@@ -1,0 +1,8 @@
+{
+  "system_health_monitoring": true,
+  "performance_tracking": true,
+  "resource_monitoring": true,
+  "checkpoint_enabled": true,
+  "checkpoint_interval": 1800,
+  "health_check_interval": 60
+}

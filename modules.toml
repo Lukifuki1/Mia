@@ -1,0 +1,45 @@
+[core]
+consciousness = "mia.core.consciousness.main"
+memory = "mia.core.memory.main"
+bootstrap = "mia.core.bootstrap.main"
+
+[voice]
+stt = "mia.modules.voice.stt.main"
+tts = "mia.modules.voice.tts.main"
+emotional_processor = "mia.modules.voice.emotional"
+
+[multimodal]
+image_generator = "mia.modules.multimodal.image.main"
+video_generator = "mia.modules.multimodal.video.main"
+audio_generator = "mia.modules.multimodal.audio.main"
+
+[avatar]
+webgl_renderer = "mia.modules.avatar.webgl"
+animation_engine = "mia.modules.avatar.animation"
+
+[ui]
+web_interface = "mia.modules.ui.web"
+chat_handler = "mia.modules.ui.chat"
+terminal = "mia.modules.ui.terminal"
+
+[projects]
+agp_engine = "mia.modules.projects.agp"
+code_generator = "mia.modules.projects.codegen"
+
+[training]
+lora_trainer = "mia.modules.training.lora"
+sandbox = "mia.modules.training.sandbox"
+
+[api]
+key_manager = "mia.modules.api.keys"
+email_client = "mia.modules.api.email"
+
+[lora]
+manager = "mia.modules.lora.manager"
+voice_tuner = "mia.modules.lora.voice"
+image_tuner = "mia.modules.lora.image"
+
+[monitoring]
+system_health = "mia.modules.monitoring.health"
+performance = "mia.modules.monitoring.performance"
+checkpointing = "mia.modules.monitoring.checkpoint"

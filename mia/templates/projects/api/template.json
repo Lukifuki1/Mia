@@ -1,0 +1,15 @@
+{
+  "structure": [
+    "src/",
+    "src/routes/",
+    "src/models/",
+    "src/middleware/",
+    "tests/",
+    "docs/"
+  ],
+  "files": {
+    "requirements.txt": "fastapi\nuvicorn\npydantic\nsqlalchemy\nalembic",
+    "main.py": "from fastapi import FastAPI\n\napp = FastAPI(title=\"{{project_name}}\", description=\"{{description}}\")\n\n@app.get(\"/\")\ndef read_root():\n    return {\"message\": \"Hello from {{project_name}}\"}",
+    "README.md": "# {{project_name}} API\n\n{{description}}\n\n## Installation\n\n```bash\npip install -r requirements.txt\nuvicorn main:app --reload\n```"
+  }
+}

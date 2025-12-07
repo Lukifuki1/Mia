@@ -1,0 +1,83 @@
+mia:
+  allow_external_api: false
+  description: Local Digital Intelligence Entity
+  fail_on_placeholder: true
+  fail_on_simulation: true
+  mode: full_autonomous
+  name: MIA
+  priority: CRITICAL
+  require_local_execution: true
+  require_user_input: false
+  version: 1.0.0
+modules:
+  api_management:
+    email_integration: true
+    enabled: true
+    keystore: true
+  avatar:
+    enabled: true
+    real_time_animation: true
+    type: webgl
+  consciousness:
+    enabled: true
+    introspection_interval: 30
+    self_evaluation: true
+  lora:
+    auto_tuning: true
+    enabled: true
+    image_lora: true
+    voice_lora: true
+  memory:
+    enabled: true
+    long_term_unlimited: true
+    medium_term_limit: 10000
+    short_term_limit: 1000
+    vectorization: true
+  monitoring:
+    checkpointing: true
+    enabled: true
+    performance_tracking: true
+    system_health: true
+  multimodal:
+    audio_generation: true
+    enabled: true
+    image_generation: true
+    video_generation: false
+  projects:
+    agp_engine: true
+    auto_generation: true
+    enabled: true
+  training:
+    auto_training: true
+    enabled: true
+    sandbox_mode: true
+  voice:
+    emotional_profiles: true
+    enabled: true
+    stt_model: whisper-base
+    tts_model: piper
+security:
+  encrypted_storage: true
+  local_only: true
+  no_external_apis: true
+  secure_keystore: true
+system:
+  auto_detect_hardware: true
+  cpu_cores: 4
+  gpu_available: false
+  optimization_mode: cpu_only
+  ram_gb: 15
+  storage_gb: 25
+ui:
+  adult_mode_hidden: true
+  allow_cors: true
+  allow_iframes: true
+  avatar_window: true
+  chat_interface: true
+  control_panel: true
+  host: 0.0.0.0
+  memory_map_3d: true
+  multimodal_zone: true
+  port: 12000
+  terminal: true
+  theme: dark

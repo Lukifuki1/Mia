@@ -1,0 +1,9 @@
+{
+  "web_interface": true,
+  "avatar_enabled": true,
+  "chat_interface": true,
+  "terminal_enabled": true,
+  "3d_memory_map": true,
+  "adult_mode_hidden": true,
+  "developer_mode_enabled": true
+}

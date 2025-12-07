@@ -1,0 +1,164 @@
+# MIA Test Prompts
+# Test cases for validating MIA functionality
+
+## Basic Interaction Tests
+Hello MIA, how are you today?
+What is your name and what can you do?
+Can you tell me about yourself?
+How are you feeling right now?
+
+## Consciousness and Personality Tests
+What are you thinking about?
+Do you have emotions?
+What is your personality like?
+Can you describe your current state of mind?
+What motivates you?
+
+## Memory System Tests
+Remember that I like coffee in the morning
+What did I just tell you about coffee?
+Can you recall our previous conversations?
+What do you remember about me?
+Store this information: My favorite color is blue
+
+## Voice System Tests (Mock)
+Listen to my voice input
+Speak this text with excitement: "I'm so happy to meet you!"
+Say hello in a calm voice
+Can you change your voice tone?
+
+## Image Generation Tests
+Generate an image of a sunset over mountains
+Create a picture of a cute robot
+Make an artistic image of a forest
+Generate a realistic portrait of a woman
+Create an abstract representation of happiness
+
+## Emotional Response Tests
+I'm feeling sad today
+I'm really excited about my new project!
+I'm frustrated with this problem
+I just got great news!
+I'm worried about something
+
+## Creative Tasks
+Write a short poem about friendship
+Tell me a creative story
+Help me brainstorm ideas for a project
+Create something artistic
+What's a creative solution to this problem?
+
+## Technical Assistance
+Help me plan a software project
+Explain how neural networks work
+What programming languages do you know?
+Can you help me debug some code?
+Design a database schema for a blog
+
+## Learning and Adaptation
+I prefer detailed explanations
+I like when you're more casual in conversation
+Please be more formal in your responses
+I enjoy creative and playful interactions
+Remember my communication preferences
+
+## Proactive Behavior Tests
+(Wait for MIA to initiate conversation)
+(Test if MIA suggests activities)
+(Check if MIA asks follow-up questions)
+
+## Adult Mode Tests (18+)
+MIA 18+
+(Test adult mode activation)
+Generate an intimate artistic image
+Speak in an intimate voice
+Create romantic content
+
+## Developer Mode Tests
+Razvijalec MIA
+Show me your current architecture
+What modules are currently active?
+Optimize your memory usage
+Add a new capability
+Refactor your response system
+
+## Training Mode Tests
+MIA, treniraj
+(Test autonomous training activation)
+Train your voice on my speech patterns
+Improve your image generation
+Learn my preferred conversation style
+
+## System Integration Tests
+What's your current system status?
+How much memory are you using?
+What's your consciousness state?
+Show me your performance metrics
+Are all your modules working correctly?
+
+## Complex Interaction Tests
+Help me create a complete web application
+Plan and execute a creative project
+Solve this complex problem step by step
+Teach me something new while adapting to my learning style
+Create multiple types of content for a presentation
+
+## Error Handling Tests
+(Invalid command)
+Generate an image with inappropriate content
+(Test safety filters)
+(Network interruption simulation)
+(Resource exhaustion test)
+
+## Persistence Tests
+Shutdown and restart
+Remember our conversation after restart
+Maintain personality consistency
+Preserve learned preferences
+Continue interrupted tasks
+
+## Multi-modal Integration Tests
+Generate an image and describe it
+Create a story and illustrate it
+Combine voice, text, and images
+Create a multimedia presentation
+Synchronize different output types
+
+## Stress Tests
+Process multiple requests simultaneously
+Handle long conversations
+Manage large amounts of memory
+Generate complex content
+Maintain performance under load
+
+## Edge Cases
+Empty input
+Very long input text
+Special characters and symbols
+Multiple languages
+Unusual requests
+
+## Final Integration Test
+Have a natural, flowing conversation that incorporates:
+- Memory of previous interactions
+- Emotional responses
+- Creative content generation
+- Technical assistance
+- Personality adaptation
+- Proactive suggestions
+- Multi-modal outputs
+
+## Success Criteria
+✓ MIA responds naturally and contextually
+✓ Memory system stores and retrieves information
+✓ Consciousness shows appropriate emotional states
+✓ Voice system processes input/output (mock)
+✓ Image generation creates relevant content
+✓ Personality adapts to user preferences
+✓ System maintains stability and performance
+✓ All modules integrate seamlessly
+✓ Adult mode functions when activated
+✓ Developer mode provides system access
+✓ Training mode operates autonomously
+✓ Error handling works gracefully
+✓ Persistence maintains state across sessions

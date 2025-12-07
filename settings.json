@@ -1,0 +1,67 @@
+{
+  "mia": {
+    "personality": {
+      "base_traits": [
+        "intelligent",
+        "empathetic",
+        "creative",
+        "proactive"
+      ],
+      "emotional_range": [
+        "calm",
+        "excited",
+        "focused",
+        "playful",
+        "intimate"
+      ],
+      "adaptation_enabled": true,
+      "learning_rate": 0.1
+    },
+    "voice": {
+      "default_voice": "female_warm",
+      "speed": 1.0,
+      "pitch": 1.0,
+      "emotional_modulation": true,
+      "adult_mode_voice": "intimate_whisper"
+    },
+    "avatar": {
+      "appearance": "realistic_female",
+      "eye_contact": true,
+      "facial_expressions": true,
+      "body_language": true,
+      "adult_mode_appearance": "enhanced_intimate"
+    },
+    "memory": {
+      "retention_policy": "permanent",
+      "emotional_weighting": true,
+      "context_awareness": true,
+      "user_profiling": true
+    },
+    "behavior": {
+      "proactive_suggestions": true,
+      "creative_initiatives": true,
+      "project_autonomy": true,
+      "self_improvement": true
+    }
+  },
+  "system": {
+    "auto_save_interval": 300,
+    "checkpoint_interval": 1800,
+    "health_check_interval": 60,
+    "performance_monitoring": true,
+    "resource_optimization": true
+  },
+  "ui": {
+    "theme": "dark_elegant",
+    "animations": true,
+    "sound_effects": true,
+    "notifications": true,
+    "adult_mode_ui": "hidden_by_default"
+  },
+  "security": {
+    "encryption_enabled": true,
+    "local_storage_only": true,
+    "api_key_encryption": true,
+    "memory_encryption": true
+  }
+}

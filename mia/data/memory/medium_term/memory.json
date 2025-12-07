@@ -1,0 +1,11 @@
+{
+  "memories": [],
+  "config": {
+    "short_term_capacity": 1000,
+    "medium_term_capacity": 10000,
+    "long_term_unlimited": true,
+    "vectorization_enabled": true,
+    "emotional_weighting": true,
+    "context_awareness": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "structure": [
+    "src/",
+    "src/components/",
+    "src/pages/",
+    "src/styles/",
+    "public/",
+    "tests/",
+    "docs/"
+  ],
+  "files": {
+    "package.json": "{\n  \"name\": \"{{project_name}}\",\n  \"version\": \"1.0.0\",\n  \"description\": \"{{description}}\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"start\": \"react-scripts start\",\n    \"build\": \"react-scripts build\",\n    \"test\": \"react-scripts test\"\n  }\n}",
+    "README.md": "# {{project_name}}\n\n{{description}}\n\n## Installation\n\n```bash\nnpm install\nnpm start\n```",
+    "src/index.js": "import React from \"react\";\nimport ReactDOM from \"react-dom\";\nimport App from \"./App\";\n\nReactDOM.render(<App />, document.getElementById(\"root\"));"
+  }
+}

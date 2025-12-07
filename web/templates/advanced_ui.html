@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA - Advanced Digital Intelligence Interface</title>
+    <link rel="stylesheet" href="/static/advanced_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MIA</span>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Chat</h3>
+                    <ul>
+                        <li class="nav-item active">
+                            <i class="fas fa-comments"></i>
+                            <span>New Chat</span>
+                            <button class="new-chat-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li class="nav-item" data-tool="image-generation">
+                            <i class="fas fa-image"></i>
+                            <span>Image Generation</span>
+                        </li>
+                        <li class="nav-item" data-tool="voice-chat">
+                            <i class="fas fa-microphone"></i>
+                            <span>Voice Chat</span>
+                        </li>
+                        <li class="nav-item" data-tool="code-execution">
+                            <i class="fas fa-code"></i>
+                            <span>Code Execution</span>
+                        </li>
+                        <li class="nav-item" data-tool="file-analysis">
+                            <i class="fas fa-file-alt"></i>
+                            <span>File Analysis</span>
+                        </li>
+                        <li class="nav-item" data-tool="web-search">
+                            <i class="fas fa-search"></i>
+                            <span>Web Search</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>System</h3>
+                    <ul>
+                        <li class="nav-item" data-tool="system-monitor">
+                            <i class="fas fa-chart-line"></i>
+                            <span>System Monitor</span>
+                        </li>
+                        <li class="nav-item" data-tool="memory-explorer">
+                            <i class="fas fa-database"></i>
+                            <span>Memory Explorer</span>
+                        </li>
+                        <li class="nav-item" data-tool="evolution-status">
+                            <i class="fas fa-dna"></i>
+                            <span>Evolution Status</span>
+                        </li>
+                        <li class="nav-item" data-tool="learning-dashboard">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Learning Dashboard</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Settings</h3>
+                    <ul>
+                        <li class="nav-item" data-tool="personality">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Personality</span>
+                        </li>
+                        <li class="nav-item" data-tool="models">
+                            <i class="fas fa-cogs"></i>
+                            <span>Models</span>
+                        </li>
+                        <li class="nav-item" data-tool="adult-mode" id="adult-mode-toggle">
+                            <i class="fas fa-lock"></i>
+                            <span>Adult Mode</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <div class="status-indicator">
+                        <span class="status-dot active"></span>
+                        <span>MIA Active</span>
+                    </div>
+                    <div class="resource-usage">
+                        <div class="resource-item">
+                            <span>CPU</span>
+                            <div class="progress-bar">
+                                <div class="progress" id="cpu-usage"></div>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <span>RAM</span>
+                            <div class="progress-bar">
+                                <div class="progress" id="ram-usage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <!-- Chat Interface -->
+            <div id="chat-interface" class="tool-panel active">
+                <header class="chat-header">
+                    <div class="chat-title">
+                        <h1>Chat with MIA</h1>
+                        <span class="chat-subtitle">Advanced Digital Intelligence Entity</span>
+                    </div>
+                    <div class="chat-controls">
+                        <button id="voice-toggle" class="control-btn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="clear-chat" class="control-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button id="export-chat" class="control-btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </header>
+                
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message system-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="sender">MIA</span>
+                                <span class="timestamp">Just now</span>
+                            </div>
+                            <div class="message-text">
+                                Hello! I'm MIA, your advanced digital intelligence entity. I'm fully operational and ready to assist you with anything you need. I can help with coding, creative projects, analysis, learning, and much more. What would you like to explore today?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <textarea id="chat-input" placeholder="Type your message to MIA..." rows="1"></textarea>
+                        <div class="input-actions">
+                            <button id="attach-file" class="action-btn">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button id="send-message" class="action-btn primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="quick-action" data-action="explain">Explain</button>
+                        <button class="quick-action" data-action="code">Code</button>
+                        <button class="quick-action" data-action="create">Create</button>
+                        <button class="quick-action" data-action="analyze">Analyze</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image Generation Tool -->
+            <div id="image-generation" class="tool-panel">
+                <header class="tool-header">
+                    <h2><i class="fas fa-image"></i> Image Generation</h2>
+                </header>
+                <div class="tool-content">
+                    <div class="generation-controls">
+                        <div class="control-group">
+                            <label for="image-prompt">Prompt</label>
+                            <textarea id="image-prompt" placeholder="Describe the image you want to generate..."></textarea>
+                        </div>
+                        <div class="control-row">
+                            <div class="control-group">
+                                <label for="image-style">Style</label>
+                                <select id="image-style">
+                                    <option value="realistic">Realistic</option>
+                                    <option value="artistic">Artistic</option>
+                                    <option value="anime">Anime</option>
+                                    <option value="abstract">Abstract</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label for="image-size">Size</label>
+                                <select id="image-size">
+                                    <option value="512x512">512x512</option>
+                                    <option value="768x768">768x768</option>
+                                    <option value="1024x1024">1024x1024</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="generate-image" class="generate-btn">
+                            <i class="fas fa-magic"></i>
+                            Generate Image
+                        </button>
+                    </div>
+                    <div id="image-gallery" class="image-gallery">
+                        <!-- Generated images will appear here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code Execution Tool -->
+            <div id="code-execution" class="tool-panel">
+                <header class="tool-header">
+                    <h2><i class="fas fa-code"></i> Code Execution</h2>
+                </header>
+                <div class="tool-content">
+                    <div class="code-editor-container">
+                        <div class="editor-header">
+                            <select id="code-language">
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="bash">Bash</option>
+                                <option value="sql">SQL</option>
+                            </select>
+                            <button id="run-code" class="run-btn">
+                                <i class="fas fa-play"></i>
+                                Run Code
+                            </button>
+                        </div>
+                        <textarea id="code-editor" placeholder="Enter your code here..."></textarea>
+                    </div>
+                    <div class="code-output">
+                        <h3>Output</h3>
+                        <pre id="code-result"></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- System Monitor -->
+            <div id="system-monitor" class="tool-panel">
+                <header class="tool-header">
+                    <h2><i class="fas fa-chart-line"></i> System Monitor</h2>
+                </header>
+                <div class="tool-content">
+                    <div class="monitor-grid">
+                        <div class="monitor-card">
+                            <h3>System Resources</h3>
+                            <div class="resource-chart">
+                                <canvas id="resource-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="monitor-card">
+                            <h3>MIA Status</h3>
+                            <div class="status-grid">
+                                <div class="status-item">
+                                    <span class="label">Consciousness</span>
+                                    <span class="value" id="consciousness-status">Active</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Memory</span>
+                                    <span class="value" id="memory-status">Operational</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Learning</span>
+                                    <span class="value" id="learning-status">Active</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Evolution</span>
+                                    <span class="value" id="evolution-status">Enabled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="monitor-card">
+                            <h3>Performance Metrics</h3>
+                            <div class="metrics-list">
+                                <div class="metric-item">
+                                    <span class="metric-label">Response Time</span>
+                                    <span class="metric-value" id="response-time">0.12s</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Memory Usage</span>
+                                    <span class="metric-value" id="memory-usage">2.4GB</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Active Models</span>
+                                    <span class="metric-value" id="active-models">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Memory Explorer -->
+            <div id="memory-explorer" class="tool-panel">
+                <header class="tool-header">
+                    <h2><i class="fas fa-database"></i> Memory Explorer</h2>
+                </header>
+                <div class="tool-content">
+                    <div class="memory-controls">
+                        <input type="text" id="memory-search" placeholder="Search memories...">
+                        <select id="memory-filter">
+                            <option value="all">All Memories</option>
+                            <option value="short_term">Short Term</option>
+                            <option value="medium_term">Medium Term</option>
+                            <option value="long_term">Long Term</option>
+                        </select>
+                    </div>
+                    <div id="memory-list" class="memory-list">
+                        <!-- Memory items will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adult Mode Panel -->
+            <div id="adult-mode-panel" class="tool-panel adult-mode-panel">
+                <header class="tool-header">
+                    <h2><i class="fas fa-lock"></i> Adult Mode</h2>
+                    <div class="adult-mode-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Adult content mode - Use responsibly</span>
+                    </div>
+                </header>
+                <div class="tool-content">
+                    <div class="adult-mode-content">
+                        <p>Adult mode is now active. MIA can engage in mature conversations and generate adult content.</p>
+                        <div class="adult-controls">
+                            <button id="disable-adult-mode" class="control-btn">
+                                <i class="fas fa-lock"></i>
+                                Disable Adult Mode
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div id="modal" class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button id="modal-close" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="modal-content">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="loading-spinner"></div>
+        <span>MIA is thinking...</span>
+    </div>
+    
+    <!-- Notification System -->
+    <div id="notifications" class="notifications">
+        <!-- Notifications will appear here -->
+    </div>
+    
+    <script src="/static/advanced_ui.js"></script>
+</body>
+</html>

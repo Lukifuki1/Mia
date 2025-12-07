@@ -1,0 +1,11 @@
+{
+  "stt_enabled": true,
+  "tts_enabled": true,
+  "emotional_processing": true,
+  "voice_profiles": [
+    "default",
+    "professional",
+    "intimate"
+  ],
+  "real_time_processing": true
+}

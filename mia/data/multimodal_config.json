@@ -1,0 +1,7 @@
+{
+  "image_generation": true,
+  "video_generation": false,
+  "audio_generation": false,
+  "real_time_generation": false,
+  "quality_mode": "balanced"
+}

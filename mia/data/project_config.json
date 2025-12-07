@@ -1,0 +1,18 @@
+{
+  "agp_engine_enabled": true,
+  "code_generation": true,
+  "auto_testing": true,
+  "documentation_generation": true,
+  "supported_languages": [
+    "python",
+    "javascript",
+    "rust",
+    "go"
+  ],
+  "supported_frameworks": [
+    "fastapi",
+    "react",
+    "vue",
+    "django"
+  ]
+}

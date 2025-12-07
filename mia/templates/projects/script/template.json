@@ -1,0 +1,12 @@
+{
+  "structure": [
+    "src/",
+    "tests/",
+    "docs/"
+  ],
+  "files": {
+    "main.py": "#!/usr/bin/env python3\n\"\"\"\n{{project_name}}\n{{description}}\n\"\"\"\n\ndef main():\n    print(\"Hello from {{project_name}}\")\n\nif __name__ == \"__main__\":\n    main()",
+    "requirements.txt": "# Add your dependencies here",
+    "README.md": "# {{project_name}}\n\n{{description}}\n\n## Usage\n\n```bash\npython main.py\n```"
+  }
+}

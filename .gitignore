@@ -1,0 +1,109 @@
+# MIA specific
+mia/data/models/
+mia/data/checkpoints/
+mia/data/lora/
+mia/data/api_keys/
+mia/temp/
+mia/sandbox/
+mia/logs/
+*.mia_checkpoint
+*.mia_state
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Models and data
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.h5
+*.pkl
+*.pickle
+
+# Audio/Video
+*.wav
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.flac
+*.ogg
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# API keys and secrets
+secrets.json
+api_keys.json
+*.key
+*.pem
+*.crt
