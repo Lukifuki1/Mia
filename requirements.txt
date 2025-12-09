@@ -1,10 +1,25 @@
-# Core dependencies
+# Core AI dependencies
 torch>=2.0.0
 transformers>=4.30.0
 accelerate>=0.20.0
 datasets>=2.12.0
 tokenizers>=0.13.0
 sentencepiece>=0.1.99
+
+# Local LLM support
+ollama>=0.6.0
+openai>=1.0.0
+
+# Web framework for Real AGI interface
+flask>=3.0.0
+flask-socketio>=5.5.0
+
+# Web scraping for internet research
+beautifulsoup4>=4.14.0
+requests>=2.31.0
+
+# System monitoring
+psutil>=5.9.0
 
 # Audio processing
 librosa>=0.10.0

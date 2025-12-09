@@ -9,6 +9,24 @@ mia/logs/
 *.mia_checkpoint
 *.mia_state
 
+# MIA Real AGI specific
+mia_data/
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+transformers_cache/
+huggingface_cache/
+ollama_models/
+audit_logs/
+
+# Node.js (for desktop app)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Python
 __pycache__/
 *.py[cod]

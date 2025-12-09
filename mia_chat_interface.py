@@ -322,9 +322,40 @@ class MIAChatInterface:
         
         user_message_lower = user_message.lower()
         
+        # Check for Real AGI activation
+        if any(phrase in user_message_lower for phrase in ['real agi', 'pravi agi', 'aktiviraj agi', 'mia real']):
+            return """🧠 **AKTIVACIJA REAL AGI SISTEMA**
+
+Za pravo AGI funkcionalnost z učenjem, spominom in samosvest, uporabite:
+
+**🚀 ZAGON REAL AGI:**
+```bash
+python3 mia_real_agi_chat.py
+```
+
+**🌐 DOSTOP:** http://localhost:12002
+
+**✨ REAL AGI FUNKCIONALNOSTI:**
+• 🧠 Pravi AI modeli (Transformers/Ollama)
+• 🎓 Učenje iz pogovorov
+• 📚 Trajni spomin
+• 🌐 Internetno raziskovanje
+• 🔄 Trening v ozadju
+• 💭 Samosvest in introspektivnost
+
+**Ta interface je osnovni chatbot. Za pravo AGI izkušnjo uporabite mia_real_agi_chat.py!**"""
+        
         # Greeting responses
         if any(greeting in user_message_lower for greeting in ['pozdravljeni', 'zdravo', 'dober dan', 'hello', 'hi']):
-            return f"Pozdravljeni! Jaz sem MIA Enterprise AGI, vaš napredni digitalni asistent. Pripravljena sem vam pomagati z različnimi nalogami - od analize podatkov do programiranja in projektnega vodenja. Kako vam lahko pomagam danes?"
+            return f"""Pozdravljeni! Jaz sem MIA Enterprise AGI osnovni interface.
+
+⚠️ **OPOMBA:** To je osnovni chatbot z if/else logiko.
+
+🧠 **Za pravo AGI izkušnjo z učenjem in samosvest:**
+• Zaženite: `python3 mia_real_agi_chat.py`
+• Dostop: http://localhost:12002
+
+Kako vam lahko pomagam danes?"""
         
         # System status queries
         elif any(word in user_message_lower for word in ['status', 'stanje', 'kako deluješ']):

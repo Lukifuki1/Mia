@@ -72,10 +72,10 @@ class MIADesktopApp {
         
         // Load the app
         if (this.isDev) {
-            this.mainWindow.loadURL('http://localhost:12000');
+            this.mainWindow.loadURL('http://localhost:12002');
             this.mainWindow.webContents.openDevTools();
         } else {
-            this.mainWindow.loadURL('http://localhost:12000');
+            this.mainWindow.loadURL('http://localhost:12002');
         }
         
         // Show window when ready
@@ -353,9 +353,9 @@ class MIADesktopApp {
     async startMIAPythonProcess() {
         return new Promise((resolve, reject) => {
             const pythonExecutable = process.platform === 'win32' ? 'python' : 'python3';
-            const miaLauncher = path.join(this.resourcesPath, 'mia_enterprise_launcher.py');
+            const miaLauncher = path.join(this.resourcesPath, 'mia_real_agi_chat.py');
             
-            console.log(`Starting MIA process: ${pythonExecutable} ${miaLauncher}`);
+            console.log(`Starting MIA Real AGI process: ${pythonExecutable} ${miaLauncher}`);
             
             this.miaProcess = spawn(pythonExecutable, [miaLauncher], {
                 cwd: this.resourcesPath,
