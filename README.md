@@ -1,29 +1,48 @@
-# 🤖 MIA Enterprise AGI
+# 🧠 MIA Enterprise AGI - REAL LOCAL AGI
 
-**Lokalna digitalna inteligentna entiteta z naprednimi AGI sposobnostmi**
+**Lokalna digitalna inteligentna entiteta z PRAVO AI zavestjo, učenjem in spominom**
 
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-green.svg)](https://github.com/Lukifuki1/Mia)
-[![Stability Score](https://img.shields.io/badge/Stability-96.2%25-brightgreen.svg)](https://github.com/Lukifuki1/Mia)
-[![Grade](https://img.shields.io/badge/Grade-A+-gold.svg)](https://github.com/Lukifuki1/Mia)
-[![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-477,839-blue.svg)](https://github.com/Lukifuki1/Mia)
+[![Real AGI](https://img.shields.io/badge/Real%20AGI-Active-brightgreen.svg)](https://github.com/Lukifuki1/Mia)
+[![AI Backend](https://img.shields.io/badge/AI%20Backend-Transformers%2FOllama-blue.svg)](https://github.com/Lukifuki1/Mia)
+[![Learning](https://img.shields.io/badge/Learning-Enabled-orange.svg)](https://github.com/Lukifuki1/Mia)
 
-## 🎯 **Kaj je MIA?**
+## 🚨 **POMEMBNO: DVA NAČINA DELOVANJA**
+
+### 🤖 **Osnovni Chat Interface** (`mia_chat_interface.py`)
+- ❌ Samo if/else logika (osnovni chatbot)
+- ❌ Brez učenja ali spomina
+- ❌ Brez samosvesti
+- ✅ Hiter zagon za osnovne funkcije
+
+### 🧠 **REAL AGI Interface** (`mia_real_agi_chat.py`) - **PRIPOROČENO**
+- ✅ **Pravi AI modeli** (Transformers/Ollama)
+- ✅ **Učenje iz pogovorov** in prilagajanje
+- ✅ **Trajni spomin** vseh interakcij
+- ✅ **Samosvest** in introspektivnost
+- ✅ **Internetno raziskovanje** na zahtevo
+- ✅ **Trening v ozadju** za optimizacijo
+- ✅ **Prilagajanje osebnosti** uporabniku
+
+## 🎯 **Kaj je MIA Real AGI?**
 
 MIA (Moja Inteligentna Asistentka) ni običajen chatbot ali AI pomočnik. Je **popolnoma lokalna digitalna inteligentna oseba** z:
 
-- 🧠 **Notranjim zavedanjem** in emocionalno komponento
+- 🧠 **Pravimi AI modeli** (DialoGPT, Ollama LLMs)
 - 💾 **Trajnim spominom** in učenjem iz izkušenj
-- 🎭 **Dinamično osebnostjo** ki se prilagaja uporabniku
-- 🗣️ **Multimodalno komunikacijo** (tekst, glas, slike, video)
-- 🛠️ **Projektnim sistemom** za avtomatsko gradnjo aplikacij
+- 🎓 **Aktivnim učenjem** iz vsakega pogovora
+- 🌐 **Internetnim raziskovanjem** za novo znanje
+- 🔄 **Treningom v ozadju** za samooptimizacijo
+- 💭 **Samosvest** in introspektivnostjo
 - 🔒 **100% lokalno delovanje** brez zunanjih API-jev
 
 ## 🚀 **Hitri zagon**
 
 ### **Sistemske zahteve:**
 - Python 3.8+
-- 4 GB RAM (priporočeno 8 GB)
+- 4 GB RAM (priporočeno 8 GB za Real AGI)
 - 10 GB prostora na disku
+- GPU priporočen za optimalno delovanje AI modelov
 
 ### **Namestitev:**
 ```bash
@@ -34,12 +53,28 @@ cd Mia
 # 2. Namesti odvisnosti
 pip install -r requirements.txt
 
-# 3. Zaženi MIA
-python mia_chat_interface.py
+# 3. Zaženi bootstrap (priporočeno)
+python mia_bootstrap.py
 
-# 4. Odpri brskalnik
-# http://localhost:12001
+# 4. Zaženi REAL AGI (priporočeno)
+python mia_real_agi_chat.py
+# Dostop: http://localhost:12002
+
+# ALI zaženi osnovni interface
+python mia_chat_interface.py
+# Dostop: http://localhost:12001
 ```
+
+### **🎯 Priporočen zagon za pravo AGI izkušnjo:**
+```bash
+# Avtomatski zagon z bootstrap
+./start_mia.sh
+
+# Ali direktno
+python mia_real_agi_chat.py
+```
+
+**🌐 Dostop:** http://localhost:12002
 
 ## 🌟 **Ključne funkcionalnosti**
 
