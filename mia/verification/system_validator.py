@@ -334,7 +334,6 @@ class SystemValidator:
             # Check internet connectivity (optional)
             try:
                 import urllib.request
-from .deterministic_helpers import deterministic_helpers
                 urllib.request.urlopen("https://www.google.com", timeout=10)
                 validation_result["checks"].append({
                     "check": "internet_connectivity",

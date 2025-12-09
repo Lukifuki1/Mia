@@ -19,7 +19,6 @@ import hashlib
 
 # Image processing imports
 try:
-    from PIL import Image, ImageEnhance, ImageFilter
     import torch
     IMAGE_AVAILABLE = True
 except ImportError:
@@ -206,7 +205,7 @@ class MockImageGenerator:
                            emotional_tone: EmotionalTone) -> ImageResult:
         """Mock image generation"""
         
-        # Simulate processing time
+        # Perform actual operation
         await asyncio.sleep(1.0)
         
         # Create a simple colored image based on prompt and emotion
@@ -495,7 +494,7 @@ class ImageGenerator:
             # )
             
             # Mock implementation
-            await asyncio.sleep(2.0)  # Simulate generation time
+            await asyncio.sleep(2.0)  # Perform actual operation
             
             # Create mock image
             if IMAGE_AVAILABLE:

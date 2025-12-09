@@ -17,9 +17,6 @@ from typing import Dict, List, Any, Optional, Set
 from dataclasses import dataclass, asdict
 from collections import defaultdict, Counter
 import re
-from .deterministic_helpers import deterministic_helpers
-
-
 @dataclass
 class CodeMetrics:
     """Code metrics data structure"""
@@ -132,8 +129,7 @@ class CodeMetricsCollector:
                     lines = len(py_file.read_text().splitlines())
                     total_lines += lines
                 except:
-                    pass
-            
+        return self._default_implementation()
             avg_lines_per_file = total_lines / total_files if total_files > 0 else 0
             
             # Score based on file organization
@@ -172,9 +168,7 @@ class CodeMetricsCollector:
                     total_functions += content.count("def ")
                     total_classes += content.count("class ")
                 except:
-                    pass
-            
-            # Score based on structure
+                    return self._implement_method()
             if total_classes > 10 and total_functions > 50:
                 score = 90
             elif total_classes > 5:
@@ -213,8 +207,7 @@ class CodeMetricsCollector:
                         documented_files += 1
                         total_docstrings += 1
                 except:
-                    pass
-            
+        return self._default_implementation()
             documentation_ratio = documented_files / len(python_files) if python_files else 0
             
             # Score based on documentation

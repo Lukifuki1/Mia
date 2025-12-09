@@ -14,9 +14,6 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional, Set
 import json
 from datetime import datetime
-from .deterministic_helpers import deterministic_helpers
-
-
 class QualityAnalyzer:
     """Code quality analysis system"""
     

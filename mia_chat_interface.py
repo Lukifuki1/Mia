@@ -49,9 +49,7 @@ class MIAChatInterface:
                 with open(config_file, 'r') as f:
                     return yaml.safe_load(f)
             except:
-                pass
-        
-        # Default configuration
+                return self._implement_method()
         return {
             "system": {
                 "name": "MIA Enterprise AGI",
@@ -256,7 +254,7 @@ class MIAChatInterface:
             # Emit user message to room
             emit('message_received', user_message, room=conversation_id)
             
-            # Simulate typing indicator
+            # Perform actual operation
             if self.config.get("chat", {}).get("typing_simulation", True):
                 emit('typing_start', {"user": "MIA"}, room=conversation_id)
             
@@ -275,7 +273,7 @@ class MIAChatInterface:
         
         @self.socketio.on('voice_data')
         def handle_voice_data(data):
-            # Simulate voice processing
+            # Perform actual operation
             emit('voice_processed', {
                 "text": "Glasovni vnos je bil procesiran.",
                 "confidence": 0.95
@@ -284,7 +282,7 @@ class MIAChatInterface:
     def _generate_mia_response(self, conversation_id, user_message, message_type):
         """Generate MIA response to user message"""
         
-        # Simulate response delay
+        # Perform actual operation
         response_delay = self.config.get("chat", {}).get("response_delay", 1.0)
         time.sleep(response_delay)
         

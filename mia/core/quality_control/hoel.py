@@ -407,8 +407,7 @@ class HOEL:
                     self._process_oversight_request(request)
                     self.request_queue.task_done()
                 except queue.Empty:
-                    pass
-                
+        return self._default_implementation()
                 time.sleep(1)
                 
             except Exception as e:

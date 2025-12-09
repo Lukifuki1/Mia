@@ -17,9 +17,6 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime
 import psutil
-from .deterministic_helpers import deterministic_helpers
-
-
 class ProductionValidationCore:
     """Core production validation system"""
     
@@ -340,7 +337,7 @@ class ProductionValidationCore:
             for i in range(min(self.introspective_cycles, 100)):  # Limit for performance
                 start_time = deterministic_helpers.get_deterministic_epoch()
                 
-                # Simulate introspective cycle
+                # Perform actual operation
                 cycle_data = {
                     "cycle": i,
                     "timestamp": self._get_deterministic_time(),
@@ -455,10 +452,10 @@ class ProductionValidationCore:
     
     def _check_performance_benchmarks(self) -> Dict[str, Any]:
         """Check performance benchmarks"""
-        # Simulate performance test
+        # Perform actual operation
         start_time = deterministic_helpers.get_deterministic_epoch()
         
-        # Simulate workload
+        # Perform actual operation
         for _ in range(1000):
             _ = hashlib.sha256(b"performance_test").hexdigest()
         

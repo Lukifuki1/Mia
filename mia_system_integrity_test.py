@@ -41,7 +41,6 @@ class MIASystemIntegrityTest:
     async def test_core_bootstrap(self):
         """Test core bootstrap module"""
         try:
-            from mia.core.bootstrap.main import MIABootBuilder
             builder = MIABootBuilder()
             
             # Test hardware detection
@@ -58,7 +57,6 @@ class MIASystemIntegrityTest:
     async def test_consciousness_system(self):
         """Test consciousness system"""
         try:
-            from mia.core.consciousness.main import consciousness, awaken_consciousness
             
             # Test consciousness awakening
             await awaken_consciousness()
@@ -77,7 +75,6 @@ class MIASystemIntegrityTest:
     async def test_memory_system(self):
         """Test memory system"""
         try:
-            from mia.core.memory.main import memory_system, store_memory, retrieve_memories, MemoryType, EmotionalTone
             
             # Test memory storage
             test_memory_id = store_memory("Test memory for integrity check", EmotionalTone.NEUTRAL, ["test", "integrity"])
@@ -101,7 +98,6 @@ class MIASystemIntegrityTest:
     async def test_adaptive_llm(self):
         """Test adaptive LLM system"""
         try:
-            from mia.core.adaptive_llm import adaptive_llm, get_adaptive_llm_status
             
             # Test status retrieval
             status = get_adaptive_llm_status()
@@ -124,7 +120,6 @@ class MIASystemIntegrityTest:
     async def test_self_evolution(self):
         """Test self-evolution system"""
         try:
-            from mia.core.self_evolution import evolution_engine, get_evolution_status
             
             # Test status retrieval
             status = get_evolution_status()
@@ -143,7 +138,6 @@ class MIASystemIntegrityTest:
     async def test_internet_learning(self):
         """Test internet learning system"""
         try:
-            from mia.core.internet_learning import internet_learning, get_internet_learning_status
             
             # Test status retrieval
             status = get_internet_learning_status()
@@ -162,7 +156,6 @@ class MIASystemIntegrityTest:
     async def test_voice_stt(self):
         """Test STT (Speech-to-Text) system"""
         try:
-            from mia.modules.voice.stt.main import stt_engine
             
             # Test STT status
             status = stt_engine.get_status()
@@ -180,7 +173,6 @@ class MIASystemIntegrityTest:
     async def test_voice_tts(self):
         """Test TTS (Text-to-Speech) system"""
         try:
-            from mia.modules.voice.tts.main import tts_engine, speak, VoiceProfile
             
             # Test TTS status
             status = tts_engine.get_status()
@@ -201,7 +193,6 @@ class MIASystemIntegrityTest:
     async def test_image_generation(self):
         """Test image generation system"""
         try:
-            from mia.modules.multimodal.image.main import image_generator, generate_image, ImageStyle
             
             # Test image generator status
             status = image_generator.get_status()
@@ -223,7 +214,6 @@ class MIASystemIntegrityTest:
     async def test_web_ui(self):
         """Test web UI system"""
         try:
-            from mia.modules.ui.web import web_ui
             import aiohttp
             
             # Test if web UI is running
@@ -249,7 +239,6 @@ class MIASystemIntegrityTest:
     async def test_project_system(self):
         """Test project system"""
         try:
-            from mia.modules.projects.main import project_manager
             
             # Test project manager
             has_manager = project_manager is not None
@@ -267,7 +256,6 @@ class MIASystemIntegrityTest:
     async def test_adult_mode(self):
         """Test adult mode system"""
         try:
-            from mia.modules.ui.web import web_ui
             
             # Test adult mode availability
             has_adult_mode = hasattr(web_ui, 'adult_mode_active')

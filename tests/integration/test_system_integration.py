@@ -34,7 +34,6 @@ class TestSystemIntegration(unittest.TestCase):
     def test_security_system(self):
         """Test security system integration"""
         try:
-            from mia.security import SecurityCore
             security = SecurityCore()
             self.assertIsNotNone(security)
         except Exception as e:

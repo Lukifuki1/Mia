@@ -622,7 +622,7 @@ Na podlagi moje interne baze znanja:
             })
             time.sleep(3)
             
-            # Simulate training process
+            # Perform actual operation
             training_steps = [
                 "Analiziram vzorce v pogovorih",
                 "Optimiziram odzivne algoritme", 

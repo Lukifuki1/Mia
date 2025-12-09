@@ -82,7 +82,6 @@ class DeploymentManager:
             
             manifest_file = deploy_dir / "deployment_manifest.json"
             import json
-from .deterministic_helpers import deterministic_helpers
             manifest_file.write_text(json.dumps(manifest, indent=2))
             
             self.logger.info(f"🚀 Application deployed: {deployment_config.get('name', 'app')}")

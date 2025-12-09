@@ -595,7 +595,6 @@ class MemorySystem:
     def _init_advanced_optimizer(self):
         """Initialize advanced memory optimizer"""
         try:
-            from .advanced_optimizer import get_advanced_memory_optimizer
             self.advanced_optimizer = get_advanced_memory_optimizer(self)
             self.logger.info("🧠 Advanced Memory Optimizer initialized")
         except ImportError:
@@ -614,7 +613,6 @@ class MemorySystem:
     def _init_self_identity_integration(self):
         """Initialize self-identity integration into memory"""
         try:
-            from ..identity.self_model import get_self_identity
             self.self_identity = get_self_identity()
             
             # Store identity memories in meta memory

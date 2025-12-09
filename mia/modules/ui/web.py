@@ -1099,7 +1099,6 @@ document.addEventListener('DOMContentLoaded', () => {
     async def _search_memories(self, query: str):
         """Search memories"""
         try:
-            from mia.core.memory.main import retrieve_memories
             
             memories = retrieve_memories(query, limit=20)
             

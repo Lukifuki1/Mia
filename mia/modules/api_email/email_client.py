@@ -24,7 +24,6 @@ import queue
 
 # Encryption
 try:
-    from cryptography.fernet import Fernet
     ENCRYPTION_AVAILABLE = True
 except ImportError:
     ENCRYPTION_AVAILABLE = False

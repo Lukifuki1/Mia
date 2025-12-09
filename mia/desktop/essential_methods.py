@@ -7,8 +7,6 @@ Essential methods for desktop module production readiness.
 """
 
 from typing import Dict, List, Any, Optional
-from .deterministic_helpers import deterministic_helpers
-
 class DesktopEssentialMethods:
     """Essential methods for desktop module"""
     

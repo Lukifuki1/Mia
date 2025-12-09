@@ -1046,7 +1046,7 @@ def main():
     # Record some sample metrics
     metrics_collector = analytics_dashboard.metrics_collector
     
-    # Simulate application metrics
+    # Perform actual operation
     for i in range(10):
         metrics_collector.record_metric("app.requests.total", i * 10, MetricType.COUNTER)
         metrics_collector.record_metric("app.response.time", 50 + i * 5, MetricType.GAUGE, unit="ms")

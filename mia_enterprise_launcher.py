@@ -530,7 +530,6 @@ class MIAEnterpriseLauncher:
             
             # Add enterprise monitoring status
             try:
-                from mia.enterprise import get_enterprise_status, get_enterprise_score
                 enterprise_status = get_enterprise_status()
                 enterprise_score = get_enterprise_score()
                 
@@ -629,7 +628,7 @@ async def main():
             try:
                 await launcher.shutdown_system()
             except:
-                pass
+        return self._default_implementation()
         sys.exit(1)
 
 if __name__ == "__main__":

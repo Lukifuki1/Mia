@@ -257,7 +257,6 @@ class ProductionTestRunner:
             # Test 2: System information
             try:
                 import platform
-from .deterministic_helpers import deterministic_helpers
                 system_info = {
                     "system": platform.system(),
                     "python_version": platform.python_version()

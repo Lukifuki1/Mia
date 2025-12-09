@@ -153,8 +153,7 @@ class EnterpriseStabilityMonitor:
             try:
                 await self.monitoring_task
             except asyncio.CancelledError:
-                pass
-        
+        return self._default_implementation()
         self.logger.info("🏢 Enterprise Stability Monitor stopped")
     
     async def _monitoring_loop(self):
@@ -273,7 +272,6 @@ class EnterpriseStabilityMonitor:
     async def _check_consciousness_health(self) -> float:
         """Check consciousness system health"""
         try:
-            from mia.core.consciousness.main import consciousness
             
             # Check if consciousness is active
             if hasattr(consciousness, 'consciousness_state'):
@@ -300,7 +298,6 @@ class EnterpriseStabilityMonitor:
     async def _check_memory_health(self) -> float:
         """Check memory system health"""
         try:
-            from mia.core.memory.main import memory_system
             
             # Check memory system status
             status = memory_system.get_system_status()
@@ -326,7 +323,6 @@ class EnterpriseStabilityMonitor:
     async def _check_adaptive_llm_health(self) -> float:
         """Check adaptive LLM health"""
         try:
-            from mia.core.adaptive_llm import get_adaptive_llm_status
             
             status = get_adaptive_llm_status()
             

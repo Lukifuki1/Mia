@@ -1,4 +1,0 @@
-Component,Metric,Current_Value,Target_Value,Status,Score
-Memory,Operations_Per_Second,23731.8,1000.0,PASS,100.0
-Consciousness,Response_Time_Seconds,0.000,0.100,PASS,100.0
-Overall,Performance_Score,100.0,95.0,PASS,100.0

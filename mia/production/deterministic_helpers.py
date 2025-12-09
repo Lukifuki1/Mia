@@ -38,7 +38,6 @@ class DeterministicHelpers:
     def get_seeded_random(self, seed: int = 42):
         """Get seeded random generator"""
         import random
-from .deterministic_helpers import deterministic_helpers
         deterministic_helpers.get_seeded_random().seed(seed)
         return random
     

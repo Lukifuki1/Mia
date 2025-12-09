@@ -1,0 +1,18 @@
+{
+  "name": "Test Project",
+  "description": "A test project",
+  "project_type": "ProjectType.CLI_TOOL",
+  "requirements": [
+    "Basic functionality"
+  ],
+  "technologies": [
+    "Python"
+  ],
+  "features": [
+    "Feature 1",
+    "Feature 2"
+  ],
+  "constraints": {},
+  "deadline": null,
+  "priority": 1
+}

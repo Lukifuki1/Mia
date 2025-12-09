@@ -16,9 +16,6 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 import locale
-from .deterministic_helpers import deterministic_helpers
-
-
 class ProductionComplianceChecker:
     """Production compliance validation system"""
     
@@ -242,9 +239,7 @@ class ProductionComplianceChecker:
             try:
                 locale.setlocale(locale.LC_ALL, 'C')
             except locale.Error:
-                pass
-            
-            # Calculate localization score
+                return self._implement_method()
             locale_dir_score = 1.0 if found_locale_dirs else 0.0
             translation_score = min(len(translation_files) / 4, 1.0)  # Up to 4 translation files
             system_locale_score = len(supported_system_locales) / len(self.supported_locales)

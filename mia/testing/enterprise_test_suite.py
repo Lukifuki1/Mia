@@ -133,7 +133,6 @@ class EnterpriseTestSuite:
         start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         try:
-            from mia.core.consciousness import consciousness
             
             # Test initialization
             assert consciousness is not None, "Consciousness module not initialized"
@@ -173,7 +172,6 @@ class EnterpriseTestSuite:
         start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         try:
-            from mia.core.memory import memory_system
             
             # Test memory operations
             test_data = {"test": "data", "timestamp": self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}
@@ -216,7 +214,6 @@ class EnterpriseTestSuite:
         start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         try:
-            from mia.core.adaptive_llm import adaptive_llm
             
             # Test LLM status
             status = adaptive_llm.get_llm_status()

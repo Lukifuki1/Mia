@@ -101,7 +101,6 @@ class MIASystemAudit:
         
         # Bootstrap sistem
         try:
-            from mia.core.bootstrap.main import MIABootBuilder
             bootstrap = MIABootBuilder()
             has_detect_hardware = hasattr(bootstrap, 'detect_hardware')
             has_init_modules = hasattr(bootstrap, 'initialize_modules')
@@ -115,7 +114,6 @@ class MIASystemAudit:
         
         # Consciousness sistem
         try:
-            from mia.core.consciousness.main import ConsciousnessModule
             consciousness = ConsciousnessModule()
             has_introspection = hasattr(consciousness, 'introspective_analysis')
             has_emotional_state = hasattr(consciousness, 'emotional_state')
@@ -129,7 +127,6 @@ class MIASystemAudit:
         
         # Memory sistem
         try:
-            from mia.core.memory.main import MemorySystem, EmotionalTone
             memory = MemorySystem()
             has_store = hasattr(memory, 'store_memory')
             has_retrieve = hasattr(memory, 'retrieve_memories')
@@ -147,7 +144,6 @@ class MIASystemAudit:
         
         # STT sistem
         try:
-            from mia.modules.voice.stt.main import STTEngine
             stt = STTEngine()
             has_transcribe = hasattr(stt, 'transcribe_audio')
             has_emotional_analysis = hasattr(stt, 'analyze_emotional_tone')
@@ -159,7 +155,6 @@ class MIASystemAudit:
         
         # TTS sistem
         try:
-            from mia.modules.voice.tts.main import TTSEngine
             tts = TTSEngine()
             has_generate = hasattr(tts, 'generate_speech')
             has_lora = hasattr(tts, 'activate_lora')
@@ -171,7 +166,6 @@ class MIASystemAudit:
         
         # Image generation
         try:
-            from mia.modules.multimodal.image.main import ImageGenerator
             img_gen = ImageGenerator()
             has_generate = hasattr(img_gen, 'generate_image')
             has_lora = hasattr(img_gen, 'activate_lora')
@@ -187,7 +181,6 @@ class MIASystemAudit:
         
         # Adaptive LLM
         try:
-            from mia.core.adaptive_llm import AdaptiveLLMManager
             llm = AdaptiveLLMManager()
             has_model_selection = hasattr(llm, 'select_optimal_model')
             has_performance_tracking = hasattr(llm, 'track_performance')
@@ -199,7 +192,6 @@ class MIASystemAudit:
         
         # Self Evolution
         try:
-            from mia.core.self_evolution import SelfEvolutionEngine
             evolution = SelfEvolutionEngine()
             has_analyze = hasattr(evolution, 'analyze_performance')
             has_suggest = hasattr(evolution, 'suggest_improvements')
@@ -211,7 +203,6 @@ class MIASystemAudit:
         
         # Internet Learning
         try:
-            from mia.core.internet_learning import InternetLearningEngine
             learning = InternetLearningEngine()
             has_parse = hasattr(learning, 'parse_web_content')
             has_vectorize = hasattr(learning, 'vectorize_content')
@@ -226,7 +217,6 @@ class MIASystemAudit:
         self.print_section("PROJEKTNI SISTEM")
         
         try:
-            from mia.modules.projects.main import MIAProjectManager
             pm = MIAProjectManager()
             has_create = hasattr(pm, 'create_project')
             has_templates = hasattr(pm, 'get_available_templates')
@@ -368,7 +358,6 @@ class MIASystemAudit:
         
         # Preveri UI funkcionalnosti
         try:
-            from mia.modules.ui.web import MIAWebUI
             ui = MIAWebUI()
             has_app = hasattr(ui, 'app') and ui.app is not None
             self.audit_result("UI_SYSTEM", "Web aplikacija", has_app)

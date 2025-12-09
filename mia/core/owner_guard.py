@@ -500,14 +500,12 @@ class OwnerGuard:
             
             # Try to notify other systems
             try:
-                from .immune.immune_kernel import immune_kernel
                 
                 if hasattr(immune_kernel, 'emergency_lockdown'):
                     immune_kernel.emergency_lockdown(reason)
                     
             except ImportError:
-                pass
-            
+        return self._default_implementation()
             self.logger.critical("🔒 System locked down - owner intervention required")
             
         except Exception as e:

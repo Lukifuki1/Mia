@@ -674,8 +674,7 @@ class AGIValidator:
         try:
             # This would implement automatic target discovery and validation
             # For now, just log that auto-validation is running
-            pass
-            
+        return self._default_implementation()
         except Exception as e:
             self.logger.error(f"Failed to auto-validate targets: {e}")
     

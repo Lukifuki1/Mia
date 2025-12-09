@@ -30,7 +30,6 @@ except ImportError:
 
 # LoRA libraries
 try:
-    from peft import LoraConfig, get_peft_model, TaskType
     from transformers import AutoTokenizer, AutoModel
     PEFT_AVAILABLE = True
 except ImportError:

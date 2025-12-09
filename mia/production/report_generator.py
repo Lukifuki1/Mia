@@ -115,7 +115,6 @@ class ProductionReportGenerator:
         """Save report to file"""
         try:
             import json
-from .deterministic_helpers import deterministic_helpers
             report_path = f"production_report_{int(deterministic_helpers.get_deterministic_epoch())}.json"
             
             with open(report_path, 'w') as f:

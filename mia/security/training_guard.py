@@ -136,7 +136,6 @@ class TrainingGuard:
     def _is_trusted_source(self, source: str) -> bool:
         """Preveri, če je source zaupanja vreden"""
         try:
-            from urllib.parse import urlparse
             
             if source.startswith('file://') or source.startswith('/'):
                 # Local file - dovoli

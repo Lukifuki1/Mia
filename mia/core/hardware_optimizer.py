@@ -231,8 +231,7 @@ class HardwareOptimizer:
                         if len(lines) > 1:
                             cpu_info["model"] = lines[1].strip()
             except:
-                pass
-            
+        return self._default_implementation()
             return cpu_info
             
         except Exception as e:
@@ -271,8 +270,7 @@ class HardwareOptimizer:
                         elif "DDR5" in result.stdout:
                             memory_info["type"] = "DDR5"
             except Exception:
-                pass
-            
+        return self._default_implementation()
             return memory_info
             
         except Exception as e:
@@ -320,12 +318,9 @@ class HardwareOptimizer:
                     if result.returncode == 0:
                         gpu_info["compute_capability"] = result.stdout.strip()
                 except:
-                    pass
-                    
+        return self._default_implementation()
             except (subprocess.TimeoutExpired, FileNotFoundError):
-                pass
-            
-            # Try AMD GPU detection if NVIDIA not found
+                return self._implement_method()
             if not gpu_info["available"]:
                 try:
                     result = subprocess.run(
@@ -340,9 +335,7 @@ class HardwareOptimizer:
                             # Extract memory size (this is a simplified parser)
                             gpu_info["memory_gb"] = 8.0  # Default assumption
                 except (subprocess.TimeoutExpired, FileNotFoundError):
-                    pass
-            
-            # Try Intel GPU detection
+                    return self._implement_method()
             if not gpu_info["available"]:
                 try:
                     # Check for Intel integrated graphics
@@ -357,8 +350,7 @@ class HardwareOptimizer:
                                     gpu_info["memory_gb"] = 2.0  # Shared memory assumption
                                     break
                 except:
-                    pass
-            
+        return self._default_implementation()
             return gpu_info
             
         except Exception as e:
@@ -443,8 +435,7 @@ class HardwareOptimizer:
                         network_info["interface_type"] = interface
                         break
             except:
-                pass
-            
+        return self._default_implementation()
             return network_info
             
         except Exception as e:
@@ -701,8 +692,7 @@ class HardwareOptimizer:
                     elif cc >= 6.0:
                         score += 5
                 except:
-                    pass
-            
+        return self._default_implementation()
             return min(score, 100.0)
             
         except Exception as e:

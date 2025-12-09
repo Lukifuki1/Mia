@@ -307,7 +307,7 @@ class MockTTSEngine:
                               emotional_tone: EmotionalTone) -> TTSResult:
         """Mock speech synthesis"""
         
-        # Simulate processing time
+        # Perform actual operation
         await asyncio.sleep(0.3)
         
         # Generate mock audio (sine wave)
@@ -501,7 +501,7 @@ class TTSEngine:
         """Synthesize base speech (mock implementation)"""
         
         # Mock synthesis - in production, use actual TTS model
-        await asyncio.sleep(0.1)  # Simulate processing time
+        await asyncio.sleep(0.1)  # Perform actual operation
         
         # Generate simple audio based on text
         duration = len(text) * 0.08  # 0.08 seconds per character

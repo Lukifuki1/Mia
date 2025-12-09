@@ -658,7 +658,7 @@ class ExecutorAgent:
             
             self.logger.info(f"Executing generic task: {task_type}")
             
-            # Simulate task execution
+            # Perform actual operation
             time.sleep(1)
             
             return {

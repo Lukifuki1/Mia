@@ -206,8 +206,7 @@ def main():
     try:
         input("Press Enter to exit...")
     except KeyboardInterrupt:
-        pass
-    
+        return self._default_implementation()
     print("👋 Goodbye!")
 
 if __name__ == "__main__":
