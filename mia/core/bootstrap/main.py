@@ -184,8 +184,7 @@ class MIABootBuilder:
                 gpu_available = True
                 self.logger.info(f"NVIDIA GPU detected with {gpu_memory_gb:.1f}GB VRAM")
         except:
-            pass
-        
+        return self._default_implementation()
         if not gpu_available:
             try:
                 # Try to detect AMD GPU
@@ -196,9 +195,7 @@ class MIABootBuilder:
                     gpu_memory_gb = 8.0  # Default assumption for AMD
                     self.logger.info("AMD GPU detected")
             except:
-                pass
-        
-        # Disk space detection
+                return self._implement_method()
         disk = psutil.disk_usage('/')
         disk_space_gb = disk.free / (1024**3)
         

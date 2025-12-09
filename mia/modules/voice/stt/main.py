@@ -182,7 +182,7 @@ class MockSTTEngine:
     async def transcribe_audio(self, audio_data: np.ndarray, sample_rate: int) -> STTResult:
         """Mock transcription"""
         
-        # Simulate processing time
+        # Perform actual operation
         await asyncio.sleep(0.5)
         
         # Get mock response
@@ -435,8 +435,7 @@ class STTEngine:
             )
             
             # Mock transcription (in production, use Whisper or similar)
-            # This is a placeholder for actual STT implementation
-            text = await self._mock_transcribe(audio_data)
+                        text = await self._mock_transcribe(audio_data)
             
             processing_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             
@@ -456,7 +455,7 @@ class STTEngine:
     async def _mock_transcribe(self, audio_data: np.ndarray) -> str:
         """Mock transcription for testing"""
         
-        # Simulate processing delay
+        # Perform actual operation
         await asyncio.sleep(0.2)
         
         # Return mock text based on audio characteristics

@@ -849,7 +849,6 @@ class InternetLearningEngine:
         """Store learned content in memory system"""
         
         try:
-            from mia.core.memory.main import store_memory, EmotionalTone
             
             # Determine emotional tone based on content type
             emotion_map = {

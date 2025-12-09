@@ -375,14 +375,17 @@ class AuditSystem:
         try:
             findings = []
             
-            # Check for default passwords (would need access to user management)
-            # This is a placeholder for actual permission audit
-            findings.append({
-                "type": "permission_audit",
-                "severity": "info",
-                "issue": "Permission audit completed",
-                "recommendation": "Review user permissions regularly"
-            })
+            # Check for default passwords and weak authentication
+            auth_findings = self._audit_authentication_security()
+            findings.extend(auth_findings)
+            
+            # Check file system permissions
+            fs_findings = self._audit_filesystem_permissions()
+            findings.extend(fs_findings)
+            
+            # Check process permissions
+            proc_findings = self._audit_process_permissions()
+            findings.extend(proc_findings)
             
             return {
                 "audit_type": "permissions",
@@ -620,3 +623,183 @@ class AuditSystem:
                 "success": False,
                 "error": str(e)
             }
+    
+    def _audit_authentication_security(self) -> List[Dict[str, Any]]:
+        """Audit authentication security"""
+        findings = []
+        
+        try:
+            # Check for default credentials in config files
+            config_files = list(Path(".").rglob("*.json")) + list(Path(".").rglob("*.yaml")) + list(Path(".").rglob("*.yml"))
+            
+            dangerous_patterns = [
+                "admin:admin", "admin:password", "root:root", "user:user",
+                "password123", "123456", "admin123", "default"
+            ]
+            
+            for config_file in config_files:
+                try:
+                    with open(config_file, 'r') as f:
+                        content = f.read().lower()
+                        for pattern in dangerous_patterns:
+                            if pattern in content:
+                                findings.append({
+                                    "type": "authentication",
+                                    "severity": "high",
+                                    "file": str(config_file),
+                                    "issue": f"Potential default credential pattern: {pattern}",
+                                    "recommendation": "Change default credentials immediately"
+                                })
+                except (OSError, UnicodeDecodeError):
+                    continue
+            
+            # Check for password complexity requirements
+            findings.append({
+                "type": "authentication",
+                "severity": "info",
+                "issue": "Password policy review needed",
+                "recommendation": "Implement strong password requirements"
+            })
+            
+        except Exception as e:
+            findings.append({
+                "type": "authentication",
+                "severity": "low",
+                "issue": f"Authentication audit error: {str(e)}",
+                "recommendation": "Manual authentication review required"
+            })
+        
+        return findings
+    
+    def _audit_filesystem_permissions(self) -> List[Dict[str, Any]]:
+        """Audit filesystem permissions"""
+        findings = []
+        
+        try:
+            # Check critical directories
+            critical_paths = [
+                "mia_data", "bootstrap", "mia/security", "mia/core",
+                "enterprise", "scripts"
+            ]
+            
+            for path_str in critical_paths:
+                path = Path(path_str)
+                if path.exists():
+                    try:
+                        # Check if directory is world-writable (Unix-like systems)
+                        if hasattr(os, 'stat'):
+                            stat_info = path.stat()
+                            mode = stat_info.st_mode
+                            
+                            # Check for world-writable permissions (o+w)
+                            if mode & 0o002:
+                                findings.append({
+                                    "type": "filesystem",
+                                    "severity": "high",
+                                    "path": str(path),
+                                    "issue": "Directory is world-writable",
+                                    "recommendation": "Remove world-write permissions"
+                                })
+                            
+                            # Check for world-readable sensitive directories
+                            if path_str in ["mia/security", "enterprise"] and mode & 0o004:
+                                findings.append({
+                                    "type": "filesystem",
+                                    "severity": "medium",
+                                    "path": str(path),
+                                    "issue": "Sensitive directory is world-readable",
+                                    "recommendation": "Restrict read permissions"
+                                })
+                                
+                    except (OSError, AttributeError):
+                        continue
+            
+            # Check for sensitive files
+            sensitive_patterns = ["*.key", "*.pem", "*.p12", "*.pfx", "*.env"]
+            for pattern in sensitive_patterns:
+                for file_path in Path(".").rglob(pattern):
+                    try:
+                        if hasattr(os, 'stat'):
+                            stat_info = file_path.stat()
+                            mode = stat_info.st_mode
+                            
+                            if mode & 0o044:  # World or group readable
+                                findings.append({
+                                    "type": "filesystem",
+                                    "severity": "high",
+                                    "path": str(file_path),
+                                    "issue": "Sensitive file has overly permissive permissions",
+                                    "recommendation": "Restrict file permissions to owner only"
+                                })
+                    except (OSError, AttributeError):
+                        continue
+                        
+        except Exception as e:
+            findings.append({
+                "type": "filesystem",
+                "severity": "low",
+                "issue": f"Filesystem audit error: {str(e)}",
+                "recommendation": "Manual filesystem review required"
+            })
+        
+        return findings
+    
+    def _audit_process_permissions(self) -> List[Dict[str, Any]]:
+        """Audit process permissions"""
+        findings = []
+        
+        try:
+            # Check if running as root (Unix-like systems)
+            if hasattr(os, 'getuid') and os.getuid() == 0:
+                findings.append({
+                    "type": "process",
+                    "severity": "high",
+                    "issue": "Running as root user",
+                    "recommendation": "Run with least privilege user account"
+                })
+            
+            # Check for setuid/setgid files
+            try:
+                result = subprocess.run(
+                    ["find", ".", "-type", "f", "-perm", "/6000"],
+                    capture_output=True,
+                    text=True,
+                    timeout=30
+                )
+                
+                if result.returncode == 0 and result.stdout.strip():
+                    setuid_files = result.stdout.strip().split('\n')
+                    for file_path in setuid_files:
+                        findings.append({
+                            "type": "process",
+                            "severity": "medium",
+                            "path": file_path,
+                            "issue": "File has setuid/setgid permissions",
+                            "recommendation": "Review if elevated permissions are necessary"
+                        })
+                        
+            except (subprocess.TimeoutExpired, FileNotFoundError):
+                return self._implement_method()
+            sensitive_env_patterns = ["password", "secret", "key", "token", "api"]
+            for env_var, value in os.environ.items():
+                env_lower = env_var.lower()
+                for pattern in sensitive_env_patterns:
+                    if pattern in env_lower and value:
+                        findings.append({
+                            "type": "process",
+                            "severity": "medium",
+                            "env_var": env_var,
+                            "issue": "Sensitive data in environment variable",
+                            "recommendation": "Use secure credential storage instead"
+                        })
+                        break
+                        
+        except Exception as e:
+            findings.append({
+                "type": "process",
+                "severity": "low",
+                "issue": f"Process audit error: {str(e)}",
+                "recommendation": "Manual process review required"
+            })
+        
+        return findings

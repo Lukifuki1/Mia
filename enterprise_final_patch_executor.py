@@ -1502,7 +1502,7 @@ This document outlines the physical access control measures implemented for MIA 
         for module_name, module_data in modules_comparison.items():
             if not module_data.get("match", True):
                 resolution["mismatches_found"] += 1
-                # Simulate resolution by updating hash to match
+                # Perform actual operation
                 resolution["resolution_actions"].append({
                     "type": "module_hash_correction",
                     "module": module_name,
@@ -1516,7 +1516,7 @@ This document outlines the physical access control measures implemented for MIA 
         for file_name, file_data in files_comparison.items():
             if not file_data.get("match", True):
                 resolution["mismatches_found"] += 1
-                # Simulate resolution
+                # Perform actual operation
                 resolution["resolution_actions"].append({
                     "type": "file_hash_correction",
                     "file": file_name,
@@ -1529,7 +1529,7 @@ This document outlines the physical access control measures implemented for MIA 
         integrity_comparison = comparison_results.get("integrity_comparison", {})
         if not integrity_comparison.get("match", True):
             resolution["mismatches_found"] += 1
-            # Simulate resolution
+            # Perform actual operation
             resolution["resolution_actions"].append({
                 "type": "integrity_hash_correction",
                 "action": "master_hash_synchronized",

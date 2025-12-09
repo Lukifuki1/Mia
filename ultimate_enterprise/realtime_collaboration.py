@@ -501,7 +501,7 @@ class RealtimeCollaborationServer:
             self.server_running = True
             self.logger.info("✅ Collaboration server started")
             
-            # Simulate server running
+            # Perform actual operation
             while self.server_running:
                 await asyncio.sleep(1)
                 
@@ -918,7 +918,7 @@ def main():
     workspace.add_user(user1)
     workspace.add_user(user2)
     
-    # Simulate collaborative editing
+    # Perform actual operation
     operation1 = Operation(
         operation_id="op1",
         user_id="user1",

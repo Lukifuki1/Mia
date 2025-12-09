@@ -389,7 +389,7 @@ class PerformanceMonitor:
                 while f.read(1024 * 1024):
                     pass
             
-            execution_time = deterministic_helpers.get_deterministic_epoch() - start_time
+            execution_time = time.time() - start_time
             
             # Cleanup
             test_file.unlink()
@@ -419,8 +419,6 @@ class PerformanceMonitor:
             
             # Simple network test - DNS resolution
             import socket
-from .deterministic_helpers import deterministic_helpers
-            
             test_hosts = ["google.com", "github.com", "python.org"]
             successful_resolutions = 0
             
@@ -429,8 +427,7 @@ from .deterministic_helpers import deterministic_helpers
                     socket.gethostbyname(host)
                     successful_resolutions += 1
                 except Exception:
-                    pass
-            
+        return self._default_implementation()
             execution_time = deterministic_helpers.get_deterministic_epoch() - start_time
             
             # Score based on success rate and speed

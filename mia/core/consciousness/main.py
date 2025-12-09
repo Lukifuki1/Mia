@@ -885,8 +885,7 @@ class ConsciousnessModule:
                 try:
                     await self._consciousness_task
                 except asyncio.CancelledError:
-                    pass
-            
+        return self._default_implementation()
             self.logger.info("🛑 Consciousness loop stopped")
             
         except Exception as e:
@@ -915,7 +914,6 @@ class ConsciousnessModule:
     def _init_self_identity(self):
         """Initialize self-identity model integration"""
         try:
-            from ..identity.self_model import get_self_identity
             self.self_identity = get_self_identity()
             
             # Integrate self-awareness into consciousness

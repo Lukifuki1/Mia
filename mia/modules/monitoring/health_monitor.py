@@ -365,9 +365,7 @@ class HealthMonitor:
                     gpu_memory_percent = (gpu.memoryUsed / gpu.memoryTotal) * 100
                     gpu_temperature = gpu.temperature
             except ImportError:
-                pass
-            
-            # Network metrics
+                return self._implement_method()
             network = psutil.net_io_counters()
             network_bytes_sent = network.bytes_sent
             network_bytes_recv = network.bytes_recv
@@ -381,9 +379,7 @@ class HealthMonitor:
                 try:
                     thread_count += proc.info['num_threads'] or 0
                 except (psutil.NoSuchProcess, psutil.AccessDenied):
-                    pass
-            
-            # Load average
+                    return self._implement_method()
             try:
                 load_average = list(os.getloadavg())
             except (OSError, AttributeError):
@@ -653,8 +649,7 @@ class HealthMonitor:
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
             except ImportError:
-                pass
-            
+        return self._default_implementation()
             self.logger.info("🧹 System resource recovery attempted")
             
         except Exception as e:
@@ -744,9 +739,7 @@ class HealthMonitor:
                     if 'mia' in proc.info['name'].lower():
                         active_processes.append(f"{proc.info['name']}:{proc.info['pid']}")
             except:
-                pass
-            
-            # Create memory snapshot (simplified)
+                return self._implement_method()
             memory_snapshot = pickle.dumps({
                 "metrics_history_size": len(self.metrics_history),
                 "active_alerts_count": len([a for a in self.active_alerts if not a.resolved]),

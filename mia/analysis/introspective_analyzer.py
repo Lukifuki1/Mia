@@ -19,9 +19,6 @@ from datetime import datetime
 from .code_metrics import CodeMetricsCollector
 from .system_analyzer import SystemAnalyzer
 from .quality_analyzer import QualityAnalyzer
-from .deterministic_helpers import deterministic_helpers
-
-
 class IntrospectiveAnalyzer:
     """Main introspective analysis system"""
     

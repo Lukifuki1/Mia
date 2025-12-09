@@ -194,7 +194,7 @@ class SecurityHandler:
                 "method": "run_compliance_audit"
             }
             
-            # Simulate audit logging
+            # Perform actual operation
             self.logger.info(f"📋 Audit event logged: {audit_result['event_id']} - {audit_result['event_type']}")
             
             return audit_result

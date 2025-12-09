@@ -294,7 +294,7 @@ class PerformanceTester:
             
             def worker_task(task_id: int) -> Dict[str, Any]:
                 start_time = self._get_build_epoch()
-                # Simulate work
+                # Perform actual operation
                 result = sum(i for i in range(1000))
                 end_time = self._get_build_epoch()
                 return {

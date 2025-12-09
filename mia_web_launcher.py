@@ -34,9 +34,7 @@ class MIAWebLauncher:
                 with open(config_file, 'r') as f:
                     return yaml.safe_load(f)
             except:
-                pass
-        
-        # Default configuration
+                return self._implement_method()
         return {
             "system": {
                 "name": "MIA Enterprise AGI",
@@ -160,8 +158,7 @@ class MIAWebLauncher:
                     "standards": ["ISO27001", "GDPR", "SOX", "HIPAA", "PCI DSS"]
                 }
             except:
-                pass
-        
+        return self._default_implementation()
         return {
             "compliance_score": 97.1,
             "compliance_grade": "A+",
@@ -185,8 +182,7 @@ class MIAWebLauncher:
                     "validation_summary": stability_data.get("validation_summary", {})
                 }
             except:
-                pass
-        
+        return self._default_implementation()
         return {
             "overall_stability_score": 96.2,
             "validation_success": True,

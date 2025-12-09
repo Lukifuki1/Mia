@@ -481,7 +481,6 @@ class PlatformVerifier:
         """Test network connectivity"""
         try:
             import socket
-from .deterministic_helpers import deterministic_helpers
             
             # Test DNS resolution
             socket.gethostbyname("google.com")

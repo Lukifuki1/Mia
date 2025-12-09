@@ -1,0 +1,72 @@
+{
+  "default": {
+    "name": "default",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "neutral",
+    "speed": 1.0,
+    "pitch": 1.0,
+    "volume": 1.0,
+    "model_path": null
+  },
+  "professional": {
+    "name": "professional",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "calm",
+    "speed": 0.9,
+    "pitch": 1.0,
+    "volume": 0.8,
+    "model_path": null
+  },
+  "empathetic": {
+    "name": "empathetic",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "warm",
+    "speed": 0.8,
+    "pitch": 0.9,
+    "volume": 0.9,
+    "model_path": null
+  },
+  "playful": {
+    "name": "playful",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "happy",
+    "speed": 1.2,
+    "pitch": 1.1,
+    "volume": 1.0,
+    "model_path": null
+  },
+  "dominant": {
+    "name": "dominant",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "confident",
+    "speed": 0.9,
+    "pitch": 1.2,
+    "volume": 1.1,
+    "model_path": null
+  },
+  "sensual": {
+    "name": "sensual",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "seductive",
+    "speed": 0.7,
+    "pitch": 0.8,
+    "volume": 0.9,
+    "model_path": null
+  },
+  "adult_18plus": {
+    "name": "adult_18plus",
+    "language": "sl",
+    "gender": "female",
+    "emotion": "intimate",
+    "speed": 0.8,
+    "pitch": 0.9,
+    "volume": 1.0,
+    "model_path": null
+  }
+}

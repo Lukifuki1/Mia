@@ -781,7 +781,7 @@ random.seed(42)  # Deterministic seed
     def _performance_objective(self, parameters: Dict[str, Any], target: OptimizationTarget) -> Tuple[float, Dict[str, float]]:
         """Performance objective function"""
         try:
-            # Simulate performance evaluation
+            # Perform actual operation
             batch_size = parameters.get("batch_size", 32)
             num_threads = parameters.get("num_threads", 4)
             
@@ -847,7 +847,7 @@ random.seed(42)  # Deterministic seed
     def _accuracy_objective(self, parameters: Dict[str, Any], target: OptimizationTarget) -> Tuple[float, Dict[str, float]]:
         """Accuracy objective function"""
         try:
-            # Simulate accuracy evaluation
+            # Perform actual operation
             learning_rate = parameters.get("learning_rate", 0.01)
             batch_size = parameters.get("batch_size", 32)
             

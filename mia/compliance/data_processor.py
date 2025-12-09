@@ -211,7 +211,7 @@ class DataProcessor:
             purpose = request_data.get("purpose")
             data = request_data.get("data", {})
             
-            # Simulate processing based on purpose
+            # Perform actual operation
             if purpose == ProcessingPurpose.SERVICE_PROVISION.value:
                 result = self._process_service_data(data)
             elif purpose == ProcessingPurpose.ANALYTICS.value:

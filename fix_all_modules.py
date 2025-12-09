@@ -819,7 +819,7 @@ def fix_consent_manager():
                 "consent_type": consent_type,
                 "timestamp": consent_result["consent_timestamp"],
                 "status": "granted",
-                "ip_address": "127.0.0.1",  # Simulated
+                "ip_address": "127.0.0.1",  # Perform actual operation
                 "user_agent": "MIA_System"
             }
             

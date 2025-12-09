@@ -278,7 +278,6 @@ class PAE:
     def _get_qpm_metrics(self) -> Optional[Dict[str, Any]]:
         """Get metrics from QPM"""
         try:
-            from .qpm import qpm
             
             # Get recent metrics summary
             metrics = qpm.get_metrics_summary(time_window=self.analysis_interval)

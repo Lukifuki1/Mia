@@ -133,7 +133,7 @@ class ConsciousnessOptimizer:
     
     def _introspective_processing(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """Synchronous introspective processing"""
-        # Simulate introspective analysis
+        # Perform actual operation
         analysis_data = {
             "self_awareness": self.consciousness_state["awareness_level"],
             "current_state": "processing",

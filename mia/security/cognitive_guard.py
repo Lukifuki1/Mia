@@ -183,8 +183,7 @@ class CognitiveGuard:
                 time_diff = current_time - self._last_anomaly_check
                 if time_diff > 60:  # Check every minute
                     # Perform anomaly detection
-                    pass
-            
+        return self._default_implementation()
             self._last_anomaly_check = current_time
             
         except Exception as e:

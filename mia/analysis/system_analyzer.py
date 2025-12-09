@@ -17,9 +17,6 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 import json
 from datetime import datetime
-from .deterministic_helpers import deterministic_helpers
-
-
 class SystemAnalyzer:
     """System architecture and infrastructure analyzer"""
     
@@ -318,8 +315,7 @@ class SystemAnalyzer:
                             if line.strip() and not line.strip().startswith('#')
                         ])
                 except Exception:
-                    pass
-            
+        return self._default_implementation()
             return dependency_analysis
             
         except Exception as e:

@@ -535,11 +535,9 @@ class ComprehensiveDeterministicBuildHelpers:
             return 0
         
         def kill(self):
-            pass
-        
+        return self._default_implementation()
         def terminate(self):
-            pass
-    
+        return self._default_implementation()
     def deterministic_run(self, *args, **kwargs):
         """Deterministic subprocess.run"""
         class DeterministicResult:
@@ -587,14 +585,12 @@ class ComprehensiveDeterministicBuildHelpers:
             return self._content.split(b'\n' if isinstance(self._content, bytes) else '\n')
         
         def seek(self, offset, whence=0):
-            pass
-        
+        return self._default_implementation()
         def tell(self):
             return 0
         
         def flush(self):
-            pass
-        
+        return self._default_implementation()
         def close(self):
             self.closed = True
         
@@ -610,8 +606,7 @@ class ComprehensiveDeterministicBuildHelpers:
             self.name = "/tmp/deterministic_temp_dir"
         
         def cleanup(self):
-            pass
-        
+        return self._default_implementation()
         def __enter__(self):
             return self.name
         

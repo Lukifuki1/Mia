@@ -187,9 +187,7 @@ class StabilityTester:
                     test_file.unlink()
                     cleaned_files += 1
                 except:
-                    pass
-            
-            # Score based on cleanup success
+                    return self._implement_method()
             score = (cleaned_files / len(test_files)) * 100
             
             return {

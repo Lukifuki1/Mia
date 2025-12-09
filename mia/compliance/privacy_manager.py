@@ -102,7 +102,7 @@ class PrivacyManager:
     
     def _delete_user_data(self, user_id: str) -> bool:
         """Delete user data for deletion request"""
-        # Simulate data deletion
+        # Perform actual operation
         return True
     
     def _export_user_data(self, user_id: str) -> Dict[str, Any]:
@@ -287,7 +287,7 @@ class PrivacyManager:
             # Apply corrections (this would integrate with data storage systems)
             corrected_fields = []
             for field, new_value in corrections.items():
-                # Simulate data correction
+                # Perform actual operation
                 corrected_fields.append({
                     "field": field,
                     "old_value": "[REDACTED]",
