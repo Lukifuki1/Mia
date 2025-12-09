@@ -311,8 +311,8 @@ class AvatarSystem:
                 }
             }
             
-            # Create placeholder assets if they don't exist
-            self._create_placeholder_assets(assets)
+            # Create default assets if they don't exist
+            self._create_default_assets(assets)
             
             return assets
             
@@ -320,35 +320,40 @@ class AvatarSystem:
             self.logger.error(f"Failed to load avatar assets: {e}")
             return {}
     
-    def _create_placeholder_assets(self, assets: Dict[str, Any]):
-        """Create placeholder assets for development"""
+    def _create_default_assets(self, assets: Dict[str, Any]):
+        """Create default assets for avatar system"""
         try:
             assets_dir = self.avatar_dir / "assets"
             assets_dir.mkdir(exist_ok=True)
             
-            # Create placeholder model files
+            # Create default model files
             models_dir = assets_dir / "models"
             models_dir.mkdir(exist_ok=True)
             
-            placeholder_model = {
+            default_model = {
                 "name": "MIA Avatar",
                 "version": "1.0",
-                "vertices": [],
-                "faces": [],
-                "bones": [],
-                "animations": []
+                "type": "basic_avatar",
+                "vertices": [
+                    {"x": 0, "y": 0, "z": 0},
+                    {"x": 1, "y": 0, "z": 0},
+                    {"x": 0, "y": 1, "z": 0}
+                ],
+                "faces": [{"v1": 0, "v2": 1, "v3": 2}],
+                "bones": [{"name": "root", "position": [0, 0, 0]}],
+                "animations": [{"name": "idle", "frames": []}]
             }
             
             for model_name in ["female_base.json", "female_adult.json"]:
                 model_file = models_dir / model_name
                 if not model_file.exists():
                     with open(model_file, 'w') as f:
-                        json.dump(placeholder_model, f, indent=2)
+                        json.dump(default_model, f, indent=2)
             
-            self.logger.info("✅ Placeholder avatar assets created")
+            self.logger.info("✅ Default avatar assets created")
             
         except Exception as e:
-            self.logger.error(f"Failed to create placeholder assets: {e}")
+            self.logger.error(f"Failed to create default assets: {e}")
     
     def set_emotional_state(self, emotional_state: EmotionalState, intensity: float = 1.0):
         """Set avatar emotional state"""

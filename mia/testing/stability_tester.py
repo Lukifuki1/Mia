@@ -186,8 +186,9 @@ class StabilityTester:
                 try:
                     test_file.unlink()
                     cleaned_files += 1
-                except:
-                    return self._implement_method()
+                except Exception as e:
+                    self.logger.warning(f"Could not clean test file {test_file}: {e}")
+                    continue
             score = (cleaned_files / len(test_files)) * 100
             
             return {

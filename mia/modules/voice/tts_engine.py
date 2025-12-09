@@ -273,12 +273,47 @@ class TTSEngine:
                 
                 self.logger.info("✅ pyttsx3 engine initialized")
             
-            # Initialize XTTS (placeholder for now)
+            # Initialize XTTS engine
             if self.config["engines"]["xtts"]["enabled"]:
-                self.logger.info("⚠️ XTTS engine not implemented yet")
+                try:
+                    self._initialize_xtts_engine()
+                    self.logger.info("✅ XTTS engine initialized")
+                except Exception as e:
+                    self.logger.warning(f"XTTS engine initialization failed: {e}")
+                    self.logger.info("Continuing with available engines")
             
         except Exception as e:
             self.logger.error(f"Failed to initialize TTS engines: {e}")
+    
+    def _initialize_xtts_engine(self):
+        """Initialize XTTS (Coqui TTS) engine"""
+        try:
+            # Try to import XTTS dependencies
+            try:
+                import torch
+                from TTS.api import TTS
+                self.xtts_available = True
+            except ImportError as e:
+                self.logger.warning(f"XTTS dependencies not available: {e}")
+                self.xtts_available = False
+                return
+            
+            # Initialize XTTS model
+            xtts_config = self.config["engines"]["xtts"]
+            model_name = xtts_config.get("model", "tts_models/multilingual/multi-dataset/xtts_v2")
+            
+            self.xtts_engine = TTS(model_name=model_name)
+            
+            # Set device (GPU if available, CPU otherwise)
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            self.xtts_engine.to(device)
+            
+            self.logger.info(f"XTTS engine initialized on {device}")
+            
+        except Exception as e:
+            self.logger.error(f"Failed to initialize XTTS engine: {e}")
+            self.xtts_available = False
+            raise
     
     def _initialize_audio_system(self):
         """Initialize audio playback system"""

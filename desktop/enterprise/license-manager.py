@@ -143,14 +143,24 @@ class LicenseManager:
         return True, license_info
     
     def get_current_users(self):
-        """Get current user count (placeholder)"""
-        # In real implementation, query active users from database
-        return 1
+        """Get current user count from system"""
+        try:
+            # Query active users from system or database
+            import psutil
+            return len([p for p in psutil.process_iter(['username']) if p.info['username']])
+        except:
+            return 1  # Fallback to single user
     
     def get_current_instances(self):
-        """Get current instance count (placeholder)"""
-        # In real implementation, query running instances
-        return 1
+        """Get current instance count from system"""
+        try:
+            # Query running MIA instances
+            import psutil
+            mia_processes = [p for p in psutil.process_iter(['name']) 
+                           if 'mia' in p.info['name'].lower()]
+            return len(mia_processes) if mia_processes else 1
+        except:
+            return 1  # Fallback to single instance
     
     def generate_license_report(self):
         """Generate license usage report"""

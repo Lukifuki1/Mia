@@ -230,8 +230,9 @@ class HardwareOptimizer:
                         lines = result.stdout.strip().split('\n')
                         if len(lines) > 1:
                             cpu_info["model"] = lines[1].strip()
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.debug(f"CPU model detection failed: {e}")
+                
             return cpu_info
             
         except Exception as e:
@@ -269,8 +270,9 @@ class HardwareOptimizer:
                             memory_info["type"] = "DDR3"
                         elif "DDR5" in result.stdout:
                             memory_info["type"] = "DDR5"
-            except Exception:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.debug(f"Memory type detection failed: {e}")
+                
             return memory_info
             
         except Exception as e:
@@ -317,10 +319,11 @@ class HardwareOptimizer:
                     )
                     if result.returncode == 0:
                         gpu_info["compute_capability"] = result.stdout.strip()
-                except:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"Failed to get NVIDIA compute capability: {e}")
+            
             except (subprocess.TimeoutExpired, FileNotFoundError):
-                return self._implement_method()
+                self.logger.debug("NVIDIA tools not available")
             if not gpu_info["available"]:
                 try:
                     result = subprocess.run(
@@ -335,7 +338,7 @@ class HardwareOptimizer:
                             # Extract memory size (this is a simplified parser)
                             gpu_info["memory_gb"] = 8.0  # Default assumption
                 except (subprocess.TimeoutExpired, FileNotFoundError):
-                    return self._implement_method()
+                    self.logger.debug("AMD ROCm tools not available")
             if not gpu_info["available"]:
                 try:
                     # Check for Intel integrated graphics
@@ -349,8 +352,9 @@ class HardwareOptimizer:
                                     gpu_info["model"] = "Intel Integrated Graphics"
                                     gpu_info["memory_gb"] = 2.0  # Shared memory assumption
                                     break
-                except:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"GPU detection failed: {e}")
+                    
             return gpu_info
             
         except Exception as e:
@@ -434,8 +438,9 @@ class HardwareOptimizer:
                         network_info["speed_mbps"] = stats.speed
                         network_info["interface_type"] = interface
                         break
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.debug(f"Failed to get network info: {e}")
+                
             return network_info
             
         except Exception as e:
@@ -691,8 +696,9 @@ class HardwareOptimizer:
                         score += 8
                     elif cc >= 6.0:
                         score += 5
-                except:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"Failed to check hardware feature: {e}")
+                    
             return min(score, 100.0)
             
         except Exception as e:

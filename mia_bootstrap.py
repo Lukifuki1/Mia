@@ -115,7 +115,9 @@ class MIABootstrap:
                 system_info['gpu_memory_gb'] = round(torch.cuda.get_device_properties(0).total_memory / (1024**3), 2)
                 system_info['recommended_mode'] = 'heavy' if system_info['gpu_memory_gb'] > 4 else 'medium'
         except ImportError:
-            return self._implement_method()
+            system_info['gpu_available'] = False
+            system_info['gpu_memory_gb'] = 0
+            system_info['recommended_mode'] = 'cpu'
         if system_info['ram_total_gb'] > 16 and system_info['cpu_cores'] > 4:
             if not system_info['gpu_available']:
                 system_info['recommended_mode'] = 'medium'

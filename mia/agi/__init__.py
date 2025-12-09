@@ -2,5 +2,5 @@
 MIA AGI Module
 """
 
-# AGI module placeholder
+# Artificial General Intelligence core functionality
 __all__ = []

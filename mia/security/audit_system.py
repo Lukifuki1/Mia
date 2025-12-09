@@ -778,8 +778,9 @@ class AuditSystem:
                             "recommendation": "Review if elevated permissions are necessary"
                         })
                         
-            except (subprocess.TimeoutExpired, FileNotFoundError):
-                return self._implement_method()
+            except (subprocess.TimeoutExpired, FileNotFoundError) as e:
+                self.logger.warning(f"Process audit failed: {e}")
+                # Continue with environment variable check
             sensitive_env_patterns = ["password", "secret", "key", "token", "api"]
             for env_var, value in os.environ.items():
                 env_lower = env_var.lower()

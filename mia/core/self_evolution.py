@@ -141,10 +141,10 @@ class SelfEvolutionEngine:
         memory = psutil.virtual_memory()
         baselines["memory_efficiency"] = (memory.total - memory.used) / memory.total
         
-        # Response time (mock measurement)
-        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
-        await asyncio.sleep(0.001)  # Perform actual operation
-        baselines["response_time"] = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
+        # Response time measurement
+        start_time = time.time()
+        await asyncio.sleep(0.001)  # Minimal operation for timing
+        baselines["response_time"] = time.time() - start_time
         
         # Code quality metrics
         baselines["code_complexity"] = await self._measure_code_complexity()
@@ -667,7 +667,8 @@ def {fixed_function_name}(self, *args, **kwargs):
                 )
                 
             except ImportError:
-                return self._implement_method()
+                self.logger.warning("Memory system not available for storing analysis results")
+                return None
             
         except Exception as e:
             self.logger.error(f"Failed to store analysis result: {e}")
@@ -867,9 +868,10 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
         ]
         
         # Limit daily executions
+        current_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         today_executions = len([
             result for result in self.evolution_history
-            if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - result.timestamp < 86400  # 24 hours
+            if current_time - result.timestamp < 86400  # 24 hours
         ])
         
         if today_executions >= self.safety_constraints["max_daily_evolutions"]:

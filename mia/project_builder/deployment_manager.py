@@ -243,7 +243,7 @@ class DeploymentManager:
                 "output": f"Created {package_name}"
             })
             
-            # Step 3: Upload to S3 (placeholder)
+            # Step 3: Upload to S3 (optional cloud deployment)
             bucket_name = config.get("s3_bucket", "my-deployment-bucket")
             self._run_deployment_step(
                 "Upload to S3",

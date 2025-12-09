@@ -956,7 +956,7 @@ class RFE:
                 "forecasting_interval": self.forecasting_interval,
                 "registered_components": len(self.registered_components),
                 "total_usage_points": sum(len(history) for history in self.resource_history.values()),
-                "active_forecasts": len([f for f in self.forecasts.values() if f.valid_until > self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200]),
+                "active_forecasts": len([f for f in self.forecasts.values() if f.valid_until > (self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200)]),
                 "active_alerts": len(self.get_active_alerts()),
                 "optimization_recommendations": len(self.recommendations),
                 "forecasting_methods": list(self.forecasting_models.keys())

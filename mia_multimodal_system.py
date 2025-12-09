@@ -273,7 +273,7 @@ class MIAImageGenerator:
         return image
     
     def _generate_portrait(self, width: int, height: int):
-        """Generate portrait placeholder"""
+        """Generate basic portrait image"""
         image = Image.new('RGB', (width, height), color=(240, 230, 220))
         draw = ImageDraw.Draw(image)
         

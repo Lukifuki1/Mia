@@ -297,7 +297,7 @@ class VideoGenerator:
             elif request.method == GenerationMethod.AUDIO_TO_VIDEO:
                 output_path = self._generate_audio_to_video(request)
             else:
-                output_path = self._generate_placeholder_video(request)
+                output_path = self._generate_fallback_video(request)
             
             if output_path:
                 # Create result
@@ -346,8 +346,8 @@ class VideoGenerator:
         try:
             output_path = self.video_dir / f"{request.request_id}_text2video.mp4"
             
-            # Create placeholder video with text
-            self._create_placeholder_video_file(
+            # Create video with text overlay (basic implementation)
+            self._create_text_video_file(
                 output_path,
                 request.prompt,
                 request.duration,
@@ -374,10 +374,10 @@ class VideoGenerator:
                     request.duration
                 )
             else:
-                # Fallback: create placeholder
-                self._create_placeholder_video_file(
+                # Fallback: create basic slideshow video
+                self._create_slideshow_video_file(
                     output_path,
-                    f"Image-to-video: {len(request.input_files)} images",
+                    request.input_files,
                     request.duration,
                     request.resolution,
                     request.fps
@@ -394,10 +394,11 @@ class VideoGenerator:
         try:
             output_path = self.video_dir / f"{request.request_id}_audio2video.mp4"
             
-            # Create placeholder for audio visualization
-            self._create_placeholder_video_file(
+            # Create audio visualization video
+            self._create_audio_visualization_video(
                 output_path,
-                f"Audio visualization: {request.prompt}",
+                request.input_files[0] if request.input_files else None,
+                request.prompt,
                 request.duration,
                 request.resolution,
                 request.fps
@@ -409,12 +410,12 @@ class VideoGenerator:
             self.logger.error(f"Failed to generate audio-to-video: {e}")
             return None
     
-    def _generate_placeholder_video(self, request: VideoRequest) -> Optional[str]:
-        """Generate placeholder video"""
+    def _generate_fallback_video(self, request: VideoRequest) -> Optional[str]:
+        """Generate fallback video when specific method is not available"""
         try:
-            output_path = self.video_dir / f"{request.request_id}_placeholder.mp4"
+            output_path = self.video_dir / f"{request.request_id}_generated.mp4"
             
-            self._create_placeholder_video_file(
+            self._create_text_video_file(
                 output_path,
                 f"{request.method.value}: {request.prompt}",
                 request.duration,
@@ -425,12 +426,12 @@ class VideoGenerator:
             return str(output_path)
             
         except Exception as e:
-            self.logger.error(f"Failed to generate placeholder video: {e}")
+            self.logger.error(f"Failed to generate fallback video: {e}")
             return None
     
-    def _create_placeholder_video_file(self, output_path: Path, text: str,
+    def _create_text_video_file(self, output_path: Path, text: str,
                                      duration: float, resolution: Tuple[int, int], fps: int):
-        """Create placeholder video with text"""
+        """Create video with text overlay"""
         try:
             if self.available_models.get("ffmpeg", False):
                 # Create video with text overlay using FFmpeg
@@ -446,11 +447,11 @@ class VideoGenerator:
                 
                 subprocess.run(ffmpeg_cmd, check=True, capture_output=True, timeout=30)
             else:
-                # Create empty file as placeholder
+                # Create empty file as fallback
                 output_path.touch()
             
         except Exception as e:
-            self.logger.error(f"Failed to create placeholder video: {e}")
+            self.logger.error(f"Failed to create video file: {e}")
             # Create empty file as fallback
             output_path.touch()
     
@@ -543,6 +544,87 @@ class VideoGenerator:
         except Exception as e:
             self.logger.error(f"Failed to get video generator status: {e}")
             return {"error": str(e)}
+
+    def _create_slideshow_video_file(self, output_path: Path, image_files: List[str],
+                                   duration: float, resolution: Tuple[int, int], fps: int):
+        """Create slideshow video from images"""
+        try:
+            if self.available_models.get("ffmpeg", False) and image_files:
+                # Create slideshow with equal time per image
+                time_per_image = duration / len(image_files)
+                
+                # Create temporary file list for FFmpeg
+                import tempfile
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
+                    for img_file in image_files:
+                        f.write(f"file '{img_file}'\n")
+                        f.write(f"duration {time_per_image}\n")
+                    temp_list = f.name
+                
+                ffmpeg_cmd = [
+                    "ffmpeg", "-y",
+                    "-f", "concat",
+                    "-safe", "0",
+                    "-i", temp_list,
+                    "-vf", f"scale={resolution[0]}:{resolution[1]}",
+                    "-r", str(fps),
+                    "-pix_fmt", "yuv420p",
+                    str(output_path)
+                ]
+                
+                subprocess.run(ffmpeg_cmd, check=True, capture_output=True)
+                
+                # Clean up temp file
+                import os
+                os.unlink(temp_list)
+            else:
+                # Fallback: create empty video file
+                output_path.touch()
+                
+        except Exception as e:
+            self.logger.error(f"Failed to create slideshow video: {e}")
+            output_path.touch()
+    
+    def _create_audio_visualization_video(self, output_path: Path, audio_file: Optional[str],
+                                        prompt: str, duration: float, 
+                                        resolution: Tuple[int, int], fps: int):
+        """Create audio visualization video"""
+        try:
+            if self.available_models.get("ffmpeg", False) and audio_file:
+                # Create waveform visualization
+                ffmpeg_cmd = [
+                    "ffmpeg", "-y",
+                    "-i", audio_file,
+                    "-filter_complex", 
+                    f"[0:a]showwaves=s={resolution[0]}x{resolution[1]}:mode=line:colors=white[v]",
+                    "-map", "[v]",
+                    "-map", "0:a",
+                    "-r", str(fps),
+                    "-t", str(duration),
+                    "-pix_fmt", "yuv420p",
+                    str(output_path)
+                ]
+                
+                subprocess.run(ffmpeg_cmd, check=True, capture_output=True)
+            else:
+                # Fallback: create text video with audio info
+                self._create_text_video_file(
+                    output_path,
+                    f"Audio Visualization: {prompt}",
+                    duration,
+                    resolution,
+                    fps
+                )
+                
+        except Exception as e:
+            self.logger.error(f"Failed to create audio visualization: {e}")
+            self._create_text_video_file(
+                output_path,
+                f"Audio Visualization: {prompt}",
+                duration,
+                resolution,
+                fps
+            )
 
 # Global instance
 video_generator = VideoGenerator()

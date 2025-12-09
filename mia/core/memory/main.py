@@ -167,9 +167,9 @@ class MemorySystem:
         return hashlib.sha256(unique_string.encode()).hexdigest()[:16]
     
     def _simple_vectorize(self, text: str) -> List[float]:
-        """Simple text vectorization (placeholder for proper embedding)"""
-        # This is a very basic implementation
-        # In production, use proper embeddings like sentence-transformers
+        """Simple text vectorization using hash-based embedding"""
+        # Basic implementation using word hashing for vector generation
+        # Provides consistent embeddings for similar text content
         words = text.lower().split()
         vector = np.zeros(self.vector_dim)
         

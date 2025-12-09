@@ -87,6 +87,9 @@ class DeterministicScheduler:
                     
             except Exception as e:
                 # Ignoriraj timeout napake
+                self.logger.debug(f"Scheduler exception: {e}")
+                continue
+        
         return self._default_implementation()
     def stop_execution(self):
         """Ustavi izvajanje"""

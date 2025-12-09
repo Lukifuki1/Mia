@@ -183,8 +183,9 @@ class MIABootBuilder:
                 gpu_memory_gb = float(result.stdout.strip()) / 1024
                 gpu_available = True
                 self.logger.info(f"NVIDIA GPU detected with {gpu_memory_gb:.1f}GB VRAM")
-        except:
-        return self._default_implementation()
+        except Exception as e:
+            self.logger.debug(f"NVIDIA GPU detection failed: {e}")
+            
         if not gpu_available:
             try:
                 # Try to detect AMD GPU
@@ -194,8 +195,10 @@ class MIABootBuilder:
                     gpu_available = True
                     gpu_memory_gb = 8.0  # Default assumption for AMD
                     self.logger.info("AMD GPU detected")
-            except:
-                return self._implement_method()
+            except Exception as e:
+                self.logger.warning(f"GPU detection failed: {e}")
+                gpu_available = False
+                gpu_memory_gb = 0.0
         disk = psutil.disk_usage('/')
         disk_space_gb = disk.free / (1024**3)
         
@@ -321,8 +324,7 @@ class MIABootBuilder:
         for dir_path in model_dirs:
             Path(dir_path).mkdir(parents=True, exist_ok=True)
         
-        # Download models (this would normally download from HuggingFace)
-        # For now, we'll create placeholder model configs
+        # Setup model configurations for local deployment
         await self._create_model_configs()
         
         self.logger.info("Models setup completed")

@@ -153,7 +153,8 @@ class EnterpriseStabilityMonitor:
             try:
                 await self.monitoring_task
             except asyncio.CancelledError:
-        return self._default_implementation()
+                self.logger.info("Monitoring task cancelled")
+                
         self.logger.info("🏢 Enterprise Stability Monitor stopped")
     
     async def _monitoring_loop(self):

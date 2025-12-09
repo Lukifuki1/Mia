@@ -454,10 +454,25 @@ class AGIExecutor:
             if not self.config.get("allowed_operations", {}).get("api_calls", True):
                 raise Exception("API calls are disabled")
             
-            # This would implement actual API calls
-            # For now, return mock result
+            # Implement basic API call functionality
+            import requests
             
-            return {"status": "success", "message": "API call completed"}
+            url = task.parameters.get("url")
+            method = task.parameters.get("method", "GET").upper()
+            headers = task.parameters.get("headers", {})
+            data = task.parameters.get("data")
+            
+            if not url:
+                raise Exception("URL is required for API calls")
+            
+            response = requests.request(method, url, headers=headers, json=data, timeout=30)
+            
+            return {
+                "status": "success",
+                "status_code": response.status_code,
+                "response": response.json() if response.headers.get("content-type", "").startswith("application/json") else response.text,
+                "headers": dict(response.headers)
+            }
             
         except Exception as e:
             raise Exception(f"API call failed: {e}")

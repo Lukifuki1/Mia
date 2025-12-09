@@ -239,7 +239,8 @@ class ProductionComplianceChecker:
             try:
                 locale.setlocale(locale.LC_ALL, 'C')
             except locale.Error:
-                return self._implement_method()
+                self.logger.warning(f"Failed to set locale {loc}, continuing with default")
+                continue
             locale_dir_score = 1.0 if found_locale_dirs else 0.0
             translation_score = min(len(translation_files) / 4, 1.0)  # Up to 4 translation files
             system_locale_score = len(supported_system_locales) / len(self.supported_locales)

@@ -48,7 +48,7 @@ class ManagementHandler:
         """Get deterministic build timestamp"""
         return self.build_config.get("build_timestamp", "2025-12-09T14:00:00Z")
     
-    def _generate_deterministic_deterministic_build_helpers.deterministic_deterministic_build_helpers.deterministic_deterministic_build_helpers.deterministic_hash(self, data: str) -> str:
+    def _generate_deterministic_hash(self, data: str) -> str:
         """Generate deterministic hash from data"""
         hasher = hashlib.sha256()
         hasher.update(data.encode('utf-8'))

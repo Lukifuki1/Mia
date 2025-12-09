@@ -424,15 +424,20 @@ class STTEngine:
     def _fallback_recognition(self, audio_file: str) -> Optional[SpeechResult]:
         """Fallback recognition when Whisper is not available"""
         try:
-            # Simple fallback - return placeholder result
-            self.logger.warning("Using fallback STT - limited functionality")
+            # Basic audio analysis fallback
+            self.logger.warning("Using fallback STT - basic audio analysis")
+            
+            # Analyze audio file properties for basic feedback
+            import os
+            audio_size = os.path.getsize(audio_file) if os.path.exists(audio_file) else 0
+            estimated_duration = max(0.1, audio_size / (16000 * 2))  # Rough estimate
             
             return SpeechResult(
-                text="[Speech detected - Whisper not available]",
+                text="[Audio detected - Please install Whisper for full STT functionality]",
                 confidence=0.5,
                 emotional_tone=EmotionalTone.NEUTRAL,
                 quality=SpeechQuality.FAIR,
-                duration=1.0,
+                duration=estimated_duration,
                 timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200,
                 language="unknown"
             )

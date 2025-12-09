@@ -128,8 +128,9 @@ class CodeMetricsCollector:
                 try:
                     lines = len(py_file.read_text().splitlines())
                     total_lines += lines
-                except:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"Failed to read file {py_file}: {e}")
+                    
             avg_lines_per_file = total_lines / total_files if total_files > 0 else 0
             
             # Score based on file organization
@@ -167,8 +168,9 @@ class CodeMetricsCollector:
                     content = py_file.read_text()
                     total_functions += content.count("def ")
                     total_classes += content.count("class ")
-                except:
-                    return self._implement_method()
+                except Exception as e:
+                    self.logger.warning(f"Could not analyze file {py_file}: {e}")
+                    continue
             if total_classes > 10 and total_functions > 50:
                 score = 90
             elif total_classes > 5:
@@ -206,8 +208,9 @@ class CodeMetricsCollector:
                     if 'def ' in content and docstring_count > 0:
                         documented_files += 1
                         total_docstrings += 1
-                except:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"Failed to analyze file {py_file}: {e}")
+                    
             documentation_ratio = documented_files / len(python_files) if python_files else 0
             
             # Score based on documentation

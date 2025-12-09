@@ -172,7 +172,7 @@ class ImmuneKernel:
                 "system_state": asdict(self.system_state),
                 "recent_events": len([
                     e for e in self.security_events
-                    if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - e.timestamp < 3600
+                    if (self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200) - e.timestamp < 3600
                 ])
             }
             

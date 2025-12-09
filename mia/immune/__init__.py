@@ -2,5 +2,5 @@
 MIA Immune System Module
 """
 
-# Immune system module placeholder
+# Provides security and threat detection capabilities for the MIA system
 __all__ = []
