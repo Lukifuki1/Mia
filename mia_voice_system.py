@@ -416,8 +416,8 @@ class MIASpeechToText:
             try:
                 stream.stop_stream()
                 stream.close()
-            except:
-                pass
+            except Exception as e:
+                self.logger.warning(f"Error closing audio stream: {e}")
             self.is_recording = False
     
     def _record_audio_chunk(self, stream, timeout: float) -> Optional[bytes]:
