@@ -1,0 +1,188 @@
+version: '3.8'
+
+services:
+  mia-enterprise:
+    build:
+      context: .
+      dockerfile: Dockerfile.enterprise
+    container_name: mia-enterprise-agi
+    restart: unless-stopped
+    
+    # Environment variables
+    environment:
+      - MIA_MODE=enterprise
+      - MIA_LOG_LEVEL=INFO
+      - MIA_GPU_ENABLED=true
+      - MIA_AUTO_SCALING=true
+      - MIA_BACKUP_ENABLED=true
+      - MIA_COMPLIANCE_MODE=SOC2
+    
+    # Port mappings
+    ports:
+      - "12000:12000"  # Web interface
+      - "8000:8000"    # Core API
+      - "8001:8001"    # Voice service
+      - "8002:8002"    # Multimodal service
+      - "8003:8003"    # Project service
+    
+    # Volume mounts
+    volumes:
+      - mia_data:/app/mia_data
+      - mia_logs:/app/mia_data/logs
+      - mia_models:/app/mia_data/models
+      - mia_projects:/app/mia_data/projects
+      - ./config:/app/mia_data/config:ro
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 8G
+        reservations:
+          cpus: '2.0'
+          memory: 4G
+    
+    # GPU support (uncomment if NVIDIA GPU available)
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:12000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"
+    
+    # Security options
+    security_opt:
+      - no-new-privileges:true
+    
+    # Network
+    networks:
+      - mia-network
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: mia-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - mia-network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # PostgreSQL for enterprise data (optional)
+  postgres:
+    image: postgres:15-alpine
+    container_name: mia-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=mia_enterprise
+      - POSTGRES_USER=mia
+      - POSTGRES_PASSWORD=secure_password_change_me
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - mia-network
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: mia-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - mia-enterprise
+    networks:
+      - mia-network
+
+  # Monitoring with Prometheus (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mia-prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+    networks:
+      - mia-network
+
+  # Grafana for dashboards (optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mia-grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin_change_me
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    depends_on:
+      - prometheus
+    networks:
+      - mia-network
+
+# Named volumes
+volumes:
+  mia_data:
+    driver: local
+  mia_logs:
+    driver: local
+  mia_models:
+    driver: local
+  mia_projects:
+    driver: local
+  redis_data:
+    driver: local
+  postgres_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  nginx_logs:
+    driver: local
+
+# Networks
+networks:
+  mia-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -10,22 +10,25 @@ sentencepiece>=0.1.99
 ollama>=0.6.0
 openai>=1.0.0
 
-# Web framework for Real AGI interface
+# Web frameworks
+fastapi>=0.95.0
+uvicorn>=0.21.0
 flask>=3.0.0
 flask-socketio>=5.5.0
+websockets>=11.0.0
+jinja2>=3.1.0
+python-multipart>=0.0.6
 
 # Web scraping for internet research
 beautifulsoup4>=4.14.0
 requests>=2.31.0
-
-# System monitoring
-psutil>=5.9.0
+aiohttp>=3.8.0
 
 # Audio processing
 librosa>=0.10.0
 soundfile>=0.12.0
 pyaudio>=0.2.11
-whisper>=1.1.10
+openai-whisper>=20231117
 TTS>=0.15.0
 pydub>=0.25.1
 
@@ -34,56 +37,63 @@ Pillow>=9.5.0
 opencv-python>=4.7.0
 imageio>=2.28.0
 scikit-image>=0.20.0
-
-# Web framework
-fastapi>=0.95.0
-uvicorn>=0.21.0
-websockets>=11.0.0
-jinja2>=3.1.0
-python-multipart>=0.0.6
-flask>=3.0.0
-flask-socketio>=5.5.0
+diffusers>=0.21.0
+controlnet-aux>=0.0.6
 
 # Database
-sqlite3
 sqlalchemy>=2.0.0
 alembic>=1.10.0
 
 # Vector database
 faiss-cpu>=1.7.4
-chromadb>=0.3.0
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
 
-# Email
-imaplib3>=0.5.0
-smtplib
+# Email processing
 email-validator>=2.0.0
 
 # Utilities
 pyyaml>=6.0
 toml>=0.10.2
 python-dotenv>=1.0.0
-requests>=2.28.0
-aiohttp>=3.8.0
 numpy>=1.24.0
 pandas>=2.0.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
+click>=8.1.0
+rich>=13.0.0
+tqdm>=4.65.0
+
+# System monitoring
+psutil>=5.9.0
+GPUtil>=1.4.0
 
 # Security
 cryptography>=40.0.0
 bcrypt>=4.0.0
 
-# Development
+# Development and testing
 pytest>=7.3.0
+pytest-asyncio>=0.21.0
 black>=23.3.0
 flake8>=6.0.0
 mypy>=1.3.0
 
 # LoRA and fine-tuning
-peft>=0.3.0
-bitsandbytes>=0.39.0
+peft>=0.4.0
+bitsandbytes>=0.41.0
 loralib>=0.1.1
 
-# Monitoring
-psutil>=5.9.0
-GPUtil>=1.4.0
+# Additional ML libraries
+scikit-learn>=1.3.0
+scipy>=1.10.0
+huggingface-hub>=0.16.0
+
+# Desktop app support
+electron>=1.0.0
+pywebview>=4.0.0
+
+# Enterprise features
+schedule>=1.2.0
+watchdog>=3.0.0
+paramiko>=3.2.0
