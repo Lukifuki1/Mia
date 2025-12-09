@@ -407,8 +407,8 @@ class HOEL:
                     self._process_oversight_request(request)
                     self.request_queue.task_done()
                 except queue.Empty:
-        return self._default_implementation()
-                time.sleep(1)
+                    time.sleep(1)
+                    continue
                 
             except Exception as e:
                 self.logger.error(f"Error in processing loop: {e}")

@@ -33,8 +33,9 @@ class MIAWebLauncher:
             try:
                 with open(config_file, 'r') as f:
                     return yaml.safe_load(f)
-            except:
-                return self._implement_method()
+            except Exception as e:
+                print(f"Warning: Could not load config file: {e}")
+                # Return default configuration
         return {
             "system": {
                 "name": "MIA Enterprise AGI",
@@ -157,8 +158,10 @@ class MIAWebLauncher:
                     "phase_success": phase_summary.get("phase_success", False),
                     "standards": ["ISO27001", "GDPR", "SOX", "HIPAA", "PCI DSS"]
                 }
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.error(f"Error getting compliance status: {e}")
+                return self._default_implementation()
+        
         return {
             "compliance_score": 97.1,
             "compliance_grade": "A+",
@@ -181,8 +184,10 @@ class MIAWebLauncher:
                     "categories": stability_data.get("test_categories", {}),
                     "validation_summary": stability_data.get("validation_summary", {})
                 }
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.error(f"Error getting stability info: {e}")
+                return self._default_implementation()
+        
         return {
             "overall_stability_score": 96.2,
             "validation_success": True,

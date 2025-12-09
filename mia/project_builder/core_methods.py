@@ -291,15 +291,14 @@ class CoreHandler:
                 retrieval_result["data"] = actual_data
             else:
                 retrieval_result["found"] = False
-                retrieval_result["data"] = None",
-                "metadata": {
+                retrieval_result["data"] = None
+                retrieval_result["metadata"] = {
                     "created": self._get_build_timestamp(),
                     "version": "1.0.0"
                 }
-            }
             
             retrieval_result["found"] = True
-            retrieval_result["data"] = mock_data
+            retrieval_result["data"] = project_data
             retrieval_result["retrieval_score"] = 100.0
             
             self.logger.info(f"📥 Data retrieved: {retrieval_result['method']} - {identifier}")
@@ -399,15 +398,14 @@ class CoreHandler:
                 retrieval_result["data"] = actual_data
             else:
                 retrieval_result["found"] = False
-                retrieval_result["data"] = None",
-                "metadata": {
+                retrieval_result["data"] = None
+                retrieval_result["metadata"] = {
                     "created": self._get_build_timestamp(),
                     "version": "1.0.0"
                 }
-            }
             
             retrieval_result["found"] = True
-            retrieval_result["data"] = mock_data
+            retrieval_result["data"] = project_data
             retrieval_result["retrieval_score"] = 100.0
             
             self.logger.info(f"📥 Data retrieved: {retrieval_result['method']} - {identifier}")
@@ -456,15 +454,15 @@ class CoreHandler:
                 retrieval_result["data"] = actual_data
             else:
                 retrieval_result["found"] = False
-                retrieval_result["data"] = None",
-                "metadata": {
+                retrieval_result["data"] = None
+                retrieval_result["metadata"] = {
                     "created": self._get_build_timestamp(),
                     "version": "1.0.0"
                 }
             }
             
             retrieval_result["found"] = True
-            retrieval_result["data"] = mock_data
+            retrieval_result["data"] = project_data
             retrieval_result["retrieval_score"] = 100.0
             
             self.logger.info(f"📥 Data retrieved: {retrieval_result['method']} - {identifier}")
@@ -564,15 +562,15 @@ class CoreHandler:
                 retrieval_result["data"] = actual_data
             else:
                 retrieval_result["found"] = False
-                retrieval_result["data"] = None",
-                "metadata": {
+                retrieval_result["data"] = None
+                retrieval_result["metadata"] = {
                     "created": self._get_build_timestamp(),
                     "version": "1.0.0"
                 }
             }
             
             retrieval_result["found"] = True
-            retrieval_result["data"] = mock_data
+            retrieval_result["data"] = project_data
             retrieval_result["retrieval_score"] = 100.0
             
             self.logger.info(f"📥 Data retrieved: {retrieval_result['method']} - {identifier}")

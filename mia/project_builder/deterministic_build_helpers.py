@@ -138,23 +138,23 @@ class ComprehensiveDeterministicBuildHelpers:
         return f"{hex_string[:8]}-{hex_string[8:12]}-5{hex_string[13:16]}-8{hex_string[17:20]}-{hex_string[20:32]}"
     
     # System-dependent deterministic methods
-    def _get_build_process_deterministic_build_helpers.deterministic_id(self) -> int:
+    def _get_build_process_deterministic_id(self) -> int:
         """Get deterministic build process ID"""
         return 12345
     
-    def _get_build_parent_process_deterministic_build_helpers.deterministic_id(self) -> int:
+    def _get_build_parent_process_deterministic_id(self) -> int:
         """Get deterministic parent process ID"""
         return 12344
     
-    def _get_build_user_deterministic_build_helpers.deterministic_id(self) -> int:
+    def _get_build_user_deterministic_id(self) -> int:
         """Get deterministic user ID"""
         return 1000
     
-    def _get_build_group_deterministic_build_helpers.deterministic_id(self) -> int:
+    def _get_build_group_deterministic_id(self) -> int:
         """Get deterministic group ID"""
         return 1000
     
-    def _get_build_working_deterministic_build_helpers._get_deterministic_dir(self) -> str:
+    def _get_build_working_deterministic_dir(self) -> str:
         """Get deterministic working directory"""
         return "/workspace/project"
     
@@ -251,7 +251,7 @@ class ComprehensiveDeterministicBuildHelpers:
         self._thread_counter += 1
         return DeterministicThread(67890 + self._thread_counter)
     
-    def _get_build_thread_deterministic_build_helpers.deterministic_id(self) -> int:
+    def _get_build_thread_deterministic_id(self) -> int:
         """Get deterministic thread ID"""
         return 67890
     

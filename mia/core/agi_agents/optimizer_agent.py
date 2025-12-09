@@ -319,7 +319,7 @@ class OptimizerAgent:
             if len(combinations) > max_combinations:
                 # Sample combinations if too many
                 import random
-random.seed(42)  # Deterministic seed
+                random.seed(42)  # Deterministic seed
                 combinations = random.sample(combinations, max_combinations)
             
             self.logger.info(f"Grid search: evaluating {len(combinations)} combinations")

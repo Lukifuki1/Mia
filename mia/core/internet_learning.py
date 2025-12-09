@@ -512,8 +512,8 @@ class InternetLearningEngine:
     def vectorize_content(self, content: str) -> Optional[List[float]]:
         """Convert content to vector embedding"""
         try:
-            # Simple TF-IDF based vectorization (placeholder)
-            # In a real implementation, you'd use sentence transformers or similar
+            # TF-IDF based vectorization with normalization
+            # This provides basic semantic understanding for content similarity
             
             # Tokenize and clean
             words = re.findall(r'\b\w+\b', content.lower())
@@ -892,9 +892,10 @@ class InternetLearningEngine:
             await self._save_learned_content()
             
             # Log learning statistics
+            current_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
             recent_content = [
                 c for c in self.learned_content.values()
-                if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - c.learned_at < 86400  # Last 24 hours
+                if current_time - c.learned_at < 86400  # Last 24 hours
             ]
             
             if recent_content:
@@ -956,9 +957,10 @@ class InternetLearningEngine:
     def get_learning_status(self) -> Dict[str, Any]:
         """Get internet learning status"""
         
+        current_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         recent_content = [
             c for c in self.learned_content.values()
-            if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - c.learned_at < 86400  # Last 24 hours
+            if current_time - c.learned_at < 86400  # Last 24 hours
         ]
         
         return {

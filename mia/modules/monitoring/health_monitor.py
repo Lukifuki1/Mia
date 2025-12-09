@@ -365,7 +365,9 @@ class HealthMonitor:
                     gpu_memory_percent = (gpu.memoryUsed / gpu.memoryTotal) * 100
                     gpu_temperature = gpu.temperature
             except ImportError:
-                return self._implement_method()
+                # GPU monitoring not available, use defaults
+                gpu_memory_percent = 0.0
+                gpu_temperature = 0.0
             network = psutil.net_io_counters()
             network_bytes_sent = network.bytes_sent
             network_bytes_recv = network.bytes_recv
@@ -379,7 +381,7 @@ class HealthMonitor:
                 try:
                     thread_count += proc.info['num_threads'] or 0
                 except (psutil.NoSuchProcess, psutil.AccessDenied):
-                    return self._implement_method()
+                    continue  # Skip inaccessible processes
             try:
                 load_average = list(os.getloadavg())
             except (OSError, AttributeError):
@@ -649,7 +651,8 @@ class HealthMonitor:
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
             except ImportError:
-        return self._default_implementation()
+                self.logger.debug("PyTorch not available for GPU cache cleanup")
+                
             self.logger.info("🧹 System resource recovery attempted")
             
         except Exception as e:
@@ -738,8 +741,9 @@ class HealthMonitor:
                 for proc in psutil.process_iter(['pid', 'name']):
                     if 'mia' in proc.info['name'].lower():
                         active_processes.append(f"{proc.info['name']}:{proc.info['pid']}")
-            except:
-                return self._implement_method()
+            except Exception as e:
+                self.logger.warning(f"Failed to enumerate MIA processes: {e}")
+                active_processes = ["unknown"]
             memory_snapshot = pickle.dumps({
                 "metrics_history_size": len(self.metrics_history),
                 "active_alerts_count": len([a for a in self.active_alerts if not a.resolved]),

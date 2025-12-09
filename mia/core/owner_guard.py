@@ -461,7 +461,7 @@ class OwnerGuard:
                 "owner_lock_state": self.owner_lock_state,
                 "recent_operations": len([
                     op for op in self.privileged_operations
-                    if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - op.timestamp < 3600
+                    if (self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200) - op.timestamp < 3600
                 ])
             }
             
@@ -505,7 +505,8 @@ class OwnerGuard:
                     immune_kernel.emergency_lockdown(reason)
                     
             except ImportError:
-        return self._default_implementation()
+                self.logger.warning("Immune kernel not available for emergency lockdown")
+                
             self.logger.critical("🔒 System locked down - owner intervention required")
             
         except Exception as e:

@@ -314,8 +314,9 @@ class SystemAnalyzer:
                             line for line in lines 
                             if line.strip() and not line.strip().startswith('#')
                         ])
-                except Exception:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"Failed to analyze requirements file: {e}")
+                    
             return dependency_analysis
             
         except Exception as e:

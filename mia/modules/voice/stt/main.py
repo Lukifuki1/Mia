@@ -435,7 +435,7 @@ class STTEngine:
             )
             
             # Mock transcription (in production, use Whisper or similar)
-                        text = await self._mock_transcribe(audio_data)
+            text = await self._mock_transcribe(audio_data)
             
             processing_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             

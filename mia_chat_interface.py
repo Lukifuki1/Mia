@@ -48,8 +48,13 @@ class MIAChatInterface:
             try:
                 with open(config_file, 'r') as f:
                     return yaml.safe_load(f)
-            except:
-                return self._implement_method()
+            except Exception as e:
+                self.logger.warning(f"Failed to load config: {e}")
+                return self._get_default_config()
+        return self._get_default_config()
+    
+    def _get_default_config(self):
+        """Get default configuration"""
         return {
             "system": {
                 "name": "MIA Enterprise AGI",

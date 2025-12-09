@@ -1067,9 +1067,20 @@ class MIAEnterpriseSecurity:
             conn.commit()
     
     def _block_ip_address(self, ip_address: str):
-        """Block IP address (placeholder for actual implementation)"""
-        # In a real implementation, this would integrate with firewall/WAF
+        """Block IP address by adding to blocked IPs list"""
+        # Add to blocked IPs list for application-level blocking
+        if not hasattr(self, 'blocked_ips'):
+            self.blocked_ips = set()
+        
+        self.blocked_ips.add(ip_address)
         self.logger.warning(f"IP address blocked: {ip_address}")
+        
+        # Store in database for persistence
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute('''
+                INSERT OR REPLACE INTO blocked_ips (ip_address, blocked_at, reason)
+                VALUES (?, ?, ?)
+            ''', (ip_address, time.time(), "Security violation"))
     
     def _lock_user_account(self, user_id: str):
         """Lock user account"""

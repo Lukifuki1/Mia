@@ -885,7 +885,8 @@ class ConsciousnessModule:
                 try:
                     await self._consciousness_task
                 except asyncio.CancelledError:
-        return self._default_implementation()
+                    self.logger.info("🛑 Consciousness loop cancelled")
+                    
             self.logger.info("🛑 Consciousness loop stopped")
             
         except Exception as e:

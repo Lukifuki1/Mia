@@ -426,8 +426,9 @@ class PerformanceMonitor:
                 try:
                     socket.gethostbyname(host)
                     successful_resolutions += 1
-                except Exception:
-        return self._default_implementation()
+                except Exception as e:
+                    self.logger.debug(f"DNS resolution failed for {host}: {e}")
+                    
             execution_time = deterministic_helpers.get_deterministic_epoch() - start_time
             
             # Score based on success rate and speed

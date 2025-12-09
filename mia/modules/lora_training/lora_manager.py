@@ -718,8 +718,11 @@ class LoRAManager:
                 model = get_peft_model(base_model, lora_config)
                 
             else:
-                # Placeholder for other model types
-                model = nn.Linear(768, 768)  # Simple placeholder
+                # Basic transformer model for other types
+                model = nn.TransformerEncoder(
+                    nn.TransformerEncoderLayer(d_model=768, nhead=8),
+                    num_layers=6
+                )
             
             # Optimizer
             optimizer = torch.optim.AdamW(
