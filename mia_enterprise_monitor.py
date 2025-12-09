@@ -341,7 +341,7 @@ class MIAEnterpriseMonitor:
                     tags={"gpu_id": str(i)}
                 ))
         except ImportError:
-            pass
+            self.logger.debug("GPU monitoring not available - pynvml not installed")
         
         # Check thresholds and generate alerts
         self._check_thresholds(timestamp, {

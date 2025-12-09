@@ -157,8 +157,10 @@ class MIAWebLauncher:
                     "phase_success": phase_summary.get("phase_success", False),
                     "standards": ["ISO27001", "GDPR", "SOX", "HIPAA", "PCI DSS"]
                 }
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.warning(f"Error getting compliance data: {e}")
+                return self._default_implementation()
+        
         return {
             "compliance_score": 97.1,
             "compliance_grade": "A+",
@@ -181,8 +183,10 @@ class MIAWebLauncher:
                     "categories": stability_data.get("test_categories", {}),
                     "validation_summary": stability_data.get("validation_summary", {})
                 }
-            except:
-        return self._default_implementation()
+            except Exception as e:
+                self.logger.warning(f"Error getting stability data: {e}")
+                return self._default_implementation()
+        
         return {
             "overall_stability_score": 96.2,
             "validation_success": True,
