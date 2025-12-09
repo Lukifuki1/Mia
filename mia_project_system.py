@@ -646,10 +646,11 @@ import logging
 from typing import Dict, Any
 
 
+
 @click.group()
 def {feature_name}():
     """{feature_name.title()} commands"""
-    pass
+    click.echo(f"Welcome to {feature_name} CLI")
 
 
 @{feature_name}.command()

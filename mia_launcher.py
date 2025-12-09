@@ -237,7 +237,9 @@ class MIALauncher:
                 print(f"🤖 MIA: {response}")
                 
         except KeyboardInterrupt:
-            pass
+            print("\n⏹️ Prekinjam MIA...")
+            if hasattr(self, 'mia_core') and self.mia_core:
+                self.mia_core.stop()
         finally:
             self.mia_core.stop()
             print("\n👋 MIA se je izklopila")
@@ -273,7 +275,9 @@ class MIALauncher:
                 time.sleep(1)
                 
         except KeyboardInterrupt:
-            pass
+            print("\n⏹️ Prekinjam MIA glasovni način...")
+            if hasattr(self, 'voice_system') and self.voice_system:
+                self.voice_system.stop_voice_interaction()
         finally:
             self.voice_system.stop_voice_interaction()
             self.mia_core.stop()
