@@ -1,0 +1,10 @@
+MIA Enterprise AGI - Application Icons
+=====================================
+
+icon.ico: Windows icon (256x256)
+icon.icns: macOS icon bundle
+icon.png: Linux icon (512x512)
+tray-icon.ico: Windows tray icon (16x16)
+tray-icon.png: Cross-platform tray icon (16x16)
+
+Note: Replace these with actual icon files for production build.

@@ -431,6 +431,51 @@ class MIABootBuilder:
             with open(memory_file, "w") as f:
                 json.dump({"memories": [], "config": memory_config}, f, indent=2)
     
+    async def initialize_modules(self):
+        """Initialize all MIA modules"""
+        self.logger.info("🔧 Initializing MIA modules...")
+        
+        try:
+            # Initialize core systems first
+            await self._init_consciousness_system()
+            await self._init_memory_system()
+            
+            # Initialize peripheral modules based on hardware capabilities
+            if self.model_profile and self.model_profile.stt_model:
+                await self._init_voice_module()
+            
+            if self.model_profile and self.model_profile.image_model:
+                await self._init_multimodal_module()
+            
+            await self._init_ui_module()
+            await self._init_project_module()
+            await self._init_monitoring_module()
+            
+            self.logger.info("✅ All MIA modules initialized successfully")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"❌ Failed to initialize modules: {e}")
+            return False
+    
+    async def start_consciousness(self):
+        """Start the consciousness system"""
+        self.logger.info("🧠 Starting consciousness system...")
+        
+        try:
+            # Import and start consciousness
+            from ..consciousness.main import ConsciousnessModule
+            
+            consciousness = ConsciousnessModule()
+            await consciousness.start_consciousness_loop()
+            
+            self.logger.info("✅ Consciousness system started")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"❌ Failed to start consciousness: {e}")
+            return False
+
     async def _initialize_peripheral_modules(self):
         """Initialize peripheral modules"""
         self.logger.info("Initializing peripheral modules...")

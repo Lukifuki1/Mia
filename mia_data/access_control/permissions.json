@@ -1,0 +1,32 @@
+{
+  "basic_access": {
+    "name": "Basic Access",
+    "description": "Basic system access",
+    "level": 1
+  },
+  "profile_edit": {
+    "name": "Profile Edit",
+    "description": "Edit own profile",
+    "level": 2
+  },
+  "user_management": {
+    "name": "User Management",
+    "description": "Manage users and roles",
+    "level": 4
+  },
+  "system_config": {
+    "name": "System Configuration",
+    "description": "Configure system settings",
+    "level": 4
+  },
+  "security_audit": {
+    "name": "Security Audit",
+    "description": "Access security logs and audits",
+    "level": 4
+  },
+  "read_only": {
+    "name": "Read Only",
+    "description": "Read-only access",
+    "level": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "assessment_timestamp": "2025-12-09T15:07:22.207246",
+  "assessment_framework": "ISO 27001 + NIST",
+  "critical_vendors": [
+    {
+      "vendor_name": "Cloud Infrastructure Provider",
+      "risk_level": "Medium",
+      "certifications": [
+        "ISO 27001",
+        "SOC 2 Type II"
+      ],
+      "last_assessment": "2025-01-01"
+    }
+  ],
+  "assessment_criteria": [
+    "Security certifications",
+    "Data protection measures",
+    "Incident response capabilities",
+    "Business continuity planning",
+    "Compliance with regulations"
+  ]
+}

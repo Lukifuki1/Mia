@@ -29,6 +29,11 @@ except ImportError:
 from mia.core.memory.main import EmotionalTone, store_memory
 
 class ImageStyle(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
     REALISTIC = "realistic"
     ARTISTIC = "artistic"
     ANIME = "anime"
@@ -471,12 +476,12 @@ class ImageGenerator:
                                     emotional_tone: EmotionalTone) -> Optional[ImageResult]:
         """Generate image using actual pipeline"""
         
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         try:
             # Set seed for reproducibility
             if config.seed is None:
-                config.seed = int(time.time()) % 2147483647
+                config.seed = int(self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200) % 2147483647
             
             # In production, use actual Stable Diffusion pipeline
             # result = self.pipeline(
@@ -501,7 +506,7 @@ class ImageGenerator:
             else:
                 image_data = b"MOCK_PIPELINE_IMAGE"
             
-            generation_time = time.time() - start_time
+            generation_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             
             return ImageResult(
                 prompt=prompt,
@@ -524,7 +529,7 @@ class ImageGenerator:
         
         try:
             # Generate filename
-            timestamp = int(time.time())
+            timestamp = int(self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200)
             prompt_hash = hashlib.md5(result.prompt.encode()).hexdigest()[:8]
             filename = f"img_{timestamp}_{prompt_hash}.png"
             

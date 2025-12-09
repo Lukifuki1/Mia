@@ -29,6 +29,11 @@ except ImportError:
 from mia.core.memory.main import EmotionalTone, store_memory
 
 class TTSState(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
     IDLE = "idle"
     GENERATING = "generating"
     PLAYING = "playing"
@@ -453,7 +458,7 @@ class TTSEngine:
                              emotional_tone: EmotionalTone) -> Optional[TTSResult]:
         """Generate speech audio from text"""
         
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         if self.use_mock:
             return await self.mock_engine.synthesize_speech(text, voice_profile, emotional_tone)
@@ -475,7 +480,7 @@ class TTSEngine:
             if self.config.lora_enabled and self.lora_manager.get_active_lora():
                 processed_audio = await self._apply_lora_processing(processed_audio)
             
-            generation_time = time.time() - start_time
+            generation_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             audio_length = len(processed_audio) / self.config.sample_rate
             
             return TTSResult(

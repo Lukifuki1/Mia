@@ -1,0 +1,101 @@
+[
+  {
+    "rule_id": "system_modification_critical",
+    "name": "Critical System Modifications",
+    "description": "Require approval for critical system modifications",
+    "operation_type": "system_modification",
+    "oversight_level": "mandatory_review",
+    "conditions": {
+      "criticality": "high"
+    },
+    "approvers": [
+      "admin",
+      "system_architect"
+    ],
+    "timeout_seconds": 1800,
+    "escalation_rules": {
+      "auto_escalate": true,
+      "escalate_to": "manager"
+    },
+    "enabled": true,
+    "created_at": 1765267118.6705472
+  },
+  {
+    "rule_id": "data_deletion_any",
+    "name": "Data Deletion Operations",
+    "description": "Require approval for any data deletion",
+    "operation_type": "data_deletion",
+    "oversight_level": "mandatory_review",
+    "conditions": {},
+    "approvers": [
+      "admin",
+      "data_protection_officer"
+    ],
+    "timeout_seconds": 3600,
+    "escalation_rules": {
+      "auto_escalate": true,
+      "escalate_to": "legal"
+    },
+    "enabled": true,
+    "created_at": 1765267118.6705546
+  },
+  {
+    "rule_id": "security_changes",
+    "name": "Security Configuration Changes",
+    "description": "Require approval for security-related changes",
+    "operation_type": "security_change",
+    "oversight_level": "mandatory_review",
+    "conditions": {},
+    "approvers": [
+      "security_officer",
+      "admin"
+    ],
+    "timeout_seconds": 1800,
+    "escalation_rules": {
+      "auto_escalate": true,
+      "escalate_to": "ciso"
+    },
+    "enabled": true,
+    "created_at": 1765267118.670557
+  },
+  {
+    "rule_id": "model_deployment_production",
+    "name": "Production Model Deployment",
+    "description": "Require approval for production model deployments",
+    "operation_type": "model_deployment",
+    "oversight_level": "approval_required",
+    "conditions": {
+      "environment": "production"
+    },
+    "approvers": [
+      "ml_engineer",
+      "admin"
+    ],
+    "timeout_seconds": 3600,
+    "escalation_rules": {
+      "auto_escalate": false
+    },
+    "enabled": true,
+    "created_at": 1765267118.6705585
+  },
+  {
+    "rule_id": "critical_decisions",
+    "name": "Critical AI Decisions",
+    "description": "Human-only for critical decisions",
+    "operation_type": "critical_decision",
+    "oversight_level": "human_only",
+    "conditions": {
+      "impact": "high"
+    },
+    "approvers": [
+      "human_supervisor"
+    ],
+    "timeout_seconds": 7200,
+    "escalation_rules": {
+      "auto_escalate": true,
+      "escalate_to": "ethics_board"
+    },
+    "enabled": true,
+    "created_at": 1765267118.6705596
+  }
+]

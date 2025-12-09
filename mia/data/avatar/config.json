@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "rendering_engine": "webgl",
+  "frame_rate": 30,
+  "animation_smoothing": true,
+  "eye_tracking": true,
+  "lip_sync": true,
+  "gesture_recognition": true,
+  "emotional_responsiveness": 0.8,
+  "avatar_styles": {
+    "normal": {
+      "base_model": "default_female",
+      "clothing": "casual",
+      "hair_style": "medium_length",
+      "eye_color": "brown",
+      "expression_range": "full"
+    },
+    "professional": {
+      "base_model": "default_female",
+      "clothing": "business",
+      "hair_style": "professional",
+      "eye_color": "brown",
+      "expression_range": "moderate"
+    },
+    "adult": {
+      "base_model": "adult_female",
+      "clothing": "intimate",
+      "hair_style": "flowing",
+      "eye_color": "seductive",
+      "expression_range": "enhanced"
+    }
+  },
+  "animation_settings": {
+    "idle_frequency": 3.0,
+    "blink_frequency": 2.5,
+    "micro_expressions": true,
+    "breathing_animation": true,
+    "subtle_movements": true
+  },
+  "adult_mode": {
+    "enabled": false,
+    "enhanced_expressions": true,
+    "intimate_gestures": true,
+    "seductive_animations": true,
+    "adult_voice_sync": true
+  }
+}

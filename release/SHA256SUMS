@@ -1,0 +1,7 @@
+# MIA Enterprise AGI v1.0.0 - Package Checksums
+# Generated: 2025-12-09T14:19:54.022063
+# Algorithm: SHA-256
+
+461df237cdbd3dc7779dfcccc0e33a9a678281eaebdf71f747d8a99df0211432  mia-enterprise-agi-1.0.0-linux.tar.gz
+4d9bc340c2716effde7226758fa9971953c6b23c02a9a27d3a261c98233ab158  mia-enterprise-agi-1.0.0-windows.tar.gz
+db6fbc84b410baea6a88286e61e6bf6e840a103d4d031cfbe0b9e5112d19d417  mia-enterprise-agi-1.0.0-macos.tar.gz

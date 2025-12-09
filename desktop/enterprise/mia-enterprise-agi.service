@@ -1,0 +1,35 @@
+[Unit]
+Description=MIA Enterprise AGI Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=mia-agi
+Group=mia-agi
+WorkingDirectory=/opt/mia-enterprise-agi
+ExecStart=/opt/mia-enterprise-agi/bin/mia-enterprise-agi --daemon
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -TERM $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mia-enterprise-agi
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/mia-enterprise-agi/data
+ReadWritePaths=/var/log/mia-enterprise-agi
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+MemoryMax=16G
+CPUQuota=80%
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,143 @@
+{
+  "fix_timestamp": "2025-12-09T14:35:47.529537",
+  "fixer": "ProjectBuilderFinalFixer",
+  "module": "project_builder",
+  "initial_analysis": {
+    "module_exists": true,
+    "files_analyzed": [
+      {
+        "file": "build_system.py",
+        "patterns_found": {},
+        "line_numbers": {},
+        "issues_count": 0
+      },
+      {
+        "file": "management_methods.py",
+        "patterns_found": {},
+        "line_numbers": {},
+        "issues_count": 0
+      },
+      {
+        "file": "deployment_manager.py",
+        "patterns_found": {},
+        "line_numbers": {},
+        "issues_count": 0
+      },
+      {
+        "file": "core_methods.py",
+        "patterns_found": {},
+        "line_numbers": {},
+        "issues_count": 0
+      },
+      {
+        "file": "template_manager.py",
+        "patterns_found": {
+          "datetime\\.now\\(\\)": [
+            "\"template_timestamp\": datetime.now().isoformat(),",
+            "\"template_timestamp\": datetime.now().isoformat()",
+            "timestamp: datetime = datetime.now()",
+            "timestamp: datetime = datetime.now()"
+          ]
+        },
+        "line_numbers": {
+          "datetime\\.now\\(\\)": [
+            44,
+            98,
+            227,
+            239
+          ]
+        },
+        "issues_count": 4
+      },
+      {
+        "file": "project_generator.py",
+        "patterns_found": {},
+        "line_numbers": {},
+        "issues_count": 0
+      }
+    ],
+    "non_deterministic_patterns_found": {
+      "datetime\\.now\\(\\)": 4
+    },
+    "deterministic_issues": [],
+    "current_score": 96.0
+  },
+  "fixes_applied": [
+    {
+      "file": "template_manager.py",
+      "fixes_count": 4,
+      "patterns_fixed": [
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 4
+        }
+      ],
+      "backup_created": true,
+      "success": true
+    }
+  ],
+  "deterministic_helpers_added": true,
+  "hash_validation_results": {
+    "validation_timestamp": "2025-12-09T14:35:47.548402",
+    "cycles": 500,
+    "hash_consistency": 100.0,
+    "unique_hashes": 1,
+    "validation_passed": true,
+    "execution_time": 0.575594,
+    "hash_samples": [
+      {
+        "cycle": 0,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 1,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 2,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 3,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 4,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 5,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 6,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 7,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 8,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      },
+      {
+        "cycle": 9,
+        "hash": "340451a8e2c11efd59f3560bd66ce7ac00d840d9e745e15702a59ff4f5cadddf"
+      }
+    ]
+  },
+  "final_deterministic_score": 98.0,
+  "production_ready": false,
+  "recommendations": [
+    "\u26a0\ufe0f Project Builder score: 98.0% - continue improvements",
+    "\u274c Project Builder module needs additional fixes",
+    "\ud83d\udd04 Hash validation passed - perfect consistency",
+    "\u2705 Applied 4 deterministic fixes",
+    "Run comprehensive integration tests",
+    "Validate build reproducibility across platforms",
+    "Monitor deterministic behavior in production",
+    "Update module documentation with deterministic design"
+  ]
+}

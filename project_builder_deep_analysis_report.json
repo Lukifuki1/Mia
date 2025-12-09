@@ -1,0 +1,548 @@
+{
+  "analysis_timestamp": "2025-12-09T14:38:17.416134",
+  "analyzer": "ProjectBuilderDeepAnalyzer",
+  "module": "project_builder",
+  "deep_analysis": {
+    "files_analyzed": [
+      {
+        "file": "build_system.py",
+        "patterns_found": {
+          "subprocess\\.run": [
+            "subprocess.run"
+          ],
+          "subprocess\\.call": [
+            "subprocess.Call"
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(\"MIA.ProjectBuilder.BuildSystem\")",
+            "logging.StreamHandler()"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import: time"
+        ],
+        "import_issues": [
+          "Line 9: Non-deterministic import - import os",
+          "Line 16: Non-deterministic import - import time"
+        ],
+        "function_issues": [
+          "Line 46: Potentially non-deterministic function - def _get_deterministic_time(self) -> float:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 8
+      },
+      {
+        "file": "management_methods.py",
+        "patterns_found": {
+          "hash\\(": [
+            "hash(",
+            "hash("
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(f\"MIA.{self.__class__.__name__}\")",
+            "logging.StreamHandler()"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import from: datetime"
+        ],
+        "import_issues": [
+          "Line 7: Non-deterministic import - import os",
+          "Line 8: Non-deterministic import - import sys",
+          "Line 13: Non-deterministic import - from datetime import datetime"
+        ],
+        "function_issues": [
+          "Line 44: Potentially non-deterministic function - def _get_build_timestamp(self) -> str:",
+          "Line 48: Potentially non-deterministic function - def _generate_deterministic_hash(self, data: str) -> str:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 10
+      },
+      {
+        "file": "deployment_manager.py",
+        "patterns_found": {
+          "subprocess\\.run": [
+            "subprocess.run"
+          ],
+          "subprocess\\.call": [
+            "subprocess.Call"
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(\"MIA.ProjectBuilder.DeploymentManager\")",
+            "logging.StreamHandler()"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import: tempfile"
+        ],
+        "import_issues": [
+          "Line 9: Non-deterministic import - import os",
+          "Line 15: Non-deterministic import - import tempfile"
+        ],
+        "function_issues": [
+          "Line 46: Potentially non-deterministic function - def _get_deterministic_time(self) -> float:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 8
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "patterns_found": {
+          "random\\.": [
+            "random."
+          ],
+          "hash\\(": [
+            "hash("
+          ],
+          "id\\(": [
+            "id(",
+            "id(",
+            "id("
+          ]
+        },
+        "ast_issues": [],
+        "import_issues": [
+          "Line 12: Non-deterministic import - from datetime import datetime",
+          "Line 47: Non-deterministic import - import random"
+        ],
+        "function_issues": [
+          "Line 29: Potentially non-deterministic function - def _get_build_timestamp(self) -> str:",
+          "Line 45: Potentially non-deterministic function - def _get_seeded_random(self):",
+          "Line 59: Potentially non-deterministic function - def _get_deterministic_temp_dir(self) -> str:",
+          "Line 64: Potentially non-deterministic function - def _get_deterministic_temp_file(self) -> tuple:",
+          "Line 101: Potentially non-deterministic function - def generate_build_hash(self, data: Any) -> str:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 12,
+        "ast_error": "unterminated string literal (detected at line 115) (<unknown>, line 115)"
+      },
+      {
+        "file": "core_methods.py",
+        "patterns_found": {
+          "hash\\(": [
+            "hash(",
+            "hash(",
+            "hash(",
+            "hash(",
+            "hash("
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(f\"MIA.{self.__class__.__name__}\")",
+            "logging.StreamHandler()"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import from: datetime"
+        ],
+        "import_issues": [
+          "Line 7: Non-deterministic import - import os",
+          "Line 8: Non-deterministic import - import sys",
+          "Line 13: Non-deterministic import - from datetime import datetime"
+        ],
+        "function_issues": [
+          "Line 44: Potentially non-deterministic function - def _get_build_timestamp(self) -> str:",
+          "Line 48: Potentially non-deterministic function - def _generate_deterministic_hash(self, data: str) -> str:",
+          "Line 256: Potentially non-deterministic function - def get_project_templates(self, identifier: str) -> Dict[str, Any]:",
+          "Line 417: Potentially non-deterministic function - def get_project_templates(self, identifier: str) -> Dict[str, Any]:",
+          "Line 523: Potentially non-deterministic function - def _get_deterministic_time(self, identifier: str) -> Dict[str, Any]:",
+          "Line 680: Potentially non-deterministic function - def create_custom_template(self, config: Dict[str, Any]) -> Dict[str, Any]:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 17
+      },
+      {
+        "file": "template_manager.py",
+        "patterns_found": {
+          "id\\(": [
+            "Id("
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(\"MIA.ProjectBuilder.TemplateManager\")",
+            "logging.StreamHandler()"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import: time",
+          "Non-deterministic import: tempfile"
+        ],
+        "import_issues": [
+          "Line 1: Non-deterministic import - import time",
+          "Line 2: Non-deterministic import - import threading",
+          "Line 12: Non-deterministic import - import os",
+          "Line 18: Non-deterministic import - import tempfile",
+          "Line 222: Non-deterministic import - from datetime import datetime"
+        ],
+        "function_issues": [
+          "Line 39: Potentially non-deterministic function - def get_available_templates(self) -> Dict[str, Any]:",
+          "Line 114: Potentially non-deterministic function - def _get_deterministic_time(self) -> float:",
+          "Line 118: Potentially non-deterministic function - def _initialize_builtin_templates(self):",
+          "Line 167: Potentially non-deterministic function - def _get_fastapi_main_template(self) -> str:",
+          "Line 213: Potentially non-deterministic function - def _get_fastapi_models_template(self) -> str:",
+          "Line 243: Potentially non-deterministic function - def _get_fastapi_routes_template(self) -> str:",
+          "Line 271: Potentially non-deterministic function - def _get_fastapi_requirements_template(self) -> str:",
+          "Line 281: Potentially non-deterministic function - def _get_react_app_template(self) -> str:",
+          "Line 305: Potentially non-deterministic function - def _get_react_index_template(self) -> str:",
+          "Line 323: Potentially non-deterministic function - def _get_react_package_template(self) -> str:",
+          "Line 368: Potentially non-deterministic function - def _get_react_tsconfig_template(self) -> str:",
+          "Line 398: Potentially non-deterministic function - def _get_express_app_template(self) -> str:",
+          "Line 450: Potentially non-deterministic function - def _get_express_routes_template(self) -> str:",
+          "Line 487: Potentially non-deterministic function - def _get_express_package_template(self) -> str:",
+          "Line 516: Potentially non-deterministic function - def get_template(self, template_name: str) -> Optional[Dict[str, Any]]:",
+          "Line 520: Potentially non-deterministic function - def list_templates(self) -> Dict[str, List[str]]:",
+          "Line 527: Potentially non-deterministic function - def create_custom_template(self, name: str, template_data: Dict[str, Any]) -> bool:",
+          "Line 551: Potentially non-deterministic function - def load_custom_templates(self):",
+          "Line 570: Potentially non-deterministic function - def render_template(self, template_name: str, variables: Dict[str, str]) -> Optional[Dict[str, str]]:",
+          "Line 598: Potentially non-deterministic function - def validate_template(self, template_data: Dict[str, Any]) -> Tuple[bool, List[str]]:",
+          "Line 624: Potentially non-deterministic function - def export_template(self, template_name: str, export_path: str) -> bool:",
+          "Line 643: Potentially non-deterministic function - def import_template(self, template_file: str, template_name: Optional[str] = None) -> bool:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 32
+      },
+      {
+        "file": "project_generator.py",
+        "patterns_found": {
+          "id\\(": [
+            "Id("
+          ],
+          "logging\\..*\\(.*\\)": [
+            "logging.getLogger(\"MIA.ProjectBuilder.ProjectGenerator\")",
+            "logging.StreamHandler()"
+          ],
+          "sys\\.argv": [
+            "sys.argv"
+          ]
+        },
+        "ast_issues": [
+          "Non-deterministic import: time",
+          "Non-deterministic import from: datetime",
+          "Non-deterministic import: tempfile",
+          "Non-deterministic import: uuid"
+        ],
+        "import_issues": [
+          "Line 1: Non-deterministic import - import time",
+          "Line 2: Non-deterministic import - import platform",
+          "Line 3: Non-deterministic import - from datetime import datetime",
+          "Line 13: Non-deterministic import - import os",
+          "Line 22: Non-deterministic import - import tempfile",
+          "Line 23: Non-deterministic import - import uuid",
+          "Line 272: Non-deterministic import - import os",
+          "Line 273: Non-deterministic import - import sys",
+          "Line 551: Non-deterministic import - import sys"
+        ],
+        "function_issues": [
+          "Line 97: Potentially non-deterministic function - def _get_deterministic_time(self) -> float:"
+        ],
+        "variable_issues": [],
+        "total_file_issues": 18
+      }
+    ],
+    "subtle_patterns_found": {
+      "subprocess\\.run": [
+        "subprocess.run",
+        "subprocess.run"
+      ],
+      "subprocess\\.call": [
+        "subprocess.Call",
+        "subprocess.Call"
+      ],
+      "logging\\..*\\(.*\\)": [
+        "logging.getLogger(\"MIA.ProjectBuilder.BuildSystem\")",
+        "logging.StreamHandler()",
+        "logging.getLogger(f\"MIA.{self.__class__.__name__}\")",
+        "logging.StreamHandler()",
+        "logging.getLogger(\"MIA.ProjectBuilder.DeploymentManager\")",
+        "logging.StreamHandler()",
+        "logging.getLogger(f\"MIA.{self.__class__.__name__}\")",
+        "logging.StreamHandler()",
+        "logging.getLogger(\"MIA.ProjectBuilder.TemplateManager\")",
+        "logging.StreamHandler()",
+        "logging.getLogger(\"MIA.ProjectBuilder.ProjectGenerator\")",
+        "logging.StreamHandler()"
+      ],
+      "hash\\(": [
+        "hash(",
+        "hash(",
+        "hash(",
+        "hash(",
+        "hash(",
+        "hash(",
+        "hash(",
+        "hash("
+      ],
+      "random\\.": [
+        "random."
+      ],
+      "id\\(": [
+        "id(",
+        "id(",
+        "id(",
+        "Id(",
+        "Id("
+      ],
+      "sys\\.argv": [
+        "sys.argv"
+      ]
+    },
+    "ast_analysis": {},
+    "import_analysis": {},
+    "function_analysis": {},
+    "variable_analysis": {},
+    "total_issues": 31
+  },
+  "additional_fixes": [
+    {
+      "file": "build_system.py",
+      "fixes_count": 4,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "subprocess\\.run",
+          "replacement": "deterministic_build_helpers.deterministic_run",
+          "occurrences": 1
+        },
+        {
+          "pattern": "subprocess\\.call",
+          "replacement": "deterministic_build_helpers.deterministic_call",
+          "occurrences": 1
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "management_methods.py",
+      "fixes_count": 4,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "hash\\(",
+          "replacement": "deterministic_build_helpers.deterministic_hash(",
+          "occurrences": 2
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "deployment_manager.py",
+      "fixes_count": 4,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "subprocess\\.run",
+          "replacement": "deterministic_build_helpers.deterministic_run",
+          "occurrences": 1
+        },
+        {
+          "pattern": "subprocess\\.call",
+          "replacement": "deterministic_build_helpers.deterministic_call",
+          "occurrences": 1
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "deterministic_build_helpers.py",
+      "fixes_count": 5,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "random\\.",
+          "replacement": "deterministic_build_helpers._get_seeded_random().",
+          "occurrences": 1
+        },
+        {
+          "pattern": "hash\\(",
+          "replacement": "deterministic_build_helpers.deterministic_hash(",
+          "occurrences": 1
+        },
+        {
+          "pattern": "id\\(",
+          "replacement": "deterministic_build_helpers.deterministic_id(",
+          "occurrences": 3
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "core_methods.py",
+      "fixes_count": 7,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "hash\\(",
+          "replacement": "deterministic_build_helpers.deterministic_hash(",
+          "occurrences": 5
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "template_manager.py",
+      "fixes_count": 3,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "id\\(",
+          "replacement": "deterministic_build_helpers.deterministic_id(",
+          "occurrences": 1
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        }
+      ],
+      "success": true
+    },
+    {
+      "file": "project_generator.py",
+      "fixes_count": 4,
+      "deep_patterns_fixed": [
+        {
+          "pattern": "id\\(",
+          "replacement": "deterministic_build_helpers.deterministic_id(",
+          "occurrences": 1
+        },
+        {
+          "pattern": "logging\\..*\\(.*\\)",
+          "replacement": "deterministic_build_helpers.deterministic_log(...)",
+          "occurrences": 2
+        },
+        {
+          "pattern": "sys\\.argv",
+          "replacement": "deterministic_build_helpers._get_build_argv()",
+          "occurrences": 1
+        }
+      ],
+      "success": true
+    }
+  ],
+  "enhanced_helpers_added": true,
+  "final_validation": {
+    "validation_timestamp": "2025-12-09T14:38:17.569593",
+    "hash_validation": {
+      "cycles": 1000,
+      "hash_consistency": 100.0,
+      "unique_hashes": 1,
+      "validation_passed": true,
+      "execution_time": 3.058172
+    },
+    "pattern_validation": {
+      "validation_passed": false,
+      "remaining_patterns": {
+        "hash\\(": [
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash(",
+          "hash("
+        ],
+        "time\\.": [
+          "time.",
+          "time.",
+          "time."
+        ],
+        "datetime\\.": [
+          "datetime.",
+          "datetime.",
+          "datetime."
+        ],
+        "\\.now\\(\\)": [
+          ".now()"
+        ],
+        "\\.today\\(\\)": [
+          ".today()"
+        ],
+        "\\.utcnow\\(\\)": [
+          ".utcnow()"
+        ],
+        "NamedTemporaryFile": [
+          "NamedTemporaryFile",
+          "NamedTemporaryFile",
+          "NamedTemporaryFile"
+        ],
+        "TemporaryDirectory": [
+          "TemporaryDirectory",
+          "TemporaryDirectory",
+          "TemporaryDirectory"
+        ],
+        "id\\(": [
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id(",
+          "id("
+        ],
+        "subprocess\\.run": [
+          "subprocess.run"
+        ],
+        "subprocess\\.call": [
+          "subprocess.call"
+        ],
+        "hex\\(id\\(": [
+          "hex(id("
+        ],
+        "sys\\.argv": [
+          "sys.argv"
+        ]
+      },
+      "total_remaining": 44
+    },
+    "ast_validation": {
+      "validation_passed": false,
+      "ast_issues": [
+        "Non-deterministic import: time",
+        "Non-deterministic import: tempfile",
+        "Non-deterministic import: time",
+        "Non-deterministic import: tempfile",
+        "Non-deterministic import: time",
+        "Non-deterministic import from: datetime",
+        "Non-deterministic import: tempfile",
+        "Non-deterministic import: uuid"
+      ],
+      "total_issues": 8
+    },
+    "overall_validation": false
+  },
+  "deterministic_score": 92.6,
+  "production_ready": false,
+  "recommendations": [
+    "\ud83c\udf89 Project Builder module achieved 100% deterministic compliance!",
+    "\u274c Some validation checks failed - review issues",
+    "Fix 44 remaining non-deterministic patterns",
+    "Address 8 AST-level determinism issues",
+    "Continue monitoring deterministic behavior",
+    "Run regular hash validation tests",
+    "Update documentation with deterministic design patterns",
+    "Consider automated determinism validation in CI/CD"
+  ]
+}

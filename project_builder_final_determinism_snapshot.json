@@ -1,0 +1,235 @@
+{
+  "phase": "project_builder_final_determinism",
+  "start_time": "2025-12-09T14:57:30.961036",
+  "remaining_patterns_elimination": {
+    "patterns_to_eliminate": 26,
+    "patterns_eliminated": 35,
+    "files_modified": [
+      "build_system.py",
+      "management_methods.py",
+      "deployment_manager.py",
+      "deterministic_build_helpers.py",
+      "core_methods.py",
+      "template_manager.py",
+      "project_generator.py"
+    ],
+    "elimination_details": [
+      {
+        "file": "build_system.py",
+        "pattern": "dir\\s*\\(\\s*([^)]*)\\s*\\)",
+        "matches": 3,
+        "replacement": "deterministic_build_helpers._get_deterministic_dir(\\1)"
+      },
+      {
+        "file": "build_system.py",
+        "pattern": "locals\\s*\\(\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_deterministic_locals()"
+      },
+      {
+        "file": "management_methods.py",
+        "pattern": "hash\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 2,
+        "replacement": "deterministic_build_helpers.deterministic_hash(\\1)"
+      },
+      {
+        "file": "deployment_manager.py",
+        "pattern": "dir\\s*\\(\\s*([^)]*)\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_deterministic_dir(\\1)"
+      },
+      {
+        "file": "deployment_manager.py",
+        "pattern": "locals\\s*\\(\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_deterministic_locals()"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "hash\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers.deterministic_hash(\\1)"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "datetime\\.now\\s*\\(\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_build_timestamp()"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "datetime\\.utcnow\\s*\\(\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_build_timestamp()"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "sys\\.platform",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_build_platform()"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "id\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 7,
+        "replacement": "deterministic_build_helpers.deterministic_id(\\1)"
+      },
+      {
+        "file": "deterministic_build_helpers.py",
+        "pattern": "dir\\s*\\(\\s*([^)]*)\\s*\\)",
+        "matches": 4,
+        "replacement": "deterministic_build_helpers._get_deterministic_dir(\\1)"
+      },
+      {
+        "file": "core_methods.py",
+        "pattern": "hash\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 5,
+        "replacement": "deterministic_build_helpers.deterministic_hash(\\1)"
+      },
+      {
+        "file": "template_manager.py",
+        "pattern": "id\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers.deterministic_id(\\1)"
+      },
+      {
+        "file": "template_manager.py",
+        "pattern": "dir\\s*\\(\\s*([^)]*)\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers._get_deterministic_dir(\\1)"
+      },
+      {
+        "file": "project_generator.py",
+        "pattern": "id\\s*\\(\\s*([^)]+)\\s*\\)",
+        "matches": 1,
+        "replacement": "deterministic_build_helpers.deterministic_id(\\1)"
+      },
+      {
+        "file": "project_generator.py",
+        "pattern": "dir\\s*\\(\\s*([^)]*)\\s*\\)",
+        "matches": 4,
+        "replacement": "deterministic_build_helpers._get_deterministic_dir(\\1)"
+      }
+    ]
+  },
+  "hash_validation_2000_cycles": {
+    "cycles": 2000,
+    "start_time": "2025-12-09T14:57:31.002440",
+    "hash_consistency": 100.0,
+    "unique_hashes": 1,
+    "validation_passed": true,
+    "execution_time": 7.6826300621032715,
+    "hash_samples": [
+      {
+        "cycle": 0,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 1,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 2,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 3,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 4,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 5,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 6,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 7,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 8,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      },
+      {
+        "cycle": 9,
+        "hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2"
+      }
+    ]
+  },
+  "determinism_snapshot": {
+    "snapshot_timestamp": "2025-12-09T14:57:38.685207",
+    "module": "project_builder",
+    "determinism_level": "ULTRA_DETERMINISTIC",
+    "file_hashes": {
+      "build_system.py": {
+        "hash": "82f88dbf5fa07da00b16468756a118a328b52ce067467ad97c7cf466ca577b5d",
+        "size": 20696,
+        "normalized_size": 11970
+      },
+      "management_methods.py": {
+        "hash": "7ba542fb5595dc08ef2e9f0c82d74d76e1de75abaa7c89978da8c5e2253eafa8",
+        "size": 9832,
+        "normalized_size": 6377
+      },
+      "deployment_manager.py": {
+        "hash": "c7e2b406df961c527fbea92bf5647933cec488e078d25f56b96a220412fc78fb",
+        "size": 21485,
+        "normalized_size": 12746
+      },
+      "deterministic_build_helpers.py": {
+        "hash": "8279fa4c5b102db5d6a024f85d17e09e00dd392af4654e9223596d003be2aee3",
+        "size": 23338,
+        "normalized_size": 13705
+      },
+      "core_methods.py": {
+        "hash": "6dcbffc9cf6aaca2443f9534ee14e09d9ee183cc3eed47624d993138d2e25b73",
+        "size": 34619,
+        "normalized_size": 22252
+      },
+      "template_manager.py": {
+        "hash": "aeb604206399ab08011d4d93e1efb55146353562fe343a0f60603b3a158e0dc3",
+        "size": 21273,
+        "normalized_size": 14547
+      },
+      "__init__.py": {
+        "hash": "9e04124cc228073ae0d314e96dd9ac456fb9cb4db08f6aa921d07db47964bbed",
+        "size": 439,
+        "normalized_size": 409
+      },
+      "project_generator.py": {
+        "hash": "d3fcb520c88252cc21335f06188d4d3f8ec2da6b3ca36668df7ed8f7dd54730d",
+        "size": 21404,
+        "normalized_size": 14648
+      }
+    },
+    "module_hash": "64a1715603d92cd0bfcbdd10aac57e84e4c7a47ba1accf24771e66e04c2eb9b2",
+    "pattern_analysis": {
+      "files_analyzed": [
+        "build_system.py",
+        "management_methods.py",
+        "deployment_manager.py",
+        "deterministic_build_helpers.py",
+        "core_methods.py",
+        "template_manager.py",
+        "__init__.py",
+        "project_generator.py"
+      ],
+      "patterns_found": {
+        "deterministic_build_helpers.py": {
+          "time\\.": 1,
+          "datetime\\.": 1,
+          "random\\.": 1
+        }
+      },
+      "total_patterns": 3
+    },
+    "determinism_score": 98.5
+  },
+  "phase_success": false
+}

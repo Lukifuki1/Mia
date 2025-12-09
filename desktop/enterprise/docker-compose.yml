@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  mia-enterprise-agi:
+    build: .
+    container_name: mia-enterprise-agi
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    volumes:
+      - mia-data:/opt/mia-enterprise-agi/data
+      - mia-logs:/opt/mia-enterprise-agi/logs
+      - mia-config:/opt/mia-enterprise-agi/config
+    environment:
+      - MIA_ENTERPRISE_MODE=1
+      - MIA_LOG_LEVEL=INFO
+      - MIA_DATA_DIR=/opt/mia-enterprise-agi/data
+    networks:
+      - mia-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  mia-database:
+    image: postgres:15
+    container_name: mia-database
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=mia_enterprise
+      - POSTGRES_USER=mia_user
+      - POSTGRES_PASSWORD=secure_password
+    volumes:
+      - mia-db:/var/lib/postgresql/data
+    networks:
+      - mia-network
+
+  mia-redis:
+    image: redis:7-alpine
+    container_name: mia-redis
+    restart: unless-stopped
+    volumes:
+      - mia-redis:/data
+    networks:
+      - mia-network
+
+volumes:
+  mia-data:
+  mia-logs:
+  mia-config:
+  mia-db:
+  mia-redis:
+
+networks:
+  mia-network:
+    driver: bridge

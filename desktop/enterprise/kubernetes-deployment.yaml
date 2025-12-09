@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mia-enterprise-agi
+  namespace: mia-system
+  labels:
+    app: mia-enterprise-agi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mia-enterprise-agi
+  template:
+    metadata:
+      labels:
+        app: mia-enterprise-agi
+    spec:
+      containers:
+      - name: mia-enterprise-agi
+        image: mia-enterprise/agi:latest
+        ports:
+        - containerPort: 8000
+        - containerPort: 3000
+        env:
+        - name: MIA_ENTERPRISE_MODE
+          value: "1"
+        - name: MIA_LOG_LEVEL
+          value: "INFO"
+        resources:
+          requests:
+            memory: "4Gi"
+            cpu: "2"
+          limits:
+            memory: "16Gi"
+            cpu: "8"
+        volumeMounts:
+        - name: mia-data
+          mountPath: /opt/mia-enterprise-agi/data
+        - name: mia-config
+          mountPath: /opt/mia-enterprise-agi/config
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+      volumes:
+      - name: mia-data
+        persistentVolumeClaim:
+          claimName: mia-data-pvc
+      - name: mia-config
+        configMap:
+          name: mia-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mia-enterprise-agi-service
+  namespace: mia-system
+spec:
+  selector:
+    app: mia-enterprise-agi
+  ports:
+  - name: backend
+    port: 8000
+    targetPort: 8000
+  - name: frontend
+    port: 3000
+    targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mia-data-pvc
+  namespace: mia-system
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped
+
+  # Add database service if needed
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: sample-api
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:

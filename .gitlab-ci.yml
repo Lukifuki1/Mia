@@ -1,0 +1,103 @@
+# MIA Enterprise AGI - Deterministic GitLab CI/CD Pipeline
+
+variables:
+  PYTHONHASHSEED: "0"
+  SOURCE_DATE_EPOCH: "1640995200"
+  TZ: "UTC"
+  LANG: "C.UTF-8"
+  LC_ALL: "C.UTF-8"
+
+stages:
+  - test
+  - build
+  - verify
+  - deploy
+
+deterministic-test:
+  stage: test
+  image: python:3.11.6-slim
+  script:
+    - pip install --no-cache-dir --no-deps -r requirements.lock
+    - python deep_deterministic_analysis.py
+    - |
+      if [ ! -f "deterministic_test_passed.flag" ]; then
+        echo "❌ Deterministic test failed - blocking build"
+        exit 1
+      fi
+  artifacts:
+    reports:
+      junit: test-results.xml
+    paths:
+      - deterministic_test_results.json
+
+build-linux:
+  stage: build
+  image: python:3.11.6-slim
+  needs: ["deterministic-test"]
+  script:
+    - chmod +x scripts/build_linux.sh
+    - ./scripts/build_linux.sh
+  artifacts:
+    paths:
+      - dist/linux/
+      - build_metadata_linux.json
+    expire_in: 1 week
+
+build-windows:
+  stage: build
+  tags:
+    - windows
+  needs: ["deterministic-test"]
+  script:
+    - scripts\build_windows.bat
+  artifacts:
+    paths:
+      - dist/windows/
+      - build_metadata_windows.json
+    expire_in: 1 week
+
+build-macos:
+  stage: build
+  tags:
+    - macos
+  needs: ["deterministic-test"]
+  script:
+    - chmod +x scripts/build_macos.sh
+    - ./scripts/build_macos.sh
+  artifacts:
+    paths:
+      - dist/macos/
+      - build_metadata_macos.json
+    expire_in: 1 week
+
+verify-reproducibility:
+  stage: verify
+  image: python:3.11.6-slim
+  needs: ["build-linux", "build-windows", "build-macos"]
+  script:
+    - python scripts/verify_reproducibility.py
+    - python scripts/generate_build_report.py
+  artifacts:
+    paths:
+      - builds/deterministic/
+    expire_in: 1 month
+
+deploy-staging:
+  stage: deploy
+  image: alpine:latest
+  needs: ["verify-reproducibility"]
+  only:
+    - develop
+  script:
+    - echo "🚀 Deploying to staging..."
+    # Staging deployment logic
+
+deploy-production:
+  stage: deploy
+  image: alpine:latest
+  needs: ["verify-reproducibility"]
+  only:
+    - tags
+  script:
+    - echo "🚀 Deploying to production..."
+    # Production deployment logic

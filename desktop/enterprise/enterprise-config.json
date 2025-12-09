@@ -1,0 +1,82 @@
+{
+  "enterprise": {
+    "enabled": true,
+    "organization": "Your Organization",
+    "license_key": "",
+    "deployment_id": "",
+    "admin_contact": "admin@yourorg.com"
+  },
+  "security": {
+    "enforce_encryption": true,
+    "require_authentication": true,
+    "audit_logging": true,
+    "data_retention_days": 90,
+    "allowed_domains": [],
+    "blocked_domains": [],
+    "firewall_rules": {
+      "allow_outbound": true,
+      "allowed_ports": [
+        80,
+        443,
+        8000
+      ],
+      "blocked_ports": []
+    }
+  },
+  "policies": {
+    "auto_update": {
+      "enabled": true,
+      "channel": "stable",
+      "schedule": "weekly",
+      "maintenance_window": "02:00-04:00"
+    },
+    "usage_monitoring": {
+      "enabled": true,
+      "collect_analytics": false,
+      "report_frequency": "monthly"
+    },
+    "resource_limits": {
+      "max_memory_gb": 16,
+      "max_cpu_percent": 80,
+      "max_disk_gb": 100,
+      "max_gpu_percent": 90
+    }
+  },
+  "integration": {
+    "active_directory": {
+      "enabled": false,
+      "server": "",
+      "domain": "",
+      "base_dn": ""
+    },
+    "sso": {
+      "enabled": false,
+      "provider": "saml",
+      "endpoint": "",
+      "certificate": ""
+    },
+    "logging": {
+      "syslog_enabled": false,
+      "syslog_server": "",
+      "syslog_port": 514,
+      "log_level": "INFO"
+    }
+  },
+  "features": {
+    "multimodal_generation": true,
+    "project_management": true,
+    "collaboration": true,
+    "api_access": true,
+    "plugin_system": true,
+    "18plus_mode": false
+  },
+  "deployment": {
+    "installation_path": "",
+    "data_directory": "",
+    "log_directory": "",
+    "temp_directory": "",
+    "backup_directory": "",
+    "service_account": "",
+    "startup_mode": "automatic"
+  }
+}

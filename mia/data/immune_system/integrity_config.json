@@ -1,0 +1,56 @@
+{
+  "enabled": true,
+  "monitoring_interval": 300,
+  "default_integrity_level": "standard",
+  "checksum_algorithm": "sha256",
+  "signature_algorithm": "hmac-sha256",
+  "protected_paths": [
+    "mia/core/",
+    "mia/data/config/",
+    "mia/data/models/",
+    "mia/data/memory/"
+  ],
+  "excluded_patterns": [
+    "*.log",
+    "*.tmp",
+    "__pycache__",
+    "*.pyc"
+  ],
+  "integrity_levels": {
+    "critical": {
+      "verify_interval": 60,
+      "require_signature": true,
+      "monitor_permissions": true,
+      "alert_on_violation": true
+    },
+    "high": {
+      "verify_interval": 300,
+      "require_signature": true,
+      "monitor_permissions": true,
+      "alert_on_violation": true
+    },
+    "standard": {
+      "verify_interval": 900,
+      "require_signature": false,
+      "monitor_permissions": false,
+      "alert_on_violation": true
+    },
+    "basic": {
+      "verify_interval": 3600,
+      "require_signature": false,
+      "monitor_permissions": false,
+      "alert_on_violation": false
+    }
+  },
+  "violation_responses": {
+    "checksum_mismatch": "alert_and_quarantine",
+    "unauthorized_modification": "alert_and_restore",
+    "signature_invalid": "alert_and_block",
+    "timestamp_anomaly": "alert_only",
+    "size_anomaly": "alert_only",
+    "permission_violation": "alert_and_fix"
+  },
+  "backup_enabled": true,
+  "quarantine_enabled": true,
+  "auto_restore": false
+}

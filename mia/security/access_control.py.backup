@@ -1,0 +1,590 @@
+#!/usr/bin/env python3
+"""
+MIA Enterprise AGI - Access Control
+==================================
+
+Zero-trust access control and authorization system.
+"""
+
+import os
+import sys
+import logging
+import hashlib
+import secrets
+import time
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Set
+import json
+from datetime import datetime, timedelta
+from enum import Enum
+
+
+class PermissionLevel(Enum):
+    """Permission levels for access control"""
+    NONE = 0
+    READ = 1
+    WRITE = 2
+    EXECUTE = 3
+    ADMIN = 4
+    SUPER_ADMIN = 5
+
+
+class AccessControl:
+    """Zero-trust access control system"""
+    
+    def __init__(self, config_path: Optional[str] = None):
+        self.logger = self._setup_logging()
+        
+        # Configuration
+        self.config_path = Path(config_path) if config_path else Path("mia_data/access_control")
+        self.config_path.mkdir(parents=True, exist_ok=True)
+        
+        # Access control data
+        self.users = {}
+        self.roles = {}
+        self.permissions = {}
+        self.active_sessions = {}
+        self.access_log = []
+        
+        # Security settings
+        self.session_timeout = 3600  # 1 hour
+        self.max_failed_attempts = 3
+        self.lockout_duration = 300  # 5 minutes
+        self.password_min_length = 8
+        
+        # Load existing configuration
+        self._load_configuration()
+        
+        self.logger.info("🔐 Access Control system initialized")
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging configuration"""
+        logger = logging.getLogger("MIA.Security.AccessControl")
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _load_configuration(self):
+        """Load access control configuration"""
+        try:
+            # Load users
+            users_file = self.config_path / "users.json"
+            if users_file.exists():
+                with open(users_file, 'r') as f:
+                    self.users = json.load(f)
+            
+            # Load roles
+            roles_file = self.config_path / "roles.json"
+            if roles_file.exists():
+                with open(roles_file, 'r') as f:
+                    self.roles = json.load(f)
+            
+            # Load permissions
+            permissions_file = self.config_path / "permissions.json"
+            if permissions_file.exists():
+                with open(permissions_file, 'r') as f:
+                    self.permissions = json.load(f)
+            
+            # Initialize default admin user if no users exist
+            if not self.users:
+                self._create_default_admin()
+                
+        except Exception as e:
+            self.logger.error(f"Configuration loading error: {e}")
+            self._create_default_admin()
+    
+    def _save_configuration(self):
+        """Save access control configuration"""
+        try:
+            # Save users
+            users_file = self.config_path / "users.json"
+            with open(users_file, 'w') as f:
+                json.dump(self.users, f, indent=2)
+            
+            # Save roles
+            roles_file = self.config_path / "roles.json"
+            with open(roles_file, 'w') as f:
+                json.dump(self.roles, f, indent=2)
+            
+            # Save permissions
+            permissions_file = self.config_path / "permissions.json"
+            with open(permissions_file, 'w') as f:
+                json.dump(self.permissions, f, indent=2)
+                
+        except Exception as e:
+            self.logger.error(f"Configuration saving error: {e}")
+    
+    def _create_default_admin(self):
+        """Create default admin user"""
+        try:
+            admin_password = secrets.token_urlsafe(16)
+            
+            # Create admin user
+            self.create_user(
+                username="admin",
+                password=admin_password,
+                role="super_admin",
+                email="admin@mia-enterprise.local"
+            )
+            
+            # Create default roles
+            self._create_default_roles()
+            
+            self.logger.warning(f"Default admin created - Username: admin, Password: {admin_password}")
+            
+        except Exception as e:
+            self.logger.error(f"Default admin creation error: {e}")
+    
+    def _create_default_roles(self):
+        """Create default roles and permissions"""
+        try:
+            # Define default roles
+            default_roles = {
+                "super_admin": {
+                    "name": "Super Administrator",
+                    "description": "Full system access",
+                    "permissions": ["*"]
+                },
+                "admin": {
+                    "name": "Administrator",
+                    "description": "Administrative access",
+                    "permissions": ["user_management", "system_config", "security_audit"]
+                },
+                "user": {
+                    "name": "Standard User",
+                    "description": "Basic user access",
+                    "permissions": ["basic_access", "profile_edit"]
+                },
+                "guest": {
+                    "name": "Guest",
+                    "description": "Limited read-only access",
+                    "permissions": ["read_only"]
+                }
+            }
+            
+            # Define default permissions
+            default_permissions = {
+                "basic_access": {
+                    "name": "Basic Access",
+                    "description": "Basic system access",
+                    "level": PermissionLevel.READ.value
+                },
+                "profile_edit": {
+                    "name": "Profile Edit",
+                    "description": "Edit own profile",
+                    "level": PermissionLevel.WRITE.value
+                },
+                "user_management": {
+                    "name": "User Management",
+                    "description": "Manage users and roles",
+                    "level": PermissionLevel.ADMIN.value
+                },
+                "system_config": {
+                    "name": "System Configuration",
+                    "description": "Configure system settings",
+                    "level": PermissionLevel.ADMIN.value
+                },
+                "security_audit": {
+                    "name": "Security Audit",
+                    "description": "Access security logs and audits",
+                    "level": PermissionLevel.ADMIN.value
+                },
+                "read_only": {
+                    "name": "Read Only",
+                    "description": "Read-only access",
+                    "level": PermissionLevel.READ.value
+                }
+            }
+            
+            self.roles.update(default_roles)
+            self.permissions.update(default_permissions)
+            
+            self._save_configuration()
+            
+        except Exception as e:
+            self.logger.error(f"Default roles creation error: {e}")
+    
+    def create_user(self, 
+                   username: str, 
+                   password: str, 
+                   role: str = "user",
+                   email: Optional[str] = None) -> Dict[str, Any]:
+        """Create new user"""
+        try:
+            self.logger.info(f"👤 Creating user: {username}")
+            
+            # Validate input
+            if username in self.users:
+                return {
+                    "success": False,
+                    "error": "Username already exists"
+                }
+            
+            if len(password) < self.password_min_length:
+                return {
+                    "success": False,
+                    "error": f"Password must be at least {self.password_min_length} characters"
+                }
+            
+            if role not in self.roles:
+                return {
+                    "success": False,
+                    "error": f"Role '{role}' does not exist"
+                }
+            
+            # Hash password
+            salt = secrets.token_hex(16)
+            password_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt.encode(), 100000)
+            
+            # Create user record
+            user_data = {
+                "username": username,
+                "password_hash": password_hash.hex(),
+                "salt": salt,
+                "role": role,
+                "email": email,
+                "created_at": datetime.now().isoformat(),
+                "last_login": None,
+                "failed_attempts": 0,
+                "locked_until": None,
+                "active": True
+            }
+            
+            self.users[username] = user_data
+            self._save_configuration()
+            
+            self._log_access_event("user_created", username, "system", True)
+            
+            return {
+                "success": True,
+                "username": username,
+                "role": role
+            }
+            
+        except Exception as e:
+            self.logger.error(f"User creation error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def authenticate_user(self, username: str, password: str) -> Dict[str, Any]:
+        """Authenticate user credentials"""
+        try:
+            self.logger.info(f"🔐 Authenticating user: {username}")
+            
+            # Check if user exists
+            if username not in self.users:
+                self._log_access_event("auth_failed", username, "unknown", False, "User not found")
+                return {
+                    "success": False,
+                    "error": "Invalid credentials"
+                }
+            
+            user = self.users[username]
+            
+            # Check if user is active
+            if not user.get("active", True):
+                self._log_access_event("auth_failed", username, "disabled", False, "User disabled")
+                return {
+                    "success": False,
+                    "error": "Account disabled"
+                }
+            
+            # Check if user is locked
+            if user.get("locked_until"):
+                locked_until = datetime.fromisoformat(user["locked_until"])
+                if datetime.now() < locked_until:
+                    self._log_access_event("auth_failed", username, "locked", False, "Account locked")
+                    return {
+                        "success": False,
+                        "error": "Account temporarily locked"
+                    }
+                else:
+                    # Unlock account
+                    user["locked_until"] = None
+                    user["failed_attempts"] = 0
+            
+            # Verify password
+            salt = user["salt"]
+            stored_hash = user["password_hash"]
+            password_hash = hashlib.pbkdf2_hmac('sha256', password.encode(), salt.encode(), 100000)
+            
+            if password_hash.hex() != stored_hash:
+                # Increment failed attempts
+                user["failed_attempts"] = user.get("failed_attempts", 0) + 1
+                
+                # Lock account if too many failed attempts
+                if user["failed_attempts"] >= self.max_failed_attempts:
+                    user["locked_until"] = (datetime.now() + timedelta(seconds=self.lockout_duration)).isoformat()
+                
+                self._save_configuration()
+                self._log_access_event("auth_failed", username, "invalid_password", False, "Invalid password")
+                
+                return {
+                    "success": False,
+                    "error": "Invalid credentials"
+                }
+            
+            # Authentication successful
+            user["last_login"] = datetime.now().isoformat()
+            user["failed_attempts"] = 0
+            user["locked_until"] = None
+            
+            # Create session
+            session_id = secrets.token_urlsafe(32)
+            session_data = {
+                "username": username,
+                "role": user["role"],
+                "created_at": datetime.now().isoformat(),
+                "expires_at": (datetime.now() + timedelta(seconds=self.session_timeout)).isoformat(),
+                "permissions": self._get_user_permissions(username)
+            }
+            
+            self.active_sessions[session_id] = session_data
+            self._save_configuration()
+            
+            self._log_access_event("auth_success", username, user["role"], True)
+            
+            return {
+                "success": True,
+                "session_id": session_id,
+                "username": username,
+                "role": user["role"],
+                "permissions": session_data["permissions"]
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Authentication error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def validate_session(self, session_id: str) -> Dict[str, Any]:
+        """Validate active session"""
+        try:
+            if session_id not in self.active_sessions:
+                return {
+                    "valid": False,
+                    "error": "Invalid session"
+                }
+            
+            session = self.active_sessions[session_id]
+            expires_at = datetime.fromisoformat(session["expires_at"])
+            
+            if datetime.now() > expires_at:
+                # Session expired
+                del self.active_sessions[session_id]
+                return {
+                    "valid": False,
+                    "error": "Session expired"
+                }
+            
+            return {
+                "valid": True,
+                "username": session["username"],
+                "role": session["role"],
+                "permissions": session["permissions"]
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Session validation error: {e}")
+            return {
+                "valid": False,
+                "error": str(e)
+            }
+    
+    def check_permission(self, session_id: str, required_permission: str) -> Dict[str, Any]:
+        """Check if session has required permission"""
+        try:
+            # Validate session first
+            session_validation = self.validate_session(session_id)
+            if not session_validation.get("valid", False):
+                return {
+                    "authorized": False,
+                    "error": session_validation.get("error", "Invalid session")
+                }
+            
+            permissions = session_validation["permissions"]
+            
+            # Check for wildcard permission (super admin)
+            if "*" in permissions:
+                return {
+                    "authorized": True,
+                    "permission": required_permission,
+                    "granted_by": "wildcard"
+                }
+            
+            # Check specific permission
+            if required_permission in permissions:
+                return {
+                    "authorized": True,
+                    "permission": required_permission,
+                    "granted_by": "explicit"
+                }
+            
+            self._log_access_event("permission_denied", session_validation["username"], 
+                                 session_validation["role"], False, f"Permission: {required_permission}")
+            
+            return {
+                "authorized": False,
+                "error": f"Permission '{required_permission}' not granted"
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Permission check error: {e}")
+            return {
+                "authorized": False,
+                "error": str(e)
+            }
+    
+    def logout_session(self, session_id: str) -> Dict[str, Any]:
+        """Logout and invalidate session"""
+        try:
+            if session_id in self.active_sessions:
+                session = self.active_sessions[session_id]
+                username = session.get("username", "unknown")
+                
+                del self.active_sessions[session_id]
+                
+                self._log_access_event("logout", username, session.get("role", "unknown"), True)
+                
+                return {
+                    "success": True,
+                    "message": "Session logged out"
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": "Session not found"
+                }
+                
+        except Exception as e:
+            self.logger.error(f"Logout error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def _get_user_permissions(self, username: str) -> List[str]:
+        """Get all permissions for user"""
+        try:
+            if username not in self.users:
+                return []
+            
+            user_role = self.users[username]["role"]
+            if user_role not in self.roles:
+                return []
+            
+            return self.roles[user_role].get("permissions", [])
+            
+        except Exception as e:
+            self.logger.error(f"Permission retrieval error: {e}")
+            return []
+    
+    def _log_access_event(self, event_type: str, username: str, role: str, success: bool, details: str = ""):
+        """Log access control event"""
+        try:
+            event = {
+                "timestamp": datetime.now().isoformat(),
+                "event_type": event_type,
+                "username": username,
+                "role": role,
+                "success": success,
+                "details": details,
+                "ip_address": "127.0.0.1"  # Would be actual IP in real implementation
+            }
+            
+            self.access_log.append(event)
+            
+            # Keep only last 1000 events
+            if len(self.access_log) > 1000:
+                self.access_log = self.access_log[-1000:]
+                
+        except Exception as e:
+            self.logger.error(f"Access logging error: {e}")
+    
+    def get_access_log(self, session_id: str, limit: int = 100) -> Dict[str, Any]:
+        """Get access log (requires admin permission)"""
+        try:
+            # Check admin permission
+            permission_check = self.check_permission(session_id, "security_audit")
+            if not permission_check.get("authorized", False):
+                return {
+                    "success": False,
+                    "error": "Insufficient permissions"
+                }
+            
+            # Return recent log entries
+            recent_logs = self.access_log[-limit:] if limit > 0 else self.access_log
+            
+            return {
+                "success": True,
+                "log_entries": recent_logs,
+                "total_entries": len(self.access_log)
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Access log retrieval error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def cleanup_expired_sessions(self) -> Dict[str, Any]:
+        """Clean up expired sessions"""
+        try:
+            current_time = datetime.now()
+            expired_sessions = []
+            
+            for session_id, session_data in list(self.active_sessions.items()):
+                expires_at = datetime.fromisoformat(session_data["expires_at"])
+                if current_time > expires_at:
+                    expired_sessions.append(session_id)
+                    del self.active_sessions[session_id]
+            
+            return {
+                "success": True,
+                "expired_sessions": len(expired_sessions),
+                "active_sessions": len(self.active_sessions)
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Session cleanup error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def get_system_status(self) -> Dict[str, Any]:
+        """Get access control system status"""
+        try:
+            # Clean up expired sessions first
+            self.cleanup_expired_sessions()
+            
+            status = {
+                "total_users": len(self.users),
+                "active_users": len([u for u in self.users.values() if u.get("active", True)]),
+                "total_roles": len(self.roles),
+                "total_permissions": len(self.permissions),
+                "active_sessions": len(self.active_sessions),
+                "recent_logins": len([log for log in self.access_log[-100:] if log["event_type"] == "auth_success"]),
+                "failed_attempts": len([log for log in self.access_log[-100:] if log["event_type"] == "auth_failed"]),
+                "session_timeout": self.session_timeout,
+                "max_failed_attempts": self.max_failed_attempts
+            }
+            
+            return status
+            
+        except Exception as e:
+            self.logger.error(f"System status error: {e}")
+            return {
+                "error": str(e)
+            }

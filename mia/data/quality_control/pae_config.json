@@ -1,0 +1,54 @@
+{
+  "enabled": true,
+  "analysis_interval": 300,
+  "regression_threshold": 0.1,
+  "baseline_window": 3600,
+  "min_samples": 10,
+  "optimization_targets": {
+    "cpu_usage": {
+      "target": 70.0,
+      "critical": 90.0
+    },
+    "memory_usage": {
+      "target": 80.0,
+      "critical": 95.0
+    },
+    "response_time": {
+      "target": 1.0,
+      "critical": 5.0
+    },
+    "throughput": {
+      "target": 100.0,
+      "critical": 50.0
+    }
+  },
+  "optimization_strategies": {
+    "batch_size": {
+      "enabled": true,
+      "min_batch": 1,
+      "max_batch": 64,
+      "step": 2
+    },
+    "precision": {
+      "enabled": true,
+      "options": [
+        "fp32",
+        "fp16",
+        "int8"
+      ]
+    },
+    "memory_layout": {
+      "enabled": true,
+      "strategies": [
+        "contiguous",
+        "chunked",
+        "streaming"
+      ]
+    }
+  },
+  "auto_apply": {
+    "enabled": false,
+    "priority_threshold": "medium",
+    "require_approval": true
+  }
+}

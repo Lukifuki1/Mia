@@ -1,0 +1,67 @@
+CLASS MACHINE
+
+CATEGORY "MIA Enterprise AGI"
+    POLICY "Enable Enterprise Mode"
+        KEYNAME "Software\Policies\MIA Enterprise AGI"
+        VALUENAME "EnterpriseMode"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+    END POLICY
+    
+    POLICY "Auto Update Settings"
+        KEYNAME "Software\Policies\MIA Enterprise AGI\Updates"
+        PART "Enable Auto Updates" CHECKBOX
+            VALUENAME "AutoUpdateEnabled"
+            VALUEON NUMERIC 1
+            VALUEOFF NUMERIC 0
+        END PART
+        PART "Update Channel" DROPDOWNLIST
+            VALUENAME "UpdateChannel"
+            ITEMLIST
+                NAME "Stable" VALUE "stable"
+                NAME "Beta" VALUE "beta"
+                NAME "Alpha" VALUE "alpha"
+            END ITEMLIST
+        END PART
+    END POLICY
+    
+    POLICY "Security Settings"
+        KEYNAME "Software\Policies\MIA Enterprise AGI\Security"
+        PART "Enforce Encryption" CHECKBOX
+            VALUENAME "EnforceEncryption"
+            VALUEON NUMERIC 1
+            VALUEOFF NUMERIC 0
+        END PART
+        PART "Audit Logging" CHECKBOX
+            VALUENAME "AuditLogging"
+            VALUEON NUMERIC 1
+            VALUEOFF NUMERIC 0
+        END PART
+    END POLICY
+    
+    POLICY "Resource Limits"
+        KEYNAME "Software\Policies\MIA Enterprise AGI\Resources"
+        PART "Max Memory (GB)" NUMERIC
+            VALUENAME "MaxMemoryGB"
+            MIN 4 MAX 128 DEFAULT 16
+        END PART
+        PART "Max CPU (%)" NUMERIC
+            VALUENAME "MaxCPUPercent"
+            MIN 10 MAX 100 DEFAULT 80
+        END PART
+    END POLICY
+    
+    POLICY "Feature Control"
+        KEYNAME "Software\Policies\MIA Enterprise AGI\Features"
+        PART "Enable 18+ Mode" CHECKBOX
+            VALUENAME "Enable18PlusMode"
+            VALUEON NUMERIC 1
+            VALUEOFF NUMERIC 0
+        END PART
+        PART "Enable API Access" CHECKBOX
+            VALUENAME "EnableAPIAccess"
+            VALUEON NUMERIC 1
+            VALUEOFF NUMERIC 0
+        END PART
+    END POLICY
+END CATEGORY

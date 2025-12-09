@@ -1,0 +1,12 @@
+{
+  "name": "vue_typescript",
+  "description": "Template for vue_typescript projects",
+  "version": "1.0.0",
+  "files": [],
+  "variables": {
+    "project_name": "{{project_name}}",
+    "description": "{{description}}",
+    "author": "{{author}}",
+    "email": "{{email}}"
+  }
+}

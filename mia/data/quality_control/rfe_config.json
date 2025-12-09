@@ -1,0 +1,76 @@
+{
+  "enabled": true,
+  "forecasting_interval": 300,
+  "history_retention": 86400,
+  "max_history_points": 1000,
+  "forecast_horizons": {
+    "short_term": {
+      "duration": 300,
+      "points": 10
+    },
+    "medium_term": {
+      "duration": 3600,
+      "points": 20
+    },
+    "long_term": {
+      "duration": 86400,
+      "points": 48
+    }
+  },
+  "forecasting_methods": {
+    "linear_regression": {
+      "enabled": true,
+      "min_points": 10
+    },
+    "exponential_smoothing": {
+      "enabled": true,
+      "alpha": 0.3
+    },
+    "moving_average": {
+      "enabled": true,
+      "window": 5
+    },
+    "arima": {
+      "enabled": false,
+      "order": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "alert_thresholds": {
+    "cpu": {
+      "warning": 70.0,
+      "critical": 85.0
+    },
+    "memory": {
+      "warning": 80.0,
+      "critical": 90.0
+    },
+    "gpu": {
+      "warning": 75.0,
+      "critical": 90.0
+    },
+    "disk": {
+      "warning": 85.0,
+      "critical": 95.0
+    },
+    "network": {
+      "warning": 80.0,
+      "critical": 95.0
+    }
+  },
+  "optimization_targets": {
+    "cpu_efficiency": 0.7,
+    "memory_efficiency": 0.8,
+    "cost_reduction": 0.2,
+    "performance_improvement": 0.15
+  },
+  "auto_scaling": {
+    "enabled": false,
+    "scale_up_threshold": 80.0,
+    "scale_down_threshold": 30.0,
+    "cooldown_period": 300
+  }
+}

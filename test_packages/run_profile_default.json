@@ -1,0 +1,12 @@
+{
+  "mode": "enterprise",
+  "deterministic": true,
+  "seed": 42,
+  "memory_limit_gb": 5,
+  "introspective_cycles": 100,
+  "telemetry_enabled": true,
+  "mis_enabled": true,
+  "prk_enabled": true,
+  "ui_enabled": true,
+  "language": "sl-SI"
+}

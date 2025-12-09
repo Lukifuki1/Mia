@@ -1,0 +1,2729 @@
+{
+  "timestamp": "2025-12-09T12:51:05.183475",
+  "analysis_type": "comprehensive_introspective",
+  "code_metrics": {
+    "timestamp": "2025-12-09T12:00:00Z",
+    "project_summary": {
+      "total_files": 227,
+      "total_lines_of_code": 8103,
+      "total_complexity": 0,
+      "average_complexity_per_file": 0.0,
+      "total_classes": 0,
+      "total_functions": 0,
+      "unique_classes": 0,
+      "unique_functions": 0
+    },
+    "file_metrics": [
+      {
+        "file_path": "final_optimization_verification.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "comprehensive_introspective_validation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia_structure.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "ultimate_enterprise_upgrades.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "final_testing_implementation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "final_production_validation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "critical_deterministic_fix.py",
+        "lines_of_code": 756,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 41684
+      },
+      {
+        "file_path": "mia_comprehensive_audit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "optimized_audit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "comprehensive_introspective_validation_backup.py",
+        "lines_of_code": 1918,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 111157
+      },
+      {
+        "file_path": "introspective_analysis.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "enterprise_compliance_test.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "run_mia.py",
+        "lines_of_code": 42,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "asyncio",
+          "sys",
+          "pathlib.Path",
+          "bootstrap.mia_boot.MIASystem",
+          "mia.modules.ui.web.web_ui"
+        ],
+        "size_bytes": 1527
+      },
+      {
+        "file_path": "ultimate_enterprise_audit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "run_all_tests.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "final_security_implementation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia_main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "comprehensive_system_audit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "structural_optimization_analyzer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "lgpd_compliance_implementation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "automated_platform_verification.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "deterministic_cicd_implementation.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia_enterprise_launcher.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "performance_optimization_test.py",
+        "lines_of_code": 48,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "asyncio",
+          "sys",
+          "pathlib.Path",
+          "mia.performance.MemoryOptimizer",
+          "mia.performance.ConsciousnessOptimizer",
+          "mia.performance.PerformanceBenchmarker"
+        ],
+        "size_bytes": 2727
+      },
+      {
+        "file_path": "deep_deterministic_analysis.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "final_comprehensive_report.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia_system_integrity_test.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "test_mia.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "bootstrap/mia_boot.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "scripts/generate_build_report.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "scripts/test_deterministic_loop.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "scripts/verify_reproducibility.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "optimizations/integrated_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "optimizations/file_complexity_reducer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "optimizations/advanced_caching.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "optimizations/performance_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "desktop/enterprise_features.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "desktop/cross_platform_builder.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "ultimate_enterprise/realtime_collaboration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "ultimate_enterprise/ai_model_management.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "ultimate_enterprise/analytics_dashboard.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "desktop/enterprise/config-manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "desktop/enterprise/license-manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "desktop/enterprise/monitoring-system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/security/test_input_validation_security_security.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/security/test_authentication_security_security.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/security/test_authorization_security_security.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/security/test_data_encryption_security_security.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/recovery/test_network_failure_recovery_recovery.py",
+        "lines_of_code": 147,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 8178
+      },
+      {
+        "file_path": "tests/recovery/test_memory_overflow_recovery_recovery.py",
+        "lines_of_code": 147,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 8177
+      },
+      {
+        "file_path": "tests/recovery/test_power_failure_recovery_recovery.py",
+        "lines_of_code": 147,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 8165
+      },
+      {
+        "file_path": "tests/recovery/test_consciousness_crash_recovery_recovery.py",
+        "lines_of_code": 147,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 8219
+      },
+      {
+        "file_path": "tests/recovery/test_prk_activation_test_recovery.py",
+        "lines_of_code": 147,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 8143
+      },
+      {
+        "file_path": "tests/stress/test_high_load_consciousness_stress.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/stress/test_concurrent_users_stress_stress.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/stress/test_memory_pressure_test_stress.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/stress/test_long_running_stability_stress.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_llm_consciousness_integration_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_voice_avatar_integration_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_security_consciousness_integration_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_system_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_enterprise_core_integration_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/integration/test_consciousness_memory_integration_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/deterministic/test_llm_output_consistency_deterministic.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/deterministic/test_sdm_loop_validation_deterministic.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/deterministic/test_consciousness_loop_determinism_deterministic.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/deterministic/test_memory_retrieval_determinism_deterministic.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_optimizations_integrated_optimizer_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_adult_mode_adult_system_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_agi_agents_planner_agent_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_voice_stt_engine_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_multimodal_image_main_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_desktop_cross_platform_builder_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_multimodal_video_generator_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_voice_tts_engine_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_lora_training_lora_manager_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_hardware_optimizer_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_world_model_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_immune_immune_kernel_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_avatar_avatar_system_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_agi_agents_validator_agent_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_security_system_fuse_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_api_email_email_client_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_projects_main_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_bootstrap_main_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_modules_monitoring_health_monitor_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/unit/test_mia_core_agi_agents_executor_agent_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/e2e/test_avatar_communication_flow_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/e2e/test_complete_consciousness_cycle_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/e2e/test_enterprise_user_journey_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/e2e/test_internet_learning_flow_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/e2e/test_multimodal_generation_flow_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/test_hardware_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/test_world_model.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/api_email/test_email_client.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/voice/test_tts_engine.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/voice/test_stt_engine.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/adult_mode/test_adult_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/avatar/test_avatar_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/lora_training/test_lora_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/modules/multimodal/image/test_main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/multimodal/test_video_generator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/bootstrap/test_main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/security/test_system_fuse.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "tests/mia/core/immune/test_immune_kernel.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/performance/memory_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/performance/performance_benchmarker.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/performance/consciousness_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/performance/__init__.py",
+        "lines_of_code": 13,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "memory_optimizer.MemoryOptimizer",
+          "consciousness_optimizer.ConsciousnessOptimizer",
+          "performance_benchmarker.PerformanceBenchmarker"
+        ],
+        "size_bytes": 419
+      },
+      {
+        "file_path": "mia/security/access_control.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/cognitive_guard.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/encryption_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/system_fuse.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/__init__.py",
+        "lines_of_code": 17,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "system_fuse.SystemFuse",
+          "security_core.SecurityCore",
+          "encryption_manager.EncryptionManager",
+          "access_control.AccessControl",
+          "audit_system.AuditSystem"
+        ],
+        "size_bytes": 471
+      },
+      {
+        "file_path": "mia/security/security_core.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/integrity_hash.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/network_security.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/sandbox_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/rbac_iam.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/audit_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/behavior_firewall.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/training_guard.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/security/input_sanitization.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/production/report_generator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/production/test_runner.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/production/__init__.py",
+        "lines_of_code": 15,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "validation_core.ProductionValidationCore",
+          "test_runner.ProductionTestRunner",
+          "compliance_checker.ProductionComplianceChecker",
+          "report_generator.ProductionReportGenerator"
+        ],
+        "size_bytes": 535
+      },
+      {
+        "file_path": "mia/production/validation_core.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/production/compliance_checker.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/quality/pae.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/quality/__init__.py",
+        "lines_of_code": 7,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "qpm.QPM",
+          "pae.PAE",
+          "sse.SSE"
+        ],
+        "size_bytes": 133
+      },
+      {
+        "file_path": "mia/quality/qpm.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/quality/sse.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/agi/__init__.py",
+        "lines_of_code": 4,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 61
+      },
+      {
+        "file_path": "mia/desktop/build_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/desktop/deployment_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/desktop/platform_detector.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/desktop/__init__.py",
+        "lines_of_code": 15,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "platform_detector.PlatformDetector",
+          "build_system.BuildSystem",
+          "deployment_manager.DeploymentManager",
+          "cross_platform_utils.CrossPlatformUtils"
+        ],
+        "size_bytes": 449
+      },
+      {
+        "file_path": "mia/desktop/cross_platform_utils.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/immune/__init__.py",
+        "lines_of_code": 4,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 81
+      },
+      {
+        "file_path": "mia/tests/test_enterprise_final.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/__init__.py",
+        "lines_of_code": 12,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "sys",
+          "os",
+          "pathlib.Path"
+        ],
+        "size_bytes": 438
+      },
+      {
+        "file_path": "mia/tests/conftest.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/testing/performance_tester.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/testing/test_runner.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/testing/__init__.py",
+        "lines_of_code": 15,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "test_runner.TestRunner",
+          "test_generator.TestGenerator",
+          "performance_tester.PerformanceTester",
+          "stability_tester.StabilityTester"
+        ],
+        "size_bytes": 430
+      },
+      {
+        "file_path": "mia/testing/test_generator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/testing/enterprise_test_suite.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/testing/stability_tester.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/self_evolution.py",
+        "lines_of_code": 746,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 42309
+      },
+      {
+        "file_path": "mia/core/world_model.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/hardware_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/deterministic_async.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/deterministic_scheduler.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/owner_guard.py",
+        "lines_of_code": 410,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 22638
+      },
+      {
+        "file_path": "mia/core/adaptive_llm.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/system_integrator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/deterministic_memory.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/internet_learning.py",
+        "lines_of_code": 714,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 42312
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_privacy_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_retention_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_audit_trail.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_consent_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/__init__.py",
+        "lines_of_code": 20,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "stability_monitor.enterprise_stability_monitor",
+          "stability_monitor.start_enterprise_monitoring",
+          "stability_monitor.stop_enterprise_monitoring",
+          "stability_monitor.get_enterprise_status",
+          "stability_monitor.get_enterprise_score",
+          "compliance_manager.ComplianceManager"
+        ],
+        "size_bytes": 547
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_breach_response.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/compliance_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/lgpd_transfer_controls.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/enterprise/stability_monitor.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/analysis/__init__.py",
+        "lines_of_code": 16,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "introspective_analyzer.IntrospectiveAnalyzer",
+          "code_metrics.CodeMetrics",
+          "code_metrics.ModuleAnalysis",
+          "system_analyzer.SystemAnalyzer",
+          "quality_analyzer.QualityAnalyzer"
+        ],
+        "size_bytes": 476
+      },
+      {
+        "file_path": "mia/analysis/quality_analyzer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/analysis/system_analyzer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/analysis/introspective_analyzer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/analysis/code_metrics.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/validation/__init__.py",
+        "lines_of_code": 13,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "introspective_validator.ComprehensiveIntrospectiveValidator",
+          "validation_core.ValidationCore",
+          "validation_utils.ValidationUtils"
+        ],
+        "size_bytes": 420
+      },
+      {
+        "file_path": "mia/validation/validation_core.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/validation/validation_utils.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/validation/introspective_validator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/security/test_security_comprehensive.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/stress/test_memory_stress.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/lsp/test_lsp_slovenian.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/integration/test_consciousness_integration.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/deterministic/test_deterministic_core.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/unit/test_memory_core_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/unit/test_consciousness_loop_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/unit/test_adaptive_llm_unit.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/tests/e2e/test_cold_boot_e2e.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/data/project_builder/templates/python_django/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/data/project_builder/templates/python_fastapi/main.py",
+        "lines_of_code": 26,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "fastapi.FastAPI",
+          "fastapi.HTTPException",
+          "fastapi.middleware.cors.CORSMiddleware",
+          "uvicorn"
+        ],
+        "size_bytes": 686
+      },
+      {
+        "file_path": "mia/data/project_builder/templates/python_flask/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/api_email/email_client.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/project_builder/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/voice/stt_engine.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/voice/tts_engine.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/monitoring/health_monitor.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/projects/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/adult_mode/adult_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/avatar/avatar_system.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/lora_training/lora_manager.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/ui/web.py",
+        "lines_of_code": 891,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 40742
+      },
+      {
+        "file_path": "mia/modules/multimodal/image/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/voice/tts/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/modules/voice/stt/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/multimodal/video_generator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/bootstrap/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/memory/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/memory/advanced_optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/security/system_fuse.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/immune/immune_kernel.py",
+        "lines_of_code": 151,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 6093
+      },
+      {
+        "file_path": "mia/core/consciousness/main.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/validator_agent.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/planner_agent.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/__init__.py",
+        "lines_of_code": 9,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "planner.agi_planner",
+          "executor.agi_executor",
+          "validator.agi_validator",
+          "optimizer.agi_optimizer"
+        ],
+        "size_bytes": 325
+      },
+      {
+        "file_path": "mia/core/agi_agents/optimizer.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/executor_agent.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/planner.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/executor.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/agi_agents/optimizer_agent.py",
+        "lines_of_code": 761,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 45795
+      },
+      {
+        "file_path": "mia/core/agi_agents/validator.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/dve.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/pae.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/qpm.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/sse.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/hoel.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/quality_control/rfe.py",
+        "lines_of_code": 721,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 41604
+      },
+      {
+        "file_path": "mia/core/quality_control/qrd.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/immune_system/integrity_guard.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/identity/self_model.py",
+        "lines_of_code": 0,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [],
+        "size_bytes": 0
+      },
+      {
+        "file_path": "mia/core/identity/__init__.py",
+        "lines_of_code": 24,
+        "complexity": 0,
+        "classes": [],
+        "functions": [],
+        "imports": [
+          "self_model.SelfIdentityModel",
+          "self_model.PhysicalAttributes",
+          "self_model.BehavioralTraits",
+          "self_model.PersonalityCore",
+          "self_model.get_self_identity",
+          "self_model.get_self_description",
+          "self_model.perform_self_reflection",
+          "self_model.get_introspective_thoughts"
+        ],
+        "size_bytes": 556
+      }
+    ],
+    "module_analyses": [
+      {
+        "domain": "performance",
+        "file_count": 4,
+        "total_lines": 13,
+        "test_coverage": 0.0,
+        "responsibility_separation": 4,
+        "dependencies": [
+          "memory_optimizer.MemoryOptimizer",
+          "performance_benchmarker.PerformanceBenchmarker",
+          "consciousness_optimizer.ConsciousnessOptimizer"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "security",
+        "file_count": 14,
+        "total_lines": 17,
+        "test_coverage": 0.0,
+        "responsibility_separation": 14,
+        "dependencies": [
+          "access_control.AccessControl",
+          "encryption_manager.EncryptionManager",
+          "system_fuse.SystemFuse",
+          "security_core.SecurityCore",
+          "audit_system.AuditSystem"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "production",
+        "file_count": 5,
+        "total_lines": 15,
+        "test_coverage": 20.0,
+        "responsibility_separation": 5,
+        "dependencies": [
+          "compliance_checker.ProductionComplianceChecker",
+          "report_generator.ProductionReportGenerator",
+          "validation_core.ProductionValidationCore",
+          "test_runner.ProductionTestRunner"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "quality",
+        "file_count": 4,
+        "total_lines": 7,
+        "test_coverage": 0.0,
+        "responsibility_separation": 4,
+        "dependencies": [
+          "qpm.QPM",
+          "pae.PAE",
+          "sse.SSE"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "sandbox",
+        "file_count": 0,
+        "total_lines": 0,
+        "test_coverage": 0.0,
+        "responsibility_separation": 0,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "agi",
+        "file_count": 1,
+        "total_lines": 4,
+        "test_coverage": 0.0,
+        "responsibility_separation": 1,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "desktop",
+        "file_count": 5,
+        "total_lines": 15,
+        "test_coverage": 0.0,
+        "responsibility_separation": 5,
+        "dependencies": [
+          "deployment_manager.DeploymentManager",
+          "cross_platform_utils.CrossPlatformUtils",
+          "build_system.BuildSystem",
+          "platform_detector.PlatformDetector"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "immune",
+        "file_count": 1,
+        "total_lines": 4,
+        "test_coverage": 0.0,
+        "responsibility_separation": 1,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "logs",
+        "file_count": 0,
+        "total_lines": 0,
+        "test_coverage": 0.0,
+        "responsibility_separation": 0,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "config",
+        "file_count": 0,
+        "total_lines": 0,
+        "test_coverage": 0.0,
+        "responsibility_separation": 0,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "tests",
+        "file_count": 12,
+        "total_lines": 12,
+        "test_coverage": 91.66666666666666,
+        "responsibility_separation": 12,
+        "dependencies": [
+          "os",
+          "pathlib.Path",
+          "sys"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "temp",
+        "file_count": 0,
+        "total_lines": 0,
+        "test_coverage": 0.0,
+        "responsibility_separation": 0,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "templates",
+        "file_count": 0,
+        "total_lines": 0,
+        "test_coverage": 0.0,
+        "responsibility_separation": 0,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "data",
+        "file_count": 3,
+        "total_lines": 26,
+        "test_coverage": 0.0,
+        "responsibility_separation": 3,
+        "dependencies": [
+          "uvicorn",
+          "fastapi.HTTPException",
+          "fastapi.middleware.cors.CORSMiddleware",
+          "fastapi.FastAPI"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "modules",
+        "file_count": 13,
+        "total_lines": 891,
+        "test_coverage": 0.0,
+        "responsibility_separation": 13,
+        "dependencies": [],
+        "circular_deps": []
+      },
+      {
+        "domain": "testing",
+        "file_count": 6,
+        "total_lines": 15,
+        "test_coverage": 83.33333333333334,
+        "responsibility_separation": 6,
+        "dependencies": [
+          "test_runner.TestRunner",
+          "performance_tester.PerformanceTester",
+          "stability_tester.StabilityTester",
+          "test_generator.TestGenerator"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "core",
+        "file_count": 36,
+        "total_lines": 3536,
+        "test_coverage": 0.0,
+        "responsibility_separation": 36,
+        "dependencies": [
+          "self_model.PersonalityCore",
+          "self_model.SelfIdentityModel",
+          "self_model.get_self_description",
+          "self_model.get_introspective_thoughts",
+          "executor.agi_executor",
+          "self_model.perform_self_reflection",
+          "self_model.PhysicalAttributes",
+          "self_model.get_self_identity",
+          "optimizer.agi_optimizer",
+          "planner.agi_planner",
+          "self_model.BehavioralTraits",
+          "validator.agi_validator"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "enterprise",
+        "file_count": 9,
+        "total_lines": 20,
+        "test_coverage": 0.0,
+        "responsibility_separation": 9,
+        "dependencies": [
+          "stability_monitor.stop_enterprise_monitoring",
+          "stability_monitor.start_enterprise_monitoring",
+          "stability_monitor.get_enterprise_score",
+          "compliance_manager.ComplianceManager",
+          "stability_monitor.get_enterprise_status",
+          "stability_monitor.enterprise_stability_monitor"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "analysis",
+        "file_count": 5,
+        "total_lines": 16,
+        "test_coverage": 0.0,
+        "responsibility_separation": 5,
+        "dependencies": [
+          "introspective_analyzer.IntrospectiveAnalyzer",
+          "code_metrics.CodeMetrics",
+          "system_analyzer.SystemAnalyzer",
+          "quality_analyzer.QualityAnalyzer",
+          "code_metrics.ModuleAnalysis"
+        ],
+        "circular_deps": []
+      },
+      {
+        "domain": "validation",
+        "file_count": 4,
+        "total_lines": 13,
+        "test_coverage": 0.0,
+        "responsibility_separation": 4,
+        "dependencies": [
+          "validation_core.ValidationCore",
+          "introspective_validator.ComprehensiveIntrospectiveValidator",
+          "validation_utils.ValidationUtils"
+        ],
+        "circular_deps": []
+      }
+    ],
+    "quality_indicators": {
+      "large_files": 1,
+      "complex_files": 0,
+      "modules_with_tests": 3,
+      "modules_with_circular_deps": 0
+    }
+  },
+  "system_analysis": {
+    "timestamp": "2025-12-09T12:51:06.658659",
+    "system_info": {
+      "platform": "linux",
+      "python_version": "3.12.12",
+      "cpu_count": 4,
+      "memory_total_gb": 15.62,
+      "disk_total_gb": 289.56,
+      "disk_free_gb": 269.0,
+      "gpu": "Not detected"
+    },
+    "project_structure": {
+      "total_directories": 335,
+      "total_files": 888,
+      "python_files": 227,
+      "config_files": 197,
+      "test_files": 85,
+      "documentation_files": 60,
+      "main_modules": [
+        "performance",
+        "security",
+        "production",
+        "quality",
+        "sandbox",
+        "agi",
+        "desktop",
+        "immune",
+        "logs",
+        "config",
+        "tests",
+        "temp",
+        "templates",
+        "data",
+        "modules",
+        "testing",
+        "core",
+        "enterprise",
+        "analysis",
+        "validation"
+      ],
+      "structure_score": 90.0
+    },
+    "dependency_analysis": {
+      "requirements_files": [
+        "requirements.txt"
+      ],
+      "total_dependencies": 49,
+      "dependency_health": "unknown",
+      "outdated_dependencies": [],
+      "security_vulnerabilities": []
+    },
+    "configuration_analysis": {
+      "config_files_found": [
+        ".env",
+        "settings.json"
+      ],
+      "environment_variables": 0,
+      "logging_configured": false,
+      "security_config": false,
+      "database_config": false
+    },
+    "infrastructure_readiness": {
+      "docker_support": false,
+      "ci_cd_configured": true,
+      "deployment_ready": false,
+      "monitoring_configured": false,
+      "backup_strategy": false,
+      "scalability_score": 25.0
+    },
+    "architecture_score": 63.75,
+    "architecture_issues": [
+      "No Docker support for containerization"
+    ]
+  },
+  "quality_analysis": {
+    "timestamp": "2025-12-09T12:51:06.665845",
+    "code_style_analysis": {
+      "pep8_compliance": 47.136563876651984,
+      "naming_conventions": 69.16299559471366,
+      "line_length_issues": 728,
+      "import_organization": 71.80616740088107,
+      "style_issues": []
+    },
+    "documentation_analysis": {
+      "docstring_coverage": 90.4838278535151,
+      "readme_quality": 0.0,
+      "inline_comments": 0.0,
+      "documentation_files": 53,
+      "api_documentation": false
+    },
+    "maintainability_analysis": {
+      "cyclomatic_complexity": 3.0954317897371713,
+      "code_duplication": 0.0,
+      "function_length": 21.26846057571965,
+      "class_size": 5.651376146788991,
+      "maintainability_index": 90.99295994993741
+    },
+    "reliability_analysis": {
+      "error_handling_coverage": 49.4055068836045,
+      "defensive_programming": 0.0,
+      "input_validation": 1.5018773466833542,
+      "resource_management": 12.359198998748436
+    },
+    "performance_analysis": {
+      "efficient_algorithms": 0.0,
+      "memory_efficiency": 10.572687224669604,
+      "io_optimization": 46.25550660792951,
+      "caching_usage": 9.691629955947137
+    },
+    "security_analysis": {
+      "input_sanitization": 3.0837004405286343,
+      "secure_coding": 0.0,
+      "credential_management": 3.524229074889868,
+      "security_issues": [
+        "exec() usage in comprehensive_system_audit.py",
+        "eval() usage in tests/security/test_input_validation_security_security.py",
+        "exec() usage in tests/security/test_input_validation_security_security.py",
+        "eval() usage in tests/security/test_authentication_security_security.py",
+        "exec() usage in tests/security/test_authentication_security_security.py",
+        "eval() usage in tests/security/test_authorization_security_security.py",
+        "exec() usage in tests/security/test_authorization_security_security.py",
+        "eval() usage in tests/security/test_data_encryption_security_security.py",
+        "exec() usage in tests/security/test_data_encryption_security_security.py",
+        "exec() usage in mia/core/self_evolution.py",
+        "eval() usage in mia/analysis/quality_analyzer.py",
+        "exec() usage in mia/analysis/quality_analyzer.py",
+        "eval() usage in mia/modules/lora_training/lora_manager.py",
+        "eval() usage in mia/core/agi_agents/validator_agent.py",
+        "exec() usage in mia/core/agi_agents/validator_agent.py",
+        "eval() usage in mia/core/agi_agents/executor_agent.py",
+        "exec() usage in mia/core/agi_agents/executor_agent.py"
+      ]
+    },
+    "quality_score": 57.59,
+    "quality_grade": "F",
+    "improvement_suggestions": [
+      "Improve PEP 8 compliance",
+      "Fix 728 line length issues",
+      "Create or improve README documentation",
+      "Add more error handling to functions",
+      "Address identified security issues"
+    ]
+  },
+  "integration_analysis": {
+    "module_dependencies": {
+      "performance": {
+        "dependencies": [
+          "memory_optimizer.MemoryOptimizer",
+          "performance_benchmarker.PerformanceBenchmarker",
+          "consciousness_optimizer.ConsciousnessOptimizer"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 4
+      },
+      "security": {
+        "dependencies": [
+          "access_control.AccessControl",
+          "encryption_manager.EncryptionManager",
+          "system_fuse.SystemFuse",
+          "security_core.SecurityCore",
+          "audit_system.AuditSystem"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 14
+      },
+      "production": {
+        "dependencies": [
+          "compliance_checker.ProductionComplianceChecker",
+          "report_generator.ProductionReportGenerator",
+          "validation_core.ProductionValidationCore",
+          "test_runner.ProductionTestRunner"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 5
+      },
+      "quality": {
+        "dependencies": [
+          "qpm.QPM",
+          "pae.PAE",
+          "sse.SSE"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 4
+      },
+      "sandbox": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 0
+      },
+      "agi": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 1
+      },
+      "desktop": {
+        "dependencies": [
+          "deployment_manager.DeploymentManager",
+          "cross_platform_utils.CrossPlatformUtils",
+          "build_system.BuildSystem",
+          "platform_detector.PlatformDetector"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 5
+      },
+      "immune": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 1
+      },
+      "logs": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 0
+      },
+      "config": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 0
+      },
+      "tests": {
+        "dependencies": [
+          "os",
+          "pathlib.Path",
+          "sys"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 12
+      },
+      "temp": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 0
+      },
+      "templates": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 0
+      },
+      "data": {
+        "dependencies": [
+          "uvicorn",
+          "fastapi.HTTPException",
+          "fastapi.middleware.cors.CORSMiddleware",
+          "fastapi.FastAPI"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 3
+      },
+      "modules": {
+        "dependencies": [],
+        "circular_deps": [],
+        "responsibility_separation": 13
+      },
+      "testing": {
+        "dependencies": [
+          "test_runner.TestRunner",
+          "performance_tester.PerformanceTester",
+          "stability_tester.StabilityTester",
+          "test_generator.TestGenerator"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 6
+      },
+      "core": {
+        "dependencies": [
+          "self_model.PersonalityCore",
+          "self_model.SelfIdentityModel",
+          "self_model.get_self_description",
+          "self_model.get_introspective_thoughts",
+          "executor.agi_executor",
+          "self_model.perform_self_reflection",
+          "self_model.PhysicalAttributes",
+          "self_model.get_self_identity",
+          "optimizer.agi_optimizer",
+          "planner.agi_planner",
+          "self_model.BehavioralTraits",
+          "validator.agi_validator"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 36
+      },
+      "enterprise": {
+        "dependencies": [
+          "stability_monitor.stop_enterprise_monitoring",
+          "stability_monitor.start_enterprise_monitoring",
+          "stability_monitor.get_enterprise_score",
+          "compliance_manager.ComplianceManager",
+          "stability_monitor.get_enterprise_status",
+          "stability_monitor.enterprise_stability_monitor"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 9
+      },
+      "analysis": {
+        "dependencies": [
+          "introspective_analyzer.IntrospectiveAnalyzer",
+          "code_metrics.CodeMetrics",
+          "system_analyzer.SystemAnalyzer",
+          "quality_analyzer.QualityAnalyzer",
+          "code_metrics.ModuleAnalysis"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 5
+      },
+      "validation": {
+        "dependencies": [
+          "validation_core.ValidationCore",
+          "introspective_validator.ComprehensiveIntrospectiveValidator",
+          "validation_utils.ValidationUtils"
+        ],
+        "circular_deps": [],
+        "responsibility_separation": 4
+      }
+    },
+    "circular_dependencies": [],
+    "loose_coupling_score": 86.0,
+    "cohesion_score": 61.0,
+    "integration_issues": []
+  },
+  "recommendations": [
+    "Refactor 1 large files (>50KB)",
+    "Address identified architecture issues",
+    "Improve overall code quality",
+    "Implement continuous code quality monitoring",
+    "Add more comprehensive documentation",
+    "Increase test coverage across all modules",
+    "Consider implementing design patterns for better architecture"
+  ],
+  "overall_score": 73.68
+}

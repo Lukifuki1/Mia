@@ -1,0 +1,556 @@
+#!/usr/bin/env python3
+"""
+MIA Enterprise AGI - Security Core
+=================================
+
+Core security vulnerability scanning and remediation system.
+"""
+
+import ast
+import os
+import re
+import sys
+import logging
+import hashlib
+import subprocess
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Set
+import json
+import time
+from datetime import datetime
+
+
+class SecurityCore:
+    """Core security vulnerability scanner and remediator"""
+    
+    def __init__(self, project_root: str = "."):
+        self.project_root = Path(project_root)
+        self.logger = self._setup_logging()
+        
+        # Dangerous functions for removal
+        self.dangerous_functions = [
+            'eval', 'exec', 'compile', '__import__',
+            'os.system', 'subprocess.call', 'subprocess.run',
+            'open', 'file', 'input', 'raw_input'
+        ]
+        
+        # Shell injection patterns
+        self.shell_patterns = [
+            r'shell\s*=\s*True',
+            r'os\.system\s*\(',
+            r'subprocess\.call\s*\([^)]*shell\s*=\s*True',
+            r'subprocess\.run\s*\([^)]*shell\s*=\s*True',
+            r'subprocess\.Popen\s*\([^)]*shell\s*=\s*True'
+        ]
+        
+        # SQL injection patterns
+        self.sql_patterns = [
+            r'SELECT\s+.*\s+FROM\s+.*\s+WHERE\s+.*\+',
+            r'INSERT\s+INTO\s+.*\s+VALUES\s*\([^)]*\+',
+            r'UPDATE\s+.*\s+SET\s+.*\+',
+            r'DELETE\s+FROM\s+.*\s+WHERE\s+.*\+'
+        ]
+        
+        # Path traversal patterns
+        self.path_traversal_patterns = [
+            r'\.\./',
+            r'\.\.\\',
+            r'%2e%2e%2f',
+            r'%2e%2e%5c'
+        ]
+        
+        # Hardcoded secrets patterns
+        self.secret_patterns = [
+            r'password\s*=\s*["\'][^"\']+["\']',
+            r'api_key\s*=\s*["\'][^"\']+["\']',
+            r'secret\s*=\s*["\'][^"\']+["\']',
+            r'token\s*=\s*["\'][^"\']+["\']',
+            r'key\s*=\s*["\'][^"\']+["\']'
+        ]
+        
+        self.scan_results = {}
+        self.remediation_log = []
+        
+        self.logger.info("🛡️ Security Core initialized")
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging configuration"""
+        logger = logging.getLogger("MIA.Security.Core")
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _get_deterministic_time(self) -> float:
+        """Return deterministic time for testing"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+    
+    def scan_vulnerabilities(self) -> Dict[str, Any]:
+        """Comprehensive vulnerability scan"""
+        self.logger.info("🔍 Starting comprehensive vulnerability scan...")
+        
+        try:
+            scan_start_time = self._get_build_epoch()
+            
+            # Initialize scan results
+            self.scan_results = {
+                "timestamp": self._get_build_timestamp().isoformat(),
+                "scan_duration": 0,
+                "files_scanned": 0,
+                "vulnerabilities_found": 0,
+                "critical_issues": [],
+                "high_issues": [],
+                "medium_issues": [],
+                "low_issues": [],
+                "file_results": {}
+            }
+            
+            # Scan all Python files
+            python_files = list(self.project_root.rglob("*.py"))
+            self.scan_results["files_scanned"] = len(python_files)
+            
+            for file_path in python_files:
+                try:
+                    file_results = self._scan_file(file_path)
+                    self.scan_results["file_results"][str(file_path)] = file_results
+                    
+                    # Aggregate vulnerabilities by severity
+                    for vuln in file_results.get("vulnerabilities", []):
+                        severity = vuln.get("severity", "low")
+                        self.scan_results[f"{severity}_issues"].append(vuln)
+                        self.scan_results["vulnerabilities_found"] += 1
+                        
+                except Exception as e:
+                    self.logger.error(f"Error scanning {file_path}: {e}")
+            
+            # Calculate scan duration
+            self.scan_results["scan_duration"] = self._get_build_epoch() - scan_start_time
+            
+            # Generate security score
+            security_score = self._calculate_security_score()
+            self.scan_results["security_score"] = security_score
+            
+            self.logger.info(f"✅ Vulnerability scan completed: {self.scan_results['vulnerabilities_found']} issues found")
+            
+            return self.scan_results
+            
+        except Exception as e:
+            self.logger.error(f"Vulnerability scan error: {e}")
+            return {
+                "error": str(e),
+                "scan_completed": False
+            }
+    
+    def _scan_file(self, file_path: Path) -> Dict[str, Any]:
+        """Scan individual file for vulnerabilities"""
+        try:
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+            
+            file_results = {
+                "file_path": str(file_path),
+                "file_size": len(content),
+                "vulnerabilities": []
+            }
+            
+            # Check for dangerous functions
+            dangerous_funcs = self._check_dangerous_functions(content, file_path)
+            file_results["vulnerabilities"].extend(dangerous_funcs)
+            
+            # Check for shell injection
+            shell_injections = self._check_shell_injection(content, file_path)
+            file_results["vulnerabilities"].extend(shell_injections)
+            
+            # Check for SQL injection
+            sql_injections = self._check_sql_injection(content, file_path)
+            file_results["vulnerabilities"].extend(sql_injections)
+            
+            # Check for path traversal
+            path_traversals = self._check_path_traversal(content, file_path)
+            file_results["vulnerabilities"].extend(path_traversals)
+            
+            # Check for hardcoded secrets
+            hardcoded_secrets = self._check_hardcoded_secrets(content, file_path)
+            file_results["vulnerabilities"].extend(hardcoded_secrets)
+            
+            # Check for unsafe imports
+            unsafe_imports = self._check_unsafe_imports(content, file_path)
+            file_results["vulnerabilities"].extend(unsafe_imports)
+            
+            return file_results
+            
+        except Exception as e:
+            return {
+                "file_path": str(file_path),
+                "error": str(e),
+                "vulnerabilities": []
+            }
+    
+    def _check_dangerous_functions(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for dangerous function usage"""
+        vulnerabilities = []
+        
+        for func in self.dangerous_functions:
+            pattern = rf'\b{re.escape(func)}\s*\('
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "dangerous_function",
+                    "severity": "critical",
+                    "function": func,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": f"Dangerous function '{func}' detected",
+                    "recommendation": f"Replace '{func}' with safer alternative"
+                })
+        
+        return vulnerabilities
+    
+    def _check_shell_injection(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for shell injection vulnerabilities"""
+        vulnerabilities = []
+        
+        for pattern in self.shell_patterns:
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "shell_injection",
+                    "severity": "high",
+                    "pattern": pattern,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": "Potential shell injection vulnerability",
+                    "recommendation": "Use shell=False or parameterized commands"
+                })
+        
+        return vulnerabilities
+    
+    def _check_sql_injection(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for SQL injection vulnerabilities"""
+        vulnerabilities = []
+        
+        for pattern in self.sql_patterns:
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "sql_injection",
+                    "severity": "high",
+                    "pattern": pattern,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": "Potential SQL injection vulnerability",
+                    "recommendation": "Use parameterized queries or ORM"
+                })
+        
+        return vulnerabilities
+    
+    def _check_path_traversal(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for path traversal vulnerabilities"""
+        vulnerabilities = []
+        
+        for pattern in self.path_traversal_patterns:
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "path_traversal",
+                    "severity": "medium",
+                    "pattern": pattern,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": "Potential path traversal vulnerability",
+                    "recommendation": "Validate and sanitize file paths"
+                })
+        
+        return vulnerabilities
+    
+    def _check_hardcoded_secrets(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for hardcoded secrets"""
+        vulnerabilities = []
+        
+        for pattern in self.secret_patterns:
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "hardcoded_secret",
+                    "severity": "high",
+                    "pattern": pattern,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": "Hardcoded secret detected",
+                    "recommendation": "Use environment variables or secure key management"
+                })
+        
+        return vulnerabilities
+    
+    def _check_unsafe_imports(self, content: str, file_path: Path) -> List[Dict[str, Any]]:
+        """Check for unsafe imports"""
+        vulnerabilities = []
+        
+        unsafe_modules = ['pickle', 'cPickle', 'marshal', 'shelve']
+        
+        for module in unsafe_modules:
+            pattern = rf'import\s+{re.escape(module)}\b|from\s+{re.escape(module)}\s+import'
+            matches = re.finditer(pattern, content, re.IGNORECASE)
+            
+            for match in matches:
+                line_num = content[:match.start()].count('\n') + 1
+                vulnerabilities.append({
+                    "type": "unsafe_import",
+                    "severity": "medium",
+                    "module": module,
+                    "line": line_num,
+                    "file": str(file_path),
+                    "description": f"Unsafe module '{module}' imported",
+                    "recommendation": f"Consider safer alternatives to '{module}'"
+                })
+        
+        return vulnerabilities
+    
+    def _calculate_security_score(self) -> float:
+        """Calculate overall security score"""
+        try:
+            total_issues = self.scan_results["vulnerabilities_found"]
+            files_scanned = self.scan_results["files_scanned"]
+            
+            if files_scanned == 0:
+                return 1.0
+            
+            # Weight by severity
+            critical_weight = 10
+            high_weight = 5
+            medium_weight = 2
+            low_weight = 1
+            
+            weighted_score = (
+                len(self.scan_results["critical_issues"]) * critical_weight +
+                len(self.scan_results["high_issues"]) * high_weight +
+                len(self.scan_results["medium_issues"]) * medium_weight +
+                len(self.scan_results["low_issues"]) * low_weight
+            )
+            
+            # Calculate score (0.0 to 1.0, where 1.0 is perfect)
+            max_possible_score = files_scanned * critical_weight
+            if max_possible_score == 0:
+                return 1.0
+            
+            score = max(0.0, 1.0 - (weighted_score / max_possible_score))
+            return round(score, 3)
+            
+        except Exception as e:
+            self.logger.error(f"Security score calculation error: {e}")
+            return 0.0
+    
+    def remediate_vulnerabilities(self, auto_fix: bool = False) -> Dict[str, Any]:
+        """Remediate found vulnerabilities"""
+        self.logger.info("🔧 Starting vulnerability remediation...")
+        
+        try:
+            if not self.scan_results:
+                return {
+                    "error": "No scan results available. Run scan_vulnerabilities() first."
+                }
+            
+            remediation_results = {
+                "timestamp": self._get_build_timestamp().isoformat(),
+                "auto_fix_enabled": auto_fix,
+                "fixes_applied": 0,
+                "fixes_failed": 0,
+                "manual_fixes_required": 0,
+                "remediation_log": []
+            }
+            
+            # Process each vulnerability
+            all_vulnerabilities = (
+                self.scan_results["critical_issues"] +
+                self.scan_results["high_issues"] +
+                self.scan_results["medium_issues"] +
+                self.scan_results["low_issues"]
+            )
+            
+            for vuln in all_vulnerabilities:
+                try:
+                    fix_result = self._remediate_vulnerability(vuln, auto_fix)
+                    remediation_results["remediation_log"].append(fix_result)
+                    
+                    if fix_result["status"] == "fixed":
+                        remediation_results["fixes_applied"] += 1
+                    elif fix_result["status"] == "failed":
+                        remediation_results["fixes_failed"] += 1
+                    else:
+                        remediation_results["manual_fixes_required"] += 1
+                        
+                except Exception as e:
+                    self.logger.error(f"Remediation error for {vuln}: {e}")
+                    remediation_results["fixes_failed"] += 1
+            
+            self.logger.info(f"✅ Remediation completed: {remediation_results['fixes_applied']} fixes applied")
+            
+            return remediation_results
+            
+        except Exception as e:
+            self.logger.error(f"Vulnerability remediation error: {e}")
+            return {
+                "error": str(e),
+                "remediation_completed": False
+            }
+    
+    def _remediate_vulnerability(self, vuln: Dict[str, Any], auto_fix: bool) -> Dict[str, Any]:
+        """Remediate individual vulnerability"""
+        vuln_type = vuln.get("type", "unknown")
+        
+        if not auto_fix:
+            return {
+                "vulnerability": vuln,
+                "status": "manual_required",
+                "message": "Auto-fix disabled, manual remediation required"
+            }
+        
+        # Implement specific remediation strategies
+        if vuln_type == "dangerous_function":
+            return self._fix_dangerous_function(vuln)
+        elif vuln_type == "shell_injection":
+            return self._fix_shell_injection(vuln)
+        elif vuln_type == "hardcoded_secret":
+            return self._fix_hardcoded_secret(vuln)
+        else:
+            return {
+                "vulnerability": vuln,
+                "status": "manual_required",
+                "message": f"No automatic fix available for {vuln_type}"
+            }
+    
+    def _fix_dangerous_function(self, vuln: Dict[str, Any]) -> Dict[str, Any]:
+        """Fix dangerous function usage"""
+        # For now, just log the issue - actual fixing would require code analysis
+        return {
+            "vulnerability": vuln,
+            "status": "manual_required",
+            "message": f"Manual review required for dangerous function: {vuln.get('function')}"
+        }
+    
+    def _fix_shell_injection(self, vuln: Dict[str, Any]) -> Dict[str, Any]:
+        """Fix shell injection vulnerability"""
+        return {
+            "vulnerability": vuln,
+            "status": "manual_required",
+            "message": "Manual review required for shell injection vulnerability"
+        }
+    
+    def _fix_hardcoded_secret(self, vuln: Dict[str, Any]) -> Dict[str, Any]:
+        """Fix hardcoded secret"""
+        return {
+            "vulnerability": vuln,
+            "status": "manual_required",
+            "message": "Manual review required for hardcoded secret"
+        }
+    
+    def generate_security_report(self) -> Dict[str, Any]:
+        """Generate comprehensive security report"""
+        self.logger.info("📊 Generating security report...")
+        
+        try:
+            if not self.scan_results:
+                return {
+                    "error": "No scan results available. Run scan_vulnerabilities() first."
+                }
+            
+            report = {
+                "report_timestamp": self._get_build_timestamp().isoformat(),
+                "scan_summary": {
+                    "files_scanned": self.scan_results["files_scanned"],
+                    "vulnerabilities_found": self.scan_results["vulnerabilities_found"],
+                    "security_score": self.scan_results.get("security_score", 0.0),
+                    "scan_duration": self.scan_results["scan_duration"]
+                },
+                "vulnerability_breakdown": {
+                    "critical": len(self.scan_results["critical_issues"]),
+                    "high": len(self.scan_results["high_issues"]),
+                    "medium": len(self.scan_results["medium_issues"]),
+                    "low": len(self.scan_results["low_issues"])
+                },
+                "top_vulnerabilities": self._get_top_vulnerabilities(),
+                "recommendations": self._generate_recommendations(),
+                "compliance_status": self._check_compliance_status()
+            }
+            
+            return report
+            
+        except Exception as e:
+            self.logger.error(f"Security report generation error: {e}")
+            return {
+                "error": str(e),
+                "report_generated": False
+            }
+    
+    def _get_top_vulnerabilities(self) -> List[Dict[str, Any]]:
+        """Get top vulnerabilities by severity"""
+        all_vulns = (
+            self.scan_results["critical_issues"] +
+            self.scan_results["high_issues"] +
+            self.scan_results["medium_issues"]
+        )
+        
+        # Sort by severity and return top 10
+        severity_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+        sorted_vulns = sorted(
+            all_vulns,
+            key=lambda x: severity_order.get(x.get("severity", "low"), 3)
+        )
+        
+        return sorted_vulns[:10]
+    
+    def _generate_recommendations(self) -> List[str]:
+        """Generate security recommendations"""
+        recommendations = []
+        
+        if self.scan_results["critical_issues"]:
+            recommendations.append("Address critical vulnerabilities immediately")
+        
+        if self.scan_results["high_issues"]:
+            recommendations.append("Review and fix high-severity issues")
+        
+        if len(self.scan_results["critical_issues"]) + len(self.scan_results["high_issues"]) > 10:
+            recommendations.append("Consider implementing automated security testing")
+        
+        if self.scan_results.get("security_score", 0) < 0.8:
+            recommendations.append("Improve overall security posture")
+        
+        recommendations.extend([
+            "Implement regular security scans",
+            "Use static analysis tools in CI/CD pipeline",
+            "Conduct security code reviews",
+            "Implement secure coding practices"
+        ])
+        
+        return recommendations
+    
+    def _check_compliance_status(self) -> Dict[str, Any]:
+        """Check compliance with security standards"""
+        security_score = self.scan_results.get("security_score", 0.0)
+        critical_issues = len(self.scan_results["critical_issues"])
+        high_issues = len(self.scan_results["high_issues"])
+        
+        compliance_status = {
+            "overall_compliant": security_score >= 0.9 and critical_issues == 0,
+            "security_score": security_score,
+            "critical_issues_count": critical_issues,
+            "high_issues_count": high_issues,
+            "compliance_level": "high" if security_score >= 0.9 else "medium" if security_score >= 0.7 else "low"
+        }
+        
+        return compliance_status

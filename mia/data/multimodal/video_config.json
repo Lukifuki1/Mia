@@ -1,0 +1,68 @@
+{
+  "enabled": true,
+  "max_concurrent_generations": 2,
+  "default_fps": 24,
+  "default_duration": 5.0,
+  "default_resolution": [
+    1280,
+    720
+  ],
+  "output_formats": [
+    "mp4",
+    "avi",
+    "mov"
+  ],
+  "quality_presets": {
+    "low": {
+      "resolution": [
+        640,
+        480
+      ],
+      "bitrate": "1M",
+      "fps": 15
+    },
+    "medium": {
+      "resolution": [
+        1280,
+        720
+      ],
+      "bitrate": "3M",
+      "fps": 24
+    },
+    "high": {
+      "resolution": [
+        1920,
+        1080
+      ],
+      "bitrate": "8M",
+      "fps": 30
+    },
+    "ultra": {
+      "resolution": [
+        3840,
+        2160
+      ],
+      "bitrate": "20M",
+      "fps": 60
+    }
+  },
+  "models": {
+    "text_to_video": {
+      "enabled": true,
+      "model_path": "models/text2video",
+      "max_duration": 10.0,
+      "batch_size": 1
+    },
+    "image_to_video": {
+      "enabled": true,
+      "model_path": "models/img2video",
+      "max_duration": 15.0,
+      "batch_size": 2
+    }
+  },
+  "ffmpeg": {
+    "path": "ffmpeg",
+    "threads": 4,
+    "hardware_acceleration": "auto"
+  }
+}

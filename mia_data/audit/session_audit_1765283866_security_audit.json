@@ -1,0 +1,13 @@
+{
+  "session_id": "audit_1765283866_security_audit",
+  "session_name": "security_audit",
+  "description": "Comprehensive security audit",
+  "start_time": "2025-12-09T12:37:46.363413",
+  "end_time": "2025-12-09T12:37:46.477592",
+  "events_logged": 2,
+  "categories_used": [
+    "security",
+    "system"
+  ],
+  "status": "completed"
+}

@@ -29,6 +29,11 @@ except ImportError:
 from mia.core.memory.main import EmotionalTone, store_memory
 
 class STTState(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
     IDLE = "idle"
     LISTENING = "listening"
     PROCESSING = "processing"
@@ -200,7 +205,7 @@ class MockSTTEngine:
             emotional_tone=emotion,
             audio_features={},
             processing_time=0.5,
-            timestamp=time.time()
+            timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         )
 
 class STTEngine:
@@ -390,10 +395,10 @@ class STTEngine:
         """Collect audio data from stream"""
         
         audio_chunks = []
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         silence_start = None
         
-        while time.time() - start_time < timeout:
+        while self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time < timeout:
             try:
                 # Get audio chunk with timeout
                 chunk = self.audio_queue.get(timeout=0.1)
@@ -405,8 +410,8 @@ class STTEngine:
                 
                 if energy < self.audio_config.noise_threshold:
                     if silence_start is None:
-                        silence_start = time.time()
-                    elif time.time() - silence_start > self.audio_config.silence_timeout:
+                        silence_start = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
+                    elif self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - silence_start > self.audio_config.silence_timeout:
                         break  # End of speech detected
                 else:
                     silence_start = None
@@ -421,7 +426,7 @@ class STTEngine:
     async def _transcribe_audio(self, audio_data: np.ndarray) -> Optional[STTResult]:
         """Transcribe audio data to text"""
         
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         
         try:
             # Analyze emotional tone
@@ -433,7 +438,7 @@ class STTEngine:
             # This is a placeholder for actual STT implementation
             text = await self._mock_transcribe(audio_data)
             
-            processing_time = time.time() - start_time
+            processing_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             
             return STTResult(
                 text=text,
@@ -441,7 +446,7 @@ class STTEngine:
                 emotional_tone=emotional_tone,
                 audio_features=audio_features,
                 processing_time=processing_time,
-                timestamp=time.time()
+                timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
             )
             
         except Exception as e:

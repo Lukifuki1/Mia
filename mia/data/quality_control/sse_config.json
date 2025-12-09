@@ -1,0 +1,39 @@
+{
+  "enabled": true,
+  "evaluation_interval": 60,
+  "baseline_window": 3600,
+  "stability_window": 1800,
+  "max_metrics_per_component": 1000,
+  "stability_thresholds": {
+    "highly_stable": 0.95,
+    "stable": 0.85,
+    "moderate": 0.7,
+    "unstable": 0.5,
+    "critical": 0.3
+  },
+  "deviation_thresholds": {
+    "low": 0.05,
+    "medium": 0.15,
+    "high": 0.3,
+    "critical": 0.5
+  },
+  "anomaly_detection": {
+    "enabled": true,
+    "sensitivity": 2.0,
+    "min_samples": 10
+  },
+  "trend_analysis": {
+    "enabled": true,
+    "trend_window": 3600,
+    "significance_threshold": 0.05
+  },
+  "component_weights": {
+    "system": 1.0,
+    "module": 0.8,
+    "process": 0.6,
+    "service": 0.7,
+    "memory": 0.9,
+    "network": 0.8,
+    "storage": 0.7
+  }
+}

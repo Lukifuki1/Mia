@@ -1,0 +1,55 @@
+{
+  "benchmark_timestamp": 1765281594.6670594,
+  "total_duration": 20.002466440200806,
+  "memory_benchmark": {
+    "benchmark_duration": 20.00226092338562,
+    "operations_completed": 480600,
+    "benchmark_ops_per_second": 24027.283807607324,
+    "target_achieved": true,
+    "performance_metrics": {
+      "ops_per_second": 24026.78491758466,
+      "total_operations": 480600,
+      "uptime_seconds": 20.002676248550415,
+      "avg_operation_time_ms": 1.4560327529907227,
+      "cache_size": 50,
+      "cache_hit_rate": 1.0,
+      "memory_stats": {
+        "stores": 240300,
+        "store_time": 335.3140456676483,
+        "retrievals": 240300,
+        "retrieve_time": 328.4031937122345,
+        "misses": 0
+      }
+    }
+  },
+  "consciousness_benchmark": {
+    "benchmark_duration": 20.000617265701294,
+    "requests_completed": 150860,
+    "requests_per_second": 7542.767205425563,
+    "avg_response_time": 0.0002830817699432373,
+    "target_achieved": true,
+    "performance_metrics": {
+      "avg_response_time": 0.0002830817699432373,
+      "target_achieved": true,
+      "total_requests": 150860,
+      "successful_responses": 150860,
+      "success_rate": 1.0,
+      "consciousness_state": {
+        "awareness_level": 0.95,
+        "processing_load": 1.0,
+        "response_readiness": false,
+        "last_update": 1765281594.6651585
+      },
+      "cache_size": 0
+    }
+  },
+  "overall_performance": {
+    "memory_score": 100.0,
+    "consciousness_score": 100.0,
+    "overall_score": 100.0,
+    "memory_target_achieved": true,
+    "consciousness_target_achieved": true,
+    "all_targets_achieved": true,
+    "performance_grade": "A+"
+  }
+}

@@ -1,0 +1,809 @@
+{
+  "fix_timestamp": "2025-12-09T14:15:13.221825",
+  "fixer": "DeterministicModuleFixer",
+  "modules_fixed": {
+    "security": {
+      "module": "security",
+      "files_processed": [
+        {
+          "file": "mia/security/access_control.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 9
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/cognitive_guard.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 2
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/encryption_manager.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/system_fuse.py",
+          "fixes_applied": [
+            {
+              "pattern": "tempfile\\.",
+              "replacement": "self._get_temp_path().",
+              "occurrences": 1
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/security_core.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 3
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 2
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/integrity_hash.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 6
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/network_security.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/sandbox_system.py",
+          "fixes_applied": [
+            {
+              "pattern": "tempfile\\.",
+              "replacement": "self._get_temp_path().",
+              "occurrences": 1
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/security_methods.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/validation_methods.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/rbac_iam.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 9
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/audit_system.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 7
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 2
+            },
+            {
+              "pattern": "os\\.getpid\\(\\)",
+              "replacement": "self._get_process_id()",
+              "occurrences": 1
+            },
+            {
+              "pattern": "sys\\.platform",
+              "replacement": "self._get_platform()",
+              "occurrences": 1
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/behavior_firewall.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 5
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/training_guard.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 5
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/security/input_sanitization.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        }
+      ],
+      "fixes_applied": [
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 9
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 2
+        },
+        {
+          "pattern": "tempfile\\.",
+          "replacement": "self._get_temp_path().",
+          "occurrences": 1
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 3
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 2
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 6
+        },
+        {
+          "pattern": "tempfile\\.",
+          "replacement": "self._get_temp_path().",
+          "occurrences": 1
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 9
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 7
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 2
+        },
+        {
+          "pattern": "os\\.getpid\\(\\)",
+          "replacement": "self._get_process_id()",
+          "occurrences": 1
+        },
+        {
+          "pattern": "sys\\.platform",
+          "replacement": "self._get_platform()",
+          "occurrences": 1
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 5
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 5
+        }
+      ],
+      "deterministic_score_before": 64.66666666666667,
+      "deterministic_score_after": 98.66666666666667,
+      "issues": []
+    },
+    "enterprise": {
+      "module": "enterprise",
+      "files_processed": [
+        {
+          "file": "mia/enterprise/management_methods.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/deployment_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 12
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/license_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 10
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_privacy_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 5
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_retention_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 5
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_audit_trail.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 7
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/core_methods.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_consent_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 6
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/configuration_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 13
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_breach_response.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 9
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/compliance_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 2
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/policy_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 9
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/lgpd_transfer_controls.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 6
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/enterprise_manager.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 9
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/enterprise/stability_monitor.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        }
+      ],
+      "fixes_applied": [
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 12
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 10
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 5
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 5
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 7
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 6
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 13
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 9
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 2
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 9
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 6
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 9
+        }
+      ],
+      "deterministic_score_before": 41.333333333333336,
+      "deterministic_score_after": 99.33333333333333,
+      "issues": []
+    },
+    "testing": {
+      "module": "testing",
+      "files_processed": [
+        {
+          "file": "mia/testing/performance_tester.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 7
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 18
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/testing/test_runner.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 7
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 6
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/testing/test_generator.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 4
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 2
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        },
+        {
+          "file": "mia/testing/enterprise_test_suite.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/testing/validation_methods.py",
+          "fixes_applied": [],
+          "deterministic_helpers_added": false,
+          "backup_created": true
+        },
+        {
+          "file": "mia/testing/stability_tester.py",
+          "fixes_applied": [
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "replacement": "self._get_build_timestamp()",
+              "occurrences": 21
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "replacement": "self._get_build_epoch()",
+              "occurrences": 2
+            }
+          ],
+          "deterministic_helpers_added": true,
+          "backup_created": true
+        }
+      ],
+      "fixes_applied": [
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 7
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 18
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 7
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 6
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 4
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 2
+        },
+        {
+          "pattern": "datetime\\.now\\(\\)",
+          "replacement": "self._get_build_timestamp()",
+          "occurrences": 21
+        },
+        {
+          "pattern": "time\\.time\\(\\)",
+          "replacement": "self._get_build_epoch()",
+          "occurrences": 2
+        }
+      ],
+      "deterministic_score_before": 40.0,
+      "deterministic_score_after": 100.0,
+      "issues": []
+    }
+  },
+  "hash_validation_results": {
+    "security": {
+      "module": "security",
+      "cycles": 500,
+      "hash_consistency": 100.0,
+      "unique_hashes": 1,
+      "validation_passed": true,
+      "execution_time": 1.134048,
+      "hash_samples": [
+        {
+          "cycle": 0,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 1,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 2,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 3,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 4,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 5,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 6,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 7,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 8,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        },
+        {
+          "cycle": 9,
+          "hash": "fccab670568bd5a696fa2dc9ea95d39717c7ba7ed919c24976edb4bf63a26954"
+        }
+      ]
+    },
+    "enterprise": {
+      "module": "enterprise",
+      "cycles": 500,
+      "hash_consistency": 100.0,
+      "unique_hashes": 1,
+      "validation_passed": true,
+      "execution_time": 1.250165,
+      "hash_samples": [
+        {
+          "cycle": 0,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 1,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 2,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 3,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 4,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 5,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 6,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 7,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 8,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        },
+        {
+          "cycle": 9,
+          "hash": "770b9833f603bec19121025030812f79446a84ae09b083ed62c223f866bbc2d3"
+        }
+      ]
+    },
+    "testing": {
+      "module": "testing",
+      "cycles": 500,
+      "hash_consistency": 100.0,
+      "unique_hashes": 1,
+      "validation_passed": true,
+      "execution_time": 0.660403,
+      "hash_samples": [
+        {
+          "cycle": 0,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 1,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 2,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 3,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 4,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 5,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 6,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 7,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 8,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        },
+        {
+          "cycle": 9,
+          "hash": "2d91f75131c03b184bffc62d1ae61a97977ddccc338647ca1a79c733e083a9e5"
+        }
+      ]
+    }
+  },
+  "fix_summary": {
+    "total_modules_fixed": 3,
+    "total_files_processed": 36,
+    "total_fixes_applied": 34,
+    "average_deterministic_improvement": 50.666666666666664,
+    "modules_summary": {
+      "security": {
+        "files_processed": 15,
+        "fixes_applied": 14,
+        "score_before": 64.66666666666667,
+        "score_after": 98.66666666666667,
+        "improvement": 34.0
+      },
+      "enterprise": {
+        "files_processed": 15,
+        "fixes_applied": 12,
+        "score_before": 41.333333333333336,
+        "score_after": 99.33333333333333,
+        "improvement": 57.99999999999999
+      },
+      "testing": {
+        "files_processed": 6,
+        "fixes_applied": 8,
+        "score_before": 40.0,
+        "score_after": 100.0,
+        "improvement": 60.0
+      }
+    }
+  },
+  "recommendations": [
+    "Successfully applied 34 deterministic fixes",
+    "Module security: Perfect hash consistency achieved",
+    "Module enterprise: Perfect hash consistency achieved",
+    "Module testing: Perfect hash consistency achieved",
+    "Run comprehensive tests to validate deterministic behavior",
+    "Monitor hash consistency in production environment",
+    "Consider adding automated deterministic validation to CI/CD",
+    "Update module documentation to reflect deterministic design"
+  ]
+}

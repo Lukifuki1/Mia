@@ -1,0 +1,33 @@
+{
+  "super_admin": {
+    "name": "Super Administrator",
+    "description": "Full system access",
+    "permissions": [
+      "*"
+    ]
+  },
+  "admin": {
+    "name": "Administrator",
+    "description": "Administrative access",
+    "permissions": [
+      "user_management",
+      "system_config",
+      "security_audit"
+    ]
+  },
+  "user": {
+    "name": "Standard User",
+    "description": "Basic user access",
+    "permissions": [
+      "basic_access",
+      "profile_edit"
+    ]
+  },
+  "guest": {
+    "name": "Guest",
+    "description": "Limited read-only access",
+    "permissions": [
+      "read_only"
+    ]
+  }
+}

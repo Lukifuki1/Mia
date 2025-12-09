@@ -1,0 +1,1620 @@
+{
+  "validation_timestamp": "2025-12-09T14:17:42.151079",
+  "validator": "FinalProductionValidator",
+  "module_validations": {
+    "security": {
+      "module_path": "mia/security",
+      "deterministic_score": 87.33333333333333,
+      "isolation_score": 87.33333333333333,
+      "side_effect_score": 74.59331550802139,
+      "documentation_score": 87.54032258938392,
+      "overall_score": 84.20007619101798,
+      "production_ready": true,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "access_control.py",
+          "analysis": {
+            "file_path": "mia/security/access_control.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 37.5,
+            "documentation_score": 96.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 590,
+              "classes": 2,
+              "functions": 16,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "cognitive_guard.py",
+          "analysis": {
+            "file_path": "mia/security/cognitive_guard.py",
+            "deterministic_score": 95.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 59.09090909090909,
+            "documentation_score": 90.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 235,
+              "classes": 1,
+              "functions": 11,
+              "imports": 11,
+              "complexity_score": 70.0
+            }
+          }
+        },
+        {
+          "file": "encryption_manager.py",
+          "analysis": {
+            "file_path": "mia/security/encryption_manager.py",
+            "deterministic_score": 65.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 53.57142857142857,
+            "documentation_score": 76.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 517,
+              "classes": 1,
+              "functions": 14,
+              "imports": 16,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "system_fuse.py",
+          "analysis": {
+            "file_path": "mia/security/system_fuse.py",
+            "deterministic_score": 65.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 68.33333333333333,
+            "documentation_score": 64.68085106382978,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 594,
+              "classes": 8,
+              "functions": 39,
+              "imports": 15,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "security_core.py",
+          "analysis": {
+            "file_path": "mia/security/security_core.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 69.04761904761905,
+            "documentation_score": 97.27272727272728,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 556,
+              "classes": 1,
+              "functions": 21,
+              "imports": 12,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "integrity_hash.py",
+          "analysis": {
+            "file_path": "mia/security/integrity_hash.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 47.05882352941177,
+            "documentation_score": 93.33333333333333,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 372,
+              "classes": 1,
+              "functions": 17,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "network_security.py",
+          "analysis": {
+            "file_path": "mia/security/network_security.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 55.0,
+            "side_effect_score": 97.5,
+            "documentation_score": 93.33333333333333,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 161,
+              "classes": 1,
+              "functions": 8,
+              "imports": 9,
+              "complexity_score": 46.0
+            }
+          }
+        },
+        {
+          "file": "sandbox_system.py",
+          "analysis": {
+            "file_path": "mia/security/sandbox_system.py",
+            "deterministic_score": 50.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 72.33333333333334,
+            "documentation_score": 58.82352941176471,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 349,
+              "classes": 4,
+              "functions": 30,
+              "imports": 14,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "security_methods.py",
+          "analysis": {
+            "file_path": "mia/security/security_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.85714285714286,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 655,
+              "classes": 1,
+              "functions": 27,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "validation_methods.py",
+          "analysis": {
+            "file_path": "mia/security/validation_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 268,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 78.0
+            }
+          }
+        },
+        {
+          "file": "rbac_iam.py",
+          "analysis": {
+            "file_path": "mia/security/rbac_iam.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 76.66666666666667,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 265,
+              "classes": 5,
+              "functions": 13,
+              "imports": 8,
+              "complexity_score": 56.0
+            }
+          }
+        },
+        {
+          "file": "audit_system.py",
+          "analysis": {
+            "file_path": "mia/security/audit_system.py",
+            "deterministic_score": 85.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 68.75,
+            "documentation_score": 96.47058823529412,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 622,
+              "classes": 1,
+              "functions": 16,
+              "imports": 10,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "behavior_firewall.py",
+          "analysis": {
+            "file_path": "mia/security/behavior_firewall.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 65.0,
+            "documentation_score": 88.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 250,
+              "classes": 2,
+              "functions": 8,
+              "imports": 6,
+              "complexity_score": 66.0
+            }
+          }
+        },
+        {
+          "file": "training_guard.py",
+          "analysis": {
+            "file_path": "mia/security/training_guard.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 85.0,
+            "side_effect_score": 80.71428571428571,
+            "documentation_score": 92.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 327,
+              "classes": 1,
+              "functions": 14,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "input_sanitization.py",
+          "analysis": {
+            "file_path": "mia/security/input_sanitization.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 85.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 95.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 180,
+              "classes": 1,
+              "functions": 11,
+              "imports": 6,
+              "complexity_score": 80.0
+            }
+          }
+        }
+      ]
+    },
+    "production": {
+      "module_path": "mia/production",
+      "deterministic_score": 70.83333333333333,
+      "isolation_score": 93.33333333333333,
+      "side_effect_score": 89.16168261563,
+      "documentation_score": 89.3348889691096,
+      "overall_score": 85.66580956285156,
+      "production_ready": false,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/production/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 96.84210526315789,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 214,
+              "classes": 1,
+              "functions": 18,
+              "imports": 8,
+              "complexity_score": 44.0
+            }
+          }
+        },
+        {
+          "file": "report_generator.py",
+          "analysis": {
+            "file_path": "mia/production/report_generator.py",
+            "deterministic_score": 50.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 76.25,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 573,
+              "classes": 1,
+              "functions": 15,
+              "imports": 10,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "test_runner.py",
+          "analysis": {
+            "file_path": "mia/production/test_runner.py",
+            "deterministic_score": 55.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 77.27272727272728,
+            "documentation_score": 92.17391304347825,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 729,
+              "classes": 1,
+              "functions": 22,
+              "imports": 15,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/production/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.27272727272728,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 362,
+              "classes": 1,
+              "functions": 21,
+              "imports": 8,
+              "complexity_score": 86.0
+            }
+          }
+        },
+        {
+          "file": "validation_core.py",
+          "analysis": {
+            "file_path": "mia/production/validation_core.py",
+            "deterministic_score": 65.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 68.94736842105263,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 588,
+              "classes": 1,
+              "functions": 19,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "compliance_checker.py",
+          "analysis": {
+            "file_path": "mia/production/compliance_checker.py",
+            "deterministic_score": 55.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 88.75,
+            "documentation_score": 76.47058823529412,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 516,
+              "classes": 1,
+              "functions": 16,
+              "imports": 10,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "testing": {
+      "module_path": "mia/testing",
+      "deterministic_score": 86.66666666666667,
+      "isolation_score": 92.5,
+      "side_effect_score": 81.07022607022607,
+      "documentation_score": 88.22580318232492,
+      "overall_score": 87.11567397980441,
+      "production_ready": true,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "performance_tester.py",
+          "analysis": {
+            "file_path": "mia/testing/performance_tester.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 75.45454545454545,
+            "documentation_score": 86.95652173913044,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 595,
+              "classes": 1,
+              "functions": 22,
+              "imports": 10,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "test_runner.py",
+          "analysis": {
+            "file_path": "mia/testing/test_runner.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 82.14285714285714,
+            "documentation_score": 76.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 545,
+              "classes": 1,
+              "functions": 14,
+              "imports": 14,
+              "complexity_score": 96.0
+            }
+          }
+        },
+        {
+          "file": "test_generator.py",
+          "analysis": {
+            "file_path": "mia/testing/test_generator.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 93.57142857142857,
+            "documentation_score": 76.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 507,
+              "classes": 1,
+              "functions": 14,
+              "imports": 9,
+              "complexity_score": 90.0
+            }
+          }
+        },
+        {
+          "file": "enterprise_test_suite.py",
+          "analysis": {
+            "file_path": "mia/testing/enterprise_test_suite.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 98.88888888888889,
+            "documentation_score": 94.54545454545455,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 568,
+              "classes": 4,
+              "functions": 18,
+              "imports": 12,
+              "complexity_score": 92.0
+            }
+          }
+        },
+        {
+          "file": "validation_methods.py",
+          "analysis": {
+            "file_path": "mia/testing/validation_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 98.46153846153845,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 1213,
+              "classes": 1,
+              "functions": 38,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "stability_tester.py",
+          "analysis": {
+            "file_path": "mia/testing/stability_tester.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 36.36363636363636,
+            "documentation_score": 97.3913043478261,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 765,
+              "classes": 1,
+              "functions": 22,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "compliance": {
+      "module_path": "mia/compliance",
+      "deterministic_score": 86.66666666666667,
+      "isolation_score": 87.77777777777777,
+      "side_effect_score": 85.2880658436214,
+      "documentation_score": 86.35349190119173,
+      "overall_score": 86.52150054731439,
+      "production_ready": true,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/compliance/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.3913043478261,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 410,
+              "classes": 1,
+              "functions": 22,
+              "imports": 8,
+              "complexity_score": 76.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_manager.py",
+          "analysis": {
+            "file_path": "mia/compliance/lgpd_manager.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 68.88888888888889,
+            "documentation_score": 77.14285714285714,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 498,
+              "classes": 3,
+              "functions": 18,
+              "imports": 13,
+              "complexity_score": 96.0
+            }
+          }
+        },
+        {
+          "file": "consent_manager.py",
+          "analysis": {
+            "file_path": "mia/compliance/consent_manager.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 80.55555555555556,
+            "documentation_score": 77.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 465,
+              "classes": 2,
+              "functions": 18,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/compliance/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 98.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 755,
+              "classes": 1,
+              "functions": 29,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "data_processor.py",
+          "analysis": {
+            "file_path": "mia/compliance/data_processor.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 81.66666666666667,
+            "documentation_score": 77.6923076923077,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 504,
+              "classes": 2,
+              "functions": 24,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "privacy_manager.py",
+          "analysis": {
+            "file_path": "mia/compliance/privacy_manager.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 85.0,
+            "side_effect_score": 66.66666666666667,
+            "documentation_score": 78.18181818181819,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 695,
+              "classes": 3,
+              "functions": 30,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "security_methods.py",
+          "analysis": {
+            "file_path": "mia/compliance/security_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 96.84210526315789,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 214,
+              "classes": 1,
+              "functions": 18,
+              "imports": 8,
+              "complexity_score": 44.0
+            }
+          }
+        },
+        {
+          "file": "validation_methods.py",
+          "analysis": {
+            "file_path": "mia/compliance/validation_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 272,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 78.0
+            }
+          }
+        },
+        {
+          "file": "audit_system.py",
+          "analysis": {
+            "file_path": "mia/compliance/audit_system.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 85.0,
+            "side_effect_score": 69.81481481481481,
+            "documentation_score": 77.93103448275863,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 625,
+              "classes": 2,
+              "functions": 27,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "enterprise": {
+      "module_path": "mia/enterprise",
+      "deterministic_score": 94.66666666666667,
+      "isolation_score": 97.33333333333333,
+      "side_effect_score": 87.13457131336614,
+      "documentation_score": 90.88771733394158,
+      "overall_score": 92.50557216182693,
+      "production_ready": true,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/enterprise/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.5,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 454,
+              "classes": 1,
+              "functions": 23,
+              "imports": 8,
+              "complexity_score": 84.0
+            }
+          }
+        },
+        {
+          "file": "deployment_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/deployment_manager.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 65.65217391304348,
+            "documentation_score": 97.6923076923077,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 675,
+              "classes": 3,
+              "functions": 23,
+              "imports": 7,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "license_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/license_manager.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 81.84210526315789,
+            "documentation_score": 97.27272727272728,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 516,
+              "classes": 3,
+              "functions": 19,
+              "imports": 7,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_privacy_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_privacy_manager.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 98.57142857142857,
+            "documentation_score": 92.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 247,
+              "classes": 1,
+              "functions": 14,
+              "imports": 6,
+              "complexity_score": 66.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_retention_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_retention_manager.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 91.42857142857142,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 113,
+              "classes": 1,
+              "functions": 6,
+              "imports": 3,
+              "complexity_score": 24.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_audit_trail.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_audit_trail.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 88.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 187,
+              "classes": 1,
+              "functions": 9,
+              "imports": 4,
+              "complexity_score": 28.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/enterprise/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.77777777777777,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 627,
+              "classes": 1,
+              "functions": 26,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_consent_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_consent_manager.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 93.33333333333333,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 156,
+              "classes": 1,
+              "functions": 8,
+              "imports": 4,
+              "complexity_score": 26.0
+            }
+          }
+        },
+        {
+          "file": "configuration_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/configuration_manager.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 64.54545454545455,
+            "documentation_score": 77.5,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 706,
+              "classes": 2,
+              "functions": 22,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_breach_response.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_breach_response.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 89.0909090909091,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 245,
+              "classes": 1,
+              "functions": 10,
+              "imports": 4,
+              "complexity_score": 56.0
+            }
+          }
+        },
+        {
+          "file": "compliance_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/compliance_manager.py",
+            "deterministic_score": 80.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 99.62962962962963,
+            "documentation_score": 69.47368421052632,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 448,
+              "classes": 3,
+              "functions": 54,
+              "imports": 7,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "policy_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/policy_manager.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 70.0,
+            "documentation_score": 97.3913043478261,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 604,
+              "classes": 3,
+              "functions": 20,
+              "imports": 6,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "lgpd_transfer_controls.py",
+          "analysis": {
+            "file_path": "mia/enterprise/lgpd_transfer_controls.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 91.42857142857142,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 183,
+              "classes": 1,
+              "functions": 6,
+              "imports": 3,
+              "complexity_score": 42.0
+            }
+          }
+        },
+        {
+          "file": "enterprise_manager.py",
+          "analysis": {
+            "file_path": "mia/enterprise/enterprise_manager.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 59.0,
+            "documentation_score": 97.27272727272728,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 653,
+              "classes": 2,
+              "functions": 20,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "stability_monitor.py",
+          "analysis": {
+            "file_path": "mia/enterprise/stability_monitor.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 67.77777777777777,
+            "documentation_score": 86.15384615384616,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 849,
+              "classes": 4,
+              "functions": 9,
+              "imports": 13,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "verification": {
+      "module_path": "mia/verification",
+      "deterministic_score": 76.42857142857143,
+      "isolation_score": 72.14285714285714,
+      "side_effect_score": 95.35538317891259,
+      "documentation_score": 96.89182353103185,
+      "overall_score": 85.20465882034325,
+      "production_ready": false,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/verification/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 96.84210526315789,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 214,
+              "classes": 1,
+              "functions": 18,
+              "imports": 8,
+              "complexity_score": 44.0
+            }
+          }
+        },
+        {
+          "file": "performance_monitor.py",
+          "analysis": {
+            "file_path": "mia/verification/performance_monitor.py",
+            "deterministic_score": 50.0,
+            "isolation_score": 85.0,
+            "side_effect_score": 86.47058823529412,
+            "documentation_score": 96.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 507,
+              "classes": 1,
+              "functions": 17,
+              "imports": 8,
+              "complexity_score": 96.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/verification/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 98.23529411764706,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 986,
+              "classes": 1,
+              "functions": 33,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "package_tester.py",
+          "analysis": {
+            "file_path": "mia/verification/package_tester.py",
+            "deterministic_score": 50.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 93.66666666666667,
+            "documentation_score": 96.25,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 545,
+              "classes": 1,
+              "functions": 15,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "validation_methods.py",
+          "analysis": {
+            "file_path": "mia/verification/validation_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.6923076923077,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 556,
+              "classes": 1,
+              "functions": 25,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "system_validator.py",
+          "analysis": {
+            "file_path": "mia/verification/system_validator.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 45.0,
+            "side_effect_score": 98.46153846153847,
+            "documentation_score": 95.71428571428572,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 592,
+              "classes": 1,
+              "functions": 13,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "platform_verifier.py",
+          "analysis": {
+            "file_path": "mia/verification/platform_verifier.py",
+            "deterministic_score": 60.0,
+            "isolation_score": 60.0,
+            "side_effect_score": 88.88888888888889,
+            "documentation_score": 96.84210526315789,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 587,
+              "classes": 1,
+              "functions": 18,
+              "imports": 14,
+              "complexity_score": 98.0
+            }
+          }
+        }
+      ]
+    },
+    "analysis": {
+      "module_path": "mia/analysis",
+      "deterministic_score": 76.66666666666667,
+      "isolation_score": 89.16666666666667,
+      "side_effect_score": 97.52764263600177,
+      "documentation_score": 86.9673202614379,
+      "overall_score": 87.58207405769326,
+      "production_ready": false,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/analysis/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 262,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 52.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/analysis/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 98.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 753,
+              "classes": 1,
+              "functions": 29,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "quality_analyzer.py",
+          "analysis": {
+            "file_path": "mia/analysis/quality_analyzer.py",
+            "deterministic_score": 60.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 98.94736842105263,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 585,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "system_analyzer.py",
+          "analysis": {
+            "file_path": "mia/analysis/system_analyzer.py",
+            "deterministic_score": 55.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 76.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 492,
+              "classes": 1,
+              "functions": 17,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "introspective_analyzer.py",
+          "analysis": {
+            "file_path": "mia/analysis/introspective_analyzer.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 87.64705882352942,
+            "documentation_score": 76.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 442,
+              "classes": 1,
+              "functions": 17,
+              "imports": 12,
+              "complexity_score": 98.0
+            }
+          }
+        },
+        {
+          "file": "code_metrics.py",
+          "analysis": {
+            "file_path": "mia/analysis/code_metrics.py",
+            "deterministic_score": 70.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 98.57142857142857,
+            "documentation_score": 76.47058823529412,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 496,
+              "classes": 3,
+              "functions": 14,
+              "imports": 11,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "project_builder": {
+      "module_path": "mia/project_builder",
+      "deterministic_score": 86.66666666666667,
+      "isolation_score": 85.0,
+      "side_effect_score": 94.01470588235294,
+      "documentation_score": 90.56037581699347,
+      "overall_score": 89.06043709150327,
+      "production_ready": true,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "build_system.py",
+          "analysis": {
+            "file_path": "mia/project_builder/build_system.py",
+            "deterministic_score": 85.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 90.58823529411765,
+            "documentation_score": 96.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 547,
+              "classes": 1,
+              "functions": 17,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/project_builder/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 262,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 52.0
+            }
+          }
+        },
+        {
+          "file": "deployment_manager.py",
+          "analysis": {
+            "file_path": "mia/project_builder/deployment_manager.py",
+            "deterministic_score": 95.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 90.0,
+            "documentation_score": 96.47058823529412,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 567,
+              "classes": 1,
+              "functions": 16,
+              "imports": 8,
+              "complexity_score": 98.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/project_builder/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 98.125,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 881,
+              "classes": 1,
+              "functions": 31,
+              "imports": 8,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "template_manager.py",
+          "analysis": {
+            "file_path": "mia/project_builder/template_manager.py",
+            "deterministic_score": 75.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 97.5,
+            "documentation_score": 77.6,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 670,
+              "classes": 1,
+              "functions": 24,
+              "imports": 9,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "project_generator.py",
+          "analysis": {
+            "file_path": "mia/project_builder/project_generator.py",
+            "deterministic_score": 65.0,
+            "isolation_score": 100.0,
+            "side_effect_score": 86.0,
+            "documentation_score": 77.5,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 772,
+              "classes": 4,
+              "functions": 20,
+              "imports": 15,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    },
+    "desktop": {
+      "module_path": "mia/desktop",
+      "deterministic_score": 79.16666666666667,
+      "isolation_score": 76.66666666666667,
+      "side_effect_score": 95.75634891424365,
+      "documentation_score": 83.10894660894661,
+      "overall_score": 83.6746572141309,
+      "production_ready": false,
+      "issues": [],
+      "strengths": [],
+      "files_analyzed": [
+        {
+          "file": "build_system.py",
+          "analysis": {
+            "file_path": "mia/desktop/build_system.py",
+            "deterministic_score": 70.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 88.46153846153847,
+            "documentation_score": 75.71428571428572,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 492,
+              "classes": 1,
+              "functions": 13,
+              "imports": 12,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "management_methods.py",
+          "analysis": {
+            "file_path": "mia/desktop/management_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 262,
+              "classes": 1,
+              "functions": 19,
+              "imports": 8,
+              "complexity_score": 52.0
+            }
+          }
+        },
+        {
+          "file": "deployment_manager.py",
+          "analysis": {
+            "file_path": "mia/desktop/deployment_manager.py",
+            "deterministic_score": 65.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 87.89473684210526,
+            "documentation_score": 77.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 625,
+              "classes": 1,
+              "functions": 19,
+              "imports": 15,
+              "complexity_score": 100.0
+            }
+          }
+        },
+        {
+          "file": "platform_detector.py",
+          "analysis": {
+            "file_path": "mia/desktop/platform_detector.py",
+            "deterministic_score": 90.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 98.18181818181819,
+            "documentation_score": 75.0,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 280,
+              "classes": 1,
+              "functions": 11,
+              "imports": 10,
+              "complexity_score": 46.0
+            }
+          }
+        },
+        {
+          "file": "core_methods.py",
+          "analysis": {
+            "file_path": "mia/desktop/core_methods.py",
+            "deterministic_score": 100.0,
+            "isolation_score": 80.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 97.27272727272728,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 358,
+              "classes": 1,
+              "functions": 21,
+              "imports": 8,
+              "complexity_score": 78.0
+            }
+          }
+        },
+        {
+          "file": "cross_platform_utils.py",
+          "analysis": {
+            "file_path": "mia/desktop/cross_platform_utils.py",
+            "deterministic_score": 50.0,
+            "isolation_score": 75.0,
+            "side_effect_score": 100.0,
+            "documentation_score": 76.66666666666666,
+            "issues": [],
+            "strengths": [],
+            "metrics": {
+              "lines_of_code": 481,
+              "classes": 1,
+              "functions": 17,
+              "imports": 17,
+              "complexity_score": 100.0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "overall_scores": {
+    "average_deterministic": 82.78835978835978,
+    "average_isolation": 86.80599647266314,
+    "average_side_effect": 88.87799355137511,
+    "average_documentation": 88.87452113270685,
+    "average_overall": 86.83671773627621,
+    "production_ready_modules": 5,
+    "total_modules": 9
+  },
+  "production_readiness": {
+    "overall_status": "PARTIALLY_READY",
+    "readiness_percentage": 55.55555555555556,
+    "ready_modules": [
+      "security",
+      "testing",
+      "compliance",
+      "enterprise",
+      "project_builder"
+    ],
+    "not_ready_modules": [
+      "production",
+      "verification",
+      "analysis",
+      "desktop"
+    ],
+    "critical_issues": [],
+    "blocking_issues": []
+  },
+  "documentation_coverage": {
+    "overall_coverage": 88.87452113270685,
+    "well_documented_modules": [
+      "security",
+      "production",
+      "testing",
+      "compliance",
+      "enterprise",
+      "verification",
+      "analysis",
+      "project_builder",
+      "desktop"
+    ],
+    "poorly_documented_modules": [],
+    "documentation_grade": "B (Good)"
+  },
+  "recommendations": [
+    "CRITICAL: Only 55.6% of modules are production ready",
+    "Focus on improving 4 modules: production, verification, analysis",
+    "Improve deterministic behavior in modules",
+    "Implement comprehensive unit tests for all modules",
+    "Add type hints to improve code clarity and maintainability",
+    "Consider code review process for production readiness",
+    "Implement automated quality gates in CI/CD pipeline"
+  ]
+}

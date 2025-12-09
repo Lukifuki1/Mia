@@ -1,0 +1,40 @@
+{
+  "enabled": true,
+  "planning_interval": 300,
+  "max_concurrent_plans": 10,
+  "auto_planning": true,
+  "plan_templates": {
+    "project": {
+      "phases": [
+        "analysis",
+        "design",
+        "implementation",
+        "testing",
+        "deployment"
+      ],
+      "default_duration": 3600
+    },
+    "task": {
+      "phases": [
+        "preparation",
+        "execution",
+        "verification"
+      ],
+      "default_duration": 900
+    },
+    "optimization": {
+      "phases": [
+        "analysis",
+        "optimization",
+        "validation"
+      ],
+      "default_duration": 1800
+    }
+  },
+  "planning_strategies": {
+    "critical_path": true,
+    "resource_optimization": true,
+    "risk_assessment": true,
+    "dependency_analysis": true
+  }
+}

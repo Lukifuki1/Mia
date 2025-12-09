@@ -1,0 +1,326 @@
+#!/usr/bin/env python3
+"""
+🎓 Training Guard
+================
+"""
+
+import logging
+import hashlib
+import json
+import time
+from typing import Dict, List, Any, Optional
+from datetime import datetime
+import os
+
+class TrainingGuard:
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
+    """Training Guard za zaščito učnih procesov"""
+    
+    def __init__(self):
+        self.logger = logging.getLogger("MIA.TrainingGuard")
+        self.is_active = True
+        
+        # Dovoljeni training sources
+        self.trusted_sources = {
+            'huggingface.co',
+            'openai.com',
+            'github.com',
+            'localhost'
+        }
+        
+        # Training data validation rules
+        self.validation_rules = {
+            'max_file_size': 100 * 1024 * 1024,  # 100MB
+            'allowed_extensions': {'.txt', '.json', '.csv', '.jsonl'},
+            'max_training_time': 3600,  # 1 hour
+            'min_data_quality_score': 0.8
+        }
+        
+        # Training session tracking
+        self.active_sessions = {}
+        self.completed_sessions = []
+        self.blocked_sessions = []
+    
+    def validate_training_data(self, data_source: str, data_content: Any) -> bool:
+        """Validiraj training podatke"""
+        try:
+            # Preveri source
+            if not self._is_trusted_source(data_source):
+                self.logger.warning(f"Untrusted training source: {data_source}")
+                return False
+            
+            # Preveri velikost
+            data_size = len(str(data_content))
+            if data_size > self.validation_rules['max_file_size']:
+                self.logger.warning(f"Training data too large: {data_size} bytes")
+                return False
+            
+            # Preveri kvaliteto podatkov
+            quality_score = self._assess_data_quality(data_content)
+            if quality_score < self.validation_rules['min_data_quality_score']:
+                self.logger.warning(f"Training data quality too low: {quality_score}")
+                return False
+            
+            # Preveri za škodljive vzorce
+            if self._contains_harmful_patterns(data_content):
+                self.logger.warning("Harmful patterns detected in training data")
+                return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Training data validation error: {e}")
+            return False
+    
+    def start_training_session(self, session_config: Dict[str, Any]) -> Optional[str]:
+        """Začni training session"""
+        try:
+            session_id = hashlib.sha256(f"{self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}{session_config}".encode()).hexdigest()[:16]
+            
+            # Validiraj konfiguraciju
+            if not self._validate_training_config(session_config):
+                self.logger.warning("Invalid training configuration")
+                return None
+            
+            # Ustvari session
+            session = {
+                'session_id': session_id,
+                'config': session_config,
+                'start_time': self._get_build_timestamp(),
+                'status': 'active',
+                'data_hash': self._calculate_data_hash(session_config.get('data', '')),
+                'validation_passed': True
+            }
+            
+            self.active_sessions[session_id] = session
+            
+            self.logger.info(f"Training session started: {session_id}")
+            return session_id
+            
+        except Exception as e:
+            self.logger.error(f"Training session start error: {e}")
+            return None
+    
+    def monitor_training_session(self, session_id: str) -> Dict[str, Any]:
+        """Spremljaj training session"""
+        try:
+            session = self.active_sessions.get(session_id)
+            if not session:
+                return {"error": "Session not found"}
+            
+            # Preveri čas trajanja
+            duration = (self._get_build_timestamp() - session['start_time']).total_seconds()
+            if duration > self.validation_rules['max_training_time']:
+                self._terminate_session(session_id, "Training time exceeded")
+                return {"status": "terminated", "reason": "timeout"}
+            
+            # Preveri sistem resources
+            if not self._check_system_resources():
+                self._pause_session(session_id, "Insufficient system resources")
+                return {"status": "paused", "reason": "resources"}
+            
+            return {
+                "status": session['status'],
+                "duration": duration,
+                "progress": self._estimate_progress(session_id)
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Training session monitoring error: {e}")
+            return {"error": str(e)}
+    
+    def _is_trusted_source(self, source: str) -> bool:
+        """Preveri, če je source zaupanja vreden"""
+        try:
+            from urllib.parse import urlparse
+            
+            if source.startswith('file://') or source.startswith('/'):
+                # Local file - dovoli
+                return True
+            
+            parsed = urlparse(source)
+            hostname = parsed.hostname
+            
+            if hostname:
+                for trusted in self.trusted_sources:
+                    if hostname.endswith(trusted):
+                        return True
+            
+            return False
+            
+        except Exception as e:
+            self.logger.error(f"Source trust check error: {e}")
+            return False
+    
+    def _assess_data_quality(self, data: Any) -> float:
+        """Oceni kvaliteto podatkov"""
+        try:
+            # Poenostavljeno quality assessment
+            if isinstance(data, str):
+                # Text quality metrics
+                if len(data) < 100:
+                    return 0.3  # Too short
+                
+                # Check for repetitive patterns
+                words = data.split()
+                unique_words = set(words)
+                
+                if len(unique_words) / len(words) < 0.3:
+                    return 0.4  # Too repetitive
+                
+                return 0.9  # Good quality
+            
+            elif isinstance(data, (list, dict)):
+                # Structured data quality
+                if len(str(data)) < 1000:
+                    return 0.5  # Too small
+                
+                return 0.8  # Acceptable quality
+            
+            return 0.6  # Default quality
+            
+        except Exception as e:
+            self.logger.error(f"Data quality assessment error: {e}")
+            return 0.0
+    
+    def _contains_harmful_patterns(self, data: Any) -> bool:
+        """Preveri za škodljive vzorce"""
+        try:
+            data_str = str(data).lower()
+            
+            harmful_patterns = [
+                'malware',
+                'virus',
+                'exploit',
+                'backdoor',
+                'password',
+                'credit card',
+                'social security',
+                'personal information'
+            ]
+            
+            for pattern in harmful_patterns:
+                if pattern in data_str:
+                    return True
+            
+            return False
+            
+        except Exception as e:
+            self.logger.error(f"Harmful pattern check error: {e}")
+            return True  # Err on the side of caution
+    
+    def _validate_training_config(self, config: Dict[str, Any]) -> bool:
+        """Validiraj training konfiguraciju"""
+        try:
+            required_fields = ['model_type', 'data', 'parameters']
+            
+            for field in required_fields:
+                if field not in config:
+                    return False
+            
+            # Preveri model type
+            allowed_models = ['lora', 'fine_tune', 'adapter']
+            if config['model_type'] not in allowed_models:
+                return False
+            
+            # Preveri parameters
+            params = config['parameters']
+            if not isinstance(params, dict):
+                return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Training config validation error: {e}")
+            return False
+    
+    def _calculate_data_hash(self, data: Any) -> str:
+        """Izračunaj hash podatkov"""
+        try:
+            data_str = str(data)
+            return hashlib.sha256(data_str.encode()).hexdigest()
+        except Exception as e:
+            self.logger.error(f"Data hash calculation error: {e}")
+            return ""
+    
+    def _terminate_session(self, session_id: str, reason: str):
+        """Prekini training session"""
+        try:
+            session = self.active_sessions.get(session_id)
+            if session:
+                session['status'] = 'terminated'
+                session['end_time'] = self._get_build_timestamp()
+                session['termination_reason'] = reason
+                
+                # Premakni v completed sessions
+                self.completed_sessions.append(session)
+                del self.active_sessions[session_id]
+                
+                self.logger.warning(f"Training session terminated: {session_id}, reason: {reason}")
+                
+        except Exception as e:
+            self.logger.error(f"Session termination error: {e}")
+    
+    def _pause_session(self, session_id: str, reason: str):
+        """Pavziraj training session"""
+        try:
+            session = self.active_sessions.get(session_id)
+            if session:
+                session['status'] = 'paused'
+                session['pause_reason'] = reason
+                session['pause_time'] = self._get_build_timestamp()
+                
+                self.logger.info(f"Training session paused: {session_id}, reason: {reason}")
+                
+        except Exception as e:
+            self.logger.error(f"Session pause error: {e}")
+    
+    def _check_system_resources(self) -> bool:
+        """Preveri sistem resources"""
+        try:
+            import psutil
+            
+            # CPU check
+            cpu_percent = psutil.cpu_percent(interval=1)
+            if cpu_percent > 90:
+                return False
+            
+            # Memory check
+            memory = psutil.virtual_memory()
+            if memory.percent > 90:
+                return False
+            
+            # Disk space check
+            disk = psutil.disk_usage('/')
+            if disk.percent > 90:
+                return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"System resource check error: {e}")
+            return False
+    
+    def _estimate_progress(self, session_id: str) -> float:
+        """Oceni napredek training session"""
+        try:
+            session = self.active_sessions.get(session_id)
+            if not session:
+                return 0.0
+            
+            # Poenostavljeno progress estimation
+            duration = (self._get_build_timestamp() - session['start_time']).total_seconds()
+            max_duration = self.validation_rules['max_training_time']
+            
+            return min(duration / max_duration, 1.0)
+            
+        except Exception as e:
+            self.logger.error(f"Progress estimation error: {e}")
+            return 0.0
+
+# Globalni training guard
+training_guard = TrainingGuard()

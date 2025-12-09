@@ -1,0 +1,508 @@
+{
+  "compliance_score": 82.6086956521739,
+  "audit_results": {
+    "FILE_STRUCTURE": [
+      {
+        "requirement": "Datoteka .mia-config.yaml",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka modules.toml",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka settings.json",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka .env",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka requirements.txt",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka run_mia.py",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Datoteka mia_system_integrity_test.py",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/core/bootstrap",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/core/consciousness",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/core/memory",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/modules/voice/stt",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/modules/voice/tts",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/modules/multimodal/image",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/modules/projects",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/memory",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/generated_images",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/models",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/logs",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/training",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij mia/data/api_keys",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij web/templates",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Direktorij web/static",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "BOOTSTRAP": [
+      {
+        "requirement": "Detect hardware metoda",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Initialize modules metoda",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Start consciousness metoda",
+        "status": false,
+        "details": ""
+      }
+    ],
+    "CONSCIOUSNESS": [
+      {
+        "requirement": "Introspektivna analiza",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Emocionalno stanje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Osebnostne lastnosti",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "MEMORY": [
+      {
+        "requirement": "Store memory funkcija",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Retrieve memories funkcija",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "EmotionalTone enum",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "STT": [
+      {
+        "requirement": "Transcribe audio funkcija",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Emotional tone analiza",
+        "status": false,
+        "details": ""
+      }
+    ],
+    "TTS": [
+      {
+        "requirement": "Generate speech funkcija",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA aktivacija",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "IMAGE_GEN": [
+      {
+        "requirement": "Generate image funkcija",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA aktivacija",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "ADAPTIVE_LLM": [
+      {
+        "requirement": "Model selection",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Performance tracking",
+        "status": false,
+        "details": ""
+      }
+    ],
+    "SELF_EVOLUTION": [
+      {
+        "requirement": "Performance analiza",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Improvement suggestions",
+        "status": false,
+        "details": ""
+      }
+    ],
+    "INTERNET_LEARNING": [
+      {
+        "requirement": "Web content parsing",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Content vectorization",
+        "status": false,
+        "details": ""
+      }
+    ],
+    "PROJECT_SYSTEM": [
+      {
+        "requirement": "Project sistem",
+        "status": false,
+        "details": "Error: cannot import name 'ProjectManager' from 'mia.modules.projects.main' (/workspace/project/mia/modules/projects/main.py)"
+      }
+    ],
+    "ADULT_MODE": [
+      {
+        "requirement": "Adult mode implementacija",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Lokalna implementacija",
+        "status": true,
+        "details": "Brez zunanjih API-jev"
+      },
+      {
+        "requirement": "Brez cenzure",
+        "status": true,
+        "details": "Lokalno delovanje"
+      }
+    ],
+    "LORA_SYSTEM": [
+      {
+        "requirement": "LoRA direktorij lora",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA direktorij voice",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA direktorij image",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA direktorij import",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "TTS LoRA podpora",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Image LoRA podpora",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "API_SYSTEM": [
+      {
+        "requirement": "API direktorij api_keys",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "API direktorij api",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Email API pridobivanje",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "TRAINING_SYSTEM": [
+      {
+        "requirement": "Training direktorij training",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Training direktorij sandbox",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Samostojni trening",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "SECURITY": [
+      {
+        "requirement": "Lokalno delovanje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Brez zunanjih API-jev",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Sandbox izvajanje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Checkpointing",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Varni na\u010din",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "UI_SYSTEM": [
+      {
+        "requirement": "UI datoteka index.html",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "UI datoteka advanced_ui.html",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "UI datoteka style.css",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "UI datoteka advanced_style.css",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "UI datoteka app.js",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "UI datoteka advanced_ui.js",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Web aplikacija",
+        "status": false,
+        "details": "Error: cannot import name 'create_app' from 'mia.modules.ui.web' (/workspace/project/mia/modules/ui/web.py)"
+      }
+    ],
+    "CONFIGURATION": [
+      {
+        "requirement": "Glavna konfiguracija",
+        "status": true,
+        "details": "Datoteka obstaja in je veljavna"
+      },
+      {
+        "requirement": "Moduli konfiguracija",
+        "status": true,
+        "details": "Datoteka obstaja in je veljavna"
+      },
+      {
+        "requirement": "Uporabni\u0161ke nastavitve",
+        "status": true,
+        "details": "Datoteka obstaja in je veljavna"
+      },
+      {
+        "requirement": "Okoljske spremenljivke",
+        "status": true,
+        "details": "Datoteka obstaja in je veljavna"
+      }
+    ],
+    "INTEGRATION": [
+      {
+        "requirement": "Sistemski test integritete",
+        "status": true,
+        "details": "Uspe\u0161nost: 100.0%"
+      },
+      {
+        "requirement": "Vsi moduli operativni",
+        "status": true,
+        "details": ""
+      }
+    ],
+    "ORIGINAL_REQUIREMENTS": [
+      {
+        "requirement": "Popolnoma lokalno delovanje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Brez placeholderjev",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Brez TODO komentarjev",
+        "status": false,
+        "details": ""
+      },
+      {
+        "requirement": "Deterministi\u010dno obna\u0161anje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Zavestni sistem",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Spominski sistem",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Multimodalna komunikacija",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "18+ na\u010din",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "LoRA podpora",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Projektni sistem",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Razvijalski na\u010din",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Internetno u\u010denje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Samostojni trening",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "API upravljanje",
+        "status": true,
+        "details": ""
+      },
+      {
+        "requirement": "Varnostni sistemi",
+        "status": true,
+        "details": ""
+      }
+    ]
+  },
+  "total_requirements": 92,
+  "met_requirements": 76,
+  "audit_timestamp": 1765109670.1182554
+}

@@ -1,0 +1,60 @@
+{
+  "general": {
+    "general": {
+      "memory": [
+        "aa52439cd74b25be",
+        "b8a2643451e27bfb",
+        "4529e5f54a52a7d6"
+      ],
+      "generated": [
+        "93cd57d34d31f980",
+        "70297d37fd8982fa"
+      ],
+      "speech": [
+        "94cec40ab93bb71f"
+      ],
+      "awakened": [
+        "ae923f4c66d9c9ce"
+      ]
+    }
+  },
+  "system_events": {
+    "general_system": {
+      "system": [
+        "ac122d58697a9898"
+      ]
+    },
+    "performance": {
+      "system": [
+        "1504fcaab415b72a"
+      ]
+    }
+  },
+  "user_interactions": {
+    "general_interaction": {
+      "zdravo": [
+        "3ab7beaf4f7ccc83"
+      ],
+      "general": [
+        "dff15152ad3fcac8"
+      ],
+      "asked": [
+        "73d2a8664344783c",
+        "5bdf324022c0db50"
+      ],
+      "wants": [
+        "fba7679809d39525"
+      ],
+      "introspective": [
+        "36cc2c5f8b473565",
+        "6dac8b4eec054563"
+      ],
+      "hello": [
+        "8d8ad9140942d249"
+      ],
+      "system": [
+        "00ed684ba1096a3f"
+      ]
+    }
+  }
+}

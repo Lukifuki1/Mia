@@ -1,0 +1,87 @@
+[
+  {
+    "anomaly_id": 0,
+    "type": "CICD_VALIDATION_FAILURE",
+    "description": "CI/CD validation failed",
+    "context": {
+      "status": "FAILED",
+      "build_artifacts_test": {
+        "artifacts_consistent": true,
+        "platforms_tested": 3,
+        "artifact_hashes": {
+          "linux": "539de867ab0ebff86601d8cc5f10149f4b54bec33efec4f2f816084b2a7bfdf2",
+          "windows": "f913f93853db39c97b0e81b23dea6be9911cbf15a335858745c47ede5f3c8514",
+          "macos": "1a0fd9f3662c10d8ae303fd7b243ea5136ba194607fbe423bbe9b919f36bdcc6"
+        },
+        "deterministic_builds": true
+      },
+      "locked_dependencies_test": {
+        "dependencies_locked": true,
+        "total_lock_files": 3,
+        "existing_files": [
+          "requirements.lock",
+          "frontend/package-lock.json",
+          "Dockerfile.deterministic"
+        ],
+        "missing_files": [],
+        "lock_file_coverage": 1.0
+      },
+      "pipeline_reproducibility_test": {
+        "pipeline_reproducible": false,
+        "runs_executed": 2,
+        "unique_hashes": 2,
+        "baseline_hash": "3e7224cb7f287498f2983a6b8965214e3319d84390ea5549139defe812fdb440",
+        "pipeline_runs": [
+          {
+            "run_id": 0,
+            "pipeline_hash": "3e7224cb7f287498f2983a6b8965214e3319d84390ea5549139defe812fdb440",
+            "result": {
+              "run_id": 0,
+              "build_timestamp": 1640995200,
+              "source_commit": "abc123def456",
+              "build_environment": "deterministic",
+              "artifacts": [
+                "app.whl",
+                "app.exe",
+                "app.dmg"
+              ],
+              "test_results": {
+                "passed": 100,
+                "failed": 0
+              }
+            }
+          },
+          {
+            "run_id": 1,
+            "pipeline_hash": "ebb8f3ea03e4bd95c55887cfdd8f5dfde7332c1a50731dce3637ae3dfa165a55",
+            "result": {
+              "run_id": 1,
+              "build_timestamp": 1640995200,
+              "source_commit": "abc123def456",
+              "build_environment": "deterministic",
+              "artifacts": [
+                "app.whl",
+                "app.exe",
+                "app.dmg"
+              ],
+              "test_results": {
+                "passed": 100,
+                "failed": 0
+              }
+            }
+          }
+        ]
+      },
+      "overall_cicd_score": {
+        "overall_cicd_score": 0.6666666666666666,
+        "cicd_percentage": 66.66666666666666,
+        "tests_passed": 2.0,
+        "total_tests": 3,
+        "cicd_status": "FAILED"
+      }
+    },
+    "test_phase": "cicd_validation",
+    "timestamp": "2025-12-09T11:22:52.842823",
+    "hash": "e1ea54903ada0452b785274f513d7aea21859f47e83795e238e370cfdeb3b86e"
+  }
+]

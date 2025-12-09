@@ -1,0 +1,9 @@
+{
+  "username": "root",
+  "user_id": "0",
+  "privilege_level": "owner",
+  "ownership_level": "authenticated",
+  "created_at": 1765262991.0886319,
+  "last_verified": 1765262991.088632,
+  "verification_hash": "7f2a82e3a8f3040018a308efdbe6e9db6ca5725732a29395f907cc03963e502b"
+}

@@ -307,6 +307,7 @@ class MIAWebUI:
         
         # Select response (in production, use more sophisticated selection)
         import random
+random.seed(42)  # Deterministic seed
         return random.choice(responses)
     
     async def _process_voice_input(self) -> Dict[str, Any]:

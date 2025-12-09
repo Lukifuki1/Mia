@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Enterprise AGI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                <span class="logo-text">MIA Enterprise AGI</span>
+            </div>
+            <div class="system-status">
+                <span class="status-indicator" id="status-indicator"></span>
+                <span class="status-text" id="status-text">Initializing...</span>
+            </div>
+        </header>
+        
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link active" data-page="dashboard">📊 Dashboard</a></li>
+                <li><a href="#chat" class="nav-link" data-page="chat">💬 Chat</a></li>
+                <li><a href="#projects" class="nav-link" data-page="projects">📁 Projects</a></li>
+                <li><a href="#generate" class="nav-link" data-page="generate">🎨 Generate</a></li>
+                <li><a href="#memory" class="nav-link" data-page="memory">🧠 Memory</a></li>
+                <li><a href="#monitor" class="nav-link" data-page="monitor">📈 Monitor</a></li>
+                <li><a href="#settings" class="nav-link" data-page="settings">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div id="dashboard" class="page active">
+                <h1>Dashboard</h1>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>System Status</h3>
+                        <div id="system-info">Loading...</div>
+                    </div>
+                    <div class="card">
+                        <h3>Recent Activity</h3>
+                        <div id="recent-activity">No recent activity</div>
+                    </div>
+                    <div class="card">
+                        <h3>Performance</h3>
+                        <div id="performance-metrics">Loading...</div>
+                    </div>
+                    <div class="card">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn-primary" onclick="startNewChat()">New Chat</button>
+                            <button class="btn btn-secondary" onclick="createProject()">New Project</button>
+                            <button class="btn btn-secondary" onclick="generateContent()">Generate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="chat" class="page">
+                <h1>Chat with MIA</h1>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages"></div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Ask MIA anything..." />
+                        <button id="send-button" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="projects" class="page">
+                <h1>Projects</h1>
+                <div class="projects-container">
+                    <div class="projects-header">
+                        <button class="btn btn-primary" onclick="createNewProject()">New Project</button>
+                    </div>
+                    <div id="projects-list" class="projects-list">
+                        <p>No projects yet. Create your first project!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="generate" class="page">
+                <h1>Content Generation</h1>
+                <div class="generation-tabs">
+                    <button class="tab-button active" data-tab="image">🖼️ Image</button>
+                    <button class="tab-button" data-tab="video">🎥 Video</button>
+                    <button class="tab-button" data-tab="audio">🎵 Audio</button>
+                    <button class="tab-button" data-tab="text">📝 Text</button>
+                </div>
+                <div class="generation-content">
+                    <div id="image-gen" class="gen-tab active">
+                        <textarea id="image-prompt" placeholder="Describe the image you want to generate..."></textarea>
+                        <button class="btn btn-primary" onclick="generateImage()">Generate Image</button>
+                        <div id="image-result"></div>
+                    </div>
+                    <div id="video-gen" class="gen-tab">
+                        <textarea id="video-prompt" placeholder="Describe the video you want to generate..."></textarea>
+                        <button class="btn btn-primary" onclick="generateVideo()">Generate Video</button>
+                        <div id="video-result"></div>
+                    </div>
+                    <div id="audio-gen" class="gen-tab">
+                        <textarea id="audio-prompt" placeholder="Describe the audio you want to generate..."></textarea>
+                        <button class="btn btn-primary" onclick="generateAudio()">Generate Audio</button>
+                        <div id="audio-result"></div>
+                    </div>
+                    <div id="text-gen" class="gen-tab">
+                        <textarea id="text-prompt" placeholder="What kind of text do you want to generate?"></textarea>
+                        <button class="btn btn-primary" onclick="generateText()">Generate Text</button>
+                        <div id="text-result"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="memory" class="page">
+                <h1>Memory System</h1>
+                <div class="memory-container">
+                    <div class="memory-search">
+                        <input type="text" id="memory-search" placeholder="Search memories..." />
+                        <button onclick="searchMemories()">Search</button>
+                    </div>
+                    <div id="memory-results" class="memory-results">
+                        <p>Enter a search query to explore MIA's memory.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="monitor" class="page">
+                <h1>System Monitor</h1>
+                <div class="monitor-grid">
+                    <div class="card">
+                        <h3>CPU Usage</h3>
+                        <div id="cpu-usage" class="metric">0%</div>
+                    </div>
+                    <div class="card">
+                        <h3>Memory Usage</h3>
+                        <div id="memory-usage" class="metric">0%</div>
+                    </div>
+                    <div class="card">
+                        <h3>GPU Usage</h3>
+                        <div id="gpu-usage" class="metric">0%</div>
+                    </div>
+                    <div class="card">
+                        <h3>Network</h3>
+                        <div id="network-usage" class="metric">0 KB/s</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="settings" class="page">
+                <h1>Settings</h1>
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>General</h3>
+                        <label>
+                            <input type="checkbox" id="start-on-boot"> Start on system boot
+                        </label>
+                        <label>
+                            <input type="checkbox" id="minimize-to-tray"> Minimize to system tray
+                        </label>
+                    </div>
+                    <div class="settings-section">
+                        <h3>Performance</h3>
+                        <label>
+                            GPU Acceleration: <select id="gpu-mode">
+                                <option value="auto">Auto</option>
+                                <option value="cuda">CUDA</option>
+                                <option value="rocm">ROCm</option>
+                                <option value="cpu">CPU Only</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="settings-section">
+                        <h3>About</h3>
+                        <div id="app-info">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

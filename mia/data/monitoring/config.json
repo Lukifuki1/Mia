@@ -1,0 +1,58 @@
+{
+  "enabled": true,
+  "monitoring_interval": 5.0,
+  "checkpoint_interval": 300.0,
+  "max_history_size": 1000,
+  "max_checkpoints": 50,
+  "thresholds": {
+    "cpu_warning": 80.0,
+    "cpu_critical": 95.0,
+    "memory_warning": 85.0,
+    "memory_critical": 95.0,
+    "disk_warning": 90.0,
+    "disk_critical": 95.0,
+    "gpu_memory_warning": 90.0,
+    "gpu_memory_critical": 95.0,
+    "response_time_warning": 5.0,
+    "response_time_critical": 10.0
+  },
+  "alerts": {
+    "enabled": true,
+    "email_notifications": false,
+    "log_alerts": true,
+    "auto_resolve": true,
+    "resolution_timeout": 300.0
+  },
+  "recovery": {
+    "auto_recovery": true,
+    "max_recovery_attempts": 3,
+    "recovery_delay": 30.0,
+    "safe_mode_threshold": "critical"
+  },
+  "components": {
+    "consciousness": {
+      "enabled": true,
+      "timeout": 10.0
+    },
+    "memory": {
+      "enabled": true,
+      "timeout": 5.0
+    },
+    "voice": {
+      "enabled": true,
+      "timeout": 15.0
+    },
+    "project_builder": {
+      "enabled": true,
+      "timeout": 30.0
+    },
+    "lora_manager": {
+      "enabled": true,
+      "timeout": 20.0
+    },
+    "email_client": {
+      "enabled": true,
+      "timeout": 10.0
+    }
+  }
+}

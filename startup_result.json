@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "platform": "macos",
+  "meta_state_hash": "1b7dbba56a3b72a60cac4646ed0dd85f755c5eb8d5a44ac3552f682ebf79a9e4",
+  "startup_time": 2.5,
+  "memory_usage_gb": 1.2,
+  "modules_loaded": 15,
+  "deterministic": true,
+  "timestamp": "2025-12-09T11:35:56.799334"
+}

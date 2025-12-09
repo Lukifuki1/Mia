@@ -1,0 +1,56 @@
+{
+  "enabled": true,
+  "whisper_model": "base",
+  "language": "auto",
+  "emotional_analysis": true,
+  "real_time_processing": true,
+  "voice_activity_detection": true,
+  "noise_reduction": true,
+  "speaker_identification": false,
+  "confidence_threshold": 0.7,
+  "audio_settings": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "chunk_size": 1024,
+    "vad_aggressiveness": 2,
+    "silence_threshold": 0.5
+  },
+  "emotional_keywords": {
+    "happy": [
+      "great",
+      "awesome",
+      "wonderful",
+      "fantastic",
+      "love",
+      "excited"
+    ],
+    "sad": [
+      "sad",
+      "disappointed",
+      "upset",
+      "depressed",
+      "terrible"
+    ],
+    "angry": [
+      "angry",
+      "furious",
+      "mad",
+      "annoyed",
+      "frustrated"
+    ],
+    "confident": [
+      "sure",
+      "certain",
+      "confident",
+      "definitely",
+      "absolutely"
+    ],
+    "uncertain": [
+      "maybe",
+      "perhaps",
+      "not sure",
+      "uncertain",
+      "possibly"
+    ]
+  }
+}

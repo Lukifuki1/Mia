@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "parallel_execution": true,
+  "max_parallel_tests": 4,
+  "default_timeout": 300,
+  "stress_test_duration": 600,
+  "performance_thresholds": {
+    "response_time_ms": 1000,
+    "memory_usage_mb": 2048,
+    "cpu_usage_percent": 80.0,
+    "throughput_ops_sec": 100
+  }
+}

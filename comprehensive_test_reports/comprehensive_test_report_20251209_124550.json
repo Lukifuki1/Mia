@@ -1,0 +1,29 @@
+{
+  "report_timestamp": "2025-12-09T12:45:50.119004",
+  "test_summary": {
+    "tests_generated": 136,
+    "modules_covered": 13,
+    "tests_executed": 9,
+    "tests_passed": 4,
+    "tests_failed": 5,
+    "coverage_percentage": 37.89
+  },
+  "performance_summary": {
+    "performance_score": 100.0,
+    "meets_thresholds": true
+  },
+  "quality_metrics": {
+    "test_success_rate": 44.44444444444444,
+    "coverage_grade": "F",
+    "performance_grade": "A+"
+  },
+  "recommendations": [
+    "Fix 5 failing tests",
+    "Increase test coverage to at least 80%",
+    "Implement continuous testing in CI/CD pipeline",
+    "Add more integration and end-to-end tests",
+    "Consider property-based testing for critical components",
+    "Implement automated performance regression testing"
+  ],
+  "overall_grade": "F"
+}

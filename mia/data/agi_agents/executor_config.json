@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "execution_interval": 10,
+  "max_concurrent_jobs": 5,
+  "max_concurrent_tasks": 10,
+  "default_timeout": 300,
+  "default_retries": 3,
+  "auto_execution": true,
+  "safety_checks": true,
+  "execution_limits": {
+    "max_execution_time": 3600,
+    "max_memory_usage": 1024,
+    "max_cpu_usage": 80
+  },
+  "allowed_operations": {
+    "file_operations": true,
+    "system_commands": false,
+    "network_operations": true,
+    "api_calls": true
+  }
+}

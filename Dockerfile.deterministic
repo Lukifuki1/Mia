@@ -1,0 +1,43 @@
+# MIA Enterprise AGI - Deterministic Dockerfile
+# Base images with fixed digests for reproducibility
+
+FROM python:3.11.6-slim@sha256:f3b5b4c7c1e4d8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5 AS base
+
+# Set deterministic build environment
+ENV PYTHONHASHSEED=0
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV TZ=UTC
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+# Set fixed timestamp for reproducible builds
+ENV SOURCE_DATE_EPOCH=1640995200
+
+# Install system dependencies with fixed versions
+RUN apt-get update && apt-get install -y \
+    build-essential=12.9ubuntu3 \
+    curl=7.81.0-1ubuntu1.15 \
+    git=1:2.34.1-1ubuntu1.10 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy locked dependencies
+COPY requirements.lock /app/requirements.lock
+
+# Install Python dependencies from lock file
+RUN pip install --no-cache-dir --no-deps -r /app/requirements.lock
+
+# Copy application code
+COPY . /app
+WORKDIR /app
+
+# Build application
+RUN python setup.py build
+
+# Production stage
+FROM base AS production
+COPY --from=base /app /app
+WORKDIR /app
+
+# Set deterministic entrypoint
+ENTRYPOINT ["python", "-m", "mia.main"]

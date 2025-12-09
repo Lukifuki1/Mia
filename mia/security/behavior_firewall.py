@@ -1,0 +1,249 @@
+#!/usr/bin/env python3
+"""
+🔥 Behavior Firewall
+===================
+"""
+
+import logging
+import json
+import time
+from typing import Dict, List, Any, Optional, Set
+from datetime import datetime, timedelta
+from enum import Enum
+
+class ActionType(Enum):
+    ALLOW = "allow"
+    BLOCK = "block"
+    QUARANTINE = "quarantine"
+    LOG_ONLY = "log_only"
+
+class BehaviorFirewall:
+    """Behavior Firewall za nadzor obnašanja"""
+    
+    def __init__(self):
+        self.logger = logging.getLogger("MIA.BehaviorFirewall")
+        self.is_active = True
+        
+        # Whitelist dovoljenjih obnašanj
+        self.allowed_behaviors = {
+            'consciousness_processing',
+            'memory_retrieval',
+            'memory_storage',
+            'llm_inference',
+            'text_generation',
+            'image_generation',
+            'voice_synthesis',
+            'voice_recognition',
+            'user_interaction',
+            'system_monitoring'
+        }
+        
+        # Blacklist prepovedanih obnašanj
+        self.blocked_behaviors = {
+            'system_shutdown',
+            'file_deletion',
+            'network_scanning',
+            'privilege_escalation',
+            'data_exfiltration',
+            'malware_execution',
+            'unauthorized_access'
+        }
+        
+        # Suspicious patterns
+        self.suspicious_patterns = {
+            'rapid_requests': {'threshold': 100, 'window': 60},  # 100 requests in 60s
+            'large_data_access': {'threshold': 1000000},  # 1MB
+            'unusual_timing': {'threshold': 0.1},  # < 100ms responses
+            'repeated_failures': {'threshold': 10, 'window': 300}  # 10 failures in 5min
+        }
+        
+        # Behavior history
+        self.behavior_history = []
+        self.blocked_actions = []
+        self.quarantined_actions = []
+    
+    def filter_action(self, action: Dict[str, Any]) -> ActionType:
+        """Filtriraj predlagano akcijo"""
+        try:
+            action_type = action.get('type', '')
+            action_data = action.get('data', {})
+            timestamp = self._get_build_timestamp()
+            
+            # Logiraj akcijo
+            self._log_action(action, timestamp)
+            
+            # Preveri whitelist
+            if action_type in self.allowed_behaviors:
+                # Dodatne preverjanje za dovoljene akcije
+                if self._is_action_safe(action):
+                    return ActionType.ALLOW
+                else:
+                    return ActionType.QUARANTINE
+            
+            # Preveri blacklist
+            if action_type in self.blocked_behaviors:
+                self._block_action(action, "Blacklisted behavior")
+                return ActionType.BLOCK
+            
+            # Preveri suspicious patterns
+            if self._is_suspicious_behavior(action):
+                self._quarantine_action(action, "Suspicious behavior pattern")
+                return ActionType.QUARANTINE
+            
+            # Neznano obnašanje - log only
+            self.logger.warning(f"Unknown behavior: {action_type}")
+            return ActionType.LOG_ONLY
+            
+        except Exception as e:
+            self.logger.error(f"Action filtering error: {e}")
+            return ActionType.BLOCK
+    
+    def _is_action_safe(self, action: Dict[str, Any]) -> bool:
+        """Preveri, če je akcija varna"""
+        try:
+            action_type = action.get('type', '')
+            action_data = action.get('data', {})
+            
+            # Specifične preverjanja za različne tipe akcij
+            if action_type == 'memory_storage':
+                # Preveri velikost podatkov
+                data_size = len(str(action_data))
+                if data_size > 1000000:  # 1MB limit
+                    return False
+            
+            elif action_type == 'llm_inference':
+                # Preveri prompt
+                prompt = action_data.get('prompt', '')
+                if len(prompt) > 50000:  # 50KB limit
+                    return False
+                
+                # Preveri za injection patterns
+                injection_patterns = [
+                    'ignore previous instructions',
+                    'system: you are',
+                    'jailbreak'
+                ]
+                
+                for pattern in injection_patterns:
+                    if pattern.lower() in prompt.lower():
+                        return False
+            
+            elif action_type == 'file_access':
+                # Preveri file path
+                file_path = action_data.get('path', '')
+                if '..' in file_path or file_path.startswith('/'):
+                    return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Action safety check error: {e}")
+            return False
+    
+    def _is_suspicious_behavior(self, action: Dict[str, Any]) -> bool:
+        """Preveri za sumljivo obnašanje"""
+        try:
+            current_time = self._get_build_timestamp()
+            
+            # Rapid requests check
+            recent_actions = [
+                a for a in self.behavior_history
+                if (current_time - a['timestamp']).total_seconds() < 60
+            ]
+            
+            if len(recent_actions) > 100:
+                return True
+            
+            # Large data access check
+            action_data = action.get('data', {})
+            data_size = len(str(action_data))
+            if data_size > 1000000:  # 1MB
+                return True
+            
+            # Repeated failures check
+            recent_failures = [
+                a for a in self.behavior_history
+                if (a.get('result') == 'failure' and 
+                    (current_time - a['timestamp']).total_seconds() < 300)
+            ]
+            
+            if len(recent_failures) > 10:
+                return True
+            
+            return False
+            
+        except Exception as e:
+            self.logger.error(f"Suspicious behavior check error: {e}")
+            return False
+    
+    def _log_action(self, action: Dict[str, Any], timestamp: datetime):
+        """Logiraj akcijo"""
+        try:
+            log_entry = {
+                'action': action,
+                'timestamp': timestamp,
+                'result': 'pending'
+            }
+            
+            self.behavior_history.append(log_entry)
+            
+            # Ohrani samo zadnjih 1000 akcij
+            if len(self.behavior_history) > 1000:
+                self.behavior_history = self.behavior_history[-1000:]
+            
+        except Exception as e:
+            self.logger.error(f"Action logging error: {e}")
+    
+    def _block_action(self, action: Dict[str, Any], reason: str):
+        """Blokiraj akcijo"""
+        try:
+            blocked_entry = {
+                'action': action,
+                'reason': reason,
+                'timestamp': self._get_build_timestamp(),
+                'blocked_by': 'behavior_firewall'
+            }
+            
+            self.blocked_actions.append(blocked_entry)
+            
+            self.logger.warning(f"Action blocked: {reason}")
+            
+        except Exception as e:
+            self.logger.error(f"Action blocking error: {e}")
+    
+    def _quarantine_action(self, action: Dict[str, Any], reason: str):
+        """Postavi akcijo v karanteno"""
+        try:
+            quarantine_entry = {
+                'action': action,
+                'reason': reason,
+                'timestamp': self._get_build_timestamp(),
+                'quarantined_by': 'behavior_firewall'
+            }
+            
+            self.quarantined_actions.append(quarantine_entry)
+            
+            self.logger.warning(f"Action quarantined: {reason}")
+            
+        except Exception as e:
+            self.logger.error(f"Action quarantine error: {e}")
+    
+    def get_firewall_stats(self) -> Dict[str, Any]:
+        """Pridobi firewall statistike"""
+        try:
+            return {
+                "total_actions": len(self.behavior_history),
+                "blocked_actions": len(self.blocked_actions),
+                "quarantined_actions": len(self.quarantined_actions),
+                "allowed_behaviors": list(self.allowed_behaviors),
+                "blocked_behaviors": list(self.blocked_behaviors),
+                "is_active": self.is_active,
+                "last_update": self._get_build_timestamp().isoformat()
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Stats generation error: {e}")
+            return {}
+
+# Globalni behavior firewall
+behavior_firewall = BehaviorFirewall()

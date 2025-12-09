@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>MIA Enterprise AGI Settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.mia-enterprise.agi.settings</string>
+            <key>PayloadType</key>
+            <string>com.apple.ManagedClient.preferences</string>
+            <key>PayloadUUID</key>
+            <string>12345678-1234-1234-1234-123456789012</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadContent</key>
+            <dict>
+                <key>com.mia-enterprise.agi</key>
+                <dict>
+                    <key>Forced</key>
+                    <array>
+                        <dict>
+                            <key>mcx_preference_settings</key>
+                            <dict>
+                                <key>EnterpriseMode</key>
+                                <true/>
+                                <key>AutoUpdateEnabled</key>
+                                <true/>
+                                <key>UpdateChannel</key>
+                                <string>stable</string>
+                                <key>EnforceEncryption</key>
+                                <true/>
+                                <key>AuditLogging</key>
+                                <true/>
+                                <key>MaxMemoryGB</key>
+                                <integer>16</integer>
+                                <key>MaxCPUPercent</key>
+                                <integer>80</integer>
+                                <key>Enable18PlusMode</key>
+                                <false/>
+                                <key>EnableAPIAccess</key>
+                                <true/>
+                            </dict>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>MIA Enterprise AGI Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.mia-enterprise.agi.config</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>87654321-4321-4321-4321-210987654321</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

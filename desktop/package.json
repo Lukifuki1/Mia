@@ -1,0 +1,248 @@
+{
+  "name": "mia-enterprise-agi",
+  "version": "1.0.0",
+  "description": "MIA Enterprise AGI - Ultimate Local AI Platform",
+  "main": "main.js",
+  "homepage": "https://mia-enterprise-agi.com",
+  "author": {
+    "name": "MIA Enterprise Team",
+    "email": "enterprise@mia-agi.com"
+  },
+  "license": "Commercial",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac",
+    "build-linux": "electron-builder --linux",
+    "build-all": "electron-builder --win --mac --linux",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build",
+    "postinstall": "electron-builder install-app-deps",
+    "test": "jest",
+    "lint": "eslint .",
+    "clean": "rimraf dist build"
+  },
+  "dependencies": {
+    "electron": "^27.0.0",
+    "electron-updater": "^6.1.4",
+    "electron-store": "^8.1.0",
+    "electron-window-state": "^5.0.3",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "axios": "^1.5.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0",
+    "node-machine-id": "^1.1.12",
+    "systeminformation": "^5.21.8",
+    "node-notifier": "^10.0.1",
+    "keytar": "^7.9.0",
+    "auto-launch": "^5.0.5"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.4",
+    "electron-devtools-installer": "^3.2.0",
+    "concurrently": "^8.2.1",
+    "wait-on": "^7.0.1",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.1",
+    "jest": "^29.7.0",
+    "eslint": "^8.49.0"
+  },
+  "build": {
+    "appId": "com.mia-enterprise.agi",
+    "productName": "MIA Enterprise AGI",
+    "copyright": "Copyright \u00a9 2024 MIA Enterprise Team",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "backend/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!node_modules/*.d.ts",
+      "!node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "extraResources": [
+      {
+        "from": "../mia",
+        "to": "mia",
+        "filter": [
+          "**/*",
+          "!**/__pycache__",
+          "!**/*.pyc"
+        ]
+      },
+      {
+        "from": "../config",
+        "to": "config"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "msi",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "asInvoker",
+      "publisherName": "MIA Enterprise Team",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MIA Enterprise AGI",
+      "include": "assets/installer.nsh"
+    },
+    "msi": {
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MIA Enterprise AGI"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist"
+    },
+    "dmg": {
+      "title": "MIA Enterprise AGI ${version}",
+      "icon": "assets/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "snap",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "tar.gz",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "category": "Office",
+      "synopsis": "Ultimate Local AI Platform",
+      "description": "MIA Enterprise AGI - The most advanced local AI platform for enterprises"
+    },
+    "deb": {
+      "depends": [
+        "python3",
+        "python3-pip"
+      ],
+      "priority": "optional"
+    },
+    "rpm": {
+      "depends": [
+        "python3",
+        "python3-pip"
+      ]
+    },
+    "snap": {
+      "summary": "Ultimate Local AI Platform",
+      "grade": "stable",
+      "confinement": "classic"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "mia-enterprise",
+      "repo": "mia-agi"
+    }
+  }
+}

@@ -1,0 +1,2816 @@
+{
+  "analysis_timestamp": "2025-12-09T14:05:45.739854",
+  "analyzer": "CICDHashStrategyAnalyzer",
+  "current_strategy": {
+    "hash_sources": [
+      {
+        "file": "introspective_hash_validator.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validator",
+            "Izvede introspektivni test s 5000 cikli za hash konsistenco.",
+            "import hashlib",
+            "class IntrospectiveHashValidator:",
+            "\"\"\"Introspective hash validator for 5000-cycle consistency testing\"\"\"",
+            "self.hash_history = []",
+            "# Hash consistency tracking",
+            "self.consistent_hashes = set()",
+            "self.inconsistent_hashes = set()",
+            "self.hash_variations = {}",
+            "logger = logging.getLogger(\"MIA.IntrospectiveHashValidator\")",
+            "\"\"\"Run 5000-cycle introspective hash validation\"\"\"",
+            "\"validator\": \"IntrospectiveHashValidator\",",
+            "\"hash_consistency\": {},",
+            "self.logger.info(f\"\ud83d\udd0d Starting {self.cycle_count}-cycle introspective hash validation...\")",
+            "self.hash_history.append(cycle_result)",
+            "validation_result[\"hash_consistency\"] = self._analyze_hash_consistency()",
+            "\"module_hashes\": {},",
+            "# Calculate hashes for all modules",
+            "cycle_result[\"module_hashes\"] = self._calculate_module_hashes()",
+            "cycle_result[\"introspective_hash\"] = self._hash_data(introspective_data)",
+            "def _calculate_module_hashes(self) -> Dict[str, str]:",
+            "\"\"\"Calculate hashes for all modules\"\"\"",
+            "module_hashes = {}",
+            "# Define module directories to hash",
+            "module_hash = self._hash_directory(module_path)",
+            "module_hashes[module_dir] = module_hash",
+            "return module_hashes",
+            "def _hash_directory(self, directory: Path) -> str:",
+            "\"\"\"Calculate hash for a directory\"\"\"",
+            "hasher = hashlib.sha256()",
+            "hasher.update(normalized_content.encode('utf-8'))",
+            "self.logger.warning(f\"Could not hash {py_file}: {e}\")",
+            "return hasher.hexdigest()",
+            "\"\"\"Normalize content for consistent hashing\"\"\"",
+            "if len(self.hash_history) > 10:",
+            "recent_hashes = self.hash_history[-10:]",
+            "# Check module hash consistency",
+            "module_hashes = [cycle.get(\"module_hashes\", {}) for cycle in recent_hashes]",
+            "if module_hashes:",
+            "module_hash_values = [mh.get(module_dir, \"\") for mh in module_hashes]",
+            "unique_hashes = set(module_hash_values)",
+            "if len(unique_hashes) <= 1:",
+            "def _hash_data(self, data: Any) -> str:",
+            "\"\"\"Hash arbitrary data structure\"\"\"",
+            "hasher = hashlib.sha256()",
+            "# Convert data to JSON string for consistent hashing",
+            "hasher.update(json_str.encode('utf-8'))",
+            "hasher.update(str(data).encode('utf-8'))",
+            "return hasher.hexdigest()",
+            "if len(self.hash_history) < 10:",
+            "recent_cycles = self.hash_history[-10:]",
+            "# Check module hash consistency",
+            "module_hashes = [",
+            "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "unique_hashes = set(module_hashes)",
+            "if len(unique_hashes) > 3:  # Too many variations",
+            "def _analyze_hash_consistency(self) -> Dict[str, Any]:",
+            "\"\"\"Analyze hash consistency across all cycles\"\"\"",
+            "\"total_cycles_analyzed\": len(self.hash_history),",
+            "if not self.hash_history:",
+            "# Analyze each module's hash consistency",
+            "module_hashes = [",
+            "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "for cycle in self.hash_history",
+            "unique_hashes = set(module_hashes)",
+            "consistency_percentage = (1 - (len(unique_hashes) - 1) / len(module_hashes)) * 100",
+            "\"unique_hashes\": len(unique_hashes),",
+            "\"most_common_hash\": max(set(module_hashes), key=module_hashes.count) if module_hashes else \"\"",
+            "if not self.hash_history:",
+            "if not self.hash_history:",
+            "# Get module hashes across all cycles",
+            "module_hashes = [",
+            "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "for cycle in self.hash_history",
+            "if not module_hashes:",
+            "# Calculate stability based on hash consistency",
+            "unique_hashes = set(module_hashes)",
+            "if len(unique_hashes) == 1:",
+            "elif len(unique_hashes) <= 2:",
+            "elif len(unique_hashes) <= 3:",
+            "if self.hash_history:",
+            "cycle_times = [cycle.get(\"execution_time\", 0) for cycle in self.hash_history]",
+            "performance_metrics[\"cycles_per_second\"] = len(self.hash_history) / total_time",
+            "if not self.hash_history:",
+            "# Analyze deterministic behavior based on hash consistency",
+            "module_hashes = [",
+            "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "for cycle in self.hash_history",
+            "unique_hashes = set(module_hashes)",
+            "if len(unique_hashes) == 1:",
+            "score = max(0, 100 - (len(unique_hashes) - 1) * 10)",
+            "\"unique_hashes\": len(unique_hashes),",
+            "\"Remove non-deterministic elements from modules with hash variations\"",
+            "\"Implement deterministic content normalization for consistent hashing\"",
+            "# Based on hash consistency",
+            "if self.hash_history:",
+            "consistency_data = self._analyze_hash_consistency()",
+            "f\"Improve hash consistency (currently {overall_consistency:.1f}%) by removing non-deterministic elements\"",
+            "\"Excellent hash consistency achieved - maintain current practices\"",
+            "recommendations.append(\"Monitor hash consistency in production environment\")",
+            "recommendations.append(\"Implement automated hash validation in CI/CD pipeline\")",
+            "\"\"\"Main function to run introspective hash validation\"\"\"",
+            "print(\"\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validation\")",
+            "validator = IntrospectiveHashValidator()",
+            "print(\"\ud83d\udd04 Running 5000-cycle introspective hash validation...\")",
+            "output_file = \"introspective_hash_validation.log\"",
+            "print(\"\\n\ud83d\udcca INTROSPECTIVE HASH VALIDATION SUMMARY:\")",
+            "consistency = validation_result.get(\"hash_consistency\", {})",
+            "print(f\"\\n\u2705 Introspective hash validation completed!\")"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "timestamp",
+              "line": 52,
+              "content": "\"validation_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 52,
+              "content": "\"validation_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 64,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 79,
+              "content": "end_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 96,
+              "content": "cycle_start = time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 100,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 100,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 122,
+              "content": "cycle_result[\"execution_time\"] = time.time() - cycle_start"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 166,
+              "content": "# Normalize content (remove timestamps, random values)"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 182,
+              "content": "# Skip timestamp lines"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 183,
+              "content": "if any(keyword in line.lower() for keyword in ['timestamp', 'datetime.now()', 'time.time()']):"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 183,
+              "content": "if any(keyword in line.lower() for keyword in ['timestamp', 'datetime.now()', 'time.time()']):"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 183,
+              "content": "if any(keyword in line.lower() for keyword in ['timestamp', 'datetime.now()', 'time.time()']):"
+            },
+            {
+              "pattern": "__name__",
+              "line": 695,
+              "content": "if __name__ == \"__main__\":"
+            }
+          ],
+          "line_numbers": {
+            "3": "\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validator",
+            "6": "Izvede introspektivni test s 5000 cikli za hash konsistenco.",
+            "13": "import hashlib",
+            "20": "class IntrospectiveHashValidator:",
+            "21": "\"\"\"Introspective hash validator for 5000-cycle consistency testing\"\"\"",
+            "26": "self.hash_history = []",
+            "30": "# Hash consistency tracking",
+            "31": "self.consistent_hashes = set()",
+            "32": "self.inconsistent_hashes = set()",
+            "33": "self.hash_variations = {}",
+            "37": "logger = logging.getLogger(\"MIA.IntrospectiveHashValidator\")",
+            "49": "\"\"\"Run 5000-cycle introspective hash validation\"\"\"",
+            "53": "\"validator\": \"IntrospectiveHashValidator\",",
+            "55": "\"hash_consistency\": {},",
+            "62": "self.logger.info(f\"\ud83d\udd0d Starting {self.cycle_count}-cycle introspective hash validation...\")",
+            "72": "self.hash_history.append(cycle_result)",
+            "83": "validation_result[\"hash_consistency\"] = self._analyze_hash_consistency()",
+            "101": "\"module_hashes\": {},",
+            "108": "# Calculate hashes for all modules",
+            "109": "cycle_result[\"module_hashes\"] = self._calculate_module_hashes()",
+            "116": "cycle_result[\"introspective_hash\"] = self._hash_data(introspective_data)",
+            "126": "def _calculate_module_hashes(self) -> Dict[str, str]:",
+            "127": "\"\"\"Calculate hashes for all modules\"\"\"",
+            "129": "module_hashes = {}",
+            "131": "# Define module directories to hash",
+            "147": "module_hash = self._hash_directory(module_path)",
+            "148": "module_hashes[module_dir] = module_hash",
+            "150": "return module_hashes",
+            "152": "def _hash_directory(self, directory: Path) -> str:",
+            "153": "\"\"\"Calculate hash for a directory\"\"\"",
+            "155": "hasher = hashlib.sha256()",
+            "168": "hasher.update(normalized_content.encode('utf-8'))",
+            "170": "self.logger.warning(f\"Could not hash {py_file}: {e}\")",
+            "172": "return hasher.hexdigest()",
+            "175": "\"\"\"Normalize content for consistent hashing\"\"\"",
+            "337": "if len(self.hash_history) > 10:",
+            "338": "recent_hashes = self.hash_history[-10:]",
+            "340": "# Check module hash consistency",
+            "341": "module_hashes = [cycle.get(\"module_hashes\", {}) for cycle in recent_hashes]",
+            "342": "if module_hashes:",
+            "346": "module_hash_values = [mh.get(module_dir, \"\") for mh in module_hashes]",
+            "347": "unique_hashes = set(module_hash_values)",
+            "349": "if len(unique_hashes) <= 1:",
+            "359": "def _hash_data(self, data: Any) -> str:",
+            "360": "\"\"\"Hash arbitrary data structure\"\"\"",
+            "362": "hasher = hashlib.sha256()",
+            "364": "# Convert data to JSON string for consistent hashing",
+            "367": "hasher.update(json_str.encode('utf-8'))",
+            "370": "hasher.update(str(data).encode('utf-8'))",
+            "372": "return hasher.hexdigest()",
+            "377": "if len(self.hash_history) < 10:",
+            "381": "recent_cycles = self.hash_history[-10:]",
+            "383": "# Check module hash consistency",
+            "385": "module_hashes = [",
+            "386": "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "390": "unique_hashes = set(module_hashes)",
+            "391": "if len(unique_hashes) > 3:  # Too many variations",
+            "396": "def _analyze_hash_consistency(self) -> Dict[str, Any]:",
+            "397": "\"\"\"Analyze hash consistency across all cycles\"\"\"",
+            "400": "\"total_cycles_analyzed\": len(self.hash_history),",
+            "407": "if not self.hash_history:",
+            "410": "# Analyze each module's hash consistency",
+            "414": "module_hashes = [",
+            "415": "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "416": "for cycle in self.hash_history",
+            "419": "unique_hashes = set(module_hashes)",
+            "420": "consistency_percentage = (1 - (len(unique_hashes) - 1) / len(module_hashes)) * 100",
+            "423": "\"unique_hashes\": len(unique_hashes),",
+            "425": "\"most_common_hash\": max(set(module_hashes), key=module_hashes.count) if module_hashes else \"\"",
+            "462": "if not self.hash_history:",
+            "488": "if not self.hash_history:",
+            "491": "# Get module hashes across all cycles",
+            "492": "module_hashes = [",
+            "493": "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "494": "for cycle in self.hash_history",
+            "497": "if not module_hashes:",
+            "500": "# Calculate stability based on hash consistency",
+            "501": "unique_hashes = set(module_hashes)",
+            "503": "if len(unique_hashes) == 1:",
+            "505": "elif len(unique_hashes) <= 2:",
+            "507": "elif len(unique_hashes) <= 3:",
+            "523": "if self.hash_history:",
+            "525": "cycle_times = [cycle.get(\"execution_time\", 0) for cycle in self.hash_history]",
+            "530": "performance_metrics[\"cycles_per_second\"] = len(self.hash_history) / total_time",
+            "566": "if not self.hash_history:",
+            "569": "# Analyze deterministic behavior based on hash consistency",
+            "574": "module_hashes = [",
+            "575": "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+            "576": "for cycle in self.hash_history",
+            "579": "unique_hashes = set(module_hashes)",
+            "581": "if len(unique_hashes) == 1:",
+            "585": "score = max(0, 100 - (len(unique_hashes) - 1) * 10)",
+            "589": "\"unique_hashes\": len(unique_hashes),",
+            "613": "\"Remove non-deterministic elements from modules with hash variations\"",
+            "618": "\"Implement deterministic content normalization for consistent hashing\"",
+            "628": "# Based on hash consistency",
+            "629": "if self.hash_history:",
+            "630": "consistency_data = self._analyze_hash_consistency()",
+            "635": "f\"Improve hash consistency (currently {overall_consistency:.1f}%) by removing non-deterministic elements\"",
+            "640": "\"Excellent hash consistency achieved - maintain current practices\"",
+            "645": "recommendations.append(\"Monitor hash consistency in production environment\")",
+            "646": "recommendations.append(\"Implement automated hash validation in CI/CD pipeline\")",
+            "651": "\"\"\"Main function to run introspective hash validation\"\"\"",
+            "653": "print(\"\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validation\")",
+            "656": "validator = IntrospectiveHashValidator()",
+            "658": "print(\"\ud83d\udd04 Running 5000-cycle introspective hash validation...\")",
+            "662": "output_file = \"introspective_hash_validation.log\"",
+            "669": "print(\"\\n\ud83d\udcca INTROSPECTIVE HASH VALIDATION SUMMARY:\")",
+            "671": "consistency = validation_result.get(\"hash_consistency\", {})",
+            "692": "print(f\"\\n\u2705 Introspective hash validation completed!\")"
+          }
+        }
+      },
+      {
+        "file": "cicd_hash_strategy_analyzer.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256",
+            "md5",
+            "sha1",
+            "blake2b"
+          ],
+          "hash_elements": [
+            "\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analyzer",
+            "Ugotovi run_id vklju\u010denost v hash in predlagaj refaktorirano strategijo.",
+            "import hashlib",
+            "class CICDHashStrategyAnalyzer:",
+            "\"\"\"Analyzer for CI/CD hash strategy and reproducibility\"\"\"",
+            "# Hash strategy configuration",
+            "'run_id': 'build_hash',",
+            "logger = logging.getLogger(\"MIA.CICDHashStrategyAnalyzer\")",
+            "def analyze_hash_strategy(self) -> Dict[str, Any]:",
+            "\"\"\"Analyze current hash strategy and reproducibility\"\"\"",
+            "\"analyzer\": \"CICDHashStrategyAnalyzer\",",
+            "self.logger.info(\"\ud83d\udd04 Starting CI/CD hash strategy analysis...\")",
+            "# Analyze current hash strategy",
+            "self.logger.info(\"\u2705 CI/CD hash strategy analysis completed\")",
+            "\"\"\"Analyze current hash strategy implementation\"\"\"",
+            "\"hash_sources\": [],",
+            "\"hash_algorithms\": [],",
+            "# Find all Python files that might contain hashing logic",
+            "hash_files = []",
+            "for pattern in [\"*hash*.py\", \"*validation*.py\", \"*build*.py\", \"*deploy*.py\"]:",
+            "hash_files.extend(self.project_root.rglob(pattern))",
+            "# Analyze each file for hash-related code",
+            "for file_path in hash_files:",
+            "file_analysis = self._analyze_file_for_hashing(file_path)",
+            "if file_analysis[\"contains_hashing\"]:",
+            "current_strategy[\"hash_sources\"].append({",
+            "for source in current_strategy[\"hash_sources\"]:",
+            "all_elements.extend(source[\"analysis\"][\"hash_elements\"])",
+            "def _analyze_file_for_hashing(self, file_path: Path) -> Dict[str, Any]:",
+            "\"\"\"Analyze a file for hashing-related code\"\"\"",
+            "\"contains_hashing\": False,",
+            "\"hash_algorithms\": [],",
+            "\"hash_elements\": [],",
+            "# Check for hash algorithms",
+            "hash_algorithms = ['hashlib', 'sha256', 'md5', 'sha1', 'blake2b']",
+            "for algorithm in hash_algorithms:",
+            "file_analysis[\"hash_algorithms\"].append(algorithm)",
+            "file_analysis[\"contains_hashing\"] = True",
+            "# Check for hash-related methods",
+            "hash_methods = ['hash', 'digest', 'hexdigest', 'update']",
+            "for method in hash_methods:",
+            "file_analysis[\"contains_hashing\"] = True",
+            "# Find hash elements and non-deterministic patterns",
+            "# Look for hash input elements",
+            "if any(keyword in line.lower() for keyword in ['hash', 'digest', 'checksum']):",
+            "file_analysis[\"hash_elements\"].append(line.strip())",
+            "\"issue\": \"Non-deterministic elements in hash calculation\",",
+            "\"impact\": \"Builds will produce different hashes for identical code\"",
+            "for source in current_strategy.get(\"hash_sources\", []):",
+            "\"issue\": \"run_id included in hash calculation\",",
+            "\"impact\": \"Each CI/CD run produces unique hash regardless of code changes\",",
+            "\"recommendation\": \"Increase deterministic elements in hash calculation\"",
+            "if len(current_strategy.get(\"hash_algorithms\", [])) > 1:",
+            "\"issue\": \"Multiple hash algorithms used\",",
+            "\"impact\": \"Inconsistent hashing across different components\",",
+            "\"recommendation\": \"Standardize on single hash algorithm (SHA-256)\"",
+            "\"\"\"Generate recommended hash strategy\"\"\"",
+            "\"strategy_name\": \"Deterministic Build Hash Strategy\",",
+            "\"Use only deterministic inputs for hash calculation\",",
+            "\"Normalize content before hashing\",",
+            "\"Use consistent hash algorithm (SHA-256)\"",
+            "\"hash_inputs\": {",
+            "\"hash_algorithm\": \"SHA-256\",",
+            "\"build_identifier\": \"content_based_hash\"",
+            "\"\"\"Create implementation plan for new hash strategy\"\"\"",
+            "\"Audit all hash-related code\",",
+            "\"Design new hash calculation logic\"",
+            "\"Implement deterministic hash calculator\",",
+            "\"Monitor hash consistency\",",
+            "\"mia/build/deterministic_hasher.py\",",
+            "\"tests/test_hash_reproducibility.py\"",
+            "\"All files containing hash calculations\",",
+            "\"Monitor hash consistency metrics\"",
+            "\"\"\"Design validation tests for new hash strategy\"\"\"",
+            "\"test_name\": \"identical_builds_same_hash\",",
+            "\"description\": \"Verify identical builds produce same hash\",",
+            "\"Compare generated hashes\",",
+            "\"Assert hashes are identical\"",
+            "\"description\": \"Verify hash consistency across platforms\",",
+            "\"Compare hashes across platforms\",",
+            "\"Assert platform-independent hashes\"",
+            "\"description\": \"Verify hash consistency over time\",",
+            "\"Compare hashes from different builds\",",
+            "\"Assert time-independent hashes\"",
+            "\"description\": \"Verify hash changes when code changes\",",
+            "\"Assert hashes are different\"",
+            "\"description\": \"Verify hash changes when config changes\",",
+            "\"Assert hashes are different\"",
+            "\"test_name\": \"hash_calculation_performance\",",
+            "\"description\": \"Measure hash calculation performance\",",
+            "\"Hash calculation time\",",
+            "\"Memory usage during hashing\",",
+            "\"Verify hash generation\",",
+            "\"Check hash storage and retrieval\",",
+            "\"\"\"Main function to run CI/CD hash strategy analysis\"\"\"",
+            "print(\"\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analysis\")",
+            "analyzer = CICDHashStrategyAnalyzer()",
+            "print(\"\ud83d\udd0d Analyzing current CI/CD hash strategy...\")",
+            "analysis_result = analyzer.analyze_hash_strategy()",
+            "output_file = \"cicd_hash_strategy_recommendation.md\"",
+            "markdown_content = f\"\"\"# \ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Recommendation",
+            "### Hash Sources",
+            "for source in current_strategy.get(\"hash_sources\", []):",
+            "markdown_content += f\"- **{source['file']}**: Contains hashing logic\\n\"",
+            "### {recommended.get('strategy_name', 'New Hash Strategy')}",
+            "#### Hash Inputs",
+            "for input_item in recommended.get(\"hash_inputs\", {}).get(\"included\", []):",
+            "for excluded_item in recommended.get(\"hash_inputs\", {}).get(\"excluded\", []):",
+            "1. **Review and approve** the recommended hash strategy",
+            "3. **Create deterministic hash calculator** module",
+            "*Generated by MIA Enterprise AGI CI/CD Hash Strategy Analyzer*",
+            "json_output_file = \"cicd_hash_strategy_analysis.json\"",
+            "print(\"\\n\ud83d\udcca CI/CD HASH STRATEGY ANALYSIS SUMMARY:\")",
+            "print(\"  3. MEDIUM: Implement deterministic hash strategy\")",
+            "print(f\"\\n\u2705 CI/CD hash strategy analysis completed!\")"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "run_id",
+              "line": 6,
+              "content": "Ugotovi run_id vklju\u010denost v hash in predlagaj refaktorirano strategijo."
+            },
+            {
+              "pattern": "run_id",
+              "line": 29,
+              "content": "r'run_id',"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 30,
+              "content": "r'timestamp',"
+            },
+            {
+              "pattern": "__file__",
+              "line": 37,
+              "content": "r'__file__',"
+            },
+            {
+              "pattern": "__name__",
+              "line": 38,
+              "content": "r'__name__'"
+            },
+            {
+              "pattern": "run_id",
+              "line": 42,
+              "content": "'run_id': 'build_hash',"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 43,
+              "content": "'timestamp': 'build_version',"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 44,
+              "content": "'datetime.now()': 'build_timestamp',"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 44,
+              "content": "'datetime.now()': 'build_timestamp',"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 45,
+              "content": "'time.time()': 'build_epoch',"
+            },
+            {
+              "pattern": "uuid\\.",
+              "line": 46,
+              "content": "'uuid.': 'deterministic_id',"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 47,
+              "content": "'random.': 'seeded_random',"
+            },
+            {
+              "pattern": "os\\.getpid\\(\\)",
+              "line": 48,
+              "content": "'os.getpid()': 'process_identifier',"
+            },
+            {
+              "pattern": "threading\\.current_thread\\(\\)",
+              "line": 49,
+              "content": "'threading.current_thread()': 'thread_identifier'"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 69,
+              "content": "\"analysis_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 69,
+              "content": "\"analysis_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "run_id",
+              "line": 236,
+              "content": "# Check for run_id specifically"
+            },
+            {
+              "pattern": "run_id",
+              "line": 237,
+              "content": "run_id_found = False"
+            },
+            {
+              "pattern": "run_id",
+              "line": 240,
+              "content": "if \"run_id\" in pattern[\"pattern\"].lower():"
+            },
+            {
+              "pattern": "run_id",
+              "line": 241,
+              "content": "run_id_found = True"
+            },
+            {
+              "pattern": "run_id",
+              "line": 244,
+              "content": "if run_id_found:"
+            },
+            {
+              "pattern": "run_id",
+              "line": 246,
+              "content": "\"issue\": \"run_id included in hash calculation\","
+            },
+            {
+              "pattern": "run_id",
+              "line": 248,
+              "content": "\"recommendation\": \"Replace run_id with deterministic build identifier\""
+            },
+            {
+              "pattern": "run_id",
+              "line": 280,
+              "content": "\"build_reproducibility\": \"COMPROMISED\" if run_id_found else \"PARTIAL\","
+            },
+            {
+              "pattern": "run_id",
+              "line": 294,
+              "content": "\"Exclude runtime-specific identifiers (run_id, timestamps)\","
+            },
+            {
+              "pattern": "timestamp",
+              "line": 294,
+              "content": "\"Exclude runtime-specific identifiers (run_id, timestamps)\","
+            },
+            {
+              "pattern": "run_id",
+              "line": 308,
+              "content": "\"run_id\","
+            },
+            {
+              "pattern": "timestamp",
+              "line": 309,
+              "content": "\"build_timestamp\","
+            },
+            {
+              "pattern": "timestamp",
+              "line": 503,
+              "content": "**Analysis Date**: {analysis_result['analysis_timestamp']}"
+            },
+            {
+              "pattern": "__name__",
+              "line": 653,
+              "content": "if __name__ == \"__main__\":"
+            }
+          ],
+          "line_numbers": {
+            "3": "\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analyzer",
+            "6": "Ugotovi run_id vklju\u010denost v hash in predlagaj refaktorirano strategijo.",
+            "12": "import hashlib",
+            "19": "class CICDHashStrategyAnalyzer:",
+            "20": "\"\"\"Analyzer for CI/CD hash strategy and reproducibility\"\"\"",
+            "27": "# Hash strategy configuration",
+            "42": "'run_id': 'build_hash',",
+            "54": "logger = logging.getLogger(\"MIA.CICDHashStrategyAnalyzer\")",
+            "65": "def analyze_hash_strategy(self) -> Dict[str, Any]:",
+            "66": "\"\"\"Analyze current hash strategy and reproducibility\"\"\"",
+            "70": "\"analyzer\": \"CICDHashStrategyAnalyzer\",",
+            "78": "self.logger.info(\"\ud83d\udd04 Starting CI/CD hash strategy analysis...\")",
+            "80": "# Analyze current hash strategy",
+            "95": "self.logger.info(\"\u2705 CI/CD hash strategy analysis completed\")",
+            "100": "\"\"\"Analyze current hash strategy implementation\"\"\"",
+            "103": "\"hash_sources\": [],",
+            "106": "\"hash_algorithms\": [],",
+            "110": "# Find all Python files that might contain hashing logic",
+            "111": "hash_files = []",
+            "112": "for pattern in [\"*hash*.py\", \"*validation*.py\", \"*build*.py\", \"*deploy*.py\"]:",
+            "113": "hash_files.extend(self.project_root.rglob(pattern))",
+            "115": "# Analyze each file for hash-related code",
+            "116": "for file_path in hash_files:",
+            "118": "file_analysis = self._analyze_file_for_hashing(file_path)",
+            "119": "if file_analysis[\"contains_hashing\"]:",
+            "120": "current_strategy[\"hash_sources\"].append({",
+            "127": "for source in current_strategy[\"hash_sources\"]:",
+            "128": "all_elements.extend(source[\"analysis\"][\"hash_elements\"])",
+            "145": "def _analyze_file_for_hashing(self, file_path: Path) -> Dict[str, Any]:",
+            "146": "\"\"\"Analyze a file for hashing-related code\"\"\"",
+            "149": "\"contains_hashing\": False,",
+            "150": "\"hash_algorithms\": [],",
+            "151": "\"hash_elements\": [],",
+            "160": "# Check for hash algorithms",
+            "161": "hash_algorithms = ['hashlib', 'sha256', 'md5', 'sha1', 'blake2b']",
+            "162": "for algorithm in hash_algorithms:",
+            "164": "file_analysis[\"hash_algorithms\"].append(algorithm)",
+            "165": "file_analysis[\"contains_hashing\"] = True",
+            "167": "# Check for hash-related methods",
+            "168": "hash_methods = ['hash', 'digest', 'hexdigest', 'update']",
+            "169": "for method in hash_methods:",
+            "171": "file_analysis[\"contains_hashing\"] = True",
+            "173": "# Find hash elements and non-deterministic patterns",
+            "175": "# Look for hash input elements",
+            "176": "if any(keyword in line.lower() for keyword in ['hash', 'digest', 'checksum']):",
+            "177": "file_analysis[\"hash_elements\"].append(line.strip())",
+            "230": "\"issue\": \"Non-deterministic elements in hash calculation\",",
+            "233": "\"impact\": \"Builds will produce different hashes for identical code\"",
+            "238": "for source in current_strategy.get(\"hash_sources\", []):",
+            "246": "\"issue\": \"run_id included in hash calculation\",",
+            "247": "\"impact\": \"Each CI/CD run produces unique hash regardless of code changes\",",
+            "257": "\"recommendation\": \"Increase deterministic elements in hash calculation\"",
+            "261": "if len(current_strategy.get(\"hash_algorithms\", [])) > 1:",
+            "263": "\"issue\": \"Multiple hash algorithms used\",",
+            "264": "\"impact\": \"Inconsistent hashing across different components\",",
+            "265": "\"recommendation\": \"Standardize on single hash algorithm (SHA-256)\"",
+            "288": "\"\"\"Generate recommended hash strategy\"\"\"",
+            "291": "\"strategy_name\": \"Deterministic Build Hash Strategy\",",
+            "293": "\"Use only deterministic inputs for hash calculation\",",
+            "296": "\"Normalize content before hashing\",",
+            "297": "\"Use consistent hash algorithm (SHA-256)\"",
+            "299": "\"hash_inputs\": {",
+            "316": "\"hash_algorithm\": \"SHA-256\",",
+            "319": "\"build_identifier\": \"content_based_hash\"",
+            "331": "\"\"\"Create implementation plan for new hash strategy\"\"\"",
+            "340": "\"Audit all hash-related code\",",
+            "343": "\"Design new hash calculation logic\"",
+            "351": "\"Implement deterministic hash calculator\",",
+            "374": "\"Monitor hash consistency\",",
+            "382": "\"mia/build/deterministic_hasher.py\",",
+            "384": "\"tests/test_hash_reproducibility.py\"",
+            "387": "\"All files containing hash calculations\",",
+            "396": "\"Monitor hash consistency metrics\"",
+            "403": "\"\"\"Design validation tests for new hash strategy\"\"\"",
+            "408": "\"test_name\": \"identical_builds_same_hash\",",
+            "409": "\"description\": \"Verify identical builds produce same hash\",",
+            "412": "\"Compare generated hashes\",",
+            "413": "\"Assert hashes are identical\"",
+            "418": "\"description\": \"Verify hash consistency across platforms\",",
+            "421": "\"Compare hashes across platforms\",",
+            "422": "\"Assert platform-independent hashes\"",
+            "427": "\"description\": \"Verify hash consistency over time\",",
+            "430": "\"Compare hashes from different builds\",",
+            "431": "\"Assert time-independent hashes\"",
+            "438": "\"description\": \"Verify hash changes when code changes\",",
+            "443": "\"Assert hashes are different\"",
+            "448": "\"description\": \"Verify hash changes when config changes\",",
+            "453": "\"Assert hashes are different\"",
+            "459": "\"test_name\": \"hash_calculation_performance\",",
+            "460": "\"description\": \"Measure hash calculation performance\",",
+            "462": "\"Hash calculation time\",",
+            "463": "\"Memory usage during hashing\",",
+            "474": "\"Verify hash generation\",",
+            "475": "\"Check hash storage and retrieval\",",
+            "485": "\"\"\"Main function to run CI/CD hash strategy analysis\"\"\"",
+            "487": "print(\"\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analysis\")",
+            "490": "analyzer = CICDHashStrategyAnalyzer()",
+            "492": "print(\"\ud83d\udd0d Analyzing current CI/CD hash strategy...\")",
+            "493": "analysis_result = analyzer.analyze_hash_strategy()",
+            "496": "output_file = \"cicd_hash_strategy_recommendation.md\"",
+            "499": "markdown_content = f\"\"\"# \ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Recommendation",
+            "508": "### Hash Sources",
+            "512": "for source in current_strategy.get(\"hash_sources\", []):",
+            "513": "markdown_content += f\"- **{source['file']}**: Contains hashing logic\\n\"",
+            "553": "### {recommended.get('strategy_name', 'New Hash Strategy')}",
+            "562": "#### Hash Inputs",
+            "567": "for input_item in recommended.get(\"hash_inputs\", {}).get(\"included\", []):",
+            "574": "for excluded_item in recommended.get(\"hash_inputs\", {}).get(\"excluded\", []):",
+            "612": "1. **Review and approve** the recommended hash strategy",
+            "614": "3. **Create deterministic hash calculator** module",
+            "620": "*Generated by MIA Enterprise AGI CI/CD Hash Strategy Analyzer*",
+            "628": "json_output_file = \"cicd_hash_strategy_analysis.json\"",
+            "636": "print(\"\\n\ud83d\udcca CI/CD HASH STRATEGY ANALYSIS SUMMARY:\")",
+            "647": "print(\"  3. MEDIUM: Implement deterministic hash strategy\")",
+            "650": "print(f\"\\n\u2705 CI/CD hash strategy analysis completed!\")"
+          }
+        }
+      },
+      {
+        "file": "mia/security/integrity_hash.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "\ud83d\udd10 Integrity Hash System",
+            "import hashlib",
+            "class IntegrityHashSystem:",
+            "self.logger = logging.getLogger(\"MIA.IntegrityHash\")",
+            "# Hash database",
+            "self.hash_database = {}",
+            "self.hash_file = \"integrity_hashes.json\"",
+            "# Load existing hashes",
+            "self._load_hash_database()",
+            "# Generiraj baseline hashes",
+            "self._generate_baseline_hashes()",
+            "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring started\")",
+            "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring stopped\")",
+            "def _generate_baseline_hashes(self):",
+            "\"\"\"Generiraj baseline hashes\"\"\"",
+            "self.logger.info(\"Generating baseline integrity hashes...\")",
+            "# Hash critical files",
+            "file_hash = self._calculate_file_hash(full_path)",
+            "self.hash_database[str(full_path)] = {",
+            "'hash': file_hash,",
+            "# Hash all Python files",
+            "if str(py_file) not in self.hash_database:",
+            "file_hash = self._calculate_file_hash(py_file)",
+            "self.hash_database[str(py_file)] = {",
+            "'hash': file_hash,",
+            "# Save hash database",
+            "self._save_hash_database()",
+            "self.logger.info(f\"Generated hashes for {len(self.hash_database)} files\")",
+            "self.logger.error(f\"Baseline hash generation error: {e}\")",
+            "def _calculate_file_hash(self, file_path: Path) -> str:",
+            "\"\"\"Izra\u010dunaj hash datoteke\"\"\"",
+            "hasher = hashlib.sha256()",
+            "hasher.update(chunk)",
+            "return hasher.hexdigest()",
+            "self.logger.error(f\"File hash calculation error for {file_path}: {e}\")",
+            "for file_path, stored_data in self.hash_database.items():",
+            "# Calculate current hash",
+            "current_hash = self._calculate_file_hash(path_obj)",
+            "stored_hash = stored_data['hash']",
+            "if current_hash != stored_hash:",
+            "'type': 'hash_mismatch',",
+            "'description': f\"Hash mismatch in {file_path}\",",
+            "'stored_hash': stored_hash,",
+            "'current_hash': current_hash",
+            "if violation['type'] in ['hash_mismatch', 'size_change']:",
+            "def _load_hash_database(self):",
+            "\"\"\"Nalo\u017ei hash database\"\"\"",
+            "if os.path.exists(self.hash_file):",
+            "with open(self.hash_file, 'r') as f:",
+            "self.hash_database = json.load(f)",
+            "self.logger.info(f\"Loaded {len(self.hash_database)} hashes from database\")",
+            "self.logger.error(f\"Hash database load error: {e}\")",
+            "self.hash_database = {}",
+            "def _save_hash_database(self):",
+            "\"\"\"Shrani hash database\"\"\"",
+            "with open(self.hash_file, 'w') as f:",
+            "json.dump(self.hash_database, f, indent=2)",
+            "self.logger.error(f\"Hash database save error: {e}\")",
+            "def update_file_hash(self, file_path: str):",
+            "\"\"\"Posodobi hash datoteke\"\"\"",
+            "file_hash = self._calculate_file_hash(path_obj)",
+            "self.hash_database[file_path] = {",
+            "'hash': file_hash,",
+            "self._save_hash_database()",
+            "self.logger.info(f\"Hash updated for {file_path}\")",
+            "self.logger.error(f\"Hash update error: {e}\")",
+            "'total_files': len(self.hash_database),",
+            "'critical_files': len([f for f in self.hash_database.values() if f['type'] == 'critical']),",
+            "# Globalni integrity hash system",
+            "integrity_hash_system = IntegrityHashSystem()"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "timestamp",
+              "line": 21,
+              "content": "return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 99,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 99,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 110,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 110,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 218,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 218,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 271,
+              "content": "Timestamp: {incident['timestamp']}"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 295,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 295,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 340,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 340,
+              "content": "'timestamp': datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 362,
+              "content": "'last_check': datetime.now().isoformat(),"
+            }
+          ],
+          "line_numbers": {
+            "3": "\ud83d\udd10 Integrity Hash System",
+            "7": "import hashlib",
+            "17": "class IntegrityHashSystem:",
+            "26": "self.logger = logging.getLogger(\"MIA.IntegrityHash\")",
+            "30": "# Hash database",
+            "31": "self.hash_database = {}",
+            "32": "self.hash_file = \"integrity_hashes.json\"",
+            "44": "# Load existing hashes",
+            "45": "self._load_hash_database()",
+            "54": "# Generiraj baseline hashes",
+            "55": "self._generate_baseline_hashes()",
+            "61": "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring started\")",
+            "69": "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring stopped\")",
+            "87": "def _generate_baseline_hashes(self):",
+            "88": "\"\"\"Generiraj baseline hashes\"\"\"",
+            "90": "self.logger.info(\"Generating baseline integrity hashes...\")",
+            "92": "# Hash critical files",
+            "96": "file_hash = self._calculate_file_hash(full_path)",
+            "97": "self.hash_database[str(full_path)] = {",
+            "98": "'hash': file_hash,",
+            "104": "# Hash all Python files",
+            "106": "if str(py_file) not in self.hash_database:",
+            "107": "file_hash = self._calculate_file_hash(py_file)",
+            "108": "self.hash_database[str(py_file)] = {",
+            "109": "'hash': file_hash,",
+            "115": "# Save hash database",
+            "116": "self._save_hash_database()",
+            "118": "self.logger.info(f\"Generated hashes for {len(self.hash_database)} files\")",
+            "121": "self.logger.error(f\"Baseline hash generation error: {e}\")",
+            "123": "def _calculate_file_hash(self, file_path: Path) -> str:",
+            "124": "\"\"\"Izra\u010dunaj hash datoteke\"\"\"",
+            "126": "hasher = hashlib.sha256()",
+            "130": "hasher.update(chunk)",
+            "132": "return hasher.hexdigest()",
+            "135": "self.logger.error(f\"File hash calculation error for {file_path}: {e}\")",
+            "143": "for file_path, stored_data in self.hash_database.items():",
+            "155": "# Calculate current hash",
+            "156": "current_hash = self._calculate_file_hash(path_obj)",
+            "157": "stored_hash = stored_data['hash']",
+            "159": "if current_hash != stored_hash:",
+            "161": "'type': 'hash_mismatch',",
+            "164": "'description': f\"Hash mismatch in {file_path}\",",
+            "165": "'stored_hash': stored_hash,",
+            "166": "'current_hash': current_hash",
+            "226": "if violation['type'] in ['hash_mismatch', 'size_change']:",
+            "310": "def _load_hash_database(self):",
+            "311": "\"\"\"Nalo\u017ei hash database\"\"\"",
+            "313": "if os.path.exists(self.hash_file):",
+            "314": "with open(self.hash_file, 'r') as f:",
+            "315": "self.hash_database = json.load(f)",
+            "317": "self.logger.info(f\"Loaded {len(self.hash_database)} hashes from database\")",
+            "320": "self.logger.error(f\"Hash database load error: {e}\")",
+            "321": "self.hash_database = {}",
+            "323": "def _save_hash_database(self):",
+            "324": "\"\"\"Shrani hash database\"\"\"",
+            "326": "with open(self.hash_file, 'w') as f:",
+            "327": "json.dump(self.hash_database, f, indent=2)",
+            "330": "self.logger.error(f\"Hash database save error: {e}\")",
+            "332": "def update_file_hash(self, file_path: str):",
+            "333": "\"\"\"Posodobi hash datoteke\"\"\"",
+            "337": "file_hash = self._calculate_file_hash(path_obj)",
+            "338": "self.hash_database[file_path] = {",
+            "339": "'hash': file_hash,",
+            "345": "self._save_hash_database()",
+            "346": "self.logger.info(f\"Hash updated for {file_path}\")",
+            "349": "self.logger.error(f\"Hash update error: {e}\")",
+            "358": "'total_files': len(self.hash_database),",
+            "359": "'critical_files': len([f for f in self.hash_database.values() if f['type'] == 'critical']),",
+            "370": "# Globalni integrity hash system",
+            "371": "integrity_hash_system = IntegrityHashSystem()"
+          }
+        }
+      },
+      {
+        "file": "comprehensive_introspective_validation_backup.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "self.hash_registry = {}",
+            "# Preveri meta_state_hash konsistenco",
+            "\"baseline_hash\": cycles_result.get(\"baseline_hash\", \"\"),",
+            "\"unique_hashes\": cycles_result.get(\"unique_hashes\", 0),",
+            "f\"Non-deterministic behavior: {result['unique_hashes']} unique hashes\",",
+            "hash1 = result1.get(\"baseline_hash\", \"\")",
+            "hash2 = result2.get(\"baseline_hash\", \"\")",
+            "\"consistent_after_restart\": hash1 == hash2,",
+            "\"hash1\": hash1,",
+            "\"hash2\": hash2,",
+            "results.append(result.get(\"baseline_hash\", \"\"))",
+            "unique_hashes = len(set(results))",
+            "\"parallel_consistent\": unique_hashes == 1,",
+            "\"unique_hashes\": unique_hashes,",
+            "\"hashes\": results",
+            "\"baseline_hash\": result.get(\"baseline_hash\", \"\"),",
+            "\"\"\"Validiraj meta_state_hash konsistenco\"\"\"",
+            "# Generiraj 100 meta state hash-ov",
+            "meta_state_hash = self._calculate_meta_state_hash(meta_state)",
+            "meta_states.append(meta_state_hash)",
+            "\"baseline_meta_hash\": meta_states[0] if meta_states else \"\",",
+            "def _calculate_meta_state_hash(self, meta_state: Dict[str, Any]) -> str:",
+            "\"\"\"Izra\u010dunaj meta state hash\"\"\"",
+            "return hashlib.sha256(state_str.encode('utf-8')).hexdigest()",
+            "\"PYTHONHASHSEED\": \"0\",",
+            "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+            "outputs.append(output_hash)",
+            "\"baseline_output_hash\": outputs[0] if outputs else \"\",",
+            "\"output_hashes\": outputs",
+            "\"hash\": hashlib.sha256(f\"short_term_data_{i}\".encode()).hexdigest()",
+            "unique_hashes = len(set(op[\"hash\"] for op in memory_operations))",
+            "\"consistent\": unique_hashes == expected_unique,",
+            "\"unique_hashes\": unique_hashes,",
+            "retrieved_hash = hashlib.sha256(json.dumps(retrieved, sort_keys=True).encode()).hexdigest()",
+            "retrieved_contexts.append(retrieved_hash)",
+            "serialization_hash = hashlib.sha256(serialized.encode()).hexdigest()",
+            "serializations.append(serialization_hash)",
+            "meta_hashes = []",
+            "meta_hash = hashlib.sha256(json.dumps(meta_data, sort_keys=True).encode()).hexdigest()",
+            "meta_hashes.append(meta_hash)",
+            "unique_meta_hashes = len(set(meta_hashes))",
+            "\"consistent\": unique_meta_hashes == 1,",
+            "\"hash_tests\": len(meta_hashes),",
+            "\"unique_hashes\": unique_meta_hashes",
+            "# Izra\u010dunaj checkpoint hash",
+            "checkpoint_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "\"checkpoint_hash\": checkpoint_hash,",
+            "\"baseline_hash\": continuation_result.get(\"baseline_hash\", \"\")",
+            "\"hash\": hashlib.sha256(f\"checkpoint_data_{i}\".encode()).hexdigest()",
+            "# Preveri hash konsistenco",
+            "checkpoint_hashes = [cp[\"hash\"] for cp in rotated_checkpoints]",
+            "unique_hashes = len(set(checkpoint_hashes))",
+            "\"unique_hashes\": unique_hashes,",
+            "\"hash_consistency\": unique_hashes == len(rotated_checkpoints)",
+            "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+            "outputs.append(output_hash)",
+            "# Izra\u010dunaj hash",
+            "result_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "results.append(result_hash)",
+            "\"baseline_hash\": results[0] if results else \"\",",
+            "\"audio_hash\": hashlib.sha256(llm_result[\"response\"].encode()).hexdigest(),",
+            "image_hashes = []",
+            "image_hashes.append(sd_result[\"image_hash\"])",
+            "unique_hashes = len(set(image_hashes))",
+            "deterministic = unique_hashes == 1",
+            "\"generations_executed\": len(image_hashes),",
+            "\"unique_hashes\": unique_hashes,",
+            "\"baseline_image_hash\": image_hashes[0] if image_hashes else \"\",",
+            "image_hash = hashlib.sha256(image_data.encode()).hexdigest()",
+            "\"image_hash\": image_hash,",
+            "# Test shranjevanja z hash reference ID",
+            "# Izra\u010dunaj hash reference ID",
+            "hash_id = hashlib.sha256(json.dumps(item, sort_keys=True).encode()).hexdigest()",
+            "\"hash_id\": hash_id,",
+            "# Preveri konsistenco hash ID-jev",
+            "hash_ids = [item[\"hash_id\"] for item in stored_items]",
+            "unique_hash_ids = len(set(hash_ids))",
+            "\"storage_consistent\": unique_hash_ids == len(stored_items),  # Vsak mora biti unikaten",
+            "\"unique_hash_ids\": unique_hash_ids,",
+            "\"hash_collision_rate\": 1.0 - (unique_hash_ids / len(stored_items))",
+            "pipeline_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "pipeline_results.append(pipeline_hash)",
+            "# Preveri 1:1 izhod (hash match)",
+            "\"baseline_pipeline_hash\": pipeline_results[0] if pipeline_results else \"\",",
+            "\"hash_match_rate\": 1.0 if pipeline_deterministic else 0.0",
+            "\"stored_hash\": hashlib.sha256(json.dumps({",
+            "}, sort_keys=True).encode()).hexdigest()",
+            "artifact_hashes = {}",
+            "\"source_hash\": \"abc123def456\",",
+            "\"dependencies_hash\": \"def456abc123\"",
+            "# Izra\u010dunaj artifact hash",
+            "artifact_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "artifact_hashes[platform] = artifact_hash",
+            "# Preveri, \u010de so hash-i deterministi\u010dni za isto platformo",
+            "# (razli\u010dne platforme lahko imajo razli\u010dne hash-e)",
+            "\"artifact_hashes\": artifact_hashes,",
+            "# Izra\u010dunaj pipeline hash",
+            "pipeline_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "\"pipeline_hash\": pipeline_hash,",
+            "unique_hashes = len(set(run[\"pipeline_hash\"] for run in pipeline_runs))",
+            "pipeline_reproducible = unique_hashes == 1",
+            "\"unique_hashes\": unique_hashes,",
+            "\"baseline_hash\": pipeline_runs[0][\"pipeline_hash\"] if pipeline_runs else \"\",",
+            "\"backup_hash\": hashlib.sha256(json.dumps(backup_data, sort_keys=True).encode()).hexdigest()",
+            "\"log_hash\": hashlib.sha256(f\"{incident['type']}_{incident['severity']}\".encode()).hexdigest()",
+            "\"hash\": hashlib.sha256(f\"{anomaly_type}_{description}\".encode()).hexdigest()",
+            "# Generiraj hash registry",
+            "hash_registry = self._generate_hash_registry()",
+            "\"hash_registry\": hash_registry,",
+            "def _generate_hash_registry(self) -> Dict[str, Any]:",
+            "\"\"\"Generiraj hash registry\"\"\"",
+            "hash_registry = {",
+            "\"deterministic_baseline_hash\": \"\",",
+            "\"memory_state_hashes\": [],",
+            "\"multimodal_output_hashes\": [],",
+            "\"security_policy_hashes\": [],",
+            "\"build_artifact_hashes\": [],",
+            "\"backup_state_hashes\": []",
+            "# Izvleci hash-e iz rezultatov",
+            "hash_registry[\"deterministic_baseline_hash\"] = introspective.get(\"baseline_hash\", \"\")",
+            "# Dodaj druge hash-e iz rezultatov",
+            "# Poi\u0161\u010di hash-e v rezultatih",
+            "self._extract_hashes_from_result(result, hash_registry)",
+            "return hash_registry",
+            "def _extract_hashes_from_result(self, result: Dict[str, Any], hash_registry: Dict[str, Any]):",
+            "\"\"\"Izvleci hash-e iz rezultata\"\"\"",
+            "# Verjetno je hash",
+            "hash_registry[\"memory_state_hashes\"].append(value)",
+            "hash_registry[\"multimodal_output_hashes\"].append(value)",
+            "hash_registry[\"security_policy_hashes\"].append(value)",
+            "hash_registry[\"build_artifact_hashes\"].append(value)",
+            "hash_registry[\"backup_state_hashes\"].append(value)",
+            "self._extract_hashes_from_result(value, hash_registry)",
+            "self._extract_hashes_from_result(item, hash_registry)"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "__file__",
+              "line": 14,
+              "content": "project_root = Path(__file__).parent"
+            },
+            {
+              "pattern": "__name__",
+              "line": 40,
+              "content": "if __name__ == \"__main__\":"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 51,
+              "content": "\"fixed_timestamp\": 1640995200"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 83,
+              "content": "self.test_start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 174,
+              "content": "\"execution_time\": time.time() - self.test_start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 346,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"],"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 382,
+              "content": "random.seed(42)"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 383,
+              "content": "val1 = random.random()"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 385,
+              "content": "random.seed(42)"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 386,
+              "content": "val2 = random.random()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 395,
+              "content": "# Preveri, \u010de se uporablja fiksni timestamp"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 396,
+              "content": "fixed_time = self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 397,
+              "content": "current_time = time.time()"
+            },
+            {
+              "pattern": "uuid\\.",
+              "line": 408,
+              "content": "# V deterministi\u010dni kodi se ne sme uporabljati uuid.uuid4()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 462,
+              "content": "\"meta_memory\": {\"version\": \"1.0\", \"timestamp\": self.validation_config[\"fixed_timestamp\"]},"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 505,
+              "content": "random.seed(input_data[\"parameters\"][\"seed\"])"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 512,
+              "content": "\"random_value\": random.randint(1, 100),  # Deterministi\u010dno"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 513,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 607,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"] + i,"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 636,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"],"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 671,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 709,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 774,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 790,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 793,
+              "content": "\"created_at\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 801,
+              "content": "creation_time = time.time() - start_time"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 825,
+              "content": "simulated_corruption = random.choice(corruption_types)"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 844,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 867,
+              "content": "recovery_time = time.time() - start_time"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 884,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 893,
+              "content": "continuation_time = time.time() - start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 917,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"] + i * 3600,  # Vsako uro"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 1471,
+              "content": "random.seed(self.validation_config[\"deterministic_seed\"])"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1478,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 1484,
+              "content": "random.seed(self.validation_config[\"deterministic_seed\"])"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1492,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 1498,
+              "content": "random.seed(self.validation_config[\"deterministic_seed\"])"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1505,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 1545,
+              "content": "random.seed(seed)"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1548,
+              "content": "image_data = f\"{prompt}_{seed}_{self.validation_config['fixed_timestamp']}\""
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1558,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1573,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1583,
+              "content": "\"stored_at\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1638,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1664,
+              "content": "\"pipeline_timestamp\": self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1755,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"],"
+            },
+            {
+              "pattern": "run_id",
+              "line": 1820,
+              "content": "for run_id in range(2):"
+            },
+            {
+              "pattern": "run_id",
+              "line": 1823,
+              "content": "\"run_id\": run_id,"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1824,
+              "content": "\"build_timestamp\": self.validation_config[\"fixed_timestamp\"],"
+            },
+            {
+              "pattern": "run_id",
+              "line": 1837,
+              "content": "\"run_id\": run_id,"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 1944,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 1951,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"] + i,"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 1965,
+              "content": "total_time = time.time() - start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 2042,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"] + (hour * 3600),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 2099,
+              "content": "\"timestamp\": self.validation_config[\"fixed_timestamp\"],"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 2171,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 2171,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 2184,
+              "content": "validation_duration = time.time() - self.test_start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 2201,
+              "content": "\"timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 2201,
+              "content": "\"timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 2484,
+              "content": "base_date = datetime.now()"
+            },
+            {
+              "pattern": "__name__",
+              "line": 2567,
+              "content": "if __name__ == \"__main__\":"
+            }
+          ],
+          "line_numbers": {
+            "57": "self.hash_registry = {}",
+            "151": "# Preveri meta_state_hash konsistenco",
+            "167": "\"baseline_hash\": cycles_result.get(\"baseline_hash\", \"\"),",
+            "168": "\"unique_hashes\": cycles_result.get(\"unique_hashes\", 0),",
+            "180": "f\"Non-deterministic behavior: {result['unique_hashes']} unique hashes\",",
+            "232": "hash1 = result1.get(\"baseline_hash\", \"\")",
+            "233": "hash2 = result2.get(\"baseline_hash\", \"\")",
+            "236": "\"consistent_after_restart\": hash1 == hash2,",
+            "237": "\"hash1\": hash1,",
+            "238": "\"hash2\": hash2,",
+            "258": "results.append(result.get(\"baseline_hash\", \"\"))",
+            "271": "unique_hashes = len(set(results))",
+            "274": "\"parallel_consistent\": unique_hashes == 1,",
+            "275": "\"unique_hashes\": unique_hashes,",
+            "277": "\"hashes\": results",
+            "300": "\"baseline_hash\": result.get(\"baseline_hash\", \"\"),",
+            "313": "\"\"\"Validiraj meta_state_hash konsistenco\"\"\"",
+            "317": "# Generiraj 100 meta state hash-ov",
+            "320": "meta_state_hash = self._calculate_meta_state_hash(meta_state)",
+            "321": "meta_states.append(meta_state_hash)",
+            "330": "\"baseline_meta_hash\": meta_states[0] if meta_states else \"\",",
+            "350": "def _calculate_meta_state_hash(self, meta_state: Dict[str, Any]) -> str:",
+            "351": "\"\"\"Izra\u010dunaj meta state hash\"\"\"",
+            "355": "return hashlib.sha256(state_str.encode('utf-8')).hexdigest()",
+            "418": "\"PYTHONHASHSEED\": \"0\",",
+            "485": "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+            "486": "outputs.append(output_hash)",
+            "495": "\"baseline_output_hash\": outputs[0] if outputs else \"\",",
+            "496": "\"output_hashes\": outputs",
+            "608": "\"hash\": hashlib.sha256(f\"short_term_data_{i}\".encode()).hexdigest()",
+            "613": "unique_hashes = len(set(op[\"hash\"] for op in memory_operations))",
+            "617": "\"consistent\": unique_hashes == expected_unique,",
+            "619": "\"unique_hashes\": unique_hashes,",
+            "646": "retrieved_hash = hashlib.sha256(json.dumps(retrieved, sort_keys=True).encode()).hexdigest()",
+            "647": "retrieved_contexts.append(retrieved_hash)",
+            "679": "serialization_hash = hashlib.sha256(serialized.encode()).hexdigest()",
+            "680": "serializations.append(serialization_hash)",
+            "713": "meta_hashes = []",
+            "715": "meta_hash = hashlib.sha256(json.dumps(meta_data, sort_keys=True).encode()).hexdigest()",
+            "716": "meta_hashes.append(meta_hash)",
+            "718": "unique_meta_hashes = len(set(meta_hashes))",
+            "721": "\"consistent\": unique_meta_hashes == 1,",
+            "723": "\"hash_tests\": len(meta_hashes),",
+            "724": "\"unique_hashes\": unique_meta_hashes",
+            "796": "# Izra\u010dunaj checkpoint hash",
+            "797": "checkpoint_hash = hashlib.sha256(",
+            "799": ").hexdigest()",
+            "806": "\"checkpoint_hash\": checkpoint_hash,",
+            "901": "\"baseline_hash\": continuation_result.get(\"baseline_hash\", \"\")",
+            "919": "\"hash\": hashlib.sha256(f\"checkpoint_data_{i}\".encode()).hexdigest()",
+            "926": "# Preveri hash konsistenco",
+            "927": "checkpoint_hashes = [cp[\"hash\"] for cp in rotated_checkpoints]",
+            "928": "unique_hashes = len(set(checkpoint_hashes))",
+            "934": "\"unique_hashes\": unique_hashes,",
+            "936": "\"hash_consistency\": unique_hashes == len(rotated_checkpoints)",
+            "1016": "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+            "1017": "outputs.append(output_hash)",
+            "1446": "# Izra\u010dunaj hash",
+            "1447": "result_hash = hashlib.sha256(",
+            "1449": ").hexdigest()",
+            "1451": "results.append(result_hash)",
+            "1461": "\"baseline_hash\": results[0] if results else \"\",",
+            "1501": "\"audio_hash\": hashlib.sha256(llm_result[\"response\"].encode()).hexdigest(),",
+            "1517": "image_hashes = []",
+            "1523": "image_hashes.append(sd_result[\"image_hash\"])",
+            "1526": "unique_hashes = len(set(image_hashes))",
+            "1527": "deterministic = unique_hashes == 1",
+            "1531": "\"generations_executed\": len(image_hashes),",
+            "1532": "\"unique_hashes\": unique_hashes,",
+            "1533": "\"baseline_image_hash\": image_hashes[0] if image_hashes else \"\",",
+            "1549": "image_hash = hashlib.sha256(image_data.encode()).hexdigest()",
+            "1552": "\"image_hash\": image_hash,",
+            "1564": "# Test shranjevanja z hash reference ID",
+            "1576": "# Izra\u010dunaj hash reference ID",
+            "1577": "hash_id = hashlib.sha256(json.dumps(item, sort_keys=True).encode()).hexdigest()",
+            "1581": "\"hash_id\": hash_id,",
+            "1588": "# Preveri konsistenco hash ID-jev",
+            "1589": "hash_ids = [item[\"hash_id\"] for item in stored_items]",
+            "1590": "unique_hash_ids = len(set(hash_ids))",
+            "1593": "\"storage_consistent\": unique_hash_ids == len(stored_items),  # Vsak mora biti unikaten",
+            "1595": "\"unique_hash_ids\": unique_hash_ids,",
+            "1597": "\"hash_collision_rate\": 1.0 - (unique_hash_ids / len(stored_items))",
+            "1612": "pipeline_hash = hashlib.sha256(",
+            "1614": ").hexdigest()",
+            "1615": "pipeline_results.append(pipeline_hash)",
+            "1617": "# Preveri 1:1 izhod (hash match)",
+            "1625": "\"baseline_pipeline_hash\": pipeline_results[0] if pipeline_results else \"\",",
+            "1626": "\"hash_match_rate\": 1.0 if pipeline_deterministic else 0.0",
+            "1652": "\"stored_hash\": hashlib.sha256(json.dumps({",
+            "1656": "}, sort_keys=True).encode()).hexdigest()",
+            "1748": "artifact_hashes = {}",
+            "1756": "\"source_hash\": \"abc123def456\",",
+            "1757": "\"dependencies_hash\": \"def456abc123\"",
+            "1760": "# Izra\u010dunaj artifact hash",
+            "1761": "artifact_hash = hashlib.sha256(",
+            "1763": ").hexdigest()",
+            "1765": "artifact_hashes[platform] = artifact_hash",
+            "1767": "# Preveri, \u010de so hash-i deterministi\u010dni za isto platformo",
+            "1768": "# (razli\u010dne platforme lahko imajo razli\u010dne hash-e)",
+            "1774": "\"artifact_hashes\": artifact_hashes,",
+            "1831": "# Izra\u010dunaj pipeline hash",
+            "1832": "pipeline_hash = hashlib.sha256(",
+            "1834": ").hexdigest()",
+            "1838": "\"pipeline_hash\": pipeline_hash,",
+            "1843": "unique_hashes = len(set(run[\"pipeline_hash\"] for run in pipeline_runs))",
+            "1844": "pipeline_reproducible = unique_hashes == 1",
+            "1849": "\"unique_hashes\": unique_hashes,",
+            "1850": "\"baseline_hash\": pipeline_runs[0][\"pipeline_hash\"] if pipeline_runs else \"\",",
+            "2060": "\"backup_hash\": hashlib.sha256(json.dumps(backup_data, sort_keys=True).encode()).hexdigest()",
+            "2101": "\"log_hash\": hashlib.sha256(f\"{incident['type']}_{incident['severity']}\".encode()).hexdigest()",
+            "2172": "\"hash\": hashlib.sha256(f\"{anomaly_type}_{description}\".encode()).hexdigest()",
+            "2189": "# Generiraj hash registry",
+            "2190": "hash_registry = self._generate_hash_registry()",
+            "2209": "\"hash_registry\": hash_registry,",
+            "2283": "def _generate_hash_registry(self) -> Dict[str, Any]:",
+            "2284": "\"\"\"Generiraj hash registry\"\"\"",
+            "2286": "hash_registry = {",
+            "2287": "\"deterministic_baseline_hash\": \"\",",
+            "2288": "\"memory_state_hashes\": [],",
+            "2289": "\"multimodal_output_hashes\": [],",
+            "2290": "\"security_policy_hashes\": [],",
+            "2291": "\"build_artifact_hashes\": [],",
+            "2292": "\"backup_state_hashes\": []",
+            "2295": "# Izvleci hash-e iz rezultatov",
+            "2298": "hash_registry[\"deterministic_baseline_hash\"] = introspective.get(\"baseline_hash\", \"\")",
+            "2300": "# Dodaj druge hash-e iz rezultatov",
+            "2303": "# Poi\u0161\u010di hash-e v rezultatih",
+            "2304": "self._extract_hashes_from_result(result, hash_registry)",
+            "2306": "return hash_registry",
+            "2311": "def _extract_hashes_from_result(self, result: Dict[str, Any], hash_registry: Dict[str, Any]):",
+            "2312": "\"\"\"Izvleci hash-e iz rezultata\"\"\"",
+            "2316": "# Verjetno je hash",
+            "2318": "hash_registry[\"memory_state_hashes\"].append(value)",
+            "2320": "hash_registry[\"multimodal_output_hashes\"].append(value)",
+            "2322": "hash_registry[\"security_policy_hashes\"].append(value)",
+            "2324": "hash_registry[\"build_artifact_hashes\"].append(value)",
+            "2326": "hash_registry[\"backup_state_hashes\"].append(value)",
+            "2328": "self._extract_hashes_from_result(value, hash_registry)",
+            "2332": "self._extract_hashes_from_result(item, hash_registry)"
+          }
+        }
+      },
+      {
+        "file": "tests/security/test_input_validation_security_security.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "import hashlib",
+            "# Test password hashing",
+            "hashed_password = self._hash_password(test_password)",
+            "# Hash should not be the same as original password",
+            "self.assertNotEqual(hashed_password, test_password)",
+            "# Hash should be consistent",
+            "second_hash = self._hash_password(test_password)",
+            "self.assertEqual(hashed_password, second_hash)",
+            "# Hash should be of expected length (SHA-256)",
+            "self.assertEqual(len(hashed_password), 64)",
+            "def _hash_password(self, password):",
+            "\"\"\"Hash password\"\"\"",
+            "return hashlib.sha256(password.encode()).hexdigest()",
+            "return hashlib.sha256(session_data.encode()).hexdigest()",
+            "return len(session_id) == 64  # SHA-256 hash length"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "__file__",
+              "line": 15,
+              "content": "project_root = Path(__file__).parent.parent.parent"
+            },
+            {
+              "pattern": "__name__",
+              "line": 274,
+              "content": "if __name__ == '__main__':"
+            }
+          ],
+          "line_numbers": {
+            "9": "import hashlib",
+            "126": "# Test password hashing",
+            "127": "hashed_password = self._hash_password(test_password)",
+            "129": "# Hash should not be the same as original password",
+            "130": "self.assertNotEqual(hashed_password, test_password)",
+            "132": "# Hash should be consistent",
+            "133": "second_hash = self._hash_password(test_password)",
+            "134": "self.assertEqual(hashed_password, second_hash)",
+            "136": "# Hash should be of expected length (SHA-256)",
+            "137": "self.assertEqual(len(hashed_password), 64)",
+            "233": "def _hash_password(self, password):",
+            "234": "\"\"\"Hash password\"\"\"",
+            "236": "return hashlib.sha256(password.encode()).hexdigest()",
+            "242": "return hashlib.sha256(session_data.encode()).hexdigest()",
+            "251": "return len(session_id) == 64  # SHA-256 hash length"
+          }
+        }
+      },
+      {
+        "file": "tests/deterministic/test_sdm_loop_validation_deterministic.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "import hashlib",
+            "hashes = []",
+            "# Calculate hash",
+            "output_hash = self._calculate_output_hash(output)",
+            "hashes.append(output_hash)",
+            "first_hash = hashes[0]",
+            "for i, (output, output_hash) in enumerate(zip(outputs[1:], hashes[1:]), 1):",
+            "self.assertEqual(output_hash, first_hash,",
+            "f\"Hash {i} differs from first hash\")",
+            "def test_hash_verification(self):",
+            "\"\"\"Test hash verification of outputs\"\"\"",
+            "# Calculate hash",
+            "calculated_hash = self._calculate_output_hash(output)",
+            "# Verify hash format",
+            "self.assertIsInstance(calculated_hash, str)",
+            "self.assertEqual(len(calculated_hash), 64)  # SHA-256 hash length",
+            "# Verify hash consistency",
+            "recalculated_hash = self._calculate_output_hash(output)",
+            "self.assertEqual(calculated_hash, recalculated_hash)",
+            "def _calculate_output_hash(self, output):",
+            "\"\"\"Calculate hash of output\"\"\"",
+            "# Calculate SHA-256 hash",
+            "hash_obj = hashlib.sha256(output_str.encode('utf-8'))",
+            "return hash_obj.hexdigest()",
+            "# Fallback hash calculation",
+            "return hashlib.sha256(str(output).encode('utf-8')).hexdigest()"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "__file__",
+              "line": 16,
+              "content": "project_root = Path(__file__).parent.parent.parent"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 36,
+              "content": "\"timestamp\": 1640995200  # Fixed timestamp"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 112,
+              "content": "random.seed(seed)"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 118,
+              "content": "f\"Random value: {random.randint(1, 1000)}\""
+            },
+            {
+              "pattern": "timestamp",
+              "line": 126,
+              "content": "\"timestamp\": input_data[\"timestamp\"]"
+            },
+            {
+              "pattern": "__name__",
+              "line": 190,
+              "content": "if __name__ == '__main__':"
+            }
+          ],
+          "line_numbers": {
+            "10": "import hashlib",
+            "42": "hashes = []",
+            "48": "# Calculate hash",
+            "49": "output_hash = self._calculate_output_hash(output)",
+            "52": "hashes.append(output_hash)",
+            "56": "first_hash = hashes[0]",
+            "58": "for i, (output, output_hash) in enumerate(zip(outputs[1:], hashes[1:]), 1):",
+            "61": "self.assertEqual(output_hash, first_hash,",
+            "62": "f\"Hash {i} differs from first hash\")",
+            "64": "def test_hash_verification(self):",
+            "65": "\"\"\"Test hash verification of outputs\"\"\"",
+            "68": "# Calculate hash",
+            "69": "calculated_hash = self._calculate_output_hash(output)",
+            "71": "# Verify hash format",
+            "72": "self.assertIsInstance(calculated_hash, str)",
+            "73": "self.assertEqual(len(calculated_hash), 64)  # SHA-256 hash length",
+            "75": "# Verify hash consistency",
+            "76": "recalculated_hash = self._calculate_output_hash(output)",
+            "77": "self.assertEqual(calculated_hash, recalculated_hash)",
+            "140": "def _calculate_output_hash(self, output):",
+            "141": "\"\"\"Calculate hash of output\"\"\"",
+            "146": "# Calculate SHA-256 hash",
+            "147": "hash_obj = hashlib.sha256(output_str.encode('utf-8'))",
+            "148": "return hash_obj.hexdigest()",
+            "151": "# Fallback hash calculation",
+            "152": "return hashlib.sha256(str(output).encode('utf-8')).hexdigest()"
+          }
+        }
+      },
+      {
+        "file": "mia/production/validation_core.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "import hashlib",
+            "hashes = []",
+            "# Generate deterministic hash",
+            "cycle_hash = hashlib.sha256(",
+            ").hexdigest()",
+            "hashes.append(cycle_hash)",
+            "unique_hashes = len(set(hashes))",
+            "is_deterministic = unique_hashes == 1",
+            "\"cycles_tested\": len(hashes),",
+            "\"unique_hashes\": unique_hashes,",
+            "\"deterministic_hash\": hashes[0] if hashes else None,",
+            "_ = hashlib.sha256(b\"performance_test\").hexdigest()"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 43,
+              "content": "self.validation_start_time = time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 47,
+              "content": "\"validation_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 47,
+              "content": "\"validation_timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 93,
+              "content": "\"validation_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 93,
+              "content": "\"validation_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 272,
+              "content": "return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 340,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 345,
+              "content": "\"timestamp\": self._get_deterministic_time(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 357,
+              "content": "cycle_times.append(time.time() - start_time)"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 386,
+              "content": "\"timestamp\": self._get_deterministic_time(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 458,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 464,
+              "content": "execution_time = time.time() - start_time"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 542,
+              "content": "self.validation_start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 553,
+              "content": "execution_time = time.time() - self.validation_start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 587,
+              "content": "\"timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 587,
+              "content": "\"timestamp\": datetime.now().isoformat()"
+            }
+          ],
+          "line_numbers": {
+            "13": "import hashlib",
+            "336": "hashes = []",
+            "351": "# Generate deterministic hash",
+            "352": "cycle_hash = hashlib.sha256(",
+            "354": ").hexdigest()",
+            "356": "hashes.append(cycle_hash)",
+            "360": "unique_hashes = len(set(hashes))",
+            "361": "is_deterministic = unique_hashes == 1",
+            "368": "\"cycles_tested\": len(hashes),",
+            "369": "\"unique_hashes\": unique_hashes,",
+            "371": "\"deterministic_hash\": hashes[0] if hashes else None,",
+            "462": "_ = hashlib.sha256(b\"performance_test\").hexdigest()"
+          }
+        }
+      },
+      {
+        "file": "mia/validation/validation_core.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "import hashlib",
+            "self.hash_registry = {}",
+            "def _generate_deterministic_hash(self, data: Any) -> str:",
+            "\"\"\"Generate deterministic hash from data\"\"\"",
+            "# Sort keys for deterministic hashing",
+            "return hashlib.sha256(sorted_data.encode()).hexdigest()",
+            "hashes = set()",
+            "# Generate hash for consistency check",
+            "result_hash = self._generate_deterministic_hash(result)",
+            "hashes.add(result_hash)",
+            "# Check determinism - all hashes should be identical for same input",
+            "is_deterministic = len(hashes) == 1 if iterations > 1 else True",
+            "\"unique_hashes\": len(hashes),",
+            "\"hash_consistency\": list(hashes)[0] if hashes else None",
+            "\"hash\": self._generate_deterministic_hash(cycle_data),",
+            "\"hash\": self._generate_deterministic_hash(memory_ops),",
+            "\"hash\": self._generate_deterministic_hash(security_data),"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "timestamp",
+              "line": 41,
+              "content": "\"fixed_timestamp\": 1640995200"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 71,
+              "content": "\"\"\"Return deterministic timestamp for testing\"\"\""
+            },
+            {
+              "pattern": "timestamp",
+              "line": 72,
+              "content": "return self.validation_config[\"fixed_timestamp\"]"
+            },
+            {
+              "pattern": "random\\.",
+              "line": 96,
+              "content": "random.seed(self.validation_config[\"deterministic_seed\"] + i)"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 120,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 132,
+              "content": "execution_time = time.time() - start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 138,
+              "content": "\"timestamp\": self._get_deterministic_time() + iteration"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 201,
+              "content": "\"timestamp\": self._get_deterministic_time(),"
+            }
+          ],
+          "line_numbers": {
+            "12": "import hashlib",
+            "47": "self.hash_registry = {}",
+            "74": "def _generate_deterministic_hash(self, data: Any) -> str:",
+            "75": "\"\"\"Generate deterministic hash from data\"\"\"",
+            "77": "# Sort keys for deterministic hashing",
+            "82": "return hashlib.sha256(sorted_data.encode()).hexdigest()",
+            "92": "hashes = set()",
+            "102": "# Generate hash for consistency check",
+            "103": "result_hash = self._generate_deterministic_hash(result)",
+            "104": "hashes.add(result_hash)",
+            "106": "# Check determinism - all hashes should be identical for same input",
+            "107": "is_deterministic = len(hashes) == 1 if iterations > 1 else True",
+            "113": "\"unique_hashes\": len(hashes),",
+            "115": "\"hash_consistency\": list(hashes)[0] if hashes else None",
+            "155": "\"hash\": self._generate_deterministic_hash(cycle_data),",
+            "174": "\"hash\": self._generate_deterministic_hash(memory_ops),",
+            "193": "\"hash\": self._generate_deterministic_hash(security_data),"
+          }
+        }
+      },
+      {
+        "file": "mia/validation/validation_utils.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [
+            "hashlib",
+            "sha256"
+          ],
+          "hash_elements": [
+            "import hashlib",
+            "def generate_test_hash(data: Any) -> str:",
+            "\"\"\"Generate hash for test data\"\"\"",
+            "return hashlib.sha256(sorted_data.encode()).hexdigest()"
+          ],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 52,
+              "content": "start_time = time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 54,
+              "content": "execution_time = time.time() - start_time"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 64,
+              "content": "\"timestamp\": time.time()"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 64,
+              "content": "\"timestamp\": time.time()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 93,
+              "content": "\"validation_timestamp\": time.time(),"
+            },
+            {
+              "pattern": "time\\.time\\(\\)",
+              "line": 93,
+              "content": "\"validation_timestamp\": time.time(),"
+            }
+          ],
+          "line_numbers": {
+            "12": "import hashlib",
+            "40": "def generate_test_hash(data: Any) -> str:",
+            "41": "\"\"\"Generate hash for test data\"\"\"",
+            "47": "return hashlib.sha256(sorted_data.encode()).hexdigest()"
+          }
+        }
+      },
+      {
+        "file": "mia/desktop/build_system.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [],
+          "hash_elements": [],
+          "non_deterministic_patterns": [],
+          "line_numbers": {}
+        }
+      },
+      {
+        "file": "mia/project_builder/deployment_manager.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [],
+          "hash_elements": [],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "timestamp",
+              "line": 48,
+              "content": "return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC"
+            }
+          ],
+          "line_numbers": {}
+        }
+      },
+      {
+        "file": "mia/enterprise/deployment_manager.py",
+        "analysis": {
+          "contains_hashing": true,
+          "hash_algorithms": [],
+          "hash_elements": [],
+          "non_deterministic_patterns": [
+            {
+              "pattern": "timestamp",
+              "line": 74,
+              "content": "return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 130,
+              "content": "\"created_at\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 145,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 145,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 188,
+              "content": "deployment_record[\"started_at\"] = datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 211,
+              "content": "deployment_record[\"completed_at\"] = datetime.now().isoformat()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 232,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 232,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 389,
+              "content": "\"installation_time\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 460,
+              "content": "\"health_check_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 460,
+              "content": "\"health_check_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 467,
+              "content": "\"health_check_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 467,
+              "content": "\"health_check_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 486,
+              "content": "deployment_record[\"rolled_back_at\"] = datetime.now().isoformat()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 491,
+              "content": "\"rollback_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 491,
+              "content": "\"rollback_timestamp\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 610,
+              "content": "\"last_updated\": datetime.now().isoformat()"
+            },
+            {
+              "pattern": "timestamp",
+              "line": 641,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            },
+            {
+              "pattern": "datetime\\.now\\(\\)",
+              "line": 641,
+              "content": "\"timestamp\": datetime.now().isoformat(),"
+            }
+          ],
+          "line_numbers": {}
+        }
+      }
+    ],
+    "deterministic_elements": [
+      "class IntrospectiveHashValidator:",
+      "\"module_hashes\": {},",
+      "# Calculate hashes for all modules",
+      "cycle_result[\"module_hashes\"] = self._calculate_module_hashes()",
+      "def _calculate_module_hashes(self) -> Dict[str, str]:",
+      "\"\"\"Calculate hashes for all modules\"\"\"",
+      "module_hashes = {}",
+      "# Define module directories to hash",
+      "module_hash = self._hash_directory(module_path)",
+      "module_hashes[module_dir] = module_hash",
+      "return module_hashes",
+      "hasher.update(normalized_content.encode('utf-8'))",
+      "\"\"\"Normalize content for consistent hashing\"\"\"",
+      "# Check module hash consistency",
+      "module_hashes = [cycle.get(\"module_hashes\", {}) for cycle in recent_hashes]",
+      "if module_hashes:",
+      "module_hash_values = [mh.get(module_dir, \"\") for mh in module_hashes]",
+      "unique_hashes = set(module_hash_values)",
+      "# Check module hash consistency",
+      "module_hashes = [",
+      "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+      "unique_hashes = set(module_hashes)",
+      "# Analyze each module's hash consistency",
+      "module_hashes = [",
+      "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+      "unique_hashes = set(module_hashes)",
+      "consistency_percentage = (1 - (len(unique_hashes) - 1) / len(module_hashes)) * 100",
+      "\"most_common_hash\": max(set(module_hashes), key=module_hashes.count) if module_hashes else \"\"",
+      "# Get module hashes across all cycles",
+      "module_hashes = [",
+      "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+      "if not module_hashes:",
+      "unique_hashes = set(module_hashes)",
+      "module_hashes = [",
+      "cycle.get(\"module_hashes\", {}).get(module_dir, \"\")",
+      "unique_hashes = set(module_hashes)",
+      "\"Remove non-deterministic elements from modules with hash variations\"",
+      "\"Implement deterministic content normalization for consistent hashing\"",
+      "\"\"\"Main function to run introspective hash validation\"\"\"",
+      "class CICDHashStrategyAnalyzer:",
+      "# Hash strategy configuration",
+      "\"hash_sources\": [],",
+      "current_strategy[\"hash_sources\"].append({",
+      "for source in current_strategy[\"hash_sources\"]:",
+      "all_elements.extend(source[\"analysis\"][\"hash_elements\"])",
+      "for source in current_strategy.get(\"hash_sources\", []):",
+      "\"Normalize content before hashing\",",
+      "\"build_identifier\": \"content_based_hash\"",
+      "\"description\": \"Verify hash changes when config changes\",",
+      "\"\"\"Main function to run CI/CD hash strategy analysis\"\"\"",
+      "markdown_content = f\"\"\"# \ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Recommendation",
+      "### Hash Sources",
+      "for source in current_strategy.get(\"hash_sources\", []):",
+      "markdown_content += f\"- **{source['file']}**: Contains hashing logic\\n\"",
+      "3. **Create deterministic hash calculator** module",
+      "class IntegrityHashSystem:",
+      "\"source_hash\": \"abc123def456\","
+    ],
+    "non_deterministic_elements": [
+      "\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validator",
+      "Izvede introspektivni test s 5000 cikli za hash konsistenco.",
+      "import hashlib",
+      "\"\"\"Introspective hash validator for 5000-cycle consistency testing\"\"\"",
+      "self.hash_history = []",
+      "# Hash consistency tracking",
+      "self.consistent_hashes = set()",
+      "self.inconsistent_hashes = set()",
+      "self.hash_variations = {}",
+      "logger = logging.getLogger(\"MIA.IntrospectiveHashValidator\")",
+      "\"\"\"Run 5000-cycle introspective hash validation\"\"\"",
+      "\"validator\": \"IntrospectiveHashValidator\",",
+      "\"hash_consistency\": {},",
+      "self.logger.info(f\"\ud83d\udd0d Starting {self.cycle_count}-cycle introspective hash validation...\")",
+      "self.hash_history.append(cycle_result)",
+      "validation_result[\"hash_consistency\"] = self._analyze_hash_consistency()",
+      "cycle_result[\"introspective_hash\"] = self._hash_data(introspective_data)",
+      "def _hash_directory(self, directory: Path) -> str:",
+      "\"\"\"Calculate hash for a directory\"\"\"",
+      "hasher = hashlib.sha256()",
+      "self.logger.warning(f\"Could not hash {py_file}: {e}\")",
+      "return hasher.hexdigest()",
+      "if len(self.hash_history) > 10:",
+      "recent_hashes = self.hash_history[-10:]",
+      "if len(unique_hashes) <= 1:",
+      "def _hash_data(self, data: Any) -> str:",
+      "\"\"\"Hash arbitrary data structure\"\"\"",
+      "hasher = hashlib.sha256()",
+      "# Convert data to JSON string for consistent hashing",
+      "hasher.update(json_str.encode('utf-8'))",
+      "hasher.update(str(data).encode('utf-8'))",
+      "return hasher.hexdigest()",
+      "if len(self.hash_history) < 10:",
+      "recent_cycles = self.hash_history[-10:]",
+      "if len(unique_hashes) > 3:  # Too many variations",
+      "def _analyze_hash_consistency(self) -> Dict[str, Any]:",
+      "\"\"\"Analyze hash consistency across all cycles\"\"\"",
+      "\"total_cycles_analyzed\": len(self.hash_history),",
+      "if not self.hash_history:",
+      "for cycle in self.hash_history",
+      "\"unique_hashes\": len(unique_hashes),",
+      "if not self.hash_history:",
+      "if not self.hash_history:",
+      "for cycle in self.hash_history",
+      "# Calculate stability based on hash consistency",
+      "if len(unique_hashes) == 1:",
+      "elif len(unique_hashes) <= 2:",
+      "elif len(unique_hashes) <= 3:",
+      "if self.hash_history:",
+      "cycle_times = [cycle.get(\"execution_time\", 0) for cycle in self.hash_history]",
+      "performance_metrics[\"cycles_per_second\"] = len(self.hash_history) / total_time",
+      "if not self.hash_history:",
+      "# Analyze deterministic behavior based on hash consistency",
+      "for cycle in self.hash_history",
+      "if len(unique_hashes) == 1:",
+      "score = max(0, 100 - (len(unique_hashes) - 1) * 10)",
+      "\"unique_hashes\": len(unique_hashes),",
+      "# Based on hash consistency",
+      "if self.hash_history:",
+      "consistency_data = self._analyze_hash_consistency()",
+      "f\"Improve hash consistency (currently {overall_consistency:.1f}%) by removing non-deterministic elements\"",
+      "\"Excellent hash consistency achieved - maintain current practices\"",
+      "recommendations.append(\"Monitor hash consistency in production environment\")",
+      "recommendations.append(\"Implement automated hash validation in CI/CD pipeline\")",
+      "print(\"\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validation\")",
+      "validator = IntrospectiveHashValidator()",
+      "print(\"\ud83d\udd04 Running 5000-cycle introspective hash validation...\")",
+      "output_file = \"introspective_hash_validation.log\"",
+      "print(\"\\n\ud83d\udcca INTROSPECTIVE HASH VALIDATION SUMMARY:\")",
+      "consistency = validation_result.get(\"hash_consistency\", {})",
+      "print(f\"\\n\u2705 Introspective hash validation completed!\")",
+      "\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analyzer",
+      "Ugotovi run_id vklju\u010denost v hash in predlagaj refaktorirano strategijo.",
+      "import hashlib",
+      "\"\"\"Analyzer for CI/CD hash strategy and reproducibility\"\"\"",
+      "'run_id': 'build_hash',",
+      "logger = logging.getLogger(\"MIA.CICDHashStrategyAnalyzer\")",
+      "def analyze_hash_strategy(self) -> Dict[str, Any]:",
+      "\"\"\"Analyze current hash strategy and reproducibility\"\"\"",
+      "\"analyzer\": \"CICDHashStrategyAnalyzer\",",
+      "self.logger.info(\"\ud83d\udd04 Starting CI/CD hash strategy analysis...\")",
+      "# Analyze current hash strategy",
+      "self.logger.info(\"\u2705 CI/CD hash strategy analysis completed\")",
+      "\"\"\"Analyze current hash strategy implementation\"\"\"",
+      "\"hash_algorithms\": [],",
+      "# Find all Python files that might contain hashing logic",
+      "hash_files = []",
+      "for pattern in [\"*hash*.py\", \"*validation*.py\", \"*build*.py\", \"*deploy*.py\"]:",
+      "hash_files.extend(self.project_root.rglob(pattern))",
+      "# Analyze each file for hash-related code",
+      "for file_path in hash_files:",
+      "file_analysis = self._analyze_file_for_hashing(file_path)",
+      "if file_analysis[\"contains_hashing\"]:",
+      "def _analyze_file_for_hashing(self, file_path: Path) -> Dict[str, Any]:",
+      "\"\"\"Analyze a file for hashing-related code\"\"\"",
+      "\"contains_hashing\": False,",
+      "\"hash_algorithms\": [],",
+      "\"hash_elements\": [],",
+      "# Check for hash algorithms",
+      "hash_algorithms = ['hashlib', 'sha256', 'md5', 'sha1', 'blake2b']",
+      "for algorithm in hash_algorithms:",
+      "file_analysis[\"hash_algorithms\"].append(algorithm)",
+      "file_analysis[\"contains_hashing\"] = True",
+      "# Check for hash-related methods",
+      "hash_methods = ['hash', 'digest', 'hexdigest', 'update']",
+      "for method in hash_methods:",
+      "file_analysis[\"contains_hashing\"] = True",
+      "# Find hash elements and non-deterministic patterns",
+      "# Look for hash input elements",
+      "if any(keyword in line.lower() for keyword in ['hash', 'digest', 'checksum']):",
+      "file_analysis[\"hash_elements\"].append(line.strip())",
+      "\"issue\": \"Non-deterministic elements in hash calculation\",",
+      "\"impact\": \"Builds will produce different hashes for identical code\"",
+      "\"issue\": \"run_id included in hash calculation\",",
+      "\"impact\": \"Each CI/CD run produces unique hash regardless of code changes\",",
+      "\"recommendation\": \"Increase deterministic elements in hash calculation\"",
+      "if len(current_strategy.get(\"hash_algorithms\", [])) > 1:",
+      "\"issue\": \"Multiple hash algorithms used\",",
+      "\"impact\": \"Inconsistent hashing across different components\",",
+      "\"recommendation\": \"Standardize on single hash algorithm (SHA-256)\"",
+      "\"\"\"Generate recommended hash strategy\"\"\"",
+      "\"strategy_name\": \"Deterministic Build Hash Strategy\",",
+      "\"Use only deterministic inputs for hash calculation\",",
+      "\"Use consistent hash algorithm (SHA-256)\"",
+      "\"hash_inputs\": {",
+      "\"hash_algorithm\": \"SHA-256\",",
+      "\"\"\"Create implementation plan for new hash strategy\"\"\"",
+      "\"Audit all hash-related code\",",
+      "\"Design new hash calculation logic\"",
+      "\"Implement deterministic hash calculator\",",
+      "\"Monitor hash consistency\",",
+      "\"mia/build/deterministic_hasher.py\",",
+      "\"tests/test_hash_reproducibility.py\"",
+      "\"All files containing hash calculations\",",
+      "\"Monitor hash consistency metrics\"",
+      "\"\"\"Design validation tests for new hash strategy\"\"\"",
+      "\"test_name\": \"identical_builds_same_hash\",",
+      "\"description\": \"Verify identical builds produce same hash\",",
+      "\"Compare generated hashes\",",
+      "\"Assert hashes are identical\"",
+      "\"description\": \"Verify hash consistency across platforms\",",
+      "\"Compare hashes across platforms\",",
+      "\"Assert platform-independent hashes\"",
+      "\"description\": \"Verify hash consistency over time\",",
+      "\"Compare hashes from different builds\",",
+      "\"Assert time-independent hashes\"",
+      "\"description\": \"Verify hash changes when code changes\",",
+      "\"Assert hashes are different\"",
+      "\"Assert hashes are different\"",
+      "\"test_name\": \"hash_calculation_performance\",",
+      "\"description\": \"Measure hash calculation performance\",",
+      "\"Hash calculation time\",",
+      "\"Memory usage during hashing\",",
+      "\"Verify hash generation\",",
+      "\"Check hash storage and retrieval\",",
+      "print(\"\ud83d\udd04 MIA Enterprise AGI - CI/CD Hash Strategy Analysis\")",
+      "analyzer = CICDHashStrategyAnalyzer()",
+      "print(\"\ud83d\udd0d Analyzing current CI/CD hash strategy...\")",
+      "analysis_result = analyzer.analyze_hash_strategy()",
+      "output_file = \"cicd_hash_strategy_recommendation.md\"",
+      "### {recommended.get('strategy_name', 'New Hash Strategy')}",
+      "#### Hash Inputs",
+      "for input_item in recommended.get(\"hash_inputs\", {}).get(\"included\", []):",
+      "for excluded_item in recommended.get(\"hash_inputs\", {}).get(\"excluded\", []):",
+      "1. **Review and approve** the recommended hash strategy",
+      "*Generated by MIA Enterprise AGI CI/CD Hash Strategy Analyzer*",
+      "json_output_file = \"cicd_hash_strategy_analysis.json\"",
+      "print(\"\\n\ud83d\udcca CI/CD HASH STRATEGY ANALYSIS SUMMARY:\")",
+      "print(\"  3. MEDIUM: Implement deterministic hash strategy\")",
+      "print(f\"\\n\u2705 CI/CD hash strategy analysis completed!\")",
+      "\ud83d\udd10 Integrity Hash System",
+      "import hashlib",
+      "self.logger = logging.getLogger(\"MIA.IntegrityHash\")",
+      "# Hash database",
+      "self.hash_database = {}",
+      "self.hash_file = \"integrity_hashes.json\"",
+      "# Load existing hashes",
+      "self._load_hash_database()",
+      "# Generiraj baseline hashes",
+      "self._generate_baseline_hashes()",
+      "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring started\")",
+      "self.logger.info(\"\ud83d\udd10 Integrity Hash monitoring stopped\")",
+      "def _generate_baseline_hashes(self):",
+      "\"\"\"Generiraj baseline hashes\"\"\"",
+      "self.logger.info(\"Generating baseline integrity hashes...\")",
+      "# Hash critical files",
+      "file_hash = self._calculate_file_hash(full_path)",
+      "self.hash_database[str(full_path)] = {",
+      "'hash': file_hash,",
+      "# Hash all Python files",
+      "if str(py_file) not in self.hash_database:",
+      "file_hash = self._calculate_file_hash(py_file)",
+      "self.hash_database[str(py_file)] = {",
+      "'hash': file_hash,",
+      "# Save hash database",
+      "self._save_hash_database()",
+      "self.logger.info(f\"Generated hashes for {len(self.hash_database)} files\")",
+      "self.logger.error(f\"Baseline hash generation error: {e}\")",
+      "def _calculate_file_hash(self, file_path: Path) -> str:",
+      "\"\"\"Izra\u010dunaj hash datoteke\"\"\"",
+      "hasher = hashlib.sha256()",
+      "hasher.update(chunk)",
+      "return hasher.hexdigest()",
+      "self.logger.error(f\"File hash calculation error for {file_path}: {e}\")",
+      "for file_path, stored_data in self.hash_database.items():",
+      "# Calculate current hash",
+      "current_hash = self._calculate_file_hash(path_obj)",
+      "stored_hash = stored_data['hash']",
+      "if current_hash != stored_hash:",
+      "'type': 'hash_mismatch',",
+      "'description': f\"Hash mismatch in {file_path}\",",
+      "'stored_hash': stored_hash,",
+      "'current_hash': current_hash",
+      "if violation['type'] in ['hash_mismatch', 'size_change']:",
+      "def _load_hash_database(self):",
+      "\"\"\"Nalo\u017ei hash database\"\"\"",
+      "if os.path.exists(self.hash_file):",
+      "with open(self.hash_file, 'r') as f:",
+      "self.hash_database = json.load(f)",
+      "self.logger.info(f\"Loaded {len(self.hash_database)} hashes from database\")",
+      "self.logger.error(f\"Hash database load error: {e}\")",
+      "self.hash_database = {}",
+      "def _save_hash_database(self):",
+      "\"\"\"Shrani hash database\"\"\"",
+      "with open(self.hash_file, 'w') as f:",
+      "json.dump(self.hash_database, f, indent=2)",
+      "self.logger.error(f\"Hash database save error: {e}\")",
+      "def update_file_hash(self, file_path: str):",
+      "\"\"\"Posodobi hash datoteke\"\"\"",
+      "file_hash = self._calculate_file_hash(path_obj)",
+      "self.hash_database[file_path] = {",
+      "'hash': file_hash,",
+      "self._save_hash_database()",
+      "self.logger.info(f\"Hash updated for {file_path}\")",
+      "self.logger.error(f\"Hash update error: {e}\")",
+      "'total_files': len(self.hash_database),",
+      "'critical_files': len([f for f in self.hash_database.values() if f['type'] == 'critical']),",
+      "# Globalni integrity hash system",
+      "integrity_hash_system = IntegrityHashSystem()",
+      "self.hash_registry = {}",
+      "# Preveri meta_state_hash konsistenco",
+      "\"baseline_hash\": cycles_result.get(\"baseline_hash\", \"\"),",
+      "\"unique_hashes\": cycles_result.get(\"unique_hashes\", 0),",
+      "f\"Non-deterministic behavior: {result['unique_hashes']} unique hashes\",",
+      "hash1 = result1.get(\"baseline_hash\", \"\")",
+      "hash2 = result2.get(\"baseline_hash\", \"\")",
+      "\"consistent_after_restart\": hash1 == hash2,",
+      "\"hash1\": hash1,",
+      "\"hash2\": hash2,",
+      "results.append(result.get(\"baseline_hash\", \"\"))",
+      "unique_hashes = len(set(results))",
+      "\"parallel_consistent\": unique_hashes == 1,",
+      "\"unique_hashes\": unique_hashes,",
+      "\"hashes\": results",
+      "\"baseline_hash\": result.get(\"baseline_hash\", \"\"),",
+      "\"\"\"Validiraj meta_state_hash konsistenco\"\"\"",
+      "# Generiraj 100 meta state hash-ov",
+      "meta_state_hash = self._calculate_meta_state_hash(meta_state)",
+      "meta_states.append(meta_state_hash)",
+      "\"baseline_meta_hash\": meta_states[0] if meta_states else \"\",",
+      "def _calculate_meta_state_hash(self, meta_state: Dict[str, Any]) -> str:",
+      "\"\"\"Izra\u010dunaj meta state hash\"\"\"",
+      "return hashlib.sha256(state_str.encode('utf-8')).hexdigest()",
+      "\"PYTHONHASHSEED\": \"0\",",
+      "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+      "outputs.append(output_hash)",
+      "\"baseline_output_hash\": outputs[0] if outputs else \"\",",
+      "\"output_hashes\": outputs",
+      "\"hash\": hashlib.sha256(f\"short_term_data_{i}\".encode()).hexdigest()",
+      "unique_hashes = len(set(op[\"hash\"] for op in memory_operations))",
+      "\"consistent\": unique_hashes == expected_unique,",
+      "\"unique_hashes\": unique_hashes,",
+      "retrieved_hash = hashlib.sha256(json.dumps(retrieved, sort_keys=True).encode()).hexdigest()",
+      "retrieved_contexts.append(retrieved_hash)",
+      "serialization_hash = hashlib.sha256(serialized.encode()).hexdigest()",
+      "serializations.append(serialization_hash)",
+      "meta_hashes = []",
+      "meta_hash = hashlib.sha256(json.dumps(meta_data, sort_keys=True).encode()).hexdigest()",
+      "meta_hashes.append(meta_hash)",
+      "unique_meta_hashes = len(set(meta_hashes))",
+      "\"consistent\": unique_meta_hashes == 1,",
+      "\"hash_tests\": len(meta_hashes),",
+      "\"unique_hashes\": unique_meta_hashes",
+      "# Izra\u010dunaj checkpoint hash",
+      "checkpoint_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "\"checkpoint_hash\": checkpoint_hash,",
+      "\"baseline_hash\": continuation_result.get(\"baseline_hash\", \"\")",
+      "\"hash\": hashlib.sha256(f\"checkpoint_data_{i}\".encode()).hexdigest()",
+      "# Preveri hash konsistenco",
+      "checkpoint_hashes = [cp[\"hash\"] for cp in rotated_checkpoints]",
+      "unique_hashes = len(set(checkpoint_hashes))",
+      "\"unique_hashes\": unique_hashes,",
+      "\"hash_consistency\": unique_hashes == len(rotated_checkpoints)",
+      "output_hash = hashlib.sha256(json.dumps(output, sort_keys=True).encode()).hexdigest()",
+      "outputs.append(output_hash)",
+      "# Izra\u010dunaj hash",
+      "result_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "results.append(result_hash)",
+      "\"baseline_hash\": results[0] if results else \"\",",
+      "\"audio_hash\": hashlib.sha256(llm_result[\"response\"].encode()).hexdigest(),",
+      "image_hashes = []",
+      "image_hashes.append(sd_result[\"image_hash\"])",
+      "unique_hashes = len(set(image_hashes))",
+      "deterministic = unique_hashes == 1",
+      "\"generations_executed\": len(image_hashes),",
+      "\"unique_hashes\": unique_hashes,",
+      "\"baseline_image_hash\": image_hashes[0] if image_hashes else \"\",",
+      "image_hash = hashlib.sha256(image_data.encode()).hexdigest()",
+      "\"image_hash\": image_hash,",
+      "# Test shranjevanja z hash reference ID",
+      "# Izra\u010dunaj hash reference ID",
+      "hash_id = hashlib.sha256(json.dumps(item, sort_keys=True).encode()).hexdigest()",
+      "\"hash_id\": hash_id,",
+      "# Preveri konsistenco hash ID-jev",
+      "hash_ids = [item[\"hash_id\"] for item in stored_items]",
+      "unique_hash_ids = len(set(hash_ids))",
+      "\"storage_consistent\": unique_hash_ids == len(stored_items),  # Vsak mora biti unikaten",
+      "\"unique_hash_ids\": unique_hash_ids,",
+      "\"hash_collision_rate\": 1.0 - (unique_hash_ids / len(stored_items))",
+      "pipeline_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "pipeline_results.append(pipeline_hash)",
+      "# Preveri 1:1 izhod (hash match)",
+      "\"baseline_pipeline_hash\": pipeline_results[0] if pipeline_results else \"\",",
+      "\"hash_match_rate\": 1.0 if pipeline_deterministic else 0.0",
+      "\"stored_hash\": hashlib.sha256(json.dumps({",
+      "}, sort_keys=True).encode()).hexdigest()",
+      "artifact_hashes = {}",
+      "\"dependencies_hash\": \"def456abc123\"",
+      "# Izra\u010dunaj artifact hash",
+      "artifact_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "artifact_hashes[platform] = artifact_hash",
+      "# Preveri, \u010de so hash-i deterministi\u010dni za isto platformo",
+      "# (razli\u010dne platforme lahko imajo razli\u010dne hash-e)",
+      "\"artifact_hashes\": artifact_hashes,",
+      "# Izra\u010dunaj pipeline hash",
+      "pipeline_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "\"pipeline_hash\": pipeline_hash,",
+      "unique_hashes = len(set(run[\"pipeline_hash\"] for run in pipeline_runs))",
+      "pipeline_reproducible = unique_hashes == 1",
+      "\"unique_hashes\": unique_hashes,",
+      "\"baseline_hash\": pipeline_runs[0][\"pipeline_hash\"] if pipeline_runs else \"\",",
+      "\"backup_hash\": hashlib.sha256(json.dumps(backup_data, sort_keys=True).encode()).hexdigest()",
+      "\"log_hash\": hashlib.sha256(f\"{incident['type']}_{incident['severity']}\".encode()).hexdigest()",
+      "\"hash\": hashlib.sha256(f\"{anomaly_type}_{description}\".encode()).hexdigest()",
+      "# Generiraj hash registry",
+      "hash_registry = self._generate_hash_registry()",
+      "\"hash_registry\": hash_registry,",
+      "def _generate_hash_registry(self) -> Dict[str, Any]:",
+      "\"\"\"Generiraj hash registry\"\"\"",
+      "hash_registry = {",
+      "\"deterministic_baseline_hash\": \"\",",
+      "\"memory_state_hashes\": [],",
+      "\"multimodal_output_hashes\": [],",
+      "\"security_policy_hashes\": [],",
+      "\"build_artifact_hashes\": [],",
+      "\"backup_state_hashes\": []",
+      "# Izvleci hash-e iz rezultatov",
+      "hash_registry[\"deterministic_baseline_hash\"] = introspective.get(\"baseline_hash\", \"\")",
+      "# Dodaj druge hash-e iz rezultatov",
+      "# Poi\u0161\u010di hash-e v rezultatih",
+      "self._extract_hashes_from_result(result, hash_registry)",
+      "return hash_registry",
+      "def _extract_hashes_from_result(self, result: Dict[str, Any], hash_registry: Dict[str, Any]):",
+      "\"\"\"Izvleci hash-e iz rezultata\"\"\"",
+      "# Verjetno je hash",
+      "hash_registry[\"memory_state_hashes\"].append(value)",
+      "hash_registry[\"multimodal_output_hashes\"].append(value)",
+      "hash_registry[\"security_policy_hashes\"].append(value)",
+      "hash_registry[\"build_artifact_hashes\"].append(value)",
+      "hash_registry[\"backup_state_hashes\"].append(value)",
+      "self._extract_hashes_from_result(value, hash_registry)",
+      "self._extract_hashes_from_result(item, hash_registry)",
+      "import hashlib",
+      "# Test password hashing",
+      "hashed_password = self._hash_password(test_password)",
+      "# Hash should not be the same as original password",
+      "self.assertNotEqual(hashed_password, test_password)",
+      "# Hash should be consistent",
+      "second_hash = self._hash_password(test_password)",
+      "self.assertEqual(hashed_password, second_hash)",
+      "# Hash should be of expected length (SHA-256)",
+      "self.assertEqual(len(hashed_password), 64)",
+      "def _hash_password(self, password):",
+      "\"\"\"Hash password\"\"\"",
+      "return hashlib.sha256(password.encode()).hexdigest()",
+      "return hashlib.sha256(session_data.encode()).hexdigest()",
+      "return len(session_id) == 64  # SHA-256 hash length",
+      "import hashlib",
+      "hashes = []",
+      "# Calculate hash",
+      "output_hash = self._calculate_output_hash(output)",
+      "hashes.append(output_hash)",
+      "first_hash = hashes[0]",
+      "for i, (output, output_hash) in enumerate(zip(outputs[1:], hashes[1:]), 1):",
+      "self.assertEqual(output_hash, first_hash,",
+      "f\"Hash {i} differs from first hash\")",
+      "def test_hash_verification(self):",
+      "\"\"\"Test hash verification of outputs\"\"\"",
+      "# Calculate hash",
+      "calculated_hash = self._calculate_output_hash(output)",
+      "# Verify hash format",
+      "self.assertIsInstance(calculated_hash, str)",
+      "self.assertEqual(len(calculated_hash), 64)  # SHA-256 hash length",
+      "# Verify hash consistency",
+      "recalculated_hash = self._calculate_output_hash(output)",
+      "self.assertEqual(calculated_hash, recalculated_hash)",
+      "def _calculate_output_hash(self, output):",
+      "\"\"\"Calculate hash of output\"\"\"",
+      "# Calculate SHA-256 hash",
+      "hash_obj = hashlib.sha256(output_str.encode('utf-8'))",
+      "return hash_obj.hexdigest()",
+      "# Fallback hash calculation",
+      "return hashlib.sha256(str(output).encode('utf-8')).hexdigest()",
+      "import hashlib",
+      "hashes = []",
+      "# Generate deterministic hash",
+      "cycle_hash = hashlib.sha256(",
+      ").hexdigest()",
+      "hashes.append(cycle_hash)",
+      "unique_hashes = len(set(hashes))",
+      "is_deterministic = unique_hashes == 1",
+      "\"cycles_tested\": len(hashes),",
+      "\"unique_hashes\": unique_hashes,",
+      "\"deterministic_hash\": hashes[0] if hashes else None,",
+      "_ = hashlib.sha256(b\"performance_test\").hexdigest()",
+      "import hashlib",
+      "self.hash_registry = {}",
+      "def _generate_deterministic_hash(self, data: Any) -> str:",
+      "\"\"\"Generate deterministic hash from data\"\"\"",
+      "# Sort keys for deterministic hashing",
+      "return hashlib.sha256(sorted_data.encode()).hexdigest()",
+      "hashes = set()",
+      "# Generate hash for consistency check",
+      "result_hash = self._generate_deterministic_hash(result)",
+      "hashes.add(result_hash)",
+      "# Check determinism - all hashes should be identical for same input",
+      "is_deterministic = len(hashes) == 1 if iterations > 1 else True",
+      "\"unique_hashes\": len(hashes),",
+      "\"hash_consistency\": list(hashes)[0] if hashes else None",
+      "\"hash\": self._generate_deterministic_hash(cycle_data),",
+      "\"hash\": self._generate_deterministic_hash(memory_ops),",
+      "\"hash\": self._generate_deterministic_hash(security_data),",
+      "import hashlib",
+      "def generate_test_hash(data: Any) -> str:",
+      "\"\"\"Generate hash for test data\"\"\"",
+      "return hashlib.sha256(sorted_data.encode()).hexdigest()"
+    ],
+    "hash_algorithms": [],
+    "reproducibility_score": 11.220472440944881
+  },
+  "reproducibility_issues": {
+    "critical_issues": [
+      {
+        "issue": "Non-deterministic elements in hash calculation",
+        "count": 451,
+        "elements": [
+          "\ud83d\udd0d MIA Enterprise AGI - Introspective Hash Validator",
+          "Izvede introspektivni test s 5000 cikli za hash konsistenco.",
+          "import hashlib",
+          "\"\"\"Introspective hash validator for 5000-cycle consistency testing\"\"\"",
+          "self.hash_history = []"
+        ],
+        "impact": "Builds will produce different hashes for identical code"
+      },
+      {
+        "issue": "run_id included in hash calculation",
+        "impact": "Each CI/CD run produces unique hash regardless of code changes",
+        "recommendation": "Replace run_id with deterministic build identifier"
+      }
+    ],
+    "medium_issues": [
+      {
+        "issue": "Low reproducibility score (11.2%)",
+        "impact": "Builds may not be fully reproducible",
+        "recommendation": "Increase deterministic elements in hash calculation"
+      }
+    ],
+    "minor_issues": [],
+    "overall_risk": "HIGH",
+    "impact_assessment": {
+      "build_reproducibility": "COMPROMISED",
+      "ci_cd_reliability": "AFFECTED",
+      "deployment_consistency": "INCONSISTENT"
+    }
+  },
+  "recommended_strategy": {
+    "strategy_name": "Deterministic Build Hash Strategy",
+    "core_principles": [
+      "Use only deterministic inputs for hash calculation",
+      "Exclude runtime-specific identifiers (run_id, timestamps)",
+      "Include semantic version and build configuration",
+      "Normalize content before hashing",
+      "Use consistent hash algorithm (SHA-256)"
+    ],
+    "hash_inputs": {
+      "included": [
+        "source_code_content",
+        "configuration_files",
+        "dependency_versions",
+        "build_configuration",
+        "semantic_version"
+      ],
+      "excluded": [
+        "run_id",
+        "build_timestamp",
+        "random_values",
+        "process_ids",
+        "temporary_files"
+      ]
+    },
+    "implementation_details": {
+      "hash_algorithm": "SHA-256",
+      "content_normalization": true,
+      "version_scheme": "semantic_versioning",
+      "build_identifier": "content_based_hash"
+    },
+    "validation_approach": {
+      "reproducibility_tests": true,
+      "cross_platform_validation": true,
+      "regression_testing": true
+    }
+  },
+  "implementation_plan": {
+    "phases": [
+      {
+        "phase": 1,
+        "name": "Analysis and Preparation",
+        "duration": "1-2 days",
+        "tasks": [
+          "Audit all hash-related code",
+          "Identify non-deterministic elements",
+          "Create deterministic alternatives mapping",
+          "Design new hash calculation logic"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Implementation",
+        "duration": "2-3 days",
+        "tasks": [
+          "Implement deterministic hash calculator",
+          "Replace non-deterministic elements",
+          "Add content normalization",
+          "Update build scripts"
+        ]
+      },
+      {
+        "phase": 3,
+        "name": "Testing and Validation",
+        "duration": "1-2 days",
+        "tasks": [
+          "Run reproducibility tests",
+          "Validate cross-platform consistency",
+          "Test CI/CD pipeline integration",
+          "Performance impact assessment"
+        ]
+      },
+      {
+        "phase": 4,
+        "name": "Deployment and Monitoring",
+        "duration": "1 day",
+        "tasks": [
+          "Deploy to CI/CD pipeline",
+          "Monitor hash consistency",
+          "Update documentation",
+          "Train development team"
+        ]
+      }
+    ],
+    "code_changes": {
+      "new_files": [
+        "mia/build/deterministic_hasher.py",
+        "mia/build/content_normalizer.py",
+        "tests/test_hash_reproducibility.py"
+      ],
+      "modified_files": [
+        "All files containing hash calculations",
+        "CI/CD configuration files",
+        "Build scripts"
+      ]
+    },
+    "risk_mitigation": [
+      "Maintain backward compatibility during transition",
+      "Implement gradual rollout with feature flags",
+      "Create rollback procedures",
+      "Monitor hash consistency metrics"
+    ]
+  },
+  "validation_tests": {
+    "reproducibility_tests": [
+      {
+        "test_name": "identical_builds_same_hash",
+        "description": "Verify identical builds produce same hash",
+        "steps": [
+          "Build project twice with identical inputs",
+          "Compare generated hashes",
+          "Assert hashes are identical"
+        ]
+      },
+      {
+        "test_name": "cross_platform_consistency",
+        "description": "Verify hash consistency across platforms",
+        "steps": [
+          "Build on Linux, Windows, macOS",
+          "Compare hashes across platforms",
+          "Assert platform-independent hashes"
+        ]
+      },
+      {
+        "test_name": "temporal_consistency",
+        "description": "Verify hash consistency over time",
+        "steps": [
+          "Build same code at different times",
+          "Compare hashes from different builds",
+          "Assert time-independent hashes"
+        ]
+      }
+    ],
+    "regression_tests": [
+      {
+        "test_name": "code_change_detection",
+        "description": "Verify hash changes when code changes",
+        "steps": [
+          "Build project with original code",
+          "Make minor code change",
+          "Build project again",
+          "Assert hashes are different"
+        ]
+      },
+      {
+        "test_name": "config_change_detection",
+        "description": "Verify hash changes when config changes",
+        "steps": [
+          "Build with original configuration",
+          "Modify configuration",
+          "Build again",
+          "Assert hashes are different"
+        ]
+      }
+    ],
+    "performance_tests": [
+      {
+        "test_name": "hash_calculation_performance",
+        "description": "Measure hash calculation performance",
+        "metrics": [
+          "Hash calculation time",
+          "Memory usage during hashing",
+          "CPU utilization"
+        ]
+      }
+    ],
+    "integration_tests": [
+      {
+        "test_name": "ci_cd_pipeline_integration",
+        "description": "Test integration with CI/CD pipeline",
+        "steps": [
+          "Trigger CI/CD build",
+          "Verify hash generation",
+          "Check hash storage and retrieval",
+          "Validate deployment process"
+        ]
+      }
+    ]
+  }
+}

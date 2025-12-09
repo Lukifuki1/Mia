@@ -1,0 +1,969 @@
+{
+  "test_timestamp": "2025-12-09T14:28:16.946273",
+  "tester": "CrossModuleRegressionTester",
+  "modules_tested": [
+    "security",
+    "production",
+    "testing",
+    "compliance",
+    "enterprise",
+    "verification",
+    "analysis",
+    "project_builder",
+    "desktop"
+  ],
+  "test_combinations": {
+    "total_combinations": 48,
+    "successful_combinations": 48,
+    "failed_combinations": 0,
+    "combination_results": {
+      "individual_security": {
+        "module": "security",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "security",
+          "timestamp": "2025-12-09T14:28:16.959865",
+          "memory_before": {
+            "rss": 21757952,
+            "vms": 27533312,
+            "percent": 0.12976385031231755,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "244043c211a9cc5a"
+        },
+        "state_after": {
+          "module": "security",
+          "timestamp": "2025-12-09T14:28:16.963549",
+          "memory_before": {
+            "rss": 22282240,
+            "vms": 28114944,
+            "percent": 0.1328906900788794,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "244043c211a9cc5a"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.00511,
+        "issues": []
+      },
+      "individual_production": {
+        "module": "production",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "production",
+          "timestamp": "2025-12-09T14:28:16.965050",
+          "memory_before": {
+            "rss": 22413312,
+            "vms": 28303360,
+            "percent": 0.1336724000205199,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "2ca2a4e187347414"
+        },
+        "state_after": {
+          "module": "production",
+          "timestamp": "2025-12-09T14:28:16.967858",
+          "memory_before": {
+            "rss": 22675456,
+            "vms": 28524544,
+            "percent": 0.13523581990380082,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "2ca2a4e187347414"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.003777,
+        "issues": []
+      },
+      "individual_testing": {
+        "module": "testing",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "testing",
+          "timestamp": "2025-12-09T14:28:16.968902",
+          "memory_before": {
+            "rss": 22806528,
+            "vms": 28524544,
+            "percent": 0.13601752984544127,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "6ade5dd164bd6e70"
+        },
+        "state_after": {
+          "module": "testing",
+          "timestamp": "2025-12-09T14:28:16.971392",
+          "memory_before": {
+            "rss": 22839296,
+            "vms": 28524544,
+            "percent": 0.1362129573308514,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "6ade5dd164bd6e70"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.003357,
+        "issues": []
+      },
+      "individual_compliance": {
+        "module": "compliance",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "compliance",
+          "timestamp": "2025-12-09T14:28:16.972325",
+          "memory_before": {
+            "rss": 22839296,
+            "vms": 28893184,
+            "percent": 0.1362129573308514,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "1e5d46b4be98a030"
+        },
+        "state_after": {
+          "module": "compliance",
+          "timestamp": "2025-12-09T14:28:16.974378",
+          "memory_before": {
+            "rss": 22839296,
+            "vms": 28893184,
+            "percent": 0.1362129573308514,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "1e5d46b4be98a030"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.002884,
+        "issues": []
+      },
+      "individual_enterprise": {
+        "module": "enterprise",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "enterprise",
+          "timestamp": "2025-12-09T14:28:16.975269",
+          "memory_before": {
+            "rss": 22839296,
+            "vms": 28893184,
+            "percent": 0.1362129573308514,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "ae534e4450b71ad6"
+        },
+        "state_after": {
+          "module": "enterprise",
+          "timestamp": "2025-12-09T14:28:16.978029",
+          "memory_before": {
+            "rss": 23232512,
+            "vms": 28811264,
+            "percent": 0.1385580871557728,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "ae534e4450b71ad6"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.00417,
+        "issues": []
+      },
+      "individual_verification": {
+        "module": "verification",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "verification",
+          "timestamp": "2025-12-09T14:28:16.979520",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 28925952,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "e02b7ce16a458771"
+        },
+        "state_after": {
+          "module": "verification",
+          "timestamp": "2025-12-09T14:28:16.981771",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "e02b7ce16a458771"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.00306,
+        "issues": []
+      },
+      "individual_analysis": {
+        "module": "analysis",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "analysis",
+          "timestamp": "2025-12-09T14:28:16.982645",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "4f78bc8d3d778cd9"
+        },
+        "state_after": {
+          "module": "analysis",
+          "timestamp": "2025-12-09T14:28:16.984925",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "4f78bc8d3d778cd9"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.003005,
+        "issues": []
+      },
+      "individual_project_builder": {
+        "module": "project_builder",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "project_builder",
+          "timestamp": "2025-12-09T14:28:16.985726",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "f8127531985539fd"
+        },
+        "state_after": {
+          "module": "project_builder",
+          "timestamp": "2025-12-09T14:28:16.987865",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "f8127531985539fd"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.002832,
+        "issues": []
+      },
+      "individual_desktop": {
+        "module": "desktop",
+        "test_type": "individual",
+        "test_passed": true,
+        "state_before": {
+          "module": "desktop",
+          "timestamp": "2025-12-09T14:28:16.988623",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "03fdc757d78b96aa"
+        },
+        "state_after": {
+          "module": "desktop",
+          "timestamp": "2025-12-09T14:28:16.990585",
+          "memory_before": {
+            "rss": 23363584,
+            "vms": 29237248,
+            "percent": 0.13933979709741326,
+            "available": 13007372288
+          },
+          "loaded_submodules": [],
+          "module_hash": "03fdc757d78b96aa"
+        },
+        "state_changes": [],
+        "memory_impact": {},
+        "execution_time": 0.002611,
+        "issues": []
+      },
+      "security+production": {
+        "modules": [
+          "security",
+          "production"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009798
+      },
+      "security+testing": {
+        "modules": [
+          "security",
+          "testing"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 75.0,
+        "interaction_issues": [
+          "Module conflicts detected"
+        ],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.010732
+      },
+      "security+compliance": {
+        "modules": [
+          "security",
+          "compliance"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.010611
+      },
+      "security+enterprise": {
+        "modules": [
+          "security",
+          "enterprise"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.014001
+      },
+      "security+verification": {
+        "modules": [
+          "security",
+          "verification"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012647
+      },
+      "security+analysis": {
+        "modules": [
+          "security",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012094
+      },
+      "security+project_builder": {
+        "modules": [
+          "security",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.01037
+      },
+      "security+desktop": {
+        "modules": [
+          "security",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.013435
+      },
+      "production+testing": {
+        "modules": [
+          "production",
+          "testing"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 75.0,
+        "interaction_issues": [
+          "Module conflicts detected"
+        ],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009955
+      },
+      "production+compliance": {
+        "modules": [
+          "production",
+          "compliance"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012461
+      },
+      "production+enterprise": {
+        "modules": [
+          "production",
+          "enterprise"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.010837
+      },
+      "production+verification": {
+        "modules": [
+          "production",
+          "verification"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009953
+      },
+      "production+analysis": {
+        "modules": [
+          "production",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009183
+      },
+      "production+project_builder": {
+        "modules": [
+          "production",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009836
+      },
+      "production+desktop": {
+        "modules": [
+          "production",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.010357
+      },
+      "testing+compliance": {
+        "modules": [
+          "testing",
+          "compliance"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.014365
+      },
+      "testing+enterprise": {
+        "modules": [
+          "testing",
+          "enterprise"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.016157
+      },
+      "testing+verification": {
+        "modules": [
+          "testing",
+          "verification"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012691
+      },
+      "testing+analysis": {
+        "modules": [
+          "testing",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.008989
+      },
+      "testing+project_builder": {
+        "modules": [
+          "testing",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012437
+      },
+      "testing+desktop": {
+        "modules": [
+          "testing",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012886
+      },
+      "compliance+enterprise": {
+        "modules": [
+          "compliance",
+          "enterprise"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.011793
+      },
+      "compliance+verification": {
+        "modules": [
+          "compliance",
+          "verification"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.011464
+      },
+      "compliance+analysis": {
+        "modules": [
+          "compliance",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.010096
+      },
+      "compliance+project_builder": {
+        "modules": [
+          "compliance",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009116
+      },
+      "compliance+desktop": {
+        "modules": [
+          "compliance",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.008522
+      },
+      "enterprise+verification": {
+        "modules": [
+          "enterprise",
+          "verification"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.012585
+      },
+      "enterprise+analysis": {
+        "modules": [
+          "enterprise",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.014452
+      },
+      "enterprise+project_builder": {
+        "modules": [
+          "enterprise",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.013157
+      },
+      "enterprise+desktop": {
+        "modules": [
+          "enterprise",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.011148
+      },
+      "verification+analysis": {
+        "modules": [
+          "verification",
+          "analysis"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009235
+      },
+      "verification+project_builder": {
+        "modules": [
+          "verification",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.009279
+      },
+      "verification+desktop": {
+        "modules": [
+          "verification",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.008822
+      },
+      "analysis+project_builder": {
+        "modules": [
+          "analysis",
+          "project_builder"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.007962
+      },
+      "analysis+desktop": {
+        "modules": [
+          "analysis",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.007699
+      },
+      "project_builder+desktop": {
+        "modules": [
+          "project_builder",
+          "desktop"
+        ],
+        "test_type": "pairwise",
+        "test_passed": true,
+        "compatibility_score": 100.0,
+        "interaction_issues": [],
+        "state_isolation": true,
+        "memory_leakage": false,
+        "execution_time": 0.007582
+      },
+      "security+enterprise+compliance": {
+        "modules": [
+          "security",
+          "enterprise",
+          "compliance"
+        ],
+        "test_type": "triple",
+        "test_passed": true,
+        "integration_score": 100.0,
+        "complex_interactions": [],
+        "resource_usage": {
+          "memory_change_mb": 0.0
+        },
+        "execution_time": 0.003927
+      },
+      "production+testing+verification": {
+        "modules": [
+          "production",
+          "testing",
+          "verification"
+        ],
+        "test_type": "triple",
+        "test_passed": true,
+        "integration_score": 100.0,
+        "complex_interactions": [],
+        "resource_usage": {
+          "memory_change_mb": 0.0
+        },
+        "execution_time": 0.003968
+      },
+      "analysis+project_builder+desktop": {
+        "modules": [
+          "analysis",
+          "project_builder",
+          "desktop"
+        ],
+        "test_type": "triple",
+        "test_passed": true,
+        "integration_score": 100.0,
+        "complex_interactions": [],
+        "resource_usage": {
+          "memory_change_mb": 0.0
+        },
+        "execution_time": 0.003968
+      }
+    },
+    "interaction_matrix": {
+      "security": {
+        "production": 100.0,
+        "testing": 75.0,
+        "compliance": 100.0,
+        "enterprise": 100.0,
+        "verification": 100.0,
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "production": {
+        "testing": 75.0,
+        "compliance": 100.0,
+        "enterprise": 100.0,
+        "verification": 100.0,
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "testing": {
+        "compliance": 100.0,
+        "enterprise": 100.0,
+        "verification": 100.0,
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "compliance": {
+        "enterprise": 100.0,
+        "verification": 100.0,
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "enterprise": {
+        "verification": 100.0,
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "verification": {
+        "analysis": 100.0,
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "analysis": {
+        "project_builder": 100.0,
+        "desktop": 100.0
+      },
+      "project_builder": {
+        "desktop": 100.0
+      }
+    }
+  },
+  "state_leakage_analysis": {
+    "leakage_detected": false,
+    "leakage_sources": [],
+    "global_state_changes": [],
+    "memory_leaks": [],
+    "isolation_score": 100.0
+  },
+  "isolation_validation": {
+    "isolation_passed": true,
+    "isolation_score": 100.0,
+    "module_isolation_scores": {
+      "security": {
+        "module": "security",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "production": {
+        "module": "production",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "testing": {
+        "module": "testing",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "compliance": {
+        "module": "compliance",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "enterprise": {
+        "module": "enterprise",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "verification": {
+        "module": "verification",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "analysis": {
+        "module": "analysis",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "project_builder": {
+        "module": "project_builder",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      },
+      "desktop": {
+        "module": "desktop",
+        "isolation_score": 100.0,
+        "isolation_issues": []
+      }
+    },
+    "isolation_issues": []
+  },
+  "regression_summary": {
+    "overall_status": "PASSED",
+    "total_tests": 48,
+    "successful_tests": 48,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "state_leakage_detected": false,
+    "isolation_score": 100.0,
+    "critical_issues": [],
+    "warnings": []
+  },
+  "recommendations": [
+    "\u2705 All cross-module regression tests passed",
+    "Fix compatibility between security and testing",
+    "Fix compatibility between production and testing",
+    "Continue monitoring cross-module interactions",
+    "Implement automated regression testing in CI/CD",
+    "Add module isolation validation to deployment process",
+    "Monitor memory usage in production environment"
+  ]
+}

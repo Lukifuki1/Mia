@@ -1,0 +1,140 @@
+{
+  "policies": {
+    "policy_security_baseline_1640995200": {
+      "policy_id": "policy_security_baseline_1640995200",
+      "policy_name": "security_baseline",
+      "policy_type": "security",
+      "description": "Basic security requirements for enterprise deployment",
+      "rules": [
+        "Encryption is required for all data at rest",
+        "Access control must be enabled",
+        "Audit logging is required",
+        "Regular security updates must be applied"
+      ],
+      "enforcement_level": "strict",
+      "status": "active",
+      "created_at": "2025-12-09T13:14:34.321850",
+      "created_by": "system",
+      "version": "1.0",
+      "metadata": {}
+    },
+    "policy_data_governance_1640995200": {
+      "policy_id": "policy_data_governance_1640995200",
+      "policy_name": "data_governance",
+      "policy_type": "data_governance",
+      "description": "Data governance and privacy requirements",
+      "rules": [
+        "Personal data must be classified",
+        "Data retention policies must be enforced",
+        "Data access must be logged",
+        "Data sharing requires approval"
+      ],
+      "enforcement_level": "warning",
+      "status": "active",
+      "created_at": "2025-12-09T13:14:34.322119",
+      "created_by": "system",
+      "version": "1.0",
+      "metadata": {}
+    },
+    "policy_operational_standards_1640995200": {
+      "policy_id": "policy_operational_standards_1640995200",
+      "policy_name": "operational_standards",
+      "policy_type": "operational",
+      "description": "Operational standards and best practices",
+      "rules": [
+        "Regular backups are required",
+        "System monitoring must be enabled",
+        "Change management process must be followed",
+        "Documentation must be maintained"
+      ],
+      "enforcement_level": "warning",
+      "status": "active",
+      "created_at": "2025-12-09T13:14:34.322438",
+      "created_by": "system",
+      "version": "1.0",
+      "metadata": {}
+    }
+  },
+  "policy_violations": [],
+  "policy_history": [
+    {
+      "action": "policy_created",
+      "policy_id": "policy_security_baseline_1640995200",
+      "policy_name": "security_baseline",
+      "timestamp": "2025-12-09T13:14:34.321856",
+      "details": {
+        "policy_id": "policy_security_baseline_1640995200",
+        "policy_name": "security_baseline",
+        "policy_type": "security",
+        "description": "Basic security requirements for enterprise deployment",
+        "rules": [
+          "Encryption is required for all data at rest",
+          "Access control must be enabled",
+          "Audit logging is required",
+          "Regular security updates must be applied"
+        ],
+        "enforcement_level": "strict",
+        "status": "active",
+        "created_at": "2025-12-09T13:14:34.321850",
+        "created_by": "system",
+        "version": "1.0",
+        "metadata": {}
+      }
+    },
+    {
+      "action": "policy_created",
+      "policy_id": "policy_data_governance_1640995200",
+      "policy_name": "data_governance",
+      "timestamp": "2025-12-09T13:14:34.322124",
+      "details": {
+        "policy_id": "policy_data_governance_1640995200",
+        "policy_name": "data_governance",
+        "policy_type": "data_governance",
+        "description": "Data governance and privacy requirements",
+        "rules": [
+          "Personal data must be classified",
+          "Data retention policies must be enforced",
+          "Data access must be logged",
+          "Data sharing requires approval"
+        ],
+        "enforcement_level": "warning",
+        "status": "active",
+        "created_at": "2025-12-09T13:14:34.322119",
+        "created_by": "system",
+        "version": "1.0",
+        "metadata": {}
+      }
+    },
+    {
+      "action": "policy_created",
+      "policy_id": "policy_operational_standards_1640995200",
+      "policy_name": "operational_standards",
+      "timestamp": "2025-12-09T13:14:34.322442",
+      "details": {
+        "policy_id": "policy_operational_standards_1640995200",
+        "policy_name": "operational_standards",
+        "policy_type": "operational",
+        "description": "Operational standards and best practices",
+        "rules": [
+          "Regular backups are required",
+          "System monitoring must be enabled",
+          "Change management process must be followed",
+          "Documentation must be maintained"
+        ],
+        "enforcement_level": "warning",
+        "status": "active",
+        "created_at": "2025-12-09T13:14:34.322438",
+        "created_by": "system",
+        "version": "1.0",
+        "metadata": {}
+      }
+    }
+  ],
+  "config": {
+    "enforcement_enabled": true,
+    "policy_validation": true,
+    "audit_policy_changes": true,
+    "automatic_compliance_check": true
+  },
+  "last_updated": "2025-12-09T13:14:34.322472"
+}

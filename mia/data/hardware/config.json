@@ -1,0 +1,27 @@
+{
+  "monitoring_enabled": true,
+  "monitoring_interval": 30,
+  "optimization_settings": {
+    "auto_optimize": true,
+    "performance_priority": "balanced",
+    "thermal_protection": true,
+    "memory_management": true
+  },
+  "thresholds": {
+    "cpu_warning": 80.0,
+    "cpu_critical": 95.0,
+    "memory_warning": 85.0,
+    "memory_critical": 95.0,
+    "gpu_warning": 80.0,
+    "gpu_critical": 90.0,
+    "temperature_warning": 75.0,
+    "temperature_critical": 85.0
+  },
+  "model_optimization": {
+    "low_end_max_model_size_gb": 2.0,
+    "mid_range_max_model_size_gb": 8.0,
+    "high_end_max_model_size_gb": 32.0,
+    "prefer_quantized_models": true,
+    "auto_batch_sizing": true
+  }
+}

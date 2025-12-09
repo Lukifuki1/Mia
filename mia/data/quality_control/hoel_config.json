@@ -1,0 +1,106 @@
+{
+  "enabled": true,
+  "default_timeout": 3600,
+  "escalation_timeout": 7200,
+  "max_pending_requests": 100,
+  "audit_retention_days": 90,
+  "default_approvers": [
+    "admin",
+    "supervisor"
+  ],
+  "oversight_levels": {
+    "none": {
+      "description": "No oversight required"
+    },
+    "notification": {
+      "description": "Notify humans but proceed"
+    },
+    "approval_required": {
+      "description": "Require explicit approval"
+    },
+    "mandatory_review": {
+      "description": "Require review and approval"
+    },
+    "human_only": {
+      "description": "Only humans can perform this operation"
+    }
+  },
+  "operation_types": {
+    "system_modification": {
+      "default_level": "approval_required",
+      "default_approvers": [
+        "admin"
+      ],
+      "timeout": 1800
+    },
+    "data_deletion": {
+      "default_level": "mandatory_review",
+      "default_approvers": [
+        "admin",
+        "data_protection_officer"
+      ],
+      "timeout": 3600
+    },
+    "security_change": {
+      "default_level": "mandatory_review",
+      "default_approvers": [
+        "security_officer",
+        "admin"
+      ],
+      "timeout": 1800
+    },
+    "model_deployment": {
+      "default_level": "approval_required",
+      "default_approvers": [
+        "ml_engineer",
+        "admin"
+      ],
+      "timeout": 3600
+    },
+    "critical_decision": {
+      "default_level": "human_only",
+      "default_approvers": [
+        "human_supervisor"
+      ],
+      "timeout": 7200
+    }
+  },
+  "risk_assessment": {
+    "enabled": true,
+    "factors": {
+      "data_sensitivity": {
+        "weight": 0.3
+      },
+      "system_impact": {
+        "weight": 0.3
+      },
+      "reversibility": {
+        "weight": 0.2
+      },
+      "user_impact": {
+        "weight": 0.2
+      }
+    }
+  },
+  "escalation": {
+    "enabled": true,
+    "escalation_chain": [
+      "supervisor",
+      "manager",
+      "director"
+    ],
+    "auto_escalate_after": 3600
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": [
+      "email",
+      "slack",
+      "dashboard"
+    ],
+    "immediate_notification": [
+      "critical_decision",
+      "security_change"
+    ]
+  }
+}

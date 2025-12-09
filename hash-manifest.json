@@ -1,0 +1,37 @@
+{
+  "hash_algorithm": "SHA-256",
+  "hash_seed": "mia_enterprise_agi_deterministic_build",
+  "lockfile_hashes": {
+    "build-lock.json": "728f8791b1c5b760",
+    "docker-lock.json": "f2beb631e4ebe393",
+    "os-env-lock.json": "5032ae43186aff5d",
+    "python-lock.json": "8b1c5c908a57d424"
+  },
+  "module_hashes": {
+    "agi": "b956b62f197f2eca",
+    "analysis": "2f89a65bdd5d297e",
+    "build": "728f8791b1c5b760",
+    "compliance": "252047bfcba604f1",
+    "config": "42668c560fcf8ee5",
+    "core": "4d3a18890b143cec",
+    "data": "d43ad99536107dbb",
+    "desktop": "44fc0948944b0816",
+    "enterprise": "fc0ad6499a32257e",
+    "immune": "128402a7e9c11907",
+    "logs": "3c446ec6b4afe9c0",
+    "modules": "57f17c00ac190f2d",
+    "performance": "a91c56c798b3886a",
+    "production": "eaa1ba7b85765dde",
+    "project_builder": "cce627725acfe10f",
+    "quality": "2595093a19724958",
+    "sandbox": "5f9df7f0bbba78f5",
+    "security": "5081befcb1df7423",
+    "temp": "a8c068d146557e6d",
+    "templates": "599cf8ba2c2ea24d",
+    "testing": "508db791ec0b2fac",
+    "tests": "10e6ad0b7825a650",
+    "validation": "b36c76936c111d5b",
+    "verification": "7ca210a2a3d2a9e0"
+  },
+  "project_hash": "e628ba234a8103d7fbd7faa7f8634be8857f2377b49b2e4161e00f86763f7e4d"
+}

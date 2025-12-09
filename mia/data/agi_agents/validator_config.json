@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "validation_interval": 60,
+  "auto_validation": true,
+  "default_level": "standard",
+  "parallel_validation": true,
+  "max_concurrent_validations": 5,
+  "validation_timeout": 300,
+  "score_thresholds": {
+    "pass": 0.8,
+    "warning": 0.6,
+    "fail": 0.0
+  },
+  "validation_types": {
+    "syntax": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "logic": {
+      "enabled": true,
+      "weight": 1.5
+    },
+    "performance": {
+      "enabled": true,
+      "weight": 1.2
+    },
+    "security": {
+      "enabled": true,
+      "weight": 2.0
+    },
+    "quality": {
+      "enabled": true,
+      "weight": 1.3
+    },
+    "compliance": {
+      "enabled": true,
+      "weight": 1.1
+    },
+    "functional": {
+      "enabled": true,
+      "weight": 1.4
+    },
+    "integration": {
+      "enabled": true,
+      "weight": 1.6
+    }
+  }
+}

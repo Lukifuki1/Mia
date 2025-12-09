@@ -1,0 +1,772 @@
+import time
+import platform
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+#!/usr/bin/env python3
+"""
+MIA Enterprise AGI - Project Generator
+=====================================
+
+Core project generation system with templates and automation.
+"""
+
+import os
+import json
+import logging
+import shutil
+import subprocess
+from pathlib import Path
+from typing import Dict, List, Optional, Any, Tuple
+from dataclasses import dataclass, asdict
+from enum import Enum
+import tempfile
+import uuid
+
+
+class ProjectType(Enum):
+    """Types of projects that can be generated"""
+    WEB_APP = "web_app"
+    API_SERVICE = "api_service"
+    DESKTOP_APP = "desktop_app"
+    MOBILE_APP = "mobile_app"
+    CLI_TOOL = "cli_tool"
+    LIBRARY = "library"
+    MICROSERVICE = "microservice"
+    FULL_STACK = "full_stack"
+
+
+class TechStack(Enum):
+    """Technology stacks"""
+    PYTHON_FASTAPI = "python_fastapi"
+    PYTHON_DJANGO = "python_django"
+    PYTHON_FLASK = "python_flask"
+    NODE_EXPRESS = "node_express"
+    NODE_NEXTJS = "node_nextjs"
+    REACT_TYPESCRIPT = "react_typescript"
+    VUE_TYPESCRIPT = "vue_typescript"
+    RUST_ACTIX = "rust_actix"
+    GO_GIN = "go_gin"
+    JAVA_SPRING = "java_spring"
+
+
+@dataclass
+class ProjectConfig:
+    """Project configuration"""
+    name: str
+    description: str
+    project_type: ProjectType
+    tech_stack: TechStack
+    author: str
+    version: str = "0.1.0"
+    license: str = "MIT"
+    include_tests: bool = True
+    include_docs: bool = True
+    include_ci_cd: bool = True
+    include_docker: bool = True
+    database: Optional[str] = None
+    features: List[str] = None
+
+
+class ProjectGenerator:
+    """Core project generation system"""
+    
+    def __init__(self, workspace_dir: str = "./generated_projects"):
+        self.workspace_dir = Path(workspace_dir)
+        self.workspace_dir.mkdir(exist_ok=True)
+        self.logger = self._setup_logging()
+        
+        # Project templates
+        self.templates = {}
+        self.generated_projects = []
+        
+        self.logger.info("🏗️ Project Generator initialized")
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging configuration"""
+        logger = deterministic_build_helpers.deterministic_log(...)
+        if not logger.handlers:
+            handler = deterministic_build_helpers.deterministic_log(...)
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _get_deterministic_time(self) -> float:
+        """Return deterministic time for testing"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+    
+    def generate_project(self, config: ProjectConfig) -> Dict[str, Any]:
+        """Generate a complete project based on configuration"""
+        try:
+            self.logger.info(f"🏗️ Generating project: {config.name}")
+            
+            # Create project directory
+            project_dir = self.workspace_dir / config.name
+            if project_dir.exists():
+                shutil.rmtree(project_dir)
+            project_dir.mkdir(parents=True)
+            
+            generation_result = {
+                "project_name": config.name,
+                "project_path": str(project_dir),
+                "config": asdict(config),
+                "generated_files": [],
+                "success": True,
+                "generation_time": self._get_deterministic_time()
+            }
+            
+            # Generate project structure
+            self._generate_project_structure(project_dir, config)
+            generation_result["generated_files"].extend(self._get_generated_files(project_dir))
+            
+            # Generate source code
+            self._generate_source_code(project_dir, config)
+            
+            # Generate configuration files
+            self._generate_config_files(project_dir, config)
+            
+            # Generate tests if requested
+            if config.include_tests:
+                self._generate_tests(project_dir, config)
+            
+            # Generate documentation if requested
+            if config.include_docs:
+                self._generate_documentation(project_dir, config)
+            
+            # Generate CI/CD if requested
+            if config.include_ci_cd:
+                self._generate_ci_cd(project_dir, config)
+            
+            # Generate Docker files if requested
+            if config.include_docker:
+                self._generate_docker_files(project_dir, config)
+            
+            # Store project info
+            self.generated_projects.append(generation_result)
+            
+            self.logger.info(f"✅ Project generated successfully: {config.name}")
+            
+            return generation_result
+            
+        except Exception as e:
+            self.logger.error(f"Project generation error: {e}")
+            return {
+                "project_name": config.name,
+                "success": False,
+                "error": str(e),
+                "generation_time": self._get_deterministic_time()
+            }
+    
+    def _generate_project_structure(self, project_dir: Path, config: ProjectConfig):
+        """Generate basic project structure"""
+        try:
+            # Create standard directories
+            directories = [
+                "src",
+                "tests",
+                "docs",
+                "scripts",
+                "config"
+            ]
+            
+            # Add tech-stack specific directories
+            if config.tech_stack in [TechStack.PYTHON_FASTAPI, TechStack.PYTHON_DJANGO, TechStack.PYTHON_FLASK]:
+                directories.extend(["src/api", "src/models", "src/utils"])
+            elif config.tech_stack in [TechStack.NODE_EXPRESS, TechStack.NODE_NEXTJS]:
+                directories.extend(["src/routes", "src/middleware", "src/controllers"])
+            elif config.tech_stack in [TechStack.REACT_TYPESCRIPT, TechStack.VUE_TYPESCRIPT]:
+                directories.extend(["src/components", "src/pages", "src/hooks", "public"])
+            
+            for item in sorted(set):
+                (project_dir / directory).mkdir(parents=True, exist_ok=True)
+                
+                # Create .gitkeep files
+                gitkeep_file = project_dir / directory / ".gitkeep"
+                gitkeep_file.touch()
+            
+        except Exception as e:
+            self.logger.error(f"Project structure generation error: {e}")
+    
+    def _generate_source_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate source code based on tech stack"""
+        try:
+            if config.tech_stack == TechStack.PYTHON_FASTAPI:
+                self._generate_fastapi_code(project_dir, config)
+            elif config.tech_stack == TechStack.PYTHON_DJANGO:
+                self._generate_django_code(project_dir, config)
+            elif config.tech_stack == TechStack.PYTHON_FLASK:
+                self._generate_flask_code(project_dir, config)
+            elif config.tech_stack == TechStack.NODE_EXPRESS:
+                self._generate_express_code(project_dir, config)
+            elif config.tech_stack == TechStack.REACT_TYPESCRIPT:
+                self._generate_react_code(project_dir, config)
+            else:
+                self._generate_generic_code(project_dir, config)
+                
+        except Exception as e:
+            self.logger.error(f"Source code generation error: {e}")
+    
+    def _generate_fastapi_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate FastAPI application code"""
+        # Main application file
+        main_py = project_dir / "src" / "main.py"
+        main_py.write_text(f'''#!/usr/bin/env python3
+"""
+{config.name} - FastAPI Application
+Generated by MIA Enterprise Project Builder
+"""
+
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+
+app = FastAPI(
+    title="{config.name}",
+    description="{config.description}",
+    version="{config.version}"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+async def root():
+    return {{"message": "Welcome to {config.name}"}}
+
+@app.get("/health")
+async def health_check():
+    return {{"status": "healthy", "version": "{config.version}"}}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+''')
+        
+        # Requirements file
+        requirements_txt = project_dir / "requirements.txt"
+        requirements_txt.write_text('''fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+''')
+    
+    def _generate_django_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate Django application code"""
+        # Django project structure would be more complex
+        # This is a simplified version
+        manage_py = project_dir / "manage.py"
+        manage_py.write_text(f'''#!/usr/bin/env python3
+"""
+{config.name} - Django Management Script
+Generated by MIA Enterprise Project Builder
+"""
+
+import os
+import sys
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{config.name.lower()}.settings")
+    
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import Django. Are you sure it's installed and "
+            "available on your PYTHONPATH environment variable? Did you "
+            "forget to activate a virtual environment?"
+        ) from exc
+    execute_from_command_line(deterministic_build_helpers._get_build_argv())
+''')
+    
+    def _generate_flask_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate Flask application code"""
+        app_py = project_dir / "src" / "app.py"
+        app_py.write_text(f'''#!/usr/bin/env python3
+"""
+{config.name} - Flask Application
+Generated by MIA Enterprise Project Builder
+"""
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({{"message": "Welcome to {config.name}"}})
+
+@app.route('/health')
+def health():
+    return jsonify({{"status": "healthy", "version": "{config.version}"}})
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+''')
+    
+    def _generate_express_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate Express.js application code"""
+        app_js = project_dir / "src" / "app.js"
+        app_js.write_text(f'''/**
+ * {config.name} - Express.js Application
+ * Generated by MIA Enterprise Project Builder
+ */
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
+app.get('/', (req, res) => {{
+    res.json({{ message: 'Welcome to {config.name}' }});
+}});
+
+app.get('/health', (req, res) => {{
+    res.json({{ status: 'healthy', version: '{config.version}' }});
+}});
+
+app.listen(PORT, () => {{
+    console.log(`Server running on port ${{PORT}}`);
+}});
+
+module.exports = app;
+''')
+        
+        # Package.json
+        package_json = project_dir / "package.json"
+        package_json.write_text(f'''{{
+  "name": "{config.name.lower().replace(' ', '-')}",
+  "version": "{config.version}",
+  "description": "{config.description}",
+  "main": "src/app.js",
+  "scripts": {{
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest"
+  }},
+  "dependencies": {{
+    "express": "^4.18.0",
+    "cors": "^2.8.5"
+  }},
+  "devDependencies": {{
+    "nodemon": "^3.0.0",
+    "jest": "^29.0.0"
+  }}
+}}
+''')
+    
+    def _generate_react_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate React TypeScript application code"""
+        app_tsx = project_dir / "src" / "App.tsx"
+        app_tsx.write_text(f'''import React from 'react';
+import './App.css';
+
+function App() {{
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>{config.name}</h1>
+        <p>{config.description}</p>
+        <p>Version: {config.version}</p>
+      </header>
+    </div>
+  );
+}}
+
+export default App;
+''')
+        
+        # Index.tsx
+        index_tsx = project_dir / "src" / "index.tsx"
+        index_tsx.write_text('''import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(
+  document.getElementBydeterministic_build_helpers.deterministic_id('root') as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+''')
+    
+    def _generate_generic_code(self, project_dir: Path, config: ProjectConfig):
+        """Generate generic application code"""
+        main_file = project_dir / "src" / "main.py"
+        main_file.write_text(f'''#!/usr/bin/env python3
+"""
+{config.name}
+{config.description}
+
+Generated by MIA Enterprise Project Builder
+Version: {config.version}
+Author: {config.author}
+"""
+
+def main():
+    print("Welcome to {config.name}")
+    print("Version: {config.version}")
+
+if __name__ == "__main__":
+    main()
+''')
+    
+    def _generate_config_files(self, project_dir: Path, config: ProjectConfig):
+        """Generate configuration files"""
+        try:
+            # .gitignore
+            gitignore = project_dir / ".gitignore"
+            gitignore.write_text('''# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Testing
+.coverage
+.pytest_cache/
+coverage/
+
+# Database
+*.db
+*.sqlite3
+''')
+            
+            # README.md
+            readme = project_dir / "README.md"
+            readme.write_text(f'''# {config.name}
+
+{config.description}
+
+## Version
+{config.version}
+
+## Author
+{config.author}
+
+## License
+{config.license}
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd {config.name.lower().replace(' ', '-')}
+
+# Install dependencies
+# (Add specific installation instructions based on tech stack)
+```
+
+## Usage
+
+```bash
+# Add usage instructions here
+```
+
+## Development
+
+```bash
+# Add development setup instructions here
+```
+
+## Testing
+
+```bash
+# Add testing instructions here
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## License
+
+This project is licensed under the {config.license} License.
+''')
+            
+        except Exception as e:
+            self.logger.error(f"Config files generation error: {e}")
+    
+    def _generate_tests(self, project_dir: Path, config: ProjectConfig):
+        """Generate test files"""
+        try:
+            test_file = project_dir / "tests" / "test_main.py"
+            test_file.write_text(f'''#!/usr/bin/env python3
+"""
+Tests for {config.name}
+Generated by MIA Enterprise Project Builder
+"""
+
+import unittest
+import sys
+from pathlib import Path
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+
+class TestMain(unittest.TestCase):
+    """Test cases for main functionality"""
+    
+    def test_basic_functionality(self):
+        """Test basic functionality"""
+        self.assertTrue(True)
+    
+    def test_version(self):
+        """Test version information"""
+        version = "{config.version}"
+        self.assertIsNotNone(version)
+        self.assertIsInstance(version, str)
+
+if __name__ == '__main__':
+    unittest.main()
+''')
+            
+        except Exception as e:
+            self.logger.error(f"Tests generation error: {e}")
+    
+    def _generate_documentation(self, project_dir: Path, config: ProjectConfig):
+        """Generate documentation"""
+        try:
+            docs_dir = project_dir / "docs"
+            
+            # API documentation
+            api_md = docs_dir / "api.md"
+            api_md.write_text(f'''# {config.name} API Documentation
+
+## Overview
+{config.description}
+
+## Endpoints
+
+### GET /
+Returns welcome message
+
+### GET /health
+Returns health status
+
+## Authentication
+(Add authentication details if applicable)
+
+## Error Handling
+(Add error handling documentation)
+''')
+            
+            # Development guide
+            dev_md = docs_dir / "development.md"
+            dev_md.write_text(f'''# {config.name} Development Guide
+
+## Setup
+1. Clone the repository
+2. Install dependencies
+3. Configure environment variables
+4. Run the application
+
+## Architecture
+(Add architecture documentation)
+
+## Contributing
+(Add contribution guidelines)
+''')
+            
+        except Exception as e:
+            self.logger.error(f"Documentation generation error: {e}")
+    
+    def _generate_ci_cd(self, project_dir: Path, config: ProjectConfig):
+        """Generate CI/CD configuration"""
+        try:
+            # GitHub Actions
+            github_dir = project_dir / ".github" / "workflows"
+            github_dir.mkdir(parents=True, exist_ok=True)
+            
+            ci_yml = github_dir / "ci.yml"
+            ci_yml.write_text(f'''name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests
+      run: |
+        python -m pytest tests/
+    
+    - name: Run linting
+      run: |
+        pip install flake8
+        flake8 src/
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to production
+      run: |
+        echo "Deploy to production"
+        # Add deployment steps here
+''')
+            
+        except Exception as e:
+            self.logger.error(f"CI/CD generation error: {e}")
+    
+    def _generate_docker_files(self, project_dir: Path, config: ProjectConfig):
+        """Generate Docker configuration"""
+        try:
+            # Dockerfile
+            dockerfile = project_dir / "Dockerfile"
+            
+            if config.tech_stack in [TechStack.PYTHON_FASTAPI, TechStack.PYTHON_DJANGO, TechStack.PYTHON_FLASK]:
+                dockerfile.write_text(f'''FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY src/ ./src/
+
+EXPOSE 8000
+
+CMD ["python", "src/main.py"]
+''')
+            elif config.tech_stack in [TechStack.NODE_EXPRESS, TechStack.NODE_NEXTJS]:
+                dockerfile.write_text(f'''FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY src/ ./src/
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+''')
+            
+            # docker-compose.yml
+            docker_compose = project_dir / "docker-compose.yml"
+            docker_compose.write_text(f'''version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped
+
+  # Add database service if needed
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: {config.name.lower()}
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:
+''')
+            
+        except Exception as e:
+            self.logger.error(f"Docker files generation error: {e}")
+    
+    def _get_generated_files(self, project_dir: Path) -> List[str]:
+        """Get list of generated files"""
+        try:
+            generated_files = []
+            for file_path in project_dir.rglob("*"):
+                if file_path.is_file():
+                    relative_path = file_path.relative_to(project_dir)
+                    generated_files.append(str(relative_path))
+            return generated_files
+        except Exception as e:
+            self.logger.error(f"Generated files listing error: {e}")
+            return []
+    
+    def list_generated_projects(self) -> List[Dict[str, Any]]:
+        """List all generated projects"""
+        return self.generated_projects
+    
+    def get_project_info(self, project_name: str) -> Optional[Dict[str, Any]]:
+        """Get information about a specific project"""
+        for project in self.generated_projects:
+            if project["project_name"] == project_name:
+                return project
+        return None

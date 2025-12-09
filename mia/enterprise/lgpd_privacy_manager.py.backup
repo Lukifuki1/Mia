@@ -1,0 +1,246 @@
+#!/usr/bin/env python3
+"""
+LGPD Privacy Manager
+"""
+
+import json
+import hashlib
+import logging
+from datetime import datetime, timedelta
+from typing import Dict, List, Any, Optional
+from enum import Enum
+
+class LGPDPrivacyManager:
+    """LGPD Privacy Manager za upravljanje osebnih podatkov"""
+    
+    def __init__(self):
+        self.logger = self._setup_logging()
+        self.data_inventory = {}
+        self.processing_activities = {}
+        self.privacy_policies = {}
+        
+    def _setup_logging(self) -> logging.Logger:
+        logger = logging.getLogger("MIA.LGPD.Privacy")
+        logger.setLevel(logging.INFO)
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+        return logger
+    
+    def register_data_processing(self, 
+                                processing_id: str,
+                                data_category: str,
+                                legal_basis: str,
+                                purpose: str,
+                                retention_period: int,
+                                data_subject_id: Optional[str] = None) -> Dict[str, Any]:
+        """Registriraj obdelavo osebnih podatkov"""
+        try:
+            processing_record = {
+                "processing_id": processing_id,
+                "data_category": data_category,
+                "legal_basis": legal_basis,
+                "purpose": purpose,
+                "retention_period": retention_period,
+                "data_subject_id": data_subject_id,
+                "created_at": datetime.now().isoformat(),
+                "status": "active",
+                "compliance_checks": {
+                    "legal_basis_valid": self._validate_legal_basis(legal_basis),
+                    "purpose_limitation": self._validate_purpose(purpose),
+                    "data_minimization": True,
+                    "retention_compliant": retention_period <= self._get_max_retention(data_category)
+                }
+            }
+            
+            self.processing_activities[processing_id] = processing_record
+            
+            self.logger.info(f"Registrirana obdelava: {processing_id}")
+            
+            return {
+                "status": "registered",
+                "processing_record": processing_record,
+                "compliance_score": self._calculate_compliance_score(processing_record)
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Napaka pri registraciji obdelave: {e}")
+            return {"status": "failed", "error": str(e)}
+    
+    def process_data_subject_request(self, 
+                                   request_type: str,
+                                   data_subject_id: str,
+                                   request_details: Dict[str, Any]) -> Dict[str, Any]:
+        """Obdelaj zahtevo posameznika"""
+        try:
+            request_id = f"dsr_{int(datetime.now().timestamp())}"
+            
+            # Validiraj tip zahteve
+            valid_requests = ["access", "rectification", "erasure", "portability", 
+                            "restriction", "objection", "automated_decision_making"]
+            
+            if request_type not in valid_requests:
+                return {"status": "invalid_request", "error": f"Invalid request type: {request_type}"}
+            
+            # Obdelaj zahtevo glede na tip
+            if request_type == "access":
+                response = self._handle_access_request(data_subject_id)
+            elif request_type == "erasure":
+                response = self._handle_erasure_request(data_subject_id)
+            elif request_type == "portability":
+                response = self._handle_portability_request(data_subject_id)
+            elif request_type == "rectification":
+                response = self._handle_rectification_request(data_subject_id, request_details)
+            else:
+                response = self._handle_generic_request(request_type, data_subject_id, request_details)
+            
+            # Zabeleži zahtevo
+            request_record = {
+                "request_id": request_id,
+                "request_type": request_type,
+                "data_subject_id": data_subject_id,
+                "request_details": request_details,
+                "response": response,
+                "processed_at": datetime.now().isoformat(),
+                "status": "completed"
+            }
+            
+            self.logger.info(f"Obdelana DSR zahteva: {request_id}")
+            
+            return {
+                "status": "processed",
+                "request_record": request_record,
+                "response": response
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Napaka pri obdelavi DSR zahteve: {e}")
+            return {"status": "failed", "error": str(e)}
+    
+    def _validate_legal_basis(self, legal_basis: str) -> bool:
+        """Validiraj pravno podlago"""
+        valid_bases = ["consent", "contract", "legal_obligation", 
+                      "vital_interests", "public_task", "legitimate_interests"]
+        return legal_basis in valid_bases
+    
+    def _validate_purpose(self, purpose: str) -> bool:
+        """Validiraj namen obdelave"""
+        return len(purpose) > 10 and "legitimate" in purpose.lower()
+    
+    def _get_max_retention(self, data_category: str) -> int:
+        """Pridobi maksimalno obdobje hrambe"""
+        retention_limits = {
+            "personal": 365 * 2,
+            "sensitive": 365 * 1,
+            "children": 365 * 1,
+            "biometric": 365 * 5,
+            "health": 365 * 10
+        }
+        return retention_limits.get(data_category, 365)
+    
+    def _calculate_compliance_score(self, processing_record: Dict[str, Any]) -> float:
+        """Izračunaj compliance score"""
+        checks = processing_record["compliance_checks"]
+        passed_checks = sum(1 for check in checks.values() if check)
+        total_checks = len(checks)
+        return (passed_checks / total_checks) * 100 if total_checks > 0 else 0
+    
+    def _handle_access_request(self, data_subject_id: str) -> Dict[str, Any]:
+        """Obdelaj zahtevo za dostop"""
+        # Poišči vse podatke za posameznika
+        subject_data = {}
+        for proc_id, proc_data in self.processing_activities.items():
+            if proc_data.get("data_subject_id") == data_subject_id:
+                subject_data[proc_id] = {
+                    "data_category": proc_data["data_category"],
+                    "purpose": proc_data["purpose"],
+                    "legal_basis": proc_data["legal_basis"],
+                    "retention_period": proc_data["retention_period"],
+                    "created_at": proc_data["created_at"]
+                }
+        
+        return {
+            "request_type": "access",
+            "data_found": len(subject_data) > 0,
+            "data_records": subject_data,
+            "export_format": "json"
+        }
+    
+    def _handle_erasure_request(self, data_subject_id: str) -> Dict[str, Any]:
+        """Obdelaj zahtevo za izbris"""
+        deleted_records = []
+        
+        for proc_id, proc_data in list(self.processing_activities.items()):
+            if proc_data.get("data_subject_id") == data_subject_id:
+                # Preveri, če je izbris možen
+                if proc_data["legal_basis"] not in ["legal_obligation", "vital_interests"]:
+                    del self.processing_activities[proc_id]
+                    deleted_records.append(proc_id)
+        
+        return {
+            "request_type": "erasure",
+            "deleted_records": deleted_records,
+            "deletion_count": len(deleted_records),
+            "deletion_completed": True
+        }
+    
+    def _handle_portability_request(self, data_subject_id: str) -> Dict[str, Any]:
+        """Obdelaj zahtevo za prenosljivost"""
+        portable_data = {}
+        
+        for proc_id, proc_data in self.processing_activities.items():
+            if (proc_data.get("data_subject_id") == data_subject_id and 
+                proc_data["legal_basis"] in ["consent", "contract"]):
+                portable_data[proc_id] = proc_data
+        
+        return {
+            "request_type": "portability",
+            "portable_data": portable_data,
+            "export_format": "json",
+            "data_structure": "structured"
+        }
+    
+    def _handle_rectification_request(self, data_subject_id: str, request_details: Dict[str, Any]) -> Dict[str, Any]:
+        """Obdelaj zahtevo za popravek"""
+        updated_records = []
+        
+        for proc_id, proc_data in self.processing_activities.items():
+            if proc_data.get("data_subject_id") == data_subject_id:
+                # Posodobi podatke
+                if "updates" in request_details:
+                    proc_data.update(request_details["updates"])
+                    proc_data["last_updated"] = datetime.now().isoformat()
+                    updated_records.append(proc_id)
+        
+        return {
+            "request_type": "rectification",
+            "updated_records": updated_records,
+            "update_count": len(updated_records),
+            "rectification_completed": True
+        }
+    
+    def _handle_generic_request(self, request_type: str, data_subject_id: str, request_details: Dict[str, Any]) -> Dict[str, Any]:
+        """Obdelaj splošno zahtevo"""
+        return {
+            "request_type": request_type,
+            "data_subject_id": data_subject_id,
+            "status": "processed",
+            "details": f"Generic handling for {request_type}"
+        }
+    
+    def get_privacy_dashboard(self) -> Dict[str, Any]:
+        """Pridobi privacy dashboard"""
+        total_processing = len(self.processing_activities)
+        compliant_processing = sum(1 for proc in self.processing_activities.values() 
+                                 if all(proc["compliance_checks"].values()))
+        
+        return {
+            "total_processing_activities": total_processing,
+            "compliant_activities": compliant_processing,
+            "compliance_rate": (compliant_processing / total_processing * 100) if total_processing > 0 else 100,
+            "data_categories": list(set(proc["data_category"] for proc in self.processing_activities.values())),
+            "legal_bases": list(set(proc["legal_basis"] for proc in self.processing_activities.values())),
+            "last_updated": datetime.now().isoformat()
+        }

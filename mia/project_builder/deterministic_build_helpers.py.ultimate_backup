@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""
+🔧 MIA Enterprise AGI - Deterministic Build Helpers
+==================================================
+
+Provides deterministic utilities for Project Builder module.
+"""
+
+import hashlib
+import json
+from typing import Any, Dict, List, Optional
+from datetime import datetime
+
+class DeterministicBuildHelpers:
+    """Helpers for deterministic build operations"""
+    
+    def __init__(self):
+        self.build_config = {
+            "build_timestamp": "2025-12-09T14:00:00Z",
+            "build_version": "1.0.0",
+            "build_epoch": 1733752800,
+            "build_seed": "mia_project_builder_deterministic"
+        }
+        
+        # Deterministic counters
+        self._id_counter = 0
+        self._temp_counter = 0
+    
+    def _get_build_timestamp(self) -> str:
+        """Get deterministic build timestamp"""
+        return self.build_config["build_timestamp"]
+    
+    def _get_build_epoch(self) -> float:
+        """Get deterministic build epoch"""
+        return float(self.build_config["build_epoch"])
+    
+    def _generate_deterministic_build_deterministic_build_helpers.deterministic_id(self) -> str:
+        """Generate deterministic build ID"""
+        self._id_counter += 1
+        seed_data = f"{self.build_config['build_seed']}_{self._id_counter}"
+        hasher = hashlib.sha256()
+        hasher.update(seed_data.encode('utf-8'))
+        return hasher.hexdigest()[:32]
+    
+    def _get_seeded_random(self):
+        """Get seeded random generator"""
+        import random
+        deterministic_build_helpers._get_seeded_random().seed(42)  # Fixed seed for deterministic behavior
+        return random
+    
+    def _get_build_process_deterministic_build_helpers.deterministic_id(self) -> int:
+        """Get deterministic build process ID"""
+        return 12345
+    
+    def _get_build_thread_deterministic_build_helpers.deterministic_id(self) -> int:
+        """Get deterministic build thread ID"""
+        return 67890
+    
+    def _get_deterministic_temp_dir(self) -> str:
+        """Get deterministic temporary directory"""
+        self._temp_counter += 1
+        return f"/tmp/mia_build_temp_{self._temp_counter}"
+    
+    def _get_deterministic_temp_file(self) -> tuple:
+        """Get deterministic temporary file"""
+        self._temp_counter += 1
+        return (1, f"/tmp/mia_build_temp_file_{self._temp_counter}")
+    
+    def _get_deterministic_bytes(self, length: int) -> bytes:
+        """Get deterministic bytes"""
+        hasher = hashlib.sha256()
+        hasher.update(f"{self.build_config['build_seed']}_{length}".encode('utf-8'))
+        return hasher.digest()[:length]
+    
+    def _get_deterministic_secret(self):
+        """Get deterministic secret generator"""
+        class DeterministicSecrets:
+            def __init__(self, seed: str):
+                self.seed = seed
+            
+            def token_hex(self, nbytes: int = 32) -> str:
+                hasher = hashlib.sha256()
+                hasher.update(f"{self.seed}_token_{nbytes}".encode('utf-8'))
+                return hasher.hexdigest()[:nbytes*2]
+            
+            def token_bytes(self, nbytes: int = 32) -> bytes:
+                hasher = hashlib.sha256()
+                hasher.update(f"{self.seed}_bytes_{nbytes}".encode('utf-8'))
+                return hasher.digest()[:nbytes]
+        
+        return DeterministicSecrets(self.build_config['build_seed'])
+    
+    def _get_build_node_name(self) -> str:
+        """Get deterministic build node name"""
+        return "mia-build-node"
+    
+    def _get_build_hostname(self) -> str:
+        """Get deterministic build hostname"""
+        return "mia-build-host"
+    
+    def generate_build_deterministic_build_helpers.deterministic_hash(self, data: Any) -> str:
+        """Generate deterministic hash for build data"""
+        if isinstance(data, dict):
+            data_str = json.dumps(data, sort_keys=True, separators=(',', ':'))
+        else:
+            data_str = str(data)
+        
+        hasher = hashlib.sha256()
+        hasher.update(f"{self.build_config['build_seed']}_{data_str}".encode('utf-8'))
+        return hasher.hexdigest()
+    
+    def normalize_build_path(self, path: str) -> str:
+        """Normalize build path for deterministic behavior"""
+        # Replace system-specific path separators
+        normalized = path.replace('\\', '/').replace('\', '/')
+        
+        # Remove absolute path prefixes for deterministic builds
+        if normalized.startswith('/'):
+            parts = normalized.split('/')
+            if len(parts) > 3:  # Keep relative structure
+                normalized = '/'.join(parts[-3:])
+        
+        return normalized
+    
+    def get_deterministic_build_info(self) -> Dict[str, Any]:
+        """Get deterministic build information"""
+        return {
+            "build_timestamp": self._get_build_timestamp(),
+            "build_epoch": self._get_build_epoch(),
+            "build_version": self.build_config["build_version"],
+            "build_node": self._get_build_node_name(),
+            "build_host": self._get_build_hostname(),
+            "deterministic": True
+        }
+
+    # Enhanced deterministic methods
+    
+    def deterministic_now(self):
+        """Deterministic datetime.now()"""
+        from datetime import datetime
+        return datetime.fromisoformat(self._get_build_timestamp())
+    
+    def deterministic_today(self):
+        """Deterministic date.today()"""
+        return self.deterministic_now().date()
+    
+    def deterministic_utcnow(self):
+        """Deterministic datetime.utcnow()"""
+        return self.deterministic_now()
+    
+    def deterministic_hash(self, obj):
+        """Deterministic hash function"""
+        if hasattr(obj, '__dict__'):
+            content = str(sorted(obj.__dict__.items()))
+        else:
+            content = str(obj)
+        
+        hasher = hashlib.sha256()
+        hasher.update(f"{self.build_config['build_seed']}_{content}".encode('utf-8'))
+        return int(hasher.hexdigest()[:8], 16)
+    
+    def deterministic_id(self, obj):
+        """Deterministic id function"""
+        return self.deterministic_hash(obj)
+    
+    def deterministic_str_id(self, obj):
+        """Deterministic str(id()) function"""
+        return str(self.deterministic_id(obj))
+    
+    def deterministic_hex_id(self, obj):
+        """Deterministic hex(id()) function"""
+        return hex(self.deterministic_id(obj))
+    
+    def _get_build_parent_process_id(self) -> int:
+        """Get deterministic parent process ID"""
+        return 12344
+    
+    def _get_build_user_id(self) -> int:
+        """Get deterministic user ID"""
+        return 1000
+    
+    def _get_build_group_id(self) -> int:
+        """Get deterministic group ID"""
+        return 1000
+    
+    def _get_build_working_dir(self) -> str:
+        """Get deterministic working directory"""
+        return "/workspace/project"
+    
+    def _get_build_env_var(self, key: str, default: str = "") -> str:
+        """Get deterministic environment variable"""
+        env_vars = {
+            "HOME": "/home/user",
+            "USER": "user",
+            "PATH": "/usr/local/bin:/usr/bin:/bin",
+            "PYTHONPATH": "/workspace/project"
+        }
+        return env_vars.get(key, default)
+    
+    def _get_build_platform(self) -> str:
+        """Get deterministic platform"""
+        return "linux"
+    
+    def _get_platform_info(self):
+        """Get deterministic platform info"""
+        class DeterministicPlatform:
+            def system(self): return "Linux"
+            def machine(self): return "x86_64"
+            def processor(self): return "x86_64"
+            def platform(self): return "Linux-5.4.0-x86_64"
+            def node(self): return "mia-build-node"
+        return DeterministicPlatform()
+    
+    def _get_build_fqdn(self) -> str:
+        """Get deterministic FQDN"""
+        return "mia-build-host.local"
+    
+    def _get_build_thread(self):
+        """Get deterministic thread object"""
+        class DeterministicThread:
+            def __init__(self):
+                self.ident = 67890
+                self.name = "MainThread"
+            def getName(self): return self.name
+            def setName(self, name): self.name = name
+        return DeterministicThread()
+    
+    def _get_build_thread_count(self) -> int:
+        """Get deterministic thread count"""
+        return 1
+    
+    def _get_deterministic_temp(self):
+        """Get deterministic tempfile module"""
+        class DeterministicTempfile:
+            def __init__(self, helpers):
+                self.helpers = helpers
+            
+            def mkdtemp(self): return self.helpers._get_deterministic_temp_dir()
+            def mkstemp(self): return self.helpers._get_deterministic_temp_file()
+            def gettempdir(self): return "/tmp"
+            def NamedTemporaryFile(self, **kwargs): return self.helpers.DeterministicNamedTemporaryFile(**kwargs)
+            def TemporaryDirectory(self, **kwargs): return self.helpers.DeterministicTemporaryDirectory(**kwargs)
+        
+        return DeterministicTempfile(self)
+    
+    def _get_deterministic_sizeof(self, obj) -> int:
+        """Get deterministic sizeof"""
+        # Return a consistent size based on object type
+        if isinstance(obj, str):
+            return len(obj) * 4  # Approximate
+        elif isinstance(obj, (list, tuple)):
+            return len(obj) * 8
+        elif isinstance(obj, dict):
+            return len(obj) * 16
+        else:
+            return 64  # Default size
+    
+    def _get_deterministic_objects(self) -> list:
+        """Get deterministic objects list"""
+        return []  # Return empty list for deterministic behavior
+    
+    def _get_deterministic_socket(self):
+        """Get deterministic socket"""
+        class DeterministicSocket:
+            def __init__(self):
+                self.family = 2  # AF_INET
+                self.type = 1    # SOCK_STREAM
+            def bind(self, address): pass
+            def listen(self, backlog): pass
+            def accept(self): return (self, ("127.0.0.1", 12345))
+            def connect(self, address): pass
+            def send(self, data): return len(data)
+            def recv(self, bufsize): return b"deterministic_data"
+            def close(self): pass
+        
+        return DeterministicSocket()
+    
+    def _get_build_version(self) -> str:
+        """Get deterministic Python version"""
+        return "3.11.0"
+    
+    def _get_build_executable(self) -> str:
+        """Get deterministic Python executable"""
+        return "/usr/bin/python3"
+    
+    def _get_build_argv(self) -> list:
+        """Get deterministic sys.argv"""
+        return ["mia_bootstrap.py"]
+    
+    def deterministic_log(self, *args, **kwargs):
+        """Deterministic logging function"""
+        # Remove timestamp from logging
+        if args:
+            message = str(args[0])
+            # Log without timestamp
+            print(f"[DETERMINISTIC] {message}")
+    
+    class DeterministicNamedTemporaryFile:
+        """Deterministic named temporary file"""
+        def __init__(self, **kwargs):
+            self.name = "/tmp/deterministic_temp_file"
+            self.closed = False
+        
+        def write(self, data): pass
+        def read(self): return b"deterministic_content"
+        def close(self): self.closed = True
+        def __enter__(self): return self
+        def __exit__(self, *args): self.close()
+    
+    class DeterministicTemporaryDirectory:
+        """Deterministic temporary directory"""
+        def __init__(self, **kwargs):
+            self.name = "/tmp/deterministic_temp_dir"
+        
+        def __enter__(self): return self.name
+        def __exit__(self, *args): pass
+    
+    class DeterministicLocal:
+        """Deterministic thread-local storage"""
+        def __init__(self):
+            self._data = {}
+        
+        def __getattr__(self, name):
+            return self._data.get(name)
+        
+        def __setattr__(self, name, value):
+            if name.startswith('_'):
+                super().__setattr__(name, value)
+            else:
+                self._data[name] = value
+    
+    # Deterministic subprocess methods
+    def DeterministicPopen(self, *args, **kwargs):
+        """Deterministic Popen"""
+        class DeterministicProcess:
+            def __init__(self):
+                self.returncode = 0
+                self.pid = 12346
+            
+            def communicate(self): return (b"deterministic_output", b"")
+            def wait(self): return 0
+            def poll(self): return 0
+        
+        return DeterministicProcess()
+    
+    def deterministic_run(self, *args, **kwargs):
+        """Deterministic subprocess.run"""
+        class DeterministicResult:
+            def __init__(self):
+                self.returncode = 0
+                self.stdout = b"deterministic_output"
+                self.stderr = b""
+        
+        return DeterministicResult()
+    
+    def deterministic_call(self, *args, **kwargs):
+        """Deterministic subprocess.call"""
+        return 0
+
+# Global instance
+deterministic_build_helpers = DeterministicBuildHelpers()

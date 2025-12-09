@@ -1,0 +1,547 @@
+#!/usr/bin/env python3
+"""
+MIA Enterprise AGI - Build System
+=================================
+
+Automated build and compilation system for generated projects.
+"""
+
+import os
+import logging
+import subprocess
+import shutil
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import time
+
+
+class BuildSystem:
+    """Automated build and compilation system"""
+    
+    def __init__(self, build_dir: str = "./builds"):
+        self.build_dir = Path(build_dir)
+        self.build_dir.mkdir(exist_ok=True)
+        self.logger = self._setup_logging()
+        
+        # Build configurations
+        self.build_configs = {}
+        self.build_history = []
+        
+        self.logger.info("🔨 Build System initialized")
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging configuration"""
+        logger = logging.getLogger("MIA.ProjectBuilder.BuildSystem")
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _get_deterministic_time(self) -> float:
+        """Return deterministic time for testing"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+    
+    def build_project(self, project_path: str, build_config: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Build a project with specified configuration"""
+        try:
+            project_path = Path(project_path)
+            if not project_path.exists():
+                raise FileNotFoundError(f"Project path not found: {project_path}")
+            
+            self.logger.info(f"🔨 Building project: {project_path.name}")
+            
+            build_result = {
+                "project_name": project_path.name,
+                "project_path": str(project_path),
+                "build_config": build_config or {},
+                "build_start_time": self._get_deterministic_time(),
+                "build_steps": [],
+                "success": True,
+                "artifacts": []
+            }
+            
+            # Detect project type
+            project_type = self._detect_project_type(project_path)
+            build_result["project_type"] = project_type
+            
+            # Execute build steps based on project type
+            if project_type == "python":
+                self._build_python_project(project_path, build_result)
+            elif project_type == "node":
+                self._build_node_project(project_path, build_result)
+            elif project_type == "react":
+                self._build_react_project(project_path, build_result)
+            elif project_type == "docker":
+                self._build_docker_project(project_path, build_result)
+            else:
+                self._build_generic_project(project_path, build_result)
+            
+            build_result["build_end_time"] = self._get_deterministic_time()
+            build_result["build_duration"] = build_result["build_end_time"] - build_result["build_start_time"]
+            
+            # Store build history
+            self.build_history.append(build_result)
+            
+            self.logger.info(f"✅ Build completed: {project_path.name}")
+            
+            return build_result
+            
+        except Exception as e:
+            self.logger.error(f"Build error: {e}")
+            return {
+                "project_name": project_path.name if 'project_path' in locals() else "unknown",
+                "success": False,
+                "error": str(e),
+                "build_start_time": self._get_deterministic_time()
+            }
+    
+    def _detect_project_type(self, project_path: Path) -> str:
+        """Detect project type based on files"""
+        try:
+            # Check for specific files
+            if (project_path / "package.json").exists():
+                package_json = json.loads((project_path / "package.json").read_text())
+                dependencies = package_json.get("dependencies", {})
+                
+                if "react" in dependencies:
+                    return "react"
+                else:
+                    return "node"
+            
+            elif (project_path / "requirements.txt").exists() or (project_path / "pyproject.toml").exists():
+                return "python"
+            
+            elif (project_path / "Dockerfile").exists():
+                return "docker"
+            
+            elif (project_path / "Cargo.toml").exists():
+                return "rust"
+            
+            elif (project_path / "go.mod").exists():
+                return "go"
+            
+            elif (project_path / "pom.xml").exists():
+                return "java"
+            
+            else:
+                return "generic"
+                
+        except Exception as e:
+            self.logger.warning(f"Project type detection error: {e}")
+            return "generic"
+    
+    def _build_python_project(self, project_path: Path, build_result: Dict[str, Any]):
+        """Build Python project"""
+        try:
+            # Step 1: Create virtual environment
+            venv_path = project_path / "venv"
+            if not venv_path.exists():
+                self._run_build_step(
+                    "Create virtual environment",
+                    ["python", "-m", "venv", str(venv_path)],
+                    project_path,
+                    build_result
+                )
+            
+            # Step 2: Install dependencies
+            if (project_path / "requirements.txt").exists():
+                pip_path = venv_path / "bin" / "pip" if os.name != 'nt' else venv_path / "Scripts" / "pip.exe"
+                self._run_build_step(
+                    "Install dependencies",
+                    [str(pip_path), "install", "-r", "requirements.txt"],
+                    project_path,
+                    build_result
+                )
+            
+            # Step 3: Run tests if available
+            if (project_path / "tests").exists():
+                python_path = venv_path / "bin" / "python" if os.name != 'nt' else venv_path / "Scripts" / "python.exe"
+                self._run_build_step(
+                    "Run tests",
+                    [str(python_path), "-m", "pytest", "tests/"],
+                    project_path,
+                    build_result,
+                    optional=True
+                )
+            
+            # Step 4: Create distribution
+            self._run_build_step(
+                "Create distribution",
+                [str(pip_path), "install", "build"],
+                project_path,
+                build_result,
+                optional=True
+            )
+            
+            # Add artifacts
+            build_result["artifacts"].extend([
+                str(venv_path),
+                "requirements.txt"
+            ])
+            
+        except Exception as e:
+            self.logger.error(f"Python build error: {e}")
+            build_result["success"] = False
+            build_result["error"] = str(e)
+    
+    def _build_node_project(self, project_path: Path, build_result: Dict[str, Any]):
+        """Build Node.js project"""
+        try:
+            # Step 1: Install dependencies
+            self._run_build_step(
+                "Install dependencies",
+                ["npm", "install"],
+                project_path,
+                build_result
+            )
+            
+            # Step 2: Run tests if available
+            package_json_path = project_path / "package.json"
+            if package_json_path.exists():
+                package_json = json.loads(package_json_path.read_text())
+                scripts = package_json.get("scripts", {})
+                
+                if "test" in scripts:
+                    self._run_build_step(
+                        "Run tests",
+                        ["npm", "test"],
+                        project_path,
+                        build_result,
+                        optional=True
+                    )
+                
+                if "build" in scripts:
+                    self._run_build_step(
+                        "Build project",
+                        ["npm", "run", "build"],
+                        project_path,
+                        build_result
+                    )
+            
+            # Add artifacts
+            build_result["artifacts"].extend([
+                "node_modules",
+                "package-lock.json"
+            ])
+            
+            if (project_path / "dist").exists():
+                build_result["artifacts"].append("dist")
+            
+            if (project_path / "build").exists():
+                build_result["artifacts"].append("build")
+            
+        except Exception as e:
+            self.logger.error(f"Node.js build error: {e}")
+            build_result["success"] = False
+            build_result["error"] = str(e)
+    
+    def _build_react_project(self, project_path: Path, build_result: Dict[str, Any]):
+        """Build React project"""
+        try:
+            # Step 1: Install dependencies
+            self._run_build_step(
+                "Install dependencies",
+                ["npm", "install"],
+                project_path,
+                build_result
+            )
+            
+            # Step 2: Run tests
+            self._run_build_step(
+                "Run tests",
+                ["npm", "test", "--", "--coverage", "--watchAll=false"],
+                project_path,
+                build_result,
+                optional=True
+            )
+            
+            # Step 3: Build for production
+            self._run_build_step(
+                "Build for production",
+                ["npm", "run", "build"],
+                project_path,
+                build_result
+            )
+            
+            # Add artifacts
+            build_result["artifacts"].extend([
+                "node_modules",
+                "build",
+                "package-lock.json"
+            ])
+            
+        except Exception as e:
+            self.logger.error(f"React build error: {e}")
+            build_result["success"] = False
+            build_result["error"] = str(e)
+    
+    def _build_docker_project(self, project_path: Path, build_result: Dict[str, Any]):
+        """Build Docker project"""
+        try:
+            # Step 1: Build Docker image
+            image_name = f"{project_path.name.lower()}:latest"
+            self._run_build_step(
+                "Build Docker image",
+                ["docker", "build", "-t", image_name, "."],
+                project_path,
+                build_result
+            )
+            
+            # Step 2: Test Docker image
+            self._run_build_step(
+                "Test Docker image",
+                ["docker", "run", "--rm", image_name, "echo", "Docker build successful"],
+                project_path,
+                build_result,
+                optional=True
+            )
+            
+            # Add artifacts
+            build_result["artifacts"].extend([
+                f"Docker image: {image_name}"
+            ])
+            
+        except Exception as e:
+            self.logger.error(f"Docker build error: {e}")
+            build_result["success"] = False
+            build_result["error"] = str(e)
+    
+    def _build_generic_project(self, project_path: Path, build_result: Dict[str, Any]):
+        """Build generic project"""
+        try:
+            # Step 1: Check for build script
+            build_script = project_path / "build.sh"
+            if build_script.exists():
+                self._run_build_step(
+                    "Run build script",
+                    ["bash", str(build_script)],
+                    project_path,
+                    build_result
+                )
+            else:
+                # Step 2: Create basic build info
+                build_info = {
+                    "project_name": project_path.name,
+                    "build_time": self._get_deterministic_time(),
+                    "files": [str(f.relative_to(project_path)) for f in project_path.rglob("*") if f.is_file()]
+                }
+                
+                build_info_file = project_path / "build_info.json"
+                with open(build_info_file, 'w') as f:
+                    json.dump(build_info, f, indent=2)
+                
+                build_result["build_steps"].append({
+                    "step": "Generate build info",
+                    "command": "internal",
+                    "success": True,
+                    "output": f"Generated {build_info_file}"
+                })
+            
+            # Add artifacts
+            build_result["artifacts"].append("build_info.json")
+            
+        except Exception as e:
+            self.logger.error(f"Generic build error: {e}")
+            build_result["success"] = False
+            build_result["error"] = str(e)
+    
+    def _run_build_step(self, step_name: str, command: List[str], cwd: Path, 
+                       build_result: Dict[str, Any], optional: bool = False):
+        """Run a build step and record results"""
+        try:
+            self.logger.info(f"🔨 {step_name}: {' '.join(command)}")
+            
+            result = subprocess.run(
+                command,
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                timeout=300  # 5 minutes timeout
+            )
+            
+            step_result = {
+                "step": step_name,
+                "command": ' '.join(command),
+                "success": result.returncode == 0,
+                "return_code": result.returncode,
+                "output": result.stdout,
+                "error": result.stderr
+            }
+            
+            build_result["build_steps"].append(step_result)
+            
+            if result.returncode != 0 and not optional:
+                build_result["success"] = False
+                raise subprocess.CalledProcessError(result.returncode, command, result.stdout, result.stderr)
+            
+        except subprocess.TimeoutExpired:
+            step_result = {
+                "step": step_name,
+                "command": ' '.join(command),
+                "success": False,
+                "error": "Command timed out"
+            }
+            build_result["build_steps"].append(step_result)
+            
+            if not optional:
+                build_result["success"] = False
+                raise Exception(f"Build step timed out: {step_name}")
+        
+        except Exception as e:
+            step_result = {
+                "step": step_name,
+                "command": ' '.join(command),
+                "success": False,
+                "error": str(e)
+            }
+            build_result["build_steps"].append(step_result)
+            
+            if not optional:
+                build_result["success"] = False
+                raise
+    
+    def create_build_package(self, project_path: str, package_name: Optional[str] = None) -> Dict[str, Any]:
+        """Create a distributable package from built project"""
+        try:
+            project_path = Path(project_path)
+            package_name = package_name or f"{project_path.name}_package"
+            
+            self.logger.info(f"📦 Creating package: {package_name}")
+            
+            # Create package directory
+            package_dir = self.build_dir / package_name
+            if package_dir.exists():
+                shutil.rmtree(package_dir)
+            package_dir.mkdir(parents=True)
+            
+            # Copy project files (excluding build artifacts)
+            exclude_patterns = [
+                "node_modules",
+                "venv",
+                "__pycache__",
+                ".git",
+                "*.pyc",
+                "*.log",
+                ".env"
+            ]
+            
+            self._copy_project_files(project_path, package_dir, exclude_patterns)
+            
+            # Create package info
+            package_info = {
+                "package_name": package_name,
+                "source_project": str(project_path),
+                "created_at": self._get_deterministic_time(),
+                "files_included": self._get_package_files(package_dir)
+            }
+            
+            package_info_file = package_dir / "package_info.json"
+            with open(package_info_file, 'w') as f:
+                json.dump(package_info, f, indent=2)
+            
+            # Create archive
+            archive_path = self.build_dir / f"{package_name}.tar.gz"
+            shutil.make_archive(str(archive_path.with_suffix('')), 'gztar', package_dir)
+            
+            result = {
+                "package_name": package_name,
+                "package_path": str(package_dir),
+                "archive_path": str(archive_path),
+                "package_info": package_info,
+                "success": True
+            }
+            
+            self.logger.info(f"✅ Package created: {archive_path}")
+            
+            return result
+            
+        except Exception as e:
+            self.logger.error(f"Package creation error: {e}")
+            return {
+                "package_name": package_name,
+                "success": False,
+                "error": str(e)
+            }
+    
+    def _copy_project_files(self, source: Path, dest: Path, exclude_patterns: List[str]):
+        """Copy project files excluding specified patterns"""
+        try:
+            for item in source.rglob("*"):
+                if item.is_file():
+                    # Check if file should be excluded
+                    relative_path = item.relative_to(source)
+                    should_exclude = False
+                    
+                    for pattern in exclude_patterns:
+                        if pattern in str(relative_path) or relative_path.match(pattern):
+                            should_exclude = True
+                            break
+                    
+                    if not should_exclude:
+                        dest_file = dest / relative_path
+                        dest_file.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(item, dest_file)
+                        
+        except Exception as e:
+            self.logger.error(f"File copying error: {e}")
+            raise
+    
+    def _get_package_files(self, package_dir: Path) -> List[str]:
+        """Get list of files in package"""
+        try:
+            files = []
+            for file_path in package_dir.rglob("*"):
+                if file_path.is_file():
+                    relative_path = file_path.relative_to(package_dir)
+                    files.append(str(relative_path))
+            return files
+        except Exception as e:
+            self.logger.error(f"Package files listing error: {e}")
+            return []
+    
+    def get_build_history(self) -> List[Dict[str, Any]]:
+        """Get build history"""
+        return self.build_history
+    
+    def get_build_status(self, project_name: str) -> Optional[Dict[str, Any]]:
+        """Get build status for a specific project"""
+        for build in reversed(self.build_history):
+            if build["project_name"] == project_name:
+                return build
+        return None
+    
+    def clean_build_artifacts(self, project_path: str) -> bool:
+        """Clean build artifacts from project"""
+        try:
+            project_path = Path(project_path)
+            
+            # Common build artifact directories
+            artifact_dirs = [
+                "node_modules",
+                "build",
+                "dist",
+                "venv",
+                "__pycache__",
+                ".pytest_cache",
+                "coverage"
+            ]
+            
+            cleaned = []
+            for artifact_dir in artifact_dirs:
+                artifact_path = project_path / artifact_dir
+                if artifact_path.exists():
+                    shutil.rmtree(artifact_path)
+                    cleaned.append(artifact_dir)
+            
+            self.logger.info(f"🧹 Cleaned artifacts: {', '.join(cleaned)}")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Artifact cleaning error: {e}")
+            return False

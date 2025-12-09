@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "monitoring_interval": 5,
+  "global_emergency_stop": true,
+  "auto_recovery_enabled": true,
+  "default_recovery_time": 300,
+  "fuse_definitions": {
+    "memory_critical": {
+      "type": "memory_fuse",
+      "threshold": 95.0,
+      "duration": 30.0,
+      "actions": [
+        "log_alert",
+        "free_memory",
+        "emergency_stop"
+      ]
+    },
+    "cpu_overload": {
+      "type": "cpu_fuse",
+      "threshold": 98.0,
+      "duration": 60.0,
+      "actions": [
+        "log_alert",
+        "throttle_processes"
+      ]
+    },
+    "disk_full": {
+      "type": "disk_fuse",
+      "threshold": 98.0,
+      "duration": 10.0,
+      "actions": [
+        "log_alert",
+        "cleanup_temp"
+      ]
+    }
+  },
+  "emergency_actions": {
+    "log_alert": {
+      "enabled": true,
+      "priority": "critical"
+    },
+    "free_memory": {
+      "enabled": true,
+      "aggressive": false
+    },
+    "throttle_processes": {
+      "enabled": true,
+      "max_cpu": 80.0
+    },
+    "cleanup_temp": {
+      "enabled": true,
+      "preserve_recent": true
+    },
+    "emergency_stop": {
+      "enabled": true,
+      "save_state": true
+    }
+  }
+}

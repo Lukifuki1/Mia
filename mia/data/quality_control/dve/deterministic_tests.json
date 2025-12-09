@@ -1,0 +1,50 @@
+[
+  {
+    "test_id": "llm_inference_determinism",
+    "name": "LLM Inference Determinism",
+    "description": "Validate deterministic LLM inference with fixed seeds",
+    "validation_mode": "seed_based",
+    "seed_value": 42,
+    "expected_hash": null,
+    "tolerance": 1e-06,
+    "iterations": 5,
+    "enabled": true,
+    "created_at": 1765267118.634676
+  },
+  {
+    "test_id": "image_generation_reproducibility",
+    "name": "Image Generation Reproducibility",
+    "description": "Validate reproducible image generation",
+    "validation_mode": "hash_based",
+    "seed_value": 123,
+    "expected_hash": null,
+    "tolerance": 0.0,
+    "iterations": 3,
+    "enabled": true,
+    "created_at": 1765267118.6346834
+  },
+  {
+    "test_id": "data_processing_consistency",
+    "name": "Data Processing Consistency",
+    "description": "Validate consistent data processing results",
+    "validation_mode": "statistical",
+    "seed_value": null,
+    "expected_hash": null,
+    "tolerance": 0.001,
+    "iterations": 10,
+    "enabled": true,
+    "created_at": 1765267118.634686
+  },
+  {
+    "test_id": "random_number_generation",
+    "name": "Random Number Generation",
+    "description": "Validate deterministic random number generation",
+    "validation_mode": "seed_based",
+    "seed_value": 999,
+    "expected_hash": null,
+    "tolerance": 0.0,
+    "iterations": 5,
+    "enabled": true,
+    "created_at": 1765267118.6346877
+  }
+]

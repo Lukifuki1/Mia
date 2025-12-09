@@ -1,0 +1,12 @@
+{
+  "all_identical": true,
+  "unique_hashes": 1,
+  "total_platforms": 3,
+  "platform_hashes": {
+    "linux": "1b7dbba56a3b72a60cac4646ed0dd85f755c5eb8d5a44ac3552f682ebf79a9e4",
+    "windows": "1b7dbba56a3b72a60cac4646ed0dd85f755c5eb8d5a44ac3552f682ebf79a9e4",
+    "macos": "1b7dbba56a3b72a60cac4646ed0dd85f755c5eb8d5a44ac3552f682ebf79a9e4"
+  },
+  "baseline_hash": "1b7dbba56a3b72a60cac4646ed0dd85f755c5eb8d5a44ac3552f682ebf79a9e4",
+  "comparison_timestamp": "2025-12-09T11:35:56.807053"
+}

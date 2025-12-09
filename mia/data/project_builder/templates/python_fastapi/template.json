@@ -1,0 +1,12 @@
+{
+  "name": "python_fastapi",
+  "description": "Template for python_fastapi projects",
+  "version": "1.0.0",
+  "files": [],
+  "variables": {
+    "project_name": "{{project_name}}",
+    "description": "{{description}}",
+    "author": "{{author}}",
+    "email": "{{email}}"
+  }
+}

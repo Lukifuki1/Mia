@@ -1,0 +1,107 @@
+{
+  "generation_timestamp": "2025-12-09T14:19:52.180870",
+  "generator": "ReleasePackageGenerator",
+  "release_config": {
+    "version": "1.0.0",
+    "build_timestamp": "2025-12-09T14:00:00Z",
+    "build_epoch": 1733752800,
+    "release_name": "MIA Enterprise AGI v1.0.0",
+    "platforms": [
+      "linux",
+      "windows",
+      "macos"
+    ]
+  },
+  "platform_builds": {
+    "linux": {
+      "platform": "linux",
+      "build_successful": true,
+      "package_path": "release/mia-enterprise-agi-1.0.0-linux.tar.gz",
+      "package_size": 992695,
+      "build_hash": "461df237cdbd3dc7779dfcccc0e33a9a678281eaebdf71f747d8a99df0211432",
+      "build_time": 0.626714,
+      "issues": []
+    },
+    "windows": {
+      "platform": "windows",
+      "build_successful": true,
+      "package_path": "release/mia-enterprise-agi-1.0.0-windows.tar.gz",
+      "package_size": 992689,
+      "build_hash": "4d9bc340c2716effde7226758fa9971953c6b23c02a9a27d3a261c98233ab158",
+      "build_time": 0.608932,
+      "issues": []
+    },
+    "macos": {
+      "platform": "macos",
+      "build_successful": true,
+      "package_path": "release/mia-enterprise-agi-1.0.0-macos.tar.gz",
+      "package_size": 992678,
+      "build_hash": "db6fbc84b410baea6a88286e61e6bf6e840a103d4d031cfbe0b9e5112d19d417",
+      "build_time": 0.604817,
+      "issues": []
+    }
+  },
+  "checksums": {
+    "algorithm": "SHA-256",
+    "generation_timestamp": "2025-12-09T14:19:54.022063",
+    "package_checksums": {
+      "mia-enterprise-agi-1.0.0-linux.tar.gz": {
+        "hash": "461df237cdbd3dc7779dfcccc0e33a9a678281eaebdf71f747d8a99df0211432",
+        "size": 992695,
+        "created": "2025-12-09T14:19:52.805437"
+      },
+      "mia-enterprise-agi-1.0.0-windows.tar.gz": {
+        "hash": "4d9bc340c2716effde7226758fa9971953c6b23c02a9a27d3a261c98233ab158",
+        "size": 992689,
+        "created": "2025-12-09T14:19:53.414436"
+      },
+      "mia-enterprise-agi-1.0.0-macos.tar.gz": {
+        "hash": "db6fbc84b410baea6a88286e61e6bf6e840a103d4d031cfbe0b9e5112d19d417",
+        "size": 992678,
+        "created": "2025-12-09T14:19:54.019436"
+      }
+    },
+    "checksum_file_created": true
+  },
+  "verification_results": {
+    "verification_timestamp": "2025-12-09T14:19:54.026199",
+    "packages_verified": {
+      "mia-enterprise-agi-1.0.0-linux.tar.gz": {
+        "package": "mia-enterprise-agi-1.0.0-linux.tar.gz",
+        "verification_passed": true,
+        "file_exists": true,
+        "file_size": 992695,
+        "hash_verified": true,
+        "content_verified": true,
+        "issues": [],
+        "calculated_hash": "461df237cdbd3dc7779dfcccc0e33a9a678281eaebdf71f747d8a99df0211432",
+        "content_files": 427
+      },
+      "mia-enterprise-agi-1.0.0-windows.tar.gz": {
+        "package": "mia-enterprise-agi-1.0.0-windows.tar.gz",
+        "verification_passed": true,
+        "file_exists": true,
+        "file_size": 992689,
+        "hash_verified": true,
+        "content_verified": true,
+        "issues": [],
+        "calculated_hash": "4d9bc340c2716effde7226758fa9971953c6b23c02a9a27d3a261c98233ab158",
+        "content_files": 427
+      },
+      "mia-enterprise-agi-1.0.0-macos.tar.gz": {
+        "package": "mia-enterprise-agi-1.0.0-macos.tar.gz",
+        "verification_passed": true,
+        "file_exists": true,
+        "file_size": 992678,
+        "hash_verified": true,
+        "content_verified": true,
+        "issues": [],
+        "calculated_hash": "db6fbc84b410baea6a88286e61e6bf6e840a103d4d031cfbe0b9e5112d19d417",
+        "content_files": 427
+      }
+    },
+    "overall_verification": true,
+    "verification_issues": []
+  },
+  "package_ready": true
+}

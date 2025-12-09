@@ -107,3 +107,17 @@ api_keys.json
 *.key
 *.pem
 *.crt
+
+# Generated files and reports (keep main documentation)
+*.zip
+*.tar.gz
+!MIA_Enterprise_AGI_Complete_System.zip
+*-lock.json
+*.lock
+runtime_*.json
+production_report_*.json
+test_results/
+test_state/
+.browser_screenshots/
+uploads/
+cache/

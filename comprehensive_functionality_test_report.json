@@ -1,0 +1,1207 @@
+{
+  "test_timestamp": "2025-12-09T13:46:30.002229",
+  "test_system": "ComprehensiveFunctionalityTester",
+  "overall_statistics": {
+    "total_tests": 27,
+    "passed_tests": 17,
+    "failed_tests": 6,
+    "error_tests": 4,
+    "total_execution_time": 1.3285834789276123
+  },
+  "success_rate": 62.96296296296296,
+  "overall_status": "POOR - MAJOR ISSUES DETECTED",
+  "module_statistics": {
+    "security": {
+      "total_tests": 4,
+      "passed_tests": 2,
+      "failed_tests": 1,
+      "error_tests": 1,
+      "total_execution_time": 0.0005288124084472656,
+      "average_execution_time": 0.0001322031021118164
+    },
+    "production": {
+      "total_tests": 4,
+      "passed_tests": 4,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "total_execution_time": 0.002146482467651367,
+      "average_execution_time": 0.0005366206169128418
+    },
+    "testing": {
+      "total_tests": 4,
+      "passed_tests": 3,
+      "failed_tests": 1,
+      "error_tests": 0,
+      "total_execution_time": 1.0229384899139404,
+      "average_execution_time": 0.2557346224784851
+    },
+    "compliance": {
+      "total_tests": 4,
+      "passed_tests": 2,
+      "failed_tests": 2,
+      "error_tests": 0,
+      "total_execution_time": 0.0004286766052246094,
+      "average_execution_time": 0.00010716915130615234
+    },
+    "enterprise": {
+      "total_tests": 3,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "error_tests": 1,
+      "total_execution_time": 0.0010807514190673828,
+      "average_execution_time": 0.00036025047302246094
+    },
+    "verification": {
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "total_execution_time": 0.0988619327545166,
+      "average_execution_time": 0.03295397758483887
+    },
+    "analysis": {
+      "total_tests": 2,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "error_tests": 1,
+      "total_execution_time": 0.0002448558807373047,
+      "average_execution_time": 0.00012242794036865234
+    },
+    "project_builder": {
+      "total_tests": 1,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "error_tests": 1,
+      "total_execution_time": 0.0,
+      "average_execution_time": 0.0
+    },
+    "desktop": {
+      "total_tests": 2,
+      "passed_tests": 0,
+      "failed_tests": 2,
+      "error_tests": 0,
+      "total_execution_time": 0.20093584060668945,
+      "average_execution_time": 0.10046792030334473
+    }
+  },
+  "detailed_results": [
+    {
+      "module": "security",
+      "test_name": "security_core_initialization",
+      "success": true,
+      "execution_time": 6.556510925292969e-05,
+      "details": {
+        "component": "SecurityCore",
+        "initialized": true
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.652542"
+    },
+    {
+      "module": "security",
+      "test_name": "encryption_manager_encrypt_decrypt",
+      "success": false,
+      "execution_time": 9.489059448242188e-05,
+      "details": {
+        "original": "test_encryption_data",
+        "encrypted_length": 2,
+        "decrypted": {
+          "success": false,
+          "error": "No decryption key available"
+        }
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.652647"
+    },
+    {
+      "module": "security",
+      "test_name": "access_control_user_creation",
+      "success": {
+        "success": false,
+        "error": "Username already exists"
+      },
+      "execution_time": 0.00036835670471191406,
+      "details": {
+        "user_created": {
+          "success": false,
+          "error": "Username already exists"
+        }
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.653021"
+    },
+    {
+      "module": "security",
+      "test_name": "security_module_test",
+      "success": false,
+      "execution_time": 0.0,
+      "details": {
+        "error": "'AuditSystem' object has no attribute 'log_event'"
+      },
+      "error": "'AuditSystem' object has no attribute 'log_event'",
+      "timestamp": "2025-12-09T13:46:28.653108"
+    },
+    {
+      "module": "production",
+      "test_name": "validation_core_system_validation",
+      "success": true,
+      "execution_time": 0.00024199485778808594,
+      "details": {
+        "success": true,
+        "validation_timestamp": "2025-12-09T13:46:28.653296",
+        "validation_checks": [
+          {
+            "check": "system_resources",
+            "memory_gb": 15.62,
+            "memory_available_gb": 12.07,
+            "disk_free_gb": 268.99,
+            "cpu_cores": 4,
+            "score": 100,
+            "status": "passed"
+          },
+          {
+            "check": "module_integrity",
+            "modules_found": [
+              "mia.security",
+              "mia.production",
+              "mia.testing",
+              "mia.compliance",
+              "mia.enterprise"
+            ],
+            "modules_missing": [],
+            "score": 100.0,
+            "status": "passed"
+          },
+          {
+            "check": "configuration",
+            "config_files_found": [
+              "settings.json",
+              ".env"
+            ],
+            "config_files_missing": [
+              "config.yaml"
+            ],
+            "score": 85,
+            "status": "passed"
+          },
+          {
+            "check": "dependencies",
+            "python_version": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:25:55) [GCC 14.3.0]",
+            "required_packages": [
+              "psutil",
+              "pathlib"
+            ],
+            "missing_packages": [],
+            "score": 100.0,
+            "status": "passed"
+          }
+        ],
+        "overall_score": 96.25,
+        "status": "excellent"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.653483"
+    },
+    {
+      "module": "production",
+      "test_name": "test_runner_production_tests",
+      "success": true,
+      "execution_time": 0.0015721321105957031,
+      "details": {
+        "success": true,
+        "test_timestamp": "2025-12-09T13:46:28.653543",
+        "test_suites": [
+          {
+            "suite": "core_functionality",
+            "tests": [
+              {
+                "test": "module_imports",
+                "success": true,
+                "score": 100
+              },
+              {
+                "test": "basic_operations",
+                "success": true,
+                "score": 100
+              }
+            ],
+            "score": 100.0
+          },
+          {
+            "suite": "performance",
+            "tests": [
+              {
+                "test": "memory_usage",
+                "success": true,
+                "memory_percent": 22.7,
+                "score": 100
+              },
+              {
+                "test": "response_time",
+                "success": true,
+                "response_time_ms": 1.068115234375,
+                "score": 100
+              }
+            ],
+            "score": 100.0
+          },
+          {
+            "suite": "integration",
+            "tests": [
+              {
+                "test": "file_system_access",
+                "success": true,
+                "score": 100
+              },
+              {
+                "test": "system_information",
+                "success": true,
+                "system_info": {
+                  "system": "Linux",
+                  "python_version": "3.12.12"
+                },
+                "score": 100
+              }
+            ],
+            "score": 100.0
+          }
+        ],
+        "overall_score": 100.0,
+        "status": "excellent"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.655060"
+    },
+    {
+      "module": "production",
+      "test_name": "compliance_checker_check",
+      "success": true,
+      "execution_time": 6.961822509765625e-05,
+      "details": {
+        "compliant": true,
+        "compliance_timestamp": "2025-12-09T13:46:28.655126",
+        "compliance_checks": [
+          {
+            "check": "code_quality",
+            "passed": true,
+            "score": 88,
+            "details": "Code quality meets standards"
+          },
+          {
+            "check": "security_standards",
+            "passed": true,
+            "score": 92,
+            "details": "Security standards implemented"
+          },
+          {
+            "check": "documentation",
+            "passed": true,
+            "score": 85,
+            "details": "Documentation is adequate"
+          }
+        ],
+        "overall_score": 88.33333333333333,
+        "status": "mostly_compliant"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.655135"
+    },
+    {
+      "module": "production",
+      "test_name": "report_generator_production_report",
+      "success": true,
+      "execution_time": 0.0002627372741699219,
+      "details": {
+        "success": true,
+        "report_timestamp": "2025-12-09T13:46:28.655218",
+        "report_sections": {
+          "system_status": {
+            "status": "operational",
+            "uptime": "99.9%",
+            "components_healthy": 5,
+            "components_total": 5
+          },
+          "performance": {
+            "response_time_avg_ms": 45,
+            "memory_usage_percent": 42,
+            "cpu_usage_percent": 35,
+            "performance_grade": "A"
+          },
+          "security": {
+            "security_incidents": 0,
+            "last_security_scan": "2025-12-09T13:46:28.655224",
+            "security_score": 95,
+            "vulnerabilities_found": 0
+          }
+        },
+        "report_path": "production_report_1765287988.json",
+        "summary": {
+          "overall_status": "healthy",
+          "key_metrics": {
+            "system_health": "excellent",
+            "performance": "good",
+            "security": "excellent"
+          },
+          "recommendations": [
+            "Continue monitoring system performance",
+            "Regular security updates recommended"
+          ]
+        }
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.655402"
+    },
+    {
+      "module": "testing",
+      "test_name": "test_generator_generate_tests",
+      "success": true,
+      "execution_time": 8.96453857421875e-05,
+      "details": {
+        "success": true,
+        "module": "sample_module",
+        "tests_generated": [
+          {
+            "test_name": "test_sample_module_initialization",
+            "test_type": "unit",
+            "generated": true
+          },
+          {
+            "test_name": "test_sample_module_basic_functionality",
+            "test_type": "unit",
+            "generated": true
+          },
+          {
+            "test_name": "test_sample_module_error_handling",
+            "test_type": "unit",
+            "generated": true
+          }
+        ],
+        "generation_timestamp": "2025-12-09T13:46:28.655575"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.655605"
+    },
+    {
+      "module": "testing",
+      "test_name": "test_runner_run_tests",
+      "success": true,
+      "execution_time": 4.649162292480469e-05,
+      "details": {
+        "success": true,
+        "test_timestamp": "2025-12-09T13:46:28.655647",
+        "test_results": [
+          {
+            "test": "basic_functionality",
+            "success": true,
+            "score": 100,
+            "details": {
+              "result": 2,
+              "expected": 2
+            }
+          },
+          {
+            "test": "module_availability",
+            "success": true,
+            "score": 100,
+            "details": {
+              "module": "mia.testing"
+            }
+          }
+        ],
+        "overall_score": 100.0,
+        "status": "excellent"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:28.655655"
+    },
+    {
+      "module": "testing",
+      "test_name": "performance_tester_run_tests",
+      "success": false,
+      "execution_time": 1.021963357925415,
+      "details": {
+        "timestamp": "2025-12-09T13:46:28.655711",
+        "test_results": {
+          "import_performance": {
+            "status": "completed",
+            "average_import_time": 3.2782554626464844e-07,
+            "average_mia_import_time": 5.960464477539062e-07,
+            "total_modules_tested": 12,
+            "meets_threshold": true
+          },
+          "memory_performance": {
+            "status": "completed",
+            "initial_memory_mb": 35.125,
+            "peak_memory_mb": 35.375,
+            "final_memory_mb": 35.375,
+            "memory_increase_mb": 0.25,
+            "meets_threshold": true
+          },
+          "cpu_performance": {
+            "status": "completed",
+            "computation_time": 0.004011869430541992,
+            "average_cpu_usage": 2.7600000000000002,
+            "computation_result": 333328333350000,
+            "meets_threshold": true
+          },
+          "io_performance": {
+            "status": "completed",
+            "write_time": 0.0010352134704589844,
+            "read_time": 0.0011501312255859375,
+            "scan_time": 0.010177373886108398,
+            "files_scanned": 255,
+            "total_io_time": 0.01236271858215332
+          },
+          "concurrent_performance": {
+            "status": "completed",
+            "sequential_time": 0.00029206275939941406,
+            "concurrent_time": 0.0010280609130859375,
+            "speedup_factor": 0.2840909090909091,
+            "tasks_completed": 10,
+            "concurrency_effective": false
+          }
+        },
+        "performance_metrics": {
+          "import_time": 3.2782554626464844e-07,
+          "memory_usage": 35.375,
+          "cpu_usage": 2.7600000000000002,
+          "response_time": 0.004011869430541992,
+          "io_time": 0.01236271858215332,
+          "concurrency_speedup": 0.2840909090909091
+        },
+        "threshold_compliance": {
+          "import_time": {
+            "value": 3.2782554626464844e-07,
+            "threshold": 2.0,
+            "meets_threshold": true,
+            "performance_ratio": 1.6391277313232422e-07
+          },
+          "memory_usage": {
+            "value": 35.375,
+            "threshold": 500,
+            "meets_threshold": true,
+            "performance_ratio": 0.07075
+          },
+          "cpu_usage": {
+            "value": 2.7600000000000002,
+            "threshold": 80,
+            "meets_threshold": true,
+            "performance_ratio": 0.0345
+          },
+          "response_time": {
+            "value": 0.004011869430541992,
+            "threshold": 1.0,
+            "meets_threshold": true,
+            "performance_ratio": 0.004011869430541992
+          }
+        },
+        "recommendations": [
+          "Performance is within acceptable thresholds",
+          "Consider implementing performance monitoring",
+          "Add performance regression tests",
+          "Profile critical code paths",
+          "Implement caching strategies"
+        ],
+        "overall_performance_score": 100.0
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.677623"
+    },
+    {
+      "module": "testing",
+      "test_name": "stability_tester_run_tests",
+      "success": true,
+      "execution_time": 0.0008389949798583984,
+      "details": {
+        "success": true,
+        "test_timestamp": "2025-12-09T13:46:29.677709",
+        "stability_tests": [
+          {
+            "test": "memory_stability",
+            "initial_memory_percent": 22.7,
+            "final_memory_percent": 22.7,
+            "memory_increase": 0.0,
+            "score": 100,
+            "status": "passed"
+          },
+          {
+            "test": "error_handling_stability",
+            "errors_handled": 3,
+            "total_errors": 3,
+            "score": 100.0,
+            "status": "passed"
+          },
+          {
+            "test": "resource_cleanup_stability",
+            "files_created": 5,
+            "files_cleaned": 5,
+            "score": 100.0,
+            "status": "passed"
+          }
+        ],
+        "overall_score": 100.0,
+        "status": "stable"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.678471"
+    },
+    {
+      "module": "compliance",
+      "test_name": "lgpd_manager_check_compliance",
+      "success": true,
+      "execution_time": 0.0002522468566894531,
+      "details": {
+        "compliant": true,
+        "compliance_timestamp": "2025-12-09T13:46:29.678836",
+        "compliance_checks": [
+          {
+            "check": "consent_management",
+            "implemented": true,
+            "score": 95,
+            "details": "Consent management system active"
+          },
+          {
+            "check": "data_protection",
+            "implemented": true,
+            "score": 90,
+            "details": "Data protection measures in place"
+          },
+          {
+            "check": "user_rights",
+            "implemented": true,
+            "score": 88,
+            "details": "User rights system implemented"
+          }
+        ],
+        "overall_score": 91.0,
+        "status": "fully_compliant"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.678848"
+    },
+    {
+      "module": "compliance",
+      "test_name": "consent_manager_process_consent",
+      "success": false,
+      "execution_time": 6.389617919921875e-05,
+      "details": {
+        "success": false,
+        "error": "'dict' object has no attribute 'append'",
+        "user_id": "test_user",
+        "consent_type": "data_processing",
+        "consent_timestamp": "2025-12-09T13:46:29.678910"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.678915"
+    },
+    {
+      "module": "compliance",
+      "test_name": "data_processor_process_data",
+      "success": false,
+      "execution_time": 5.316734313964844e-05,
+      "details": {
+        "success": false,
+        "error": "Invalid processing request",
+        "validation_errors": [
+          "Missing required field: subject_id",
+          "Missing required field: purpose",
+          "Missing required field: legal_basis",
+          "Missing required field: data"
+        ]
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.678971"
+    },
+    {
+      "module": "compliance",
+      "test_name": "compliance_audit_system_run_audit",
+      "success": true,
+      "execution_time": 5.936622619628906e-05,
+      "details": {
+        "success": true,
+        "audit_timestamp": "2025-12-09T13:46:29.679002",
+        "audit_checks": [
+          {
+            "audit": "data_handling",
+            "compliant": true,
+            "score": 92,
+            "details": "Data handling practices meet compliance standards"
+          },
+          {
+            "audit": "user_rights",
+            "compliant": true,
+            "score": 88,
+            "details": "User rights properly implemented"
+          },
+          {
+            "audit": "security_compliance",
+            "compliant": true,
+            "score": 95,
+            "details": "Security measures exceed compliance requirements"
+          }
+        ],
+        "overall_score": 91.66666666666667,
+        "compliance_status": "fully_compliant"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.679034"
+    },
+    {
+      "module": "enterprise",
+      "test_name": "enterprise_manager_initialize",
+      "success": true,
+      "execution_time": 0.001039743423461914,
+      "details": {
+        "timestamp": "2025-12-09T13:46:29.679395",
+        "initialization_steps": [
+          {
+            "component": "license_manager",
+            "success": true,
+            "details": {
+              "success": true,
+              "licenses_loaded": 0,
+              "validation_results": {},
+              "storage_path": "enterprise/licenses"
+            }
+          },
+          {
+            "component": "policy_manager",
+            "success": true,
+            "details": {
+              "success": true,
+              "policies_loaded": 3,
+              "default_policies_created": 3,
+              "storage_path": "enterprise/policies"
+            }
+          },
+          {
+            "component": "configuration_manager",
+            "success": true,
+            "details": {
+              "success": true,
+              "configurations_loaded": 2,
+              "templates_loaded": 2,
+              "storage_path": "enterprise/configurations"
+            }
+          },
+          {
+            "component": "deployment_manager",
+            "success": true,
+            "details": {
+              "success": true,
+              "deployments_loaded": 0,
+              "templates_loaded": 2,
+              "storage_path": "enterprise/deployments"
+            }
+          }
+        ],
+        "success": true
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.680168"
+    },
+    {
+      "module": "enterprise",
+      "test_name": "license_manager_get_status",
+      "success": true,
+      "execution_time": 4.100799560546875e-05,
+      "details": {
+        "total_licenses": 0,
+        "active_licenses": 0,
+        "expired_licenses": 0,
+        "health_score": 100,
+        "config": {
+          "validation_interval_hours": 24,
+          "grace_period_days": 7,
+          "auto_renewal": false,
+          "offline_validation_days": 30
+        }
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.680213"
+    },
+    {
+      "module": "enterprise",
+      "test_name": "enterprise_module_test",
+      "success": false,
+      "execution_time": 0.0,
+      "details": {
+        "error": "'PolicyManager' object has no attribute 'get_active_policies'"
+      },
+      "error": "'PolicyManager' object has no attribute 'get_active_policies'",
+      "timestamp": "2025-12-09T13:46:29.680252"
+    },
+    {
+      "module": "verification",
+      "test_name": "platform_verifier_detect_platform",
+      "success": true,
+      "execution_time": 0.00020885467529296875,
+      "details": {
+        "platform": "linux",
+        "architecture": "x86_64",
+        "python_version": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:25:55) [GCC 14.3.0]",
+        "cpu_count": 4,
+        "memory_gb": 15.62,
+        "disk_space_gb": 289.56,
+        "detection_timestamp": "2025-12-09T13:46:29.680542",
+        "normalized_platform": "linux"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.680578"
+    },
+    {
+      "module": "verification",
+      "test_name": "system_validator_validate_python",
+      "success": true,
+      "execution_time": 6.866455078125e-05,
+      "details": {
+        "validation_type": "python_environment",
+        "validation_timestamp": "2025-12-09T13:46:29.680624",
+        "checks": [
+          {
+            "check": "python_version",
+            "status": "passed",
+            "current": "3.12",
+            "required": "3.8",
+            "message": "Python version 3.12 meets requirement"
+          },
+          {
+            "check": "module_json",
+            "status": "passed",
+            "message": "Module json is available"
+          },
+          {
+            "check": "module_hashlib",
+            "status": "passed",
+            "message": "Module hashlib is available"
+          },
+          {
+            "check": "module_logging",
+            "status": "passed",
+            "message": "Module logging is available"
+          },
+          {
+            "check": "module_pathlib",
+            "status": "passed",
+            "message": "Module pathlib is available"
+          },
+          {
+            "check": "python_executable",
+            "status": "passed",
+            "value": "/openhands/micromamba/envs/openhands/bin/python",
+            "message": "Python executable found: /openhands/micromamba/envs/openhands/bin/python"
+          }
+        ],
+        "success": true
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.680650"
+    },
+    {
+      "module": "verification",
+      "test_name": "performance_monitor_run_benchmark",
+      "success": true,
+      "execution_time": 0.09858441352844238,
+      "details": {
+        "benchmark_id": "benchmark_test_benchmark_1640995200",
+        "benchmark_name": "test_benchmark",
+        "start_time": "2025-12-09T13:46:29.680706",
+        "benchmark_tests": [
+          {
+            "test": "cpu_performance",
+            "result": {
+              "execution_time_seconds": 0.03894639015197754,
+              "operations_per_second": 25676320.606294345,
+              "score": 99.61053609848022,
+              "grade": "excellent"
+            },
+            "score": 99.61053609848022
+          },
+          {
+            "test": "memory_performance",
+            "result": {
+              "execution_time_seconds": 0.004445075988769531,
+              "data_size_mb": 10.0,
+              "throughput_mb_s": 2249.680326110277,
+              "score": 100,
+              "grade": "excellent"
+            },
+            "score": 100
+          },
+          {
+            "test": "disk_performance",
+            "result": {
+              "execution_time_seconds": 0.007462263107299805,
+              "data_size_mb": 20,
+              "throughput_mb_s": 2680.1520815361514,
+              "score": 100,
+              "grade": "excellent"
+            },
+            "score": 100
+          },
+          {
+            "test": "network_performance",
+            "result": {
+              "execution_time_seconds": 0.04470658302307129,
+              "successful_resolutions": 3,
+              "total_hosts": 3,
+              "success_rate": 1.0,
+              "score": 99.55293416976929,
+              "grade": "excellent"
+            },
+            "score": 99.55293416976929
+          }
+        ],
+        "overall_score": 99.79086756706238,
+        "end_time": "2025-12-09T13:46:29.779136"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.779238"
+    },
+    {
+      "module": "analysis",
+      "test_name": "introspective_analyzer_analyze_system",
+      "success": true,
+      "execution_time": 0.0002448558807373047,
+      "details": {
+        "success": true,
+        "analysis_timestamp": "2025-12-09T13:46:29.779590",
+        "system_analysis": {
+          "components": {
+            "components_found": 5,
+            "components_healthy": 4,
+            "score": 85,
+            "details": "Most components functioning properly"
+          },
+          "performance": {
+            "response_time_ms": 50,
+            "memory_usage_percent": 45,
+            "score": 90,
+            "details": "Performance within acceptable limits"
+          },
+          "architecture": {
+            "modularity_score": 95,
+            "coupling_score": 88,
+            "score": 92,
+            "details": "Well-structured modular architecture"
+          }
+        },
+        "recommendations": [
+          "Consider optimizing underperforming components"
+        ],
+        "overall_score": 89.0,
+        "status": "good"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.779604"
+    },
+    {
+      "module": "analysis",
+      "test_name": "analysis_module_test",
+      "success": false,
+      "execution_time": 0.0,
+      "details": {
+        "error": "CodeMetrics.__init__() missing 7 required positional arguments: 'file_path', 'lines_of_code', 'complexity', 'classes', 'functions', 'imports', and 'size_bytes'"
+      },
+      "error": "CodeMetrics.__init__() missing 7 required positional arguments: 'file_path', 'lines_of_code', 'complexity', 'classes', 'functions', 'imports', and 'size_bytes'",
+      "timestamp": "2025-12-09T13:46:29.779617"
+    },
+    {
+      "module": "project_builder",
+      "test_name": "project_builder_module_test",
+      "success": false,
+      "execution_time": 0.0,
+      "details": {
+        "error": "ProjectGenerator.generate_project() takes 2 positional arguments but 3 were given"
+      },
+      "error": "ProjectGenerator.generate_project() takes 2 positional arguments but 3 were given",
+      "timestamp": "2025-12-09T13:46:29.779814"
+    },
+    {
+      "module": "desktop",
+      "test_name": "platform_detector_detect_platform",
+      "success": false,
+      "execution_time": 0.1909492015838623,
+      "details": {
+        "platform_info": {
+          "system": "Linux",
+          "release": "6.8.0-1026-gke",
+          "version": "#30-Ubuntu SMP Wed May 28 22:51:45 UTC 2025",
+          "machine": "x86_64",
+          "processor": "",
+          "architecture": [
+            "64bit",
+            "ELF"
+          ],
+          "python_version": "3.12.12",
+          "python_implementation": "CPython"
+        },
+        "platform_config": {
+          "executable_extension": "",
+          "installer_format": "deb",
+          "package_manager": "apt",
+          "shell": "bash",
+          "path_separator": "/",
+          "default_install_path": "/opt/mia"
+        },
+        "available_tools": {
+          "python": true,
+          "pip": true,
+          "pyinstaller": false,
+          "nuitka": false,
+          "cx_freeze": false,
+          "auto_py_to_exe": false,
+          "docker": true,
+          "git": true,
+          "node": false,
+          "npm": false
+        },
+        "system_capabilities": {
+          "memory": {
+            "total_gb": 15.62,
+            "available_gb": 12.05,
+            "percent_used": 22.8
+          },
+          "disk": {
+            "total_gb": 289.56,
+            "free_gb": 268.99,
+            "percent_used": 7.1
+          },
+          "cpu": {
+            "cores": 4,
+            "frequency_mhz": 2599.998,
+            "max_frequency_mhz": 0.0
+          },
+          "build_capable": true,
+          "packaging_capable": true
+        },
+        "is_supported": true,
+        "normalized_os": "linux"
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.970861"
+    },
+    {
+      "module": "desktop",
+      "test_name": "cross_platform_utils_get_system_info",
+      "success": false,
+      "execution_time": 0.009986639022827148,
+      "details": {
+        "platform": {
+          "system": "Linux",
+          "release": "6.8.0-1026-gke",
+          "version": "#30-Ubuntu SMP Wed May 28 22:51:45 UTC 2025",
+          "machine": "x86_64",
+          "processor": "",
+          "architecture": [
+            "64bit",
+            "ELF"
+          ],
+          "python_version": "3.12.12",
+          "python_implementation": "CPython"
+        },
+        "environment": {
+          "python_executable": "/openhands/micromamba/envs/openhands/bin/python",
+          "python_path": [
+            "/workspace/project",
+            "/openhands/code",
+            "/workspace/project",
+            "/openhands/micromamba/envs/openhands/lib/python312.zip",
+            "/openhands/micromamba/envs/openhands/lib/python3.12",
+            "/openhands/micromamba/envs/openhands/lib/python3.12/lib-dynload",
+            "/openhands/micromamba/envs/openhands/lib/python3.12/site-packages"
+          ],
+          "environment_variables": {
+            "SHELL": "/bin/bash",
+            "KUBERNETES_SERVICE_PORT_HTTPS": "443",
+            "PYTHON_SHA256": "fb85a13414b028c49ba18bbd523c2d055a30b56b18b92ce454ea2c51edc656c4",
+            "KUBERNETES_SERVICE_PORT": "443",
+            "TERM_PROGRAM_VERSION": "3.5a",
+            "LOG_JSON": "1",
+            "TMUX": "/tmp/tmux-0/default,75,0",
+            "HOSTNAME": "runtime-gyefsixgttoufouz-559df485b8-jg67d",
+            "PYTHON_VERSION": "3.12.12",
+            "LOG_JSON_LEVEL_KEY": "severity",
+            "RUNTIME_ID": "gyefsixgttoufouz",
+            "SKIP_DEPENDENCY_CHECK": "1",
+            "EDITOR": "code",
+            "PWD": "/workspace/project",
+            "VSCODE_PORT": "60001",
+            "GSETTINGS_SCHEMA_DIR": "/openhands/micromamba/envs/openhands/share/glib-2.0/schemas",
+            "CONDA_PREFIX": "/openhands/micromamba/envs/openhands",
+            "MAMBA_ROOT_PREFIX": "/openhands/micromamba",
+            "GSETTINGS_SCHEMA_DIR_CONDA_BACKUP": "",
+            "SERVE_FRONTEND": "0",
+            "WORKSPACE_BASE": "/workspace/project",
+            "WEB_HOST": "app.all-hands.dev",
+            "HOME": "/root",
+            "LANG": "C.UTF-8",
+            "ENABLE_V1": "0",
+            "GITHUB_TOKEN": "ghu_86qpLZTrzq6cxtPiiaHstbo9EvyimG1JRkEO",
+            "KUBERNETES_PORT_443_TCP": "tcp://10.3.0.1:443",
+            "SESSION_API_KEY": "1b299b22-e3d5-4b30-b3e0-0119016664f9",
+            "port": "60000",
+            "VIRTUAL_ENV": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12",
+            "FILE_STORE_WEB_HOOK_BATCH": "1",
+            "CONDA_PROMPT_MODIFIER": "(openhands) ",
+            "GPG_KEY": "7169605F62C751356D054A26A821E680E5FA6305",
+            "PROMPT_COMMAND": "export PS1=\"\n###PS1JSON###\n{\n  \\\"pid\\\": \\\"$!\\\",\n  \\\"exit_code\\\": \\\"$?\\\",\n  \\\"username\\\": \\\"\\\\u\\\",\n  \\\"hostname\\\": \\\"\\\\h\\\",\n  \\\"working_dir\\\": \\\"$(pwd)\\\",\n  \\\"py_interpreter_path\\\": \\\"$(which python 2>/dev/null || echo \\\\\"\\\\\")\\\"\n}\n###PS1END###\n\"",
+            "PLAYWRIGHT_BROWSERS_PATH": "/opt/playwright-browsers",
+            "OR_SITE_URL": "https://docs.all-hands.dev/",
+            "OH_INTERPRETER_PATH": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/bin/python",
+            "OPENHANDS_REPO_PATH": "/openhands/code",
+            "MAMBA_EXE": "/openhands/micromamba/bin/micromamba",
+            "PYTHONPATH": "/openhands/code:",
+            "TERM": "tmux-256color",
+            "OR_APP_NAME": "OpenHands",
+            "POETRY_VIRTUALENVS_PATH": "/openhands/poetry",
+            "OPENVSCODE_SERVER_ROOT": "/openhands/.openvscode-server",
+            "USER": "root",
+            "SDL_AUDIODRIVER": "dsp",
+            "TMUX_PANE": "%1",
+            "FILE_STORE_PATH": "/workspace/.openhands/file_store",
+            "CONDA_SHLVL": "1",
+            "INITIAL_NUM_WARM_SERVERS": "1",
+            "VISUAL": "code",
+            "SHLVL": "1",
+            "GIT_EDITOR": "code --wait",
+            "FILE_STORE_WEB_HOOK_URL": "https://app.all-hands.dev/event-webhook/batch",
+            "KUBERNETES_PORT_443_TCP_PROTO": "tcp",
+            "KUBERNETES_PORT_443_TCP_ADDR": "10.3.0.1",
+            "PERMITTED_CORS_ORIGINS": "https://app.all-hands.dev",
+            "ALLOW_SET_CONVERSATION_ID": "1",
+            "SANDBOX_CLOSE_DELAY": "0",
+            "PS2": "",
+            "PS1": "\n###PS1JSON###\n{\n  \"pid\": \"11758\",\n  \"exit_code\": \"0\",\n  \"username\": \"\\u\",\n  \"hostname\": \"\\h\",\n  \"working_dir\": \"/workspace/project\",\n  \"py_interpreter_path\": \"/openhands/micromamba/envs/openhands/bin/python\"\n}\n###PS1END###\n",
+            "CONDA_DEFAULT_ENV": "openhands",
+            "LOCAL_RUNTIME_MODE": "1",
+            "PYGAME_HIDE_SUPPORT_PROMPT": "hide",
+            "CONVERSATION_MANAGER_CLASS": "openhands.server.conversation_manager.standalone_conversation_manager.StandaloneConversationManager",
+            "KUBERNETES_SERVICE_HOST": "10.3.0.1",
+            "LC_ALL": "C.UTF-8",
+            "INIT_GIT_IN_EMPTY_WORKSPACE": "1",
+            "KUBERNETES_PORT": "tcp://10.3.0.1:443",
+            "KUBERNETES_PORT_443_TCP_PORT": "443",
+            "RUNTIME": "local",
+            "POETRY_HOME": "/usr/local",
+            "PATH": "/openhands/micromamba/envs/openhands/bin:/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:/openhands/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH",
+            "WORK_PORT_1": "12000",
+            "WORK_PORT_2": "12001",
+            "RUNTIME_URL": "https://gyefsixgttoufouz.prod-runtime.all-hands.dev",
+            "TIKTOKEN_CACHE_DIR": "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/lib/python3.12/site-packages/litellm/litellm_core_utils/tokenizers",
+            "MAIL": "/var/mail/root",
+            "WORKSPACE_MOUNT_PATH_IN_SANDBOX": "/workspace/project",
+            "OLDPWD": "/workspace/project",
+            "TERM_PROGRAM": "tmux",
+            "_": "/usr/bin/timeout"
+          }
+        },
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_gb": 15.62,
+          "disk_free_gb": 268.99
+        }
+      },
+      "error": null,
+      "timestamp": "2025-12-09T13:46:29.980860"
+    }
+  ],
+  "performance_analysis": {
+    "total_execution_time": 1.3285834789276123,
+    "average_test_time": 0.049206795515837495,
+    "slowest_tests": [
+      {
+        "module": "testing",
+        "test_name": "performance_tester_run_tests",
+        "execution_time": 1.021963357925415
+      },
+      {
+        "module": "desktop",
+        "test_name": "platform_detector_detect_platform",
+        "execution_time": 0.1909492015838623
+      },
+      {
+        "module": "verification",
+        "test_name": "performance_monitor_run_benchmark",
+        "execution_time": 0.09858441352844238
+      },
+      {
+        "module": "desktop",
+        "test_name": "cross_platform_utils_get_system_info",
+        "execution_time": 0.009986639022827148
+      },
+      {
+        "module": "production",
+        "test_name": "test_runner_production_tests",
+        "execution_time": 0.0015721321105957031
+      }
+    ],
+    "fastest_tests": [
+      {
+        "module": "enterprise",
+        "test_name": "license_manager_get_status",
+        "execution_time": 4.100799560546875e-05
+      },
+      {
+        "module": "security",
+        "test_name": "security_module_test",
+        "execution_time": 0.0
+      },
+      {
+        "module": "enterprise",
+        "test_name": "enterprise_module_test",
+        "execution_time": 0.0
+      },
+      {
+        "module": "analysis",
+        "test_name": "analysis_module_test",
+        "execution_time": 0.0
+      },
+      {
+        "module": "project_builder",
+        "test_name": "project_builder_module_test",
+        "execution_time": 0.0
+      }
+    ],
+    "performance_grade": "A+"
+  },
+  "error_analysis": {
+    "total_errors": 10,
+    "error_rate": 37.03703703703704,
+    "error_by_module": {
+      "security": 2,
+      "testing": 1,
+      "compliance": 2,
+      "enterprise": 1,
+      "analysis": 1,
+      "project_builder": 1,
+      "desktop": 2
+    },
+    "common_errors": {
+      "test_failure": 6,
+      "'AuditSystem' object has no attribute 'log_event'": 1,
+      "'PolicyManager' object has no attribute 'get_active_policies'": 1,
+      "CodeMetrics.__init__() missing 7 required positional arguments: 'file_path', 'lines_of_code', 'complexity', 'classes', 'functions', 'imports', and 'size_bytes'": 1,
+      "ProjectGenerator.generate_project() takes 2 positional arguments but 3 were given": 1
+    },
+    "critical_errors": [
+      {
+        "module": "analysis",
+        "test_name": "analysis_module_test",
+        "error": "CodeMetrics.__init__() missing 7 required positional arguments: 'file_path', 'lines_of_code', 'complexity', 'classes', 'functions', 'imports', and 'size_bytes'"
+      }
+    ]
+  },
+  "recommendations": [
+    "Fix failing tests to achieve 100% success rate (currently 63.0%)",
+    "Resolve 4 error(s) in test execution",
+    "Fix 2 failing test(s) in security module",
+    "Fix 1 failing test(s) in testing module",
+    "Fix 2 failing test(s) in compliance module",
+    "Fix 1 failing test(s) in enterprise module",
+    "Fix 1 failing test(s) in analysis module",
+    "Fix 1 failing test(s) in project_builder module",
+    "Fix 2 failing test(s) in desktop module",
+    "Prioritize fixing critical errors first"
+  ]
+}

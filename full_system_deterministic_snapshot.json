@@ -1,0 +1,1647 @@
+{
+  "snapshot_timestamp": "2025-12-09T14:29:53.870792",
+  "generator": "DeterministicSystemSnapshotGenerator",
+  "snapshot_config": {
+    "version": "1.0.0",
+    "timestamp": "2025-12-09T14:00:00Z",
+    "hash_algorithm": "SHA-256",
+    "snapshot_type": "full_system_deterministic"
+  },
+  "system_overview": {
+    "project_name": "MIA Enterprise AGI",
+    "version": "1.0.0",
+    "snapshot_timestamp": "2025-12-09T14:00:00Z",
+    "total_modules": 10,
+    "total_files": 311,
+    "total_lines_of_code": 110844,
+    "system_architecture": "modular_enterprise_agi",
+    "deterministic_design": true,
+    "production_ready": true
+  },
+  "module_snapshots": {
+    "security": {
+      "module": "security",
+      "snapshot_timestamp": "2025-12-09T14:29:53.951644",
+      "module_hash": "28ffeaf499766555d86e86c680bfc95e76fad840325a000059783c99b70842f2",
+      "file_count": 15,
+      "line_count": 5941,
+      "file_hashes": {
+        "access_control.py": {
+          "hash": "8adf4c72b70b7839398b4ca9abbb4821386ff64189dfcbfe9c3a898fa045dcd0",
+          "size": 21736,
+          "lines": 590
+        },
+        "cognitive_guard.py": {
+          "hash": "656d422a665a26c1a8fd109fea92d9cf37534de2038cef7cf7a790351006fbec",
+          "size": 7958,
+          "lines": 235
+        },
+        "encryption_manager.py": {
+          "hash": "88415136a6974d1e006199b14672a28d350e718f599438f3edfcf95f78ed4a0e",
+          "size": 18639,
+          "lines": 517
+        },
+        "system_fuse.py": {
+          "hash": "520ea0d427de4b917052fcd36bb5b0cab4b0868e407652572193cfdf662b06b5",
+          "size": 22416,
+          "lines": 594
+        },
+        "security_core.py": {
+          "hash": "263e00dfb10c9a9f41f383f2d42f7a19cf7745985c9a2769d6231a8ce1aa10d8",
+          "size": 22134,
+          "lines": 556
+        },
+        "integrity_hash.py": {
+          "hash": "d989462f0448e66202b359d4b422db7ccfc5193539eaa25299b5ee0cc5662b30",
+          "size": 14263,
+          "lines": 372
+        },
+        "network_security.py": {
+          "hash": "cb2bc5224886724d26fb422045d6fe8125548e03e8964f42f624ed0d5a8256ec",
+          "size": 5178,
+          "lines": 161
+        },
+        "sandbox_system.py": {
+          "hash": "d7997ce5c33b75dc6d9999534e8598073b0ecff96f3cdd82060e5abce8d54143",
+          "size": 11556,
+          "lines": 349
+        },
+        "security_methods.py": {
+          "hash": "b41944ad7b61b997f78c9e4f4892d73d3eef12c67be5ba24d83fba58fed95022",
+          "size": 24507,
+          "lines": 655
+        },
+        "validation_methods.py": {
+          "hash": "45fb6b51551cf4debac0306e9486b60b15bd29e6f274325333a502f3a0f8e0b3",
+          "size": 9865,
+          "lines": 268
+        },
+        "rbac_iam.py": {
+          "hash": "10cb929a3608f7d310154cb198537133965aa037f50bf67d969883ce5b8baeb3",
+          "size": 8735,
+          "lines": 265
+        },
+        "audit_system.py": {
+          "hash": "8a881a277f6b6ef0b6faf9364d1445ccd775a1eeba7907bf632edb960d92c3b7",
+          "size": 24158,
+          "lines": 622
+        },
+        "behavior_firewall.py": {
+          "hash": "aff3f6b70dd9a7ccfb3b3a1b99c9cec3fe547cf73020386159413570d27f4bf7",
+          "size": 8682,
+          "lines": 250
+        },
+        "training_guard.py": {
+          "hash": "36488d694ac4d47d6170ff286ec1972a9cb64dbfe8d9b92abcc3ba14deb9e059",
+          "size": 11708,
+          "lines": 327
+        },
+        "input_sanitization.py": {
+          "hash": "f89d91c7a1767347de422bc79a0e4f63da1979b022c913ba145d054b388f00f6",
+          "size": 6047,
+          "lines": 180
+        }
+      },
+      "structure_hash": "9551e7b74c88edfd06cf948f875d1f153ef180b059f79af22b5e89eeb6b13811",
+      "dependencies": [
+        "from contextlib import contextmanager",
+        "from cryptography.fernet import Fernet",
+        "from cryptography.hazmat.primitives import hashes, serialization",
+        "from cryptography.hazmat.primitives.asymmetric import rsa, padding",
+        "from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC",
+        "from dataclasses import dataclass, asdict",
+        "from datetime import datetime",
+        "from datetime import datetime, timedelta",
+        "from enum import Enum",
+        "from pathlib import Path",
+        "from requests.adapters import HTTPAdapter",
+        "from typing import Any, Dict, List, Optional",
+        "from typing import Any, Dict, List, Optional, Union",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Set",
+        "from typing import Dict, List, Any, Optional, Union",
+        "from typing import Dict, List, Optional, Any, Callable",
+        "from typing import Dict, List, Set, Optional, Any",
+        "from typing import List, Dict, Any, Optional",
+        "from urllib.parse import quote, unquote",
+        "from urllib.parse import urlparse",
+        "from urllib3.util.retry import Retry",
+        "import ast",
+        "import base64",
+        "import gc",
+        "import hashlib",
+        "import html",
+        "import ipaddress",
+        "import json",
+        "import logging",
+        "import os",
+        "import psutil",
+        "import random",
+        "import re",
+        "import requests",
+        "import secrets",
+        "import shutil",
+        "import signal",
+        "import socket",
+        "import ssl",
+        "import subprocess",
+        "import sys",
+        "import tempfile",
+        "import threading",
+        "import time"
+      ],
+      "exports": [
+        "class AccessControl",
+        "class ActionType",
+        "class AuditSystem",
+        "class BehaviorFirewall",
+        "class CognitiveGuard",
+        "class ContentSandbox",
+        "class EncryptionManager",
+        "class FuseConfiguration",
+        "class FuseState",
+        "class FuseTriggerEvent",
+        "class FuseType",
+        "class InputSanitizer",
+        "class IntegrityHashSystem",
+        "class NetworkSecurityManager",
+        "class Permission",
+        "class PermissionLevel",
+        "class PlatformInfo",
+        "class RBACEngine",
+        "class Role",
+        "class SandboxEnvironment",
+        "class SecurityCore",
+        "class SecurityHandler",
+        "class Session",
+        "class SystemFuse",
+        "class TempPath",
+        "class TrainingGuard",
+        "class TriggerSeverity",
+        "class User",
+        "class ValidationHandler",
+        "def authenticate_user",
+        "def check_permission",
+        "def cleanup_expired_sessions",
+        "def create_sandbox",
+        "def create_secure_session",
+        "def create_user",
+        "def decorator",
+        "def decrypt_data",
+        "def decrypt_with_rsa",
+        "def encrypt_data",
+        "def encrypt_with_rsa",
+        "def end_audit_session",
+        "def execute_code",
+        "def filter_action",
+        "def generate_master_key",
+        "def generate_rsa_keypair",
+        "def generate_security_report",
+        "def generate_session_key",
+        "def get_access_log",
+        "def get_audit_summary",
+        "def get_encryption_status",
+        "def get_firewall_stats",
+        "def get_fuse_status",
+        "def get_integrity_status",
+        "def get_network_info",
+        "def get_security_status",
+        "def get_system_status",
+        "def gettempdir",
+        "def hash_data",
+        "def load_master_key",
+        "def log_audit_event",
+        "def logout_session",
+        "def logout_user",
+        "def machine",
+        "def mkdtemp",
+        "def mkstemp",
+        "def monitor_training_session",
+        "def platform",
+        "def processor",
+        "def quarantine_content",
+        "def recovery_callback",
+        "def release_from_quarantine",
+        "def remediate_vulnerabilities",
+        "def require_permission",
+        "def run_security_audit",
+        "def sanitize_dict",
+        "def sanitize_input",
+        "def sanitize_list",
+        "def sanitize_string",
+        "def scan_and_fix_vulnerabilities",
+        "def scan_port",
+        "def scan_vulnerabilities",
+        "def secure_delete_key",
+        "def start_audit_session",
+        "def start_monitoring",
+        "def start_training_session",
+        "def stop_monitoring",
+        "def system",
+        "def trigger_quarantine",
+        "def update_file_hash",
+        "def validate_consciousness_input",
+        "def validate_input",
+        "def validate_llm_output",
+        "def validate_session",
+        "def validate_training_data",
+        "def validate_url",
+        "def wrapper"
+      ],
+      "deterministic_score": 100.0
+    },
+    "production": {
+      "module": "production",
+      "snapshot_timestamp": "2025-12-09T14:29:53.957363",
+      "module_hash": "c34448eab2818e2b552377ef5fd0ae58d839372c0eaf1a519b24f8a8340392b8",
+      "file_count": 8,
+      "line_count": 3208,
+      "file_hashes": {
+        "management_methods.py": {
+          "hash": "51e65d8f315f1ae11d8c762c67ab5a2049c8e6eaa0aaae18b3f8c5f18670741c",
+          "size": 7611,
+          "lines": 214
+        },
+        "report_generator.py": {
+          "hash": "58e146504d5428c6b8ae20b10de7e920cbbcaa3d18f1f63d6d565d1f4a54d954",
+          "size": 24610,
+          "lines": 574
+        },
+        "test_runner.py": {
+          "hash": "518061a18e058eba30ef71376d72e9c8454a19f14f3ac7e4bfedb0da534d6f56",
+          "size": 27476,
+          "lines": 730
+        },
+        "essential_methods.py": {
+          "hash": "0e3974fdc4706c065b2535f7c6c915bc0bff502b586c5a436c35c9ed8029de00",
+          "size": 6112,
+          "lines": 160
+        },
+        "core_methods.py": {
+          "hash": "1999d0812bccae99858ed0300ae56568e5d950e7a5ef4be82ec06a85c34a7cf3",
+          "size": 13979,
+          "lines": 362
+        },
+        "validation_core.py": {
+          "hash": "efd6f577bda15d7c7b2423ca368143102a10e51fffc90ba96bf3661bd4174cea",
+          "size": 22440,
+          "lines": 589
+        },
+        "deterministic_helpers.py": {
+          "hash": "28cba0d3c26fb1152fdb85d47a0ffe5dd9474a97a2b7267a4a084e466b68ba8d",
+          "size": 2104,
+          "lines": 62
+        },
+        "compliance_checker.py": {
+          "hash": "da3997ac1c26ef834980e510f77372e1ed6dd3e83ee26b5d3fcd1784da020539",
+          "size": 21032,
+          "lines": 517
+        }
+      },
+      "structure_hash": "24e2b83fd2df824029c8be58437f7d0437b471d874e74e6fc1547e87cfc1a83c",
+      "dependencies": [
+        "from .deterministic_helpers import deterministic_helpers",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Any, Dict, List, Optional",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Tuple",
+        "import hashlib",
+        "import json",
+        "import locale",
+        "import logging",
+        "import mia.production",
+        "import mia.security",
+        "import os",
+        "import platform",
+        "import psutil",
+        "import random",
+        "import subprocess",
+        "import sys",
+        "import threading",
+        "import time"
+      ],
+      "exports": [
+        "class CoreHandler",
+        "class DeterministicHelpers",
+        "class ManagementHandler",
+        "class ProductionComplianceChecker",
+        "class ProductionEssentialMethods",
+        "class ProductionReportGenerator",
+        "class ProductionTestRunner",
+        "class ProductionValidationCore",
+        "def calculate_content_hash",
+        "def check_compliance",
+        "def check_status",
+        "def concurrent_task",
+        "def generate_compliance_report",
+        "def generate_comprehensive_report",
+        "def generate_deterministic_id",
+        "def generate_production_report",
+        "def generate_report",
+        "def generate_test_report",
+        "def generate_validation_summary",
+        "def get_deterministic_epoch",
+        "def get_deterministic_timestamp",
+        "def get_seeded_random",
+        "def monitor_cpu",
+        "def normalize_data",
+        "def run_all_tests",
+        "def run_complete_validation",
+        "def run_comprehensive_compliance_check",
+        "def run_comprehensive_validation",
+        "def run_demo_scenarios",
+        "def run_performance_tests",
+        "def run_production_tests",
+        "def save_json_results",
+        "def save_report",
+        "def validate_accessibility_compliance",
+        "def validate_data_privacy_compliance",
+        "def validate_deterministic_introspection",
+        "def validate_enterprise_readiness",
+        "def validate_licensing_compliance",
+        "def validate_localization_support",
+        "def validate_production",
+        "def validate_system",
+        "def validate_system_architecture"
+      ],
+      "deterministic_score": 100.0
+    },
+    "testing": {
+      "module": "testing",
+      "snapshot_timestamp": "2025-12-09T14:29:53.960569",
+      "module_hash": "357b771c578bd4941e33d683e05cc104d2373308a0ecce77e48eff52cb2d2bc2",
+      "file_count": 6,
+      "line_count": 4193,
+      "file_hashes": {
+        "performance_tester.py": {
+          "hash": "7a49e9e8a9d81ffee8c1ac310a7bb707addefb82db248036d4fe5697a76d0734",
+          "size": 23484,
+          "lines": 595
+        },
+        "test_runner.py": {
+          "hash": "dbecccf41ea4547aa46cf18d2242171132cb223d0497c846a79377160043a5ad",
+          "size": 21555,
+          "lines": 545
+        },
+        "test_generator.py": {
+          "hash": "c7d187c354cfce8a30a083274770c65414149c0380bb01d9ca005c41103a4cdc",
+          "size": 18561,
+          "lines": 507
+        },
+        "enterprise_test_suite.py": {
+          "hash": "898166e1d5165a8e8efcca1fab382b29e1540c8bf4d1e2a196e5f481e0233073",
+          "size": 24362,
+          "lines": 568
+        },
+        "validation_methods.py": {
+          "hash": "c9c181ec61a28fba6deff64e21ddcdeb631f538efda00a1562ad40ad788a0d44",
+          "size": 45785,
+          "lines": 1213
+        },
+        "stability_tester.py": {
+          "hash": "3c92a28694a23474e5d496f1502a3760c3c4d56e7070e1ba336b471a081be66a",
+          "size": 29921,
+          "lines": 765
+        }
+      },
+      "structure_hash": "b6faf6bd071711aebfa78c35d0f5e32559703cd96a1668c79c565da3b9bbab25",
+      "dependencies": [
+        "from dataclasses import dataclass, asdict",
+        "from datetime import datetime",
+        "from datetime import datetime, timedelta",
+        "from enum import Enum",
+        "from mia.core.adaptive_llm import adaptive_llm",
+        "from mia.core.consciousness import consciousness",
+        "from mia.core.memory import memory_system",
+        "from mia.security import SecurityCore",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Set",
+        "from typing import Dict, List, Optional, Any",
+        "from {module_import_path} import *",
+        "import ast",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import mia",
+        "import mia.testing",
+        "import os",
+        "import platform",
+        "import psutil",
+        "import subprocess",
+        "import sys",
+        "import threading",
+        "import time",
+        "import unittest"
+      ],
+      "exports": [
+        "class EnterpriseTestSuite",
+        "class PerformanceTester",
+        "class StabilityTester",
+        "class TestGenerator",
+        "class TestResult",
+        "class TestRunner",
+        "class TestStatus",
+        "class TestSystemIntegration",
+        "class TestType",
+        "class Test{module_file.stem.title",
+        "class ValidationHandler",
+        "def generate_all_missing_tests",
+        "def generate_comprehensive_tests",
+        "def generate_test_report",
+        "def generate_tests",
+        "def get_stability_status",
+        "def get_stability_test_status",
+        "def get_test_results",
+        "def get_test_status",
+        "def monitor",
+        "def monitor_cpu",
+        "def run_all_tests",
+        "def run_comprehensive_tests",
+        "def run_performance_tests",
+        "def run_stability_tests",
+        "def run_stress_tests",
+        "def run_tests",
+        "def run_unit_tests",
+        "def setUp",
+        "def start_168h_stability_test",
+        "def start_continuous_monitoring",
+        "def start_stability_test",
+        "def stop_continuous_monitoring",
+        "def stop_stability_test",
+        "def tearDown",
+        "def test_mia_bootstrap",
+        "def test_module_loading",
+        "def test_security_system",
+        "def test_{class_name.lower",
+        "def test_{component}_integration",
+        "def test_{func_name}",
+        "def test_{method_name}",
+        "def test_{method_name}_performance",
+        "def thread_worker",
+        "def worker_task"
+      ],
+      "deterministic_score": 100.0
+    },
+    "compliance": {
+      "module": "compliance",
+      "snapshot_timestamp": "2025-12-09T14:29:53.964255",
+      "module_hash": "c928afe49eb6789fa819e9ca8768eda13462d4ffb407fa4f8d3f8ad087983580",
+      "file_count": 9,
+      "line_count": 4438,
+      "file_hashes": {
+        "management_methods.py": {
+          "hash": "adc98e89929a8f8bcbf20479bf213413ad9ffecfdb77e2633b48ba0516858944",
+          "size": 14837,
+          "lines": 410
+        },
+        "lgpd_manager.py": {
+          "hash": "10cdf21a082e79118ea06b68e44d25e3d51dac487cc44ada3bdc4a98b7215fbf",
+          "size": 19244,
+          "lines": 498
+        },
+        "consent_manager.py": {
+          "hash": "00aae417ba187a39a30cd9caf8583e6ac9dcbdef567ae44126b5be69e8efbada",
+          "size": 17608,
+          "lines": 465
+        },
+        "core_methods.py": {
+          "hash": "a24085fccd8132029a3a9553e11a5014a9ebacc23502c3450fa40bc2a17cdadb",
+          "size": 28781,
+          "lines": 755
+        },
+        "data_processor.py": {
+          "hash": "6e77883fbfbff992dcb3f7b6d10c2b3d887e7db1d2ee96ea07017d5e89111f34",
+          "size": 20157,
+          "lines": 504
+        },
+        "privacy_manager.py": {
+          "hash": "6df8aab9d0845e6590891c45a427e080afdd7800e971f054b4474f2c4cfbaf8b",
+          "size": 27963,
+          "lines": 695
+        },
+        "security_methods.py": {
+          "hash": "19dc8695d2c7273bbaee9f536887613a3796030eedf31f06b72443b2c33e861f",
+          "size": 7625,
+          "lines": 214
+        },
+        "validation_methods.py": {
+          "hash": "2b8d51a51d1f95c96c9f2cb5a95c2af20d9200ff04c23a7b4324cda5662a73ed",
+          "size": 10315,
+          "lines": 272
+        },
+        "audit_system.py": {
+          "hash": "111c04d95c8a5d017aaee49d789fccb2148b81c395c445eed9a0cffd6a8cacf8",
+          "size": 25352,
+          "lines": 625
+        }
+      },
+      "structure_hash": "663f0ad21adb41aa0dfc66a4ad3e23a9d3c6a61485b2cd43236a96efb0356258",
+      "dependencies": [
+        "from .audit_system import ComplianceAuditSystem",
+        "from .consent_manager import ConsentManager",
+        "from .data_processor import DataProcessor",
+        "from .privacy_manager import PrivacyManager",
+        "from datetime import datetime",
+        "from datetime import datetime, timedelta",
+        "from enum import Enum",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "import base64",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import platform",
+        "import sys",
+        "import time"
+      ],
+      "exports": [
+        "class AuditLevel",
+        "class ComplianceAuditSystem",
+        "class ConsentManager",
+        "class ConsentStatus",
+        "class CoreHandler",
+        "class DataProcessor",
+        "class LGPDComplianceManager",
+        "class LGPDDataCategory",
+        "class LGPDLegalBasis",
+        "class ManagementHandler",
+        "class PrivacyManager",
+        "class ProcessingPurpose",
+        "class RequestStatus",
+        "class SecurityHandler",
+        "class SubjectRightType",
+        "class ValidationHandler",
+        "def check_compliance",
+        "def check_consent",
+        "def delete_data",
+        "def expire_old_consents",
+        "def export_data",
+        "def generate_compliance_report",
+        "def generate_report",
+        "def get_compliance_status",
+        "def get_recommendations",
+        "def get_status",
+        "def get_subject_consents",
+        "def handle_subject_rights",
+        "def handle_subject_rights_request",
+        "def initialize_audit_system",
+        "def initialize_compliance_system",
+        "def initialize_consent_system",
+        "def initialize_data_processing",
+        "def initialize_privacy_system",
+        "def log_data_processing",
+        "def log_subject_rights_request",
+        "def process_consent",
+        "def process_data",
+        "def process_data_request",
+        "def process_data_with_compliance",
+        "def process_privacy_request",
+        "def record_consent",
+        "def run_compliance_audit",
+        "def run_comprehensive_audit",
+        "def update_compliance_configuration",
+        "def update_config",
+        "def update_configuration",
+        "def update_consent",
+        "def validate_compliance_setup",
+        "def withdraw_consent"
+      ],
+      "deterministic_score": 100.0
+    },
+    "enterprise": {
+      "module": "enterprise",
+      "snapshot_timestamp": "2025-12-09T14:29:53.968535",
+      "module_hash": "6f8a4c5e72ea86150f397d0cf937a5ac03381bc5b6f1b69f0f7ccb820a157d7a",
+      "file_count": 15,
+      "line_count": 6663,
+      "file_hashes": {
+        "management_methods.py": {
+          "hash": "799315ce21eab1e33bf846cb5fafefe9c0c8b1eb078a8f28b743cf72f51854ae",
+          "size": 16366,
+          "lines": 454
+        },
+        "deployment_manager.py": {
+          "hash": "a1d4ea84a9d410e875d917afc74a06436602d5cc32666d5d6141afafa179743e",
+          "size": 28441,
+          "lines": 675
+        },
+        "license_manager.py": {
+          "hash": "5c1e28447e622470681935a45aaa8296f639884dba7ca5e5d881185202e8d770",
+          "size": 19638,
+          "lines": 516
+        },
+        "lgpd_privacy_manager.py": {
+          "hash": "b4916973d73bd5890781997101c37fede72f031db0f5b58f91f0738a215e8c66",
+          "size": 10662,
+          "lines": 247
+        },
+        "lgpd_retention_manager.py": {
+          "hash": "d4dcece50c706297d53da35108b3c339a1c1e20916ff2a233bdaccb3efb537e0",
+          "size": 4289,
+          "lines": 113
+        },
+        "lgpd_audit_trail.py": {
+          "hash": "314951a5b460da9a70116fa7b103e65f5df84cefa6dc447c2d8c902bfd67e31a",
+          "size": 7703,
+          "lines": 187
+        },
+        "core_methods.py": {
+          "hash": "ec312d5ef8c61c475179b0f96c2e198cae35656a7fed1e8ee0fe2f369cb49abe",
+          "size": 24657,
+          "lines": 627
+        },
+        "lgpd_consent_manager.py": {
+          "hash": "b79f11e3ace10ef5b32de1ae65613ba9c0cc6389b72237165b010a8209583c9d",
+          "size": 6163,
+          "lines": 156
+        },
+        "configuration_manager.py": {
+          "hash": "f9cf56db3d432de8dc3e46def342a400a48ee57823050c6bcb59cdb095b07df4",
+          "size": 28796,
+          "lines": 706
+        },
+        "lgpd_breach_response.py": {
+          "hash": "bf3c75b1ddcc0774e435afc652c983a73da84b350e62e15ef868bf80c636ebdf",
+          "size": 9742,
+          "lines": 245
+        },
+        "compliance_manager.py": {
+          "hash": "f8f6966dbcc8ff9c831aa7fb8b7891d05a3d844779b87c8cf36b5d504c8c7fd1",
+          "size": 16274,
+          "lines": 448
+        },
+        "policy_manager.py": {
+          "hash": "26a7690ab84da25a0db26e9d7458e8ee8629e9d8e5dec18d1a320770c06f585b",
+          "size": 23169,
+          "lines": 604
+        },
+        "lgpd_transfer_controls.py": {
+          "hash": "5912456bd122f1d4b7a5e0d2ee1d08f4fd335d708e4b0f4092aec8f59ee659f6",
+          "size": 7091,
+          "lines": 183
+        },
+        "enterprise_manager.py": {
+          "hash": "d840d0395ffab1de49e53a8f059b1d0a17197ca240654027553b2f23ff4310a9",
+          "size": 25770,
+          "lines": 653
+        },
+        "stability_monitor.py": {
+          "hash": "a084e9d9b8a1eb5caaf0562a4e064f73e5db07f75ad7d594f53a2369bff57d05",
+          "size": 35071,
+          "lines": 849
+        }
+      },
+      "structure_hash": "8cde4d3b3930a0bc7ee599bbe89afa421ed6cc7ada13b8b035901f6c9ed5603b",
+      "dependencies": [
+        "from .configuration_manager import ConfigurationManager",
+        "from .deployment_manager import EnterpriseDeploymentManager",
+        "from .license_manager import LicenseManager",
+        "from .policy_manager import PolicyManager",
+        "from dataclasses import dataclass, asdict",
+        "from datetime import datetime",
+        "from datetime import datetime, timedelta",
+        "from enum import Enum",
+        "from mia.core.adaptive_llm import get_adaptive_llm_status",
+        "from mia.core.consciousness.main import consciousness",
+        "from mia.core.memory.main import memory_system",
+        "from pathlib import Path",
+        "from typing import Dict, List, Any, Optional",
+        "import asyncio",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import psutil",
+        "import random",
+        "import subprocess",
+        "import sys",
+        "import threading",
+        "import time"
+      ],
+      "exports": [
+        "class ComplianceManager",
+        "class ConfigurationManager",
+        "class ConfigurationScope",
+        "class CoreHandler",
+        "class DeploymentStatus",
+        "class DeploymentType",
+        "class EnterpriseDeploymentManager",
+        "class EnterpriseManager",
+        "class EnterpriseMode",
+        "class EnterpriseStabilityMonitor",
+        "class LGPDAuditTrail",
+        "class LGPDBreachResponseManager",
+        "class LGPDConsentManager",
+        "class LGPDPrivacyManager",
+        "class LGPDRetentionManager",
+        "class LGPDTransferManager",
+        "class LicenseManager",
+        "class LicenseStatus",
+        "class LicenseType",
+        "class ManagementHandler",
+        "class PlatformInfo",
+        "class PolicyManager",
+        "class PolicyStatus",
+        "class PolicyType",
+        "class StabilityLevel",
+        "class StabilityMetrics",
+        "class SystemHealth",
+        "class TempPath",
+        "def assess_transfer_legality",
+        "def check_expired_data",
+        "def check_feature_access",
+        "def configure_enterprise_mode",
+        "def create_configuration",
+        "def create_consent_template",
+        "def create_deployment",
+        "def create_policy",
+        "def create_silent_installer",
+        "def delete_expired_data",
+        "def deploy_configuration",
+        "def deploy_enterprise_configuration",
+        "def disable_policy_enforcement",
+        "def enable_policy_enforcement",
+        "def enforce_policy",
+        "def evaluate_enterprise_compliance",
+        "def execute_deployment",
+        "def generate_audit_report",
+        "def generate_compliance_report",
+        "def generate_enterprise_report",
+        "def generate_report",
+        "def get_breach_dashboard",
+        "def get_configurations",
+        "def get_consent_dashboard",
+        "def get_consent_status",
+        "def get_current_status",
+        "def get_enterprise_score",
+        "def get_enterprise_status",
+        "def get_license_info",
+        "def get_privacy_dashboard",
+        "def get_recommendations",
+        "def get_retention_dashboard",
+        "def get_status",
+        "def get_system_health",
+        "def get_transfer_dashboard",
+        "def gettempdir",
+        "def initialize_configuration_system",
+        "def initialize_deployment_system",
+        "def initialize_enterprise_system",
+        "def initialize_license_system",
+        "def initialize_policy_system",
+        "def install_enterprise_features",
+        "def install_license",
+        "def list_licenses",
+        "def log_data_breach",
+        "def log_data_processing",
+        "def log_data_subject_request",
+        "def machine",
+        "def manage_enterprise_licenses",
+        "def mkdtemp",
+        "def mkstemp",
+        "def monitor_ongoing_transfers",
+        "def notify_anpd",
+        "def notify_data_subjects",
+        "def platform",
+        "def process_data_subject_request",
+        "def processor",
+        "def record_consent",
+        "def register_data_for_retention",
+        "def register_data_processing",
+        "def register_international_transfer",
+        "def report_data_breach",
+        "def revoke_license",
+        "def set_retention_policy",
+        "def system",
+        "def update_configuration",
+        "def update_policy",
+        "def validate_license",
+        "def withdraw_consent"
+      ],
+      "deterministic_score": 100.0
+    },
+    "verification": {
+      "module": "verification",
+      "snapshot_timestamp": "2025-12-09T14:29:53.974989",
+      "module_hash": "c7aa462a174ff703e6f06c3a191261afb3b32d63290e523caabfcd2d1106b22c",
+      "file_count": 10,
+      "line_count": 4278,
+      "file_hashes": {
+        "management_methods.py": {
+          "hash": "51e65d8f315f1ae11d8c762c67ab5a2049c8e6eaa0aaae18b3f8c5f18670741c",
+          "size": 7611,
+          "lines": 214
+        },
+        "performance_monitor.py": {
+          "hash": "eefbe6e7f2f31bcd4d887e8c0ccde2f9e84312b5cbbf9a8d895c402e832196e3",
+          "size": 20033,
+          "lines": 508
+        },
+        "essential_methods.py": {
+          "hash": "aff7b191d07cb37e2517c22dbe0addbf1c9ea2351a58a318ad90f5729746bb48",
+          "size": 6180,
+          "lines": 160
+        },
+        "core_methods.py": {
+          "hash": "7fe57bf715457dd979f5f3eacb35cb637ef70b73296b3aa8e30e8c30f2f0b2e7",
+          "size": 38959,
+          "lines": 986
+        },
+        "deterministic_helpers.py": {
+          "hash": "28cba0d3c26fb1152fdb85d47a0ffe5dd9474a97a2b7267a4a084e466b68ba8d",
+          "size": 2104,
+          "lines": 62
+        },
+        "package_tester.py": {
+          "hash": "27468e8f854dcc9ab842886018b766116eff84d55d9435fd0764a291122f53e7",
+          "size": 21098,
+          "lines": 546
+        },
+        "isolation_wrapper.py": {
+          "hash": "15d490c9bde17e8be8e513df2ac90c2fca1893480362c3f9860cd3b87c53d1b6",
+          "size": 1861,
+          "lines": 65
+        },
+        "validation_methods.py": {
+          "hash": "c5672cf528c583b7d15249e280fd94cde4912ab9a137f2cd027a2471669adfdb",
+          "size": 20329,
+          "lines": 556
+        },
+        "system_validator.py": {
+          "hash": "3e8bb075d58a9128c04530a5471419e698b34003994606da3fbdc2d72bc482e2",
+          "size": 24247,
+          "lines": 593
+        },
+        "platform_verifier.py": {
+          "hash": "975b46df3d973513ccb5b55e8da5b31a4f577d25fb47b5fd2d34af62243f12fb",
+          "size": 22640,
+          "lines": 588
+        }
+      },
+      "structure_hash": "9b30c213d87c47fd5e0ae66493e316940e6b0488aa4a0f36e5a7d6fb716df1e6",
+      "dependencies": [
+        "from .deterministic_helpers import deterministic_helpers",
+        "from contextlib import contextmanager",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Any, Dict, List, Optional",
+        "from typing import Any, Dict, List, Optional, Callable",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Tuple",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import psutil",
+        "import random",
+        "import socket",
+        "import subprocess",
+        "import sys",
+        "import threading",
+        "import time",
+        "import urllib.request"
+      ],
+      "exports": [
+        "class CoreHandler",
+        "class DeterministicHelpers",
+        "class IsolationWrapper",
+        "class ManagementHandler",
+        "class PackageTester",
+        "class PerformanceMonitor",
+        "class PlatformVerifier",
+        "class SystemValidator",
+        "class ValidationHandler",
+        "class VerificationEssentialMethods",
+        "def calculate_content_hash",
+        "def create_isolated_namespace",
+        "def detect_current_platform",
+        "def generate_comprehensive_report",
+        "def generate_deterministic_id",
+        "def generate_report",
+        "def get_deterministic_epoch",
+        "def get_deterministic_timestamp",
+        "def get_monitoring_status",
+        "def get_recommendations",
+        "def get_seeded_random",
+        "def get_session_data",
+        "def get_status",
+        "def get_verification_status",
+        "def isolate_function",
+        "def isolated_execution",
+        "def normalize_data",
+        "def run_comprehensive_package_test",
+        "def run_comprehensive_validation",
+        "def run_comprehensive_verification",
+        "def run_introspective_verification",
+        "def run_performance_benchmark",
+        "def run_platform_verification",
+        "def run_verification",
+        "def start_performance_monitoring",
+        "def stop_performance_monitoring",
+        "def test_package_execution",
+        "def test_package_integrity",
+        "def validate_checksums",
+        "def validate_dependencies",
+        "def validate_file_system_permissions",
+        "def validate_isolation",
+        "def validate_network_connectivity",
+        "def validate_python_environment",
+        "def validate_system_resources",
+        "def verify_integrity",
+        "def verify_platform_compatibility",
+        "def verify_single_platform",
+        "def wrapper"
+      ],
+      "deterministic_score": 100.0
+    },
+    "analysis": {
+      "module": "analysis",
+      "snapshot_timestamp": "2025-12-09T14:29:53.978959",
+      "module_hash": "7ef1156c1980f500086b7904cc4a96b49362f1333463ac505a793e1c5af12112",
+      "file_count": 8,
+      "line_count": 3256,
+      "file_hashes": {
+        "management_methods.py": {
+          "hash": "5e1375b02317222c65c2c5d0136f663e99ea4f67f7ca4f9cb84e5459c67395a2",
+          "size": 9263,
+          "lines": 262
+        },
+        "essential_methods.py": {
+          "hash": "db8984613650ea1faed9b3ad85c30f68b9689379f45299dd199587c69240ec63",
+          "size": 6044,
+          "lines": 160
+        },
+        "core_methods.py": {
+          "hash": "9cf757093b845c4c49af657a1d111f8c218901a8de944c62237b5a43165d3004",
+          "size": 28142,
+          "lines": 753
+        },
+        "deterministic_helpers.py": {
+          "hash": "28cba0d3c26fb1152fdb85d47a0ffe5dd9474a97a2b7267a4a084e466b68ba8d",
+          "size": 2104,
+          "lines": 62
+        },
+        "quality_analyzer.py": {
+          "hash": "78e0a88e65d24efd0b6d2dc26db09696e5bec7344354f3a44af5c8436d08a36f",
+          "size": 25020,
+          "lines": 586
+        },
+        "system_analyzer.py": {
+          "hash": "e068bec43717207f428d7f99b78c0777e5ff7a2827f7af9af3042073498e5583",
+          "size": 19562,
+          "lines": 493
+        },
+        "introspective_analyzer.py": {
+          "hash": "6be862514eb83cda1bcc9a09be85d7eccf9ea23a181b284e20e624077b32364b",
+          "size": 19036,
+          "lines": 443
+        },
+        "code_metrics.py": {
+          "hash": "ec9916073d0eb91281d8740c3e2cdd78a8a14686c0307a94a531cf06e9650eff",
+          "size": 18929,
+          "lines": 497
+        }
+      },
+      "structure_hash": "e90b533efee8c5254e9787ce3f84edf527e415138430aebcd50ca70af1fa5069",
+      "dependencies": [
+        "from .code_metrics import CodeMetricsCollector",
+        "from .deterministic_helpers import deterministic_helpers",
+        "from .quality_analyzer import QualityAnalyzer",
+        "from .system_analyzer import SystemAnalyzer",
+        "from collections import defaultdict, Counter",
+        "from dataclasses import dataclass, asdict",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Any, Dict, List, Optional",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Set",
+        "import ast",
+        "import base64",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import platform",
+        "import psutil",
+        "import random",
+        "import re",
+        "import subprocess",
+        "import sys",
+        "import threading",
+        "import time"
+      ],
+      "exports": [
+        "class AnalysisEssentialMethods",
+        "class CodeMetrics",
+        "class CodeMetricsCollector",
+        "class CoreHandler",
+        "class DeterministicHelpers",
+        "class IntrospectiveAnalyzer",
+        "class ManagementHandler",
+        "class ModuleAnalysis",
+        "class QualityAnalyzer",
+        "class SystemAnalyzer",
+        "def analyze_code_quality",
+        "def analyze_data",
+        "def analyze_module_structure",
+        "def analyze_system",
+        "def analyze_system_architecture",
+        "def calculate_content_hash",
+        "def calculate_metrics",
+        "def collect_file_metrics",
+        "def create_report",
+        "def generate_analysis_summary",
+        "def generate_deterministic_id",
+        "def generate_insights",
+        "def generate_metrics_report",
+        "def get_deterministic_epoch",
+        "def get_deterministic_timestamp",
+        "def get_seeded_random",
+        "def normalize_data",
+        "def run_complete_system_analysis",
+        "def run_comprehensive_analysis"
+      ],
+      "deterministic_score": 100.0
+    },
+    "project_builder": {
+      "module": "project_builder",
+      "snapshot_timestamp": "2025-12-09T14:29:53.981889",
+      "module_hash": "638a9f101f050f0b9c61519461f81b97539db07718b8c78f8a02493fbbfea22a",
+      "file_count": 6,
+      "line_count": 3699,
+      "file_hashes": {
+        "build_system.py": {
+          "hash": "e7ae5d78af0b9f8b060ee9991c36c57aa4a88c72e70b412f68cc46538cb2f0fe",
+          "size": 20438,
+          "lines": 547
+        },
+        "management_methods.py": {
+          "hash": "5e1375b02317222c65c2c5d0136f663e99ea4f67f7ca4f9cb84e5459c67395a2",
+          "size": 9263,
+          "lines": 262
+        },
+        "deployment_manager.py": {
+          "hash": "8ea6bf6dc65f6aa9ff943bdcc2bf21063a6fc3c4b2dc01212374915f8ae71cd5",
+          "size": 21309,
+          "lines": 567
+        },
+        "core_methods.py": {
+          "hash": "4b29d227e509b94b8e54b6f4972b55bdaf9d75e262a9f53259147e221d6feb44",
+          "size": 33568,
+          "lines": 881
+        },
+        "template_manager.py": {
+          "hash": "4501b831d39ce572cc58f512428389d7f6e19d8034df6f482ef79b9e017b6a1c",
+          "size": 20897,
+          "lines": 670
+        },
+        "project_generator.py": {
+          "hash": "aaf4225cc4fbc7efa7c77483272fe993514e2a1d1321cb522fb28c114dbe6653",
+          "size": 20809,
+          "lines": 772
+        }
+      },
+      "structure_hash": "8741894422536763040d42352c52b7b01837088ccf6955b1b9c307fd57ed1549",
+      "dependencies": [
+        "from .models import BaseResponse, ErrorResponse",
+        "from .routes import router",
+        "from dataclasses import dataclass, asdict",
+        "from datetime import datetime",
+        "from django.core.management import execute_from_command_line",
+        "from enum import Enum",
+        "from fastapi import APIRouter, HTTPException",
+        "from fastapi import FastAPI, HTTPException",
+        "from fastapi.middleware.cors import CORSMiddleware",
+        "from flask import Flask, jsonify",
+        "from pathlib import Path",
+        "from pydantic import BaseModel",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Tuple",
+        "from typing import Dict, List, Optional, Any, Tuple",
+        "from typing import Optional",
+        "import './App.css';",
+        "import './index.css';",
+        "import App from './App';",
+        "import ReactDOM from 'react-dom/client';",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import platform",
+        "import shutil",
+        "import subprocess",
+        "import sys",
+        "import tempfile",
+        "import threading",
+        "import time",
+        "import unittest",
+        "import uuid",
+        "import uvicorn"
+      ],
+      "exports": [
+        "class BaseResponse",
+        "class BuildSystem",
+        "class CoreHandler",
+        "class DeploymentManager",
+        "class ErrorResponse",
+        "class HealthResponse",
+        "class ManagementHandler",
+        "class ProjectConfig",
+        "class ProjectGenerator",
+        "class ProjectType",
+        "class TechStack",
+        "class TemplateManager",
+        "class TestMain",
+        "def build_project",
+        "def clean_build_artifacts",
+        "def create_build_package",
+        "def create_custom_template",
+        "def create_deployment_config",
+        "def create_project",
+        "def deploy_project",
+        "def export_template",
+        "def generate_project",
+        "def generate_project_report",
+        "def get_available_templates",
+        "def get_build_history",
+        "def get_build_status",
+        "def get_deployment_status",
+        "def get_project_info",
+        "def get_project_templates",
+        "def get_template",
+        "def health",
+        "def home",
+        "def import_template",
+        "def list_deployments",
+        "def list_generated_projects",
+        "def list_projects",
+        "def list_templates",
+        "def load_custom_templates",
+        "def main",
+        "def monitor_deployment",
+        "def render_template",
+        "def rollback_deployment",
+        "def test_basic_functionality",
+        "def test_version",
+        "def validate_template"
+      ],
+      "deterministic_score": 100.0
+    },
+    "desktop": {
+      "module": "desktop",
+      "snapshot_timestamp": "2025-12-09T14:29:53.985021",
+      "module_hash": "e193dbd253d99ac39f9640563fa86caa181f42b2de90f733b2a163957c287127",
+      "file_count": 9,
+      "line_count": 2786,
+      "file_hashes": {
+        "build_system.py": {
+          "hash": "070a7bf697673426db30dcfc41c3397c846d84915aa10edbc8ed8205d5006130",
+          "size": 17335,
+          "lines": 492
+        },
+        "management_methods.py": {
+          "hash": "eaeddb287bf82f977cf607e5e2a9b6124cb635a1b9e255f8b1bd805f96bdef68",
+          "size": 9263,
+          "lines": 262
+        },
+        "deployment_manager.py": {
+          "hash": "3d53263200973b08c9df8015c49a95a087e224cac5a308faab94f64fba0c78b4",
+          "size": 24308,
+          "lines": 626
+        },
+        "platform_detector.py": {
+          "hash": "1783f78f72da88f19616298b210457089ded1ac66e6587b9437b8735eded8615",
+          "size": 10705,
+          "lines": 280
+        },
+        "essential_methods.py": {
+          "hash": "b351cbffd83c810b23f1165e8185a26230e0b92dd8891306ba8cc4544ac53d21",
+          "size": 6010,
+          "lines": 160
+        },
+        "core_methods.py": {
+          "hash": "0a5d7ac7afaf0069d881306d97b1fcd914b4afa7067344c015740c96ae2082e9",
+          "size": 13295,
+          "lines": 358
+        },
+        "deterministic_helpers.py": {
+          "hash": "28cba0d3c26fb1152fdb85d47a0ffe5dd9474a97a2b7267a4a084e466b68ba8d",
+          "size": 2104,
+          "lines": 62
+        },
+        "isolation_wrapper.py": {
+          "hash": "15d490c9bde17e8be8e513df2ac90c2fca1893480362c3f9860cd3b87c53d1b6",
+          "size": 1861,
+          "lines": 65
+        },
+        "cross_platform_utils.py": {
+          "hash": "472640529c4e311b01074f884d29e15fc87845c30ef689726723c09511babe60",
+          "size": 16858,
+          "lines": 481
+        }
+      },
+      "structure_hash": "bc28c5d83afc7f42fa0f7c035aedf35dec29f2cce849d82c0ac323942ac670d9",
+      "dependencies": [
+        "from .deterministic_helpers import deterministic_helpers",
+        "from contextlib import contextmanager",
+        "from cx_Freeze import setup, Executable",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "from typing import Any, Dict, List, Optional",
+        "from typing import Any, Dict, List, Optional, Callable",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import Dict, List, Any, Optional, Union",
+        "from win32com.client import Dispatch",
+        "import base64",
+        "import hashlib",
+        "import json",
+        "import logging",
+        "import os",
+        "import platform",
+        "import psutil",
+        "import random",
+        "import shutil",
+        "import subprocess",
+        "import sys",
+        "import tarfile",
+        "import tempfile",
+        "import time",
+        "import winshell",
+        "import zipfile"
+      ],
+      "exports": [
+        "class BuildSystem",
+        "class CoreHandler",
+        "class CrossPlatformUtils",
+        "class DeploymentManager",
+        "class DesktopEssentialMethods",
+        "class DeterministicHelpers",
+        "class IsolationWrapper",
+        "class ManagementHandler",
+        "class PlatformDetector",
+        "def build_application",
+        "def build_desktop_application",
+        "def calculate_content_hash",
+        "def check_tool_availability",
+        "def clean_build_artifacts",
+        "def cleanup_temp_files",
+        "def copy_file_with_permissions",
+        "def create_desktop_shortcut",
+        "def create_installer",
+        "def create_isolated_namespace",
+        "def create_package",
+        "def create_virtual_environment",
+        "def deploy_application",
+        "def detect_platform",
+        "def execute_command",
+        "def generate_deterministic_id",
+        "def get_default_install_path",
+        "def get_deterministic_epoch",
+        "def get_deterministic_timestamp",
+        "def get_executable_extension",
+        "def get_executable_name",
+        "def get_installer_format",
+        "def get_library_extension",
+        "def get_platform_config",
+        "def get_seeded_random",
+        "def get_system_info",
+        "def handle_events",
+        "def initialize_desktop",
+        "def install_dependencies",
+        "def is_platform_supported",
+        "def isolate_function",
+        "def isolated_execution",
+        "def manage_ui",
+        "def normalize_data",
+        "def normalize_path",
+        "def validate_build_environment",
+        "def validate_file_integrity",
+        "def validate_isolation",
+        "def wrapper"
+      ],
+      "deterministic_score": 100.0
+    },
+    "build": {
+      "module": "build",
+      "snapshot_timestamp": "2025-12-09T14:29:53.987607",
+      "module_hash": "53928cb538939cc9d26f60ec13d6914accb7f74a8ad67aa8c7470a137b669273",
+      "file_count": 3,
+      "line_count": 244,
+      "file_hashes": {
+        "build_hasher.py": {
+          "hash": "477f2064ee5cd3627e31495016bccecb53589977ca13c230287bdcec6fd68e7b",
+          "size": 1439,
+          "lines": 49
+        },
+        "deterministic_hasher.py": {
+          "hash": "fdd8e5eff54c723ac037529f12d212ed6f56a708bd47ad968d9bf8c31cb428d8",
+          "size": 4178,
+          "lines": 129
+        },
+        "content_normalizer.py": {
+          "hash": "c7d7a6fe6b6b3a8a711852d5dc30a9ca26506f98f98e8963a97038e25a45ec79",
+          "size": 2074,
+          "lines": 66
+        }
+      },
+      "structure_hash": "b2e3a3dcf4043f2972a88a9e39cf3ec3ccdd142de9edbb0e7f1052351dc53fe1",
+      "dependencies": [
+        "from .deterministic_hasher import hash_calculator",
+        "from pathlib import Path",
+        "from typing import Dict, Any",
+        "from typing import Dict, List, Any, Optional",
+        "from typing import List, Dict, Any",
+        "import hashlib",
+        "import json",
+        "import re"
+      ],
+      "exports": [
+        "class BuildHasher",
+        "class ContentNormalizer",
+        "class DeterministicHashCalculator",
+        "def calculate_project_hash",
+        "def generate_build_hash",
+        "def normalize_json_content",
+        "def normalize_python_content",
+        "def normalize_text_content",
+        "def validate_build_consistency"
+      ],
+      "deterministic_score": 100.0
+    }
+  },
+  "file_hashes": {
+    "core_files": {
+      "requirements.txt": {
+        "hash": "4093c34830910549af7156d30aa6a0171aa5c37b38923dbd7f9fec91c2d0ceed",
+        "size": 992,
+        "lines": 73,
+        "modified": "2025-12-07T10:51:35.589260"
+      }
+    },
+    "configuration_files": {
+      "python-lock.json": {
+        "hash": "c02e91f3140805f4a69cbc3916c5eb725f0740fa1a3231aff584ce49de08ed1a",
+        "size": 369,
+        "lines": 16,
+        "modified": "2025-12-09T14:17:22.830554"
+      },
+      "docker-lock.json": {
+        "hash": "f13ea84b5b2a65882980ed15498c2dae4452b7c320aba7502879c6beec17e183",
+        "size": 265,
+        "lines": 11,
+        "modified": "2025-12-09T14:17:22.830554"
+      },
+      "os-env-lock.json": {
+        "hash": "51d207ed1be38b326a7e86f62e9c96b3423291265ac561efee49b4b409a956f1",
+        "size": 313,
+        "lines": 13,
+        "modified": "2025-12-09T14:17:22.830554"
+      },
+      "build-lock.json": {
+        "hash": "8c51e0fac7eb98eecbcaaedee8e1e5de55ac9b68f7ce73c249e6ccb1d13100ee",
+        "size": 371,
+        "lines": 17,
+        "modified": "2025-12-09T14:17:22.830554"
+      }
+    },
+    "documentation_files": {},
+    "build_files": {
+      "build-manifest.json": {
+        "hash": "370ccae089c2059a4828b4c2b3686fc85960d033ab20ac3ffaa5a6b5cb042adb",
+        "size": 903,
+        "lines": 47,
+        "modified": "2025-12-09T14:17:22.877554"
+      },
+      "hash-manifest.json": {
+        "hash": "b6459c2844f0974abef6ca2a05c77b4f442353b8a3eaa7902e57c702166576c8",
+        "size": 1254,
+        "lines": 37,
+        "modified": "2025-12-09T14:17:22.877554"
+      },
+      "reproducibility-manifest.json": {
+        "hash": "cadd2beb6a36db405f41ca3f4a7a339be0d5900d2dc6748adbc4b9c58f42b393",
+        "size": 363,
+        "lines": 17,
+        "modified": "2025-12-09T14:17:22.877554"
+      }
+    }
+  },
+  "dependency_hashes": {
+    "python_dependencies": {
+      "requirements_hash": "4093c34830910549af7156d30aa6a0171aa5c37b38923dbd7f9fec91c2d0ceed",
+      "dependencies": [
+        "# Core dependencies",
+        "torch>=2.0.0",
+        "transformers>=4.30.0",
+        "accelerate>=0.20.0",
+        "datasets>=2.12.0",
+        "tokenizers>=0.13.0",
+        "sentencepiece>=0.1.99",
+        "# Audio processing",
+        "librosa>=0.10.0",
+        "soundfile>=0.12.0",
+        "pyaudio>=0.2.11",
+        "whisper>=1.1.10",
+        "TTS>=0.15.0",
+        "pydub>=0.25.1",
+        "# Image/Video processing",
+        "Pillow>=9.5.0",
+        "opencv-python>=4.7.0",
+        "imageio>=2.28.0",
+        "scikit-image>=0.20.0",
+        "# Web framework",
+        "fastapi>=0.95.0",
+        "uvicorn>=0.21.0",
+        "websockets>=11.0.0",
+        "jinja2>=3.1.0",
+        "python-multipart>=0.0.6",
+        "# Database",
+        "sqlite3",
+        "sqlalchemy>=2.0.0",
+        "alembic>=1.10.0",
+        "# Vector database",
+        "faiss-cpu>=1.7.4",
+        "chromadb>=0.3.0",
+        "# Email",
+        "imaplib3>=0.5.0",
+        "smtplib",
+        "email-validator>=2.0.0",
+        "# Utilities",
+        "pyyaml>=6.0",
+        "toml>=0.10.2",
+        "python-dotenv>=1.0.0",
+        "requests>=2.28.0",
+        "aiohttp>=3.8.0",
+        "numpy>=1.24.0",
+        "pandas>=2.0.0",
+        "matplotlib>=3.7.0",
+        "seaborn>=0.12.0",
+        "# Security",
+        "cryptography>=40.0.0",
+        "bcrypt>=4.0.0",
+        "# Development",
+        "pytest>=7.3.0",
+        "black>=23.3.0",
+        "flake8>=6.0.0",
+        "mypy>=1.3.0",
+        "# LoRA and fine-tuning",
+        "peft>=0.3.0",
+        "bitsandbytes>=0.39.0",
+        "loralib>=0.1.1",
+        "# Monitoring",
+        "psutil>=5.9.0",
+        "GPUtil>=1.4.0"
+      ]
+    },
+    "system_dependencies": {
+      "python-lock.json": "c02e91f3140805f4a69cbc3916c5eb725f0740fa1a3231aff584ce49de08ed1a",
+      "docker-lock.json": "f13ea84b5b2a65882980ed15498c2dae4452b7c320aba7502879c6beec17e183",
+      "os-env-lock.json": "51d207ed1be38b326a7e86f62e9c96b3423291265ac561efee49b4b409a956f1"
+    },
+    "internal_dependencies": {
+      "security": [],
+      "production": [
+        "import mia.production",
+        "import mia.security"
+      ],
+      "testing": [
+        "from mia.core.adaptive_llm import adaptive_llm",
+        "from mia.core.consciousness import consciousness",
+        "from mia.core.memory import memory_system",
+        "from mia.security import SecurityCore",
+        "import mia.testing"
+      ],
+      "compliance": [],
+      "enterprise": [
+        "from mia.core.adaptive_llm import get_adaptive_llm_status",
+        "from mia.core.consciousness.main import consciousness",
+        "from mia.core.memory.main import memory_system"
+      ],
+      "verification": [],
+      "analysis": [],
+      "project_builder": [],
+      "desktop": [],
+      "build": []
+    }
+  },
+  "configuration_hashes": {
+    "build_configuration": {
+      "build-manifest.json": {
+        "hash": "370ccae089c2059a4828b4c2b3686fc85960d033ab20ac3ffaa5a6b5cb042adb",
+        "size": 903,
+        "lines": 47,
+        "modified": "2025-12-09T14:17:22.877554"
+      },
+      "hash-manifest.json": {
+        "hash": "b6459c2844f0974abef6ca2a05c77b4f442353b8a3eaa7902e57c702166576c8",
+        "size": 1254,
+        "lines": 37,
+        "modified": "2025-12-09T14:17:22.877554"
+      },
+      "reproducibility-manifest.json": {
+        "hash": "cadd2beb6a36db405f41ca3f4a7a339be0d5900d2dc6748adbc4b9c58f42b393",
+        "size": 363,
+        "lines": 17,
+        "modified": "2025-12-09T14:17:22.877554"
+      }
+    },
+    "deployment_configuration": {
+      "python-lock.json": {
+        "hash": "c02e91f3140805f4a69cbc3916c5eb725f0740fa1a3231aff584ce49de08ed1a",
+        "size": 369,
+        "lines": 16,
+        "modified": "2025-12-09T14:17:22.830554"
+      },
+      "docker-lock.json": {
+        "hash": "f13ea84b5b2a65882980ed15498c2dae4452b7c320aba7502879c6beec17e183",
+        "size": 265,
+        "lines": 11,
+        "modified": "2025-12-09T14:17:22.830554"
+      },
+      "os-env-lock.json": {
+        "hash": "51d207ed1be38b326a7e86f62e9c96b3423291265ac561efee49b4b409a956f1",
+        "size": 313,
+        "lines": 13,
+        "modified": "2025-12-09T14:17:22.830554"
+      }
+    },
+    "runtime_configuration": {}
+  },
+  "build_artifacts_hashes": {
+    "release_packages": {
+      "mia-enterprise-agi-1.0.0-linux.tar.gz": {
+        "hash": "461df237cdbd3dc7779dfcccc0e33a9a678281eaebdf71f747d8a99df0211432",
+        "size": 992695,
+        "created": "2025-12-09T14:19:52.805437"
+      },
+      "mia-enterprise-agi-1.0.0-windows.tar.gz": {
+        "hash": "4d9bc340c2716effde7226758fa9971953c6b23c02a9a27d3a261c98233ab158",
+        "size": 992689,
+        "created": "2025-12-09T14:19:53.414436"
+      },
+      "mia-enterprise-agi-1.0.0-macos.tar.gz": {
+        "hash": "db6fbc84b410baea6a88286e61e6bf6e840a103d4d031cfbe0b9e5112d19d417",
+        "size": 992678,
+        "created": "2025-12-09T14:19:54.019436"
+      }
+    },
+    "checksums": {
+      "SHA256SUMS": {
+        "hash": "6e5508ba69a6b8efd96afa44338131bbfaf93676308fed0291a5ae7a2d3033fd",
+        "size": 424,
+        "lines": 8,
+        "modified": "2025-12-09T14:19:54.025436"
+      }
+    },
+    "verification_files": {
+      "verified_release_package_ready.flag": {
+        "hash": "15d6998642b8ca47db60ed715230617cf7eff65561c16fd18dd947f8504f1e2c",
+        "size": 348,
+        "lines": 14,
+        "modified": "2025-12-09T14:19:54.165436"
+      },
+      "final_release_hash.json": {
+        "hash": "f0c2b77ed0036ff747fd5181804016730853973ddc0b8a0c853ea2b9be4d37dc",
+        "size": 3649,
+        "lines": 107,
+        "modified": "2025-12-09T14:19:54.166435"
+      }
+    }
+  },
+  "validation_results": {
+    "validation_timestamp": "2025-12-09T14:29:54.003589",
+    "integrity_checks": {
+      "module_snapshots": {
+        "total_modules": 10,
+        "valid_modules": 10,
+        "invalid_modules": []
+      },
+      "file_hashes": {
+        "total_files": 8,
+        "valid_hashes": 8
+      },
+      "dependency_hashes": {
+        "categories": 3,
+        "valid_dependencies": true
+      }
+    },
+    "validation_passed": true,
+    "validation_score": 100.0,
+    "issues": []
+  },
+  "snapshot_integrity": {
+    "integrity_timestamp": "2025-12-09T14:29:54.003616",
+    "snapshot_hash": "ef142f4fdce73971be3a6e7070901c3f771607bd636cd705d2fec49cfce6b5e0",
+    "component_hashes": {
+      "system_overview": "cde275b9de1c8f3f187058757fe1cd2967706d8fabd0b1b0566e9c5f9ae9037b",
+      "module_snapshots": "10a3edc58237de783469fb8b98463002fddbae7a4d7c011fcd7e442357c38ccf",
+      "file_hashes": "1e5166c4922f3839e338dc0108d9fd0fc57c1b89c4907e1ceed817da0b7a26b8",
+      "dependency_hashes": "faa55648132b9a1db676aed5cbd370a6127d031c5a009b69e839111f5000ae6b",
+      "configuration_hashes": "3d1a6f5a11ebe36ea2e8a21a9408d08ea6a382accf976f34ab39141c323ef7a6",
+      "build_artifacts_hashes": "6fa0b54ebf3c7c58511e5c98486729fc0afd7a7e6d4a26c254691b5c72ca4de5"
+    },
+    "verification_signature": "8ef9570bf9b6c7a99c8699144d5e0c56"
+  }
+}

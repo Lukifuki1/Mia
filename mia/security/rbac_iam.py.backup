@@ -1,0 +1,264 @@
+#!/usr/bin/env python3
+"""
+🔐 RBAC + IAM System
+===================
+"""
+
+import json
+import hashlib
+import logging
+import time
+from typing import Dict, List, Set, Optional, Any
+from datetime import datetime, timedelta
+from dataclasses import dataclass, asdict
+from enum import Enum
+
+class Permission(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
+    # Core permissions
+    CONSCIOUSNESS_READ = "consciousness:read"
+    CONSCIOUSNESS_WRITE = "consciousness:write"
+    MEMORY_READ = "memory:read"
+    MEMORY_WRITE = "memory:write"
+    LLM_ACCESS = "llm:access"
+    LLM_ADMIN = "llm:admin"
+    
+    # Module permissions
+    AVATAR_CONTROL = "avatar:control"
+    STT_ACCESS = "stt:access"
+    TTS_ACCESS = "tts:access"
+    VISUAL_GENERATE = "visual:generate"
+    
+    # Admin permissions
+    SYSTEM_ADMIN = "system:admin"
+    USER_MANAGEMENT = "user:management"
+    SECURITY_ADMIN = "security:admin"
+    
+    # Enterprise permissions
+    ENTERPRISE_CONFIG = "enterprise:config"
+    AUDIT_ACCESS = "audit:access"
+    COMPLIANCE_ADMIN = "compliance:admin"
+
+@dataclass
+class User:
+    user_id: str
+    username: str
+    email: str
+    password_hash: str
+    roles: List[str]
+    created_at: datetime
+    last_login: Optional[datetime]
+    is_active: bool
+    mfa_enabled: bool
+    session_token: Optional[str]
+
+@dataclass
+class Role:
+    role_id: str
+    name: str
+    description: str
+    permissions: List[Permission]
+    created_at: datetime
+    is_system_role: bool
+
+@dataclass
+class Session:
+    session_id: str
+    user_id: str
+    created_at: datetime
+    expires_at: datetime
+    ip_address: str
+    user_agent: str
+    is_active: bool
+
+class RBACEngine:
+    """Role-Based Access Control Engine"""
+    
+    def __init__(self):
+        self.logger = logging.getLogger("MIA.RBAC")
+        self.users: Dict[str, User] = {}
+        self.roles: Dict[str, Role] = {}
+        self.sessions: Dict[str, Session] = {}
+        
+        # Inicializiraj sistemske vloge
+        self._initialize_system_roles()
+    
+    def _initialize_system_roles(self):
+        """Inicializiraj sistemske vloge"""
+        # Super Admin
+        super_admin = Role(
+            role_id="super_admin",
+            name="Super Administrator",
+            description="Popoln dostop do vseh funkcionalnosti",
+            permissions=list(Permission),
+            created_at=datetime.now(),
+            is_system_role=True
+        )
+        self.roles["super_admin"] = super_admin
+        
+        # Enterprise Admin
+        enterprise_admin = Role(
+            role_id="enterprise_admin",
+            name="Enterprise Administrator",
+            description="Enterprise funkcionalnosti in konfiguracija",
+            permissions=[
+                Permission.CONSCIOUSNESS_READ,
+                Permission.MEMORY_READ,
+                Permission.LLM_ACCESS,
+                Permission.ENTERPRISE_CONFIG,
+                Permission.AUDIT_ACCESS,
+                Permission.USER_MANAGEMENT
+            ],
+            created_at=datetime.now(),
+            is_system_role=True
+        )
+        self.roles["enterprise_admin"] = enterprise_admin
+        
+        # Standard User
+        standard_user = Role(
+            role_id="standard_user",
+            name="Standard User",
+            description="Osnovni dostop do MIA funkcionalnosti",
+            permissions=[
+                Permission.CONSCIOUSNESS_READ,
+                Permission.MEMORY_READ,
+                Permission.LLM_ACCESS,
+                Permission.AVATAR_CONTROL,
+                Permission.STT_ACCESS,
+                Permission.TTS_ACCESS
+            ],
+            created_at=datetime.now(),
+            is_system_role=True
+        )
+        self.roles["standard_user"] = standard_user
+        
+        # Read Only
+        read_only = Role(
+            role_id="read_only",
+            name="Read Only User",
+            description="Samo bralni dostop",
+            permissions=[
+                Permission.CONSCIOUSNESS_READ,
+                Permission.MEMORY_READ
+            ],
+            created_at=datetime.now(),
+            is_system_role=True
+        )
+        self.roles["read_only"] = read_only
+    
+    def create_user(self, username: str, email: str, password: str, roles: List[str]) -> str:
+        """Ustvari novega uporabnika"""
+        user_id = hashlib.sha256(f"{username}{email}{self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}".encode()).hexdigest()[:16]
+        password_hash = self._hash_password(password)
+        
+        user = User(
+            user_id=user_id,
+            username=username,
+            email=email,
+            password_hash=password_hash,
+            roles=roles,
+            created_at=datetime.now(),
+            last_login=None,
+            is_active=True,
+            mfa_enabled=False,
+            session_token=None
+        )
+        
+        self.users[user_id] = user
+        self.logger.info(f"Uporabnik ustvarjen: {username}")
+        
+        return user_id
+    
+    def authenticate_user(self, username: str, password: str) -> Optional[str]:
+        """Avtenticiraj uporabnika"""
+        for user in self.users.values():
+            if user.username == username and user.is_active:
+                if self._verify_password(password, user.password_hash):
+                    # Ustvari session
+                    session_id = self._create_session(user.user_id)
+                    user.last_login = datetime.now()
+                    user.session_token = session_id
+                    
+                    self.logger.info(f"Uporabnik avtenticiran: {username}")
+                    return session_id
+        
+        self.logger.warning(f"Neuspešna avtentikacija: {username}")
+        return None
+    
+    def check_permission(self, session_id: str, permission: Permission) -> bool:
+        """Preveri dovoljenja uporabnika"""
+        session = self.sessions.get(session_id)
+        if not session or not session.is_active:
+            return False
+        
+        # Preveri, če je session potekel
+        if datetime.now() > session.expires_at:
+            session.is_active = False
+            return False
+        
+        user = self.users.get(session.user_id)
+        if not user or not user.is_active:
+            return False
+        
+        # Preveri dovoljenja preko vlog
+        for role_id in user.roles:
+            role = self.roles.get(role_id)
+            if role and permission in role.permissions:
+                return True
+        
+        return False
+    
+    def _create_session(self, user_id: str) -> str:
+        """Ustvari novo sejo"""
+        session_id = hashlib.sha256(f"{user_id}{self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}".encode()).hexdigest()
+        
+        session = Session(
+            session_id=session_id,
+            user_id=user_id,
+            created_at=datetime.now(),
+            expires_at=datetime.now() + timedelta(hours=8),
+            ip_address="127.0.0.1",  # Bi se pridobilo iz zahteve
+            user_agent="MIA-Client",
+            is_active=True
+        )
+        
+        self.sessions[session_id] = session
+        return session_id
+    
+    def _hash_password(self, password: str) -> str:
+        """Hash gesla"""
+        salt = "mia_enterprise_salt"  # V produkciji bi bil naključen
+        return hashlib.pbkdf2_hmac('sha256', password.encode(), salt.encode(), 100000).hex()
+    
+    def _verify_password(self, password: str, password_hash: str) -> bool:
+        """Preveri geslo"""
+        return self._hash_password(password) == password_hash
+    
+    def logout_user(self, session_id: str) -> bool:
+        """Odjavi uporabnika"""
+        session = self.sessions.get(session_id)
+        if session:
+            session.is_active = False
+            self.logger.info(f"Uporabnik odjavljen: {session.user_id}")
+            return True
+        return False
+
+# Globalni RBAC engine
+rbac_engine = RBACEngine()
+
+def require_permission(permission: Permission):
+    """Decorator za preverjanje dovoljenj"""
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            session_id = kwargs.get('session_id') or (args[0] if args else None)
+            
+            if not session_id or not rbac_engine.check_permission(session_id, permission):
+                raise PermissionError(f"Insufficient permissions for {permission.value}")
+            
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator

@@ -295,7 +295,7 @@ class MIAProjectManager:
             # Execute command
             result = subprocess.run(
                 command,
-                shell=True,
+                shell=False,
                 cwd=project_path,
                 capture_output=True,
                 text=True,

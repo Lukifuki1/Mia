@@ -1,0 +1,907 @@
+{
+  "manifest_timestamp": "2025-12-09T14:57:39.136108",
+  "manifest_version": "1.0.0",
+  "hash_algorithm": "SHA-256",
+  "deployment_hashes": {
+    "requirements.txt": {
+      "hash": "4093c34830910549af7156d30aa6a0171aa5c37b38923dbd7f9fec91c2d0ceed",
+      "size": 992,
+      "modified": "2025-12-07T10:51:35.589260"
+    },
+    "mia/performance/memory_optimizer.py": {
+      "hash": "3f7d6407322f1f7c170a29883263af1c3b3ecb8ce45b44187158be88066ee74c",
+      "size": 9463,
+      "modified": "2025-12-09T11:52:18.646354"
+    },
+    "mia/performance/performance_benchmarker.py": {
+      "hash": "b09a2b3629a67d8bfae57536cfc9fff227ada54a5094b7d86b25d0619ce390b5",
+      "size": 12313,
+      "modified": "2025-12-09T11:53:41.390290"
+    },
+    "mia/performance/consciousness_optimizer.py": {
+      "hash": "06a8fb18f55ad6198c15a33c7f7f0fbe77c9911dba748c3fcf5d4fe5a75b243c",
+      "size": 14298,
+      "modified": "2025-12-09T11:54:20.734259"
+    },
+    "mia/performance/__init__.py": {
+      "hash": "90d6d24f433473fdcc4edfcf1b045ed2716ec70a3fa8f2c2d6b3c182d46e01e1",
+      "size": 419,
+      "modified": "2025-12-09T11:51:45.298380"
+    },
+    "mia/security/access_control.py": {
+      "hash": "022bd8f662eb3f157081c708e22842250825079710343e27bdbec5cc401edbe0",
+      "size": 21745,
+      "modified": "2025-12-09T14:15:13.225655"
+    },
+    "mia/security/cognitive_guard.py": {
+      "hash": "99488c77ed5c6caef6fab9086449ad9c207ba5b2c8091553c7b9da57884ec56e",
+      "size": 7974,
+      "modified": "2025-12-09T14:15:13.226655"
+    },
+    "mia/security/encryption_manager.py": {
+      "hash": "c04a36933330aebc0a0631bd355fe4982565f2e206a82dda441f693e513a0d09",
+      "size": 18654,
+      "modified": "2025-12-09T13:46:24.474006"
+    },
+    "mia/security/system_fuse.py": {
+      "hash": "09d1e6bb36b948e8432c8ebdf6f5191cba49c45caea5df517e487df99591df92",
+      "size": 22452,
+      "modified": "2025-12-09T14:15:13.228655"
+    },
+    "mia/security/__init__.py": {
+      "hash": "b0edaa402c02b0932c4b8f128c911aae49dceecf9582d4b24cad32d0d43c34d4",
+      "size": 471,
+      "modified": "2025-12-09T12:32:34.441468"
+    },
+    "mia/security/security_core.py": {
+      "hash": "d5ffefec0a2206842642a1b290e1bf4e50415f95625e57c9147b0d53c11969c8",
+      "size": 22152,
+      "modified": "2025-12-09T14:15:13.229655"
+    },
+    "mia/security/integrity_hash.py": {
+      "hash": "d368aeed9115a100175b431cc48edd39a95e9ec90e15d11ec0fb68738d85e4e6",
+      "size": 14279,
+      "modified": "2025-12-09T14:15:13.229655"
+    },
+    "mia/security/network_security.py": {
+      "hash": "a7607fc771eed7d7249233200df8783ed9e9f84344cb06eebdbdbee39d8d6133",
+      "size": 5183,
+      "modified": "2025-12-09T10:41:58.452650"
+    },
+    "mia/security/sandbox_system.py": {
+      "hash": "ba7183888045ae9039e8b334c4eaedaaf2668224956e363ca9eb51b8f24cca8f",
+      "size": 11578,
+      "modified": "2025-12-09T14:15:13.230655"
+    },
+    "mia/security/security_methods.py": {
+      "hash": "6b30858236eeab9eee52e9dd9df8f00375c37ccb7db95cea8a1f9d1ea97d648c",
+      "size": 24546,
+      "modified": "2025-12-09T14:13:45.034724"
+    },
+    "mia/security/validation_methods.py": {
+      "hash": "be9f7dc30bb4ec5a77d1377de0da93355f846745c38eeef2cc2da4c28e8e3247",
+      "size": 9872,
+      "modified": "2025-12-09T14:13:45.033724"
+    },
+    "mia/security/rbac_iam.py": {
+      "hash": "b06495b5caa0a96cd9488d5b6ef1266af96e33fbaf018c5b9ae140eb44074044",
+      "size": 8743,
+      "modified": "2025-12-09T14:15:13.232655"
+    },
+    "mia/security/audit_system.py": {
+      "hash": "8d0d5a7e719a3481994c38e1b4ea851c593e356252b227724397110caeca0d2d",
+      "size": 24173,
+      "modified": "2025-12-09T14:15:13.233655"
+    },
+    "mia/security/behavior_firewall.py": {
+      "hash": "2a64f1a855ef953a5575ba5ea8ee7c1f67566c91fdb923996bc8b465ba75f3c7",
+      "size": 8693,
+      "modified": "2025-12-09T14:15:13.233655"
+    },
+    "mia/security/training_guard.py": {
+      "hash": "879fcaa70a93ef6cc6026004c1d4172e97a8bfff98bfc059c29ebde603526f52",
+      "size": 11722,
+      "modified": "2025-12-09T14:15:13.234655"
+    },
+    "mia/security/input_sanitization.py": {
+      "hash": "5a8cc924a6da651390645139354116812920b4990a101ca612990175e99e9337",
+      "size": 6061,
+      "modified": "2025-12-09T10:41:58.451650"
+    },
+    "mia/verification/management_methods.py": {
+      "hash": "65cd31e6930785889058f3de91bc324cedccd39d2c0c1dfd790c0f91cbc964ec",
+      "size": 7617,
+      "modified": "2025-12-09T14:13:45.037724"
+    },
+    "mia/verification/performance_monitor.py": {
+      "hash": "21c3fb30b394e2b7d42c23fecf7c1229223e56cdce868eb94941d97fa4a696d4",
+      "size": 20057,
+      "modified": "2025-12-09T14:26:16.902137"
+    },
+    "mia/verification/essential_methods.py": {
+      "hash": "b04b89a9375d5b0ac2ba53123681c7ade5c2b27cc03307b4aa617099dc6d64ae",
+      "size": 6195,
+      "modified": "2025-12-09T14:26:16.905137"
+    },
+    "mia/verification/core_methods.py": {
+      "hash": "e545fffc9f702d848c9b91bf4dc51825354d51ff42d05d3b50fdebd2a2b75d5d",
+      "size": 39016,
+      "modified": "2025-12-09T14:13:45.037724"
+    },
+    "mia/verification/__init__.py": {
+      "hash": "9efb33bc5bd9dc6596290fae907478dcf25c12b90cf941d91836c713c646c62f",
+      "size": 440,
+      "modified": "2025-12-09T13:15:28.816457"
+    },
+    "mia/verification/deterministic_helpers.py": {
+      "hash": "afb63703f976fb184859b5ca5f7aedeb057667d233f6ff64099014906ae35ea3",
+      "size": 2107,
+      "modified": "2025-12-09T14:26:16.903136"
+    },
+    "mia/verification/package_tester.py": {
+      "hash": "b481958518d711b6876519045b81707d8a90c432adec1fdf00be6ef80a4d12c8",
+      "size": 21107,
+      "modified": "2025-12-09T14:26:16.903136"
+    },
+    "mia/verification/isolation_wrapper.py": {
+      "hash": "3dbafd76f568b999fe401419c71509869d6166a0bcb33d16d0409d05ddcf364a",
+      "size": 1866,
+      "modified": "2025-12-09T14:26:16.905137"
+    },
+    "mia/verification/validation_methods.py": {
+      "hash": "c52d64b30df0bfc4bfb1083054a0e28f34002cf4b8dab1fd137be1d09901a98a",
+      "size": 20354,
+      "modified": "2025-12-09T14:13:45.037724"
+    },
+    "mia/verification/system_validator.py": {
+      "hash": "bcbe85a022f08f608f8408347003e4cff6d29f21740a64d65e0f5b0defe9a775",
+      "size": 24256,
+      "modified": "2025-12-09T14:26:16.904136"
+    },
+    "mia/verification/platform_verifier.py": {
+      "hash": "72a083a9e549561ed318a6968d3bb9bb2ed6d11aca18b37fd0f81af1fb86bafa",
+      "size": 22655,
+      "modified": "2025-12-09T14:26:16.904136"
+    },
+    "mia/project_builder/build_system.py": {
+      "hash": "9145f8cbbc30a1fa2126a349c6f7f5de36d5e9e62283fa71427b0601223c592d",
+      "size": 20715,
+      "modified": "2025-12-09T14:57:30.966671"
+    },
+    "mia/project_builder/management_methods.py": {
+      "hash": "7590d9c624a77524f7fc5ae31438f1195ce1ef9951a88f4910c434d64d0d9706",
+      "size": 9841,
+      "modified": "2025-12-09T14:57:30.969671"
+    },
+    "mia/project_builder/deployment_manager.py": {
+      "hash": "37b4f52c741f347e2b4865ccdd4951707cf1221cf25d5ffa526e8a994e47379e",
+      "size": 21499,
+      "modified": "2025-12-09T14:57:30.974671"
+    },
+    "mia/project_builder/deterministic_build_helpers.py": {
+      "hash": "3b504c6740c36459a17cc28b7a9ad156070342224285e6153fb08eea8d48c0e1",
+      "size": 23341,
+      "modified": "2025-12-09T14:57:30.981671"
+    },
+    "mia/project_builder/core_methods.py": {
+      "hash": "44ceea9b0577c2bf5c951af8093f2e8003c0b2fef07dff6b8cf29bea1360f536",
+      "size": 34678,
+      "modified": "2025-12-09T14:57:30.989671"
+    },
+    "mia/project_builder/template_manager.py": {
+      "hash": "242000bf7a4f612ea35ca0bf87923e5f50468ac33c28155eeb9b7e2aa7fde568",
+      "size": 21294,
+      "modified": "2025-12-09T14:57:30.995672"
+    },
+    "mia/project_builder/__init__.py": {
+      "hash": "a2aded618ba94a87524ac4c926c1906849d8de0174dc5538e3ce705d93942657",
+      "size": 439,
+      "modified": "2025-12-09T12:52:27.957536"
+    },
+    "mia/project_builder/project_generator.py": {
+      "hash": "ea50ff977924cfbdceea0368d95058514a710cd7c66d76d6dc7f86b94962d65a",
+      "size": 21416,
+      "modified": "2025-12-09T14:57:31.001671"
+    },
+    "mia/production/management_methods.py": {
+      "hash": "65cd31e6930785889058f3de91bc324cedccd39d2c0c1dfd790c0f91cbc964ec",
+      "size": 7617,
+      "modified": "2025-12-09T14:13:45.033724"
+    },
+    "mia/production/report_generator.py": {
+      "hash": "63221d5cbd45fc188bf2b53a66ac367f740892d6d4bbd9d428730699fa91aae2",
+      "size": 24793,
+      "modified": "2025-12-09T14:26:16.898137"
+    },
+    "mia/production/test_runner.py": {
+      "hash": "0fb0a4afae5e70155344fad534c338f2b51e6acc50cb82695174f7d491826c72",
+      "size": 27512,
+      "modified": "2025-12-09T14:26:16.898137"
+    },
+    "mia/production/essential_methods.py": {
+      "hash": "4c35945860419c9b9246b3b3a3b072d249743c3e5e98e433a4ce121f55955a44",
+      "size": 6127,
+      "modified": "2025-12-09T14:26:16.900136"
+    },
+    "mia/production/core_methods.py": {
+      "hash": "3dc567e484d659e16c7160c97b046dd366c88ab8dcd92373c85e159ca3293c94",
+      "size": 13996,
+      "modified": "2025-12-09T14:13:45.033724"
+    },
+    "mia/production/__init__.py": {
+      "hash": "06b6d6a8a32721a64071475ff331abcceca9252981c41b9afd87d0e2a35e539c",
+      "size": 535,
+      "modified": "2025-12-09T12:10:53.888484"
+    },
+    "mia/production/validation_core.py": {
+      "hash": "c218e0171be8e1687ca936742250dbb3eac4f424a3731f406ff9715458454875",
+      "size": 22461,
+      "modified": "2025-12-09T14:26:16.899137"
+    },
+    "mia/production/deterministic_helpers.py": {
+      "hash": "afb63703f976fb184859b5ca5f7aedeb057667d233f6ff64099014906ae35ea3",
+      "size": 2107,
+      "modified": "2025-12-09T14:26:16.899137"
+    },
+    "mia/production/compliance_checker.py": {
+      "hash": "f7fb7d5390c32408ac2cb096ff32d1a902a68251d2e7e377a04183ab964de9e3",
+      "size": 21054,
+      "modified": "2025-12-09T14:26:16.900136"
+    },
+    "mia/quality/pae.py": {
+      "hash": "06aff2bfde47a39d15425e6060b3e29fc2949836259cf20a6369870371ebe352",
+      "size": 30318,
+      "modified": "2025-12-09T11:01:35.339729"
+    },
+    "mia/quality/__init__.py": {
+      "hash": "a868357fe648de4c8df7ad35193fe02094eec3f06f5336ffe7320be80d07bcd8",
+      "size": 133,
+      "modified": "2025-12-09T09:18:11.239573"
+    },
+    "mia/quality/qpm.py": {
+      "hash": "6b0e83e53d08b7fde1703818715f32cfabd6f9fcb2d5f0fef01973c1f1cbeb5b",
+      "size": 23760,
+      "modified": "2025-12-09T11:01:35.339729"
+    },
+    "mia/quality/sse.py": {
+      "hash": "75e1e383f300762543998b7f3744d5d7fec876efa408554b7104dc62eab06458",
+      "size": 28757,
+      "modified": "2025-12-09T11:01:35.340729"
+    },
+    "mia/compliance/management_methods.py": {
+      "hash": "8346961bee8706977c52c791fa8f22d4c4dc6cff437a908f891dabf37b15c560",
+      "size": 14855,
+      "modified": "2025-12-09T14:13:45.035724"
+    },
+    "mia/compliance/lgpd_manager.py": {
+      "hash": "28e0e7e3d3cd3df52dff195f57e202307f5e87c4d98a0c1bab82e92f37be28b3",
+      "size": 19285,
+      "modified": "2025-12-09T13:41:11.903251"
+    },
+    "mia/compliance/consent_manager.py": {
+      "hash": "04623867464399981c8b7893c104a55bbe37e5269dbeafd2606ef87b68b5c8a5",
+      "size": 17632,
+      "modified": "2025-12-09T13:46:24.474006"
+    },
+    "mia/compliance/core_methods.py": {
+      "hash": "0f60c40053d0ded41d28664e5f937ea01bdcbe7819311fffcbcf6cc30964c942",
+      "size": 28829,
+      "modified": "2025-12-09T14:13:45.035724"
+    },
+    "mia/compliance/__init__.py": {
+      "hash": "0bea4645af9be46e2bed93afc68f5fd55bed3db3f0123a5d8ad65e4f9a6bb814",
+      "size": 499,
+      "modified": "2025-12-09T13:00:56.487138"
+    },
+    "mia/compliance/data_processor.py": {
+      "hash": "cf0f93a72b43f59b648bb408c087d9285b87149525da9e9c57e0d0162b3110d4",
+      "size": 20175,
+      "modified": "2025-12-09T13:41:11.901251"
+    },
+    "mia/compliance/privacy_manager.py": {
+      "hash": "9e3d5403b2c9b2c3304fd5596b5a3f996c65c79b246a2e2f37f4164e5629bf23",
+      "size": 27978,
+      "modified": "2025-12-09T13:46:24.475006"
+    },
+    "mia/compliance/security_methods.py": {
+      "hash": "65926e007a42b55c846bfa03659f3a4341073a8b4955c3bc4edd13dacf2c244f",
+      "size": 7631,
+      "modified": "2025-12-09T14:13:45.035724"
+    },
+    "mia/compliance/validation_methods.py": {
+      "hash": "8e5e38c177fb7cab07e7912085d0fc8938953fff6d70acf579c700d6630e79bb",
+      "size": 10324,
+      "modified": "2025-12-09T14:13:45.035724"
+    },
+    "mia/compliance/audit_system.py": {
+      "hash": "accd2f947f88e018ef5095804a5d42950cd435f85986ecc9c9bfea3a70515f95",
+      "size": 25379,
+      "modified": "2025-12-09T13:41:11.904251"
+    },
+    "mia/agi/__init__.py": {
+      "hash": "bf440878dca22f211c9816cb2bd9e830292bc32c788c35c2d1ff48f7b4752dee",
+      "size": 61,
+      "modified": "2025-12-09T09:19:27.866513"
+    },
+    "mia/desktop/build_system.py": {
+      "hash": "470a757954b30a4638a22296fe97c936402cb35494cddeb6aac31b083cc8b92f",
+      "size": 17359,
+      "modified": "2025-12-09T13:46:24.473006"
+    },
+    "mia/desktop/management_methods.py": {
+      "hash": "b9d24d2619c69b62293d88450eecf216e2caf32a372e12ae9a51b256af92f549",
+      "size": 9272,
+      "modified": "2025-12-09T14:13:45.036724"
+    },
+    "mia/desktop/deployment_manager.py": {
+      "hash": "0ea6954a467a572fb59fcf68a1c82b5d181877b8057697b53cd2ba9abb999592",
+      "size": 24341,
+      "modified": "2025-12-09T14:26:16.911137"
+    },
+    "mia/desktop/platform_detector.py": {
+      "hash": "c1ab954f4d7ed7f279610d34b7ea92802f505e122acdc80c3ddb4432e11019c1",
+      "size": 10714,
+      "modified": "2025-12-09T13:41:11.900251"
+    },
+    "mia/desktop/essential_methods.py": {
+      "hash": "48b21259996bf64e168c1e5f8551f1755db040da7e93302e890a2a03e0ad1dc4",
+      "size": 6025,
+      "modified": "2025-12-09T14:26:16.912137"
+    },
+    "mia/desktop/core_methods.py": {
+      "hash": "b6e707b8ddae0eec6fc746aa5f92280f07f5235b4f3ee396398252af49038f8c",
+      "size": 13314,
+      "modified": "2025-12-09T14:13:45.036724"
+    },
+    "mia/desktop/__init__.py": {
+      "hash": "db9e42510cfbb9d8cfe2a6c732ac28b82fd85aa030376fa06dc410e697592b6b",
+      "size": 449,
+      "modified": "2025-12-09T12:27:22.250712"
+    },
+    "mia/desktop/deterministic_helpers.py": {
+      "hash": "afb63703f976fb184859b5ca5f7aedeb057667d233f6ff64099014906ae35ea3",
+      "size": 2107,
+      "modified": "2025-12-09T14:26:16.911137"
+    },
+    "mia/desktop/isolation_wrapper.py": {
+      "hash": "3dbafd76f568b999fe401419c71509869d6166a0bcb33d16d0409d05ddcf364a",
+      "size": 1866,
+      "modified": "2025-12-09T14:26:16.911137"
+    },
+    "mia/desktop/cross_platform_utils.py": {
+      "hash": "85180b92e4d0c8a9e304f9f9c4f2d396a930b8132536464052ea5d8db0215e87",
+      "size": 16861,
+      "modified": "2025-12-09T13:41:11.900251"
+    },
+    "mia/immune/__init__.py": {
+      "hash": "6d0fac11fc5bc7fb130d6b6af88df7c58703d12b00c1b034c7398ddc2d2d7441",
+      "size": 81,
+      "modified": "2025-12-09T09:19:31.287511"
+    },
+    "mia/tests/test_enterprise_final.py": {
+      "hash": "179c43c631b48b5534110d7f733f6d46aa81bc6cb7a7749f0532b59205f14c08",
+      "size": 58356,
+      "modified": "2025-12-09T11:01:35.340729"
+    },
+    "mia/tests/__init__.py": {
+      "hash": "52459e4a5a20a02db57dfa6e016b6073c374b31fe631bf409ce3c5e225395a66",
+      "size": 438,
+      "modified": "2025-12-09T08:11:49.501680"
+    },
+    "mia/tests/conftest.py": {
+      "hash": "eb6930c3057ded9f7e322dc9898dcfd717b8dfd48af3cafbdc8ae0cdc360f393",
+      "size": 10084,
+      "modified": "2025-12-09T11:01:35.341729"
+    },
+    "mia/build/build_hasher.py": {
+      "hash": "b489a2e20db887601588031b8d7fa638e4fc3f8de1e7f0a533ea47731f7bff43",
+      "size": 1444,
+      "modified": "2025-12-09T14:17:22.830554"
+    },
+    "mia/build/__init__.py": {
+      "hash": "93574e3c16ed197caa94b23d7f7feef5d808437b5a74e6db48cff48bbaf99cfd",
+      "size": 336,
+      "modified": "2025-12-09T14:17:22.830554"
+    },
+    "mia/build/deterministic_hasher.py": {
+      "hash": "9981b2c392f97927b6cf4c1fe31b79a271288697aa077d8609a5f0996e5fcb3e",
+      "size": 4181,
+      "modified": "2025-12-09T14:17:22.830554"
+    },
+    "mia/build/content_normalizer.py": {
+      "hash": "876b239a9fe2bcf493f6d18126efc92fa7563d48daee84a406a9a2079f5b2892",
+      "size": 2077,
+      "modified": "2025-12-09T14:17:22.830554"
+    },
+    "mia/testing/performance_tester.py": {
+      "hash": "8a63e15aa4d24a653ed19c13d262e342db4bbdd7787a4f780ac0510a11cb3baa",
+      "size": 23506,
+      "modified": "2025-12-09T14:15:15.644653"
+    },
+    "mia/testing/test_runner.py": {
+      "hash": "ca4ddd8e5309fee33c223b64a4de69c18cdfe0c569551570a111be7457943635",
+      "size": 21578,
+      "modified": "2025-12-09T14:15:15.645653"
+    },
+    "mia/testing/__init__.py": {
+      "hash": "f591eb8964793f7634bb580a82de7b03e4595bf4246249b5e475a722dff4bc61",
+      "size": 430,
+      "modified": "2025-12-09T12:40:32.582095"
+    },
+    "mia/testing/test_generator.py": {
+      "hash": "801520b4fd7f35736ecb40e73ae7197a5cfa88d4441475c0dc6f0be4d878968e",
+      "size": 18575,
+      "modified": "2025-12-09T14:15:15.646653"
+    },
+    "mia/testing/enterprise_test_suite.py": {
+      "hash": "0626241fe56c2ccb991acc60027fb2902d4f98cfef38e5430bf870cb95334f9d",
+      "size": 24378,
+      "modified": "2025-12-09T11:01:35.341729"
+    },
+    "mia/testing/validation_methods.py": {
+      "hash": "f99f8f32506b197ad3a671afdb6f86fd8a6a62ce84213b6372cfed6aa064d5bd",
+      "size": 45863,
+      "modified": "2025-12-09T14:13:45.034724"
+    },
+    "mia/testing/stability_tester.py": {
+      "hash": "4d665063e20ceecc7d37124c4666a18a6d4048231113b2982eaa43be051b0158",
+      "size": 29938,
+      "modified": "2025-12-09T14:15:15.648653"
+    },
+    "mia/core/self_evolution.py": {
+      "hash": "b5a9904aa23132ddfd6373049ca309e546d03ca98eb716e681bc0d42cfdd8c3a",
+      "size": 42309,
+      "modified": "2025-12-09T11:01:35.342729"
+    },
+    "mia/core/world_model.py": {
+      "hash": "7e565ab1da1cee4ad2f7e61e52f980c95d42018e9c81f69df443e6135f6f84cd",
+      "size": 31827,
+      "modified": "2025-12-09T11:01:35.342729"
+    },
+    "mia/core/hardware_optimizer.py": {
+      "hash": "8d5e9432d19734e7888b43819f6d6fe76eefeeb56246a9481dfd1ddd82170398",
+      "size": 37438,
+      "modified": "2025-12-09T06:50:13.763505"
+    },
+    "mia/core/deterministic_async.py": {
+      "hash": "82ec2df47483ba4e9c2c8c7551508bbc5ddb820b8f37ff21204c33a7b7d7162e",
+      "size": 616,
+      "modified": "2025-12-09T11:01:35.385729"
+    },
+    "mia/core/deterministic_scheduler.py": {
+      "hash": "42ce80c1c23c533055adaeab2687585eeffd2438f246e8bfdfdb60dfb8542962",
+      "size": 3650,
+      "modified": "2025-12-09T11:01:35.386729"
+    },
+    "mia/core/owner_guard.py": {
+      "hash": "fe7de2fbdf466867c035be41483599569c7878bf25ed9e716ad71c7d518e0711",
+      "size": 22638,
+      "modified": "2025-12-09T11:01:35.343729"
+    },
+    "mia/core/adaptive_llm.py": {
+      "hash": "2ed83cf52d1b12b61468a18ec6431e5ff9d74d1babceb05fcc5754d3fb377b35",
+      "size": 28551,
+      "modified": "2025-12-09T11:01:35.343729"
+    },
+    "mia/core/system_integrator.py": {
+      "hash": "908e05eb835b6d0f5521eaaad91fa531e1113a670e5d82d9bd7d8613af7946b9",
+      "size": 25320,
+      "modified": "2025-12-09T11:01:35.343729"
+    },
+    "mia/core/deterministic_memory.py": {
+      "hash": "0e3a17a29bec32bea1e924a37639fc91541b5870ee847bc7a31abd616281620f",
+      "size": 2956,
+      "modified": "2025-12-09T11:01:35.386729"
+    },
+    "mia/core/internet_learning.py": {
+      "hash": "1f624b62ea4d53c240815a922d214ceef7f8467afe618180616455561361824b",
+      "size": 42312,
+      "modified": "2025-12-09T11:01:35.344729"
+    },
+    "mia/enterprise/management_methods.py": {
+      "hash": "552922837d383a5af5fa22e4c5795eab5659884c3369da76ece3e99ee694d2e0",
+      "size": 16387,
+      "modified": "2025-12-09T14:13:45.036724"
+    },
+    "mia/enterprise/deployment_manager.py": {
+      "hash": "1b67714402e9b690bc090ad4ba1decc78cdb08a76b1e8aef5a490b49b742dadf",
+      "size": 28453,
+      "modified": "2025-12-09T14:15:14.378654"
+    },
+    "mia/enterprise/license_manager.py": {
+      "hash": "0e0c68e0331414ec32e0295e0dc2c0b018fc7b9bece73b5585fd5be1d282d788",
+      "size": 19650,
+      "modified": "2025-12-09T14:15:14.379654"
+    },
+    "mia/enterprise/lgpd_privacy_manager.py": {
+      "hash": "15a8b52e3699dfcb59ff519150af67f85f457836df0c824225fe862c6b51b608",
+      "size": 10669,
+      "modified": "2025-12-09T14:15:14.379654"
+    },
+    "mia/enterprise/lgpd_retention_manager.py": {
+      "hash": "a7f59df056e5699db47eb08fdd69408d7e846f8b57c329ca151e61378c2a26c4",
+      "size": 4290,
+      "modified": "2025-12-09T14:15:14.380654"
+    },
+    "mia/enterprise/lgpd_audit_trail.py": {
+      "hash": "989ab206bd04f909a356a77400057b8fc95cb270ddb04e2953d80d0ba05b1b09",
+      "size": 7711,
+      "modified": "2025-12-09T14:15:14.380654"
+    },
+    "mia/enterprise/core_methods.py": {
+      "hash": "0c06120f0df853c06b567e6ad50ef85cf460e70b45eb8865001640bcd504dffe",
+      "size": 24701,
+      "modified": "2025-12-09T14:13:45.036724"
+    },
+    "mia/enterprise/lgpd_consent_manager.py": {
+      "hash": "bc783b34528ac3b4f1d1823648781bc319c7d253848e463a566834b1a464e327",
+      "size": 6177,
+      "modified": "2025-12-09T14:15:14.382654"
+    },
+    "mia/enterprise/__init__.py": {
+      "hash": "c33e76a46037b7f107843d7fd54fbf410064258aeaabc22d1688ae4ee70cc2f8",
+      "size": 930,
+      "modified": "2025-12-09T13:08:02.362806"
+    },
+    "mia/enterprise/configuration_manager.py": {
+      "hash": "3abd396dac1b3bb620fc740b33171762b17a77ac6890a56d482dd266b8498b26",
+      "size": 28824,
+      "modified": "2025-12-09T14:15:14.382654"
+    },
+    "mia/enterprise/lgpd_breach_response.py": {
+      "hash": "affeef6163ffafffbc69b9b97da277e426d0094f0f4075660e497c8b7452589e",
+      "size": 9779,
+      "modified": "2025-12-09T14:15:14.383654"
+    },
+    "mia/enterprise/compliance_manager.py": {
+      "hash": "33fec2247f523812574fa3ba1886162ae129c697d9d60ceabc462511cf726179",
+      "size": 16277,
+      "modified": "2025-12-09T14:15:14.384654"
+    },
+    "mia/enterprise/policy_manager.py": {
+      "hash": "52abfa4d1c619109eb609cd5419311eac7c5d2e865232000b57debff23995afc",
+      "size": 23190,
+      "modified": "2025-12-09T14:15:14.384654"
+    },
+    "mia/enterprise/lgpd_transfer_controls.py": {
+      "hash": "7e1a2b439875b69d4af7936a1d0e81d66030b226304bfbf4e53b91782e9910ac",
+      "size": 7099,
+      "modified": "2025-12-09T14:15:14.385654"
+    },
+    "mia/enterprise/enterprise_manager.py": {
+      "hash": "404870ecf96511370b6b63e6330b7d80c489626981777dac664c4b7e92147530",
+      "size": 25788,
+      "modified": "2025-12-09T14:15:14.386654"
+    },
+    "mia/enterprise/stability_monitor.py": {
+      "hash": "1b6d0c52c6e6c2b66d7f1e4ddc6d36c73fb8671f23713339d71ac2bb3b3c10f8",
+      "size": 35085,
+      "modified": "2025-12-09T11:56:48.610144"
+    },
+    "mia/analysis/management_methods.py": {
+      "hash": "6ffa63c672bb8a9dff4bb1adc571687c57cfa62cc26fe5f44690ef1386073e34",
+      "size": 9272,
+      "modified": "2025-12-09T14:13:45.038724"
+    },
+    "mia/analysis/essential_methods.py": {
+      "hash": "e5621ee9eea2cad8098fe739098b3e615d072d0f51f379bd458f4fc04c054755",
+      "size": 6059,
+      "modified": "2025-12-09T14:26:16.909137"
+    },
+    "mia/analysis/core_methods.py": {
+      "hash": "626e36154bb0dc8a29428778dc60a54e6fb0107b0314750a057addd7a7e2aac4",
+      "size": 28183,
+      "modified": "2025-12-09T14:13:45.038724"
+    },
+    "mia/analysis/__init__.py": {
+      "hash": "89e29ca74a25efbd26aaefbe0ecba2be67799a086f621701ad7e37efec8fe572",
+      "size": 476,
+      "modified": "2025-12-09T12:46:48.661801"
+    },
+    "mia/analysis/deterministic_helpers.py": {
+      "hash": "afb63703f976fb184859b5ca5f7aedeb057667d233f6ff64099014906ae35ea3",
+      "size": 2107,
+      "modified": "2025-12-09T14:26:16.907136"
+    },
+    "mia/analysis/quality_analyzer.py": {
+      "hash": "64a845f7435a9d3a4264607f4e15d850052461eab4d290a28b080ed093141bb1",
+      "size": 25024,
+      "modified": "2025-12-09T14:26:16.907136"
+    },
+    "mia/analysis/system_analyzer.py": {
+      "hash": "356b4b8cd1e2531429573cd572203daab4d3175a1aa531177087eab023c6f9af",
+      "size": 19571,
+      "modified": "2025-12-09T14:26:16.908137"
+    },
+    "mia/analysis/introspective_analyzer.py": {
+      "hash": "5b07c6df92fb824d88de1dcfe61999149201f73e01f91afc6c2cae847c05e8ce",
+      "size": 19058,
+      "modified": "2025-12-09T14:26:16.908137"
+    },
+    "mia/analysis/code_metrics.py": {
+      "hash": "e9773f124aa4680d5dc2f215ac59969ace0c75f6354599d8f55402ce74c7482e",
+      "size": 18935,
+      "modified": "2025-12-09T14:26:16.909137"
+    },
+    "mia/validation/__init__.py": {
+      "hash": "c4efeee0efb35339a9d5a3a20d8ca16c90044a233d2dd98375b12bb827433dfe",
+      "size": 420,
+      "modified": "2025-12-09T11:49:01.998508"
+    },
+    "mia/validation/validation_core.py": {
+      "hash": "043d9d557d17cac2b6e49e509a8bbb212260f972c76510500f40ae40c1c11f38",
+      "size": 8262,
+      "modified": "2025-12-09T12:03:20.110838"
+    },
+    "mia/validation/validation_utils.py": {
+      "hash": "c94d2430b472f66b2d8f2c7e7ddfe179476e5bca8fcffd1cbf30fcbf476cb5cd",
+      "size": 4179,
+      "modified": "2025-12-09T11:50:10.396454"
+    },
+    "mia/validation/introspective_validator.py": {
+      "hash": "29653aaeb818156080ea3dcf84807b97adfcc858dfb7ebe7b312c70f5c2f9f44",
+      "size": 8850,
+      "modified": "2025-12-09T12:03:32.772828"
+    },
+    "mia/tests/security/test_security_comprehensive.py": {
+      "hash": "92df56b80ad77c5a773feecedd862577fb366414816835484812425e781fbbb9",
+      "size": 28177,
+      "modified": "2025-12-09T11:01:35.345729"
+    },
+    "mia/tests/stress/test_memory_stress.py": {
+      "hash": "51b5eaa8ed558b6a1441767e1f2eb0531c0c154ed21e688b02e2369eccb7ff32",
+      "size": 21957,
+      "modified": "2025-12-09T11:01:35.378729"
+    },
+    "mia/tests/lsp/test_lsp_slovenian.py": {
+      "hash": "fae78d82e65f4cea397af994d1442fd7ce676d102bb36034f27e7cab7396fd6e",
+      "size": 34881,
+      "modified": "2025-12-09T11:01:35.345729"
+    },
+    "mia/tests/integration/test_consciousness_integration.py": {
+      "hash": "8cf4462dc2bb91049d3fffa5afade9a11f7aa976a96740672c8f8014402eabfe",
+      "size": 22289,
+      "modified": "2025-12-09T11:01:35.346729"
+    },
+    "mia/tests/deterministic/test_deterministic_core.py": {
+      "hash": "138d07530177092d5f0a463154908c54e0a9e692f3d06ecc7e419d8b9c8e669d",
+      "size": 21169,
+      "modified": "2025-12-09T11:01:35.379729"
+    },
+    "mia/tests/unit/test_memory_core_unit.py": {
+      "hash": "2ea43acc010ebcf3d7a1f33341bbd7c4569041639ae66fa4463a164e394233a1",
+      "size": 18829,
+      "modified": "2025-12-09T08:14:05.235574"
+    },
+    "mia/tests/unit/test_consciousness_loop_unit.py": {
+      "hash": "a244b5a5c0d36c2f8e38eede5d0d28c31d11de73f0bddb277e1caa1d10ac3d06",
+      "size": 13792,
+      "modified": "2025-12-09T08:13:08.198619"
+    },
+    "mia/tests/unit/test_adaptive_llm_unit.py": {
+      "hash": "b76f58d0e3ed2024e13cca57a896ae1a43d47d4339532766fe5d9cd262d04426",
+      "size": 17118,
+      "modified": "2025-12-09T08:14:59.073532"
+    },
+    "mia/tests/e2e/test_cold_boot_e2e.py": {
+      "hash": "d8b5414e5b08239db8f6dfa54295c4ab6b0d8a52fc906c5b45db4c28969f24a6",
+      "size": 21365,
+      "modified": "2025-12-09T11:01:35.346729"
+    },
+    "mia/data/project_builder/templates/python_django/main.py": {
+      "hash": "8a7ec568261419703476cc2fdeccea9409c9bff2ef53491c37e21db740849a09",
+      "size": 159,
+      "modified": "2025-12-09T06:50:29.143493"
+    },
+    "mia/data/project_builder/templates/python_fastapi/main.py": {
+      "hash": "d62bcd770f561a6f0e4aab26ac835e43ecc7b87ed4d851407531bdda390f3f1d",
+      "size": 686,
+      "modified": "2025-12-09T06:50:29.143493"
+    },
+    "mia/data/project_builder/templates/python_flask/main.py": {
+      "hash": "960af969ee92337b2c45400c3ec5fa366bcceae84213861d3b976b73e21bdb38",
+      "size": 417,
+      "modified": "2025-12-09T06:50:29.143493"
+    },
+    "mia/modules/api_email/email_client.py": {
+      "hash": "4fb0bd4bc4fdeceb52574be7f210172a2cd9c79c42fa8f279a4a4cbc44463810",
+      "size": 40545,
+      "modified": "2025-12-09T11:01:35.347729"
+    },
+    "mia/modules/project_builder/main.py": {
+      "hash": "f7d6d47f38673609473ff1a1a5e474cdcca25b71303fac32e30caee08a5454df",
+      "size": 13138,
+      "modified": "2025-12-09T12:57:14.130312"
+    },
+    "mia/modules/voice/stt_engine.py": {
+      "hash": "652599c74dcaad9d035bef2bf1a3db49e92dcb9cd48742d4b4d6882253d7d62b",
+      "size": 21716,
+      "modified": "2025-12-09T11:01:35.348729"
+    },
+    "mia/modules/voice/tts_engine.py": {
+      "hash": "8ee3e46d5c1fc8fa8c2d5ce5d3b664fbcc0c5ba748ca7befc822da5ccce70b2f",
+      "size": 29550,
+      "modified": "2025-12-09T11:01:35.348729"
+    },
+    "mia/modules/monitoring/health_monitor.py": {
+      "hash": "28025b1b03402d67b4c1ee9c07dfb4030447dd440fb3d45231725697c0235590",
+      "size": 41475,
+      "modified": "2025-12-09T11:01:35.349729"
+    },
+    "mia/modules/projects/main.py": {
+      "hash": "a959e6ba6c68bc6b8bbd1f2e19e3871089ea5e3d90b4659ce1b48874cf98328c",
+      "size": 15766,
+      "modified": "2025-12-09T10:41:58.163651"
+    },
+    "mia/modules/adult_mode/adult_system.py": {
+      "hash": "74a4b8c081aca9215586ec425971ac40efb34492f496ca55aa448ea0439a614b",
+      "size": 34862,
+      "modified": "2025-12-09T11:01:35.349729"
+    },
+    "mia/modules/avatar/avatar_system.py": {
+      "hash": "7c382dd0ff612b50c83de3c4c2de69146f72ea0e39dfe7a647f03069dd40d431",
+      "size": 26922,
+      "modified": "2025-12-09T11:01:35.350729"
+    },
+    "mia/modules/lora_training/lora_manager.py": {
+      "hash": "578e6df7942218c702cf6c0a5ea27ff1bbe034016ce0de5b1520a219140dd84f",
+      "size": 44188,
+      "modified": "2025-12-09T11:01:35.350729"
+    },
+    "mia/modules/ui/web.py": {
+      "hash": "890ae70443e546ae56629866791857f0c7f507853c9e66310a5a62f095982ece",
+      "size": 40742,
+      "modified": "2025-12-09T11:01:35.381729"
+    },
+    "mia/modules/multimodal/image/main.py": {
+      "hash": "bb4a6fffab9cd7d249dbba95b39f79459923be44033141a0a4592c22516740f1",
+      "size": 24379,
+      "modified": "2025-12-09T11:01:35.350729"
+    },
+    "mia/modules/voice/tts/main.py": {
+      "hash": "f2d78b8ee69ea4afbe59f0738cfc040650ece9c89dbcad6e2a86760237456b0a",
+      "size": 24529,
+      "modified": "2025-12-09T11:01:35.351729"
+    },
+    "mia/modules/voice/stt/main.py": {
+      "hash": "2a6c82507293b63ae91cb95c57ef59b6909a14dd5dc41d2b68a394041a152b71",
+      "size": 18292,
+      "modified": "2025-12-09T11:01:35.351729"
+    },
+    "mia/core/multimodal/video_generator.py": {
+      "hash": "a73344e2fc759af4e8dec9913acbcea5955e7eef4cf0bda7dcaf8fc09a02af56",
+      "size": 20607,
+      "modified": "2025-12-09T11:01:35.352729"
+    },
+    "mia/core/bootstrap/main.py": {
+      "hash": "4a77086f5256a3b002379a9d50d8ca859f7211d7961834dec2235835d1ffd28e",
+      "size": 23898,
+      "modified": "2025-12-09T06:33:41.269280"
+    },
+    "mia/core/memory/main.py": {
+      "hash": "0aaffdb0dc27edcb48a6f5cac78cf81998b1c2aaee62678f310293bf8db5c704",
+      "size": 28521,
+      "modified": "2025-12-09T11:01:35.352729"
+    },
+    "mia/core/memory/advanced_optimizer.py": {
+      "hash": "9bd48b5698f11548f42b3e1c2d76d683e3fd4ad3bbd3ebc714af97cdccbee0e1",
+      "size": 19926,
+      "modified": "2025-12-09T11:01:35.352729"
+    },
+    "mia/core/security/system_fuse.py": {
+      "hash": "db751606dfa6546460de1990aa87260bdc7e1d04cc9d6461060605936135aa94",
+      "size": 19402,
+      "modified": "2025-12-09T11:01:35.353729"
+    },
+    "mia/core/immune/immune_kernel.py": {
+      "hash": "d4b7146b33f27c5ea45e3aff05e395bc8851f99d5b0609307b9bb0b92122ab77",
+      "size": 6093,
+      "modified": "2025-12-09T11:01:35.353729"
+    },
+    "mia/core/consciousness/main.py": {
+      "hash": "dbbbf0d9d52632701e1817f49a3e311b6ec26a088ad01619c0c938faf2fb5352",
+      "size": 44449,
+      "modified": "2025-12-09T11:01:35.382729"
+    },
+    "mia/core/agi_agents/validator_agent.py": {
+      "hash": "d1c11cee0d7e809f375ceec74e080ccddaf20fe4bcf17057a32e24b80656a24e",
+      "size": 39211,
+      "modified": "2025-12-09T11:01:35.354729"
+    },
+    "mia/core/agi_agents/planner_agent.py": {
+      "hash": "7d8985f148080726e6ea5bc54899f7ab17493f196da0288f1e32ed1ff786eb27",
+      "size": 25558,
+      "modified": "2025-12-09T11:01:35.354729"
+    },
+    "mia/core/agi_agents/__init__.py": {
+      "hash": "0266353c256ea7c90a6ba0252e8662d86dd15deae23dc6c9d1f2119bc8038915",
+      "size": 325,
+      "modified": "2025-12-09T07:58:48.802290"
+    },
+    "mia/core/agi_agents/optimizer.py": {
+      "hash": "071ab4dbffb699635381ebe4d8e0e527f770200e733fb5ad032260f04b39d8f0",
+      "size": 31530,
+      "modified": "2025-12-09T11:01:35.355729"
+    },
+    "mia/core/agi_agents/executor_agent.py": {
+      "hash": "361dc2776ef865438659fb57127e72c8a2c190af7c96c841298388d2145d7d97",
+      "size": 29334,
+      "modified": "2025-12-09T11:01:35.355729"
+    },
+    "mia/core/agi_agents/planner.py": {
+      "hash": "1011e09a0cfbe7283a05e35da4c52566b26419310325dbf8d0e392f22e517475",
+      "size": 15871,
+      "modified": "2025-12-09T11:01:35.356729"
+    },
+    "mia/core/agi_agents/executor.py": {
+      "hash": "b9de39c2396b8e6896a2cffbac448c51be5a1782821da6cb299a3d122ed77a36",
+      "size": 22892,
+      "modified": "2025-12-09T11:01:35.356729"
+    },
+    "mia/core/agi_agents/optimizer_agent.py": {
+      "hash": "a4fc02795cefd56e1e70c761f3ec7d197fbe15a1d4a3dafc4e07b8cd51041a40",
+      "size": 45795,
+      "modified": "2025-12-09T11:01:35.384729"
+    },
+    "mia/core/agi_agents/validator.py": {
+      "hash": "56bf1bb4f16b954031ac525da68765525f0a5975d66291f5ddce7cae088a0ebe",
+      "size": 29239,
+      "modified": "2025-12-09T11:01:35.357729"
+    },
+    "mia/core/quality_control/dve.py": {
+      "hash": "936840402ed948a648142a87e12f884560c1921226b6c6017c29173aed855518",
+      "size": 35501,
+      "modified": "2025-12-09T11:01:35.357729"
+    },
+    "mia/core/quality_control/pae.py": {
+      "hash": "44d01e53da1a7df4cb54e4a486e55677b81423f0eb69170b526a133afa1b046c",
+      "size": 28635,
+      "modified": "2025-12-09T11:01:35.358729"
+    },
+    "mia/core/quality_control/qpm.py": {
+      "hash": "470b1932c7631aa081f4790ee924fa8ff781f59d640cb04f92ce47ce9110fa49",
+      "size": 22194,
+      "modified": "2025-12-09T11:01:35.358729"
+    },
+    "mia/core/quality_control/sse.py": {
+      "hash": "6bb310477b9dcf7fbc94a26e952637a9a4302664ec5320d160bd54d2fb1c0c17",
+      "size": 26687,
+      "modified": "2025-12-09T11:01:35.358729"
+    },
+    "mia/core/quality_control/hoel.py": {
+      "hash": "6f3b408da989d32af121856cac8c0f0d5a0ddce2b9e9e46fc5c834d456cb085f",
+      "size": 47329,
+      "modified": "2025-12-09T11:01:35.359729"
+    },
+    "mia/core/quality_control/rfe.py": {
+      "hash": "9fdcb9865d342b730a6d7f6756a1ec0fdc2fdce5beb3c694ea62c1348afc4756",
+      "size": 41604,
+      "modified": "2025-12-09T11:01:35.359729"
+    },
+    "mia/core/quality_control/qrd.py": {
+      "hash": "7318d400361ffaef7a1b16e7b7b8876908708827cc8a81a54693c088d0776bec",
+      "size": 54660,
+      "modified": "2025-12-09T11:01:35.360729"
+    },
+    "mia/core/immune_system/integrity_guard.py": {
+      "hash": "cf70f1f4ef9682d72e3d5c57eff497b1115e20b3c5de91a353453e6a772254bb",
+      "size": 17397,
+      "modified": "2025-12-09T11:01:35.360729"
+    },
+    "mia/core/identity/self_model.py": {
+      "hash": "d91445a47f18b2bea5a9243d022e468bc7e1584243b8993000d77c4e86dff4d4",
+      "size": 15364,
+      "modified": "2025-12-09T11:01:35.361729"
+    },
+    "mia/core/identity/__init__.py": {
+      "hash": "72aaba9de5cd3951e295d74792fc5b6909090ae5907c79a653e61b5aa6a6519c",
+      "size": 556,
+      "modified": "2025-12-09T09:06:20.585128"
+    }
+  },
+  "integrity_verification": {
+    "total_files": 179,
+    "integrity_hash": "b2a935e194bb40815e0d11497ff6f4b8ed1096071b58a3214c8bc6bd20d98b1a",
+    "verification_timestamp": "2025-12-09T14:57:39.151957"
+  }
+}

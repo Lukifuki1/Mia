@@ -1,0 +1,604 @@
+#!/usr/bin/env python3
+"""
+MIA Enterprise AGI - Policy Manager
+==================================
+
+Enterprise policy management and enforcement system.
+"""
+
+import logging
+import json
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from datetime import datetime
+from enum import Enum
+
+
+class PolicyType(Enum):
+    """Policy types"""
+    SECURITY = "security"
+    COMPLIANCE = "compliance"
+    OPERATIONAL = "operational"
+    DATA_GOVERNANCE = "data_governance"
+    ACCESS_CONTROL = "access_control"
+
+
+class PolicyStatus(Enum):
+    """Policy status"""
+    ACTIVE = "active"
+    INACTIVE = "inactive"
+    DRAFT = "draft"
+    DEPRECATED = "deprecated"
+
+
+class PolicyManager:
+    """Enterprise policy management and enforcement system"""
+    
+    def __init__(self, enterprise_dir: str = "./enterprise"):
+        self.enterprise_dir = Path(enterprise_dir)
+        self.logger = self._setup_logging()
+        
+        # Policy configuration
+        self.config = {
+            "enforcement_enabled": True,
+            "policy_validation": True,
+            "audit_policy_changes": True,
+            "automatic_compliance_check": True
+        }
+        
+        # Policy storage
+        self.policies = {}
+        self.policy_violations = []
+        self.policy_history = []
+        
+        self.logger.info("📋 Policy Manager initialized")
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup logging configuration"""
+        logger = logging.getLogger("MIA.Enterprise.PolicyManager")
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _get_deterministic_time(self) -> float:
+        """Return deterministic time for testing"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+    
+    def initialize_policy_system(self) -> Dict[str, Any]:
+        """Initialize policy management system"""
+        try:
+            self.logger.info("📋 Initializing policy management system...")
+            
+            # Create policy directory
+            policy_dir = self.enterprise_dir / "policies"
+            policy_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Load existing policies
+            self._load_policies()
+            
+            # Initialize default policies
+            self._initialize_default_policies()
+            
+            return {
+                "success": True,
+                "policies_loaded": len(self.policies),
+                "default_policies_created": self._count_default_policies(),
+                "storage_path": str(policy_dir)
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy system initialization error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def create_policy(self, policy_name: str, policy_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new policy"""
+        try:
+            # Validate policy data
+            validation_result = self._validate_policy_data(policy_data)
+            if not validation_result["valid"]:
+                return {
+                    "success": False,
+                    "error": "Invalid policy data",
+                    "validation_errors": validation_result["errors"]
+                }
+            
+            policy_id = f"policy_{policy_name}_{int(self._get_deterministic_time())}"
+            
+            # Create policy record
+            policy_record = {
+                "policy_id": policy_id,
+                "policy_name": policy_name,
+                "policy_type": policy_data.get("type", PolicyType.OPERATIONAL.value),
+                "description": policy_data.get("description", ""),
+                "rules": policy_data.get("rules", []),
+                "enforcement_level": policy_data.get("enforcement_level", "warning"),
+                "status": PolicyStatus.ACTIVE.value,
+                "created_at": datetime.now().isoformat(),
+                "created_by": policy_data.get("created_by", "system"),
+                "version": "1.0",
+                "metadata": policy_data.get("metadata", {})
+            }
+            
+            # Store policy
+            self.policies[policy_id] = policy_record
+            
+            # Add to history
+            self.policy_history.append({
+                "action": "policy_created",
+                "policy_id": policy_id,
+                "policy_name": policy_name,
+                "timestamp": datetime.now().isoformat(),
+                "details": policy_record
+            })
+            
+            # Save policies
+            self._save_policies()
+            
+            self.logger.info(f"📋 Policy created: {policy_name}")
+            
+            return {
+                "success": True,
+                "policy_id": policy_id,
+                "policy_record": policy_record
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy creation error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def update_policy(self, policy_id: str, updates: Dict[str, Any]) -> Dict[str, Any]:
+        """Update an existing policy"""
+        try:
+            if policy_id not in self.policies:
+                return {
+                    "success": False,
+                    "error": "Policy not found"
+                }
+            
+            policy_record = self.policies[policy_id]
+            
+            # Update allowed fields
+            allowed_updates = ["description", "rules", "enforcement_level", "status", "metadata"]
+            for field, value in updates.items():
+                if field in allowed_updates:
+                    policy_record[field] = value
+            
+            # Update version and timestamp
+            current_version = float(policy_record.get("version", "1.0"))
+            policy_record["version"] = f"{current_version + 0.1:.1f}"
+            policy_record["updated_at"] = datetime.now().isoformat()
+            policy_record["updated_by"] = updates.get("updated_by", "system")
+            
+            # Add to history
+            self.policy_history.append({
+                "action": "policy_updated",
+                "policy_id": policy_id,
+                "timestamp": datetime.now().isoformat(),
+                "updates": updates,
+                "new_version": policy_record["version"]
+            })
+            
+            # Save policies
+            self._save_policies()
+            
+            self.logger.info(f"📋 Policy updated: {policy_record['policy_name']}")
+            
+            return {
+                "success": True,
+                "policy_id": policy_id,
+                "updated_record": policy_record
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy update error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def enforce_policy(self, policy_id: str, context: Dict[str, Any]) -> Dict[str, Any]:
+        """Enforce a specific policy"""
+        try:
+            if policy_id not in self.policies:
+                return {
+                    "success": False,
+                    "error": "Policy not found"
+                }
+            
+            policy_record = self.policies[policy_id]
+            
+            if policy_record["status"] != PolicyStatus.ACTIVE.value:
+                return {
+                    "success": False,
+                    "error": "Policy is not active"
+                }
+            
+            # Execute policy rules
+            enforcement_result = self._execute_policy_rules(policy_record, context)
+            
+            # Log enforcement
+            self.policy_history.append({
+                "action": "policy_enforced",
+                "policy_id": policy_id,
+                "timestamp": datetime.now().isoformat(),
+                "context": context,
+                "result": enforcement_result
+            })
+            
+            # Record violations if any
+            if not enforcement_result["compliant"]:
+                self._record_policy_violation(policy_id, context, enforcement_result)
+            
+            return enforcement_result
+            
+        except Exception as e:
+            self.logger.error(f"Policy enforcement error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def _execute_policy_rules(self, policy_record: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute policy rules against context"""
+        try:
+            rules = policy_record.get("rules", [])
+            enforcement_level = policy_record.get("enforcement_level", "warning")
+            
+            violations = []
+            warnings = []
+            
+            for rule in rules:
+                rule_result = self._evaluate_rule(rule, context)
+                
+                if not rule_result["compliant"]:
+                    if enforcement_level == "strict":
+                        violations.append(rule_result)
+                    else:
+                        warnings.append(rule_result)
+            
+            return {
+                "success": True,
+                "policy_id": policy_record["policy_id"],
+                "policy_name": policy_record["policy_name"],
+                "compliant": len(violations) == 0,
+                "enforcement_level": enforcement_level,
+                "violations": violations,
+                "warnings": warnings,
+                "enforcement_timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def _evaluate_rule(self, rule: str, context: Dict[str, Any]) -> Dict[str, Any]:
+        """Evaluate a single policy rule"""
+        try:
+            # Simplified rule evaluation - in practice, this would be more sophisticated
+            rule_lower = rule.lower()
+            
+            # Example rule evaluations
+            if "encryption" in rule_lower and "required" in rule_lower:
+                encryption_enabled = context.get("encryption_enabled", False)
+                return {
+                    "rule": rule,
+                    "compliant": encryption_enabled,
+                    "message": "Encryption is required" if not encryption_enabled else "Encryption requirement met"
+                }
+            
+            elif "access control" in rule_lower and "required" in rule_lower:
+                access_control = context.get("access_control_enabled", False)
+                return {
+                    "rule": rule,
+                    "compliant": access_control,
+                    "message": "Access control is required" if not access_control else "Access control requirement met"
+                }
+            
+            elif "audit" in rule_lower and "logging" in rule_lower:
+                audit_logging = context.get("audit_logging_enabled", False)
+                return {
+                    "rule": rule,
+                    "compliant": audit_logging,
+                    "message": "Audit logging is required" if not audit_logging else "Audit logging requirement met"
+                }
+            
+            elif "backup" in rule_lower and "required" in rule_lower:
+                backup_enabled = context.get("backup_enabled", False)
+                return {
+                    "rule": rule,
+                    "compliant": backup_enabled,
+                    "message": "Regular backups are required" if not backup_enabled else "Backup requirement met"
+                }
+            
+            else:
+                # Default rule evaluation
+                return {
+                    "rule": rule,
+                    "compliant": True,
+                    "message": "Rule evaluation not implemented - assuming compliant"
+                }
+                
+        except Exception as e:
+            return {
+                "rule": rule,
+                "compliant": False,
+                "message": f"Rule evaluation error: {e}"
+            }
+    
+    def _record_policy_violation(self, policy_id: str, context: Dict[str, Any], enforcement_result: Dict[str, Any]):
+        """Record a policy violation"""
+        try:
+            violation = {
+                "violation_id": f"violation_{policy_id}_{int(self._get_deterministic_time())}",
+                "policy_id": policy_id,
+                "policy_name": enforcement_result.get("policy_name"),
+                "timestamp": datetime.now().isoformat(),
+                "context": context,
+                "violations": enforcement_result.get("violations", []),
+                "severity": enforcement_result.get("enforcement_level", "warning"),
+                "status": "open",
+                "resolution_required": enforcement_result.get("enforcement_level") == "strict"
+            }
+            
+            self.policy_violations.append(violation)
+            
+            self.logger.warning(f"📋 Policy violation recorded: {violation['violation_id']}")
+            
+        except Exception as e:
+            self.logger.error(f"Policy violation recording error: {e}")
+    
+    def _validate_policy_data(self, policy_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Validate policy data structure"""
+        errors = []
+        
+        # Check required fields
+        if "type" not in policy_data:
+            errors.append("Missing policy type")
+        else:
+            try:
+                PolicyType(policy_data["type"])
+            except ValueError:
+                errors.append(f"Invalid policy type: {policy_data['type']}")
+        
+        # Check rules
+        if "rules" in policy_data:
+            if not isinstance(policy_data["rules"], list):
+                errors.append("Rules must be a list")
+            elif len(policy_data["rules"]) == 0:
+                errors.append("Policy must have at least one rule")
+        
+        # Check enforcement level
+        if "enforcement_level" in policy_data:
+            valid_levels = ["info", "warning", "strict"]
+            if policy_data["enforcement_level"] not in valid_levels:
+                errors.append(f"Invalid enforcement level: {policy_data['enforcement_level']}")
+        
+        return {
+            "valid": len(errors) == 0,
+            "errors": errors
+        }
+    
+    def _initialize_default_policies(self):
+        """Initialize default enterprise policies"""
+        try:
+            default_policies = [
+                {
+                    "name": "security_baseline",
+                    "data": {
+                        "type": PolicyType.SECURITY.value,
+                        "description": "Basic security requirements for enterprise deployment",
+                        "rules": [
+                            "Encryption is required for all data at rest",
+                            "Access control must be enabled",
+                            "Audit logging is required",
+                            "Regular security updates must be applied"
+                        ],
+                        "enforcement_level": "strict"
+                    }
+                },
+                {
+                    "name": "data_governance",
+                    "data": {
+                        "type": PolicyType.DATA_GOVERNANCE.value,
+                        "description": "Data governance and privacy requirements",
+                        "rules": [
+                            "Personal data must be classified",
+                            "Data retention policies must be enforced",
+                            "Data access must be logged",
+                            "Data sharing requires approval"
+                        ],
+                        "enforcement_level": "warning"
+                    }
+                },
+                {
+                    "name": "operational_standards",
+                    "data": {
+                        "type": PolicyType.OPERATIONAL.value,
+                        "description": "Operational standards and best practices",
+                        "rules": [
+                            "Regular backups are required",
+                            "System monitoring must be enabled",
+                            "Change management process must be followed",
+                            "Documentation must be maintained"
+                        ],
+                        "enforcement_level": "warning"
+                    }
+                }
+            ]
+            
+            for policy in default_policies:
+                # Only create if doesn't exist
+                existing_policy = None
+                for existing_id, existing_record in self.policies.items():
+                    if existing_record["policy_name"] == policy["name"]:
+                        existing_policy = existing_id
+                        break
+                
+                if not existing_policy:
+                    self.create_policy(policy["name"], policy["data"])
+                    
+        except Exception as e:
+            self.logger.error(f"Default policies initialization error: {e}")
+    
+    def _count_default_policies(self) -> int:
+        """Count default policies"""
+        default_policy_names = ["security_baseline", "data_governance", "operational_standards"]
+        count = 0
+        
+        for policy_record in self.policies.values():
+            if policy_record["policy_name"] in default_policy_names:
+                count += 1
+        
+        return count
+    
+    def enable_policy_enforcement(self) -> Dict[str, Any]:
+        """Enable policy enforcement"""
+        try:
+            self.config["enforcement_enabled"] = True
+            
+            # Save configuration
+            self._save_policies()
+            
+            self.logger.info("📋 Policy enforcement enabled")
+            
+            return {
+                "success": True,
+                "enforcement_enabled": True,
+                "message": "Policy enforcement is now active"
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy enforcement enable error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def disable_policy_enforcement(self) -> Dict[str, Any]:
+        """Disable policy enforcement"""
+        try:
+            self.config["enforcement_enabled"] = False
+            
+            # Save configuration
+            self._save_policies()
+            
+            self.logger.info("📋 Policy enforcement disabled")
+            
+            return {
+                "success": True,
+                "enforcement_enabled": False,
+                "message": "Policy enforcement is now disabled"
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy enforcement disable error: {e}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def _load_policies(self):
+        """Load policies from storage"""
+        try:
+            policy_file = self.enterprise_dir / "policies" / "policies.json"
+            if policy_file.exists():
+                with open(policy_file, 'r') as f:
+                    data = json.load(f)
+                    self.policies = data.get("policies", {})
+                    self.policy_violations = data.get("policy_violations", [])
+                    self.policy_history = data.get("policy_history", [])
+                    self.config.update(data.get("config", {}))
+                    
+        except Exception as e:
+            self.logger.warning(f"Failed to load policies: {e}")
+    
+    def _save_policies(self):
+        """Save policies to storage"""
+        try:
+            policy_file = self.enterprise_dir / "policies" / "policies.json"
+            policy_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            data = {
+                "policies": self.policies,
+                "policy_violations": self.policy_violations,
+                "policy_history": self.policy_history,
+                "config": self.config,
+                "last_updated": datetime.now().isoformat()
+            }
+            
+            with open(policy_file, 'w') as f:
+                json.dump(data, f, indent=2)
+                
+        except Exception as e:
+            self.logger.error(f"Failed to save policies: {e}")
+    
+    def get_status(self) -> Dict[str, Any]:
+        """Get policy manager status"""
+        active_policies = len([p for p in self.policies.values() if p["status"] == PolicyStatus.ACTIVE.value])
+        open_violations = len([v for v in self.policy_violations if v["status"] == "open"])
+        
+        return {
+            "total_policies": len(self.policies),
+            "active_policies": active_policies,
+            "open_violations": open_violations,
+            "enforcement_enabled": self.config["enforcement_enabled"],
+            "health_score": max(0, 100 - (open_violations * 10)),
+            "config": self.config
+        }
+    
+    def generate_report(self) -> Dict[str, Any]:
+        """Generate policy management report"""
+        try:
+            status = self.get_status()
+            
+            return {
+                "report_type": "policy_management",
+                "timestamp": datetime.now().isoformat(),
+                "statistics": status,
+                "health_score": status["health_score"],
+                "recommendations": self.get_recommendations()
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Policy report generation error: {e}")
+            return {
+                "error": str(e)
+            }
+    
+    def get_recommendations(self) -> List[str]:
+        """Get policy management recommendations"""
+        recommendations = []
+        
+        status = self.get_status()
+        
+        if status["open_violations"] > 0:
+            recommendations.append(f"Address {status['open_violations']} open policy violations")
+        
+        if not status["enforcement_enabled"]:
+            recommendations.append("Enable policy enforcement")
+        
+        if status["active_policies"] == 0:
+            recommendations.append("Create and activate enterprise policies")
+        
+        recommendations.extend([
+            "Regular policy compliance audits",
+            "Update policies based on regulatory changes",
+            "Train staff on policy requirements",
+            "Implement automated policy monitoring"
+        ])
+        
+        return recommendations

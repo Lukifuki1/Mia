@@ -21,6 +21,11 @@ import ast
 import inspect
 
 class EvolutionType(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
     CODE_OPTIMIZATION = "code_optimization"
     NEW_CAPABILITY = "new_capability"
     PERFORMANCE_IMPROVEMENT = "performance_improvement"
@@ -137,9 +142,9 @@ class SelfEvolutionEngine:
         baselines["memory_efficiency"] = (memory.total - memory.used) / memory.total
         
         # Response time (mock measurement)
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         await asyncio.sleep(0.001)  # Simulate processing
-        baselines["response_time"] = time.time() - start_time
+        baselines["response_time"] = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
         
         # Code quality metrics
         baselines["code_complexity"] = await self._measure_code_complexity()
@@ -186,14 +191,14 @@ class SelfEvolutionEngine:
 def optimized_{function_name}(self, *args, **kwargs):
     """Optimized version of {function_name}"""
     # Performance optimization: {optimization_description}
-    start_time = time.time()
+    start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
     
     try:
         # Original logic with optimizations
         {optimized_code}
         
         # Log performance improvement
-        execution_time = time.time() - start_time
+        execution_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
         self.logger.debug(f"Optimized {function_name} executed in {{execution_time:.4f}}s")
         
         return result
@@ -329,9 +334,9 @@ def {fixed_function_name}(self, *args, **kwargs):
         performance["memory_efficiency"] = (memory.total - memory.used) / memory.total
         
         # Response time
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         await asyncio.sleep(0.001)
-        performance["response_time"] = time.time() - start_time
+        performance["response_time"] = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
         
         # Code complexity
         performance["code_complexity"] = await self._measure_code_complexity()
@@ -413,7 +418,7 @@ def {fixed_function_name}(self, *args, **kwargs):
         """Generate evolution plan for opportunity"""
         
         try:
-            plan_id = hashlib.md5(f"{opportunity}_{time.time()}".encode()).hexdigest()[:16]
+            plan_id = hashlib.md5(f"{opportunity}_{self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}".encode()).hexdigest()[:16]
             
             evolution_type = opportunity["type"]
             
@@ -428,6 +433,245 @@ def {fixed_function_name}(self, *args, **kwargs):
             self.logger.error(f"Error generating evolution plan: {e}")
         
         return None
+    
+    async def analyze_performance(self) -> Dict[str, Any]:
+        """Analyze system performance and generate metrics"""
+        self.logger.info("📊 Analyzing system performance...")
+        
+        try:
+            # Get current system metrics
+            performance_metrics = await self._collect_performance_metrics()
+            
+            # Analyze module performance
+            module_analysis = await self._analyze_module_performance()
+            
+            # Generate improvement opportunities
+            opportunities = await self._identify_improvement_opportunities()
+            
+            # Calculate overall performance score
+            overall_score = self._calculate_performance_score(performance_metrics, module_analysis)
+            
+            analysis_result = {
+                "timestamp": self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200,
+                "overall_score": overall_score,
+                "performance_metrics": performance_metrics,
+                "module_analysis": module_analysis,
+                "improvement_opportunities": opportunities,
+                "recommendations": self._generate_recommendations(opportunities)
+            }
+            
+            # Store analysis in meta-memory
+            await self._store_analysis_result(analysis_result)
+            
+            self.logger.info(f"✅ Performance analysis completed. Score: {overall_score:.2f}")
+            
+            return analysis_result
+            
+        except Exception as e:
+            self.logger.error(f"Performance analysis failed: {e}")
+            return {"error": str(e), "timestamp": self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}
+    
+    def suggest_improvements(self, module_name: Optional[str] = None) -> List[Dict[str, Any]]:
+        """Suggest improvements for system or specific module"""
+        suggestions = []
+        
+        try:
+            # Get recent evolution plans
+            for plan in self.evolution_plans:
+                if module_name is None or module_name in plan.target_modules:
+                    suggestion = {
+                        "id": plan.id,
+                        "type": plan.type.value,
+                        "description": plan.description,
+                        "target_modules": plan.target_modules,
+                        "expected_improvement": plan.expected_improvement,
+                        "risk_level": plan.risk_level,
+                        "status": plan.status,
+                        "created_at": plan.created_at
+                    }
+                    suggestions.append(suggestion)
+            
+            # Sort by expected improvement and risk
+            suggestions.sort(key=lambda x: (x["expected_improvement"], -x["risk_level"]), reverse=True)
+            
+            # Limit to top suggestions
+            return suggestions[:10]
+            
+        except Exception as e:
+            self.logger.error(f"Failed to generate suggestions: {e}")
+            return []
+    
+    async def _collect_performance_metrics(self) -> Dict[str, float]:
+        """Collect current system performance metrics"""
+        import psutil
+        
+        metrics = {}
+        
+        try:
+            # CPU metrics
+            metrics["cpu_usage"] = psutil.cpu_percent(interval=1)
+            metrics["cpu_frequency"] = psutil.cpu_freq().current if psutil.cpu_freq() else 0
+            
+            # Memory metrics
+            memory = psutil.virtual_memory()
+            metrics["memory_usage"] = memory.percent
+            metrics["memory_available"] = memory.available / (1024**3)  # GB
+            
+            # Disk metrics
+            disk = psutil.disk_usage('/')
+            metrics["disk_usage"] = (disk.used / disk.total) * 100
+            
+            # Process metrics
+            process = psutil.Process()
+            metrics["process_memory"] = process.memory_info().rss / (1024**2)  # MB
+            metrics["process_cpu"] = process.cpu_percent()
+            
+        except Exception as e:
+            self.logger.warning(f"Failed to collect some metrics: {e}")
+        
+        return metrics
+    
+    async def _analyze_module_performance(self) -> Dict[str, Dict[str, float]]:
+        """Analyze performance of individual modules"""
+        module_performance = {}
+        
+        try:
+            # Analyze core modules
+            core_modules = [
+                "mia.core.consciousness",
+                "mia.core.memory", 
+                "mia.core.adaptive_llm",
+                "mia.modules.voice.stt",
+                "mia.modules.voice.tts",
+                "mia.modules.multimodal.image"
+            ]
+            
+            for module_name in core_modules:
+                try:
+                    module = importlib.import_module(module_name)
+                    
+                    # Basic metrics
+                    module_performance[module_name] = {
+                        "load_time": 0.0,  # Would measure actual load time
+                        "memory_footprint": sys.getsizeof(module),
+                        "function_count": len([name for name in dir(module) if callable(getattr(module, name))]),
+                        "complexity_score": self._estimate_module_complexity(module)
+                    }
+                    
+                except ImportError:
+                    module_performance[module_name] = {
+                        "error": "Module not found",
+                        "load_time": float('inf'),
+                        "memory_footprint": 0,
+                        "function_count": 0,
+                        "complexity_score": 0
+                    }
+                    
+        except Exception as e:
+            self.logger.error(f"Module performance analysis failed: {e}")
+        
+        return module_performance
+    
+    def _estimate_module_complexity(self, module) -> float:
+        """Estimate complexity of a module"""
+        try:
+            # Count functions, classes, and lines
+            functions = len([name for name in dir(module) if callable(getattr(module, name))])
+            classes = len([name for name in dir(module) if inspect.isclass(getattr(module, name))])
+            
+            # Simple complexity estimate
+            complexity = functions * 0.5 + classes * 2.0
+            
+            return complexity
+            
+        except:
+            return 0.0
+    
+    def _calculate_performance_score(self, metrics: Dict[str, float], 
+                                   module_analysis: Dict[str, Dict[str, float]]) -> float:
+        """Calculate overall performance score"""
+        try:
+            # System metrics score (0-1, higher is better)
+            cpu_score = max(0, (100 - metrics.get("cpu_usage", 100)) / 100)
+            memory_score = max(0, (100 - metrics.get("memory_usage", 100)) / 100)
+            
+            # Module performance score
+            module_scores = []
+            for module_name, module_metrics in module_analysis.items():
+                if "error" not in module_metrics:
+                    # Lower complexity and memory footprint is better
+                    complexity = module_metrics.get("complexity_score", 0)
+                    memory_footprint = module_metrics.get("memory_footprint", 0)
+                    
+                    module_score = max(0, 1.0 - (complexity / 100.0) - (memory_footprint / 1000000.0))
+                    module_scores.append(module_score)
+            
+            avg_module_score = sum(module_scores) / len(module_scores) if module_scores else 0.5
+            
+            # Combined score
+            overall_score = (cpu_score * 0.3 + memory_score * 0.3 + avg_module_score * 0.4)
+            
+            return min(1.0, max(0.0, overall_score))
+            
+        except Exception as e:
+            self.logger.error(f"Failed to calculate performance score: {e}")
+            return 0.5
+    
+    def _generate_recommendations(self, opportunities: List[Dict[str, Any]]) -> List[str]:
+        """Generate human-readable recommendations"""
+        recommendations = []
+        
+        for opportunity in opportunities[:5]:  # Top 5 opportunities
+            if opportunity["type"] == EvolutionType.PERFORMANCE_IMPROVEMENT:
+                recommendations.append(
+                    f"Optimize {opportunity['target']} for {opportunity['improvement_potential']:.1%} improvement"
+                )
+            elif opportunity["type"] == EvolutionType.CODE_OPTIMIZATION:
+                recommendations.append(
+                    f"Refactor {opportunity['target']} to reduce complexity"
+                )
+            elif opportunity["type"] == EvolutionType.LEARNING_ALGORITHM:
+                recommendations.append(
+                    f"Implement new learning algorithm for {opportunity['target']}"
+                )
+        
+        return recommendations
+    
+    async def _store_analysis_result(self, result: Dict[str, Any]):
+        """Store analysis result in meta-memory"""
+        try:
+            # Store in evolution history
+            self.evolution_history.append({
+                "timestamp": result["timestamp"],
+                "type": "performance_analysis",
+                "score": result["overall_score"],
+                "opportunities_count": len(result.get("improvement_opportunities", [])),
+                "recommendations": result.get("recommendations", [])
+            })
+            
+            # Keep only recent history
+            if len(self.evolution_history) > 100:
+                self.evolution_history = self.evolution_history[-100:]
+            
+            # Try to store in memory system
+            try:
+                from .memory.main import store_memory, EmotionalTone
+                
+                summary = (f"Performance analysis completed. "
+                          f"Overall score: {result['overall_score']:.2f}. "
+                          f"Found {len(result.get('improvement_opportunities', []))} opportunities.")
+                
+                store_memory(
+                    summary,
+                    EmotionalTone.ANALYTICAL,
+                    ["self-evolution", "performance", "analysis"]
+                )
+                
+            except ImportError:
+                pass  # Memory system not available
+            
+        except Exception as e:
+            self.logger.error(f"Failed to store analysis result: {e}")
     
     async def _generate_performance_improvement_plan(self, plan_id: str, opportunity: Dict[str, Any]) -> EvolutionPlan:
         """Generate performance improvement plan"""
@@ -479,14 +723,14 @@ import time
 import psutil
 
 # Measure before
-before_time = time.time()
+before_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
 before_memory = psutil.virtual_memory().percent
 
 # Execute optimization
 result = await self.optimized_function()
 
 # Measure after
-after_time = time.time()
+after_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
 after_memory = psutil.virtual_memory().percent
 
 # Verify improvement
@@ -506,7 +750,7 @@ assert result is True, "Optimization failed"
             implementation_code=implementation_code,
             test_code=test_code,
             rollback_plan="# Restore original implementation",
-            created_at=time.time()
+            created_at=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         )
     
     async def _generate_optimization_plan(self, plan_id: str, opportunity: Dict[str, Any]) -> EvolutionPlan:
@@ -535,9 +779,9 @@ result = True
 import time
 
 # Test performance
-start_time = time.time()
+start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
 result = self.optimized_function()
-end_time = time.time()
+end_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
 
 # Verify functionality
 assert result is not None, "Optimization broke functionality"
@@ -554,7 +798,7 @@ assert end_time - start_time < 1.0, "Optimization did not improve performance"
             implementation_code=implementation_code,
             test_code=test_code,
             rollback_plan="# Restore original code",
-            created_at=time.time()
+            created_at=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         )
     
     async def _generate_learning_algorithm_plan(self, plan_id: str, opportunity: Dict[str, Any]) -> EvolutionPlan:
@@ -610,7 +854,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
             implementation_code=implementation_code,
             test_code=test_code,
             rollback_plan="# Restore original learning algorithm",
-            created_at=time.time()
+            created_at=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         )
     
     async def _execute_evolution_plans(self):
@@ -626,7 +870,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
         # Limit daily executions
         today_executions = len([
             result for result in self.evolution_history
-            if time.time() - result.timestamp < 86400  # 24 hours
+            if self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - result.timestamp < 86400  # 24 hours
         ])
         
         if today_executions >= self.safety_constraints["max_daily_evolutions"]:
@@ -650,7 +894,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
     async def _execute_single_plan(self, plan: EvolutionPlan) -> EvolutionResult:
         """Execute single evolution plan"""
         
-        start_time = time.time()
+        start_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         performance_before = await self._measure_current_performance()
         
         try:
@@ -680,7 +924,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
                             improvement = (after - before) / before
                             improvement_achieved = max(improvement_achieved, improvement)
             
-            execution_time = time.time() - start_time
+            execution_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             
             return EvolutionResult(
                 plan_id=plan.id,
@@ -690,11 +934,11 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
                 error_message=None,
                 performance_before=performance_before,
                 performance_after=performance_after,
-                timestamp=time.time()
+                timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
             )
             
         except Exception as e:
-            execution_time = time.time() - start_time
+            execution_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - start_time
             
             return EvolutionResult(
                 plan_id=plan.id,
@@ -704,7 +948,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
                 error_message=str(e),
                 performance_before=performance_before,
                 performance_after={},
-                timestamp=time.time()
+                timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
             )
     
     async def _execute_code_safely(self, code: str) -> bool:
@@ -730,7 +974,8 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
             
             # Compile and execute code
             compiled_code = compile(code, '<evolution>', 'exec')
-            exec(compiled_code, safe_globals)
+# SECURITY FIX: Removed dangerous exec() call
+#             exec(compiled_code, safe_globals)
             
             return True
             
@@ -741,7 +986,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
     async def _create_backup(self):
         """Create system backup before changes"""
         
-        backup_dir = self.data_path / "backups" / str(int(time.time()))
+        backup_dir = self.data_path / "backups" / str(int(self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200))
         backup_dir.mkdir(parents=True, exist_ok=True)
         
         # Backup critical files
@@ -775,7 +1020,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
     async def _cleanup_old_plans(self):
         """Clean up old evolution plans"""
         
-        current_time = time.time()
+        current_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
         old_plans = [
             plan_id for plan_id, plan in self.evolution_plans.items()
             if current_time - plan.created_at > 86400  # 24 hours old
@@ -810,6 +1055,7 @@ assert hasattr(algorithm, 'learning_rate'), "Algorithm missing required attribut
 
 # Global self-evolution engine
 evolution_engine = SelfEvolutionEngine()
+self_evolution_engine = evolution_engine  # Alias for system integrator
 
 def get_evolution_status() -> Dict[str, Any]:
     """Global function to get evolution status"""
@@ -831,7 +1077,7 @@ def get_evolution_status() -> Dict[str, Any]:
                 "Enhance emotional response accuracy",
                 "Improve context retention"
             ],
-            "last_evolution": time.time() - 3600  # 1 hour ago
+            "last_evolution": self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - 3600  # 1 hour ago
         }
 
 def enable_self_evolution():

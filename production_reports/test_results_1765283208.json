@@ -1,0 +1,125 @@
+{
+  "status": "completed",
+  "overall_score": 1.0,
+  "execution_time": 1.4267139434814453,
+  "test_suites_passed": 2,
+  "total_test_suites": 2,
+  "test_results": {
+    "demo_scenarios": {
+      "status": "pass",
+      "demo_score": 1.0,
+      "passed_scenarios": 3,
+      "total_scenarios": 3,
+      "scenario_results": [
+        {
+          "scenario": "basic_interaction",
+          "status": "pass",
+          "input": "Pozdravljeni, kako ste?",
+          "response": "Pozdravljeni! Odli\u010dno se po\u010dutim, hvala za vpra\u0161anje. Kako vam lahko pomagam danes?",
+          "execution_time": 0.010083436965942383,
+          "response_length": 83
+        },
+        {
+          "scenario": "multimodal_generation",
+          "status": "pass",
+          "prompt": "Ustvari sliko sonca",
+          "result": {
+            "type": "text",
+            "content": "Generated text response for: Ustvari sliko sonca",
+            "prompt": "Ustvari sliko sonca",
+            "timestamp": 1765283207.4538753
+          },
+          "execution_time": 0.10011100769042969,
+          "generation_type": "text"
+        },
+        {
+          "scenario": "project_creation",
+          "status": "pass",
+          "specification": "Ustvari preprosto spletno aplikacijo",
+          "result": {
+            "project_name": "web_app_project",
+            "files_created": 4,
+            "file_list": [
+              "index.html",
+              "style.css",
+              "script.js",
+              "README.md"
+            ],
+            "specification": "Ustvari preprosto spletno aplikacijo",
+            "timestamp": 1765283207.6541142,
+            "status": "created"
+          },
+          "execution_time": 0.2000901699066162,
+          "files_created": 4
+        }
+      ],
+      "demo_grade": "A"
+    },
+    "performance_tests": {
+      "status": "pass",
+      "performance_score": 1.0,
+      "passed_tests": 4,
+      "total_tests": 4,
+      "detailed_results": {
+        "memory_test": {
+          "status": "pass",
+          "initial_memory": 22.1,
+          "peak_memory": 22.1,
+          "memory_increase": 0.0,
+          "threshold": 10.0
+        },
+        "cpu_test": {
+          "status": "pass",
+          "average_cpu": 2.21,
+          "execution_time": 0.0004878044128417969,
+          "threshold": 70.0,
+          "computation_result": 333283335000
+        },
+        "response_time_test": {
+          "status": "pass",
+          "average_response_time": 0.010082268714904785,
+          "max_response_time": 0.010092020034790039,
+          "threshold": 0.1,
+          "total_tests": 10
+        },
+        "concurrent_test": {
+          "status": "pass",
+          "concurrent_tasks": 5,
+          "average_execution_time": 0.010073232650756835,
+          "all_completed": true,
+          "detailed_results": [
+            {
+              "task_id": 0,
+              "execution_time": 0.010080575942993164,
+              "response_length": 74
+            },
+            {
+              "task_id": 1,
+              "execution_time": 0.010069847106933594,
+              "response_length": 74
+            },
+            {
+              "task_id": 2,
+              "execution_time": 0.010074615478515625,
+              "response_length": 74
+            },
+            {
+              "task_id": 3,
+              "execution_time": 0.010070085525512695,
+              "response_length": 74
+            },
+            {
+              "task_id": 4,
+              "execution_time": 0.010071039199829102,
+              "response_length": 74
+            }
+          ]
+        }
+      },
+      "performance_grade": "A"
+    }
+  },
+  "all_tests_passed": true,
+  "grade": "A",
+  "timestamp": "2025-12-09T12:26:48.770238"
+}

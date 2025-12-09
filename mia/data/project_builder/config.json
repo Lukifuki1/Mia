@@ -1,0 +1,36 @@
+{
+  "default_settings": {
+    "author": "MIA AI",
+    "email": "mia@localhost",
+    "license": "MIT",
+    "python_version": "3.11",
+    "node_version": "18",
+    "docker_base_image": "python:3.11-slim"
+  },
+  "templates": {
+    "enabled": true,
+    "auto_update": true,
+    "custom_templates_path": "templates/custom"
+  },
+  "build_settings": {
+    "include_tests": true,
+    "include_docs": true,
+    "include_ci_cd": true,
+    "include_docker": true,
+    "include_security": true,
+    "code_quality_tools": true
+  },
+  "output_formats": [
+    "zip",
+    "tar.gz",
+    "directory"
+  ],
+  "deployment_configs": {
+    "docker": true,
+    "kubernetes": true,
+    "heroku": true,
+    "aws": true,
+    "gcp": true,
+    "azure": true
+  }
+}

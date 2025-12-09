@@ -1,0 +1,47 @@
+{
+  "build_artifacts": [
+    "mia/build/deterministic_hasher.py",
+    "mia/build/build_hasher.py",
+    "mia/build/content_normalizer.py",
+    "python-lock.json",
+    "docker-lock.json",
+    "os-env-lock.json",
+    "build-lock.json"
+  ],
+  "build_info": {
+    "deterministic": true,
+    "system": "MIA Enterprise AGI",
+    "timestamp": "2025-12-09T14:00:00Z",
+    "version": "1.0.0"
+  },
+  "source_info": {
+    "modules": [
+      "agi",
+      "analysis",
+      "build",
+      "compliance",
+      "config",
+      "core",
+      "data",
+      "desktop",
+      "enterprise",
+      "immune",
+      "logs",
+      "modules",
+      "performance",
+      "production",
+      "project_builder",
+      "quality",
+      "sandbox",
+      "security",
+      "temp",
+      "templates",
+      "testing",
+      "tests",
+      "validation",
+      "verification"
+    ],
+    "total_files": 301,
+    "total_lines": 131101
+  }
+}

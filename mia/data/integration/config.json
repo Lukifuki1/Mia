@@ -1,0 +1,146 @@
+{
+  "enabled": true,
+  "startup_timeout": 120.0,
+  "health_check_interval": 30.0,
+  "auto_recovery": true,
+  "components": {
+    "consciousness": {
+      "module": "mia.core.consciousness.main",
+      "instance": "consciousness_system",
+      "dependencies": [
+        "memory",
+        "hardware_optimizer"
+      ],
+      "critical": true,
+      "auto_start": true
+    },
+    "memory": {
+      "module": "mia.core.memory.main",
+      "instance": "memory_system",
+      "dependencies": [],
+      "critical": true,
+      "auto_start": true
+    },
+    "adaptive_llm": {
+      "module": "mia.core.adaptive_llm",
+      "instance": "adaptive_llm_manager",
+      "dependencies": [
+        "hardware_optimizer"
+      ],
+      "critical": true,
+      "auto_start": true
+    },
+    "self_evolution": {
+      "module": "mia.core.self_evolution",
+      "instance": "self_evolution_engine",
+      "dependencies": [
+        "consciousness",
+        "memory"
+      ],
+      "critical": false,
+      "auto_start": true
+    },
+    "internet_learning": {
+      "module": "mia.core.internet_learning",
+      "instance": "internet_learning_engine",
+      "dependencies": [
+        "memory"
+      ],
+      "critical": false,
+      "auto_start": true
+    },
+    "hardware_optimizer": {
+      "module": "mia.core.hardware_optimizer",
+      "instance": "hardware_optimizer",
+      "dependencies": [],
+      "critical": true,
+      "auto_start": true
+    },
+    "owner_guard": {
+      "module": "mia.core.owner_guard",
+      "instance": "owner_guard",
+      "dependencies": [],
+      "critical": true,
+      "auto_start": true
+    },
+    "immune_system": {
+      "module": "mia.core.immune.immune_kernel",
+      "instance": "immune_kernel",
+      "dependencies": [
+        "owner_guard"
+      ],
+      "critical": true,
+      "auto_start": true
+    },
+    "voice_stt": {
+      "module": "mia.modules.voice.stt_engine",
+      "instance": "stt_engine",
+      "dependencies": [],
+      "critical": false,
+      "auto_start": false
+    },
+    "voice_tts": {
+      "module": "mia.modules.voice.tts_engine",
+      "instance": "tts_engine",
+      "dependencies": [],
+      "critical": false,
+      "auto_start": false
+    },
+    "lora_manager": {
+      "module": "mia.modules.lora_training.lora_manager",
+      "instance": "lora_manager",
+      "dependencies": [
+        "hardware_optimizer"
+      ],
+      "critical": false,
+      "auto_start": false
+    },
+    "project_builder": {
+      "module": "mia.modules.project_builder.main",
+      "instance": "enterprise_project_builder",
+      "dependencies": [],
+      "critical": false,
+      "auto_start": false
+    },
+    "email_client": {
+      "module": "mia.modules.api_email.email_client",
+      "instance": "email_client",
+      "dependencies": [],
+      "critical": false,
+      "auto_start": false
+    },
+    "health_monitor": {
+      "module": "mia.modules.monitoring.health_monitor",
+      "instance": "health_monitor",
+      "dependencies": [],
+      "critical": false,
+      "auto_start": true
+    },
+    "adult_system": {
+      "module": "mia.modules.adult_mode.adult_system",
+      "instance": "adult_system",
+      "dependencies": [
+        "voice_tts"
+      ],
+      "critical": false,
+      "auto_start": false
+    }
+  },
+  "integration_order": [
+    "hardware_optimizer",
+    "owner_guard",
+    "memory",
+    "consciousness",
+    "adaptive_llm",
+    "immune_system",
+    "health_monitor",
+    "self_evolution",
+    "internet_learning",
+    "voice_stt",
+    "voice_tts",
+    "lora_manager",
+    "project_builder",
+    "email_client",
+    "adult_system"
+  ]
+}

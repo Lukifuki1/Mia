@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "scan_interval": 60,
+  "threat_thresholds": {
+    "integrity_warning": 0.8,
+    "integrity_critical": 0.6,
+    "behavior_anomaly_threshold": 0.7,
+    "cognitive_drift_threshold": 0.5
+  },
+  "protection_levels": {
+    "filesystem_protection": true,
+    "memory_protection": true,
+    "network_protection": true,
+    "cognitive_protection": true,
+    "training_protection": true
+  },
+  "response_settings": {
+    "auto_quarantine": true,
+    "auto_block_threats": true,
+    "require_human_approval": [
+      "terminate",
+      "major_changes"
+    ],
+    "log_all_events": true
+  },
+  "critical_paths": [
+    "mia/core/immune/",
+    "mia/core/owner_guard.py",
+    "mia/core/root_policy.py",
+    "mia/core/consciousness/",
+    "mia/core/memory/"
+  ]
+}

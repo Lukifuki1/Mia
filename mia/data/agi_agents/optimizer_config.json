@@ -1,0 +1,63 @@
+{
+  "enabled": true,
+  "optimization_interval": 300,
+  "auto_optimization": true,
+  "max_concurrent_optimizations": 3,
+  "optimization_timeout": 600,
+  "performance_monitoring": true,
+  "optimization_types": {
+    "performance": {
+      "enabled": true,
+      "priority": "high",
+      "auto_trigger": true
+    },
+    "memory": {
+      "enabled": true,
+      "priority": "high",
+      "auto_trigger": true
+    },
+    "cpu": {
+      "enabled": true,
+      "priority": "medium",
+      "auto_trigger": true
+    },
+    "disk": {
+      "enabled": true,
+      "priority": "medium",
+      "auto_trigger": false
+    },
+    "network": {
+      "enabled": true,
+      "priority": "low",
+      "auto_trigger": false
+    },
+    "algorithm": {
+      "enabled": true,
+      "priority": "medium",
+      "auto_trigger": false
+    },
+    "resource": {
+      "enabled": true,
+      "priority": "high",
+      "auto_trigger": true
+    },
+    "workflow": {
+      "enabled": true,
+      "priority": "medium",
+      "auto_trigger": false
+    }
+  },
+  "thresholds": {
+    "cpu_usage": 80.0,
+    "memory_usage": 85.0,
+    "disk_usage": 90.0,
+    "response_time": 1000.0,
+    "error_rate": 5.0
+  },
+  "optimization_targets": {
+    "cpu_reduction": 10.0,
+    "memory_reduction": 15.0,
+    "response_time_improvement": 20.0,
+    "throughput_improvement": 25.0
+  }
+}

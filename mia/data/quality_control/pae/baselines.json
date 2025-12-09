@@ -1,0 +1,10 @@
+{
+  "cpu_usage": 0.0,
+  "memory_usage": 21.338190000000004,
+  "disk_usage": 7.086207410689632,
+  "network_bytes_sent": 124627026.8714,
+  "network_bytes_recv": 45252443.64830001,
+  "process_cpu_usage": 0.0,
+  "process_memory_rss": 39.71291406250001,
+  "process_threads": 5.0
+}

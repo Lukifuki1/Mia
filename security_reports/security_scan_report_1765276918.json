@@ -1,0 +1,3584 @@
+{
+  "scan_timestamp": "2025-12-09T10:41:58.449141",
+  "files_scanned": 99,
+  "vulnerabilities_found": 408,
+  "fixes_applied": 38,
+  "vulnerability_details": [
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 185,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 236,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 292,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 353,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 431,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 546,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_structure.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 547,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_upgrades.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 553,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_upgrades.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 559,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_upgrades.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 675,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_upgrades.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 539,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 407,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 307,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 326,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 280,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 285,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 252,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 253,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 336,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 389,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 337,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 338,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 339,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 340,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_comprehensive_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 909,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimized_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 967,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimized_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "__import__",
+      "line": 359,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije __import__",
+      "file": "optimized_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1386,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 374,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 610,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 159,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 471,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 294,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "shell_injection",
+      "pattern": "shell\\s*=\\s*True",
+      "line": 620,
+      "severity": "HIGH",
+      "description": "Možnost shell injection v vrstici 620",
+      "code": "if 'shell=True' in content:",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 977,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1048,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "ultimate_enterprise_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 49,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "run_all_tests.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 532,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 803,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1096,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1268,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1568,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1829,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2162,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2540,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 112,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 193,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 279,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 254,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "shell_injection",
+      "pattern": "shell\\s*=\\s*True",
+      "line": 236,
+      "severity": "HIGH",
+      "description": "Možnost shell injection v vrstici 236",
+      "code": "# Popravi shell=True",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 337,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 373,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 413,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 456,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 510,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 563,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 594,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 633,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 702,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 741,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 808,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 277,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 894,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 910,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 281,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 282,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 283,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 286,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 287,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 288,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 291,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 292,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 293,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 296,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 297,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 298,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 299,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 302,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 303,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 304,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 305,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 120,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_enterprise_launcher.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 52,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia_enterprise_launcher.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 58,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 263,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 421,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 458,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 82,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 87,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 118,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "final_comprehensive_report.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 138,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 263,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 369,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 403,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 420,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 489,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 515,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 525,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 552,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 394,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 443,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 71,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/file_complexity_reducer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 354,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/advanced_caching.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 361,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "optimizations/advanced_caching.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 429,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 605,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 860,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1741,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 333,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1262,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise_features.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 279,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1100,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1302,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1416,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1491,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1517,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2478,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2481,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2484,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2713,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1391,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/cross_platform_builder.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 26,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/config-manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 20,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/config-manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 29,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/license-manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 23,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/license-manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 409,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/monitoring-system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 79,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "desktop/enterprise/monitoring-system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 153,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 391,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 462,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 106,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 140,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 162,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 208,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 93,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 150,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 173,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 114,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 511,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 518,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 70,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 149,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/sse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 97,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/quality/sse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 732,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/test_enterprise_final.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1008,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/test_enterprise_final.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 754,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/test_enterprise_final.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1022,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/test_enterprise_final.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 789,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/test_enterprise_final.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 98,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/testing/enterprise_test_suite.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 537,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/testing/enterprise_test_suite.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 72,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/testing/enterprise_test_suite.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "compile",
+      "line": 971,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije compile",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 972,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 996,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1008,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 116,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 161,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 350,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 158,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 243,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 255,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 266,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 169,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 189,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 209,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/world_model.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 131,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 298,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 831,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 91,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 262,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 316,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 331,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 389,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 910,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 212,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 218,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 225,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 407,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 352,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/hardware_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 212,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 361,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 412,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 493,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 542,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 83,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 136,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 352,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 488,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 537,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/owner_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/adaptive_llm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 369,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/adaptive_llm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 373,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/adaptive_llm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 385,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/adaptive_llm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 215,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/system_integrator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "__import__",
+      "line": 349,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije __import__",
+      "file": "mia/core/system_integrator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 72,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/system_integrator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 205,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/internet_learning.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 238,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/internet_learning.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 178,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/internet_learning.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 218,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/internet_learning.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 718,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/enterprise/stability_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 614,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/tests/security/test_security_comprehensive.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 183,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 341,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 856,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 864,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 940,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 126,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 198,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 204,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 291,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 905,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 921,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 892,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1001,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 962,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "hardcoded_secret",
+      "pattern": "api_key\\s*=\\s*[\"\\'][^\"\\']+[\"\\']",
+      "line": 42,
+      "severity": "MEDIUM",
+      "description": "Možno trdo kodirano geslo v vrstici 42",
+      "code": "API_KEY = \"api_key\"",
+      "file": "mia/modules/api_email/email_client.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 159,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 866,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 873,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 880,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 887,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1197,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1204,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1488,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1495,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 1502,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2300,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 112,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 207,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 269,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 347,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 366,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 383,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 466,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 523,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 552,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 592,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 611,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 632,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 669,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 693,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2179,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2214,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2286,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2293,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2308,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 504,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 815,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 822,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2260,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 2522,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/project_builder/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 154,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/stt_engine.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 116,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/stt_engine.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 222,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts_engine.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 640,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts_engine.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 146,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts_engine.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 194,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 225,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 769,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 798,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 141,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 205,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/monitoring/health_monitor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 296,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 127,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 187,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 243,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 88,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 259,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "shell_injection",
+      "pattern": "shell\\s*=\\s*True",
+      "line": 298,
+      "severity": "HIGH",
+      "description": "Možnost shell injection v vrstici 298",
+      "code": "shell=True,",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 184,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 303,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 681,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 824,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 199,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 205,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 267,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 733,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 766,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/adult_mode/adult_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 177,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/avatar/avatar_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 117,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/avatar/avatar_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 340,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/avatar/avatar_system.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 375,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 432,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 855,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 163,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 261,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 322,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 386,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 174,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 225,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 246,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 197,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/lora_training/lora_manager.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 565,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/ui/web.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 729,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/ui/web.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 967,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/ui/web.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 1003,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/modules/ui/web.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 1012,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/modules/ui/web.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 534,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/multimodal/image/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 97,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/multimodal/image/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 141,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/multimodal/image/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 341,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/multimodal/image/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 237,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 266,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 387,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/tts/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 250,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/modules/voice/stt/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 150,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/multimodal/video_generator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 162,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/multimodal/video_generator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 442,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/multimodal/video_generator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 473,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/multimodal/video_generator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 104,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/multimodal/video_generator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 180,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 339,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 359,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 370,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 407,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 506,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 519,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 534,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 548,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 562,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 635,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 156,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 192,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 381,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 431,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/bootstrap/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 445,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/memory/advanced_optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 153,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 391,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 462,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 106,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/security/system_fuse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 132,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune/immune_kernel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 89,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune/immune_kernel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 598,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/consciousness/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 607,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/consciousness/main.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 167,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 301,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 125,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 178,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "compile",
+      "line": 473,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije compile",
+      "file": "mia/core/agi_agents/validator_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 147,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 230,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 112,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 157,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 168,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/optimizer.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 170,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 493,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 466,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "exec",
+      "line": 481,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije exec",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 547,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 552,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "eval",
+      "line": 580,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije eval",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "eval",
+      "line": 584,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije eval",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "eval",
+      "line": 590,
+      "severity": "HIGH",
+      "description": "Uporaba nevarne funkcije eval",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 124,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 85,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/planner.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 133,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 391,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "subprocess.run",
+      "line": 416,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije subprocess.run",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 542,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 99,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 470,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 535,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 474,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "shell_injection",
+      "pattern": "shell\\s*=\\s*True",
+      "line": 393,
+      "severity": "HIGH",
+      "description": "Možnost shell injection v vrstici 393",
+      "code": "shell=True,",
+      "file": "mia/core/agi_agents/executor.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 181,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/optimizer_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 136,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/optimizer_agent.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 154,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 736,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 117,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 462,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "compile",
+      "line": 466,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije compile",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 729,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/agi_agents/validator.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 153,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/dve.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 267,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/dve.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 109,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/dve.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 163,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/dve.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 140,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 162,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 208,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 93,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 150,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 173,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/pae.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 114,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 511,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 518,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 70,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qpm.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 149,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/sse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 97,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/sse.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 214,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/hoel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 352,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/hoel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 140,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/hoel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 224,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/hoel.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 185,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/rfe.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 136,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/rfe.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 226,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qrd.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 144,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/quality_control/qrd.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 169,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune_system/integrity_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 317,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune_system/integrity_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 100,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune_system/integrity_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 230,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune_system/integrity_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 236,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/immune_system/integrity_guard.py"
+    },
+    {
+      "type": "dangerous_function",
+      "function": "open",
+      "line": 122,
+      "severity": "MEDIUM",
+      "description": "Uporaba nevarne funkcije open",
+      "file": "mia/core/identity/self_model.py"
+    }
+  ],
+  "fix_details": [
+    {
+      "type": "shell_injection_fix",
+      "line": 620,
+      "old_code": "if 'shell=True' in content:",
+      "new_code": "if 'shell=False' in content:",
+      "description": "Popravek shell injection ranljivosti",
+      "file": "introspective_analysis.py"
+    },
+    {
+      "type": "shell_injection_fix",
+      "line": 236,
+      "old_code": "# Popravi shell=True",
+      "new_code": "# Popravi shell=False",
+      "description": "Popravek shell injection ranljivosti",
+      "file": "final_security_implementation.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 337,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 373,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 413,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 456,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 510,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 563,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 594,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 633,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 702,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 741,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 808,
+      "old_code": "exec(\"\"\"",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(\"\"\"",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 277,
+      "old_code": "exec(f\"import {module_path}\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                 exec(f\"import {module_path}\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 281,
+      "old_code": "exec(\"from mia.core.consciousness.main import consciousness\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"from mia.core.consciousness.main import consciousness\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 282,
+      "old_code": "exec(\"assert consciousness.awareness_level >= 0.0\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert consciousness.awareness_level >= 0.0\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 283,
+      "old_code": "exec(\"assert consciousness.emotional_intensity >= 0.0\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert consciousness.emotional_intensity >= 0.0\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 286,
+      "old_code": "exec(\"from mia.core.memory.main import memory_system\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"from mia.core.memory.main import memory_system\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 287,
+      "old_code": "exec(\"test_id = memory_system.store_memory('Test memory for audit')\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"test_id = memory_system.store_memory('Test memory for audit')\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 288,
+      "old_code": "exec(\"assert test_id is not None\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert test_id is not None\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 291,
+      "old_code": "exec(\"from mia.core.identity.self_model import get_self_identity\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"from mia.core.identity.self_model import get_self_identity\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 292,
+      "old_code": "exec(\"identity = get_self_identity()\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"identity = get_self_identity()\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 293,
+      "old_code": "exec(\"assert identity.self_awareness_level == 1.0\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert identity.self_awareness_level == 1.0\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 296,
+      "old_code": "exec(\"from mia_enterprise_launcher import MIAEnterpriseLauncher\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"from mia_enterprise_launcher import MIAEnterpriseLauncher\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 297,
+      "old_code": "exec(\"launcher = MIAEnterpriseLauncher()\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"launcher = MIAEnterpriseLauncher()\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 298,
+      "old_code": "exec(\"status = launcher.get_system_status()\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"status = launcher.get_system_status()\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 299,
+      "old_code": "exec(\"assert 'ready' in status\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert 'ready' in status\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 302,
+      "old_code": "exec(\"from mia.enterprise.stability_monitor import EnterpriseStabilityMonitor\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"from mia.enterprise.stability_monitor import EnterpriseStabilityMonitor\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 303,
+      "old_code": "exec(\"monitor = EnterpriseStabilityMonitor()\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"monitor = EnterpriseStabilityMonitor()\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 304,
+      "old_code": "exec(\"health = monitor.get_system_health()\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"health = monitor.get_system_health()\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 305,
+      "old_code": "exec(\"assert isinstance(health, dict)\")",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                     exec(\"assert isinstance(health, dict)\")",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "comprehensive_system_audit.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 972,
+      "old_code": "exec(compiled_code, safe_globals)",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#             exec(compiled_code, safe_globals)",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "mia/core/self_evolution.py"
+    },
+    {
+      "type": "shell_injection_fix",
+      "line": 298,
+      "old_code": "shell=True,",
+      "new_code": "shell=False,",
+      "description": "Popravek shell injection ranljivosti",
+      "file": "mia/modules/projects/main.py"
+    },
+    {
+      "type": "exec_removal",
+      "line": 481,
+      "old_code": "exec(script, {\"__builtins__\": __builtins__}, local_vars)",
+      "new_code": "# SECURITY FIX: Removed dangerous exec() call\n#                 exec(script, {\"__builtins__\": __builtins__}, local_vars)",
+      "description": "Odstranitev nevarnega exec() klica",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "eval_replacement",
+      "line": 580,
+      "old_code": "return [item for item in data if eval(condition, {\"item\": item})]",
+      "new_code": "return [item for item in data if ast.literal_eval(condition, {\"item\": item})]",
+      "description": "Zamenjava eval() z ast.literal_eval()",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "eval_replacement",
+      "line": 584,
+      "old_code": "transform = task_data.get(\"transform\", \"\")",
+      "new_code": "transform = task_data.get(\"transform\", \"\")",
+      "description": "Zamenjava eval() z ast.literal_eval()",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "eval_replacement",
+      "line": 590,
+      "old_code": "result = data[0] if data else None",
+      "new_code": "result = data[0] if data else None",
+      "description": "Zamenjava eval() z ast.literal_eval()",
+      "file": "mia/core/agi_agents/executor_agent.py"
+    },
+    {
+      "type": "shell_injection_fix",
+      "line": 393,
+      "old_code": "shell=True,",
+      "new_code": "shell=False,",
+      "description": "Popravek shell injection ranljivosti",
+      "file": "mia/core/agi_agents/executor.py"
+    }
+  ],
+  "security_status": "VULNERABILITIES_FOUND"
+}

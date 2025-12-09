@@ -1,0 +1,12 @@
+{
+  "name": "node_nextjs",
+  "description": "Template for node_nextjs projects",
+  "version": "1.0.0",
+  "files": [],
+  "variables": {
+    "project_name": "{{project_name}}",
+    "description": "{{description}}",
+    "author": "{{author}}",
+    "email": "{{email}}"
+  }
+}

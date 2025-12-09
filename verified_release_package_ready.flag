@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "verification_timestamp": "2025-12-09T14:19:54.166465",
+  "release_version": "1.0.0",
+  "build_timestamp": "2025-12-09T14:00:00Z",
+  "platforms_built": [
+    "linux",
+    "windows",
+    "macos"
+  ],
+  "packages_verified": 3,
+  "checksum_algorithm": "SHA-256",
+  "verification_signature": "9f9607066e5d812fcde2836189e983ba"
+}

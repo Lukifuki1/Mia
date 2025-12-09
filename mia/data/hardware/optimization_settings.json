@@ -1,0 +1,8 @@
+{
+  "max_model_size_gb": 8.0,
+  "batch_size": 2,
+  "precision": "fp16",
+  "device": "cpu",
+  "memory_optimization": true,
+  "thermal_protection": true
+}

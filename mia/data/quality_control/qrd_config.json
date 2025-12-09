@@ -1,0 +1,108 @@
+{
+  "enabled": true,
+  "detection_interval": 300,
+  "baseline_window": 7200,
+  "detection_window": 1800,
+  "max_metrics_per_component": 1000,
+  "regression_thresholds": {
+    "minor": 0.05,
+    "moderate": 0.15,
+    "major": 0.3,
+    "critical": 0.5
+  },
+  "detection_methods": {
+    "statistical": {
+      "enabled": true,
+      "confidence_level": 0.95,
+      "min_samples": 10
+    },
+    "threshold": {
+      "enabled": true,
+      "dynamic_thresholds": true
+    },
+    "trend_analysis": {
+      "enabled": true,
+      "trend_window": 3600,
+      "significance_threshold": 0.05
+    },
+    "change_point": {
+      "enabled": true,
+      "sensitivity": 2.0
+    },
+    "anomaly_detection": {
+      "enabled": true,
+      "anomaly_threshold": 2.5
+    }
+  },
+  "metric_types": {
+    "performance": {
+      "response_time": {
+        "lower_is_better": true,
+        "unit": "seconds"
+      },
+      "throughput": {
+        "lower_is_better": false,
+        "unit": "ops/sec"
+      },
+      "latency": {
+        "lower_is_better": true,
+        "unit": "ms"
+      }
+    },
+    "accuracy": {
+      "precision": {
+        "lower_is_better": false,
+        "unit": "ratio"
+      },
+      "recall": {
+        "lower_is_better": false,
+        "unit": "ratio"
+      },
+      "f1_score": {
+        "lower_is_better": false,
+        "unit": "ratio"
+      }
+    },
+    "reliability": {
+      "uptime": {
+        "lower_is_better": false,
+        "unit": "percentage"
+      },
+      "error_rate": {
+        "lower_is_better": true,
+        "unit": "percentage"
+      },
+      "success_rate": {
+        "lower_is_better": false,
+        "unit": "percentage"
+      }
+    },
+    "efficiency": {
+      "cpu_usage": {
+        "lower_is_better": true,
+        "unit": "percentage"
+      },
+      "memory_usage": {
+        "lower_is_better": true,
+        "unit": "percentage"
+      },
+      "energy_consumption": {
+        "lower_is_better": true,
+        "unit": "watts"
+      }
+    }
+  },
+  "alerting": {
+    "enabled": true,
+    "alert_on_severity": [
+      "major",
+      "critical"
+    ],
+    "notification_cooldown": 1800
+  },
+  "auto_baseline_update": {
+    "enabled": true,
+    "update_frequency": 86400,
+    "min_stable_period": 3600
+  }
+}

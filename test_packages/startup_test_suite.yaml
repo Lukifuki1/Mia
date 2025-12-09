@@ -1,0 +1,30 @@
+tests:
+  coldboot_startup:
+    enabled: true
+    timeout: 60
+  integrity_check:
+    enabled: true
+    timeout: 30
+  introspective_loop:
+    cycles: 100
+    enabled: true
+  license_validation:
+    enabled: true
+    timeout: 10
+  memory_recovery:
+    enabled: true
+    timeout: 60
+  multi_threaded:
+    enabled: true
+    instances: 3
+  telemetry_mis:
+    enabled: true
+    timeout: 30
+  ui_activation:
+    enabled: true
+    timeout: 30
+thresholds:
+  cold_start_max_seconds: 60
+  cpu_max_percent: 80
+  memory_max_gb: 5
+version: '1.0'

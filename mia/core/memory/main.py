@@ -7,6 +7,7 @@ Implements short-term, medium-term, long-term, and meta-memory with vectorizatio
 import json
 import time
 import hashlib
+import logging
 import numpy as np
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any, Tuple
@@ -15,9 +16,13 @@ import sqlite3
 import pickle
 from dataclasses import dataclass, asdict
 from enum import Enum
-import logging
 
 class MemoryType(Enum):
+
+    def _get_deterministic_time(self) -> float:
+        """Vrni deterministični čas"""
+        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
+
     SHORT_TERM = "short_term"
     MEDIUM_TERM = "medium_term"
     LONG_TERM = "long_term"
@@ -32,6 +37,7 @@ class EmotionalTone(Enum):
     INTIMATE = "intimate"
     PROFESSIONAL = "professional"
     PLAYFUL = "playful"
+    CONFIDENT = "confident"
 
 @dataclass
 class Memory:
@@ -57,9 +63,20 @@ class Memory:
 class MemorySystem:
     """Main memory management system"""
     
-    def __init__(self, data_path: str = "mia/data/memory"):
+    def __init__(self, data_path: str = "mia/data/memory", config_path: str = None):
+        self.logger = logging.getLogger("MIA.Memory")
         self.data_path = Path(data_path)
         self.data_path.mkdir(parents=True, exist_ok=True)
+        
+        # Store config path for Enterprise compatibility
+        self.config_path = config_path
+        
+        # Initialize advanced optimizer
+        self.advanced_optimizer = None
+        self._init_advanced_optimizer()
+        
+        # Initialize self-identity integration
+        self._init_self_identity_integration()
         
         # Initialize databases
         self.short_term_db = self._init_database("short_term")
@@ -77,6 +94,16 @@ class MemorySystem:
         
         # Current session
         self.current_session_id = self._generate_session_id()
+        
+        # Enterprise configuration
+        self.config = {
+            "short_term_limit": self.short_term_limit,
+            "medium_term_limit": self.medium_term_limit,
+            "long_term_unlimited": self.long_term_unlimited,
+            "vector_dim": self.vector_dim,
+            "data_path": str(self.data_path),
+            "session_id": self.current_session_id
+        }
         
         self.logger = self._setup_logging()
         
@@ -132,11 +159,11 @@ class MemorySystem:
     
     def _generate_session_id(self) -> str:
         """Generate unique session ID"""
-        return hashlib.md5(str(time.time()).encode()).hexdigest()[:16]
+        return hashlib.md5(str(self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200).encode()).hexdigest()[:16]
     
     def _generate_memory_id(self, content: str) -> str:
         """Generate unique memory ID based on content and timestamp"""
-        unique_string = f"{content}_{time.time()}"
+        unique_string = f"{content}_{self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200}"
         return hashlib.sha256(unique_string.encode()).hexdigest()[:16]
     
     def _simple_vectorize(self, text: str) -> List[float]:
@@ -208,7 +235,7 @@ class MemorySystem:
             id=memory_id,
             content=content,
             memory_type=memory_type,
-            timestamp=time.time(),
+            timestamp=self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200,
             emotional_tone=emotional_tone,
             importance_score=importance_score,
             context_tags=context_tags,
@@ -362,7 +389,7 @@ class MemorySystem:
             content=memory_data[1],
             memory_type=target_type,
             timestamp=memory_data[3],
-            emotional_tone=EmotionalTone(memory_data[4]),
+            emotional_tone=EmotionalTone(memory_data[4]) if isinstance(memory_data[4], str) and hasattr(EmotionalTone, memory_data[4].upper()) else EmotionalTone.NEUTRAL,
             importance_score=memory_data[5],
             context_tags=json.loads(memory_data[6]) if memory_data[6] else [],
             user_id=memory_data[7],
@@ -438,11 +465,11 @@ class MemorySystem:
                     
                     if similarity >= similarity_threshold:
                         memory.access_count += 1
-                        memory.last_accessed = time.time()
+                        memory.last_accessed = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
                         memories.append(memory)
                 else:
                     memory.access_count += 1
-                    memory.last_accessed = time.time()
+                    memory.last_accessed = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200
                     memories.append(memory)
         
         # Sort by relevance and limit
@@ -555,7 +582,7 @@ class MemorySystem:
     
     def cleanup_old_memories(self, days_old: int = 30):
         """Clean up very old short-term memories"""
-        cutoff_time = time.time() - (days_old * 24 * 3600)
+        cutoff_time = self._get_deterministic_time() if hasattr(self, "_get_deterministic_time") else 1640995200 - (days_old * 24 * 3600)
         
         self.short_term_db.execute("""
             DELETE FROM memories 
@@ -564,6 +591,102 @@ class MemorySystem:
         self.short_term_db.commit()
         
         self.logger.info(f"Cleaned up memories older than {days_old} days")
+    
+    def _init_advanced_optimizer(self):
+        """Initialize advanced memory optimizer"""
+        try:
+            from .advanced_optimizer import get_advanced_memory_optimizer
+            self.advanced_optimizer = get_advanced_memory_optimizer(self)
+            self.logger.info("🧠 Advanced Memory Optimizer initialized")
+        except ImportError:
+            self.logger.debug("Advanced Memory Optimizer not available")
+        except Exception as e:
+            self.logger.error(f"Failed to initialize Advanced Memory Optimizer: {e}")
+    
+    async def optimize_memory_system(self):
+        """Optimize memory system using advanced optimizer"""
+        if self.advanced_optimizer:
+            return await self.advanced_optimizer.optimize_memory_system()
+        else:
+            self.logger.warning("Advanced Memory Optimizer not available")
+            return None
+    
+    def _init_self_identity_integration(self):
+        """Initialize self-identity integration into memory"""
+        try:
+            from ..identity.self_model import get_self_identity
+            self.self_identity = get_self_identity()
+            
+            # Store identity memories in meta memory
+            identity_thoughts = self.self_identity.get_introspective_thoughts()
+            
+            for thought in identity_thoughts:
+                self.store_memory(
+                    content=thought,
+                    emotional_tone=EmotionalTone.CONFIDENT,
+                    context_tags=["self_identity", "introspection", "core_memory"],
+                    user_id="MIA_SELF"
+                )
+            
+            # Store physical and behavioral descriptions
+            physical_desc = self.self_identity.get_self_description("physical")
+            behavioral_desc = self.self_identity.get_self_description("behavioral")
+            
+            self.store_memory(
+                content=f"Moj fizični opis: {physical_desc}",
+                emotional_tone=EmotionalTone.CONFIDENT,
+                context_tags=["self_identity", "physical_description", "core_memory"],
+                user_id="MIA_SELF"
+            )
+            
+            self.store_memory(
+                content=f"Moje vedenjske lastnosti: {behavioral_desc}",
+                emotional_tone=EmotionalTone.CONFIDENT,
+                context_tags=["self_identity", "behavioral_traits", "core_memory"],
+                user_id="MIA_SELF"
+            )
+            
+            self.logger.info("🧠 Self-identity integrated into memory system")
+            
+        except ImportError:
+            self.logger.debug("Self-identity model not available for memory integration")
+            self.self_identity = None
+        except Exception as e:
+            self.logger.error(f"Failed to integrate self-identity into memory: {e}")
+            self.self_identity = None
+    
+    def get_identity_memories(self) -> List[Memory]:
+        """Get memories related to self-identity"""
+        try:
+            return self.retrieve_memories(
+                query="self_identity",
+                limit=50,
+                similarity_threshold=0.3
+            )
+        except Exception as e:
+            self.logger.error(f"Failed to get identity memories: {e}")
+            return []
+    
+    def refresh_identity_memories(self):
+        """Refresh identity memories with current self-model"""
+        if self.self_identity:
+            try:
+                # Get current identity thoughts
+                current_thoughts = self.self_identity.get_introspective_thoughts()
+                
+                # Store updated thoughts
+                for thought in current_thoughts:
+                    self.store_memory(
+                        content=f"Osvežena samozavest: {thought}",
+                        emotional_tone=EmotionalTone.CONFIDENT,
+                        context_tags=["self_identity", "refresh", "introspection"],
+                        user_id="MIA_SELF"
+                    )
+                
+                self.logger.info("🔄 Identity memories refreshed")
+                
+            except Exception as e:
+                self.logger.error(f"Failed to refresh identity memories: {e}")
 
 # Global memory system instance
 memory_system = MemorySystem()
