@@ -1,0 +1,80 @@
+[
+  {
+    "request_id": "54a02ad8-2089-4512-ba2c-5a0a22cd6cc7",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.019284725189208984,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Hello, how are you?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.0060901641845703125,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360730.1664257
+          }
+        },
+        "similarity_result": {
+          "query": "Hello, how are you?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.013134241104125977
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "a9480a0c-9147-432f-b963-a1ba3b5091b0",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 4.935264587402344e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Hello, how are you?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.0060901641845703125,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360730.1664257
+          }
+        },
+        "similarity_result": {
+          "query": "Hello, how are you?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 1.049041748046875e-05
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  }
+]

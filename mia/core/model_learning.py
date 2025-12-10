@@ -507,7 +507,7 @@ class ModelLearningEngine:
             if result.returncode == 0:
                 return result.stdout.strip()
         except (subprocess.TimeoutExpired, FileNotFoundError):
-        return self._default_implementation()
+            return self._default_implementation()
         return f"Ollama model response to: {query}"
     
     def _query_pytorch_model(self, interface: Dict, query: str) -> Optional[str]:

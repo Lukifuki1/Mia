@@ -1,0 +1,85 @@
+[
+  {
+    "user_input": "Hello, how are you?",
+    "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+    "pipeline_result": {
+      "request_id": "a9480a0c-9147-432f-b963-a1ba3b5091b0",
+      "success": true,
+      "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+      "confidence": 0.0,
+      "stage_results": [
+        {
+          "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+          "success": true,
+          "results": {
+            "parse_result": {
+              "original_text": "Hello, how are you?",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.0060901641845703125,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360730.1664257
+              }
+            },
+            "similarity_result": {
+              "query": "Hello, how are you?",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 1.049041748046875e-05
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          },
+          "confidence": 0.0,
+          "processing_time": 2.09808349609375e-05,
+          "error_message": null,
+          "metadata": {
+            "semantic_method": "neural_nlp"
+          }
+        }
+      ],
+      "processing_path": [
+        "ProcessingStage.SEMANTIC_ANALYSIS"
+      ],
+      "total_processing_time": 4.935264587402344e-05,
+      "mode_used": "PipelineMode.NEURAL_ONLY",
+      "explanation": "Neural-only processing with confidence 0.00",
+      "metadata": {
+        "semantic_results": {
+          "parse_result": {
+            "original_text": "Hello, how are you?",
+            "entities": [],
+            "relations": [],
+            "concepts": [],
+            "confidence": 0.0,
+            "processing_time": 0.0060901641845703125,
+            "metadata": {
+              "extract_entities": true,
+              "extract_relations": true,
+              "link_to_kb": true,
+              "timestamp": 1765360730.1664257
+            }
+          },
+          "similarity_result": {
+            "query": "Hello, how are you?",
+            "matches": [],
+            "similarity_scores": [],
+            "processing_time": 1.049041748046875e-05
+          },
+          "entities_count": 0,
+          "relations_count": 0,
+          "concepts_count": 0
+        }
+      }
+    },
+    "feedback": null,
+    "timestamp": 1765360730.1800697,
+    "interaction_id": "30d6c5ae-9d79-480e-b44b-51e3a3f6f669"
+  }
+]

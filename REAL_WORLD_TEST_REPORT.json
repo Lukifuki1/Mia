@@ -1,0 +1,87 @@
+{
+  "test_timestamp": 1765363000.6744437,
+  "test_date": "2025-12-10 10:36:40",
+  "system_info": {
+    "os": "Linux",
+    "os_version": "#30-Ubuntu SMP Wed May 28 22:51:45 UTC 2025",
+    "architecture": "64bit",
+    "python_version": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:25:55) [GCC 14.3.0]",
+    "cpu_count": 4,
+    "memory_gb": 15
+  },
+  "test_statistics": {
+    "total_tests": 8,
+    "passed_tests": 7,
+    "partial_tests": 0,
+    "failed_tests": 0,
+    "error_tests": 1,
+    "skipped_tests": 0,
+    "success_rate": 87.5
+  },
+  "test_results": [
+    {
+      "test": "Real Installation",
+      "status": "PASS",
+      "details": "Installer can be executed",
+      "evidence": "Installer copied to /tmp/mia_install_test_nkhv9xtd"
+    },
+    {
+      "test": "Desktop Icon Launch",
+      "status": "ERROR",
+      "details": "Test failed: [Errno 2] No such file or directory: 'gtk-launch'",
+      "evidence": "[Errno 2] No such file or directory: 'gtk-launch'"
+    },
+    {
+      "test": "Real Model Discovery",
+      "status": "PASS",
+      "details": "Found 2/2 test models",
+      "evidence": "Discovered models: ['/test_models_0/test_model_0.gguf', '/workspace/test_models_2/test_model_2.gguf']"
+    },
+    {
+      "test": "Real Internet Learning",
+      "status": "PASS",
+      "details": "2/3 learning components working",
+      "evidence": "Scraping: False, Processing: True, Storage: True"
+    },
+    {
+      "test": "Complete Workflow",
+      "status": "PASS",
+      "details": "5/5 workflow steps successful",
+      "evidence": "[('System Startup', True), ('Hardware Detection', True), ('Model Loading', True), ('Web Interface', True), ('User Interaction', True)]"
+    },
+    {
+      "test": "Cross-Platform Compatibility",
+      "status": "PASS",
+      "details": "3/3 OS platforms compatible",
+      "evidence": "{'Linux': True, 'Windows': True, 'Darwin': True}"
+    },
+    {
+      "test": "Real Performance",
+      "status": "PASS",
+      "details": "Performance score: 100/100",
+      "evidence": "{'startup_time': 0.06257867813110352, 'memory_usage': 32.70703125, 'cpu_usage': 3.8, 'response_time': 1.9550323486328125e-05}"
+    },
+    {
+      "test": "Real Error Recovery",
+      "status": "PASS",
+      "details": "4/4 recovery tests passed",
+      "evidence": "Recovery results: [True, True, True, True]"
+    }
+  ],
+  "overall_assessment": {
+    "readiness_level": "MOSTLY_READY",
+    "success_rate": 87.5,
+    "recommendation": "System is mostly ready, address remaining issues",
+    "critical_issues": [
+      {
+        "test": "Desktop Icon Launch",
+        "status": "ERROR",
+        "details": "Test failed: [Errno 2] No such file or directory: 'gtk-launch'",
+        "evidence": "[Errno 2] No such file or directory: 'gtk-launch'"
+      }
+    ],
+    "next_steps": [
+      "Debug Desktop Icon Launch: Test failed: [Errno 2] No such file or directory: 'gtk-launch'"
+    ]
+  }
+}

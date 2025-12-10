@@ -1,0 +1,13 @@
+{
+  "rules_count": 4,
+  "facts_count": 1,
+  "inferences_performed": 1,
+  "forward_chaining_runs": 1,
+  "backward_chaining_runs": 1,
+  "constraint_solving_runs": 1,
+  "consistency_checks": 1,
+  "cache_hits": 0,
+  "cache_misses": 1,
+  "system_health": "healthy",
+  "start_time": 1765360727.7082655
+}

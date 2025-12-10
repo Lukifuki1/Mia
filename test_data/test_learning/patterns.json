@@ -1,0 +1,36 @@
+{
+  "question_answer_pattern": {
+    "pattern_id": "question_answer_pattern",
+    "pattern_type": "question_answer",
+    "description": "User asks question, system provides answer",
+    "examples": [
+      {
+        "question": "What is machine learning?",
+        "answer": "Machine learning is a subset of AI.",
+        "timestamp": 1765360729.0540066
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360729.0540624,
+    "last_seen": 1765360729.0540066,
+    "metadata": {}
+  },
+  "concept_definition_pattern": {
+    "pattern_id": "concept_definition_pattern",
+    "pattern_type": "concept_definition",
+    "description": "User asks for concept definition",
+    "examples": [
+      {
+        "request": "What is machine learning?",
+        "definition": "Machine learning is a subset of AI.",
+        "timestamp": 1765360729.0540066
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360729.0540733,
+    "last_seen": 1765360729.0540066,
+    "metadata": {}
+  }
+}

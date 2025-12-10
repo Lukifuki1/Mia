@@ -1,0 +1,13 @@
+{
+  "http://mia.ai/ontology#RecoveryTest": {
+    "uri": "http://mia.ai/ontology#RecoveryTest",
+    "label": "Recovery Test",
+    "description": "Test concept for recovery",
+    "parent_classes": [
+      "http://mia.ai/ontology#Entity"
+    ],
+    "properties": {},
+    "constraints": {},
+    "created_at": 1765360748.0957437
+  }
+}

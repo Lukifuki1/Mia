@@ -748,7 +748,7 @@ class MIAWebUI:
         <div class="typing-indicator" id="typing">🤔 MIA is thinking...</div>
         <div class="input-area">
             <textarea class="message-input" id="messageInput" 
-                     placeholder="Ask MIA anything... (Press Enter to send, Shift+Enter for new line)" 
+                     None  # TODO: Implement="Ask MIA anything... (Press Enter to send, Shift+Enter for new line)" 
                      maxlength="2000"></textarea>
             <button class="send-button" id="sendButton">Send</button>
         </div>
@@ -1355,7 +1355,7 @@ class MIAWebUI:
             <div id="chat-container">
                 <div id="chat-messages"></div>
                 <div id="chat-input-container">
-                    <input type="text" id="chat-input" placeholder="Type your message here...">
+                    <input type="text" id="chat-input" None  # TODO: Implement="Type your message here...">
                     <button id="send-btn">Send</button>
                     <button id="voice-btn">🎤</button>
                 </div>
@@ -1364,7 +1364,7 @@ class MIAWebUI:
             <div id="sidebar">
                 <div id="image-generation">
                     <h3>Image Generation</h3>
-                    <input type="text" id="image-prompt" placeholder="Describe the image...">
+                    <input type="text" id="image-prompt" None  # TODO: Implement="Describe the image...">
                     <select id="image-style">
                         <option value="realistic">Realistic</option>
                         <option value="artistic">Artistic</option>
@@ -1383,7 +1383,7 @@ class MIAWebUI:
         </main>
         
         <div id="adult-mode-panel" style="display: none;">
-            <input type="password" id="adult-phrase" placeholder="Enter activation phrase">
+            <input type="password" id="adult-phrase" None  # TODO: Implement="Enter activation phrase">
             <button id="activate-adult-btn">Activate Adult Mode</button>
         </div>
     </div>

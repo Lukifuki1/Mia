@@ -1,0 +1,899 @@
+{
+  "mega_test_summary": {
+    "total_duration": 11.420716524124146,
+    "total_tests": 40,
+    "passed_tests": 30,
+    "failed_tests": 2,
+    "warning_tests": 8,
+    "skipped_tests": 0,
+    "success_rate": 75.0,
+    "overall_status": "ACCEPTABLE"
+  },
+  "system_information": {
+    "os_name": "Linux",
+    "os_version": "#30-Ubuntu SMP Wed May 28 22:51:45 UTC 2025",
+    "architecture": "64bit",
+    "cpu_count": 4,
+    "cpu_freq": 2599.998,
+    "memory_total": 16767344640,
+    "memory_available": 12471099392,
+    "disk_drives": [
+      "/dev/termination-log",
+      "/workspace",
+      "/etc/hosts",
+      "/var/lib/docker",
+      "/var/lib/rancher/k3s",
+      "/var/lib/rancher/rke2",
+      "/var/lib/kubelet",
+      "/var/lib/k0s",
+      "/var/lib/buildkit",
+      "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs",
+      "/usr/src/linux-headers-6.8.0-1026-gke",
+      "/usr/src/linux-gke-headers-6.8.0-1026",
+      "/usr/lib/modules/6.8.0-1026-gke"
+    ],
+    "gpu_info": [
+      "No GPU detected"
+    ],
+    "python_version": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:25:55) [GCC 14.3.0]",
+    "network_available": true
+  },
+  "test_categories": {
+    "system_compatibility": {
+      "total": 6,
+      "passed": 4,
+      "failed": 1,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Python Environment",
+          "status": "WARNING",
+          "duration": 0.0003800392150878906,
+          "details": "Python 3.12.12 - Warnings: Virtual environment recommended",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Storage Optimization",
+          "status": "PASS",
+          "duration": 0.0001366138458251953,
+          "details": "Analyzed 13 drives",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Critical Dependencies",
+          "status": "FAIL",
+          "duration": 2.868673801422119,
+          "details": "Installed: 8/10 critical dependencies - Missing: z3-solver, scikit-learn",
+          "error": "Critical dependencies missing",
+          "recommendations": [
+            "Install missing dependencies: pip install z3-solver scikit-learn"
+          ]
+        },
+        {
+          "test_name": "Optional Dependencies",
+          "status": "PASS",
+          "duration": 0.0004305839538574219,
+          "details": "Available features: 2/7",
+          "error": null,
+          "recommendations": [
+            "Consider installing ollama for Ollama integration",
+            "Consider installing beautifulsoup4 for Web scraping",
+            "Consider installing scrapy for Advanced web scraping",
+            "Consider installing opencv-python for Computer vision",
+            "Consider installing pillow for Image processing"
+          ]
+        },
+        {
+          "test_name": "Service Management",
+          "status": "PASS",
+          "duration": 0.0006184577941894531,
+          "details": "Features: 4, Issues: 0",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Graceful Degradation",
+          "status": "PASS",
+          "duration": 0.004240274429321289,
+          "details": "Graceful degradation: 4/4 scenarios handled gracefully",
+          "error": null,
+          "recommendations": []
+        }
+      ]
+    },
+    "hardware_detection": {
+      "total": 8,
+      "passed": 7,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "System Detection",
+          "status": "PASS",
+          "duration": 0.07697820663452148,
+          "details": "Detected Linux 64bit with 4 CPUs, 15GB RAM",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Hardware Analysis",
+          "status": "PASS",
+          "duration": 0.013331174850463867,
+          "details": "Hardware Score: 90.1/100 (CPU: 95.83840370178223, Memory: 74.37730696039418, Disk: 99.9379825592041)",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "CPU Optimization",
+          "status": "PASS",
+          "duration": 0.0022971630096435547,
+          "details": "CPU: 2 physical, 4 logical cores @ 2599.998MHz",
+          "error": null,
+          "recommendations": [
+            "Consider upgrading to multi-core CPU for better performance",
+            "Hyperthreading detected - can utilize logical cores"
+          ]
+        },
+        {
+          "test_name": "Memory Optimization",
+          "status": "PASS",
+          "duration": 0.044100046157836914,
+          "details": "RAM: 15GB total, 11GB available (25.6% used)",
+          "error": null,
+          "recommendations": [
+            "No swap space detected - consider adding swap for stability"
+          ]
+        },
+        {
+          "test_name": "GPU Detection",
+          "status": "PASS",
+          "duration": 1.066953420639038,
+          "details": "GPUs detected: No GPU detected",
+          "error": null,
+          "recommendations": [
+            "No GPU acceleration detected - CPU-only processing will be slower"
+          ]
+        },
+        {
+          "test_name": "Memory Usage",
+          "status": "PASS",
+          "duration": 0.04050278663635254,
+          "details": "Peak: 1056MB, Cleanup: 99.5%",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "CPU Utilization",
+          "status": "WARNING",
+          "duration": 2.0139098167419434,
+          "details": "Single: 0.004s, Parallel: 0.009s, Efficiency: 0.46x",
+          "error": null,
+          "recommendations": [
+            "Poor parallel processing efficiency - check thread utilization"
+          ]
+        },
+        {
+          "test_name": "System Integration",
+          "status": "PASS",
+          "duration": 0.0004749298095703125,
+          "details": "Integration tests: 5 passed, 0 issues",
+          "error": null,
+          "recommendations": []
+        }
+      ]
+    },
+    "dependency_verification": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "OS Requirements",
+          "status": "PASS",
+          "duration": 4.76837158203125e-06,
+          "details": "OS requirements check for Linux",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Installation Simulation",
+          "status": "PASS",
+          "duration": 0.008750200271606445,
+          "details": "Simulated installation: 4 files, 66 dependencies",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Requirements Validation",
+          "status": "WARNING",
+          "duration": 0.00020623207092285156,
+          "details": "Validated 2 requirements files - Issues: 1",
+          "error": null,
+          "recommendations": [
+            "Fix: No version specified for sqlite3  # Built-in with Python in requirements_hybrid.txt"
+          ]
+        },
+        {
+          "test_name": "Fresh Installation",
+          "status": "PASS",
+          "duration": 0.029788970947265625,
+          "details": "Installation steps: 5 completed, 0 issues",
+          "error": null,
+          "recommendations": [
+            "Consider reducing dependencies for faster installation"
+          ]
+        }
+      ]
+    },
+    "model_discovery": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Local Model Discovery",
+          "status": "PASS",
+          "duration": 0.0034296512603759766,
+          "details": "Found 0 models across 13 drives",
+          "error": null,
+          "recommendations": [
+            "No local models found - consider downloading models for offline use"
+          ]
+        },
+        {
+          "test_name": "Ollama Integration",
+          "status": "WARNING",
+          "duration": 0.0006592273712158203,
+          "details": "Ollama: Not available",
+          "error": null,
+          "recommendations": [
+            "Ollama not installed - consider installing for local LLM support"
+          ]
+        },
+        {
+          "test_name": "HuggingFace Models",
+          "status": "PASS",
+          "duration": 0.0021703243255615234,
+          "details": "HuggingFace: Available, 1 cached models",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Model Compatibility",
+          "status": "PASS",
+          "duration": 1.32131028175354,
+          "details": "Compatible: 2, Incompatible: 0",
+          "error": null,
+          "recommendations": []
+        }
+      ]
+    },
+    "internet_capabilities": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Network Binding",
+          "status": "PASS",
+          "duration": 0.0004069805145263672,
+          "details": "Available ports: [8001, 8080, 9000]",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Internet Connectivity",
+          "status": "PASS",
+          "duration": 0.47031092643737793,
+          "details": "Network: 4/4, HTTP: 3/4",
+          "error": null,
+          "recommendations": [
+            "Some HTTP requests failed - check internet access"
+          ]
+        },
+        {
+          "test_name": "Web Scraping",
+          "status": "PASS",
+          "duration": 0.9695758819580078,
+          "details": "Available tools: requests",
+          "error": null,
+          "recommendations": [
+            "Consider installing Scrapy for advanced web scraping"
+          ]
+        },
+        {
+          "test_name": "API Access",
+          "status": "WARNING",
+          "duration": 0.36158323287963867,
+          "details": "API tests: 3, Key support: 2",
+          "error": null,
+          "recommendations": [
+            "Some API tests failed - check network connectivity"
+          ]
+        }
+      ]
+    },
+    "installation_simulation": {
+      "total": 2,
+      "passed": 1,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Launcher Scripts",
+          "status": "PASS",
+          "duration": 0.004972934722900391,
+          "details": "Working launchers: 2, Issues: 0",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Desktop Integration",
+          "status": "WARNING",
+          "duration": 0.0013501644134521484,
+          "details": "Features: 2, Issues: 1",
+          "error": null,
+          "recommendations": [
+            "Address desktop integration issues for better user experience",
+            "Add application icons for professional appearance"
+          ]
+        }
+      ]
+    },
+    "cross_platform": {
+      "total": 5,
+      "passed": 3,
+      "failed": 1,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Path Handling",
+          "status": "PASS",
+          "duration": 0.00020551681518554688,
+          "details": "Tested 5 path formats",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "File Permissions",
+          "status": "PASS",
+          "duration": 0.0002963542938232422,
+          "details": "File operations successful",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Process Management",
+          "status": "PASS",
+          "duration": 0.0025458335876464844,
+          "details": "Process control successful - CPU: 0.0%, Memory: 37MB",
+          "error": null,
+          "recommendations": null
+        },
+        {
+          "test_name": "Content Processing",
+          "status": "WARNING",
+          "duration": 1.173975944519043,
+          "details": "Capabilities: 4, Issues: 1",
+          "error": null,
+          "recommendations": [
+            "Some content processing tools failed - check installations"
+          ]
+        },
+        {
+          "test_name": "Concurrent Processing",
+          "status": "FAIL",
+          "duration": 0.25310802459716797,
+          "details": "Concurrent processing test failed",
+          "error": "Can't get local object 'MegaComprehensiveTestSuite.test_concurrent_processing.<locals>.<lambda>'",
+          "recommendations": null
+        }
+      ]
+    },
+    "performance_benchmarks": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "warnings": 0,
+      "results": [
+        {
+          "test_name": "Auto Startup",
+          "status": "PASS",
+          "duration": 9.679794311523438e-05,
+          "details": "Available methods: 2, Issues: 0",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Startup Performance",
+          "status": "PASS",
+          "duration": 0.00656437873840332,
+          "details": "Total startup: 0.01s (Import: 0.00s, Deps: 0.00s)",
+          "error": null,
+          "recommendations": []
+        }
+      ]
+    },
+    "error_recovery": {
+      "total": 3,
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "results": [
+        {
+          "test_name": "Exception Handling",
+          "status": "WARNING",
+          "duration": 0.001348733901977539,
+          "details": "Exception handling: 6/9 scenarios handled properly",
+          "error": null,
+          "recommendations": [
+            "Improve exception handling coverage"
+          ]
+        },
+        {
+          "test_name": "Recovery Mechanisms",
+          "status": "PASS",
+          "duration": 0.3152956962585449,
+          "details": "Recovery features: 4, Issues: 0",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Data Integrity",
+          "status": "PASS",
+          "duration": 0.1381065845489502,
+          "details": "Integrity checks: 5 passed, 0 issues",
+          "error": null,
+          "recommendations": [
+            "Consider implementing checksum validation for critical files"
+          ]
+        }
+      ]
+    },
+    "real_world_scenarios": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "warnings": 0,
+      "results": [
+        {
+          "test_name": "User Workflow",
+          "status": "PASS",
+          "duration": 0.10696554183959961,
+          "details": "Workflow tests: 6 passed, 0 issues",
+          "error": null,
+          "recommendations": []
+        },
+        {
+          "test_name": "Production Readiness",
+          "status": "PASS",
+          "duration": 0.10069417953491211,
+          "details": "Production readiness: 83.3% (5 criteria met, 1 issues)",
+          "error": null,
+          "recommendations": []
+        }
+      ]
+    }
+  },
+  "detailed_results": [
+    {
+      "test_name": "System Detection",
+      "status": "PASS",
+      "duration": 0.07697820663452148,
+      "details": "Detected Linux 64bit with 4 CPUs, 15GB RAM",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "Hardware Analysis",
+      "status": "PASS",
+      "duration": 0.013331174850463867,
+      "details": "Hardware Score: 90.1/100 (CPU: 95.83840370178223, Memory: 74.37730696039418, Disk: 99.9379825592041)",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "OS Requirements",
+      "status": "PASS",
+      "duration": 4.76837158203125e-06,
+      "details": "OS requirements check for Linux",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "Python Environment",
+      "status": "WARNING",
+      "duration": 0.0003800392150878906,
+      "details": "Python 3.12.12 - Warnings: Virtual environment recommended",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "Path Handling",
+      "status": "PASS",
+      "duration": 0.00020551681518554688,
+      "details": "Tested 5 path formats",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "File Permissions",
+      "status": "PASS",
+      "duration": 0.0002963542938232422,
+      "details": "File operations successful",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "Process Management",
+      "status": "PASS",
+      "duration": 0.0025458335876464844,
+      "details": "Process control successful - CPU: 0.0%, Memory: 37MB",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "Network Binding",
+      "status": "PASS",
+      "duration": 0.0004069805145263672,
+      "details": "Available ports: [8001, 8080, 9000]",
+      "error": null,
+      "recommendations": null
+    },
+    {
+      "test_name": "CPU Optimization",
+      "status": "PASS",
+      "duration": 0.0022971630096435547,
+      "details": "CPU: 2 physical, 4 logical cores @ 2599.998MHz",
+      "error": null,
+      "recommendations": [
+        "Consider upgrading to multi-core CPU for better performance",
+        "Hyperthreading detected - can utilize logical cores"
+      ]
+    },
+    {
+      "test_name": "Memory Optimization",
+      "status": "PASS",
+      "duration": 0.044100046157836914,
+      "details": "RAM: 15GB total, 11GB available (25.6% used)",
+      "error": null,
+      "recommendations": [
+        "No swap space detected - consider adding swap for stability"
+      ]
+    },
+    {
+      "test_name": "GPU Detection",
+      "status": "PASS",
+      "duration": 1.066953420639038,
+      "details": "GPUs detected: No GPU detected",
+      "error": null,
+      "recommendations": [
+        "No GPU acceleration detected - CPU-only processing will be slower"
+      ]
+    },
+    {
+      "test_name": "Storage Optimization",
+      "status": "PASS",
+      "duration": 0.0001366138458251953,
+      "details": "Analyzed 13 drives",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Critical Dependencies",
+      "status": "FAIL",
+      "duration": 2.868673801422119,
+      "details": "Installed: 8/10 critical dependencies - Missing: z3-solver, scikit-learn",
+      "error": "Critical dependencies missing",
+      "recommendations": [
+        "Install missing dependencies: pip install z3-solver scikit-learn"
+      ]
+    },
+    {
+      "test_name": "Optional Dependencies",
+      "status": "PASS",
+      "duration": 0.0004305839538574219,
+      "details": "Available features: 2/7",
+      "error": null,
+      "recommendations": [
+        "Consider installing ollama for Ollama integration",
+        "Consider installing beautifulsoup4 for Web scraping",
+        "Consider installing scrapy for Advanced web scraping",
+        "Consider installing opencv-python for Computer vision",
+        "Consider installing pillow for Image processing"
+      ]
+    },
+    {
+      "test_name": "Installation Simulation",
+      "status": "PASS",
+      "duration": 0.008750200271606445,
+      "details": "Simulated installation: 4 files, 66 dependencies",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Requirements Validation",
+      "status": "WARNING",
+      "duration": 0.00020623207092285156,
+      "details": "Validated 2 requirements files - Issues: 1",
+      "error": null,
+      "recommendations": [
+        "Fix: No version specified for sqlite3  # Built-in with Python in requirements_hybrid.txt"
+      ]
+    },
+    {
+      "test_name": "Local Model Discovery",
+      "status": "PASS",
+      "duration": 0.0034296512603759766,
+      "details": "Found 0 models across 13 drives",
+      "error": null,
+      "recommendations": [
+        "No local models found - consider downloading models for offline use"
+      ]
+    },
+    {
+      "test_name": "Ollama Integration",
+      "status": "WARNING",
+      "duration": 0.0006592273712158203,
+      "details": "Ollama: Not available",
+      "error": null,
+      "recommendations": [
+        "Ollama not installed - consider installing for local LLM support"
+      ]
+    },
+    {
+      "test_name": "HuggingFace Models",
+      "status": "PASS",
+      "duration": 0.0021703243255615234,
+      "details": "HuggingFace: Available, 1 cached models",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Model Compatibility",
+      "status": "PASS",
+      "duration": 1.32131028175354,
+      "details": "Compatible: 2, Incompatible: 0",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Internet Connectivity",
+      "status": "PASS",
+      "duration": 0.47031092643737793,
+      "details": "Network: 4/4, HTTP: 3/4",
+      "error": null,
+      "recommendations": [
+        "Some HTTP requests failed - check internet access"
+      ]
+    },
+    {
+      "test_name": "Web Scraping",
+      "status": "PASS",
+      "duration": 0.9695758819580078,
+      "details": "Available tools: requests",
+      "error": null,
+      "recommendations": [
+        "Consider installing Scrapy for advanced web scraping"
+      ]
+    },
+    {
+      "test_name": "API Access",
+      "status": "WARNING",
+      "duration": 0.36158323287963867,
+      "details": "API tests: 3, Key support: 2",
+      "error": null,
+      "recommendations": [
+        "Some API tests failed - check network connectivity"
+      ]
+    },
+    {
+      "test_name": "Content Processing",
+      "status": "WARNING",
+      "duration": 1.173975944519043,
+      "details": "Capabilities: 4, Issues: 1",
+      "error": null,
+      "recommendations": [
+        "Some content processing tools failed - check installations"
+      ]
+    },
+    {
+      "test_name": "Launcher Scripts",
+      "status": "PASS",
+      "duration": 0.004972934722900391,
+      "details": "Working launchers: 2, Issues: 0",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Desktop Integration",
+      "status": "WARNING",
+      "duration": 0.0013501644134521484,
+      "details": "Features: 2, Issues: 1",
+      "error": null,
+      "recommendations": [
+        "Address desktop integration issues for better user experience",
+        "Add application icons for professional appearance"
+      ]
+    },
+    {
+      "test_name": "Service Management",
+      "status": "PASS",
+      "duration": 0.0006184577941894531,
+      "details": "Features: 4, Issues: 0",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Auto Startup",
+      "status": "PASS",
+      "duration": 9.679794311523438e-05,
+      "details": "Available methods: 2, Issues: 0",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Startup Performance",
+      "status": "PASS",
+      "duration": 0.00656437873840332,
+      "details": "Total startup: 0.01s (Import: 0.00s, Deps: 0.00s)",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Memory Usage",
+      "status": "PASS",
+      "duration": 0.04050278663635254,
+      "details": "Peak: 1056MB, Cleanup: 99.5%",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "CPU Utilization",
+      "status": "WARNING",
+      "duration": 2.0139098167419434,
+      "details": "Single: 0.004s, Parallel: 0.009s, Efficiency: 0.46x",
+      "error": null,
+      "recommendations": [
+        "Poor parallel processing efficiency - check thread utilization"
+      ]
+    },
+    {
+      "test_name": "Concurrent Processing",
+      "status": "FAIL",
+      "duration": 0.25310802459716797,
+      "details": "Concurrent processing test failed",
+      "error": "Can't get local object 'MegaComprehensiveTestSuite.test_concurrent_processing.<locals>.<lambda>'",
+      "recommendations": null
+    },
+    {
+      "test_name": "Exception Handling",
+      "status": "WARNING",
+      "duration": 0.001348733901977539,
+      "details": "Exception handling: 6/9 scenarios handled properly",
+      "error": null,
+      "recommendations": [
+        "Improve exception handling coverage"
+      ]
+    },
+    {
+      "test_name": "Graceful Degradation",
+      "status": "PASS",
+      "duration": 0.004240274429321289,
+      "details": "Graceful degradation: 4/4 scenarios handled gracefully",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Recovery Mechanisms",
+      "status": "PASS",
+      "duration": 0.3152956962585449,
+      "details": "Recovery features: 4, Issues: 0",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Data Integrity",
+      "status": "PASS",
+      "duration": 0.1381065845489502,
+      "details": "Integrity checks: 5 passed, 0 issues",
+      "error": null,
+      "recommendations": [
+        "Consider implementing checksum validation for critical files"
+      ]
+    },
+    {
+      "test_name": "Fresh Installation",
+      "status": "PASS",
+      "duration": 0.029788970947265625,
+      "details": "Installation steps: 5 completed, 0 issues",
+      "error": null,
+      "recommendations": [
+        "Consider reducing dependencies for faster installation"
+      ]
+    },
+    {
+      "test_name": "User Workflow",
+      "status": "PASS",
+      "duration": 0.10696554183959961,
+      "details": "Workflow tests: 6 passed, 0 issues",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "System Integration",
+      "status": "PASS",
+      "duration": 0.0004749298095703125,
+      "details": "Integration tests: 5 passed, 0 issues",
+      "error": null,
+      "recommendations": []
+    },
+    {
+      "test_name": "Production Readiness",
+      "status": "PASS",
+      "duration": 0.10069417953491211,
+      "details": "Production readiness: 83.3% (5 criteria met, 1 issues)",
+      "error": null,
+      "recommendations": []
+    }
+  ],
+  "recommendations": [
+    "Address failed tests before deployment"
+  ],
+  "production_readiness_assessment": {
+    "overall_score": 39.0,
+    "readiness_level": "NOT_READY",
+    "critical_issues": [
+      "Critical Dependencies",
+      "Concurrent Processing"
+    ],
+    "blocking_issues": [],
+    "improvement_areas": [
+      "Python Environment",
+      "Requirements Validation",
+      "Ollama Integration",
+      "API Access",
+      "Content Processing",
+      "Desktop Integration",
+      "CPU Utilization",
+      "Exception Handling"
+    ],
+    "strengths": [
+      "System Detection",
+      "Hardware Analysis",
+      "OS Requirements",
+      "Path Handling",
+      "File Permissions",
+      "Process Management",
+      "Network Binding",
+      "CPU Optimization",
+      "Memory Optimization",
+      "GPU Detection",
+      "Storage Optimization",
+      "Optional Dependencies",
+      "Installation Simulation",
+      "Local Model Discovery",
+      "HuggingFace Models",
+      "Model Compatibility",
+      "Internet Connectivity",
+      "Web Scraping",
+      "Launcher Scripts",
+      "Service Management",
+      "Auto Startup",
+      "Startup Performance",
+      "Memory Usage",
+      "Graceful Degradation",
+      "Recovery Mechanisms",
+      "Data Integrity",
+      "Fresh Installation",
+      "User Workflow",
+      "System Integration",
+      "Production Readiness"
+    ]
+  }
+}

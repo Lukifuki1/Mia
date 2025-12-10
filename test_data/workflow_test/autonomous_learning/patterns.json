@@ -1,0 +1,68 @@
+{
+  "question_answer_pattern": {
+    "pattern_id": "question_answer_pattern",
+    "pattern_type": "question_answer",
+    "description": "User asks question, system provides answer",
+    "examples": [
+      {
+        "question": "What is artificial intelligence?",
+        "answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.0341756
+      },
+      {
+        "question": "How does machine learning work?",
+        "answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.153337
+      },
+      {
+        "question": "Can you explain neural networks?",
+        "answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.269378
+      }
+    ],
+    "frequency": 3,
+    "confidence": 0.3,
+    "first_seen": 1765360734.034203,
+    "last_seen": 1765360734.269378,
+    "metadata": {}
+  },
+  "concept_definition_pattern": {
+    "pattern_id": "concept_definition_pattern",
+    "pattern_type": "concept_definition",
+    "description": "User asks for concept definition",
+    "examples": [
+      {
+        "request": "What is artificial intelligence?",
+        "definition": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.0341756
+      },
+      {
+        "request": "Can you explain neural networks?",
+        "definition": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.269378
+      }
+    ],
+    "frequency": 2,
+    "confidence": 0.2,
+    "first_seen": 1765360734.0342147,
+    "last_seen": 1765360734.269378,
+    "metadata": {}
+  },
+  "logical_reasoning_pattern": {
+    "pattern_id": "logical_reasoning_pattern",
+    "pattern_type": "logical_reasoning",
+    "description": "User engages in logical reasoning",
+    "examples": [
+      {
+        "reasoning_input": "What is artificial intelligence?",
+        "reasoning_output": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360734.0341756
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360734.0342212,
+    "last_seen": 1765360734.0341756,
+    "metadata": {}
+  }
+}

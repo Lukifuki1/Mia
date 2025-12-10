@@ -1,0 +1,11 @@
+{
+  "http://mia.ai/ontology#testRelation": {
+    "uri": "http://mia.ai/ontology#testRelation",
+    "label": "test relation",
+    "domain": "http://test.com#TestConcept",
+    "range": "http://test.com#TestConcept",
+    "properties": {},
+    "inverse_of": null,
+    "created_at": 1765360720.1290774
+  }
+}

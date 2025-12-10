@@ -1,0 +1,36 @@
+{
+  "question_answer_pattern": {
+    "pattern_id": "question_answer_pattern",
+    "pattern_type": "question_answer",
+    "description": "User asks question, system provides answer",
+    "examples": [
+      {
+        "question": "What is AI?",
+        "answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360735.6481283
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360735.6559186,
+    "last_seen": 1765360735.6481283,
+    "metadata": {}
+  },
+  "concept_definition_pattern": {
+    "pattern_id": "concept_definition_pattern",
+    "pattern_type": "concept_definition",
+    "description": "User asks for concept definition",
+    "examples": [
+      {
+        "request": "What is AI?",
+        "definition": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360735.6481283
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360735.655929,
+    "last_seen": 1765360735.6481283,
+    "metadata": {}
+  }
+}

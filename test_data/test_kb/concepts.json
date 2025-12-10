@@ -1,0 +1,13 @@
+{
+  "http://mia.ai/ontology#TestConcept": {
+    "uri": "http://mia.ai/ontology#TestConcept",
+    "label": "Test Concept",
+    "description": "A test concept",
+    "parent_classes": [
+      "http://mia.ai/ontology#Entity"
+    ],
+    "properties": {},
+    "constraints": {},
+    "created_at": 1765360720.128925
+  }
+}

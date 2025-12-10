@@ -1,0 +1,19 @@
+{
+  "question_answer_pattern": {
+    "pattern_id": "question_answer_pattern",
+    "pattern_type": "question_answer",
+    "description": "User asks question, system provides answer",
+    "examples": [
+      {
+        "question": "Hello, how are you?",
+        "answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360730.1800697
+      }
+    ],
+    "frequency": 1,
+    "confidence": 0.1,
+    "first_seen": 1765360730.1873524,
+    "last_seen": 1765360730.1800697,
+    "metadata": {}
+  }
+}

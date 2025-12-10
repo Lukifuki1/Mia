@@ -1,0 +1,313 @@
+{
+  "test_summary": {
+    "total_duration": 40.332603454589844,
+    "total_test_suites": 8,
+    "total_tests": 19,
+    "total_passed": 16,
+    "total_failed": 3,
+    "overall_success_rate": 0.8421052631578947,
+    "test_status": "PASSED"
+  },
+  "test_suites": [
+    {
+      "suite_name": "Unit Tests",
+      "total_tests": 6,
+      "passed_tests": 4,
+      "failed_tests": 2,
+      "total_duration": 10.209248065948486,
+      "results": [
+        {
+          "test_name": "Knowledge Bank Core",
+          "success": false,
+          "duration": 0.1501755714416504,
+          "error_message": "SPARQL query failed",
+          "details": null
+        },
+        {
+          "test_name": "Semantic Layer",
+          "success": true,
+          "duration": 7.54274320602417,
+          "error_message": null,
+          "details": {
+            "texts_parsed": 1,
+            "entities_extracted": 2,
+            "relations_extracted": 1,
+            "similarity_queries": 1
+          }
+        },
+        {
+          "test_name": "Deterministic Reasoning",
+          "success": true,
+          "duration": 0.10618758201599121,
+          "error_message": null,
+          "details": {
+            "facts_added": 1,
+            "rules_added": 1,
+            "reasoning_queries": 1,
+            "consistency_checks": 1
+          }
+        },
+        {
+          "test_name": "Hybrid Pipeline",
+          "success": true,
+          "duration": 1.2388460636138916,
+          "error_message": null,
+          "details": {
+            "queries_processed": 2,
+            "successful_queries": 2,
+            "modes_tested": 2
+          }
+        },
+        {
+          "test_name": "Autonomous Learning",
+          "success": false,
+          "duration": 0.03406357765197754,
+          "error_message": "Learning from interaction failed",
+          "details": null
+        },
+        {
+          "test_name": "Hybrid Integration",
+          "success": true,
+          "duration": 1.134521722793579,
+          "error_message": null,
+          "details": {
+            "requests_processed": 1,
+            "capability_level": "CapabilityLevel.EXPERT",
+            "response_length": 80
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Integration Tests",
+      "total_tests": 3,
+      "passed_tests": 2,
+      "failed_tests": 1,
+      "total_duration": 2.4543046951293945,
+      "results": [
+        {
+          "test_name": "Component Integration",
+          "success": false,
+          "duration": 1.2674100399017334,
+          "error_message": "Multiple stages not executed",
+          "details": null
+        },
+        {
+          "test_name": "Data Flow",
+          "success": true,
+          "duration": 0.006794452667236328,
+          "error_message": null,
+          "details": {
+            "concepts_persisted": 1,
+            "data_persistence": true
+          }
+        },
+        {
+          "test_name": "API Integration",
+          "success": true,
+          "duration": 1.177464246749878,
+          "error_message": null,
+          "details": {
+            "requests_processed": 3,
+            "successful_responses": 3,
+            "api_consistency": true
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "End-to-End Tests",
+      "total_tests": 2,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "total_duration": 1.8484246730804443,
+      "results": [
+        {
+          "test_name": "Complete Workflow",
+          "success": true,
+          "duration": 1.8436217308044434,
+          "error_message": null,
+          "details": {
+            "user_queries": 5,
+            "successful_responses": 5,
+            "average_response_time": 0.016614246368408202,
+            "workflow_completed": true
+          }
+        },
+        {
+          "test_name": "Launcher Integration",
+          "success": true,
+          "duration": 0.003300905227661133,
+          "error_message": null,
+          "details": {
+            "config_loaded": true,
+            "launcher_created": true,
+            "status_accessible": true
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Performance Tests",
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "total_duration": 7.646229028701782,
+      "results": [
+        {
+          "test_name": "Response Time",
+          "success": true,
+          "duration": 1.1661889553070068,
+          "error_message": null,
+          "details": {
+            "samples": 10,
+            "avg_response_time": 0.0038973093032836914,
+            "max_response_time": 0.03892636299133301,
+            "min_response_time": 1.9073486328125e-06,
+            "performance_threshold": 5.0
+          }
+        },
+        {
+          "test_name": "Throughput",
+          "success": true,
+          "duration": 1.4813206195831299,
+          "error_message": null,
+          "details": {
+            "concurrent_requests": 5,
+            "successful_responses": 5,
+            "throughput_rps": 46.20101824334297,
+            "concurrent_duration": 0.10822272300720215,
+            "throughput_threshold": 0.5
+          }
+        },
+        {
+          "test_name": "Memory Usage",
+          "success": true,
+          "duration": 4.9939124584198,
+          "error_message": null,
+          "details": {
+            "initial_memory_mb": 1297.97265625,
+            "final_memory_mb": 1171.2890625,
+            "memory_increase_mb": -126.68359375,
+            "memory_threshold_mb": 100,
+            "requests_processed": 20
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Error Handling Tests",
+      "total_tests": 2,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "total_duration": 5.9536967277526855,
+      "results": [
+        {
+          "test_name": "Invalid Input Handling",
+          "success": true,
+          "duration": 5.95174765586853,
+          "error_message": null,
+          "details": {
+            "invalid_inputs_tested": 4,
+            "errors_handled_gracefully": 4,
+            "graceful_handling_rate": 1.0
+          }
+        },
+        {
+          "test_name": "Component Failure Handling",
+          "success": true,
+          "duration": 0.0004661083221435547,
+          "error_message": null,
+          "details": {
+            "fallback_mode_functional": true,
+            "capabilities_reported": true,
+            "graceful_degradation": true
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Recovery Tests",
+      "total_tests": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "total_duration": 0.006496906280517578,
+      "results": [
+        {
+          "test_name": "Data Recovery",
+          "success": true,
+          "duration": 0.0064907073974609375,
+          "error_message": null,
+          "details": {
+            "concepts_recovered": 1,
+            "data_persistence": true,
+            "recovery_successful": true
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Load Tests",
+      "total_tests": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "total_duration": 11.322956323623657,
+      "results": [
+        {
+          "test_name": "System Under Load",
+          "success": true,
+          "duration": 11.320019006729126,
+          "error_message": null,
+          "details": {
+            "load_duration": 10.067368030548096,
+            "total_requests": 78,
+            "successful_requests": 78,
+            "requests_per_second": 7.747804566528146,
+            "success_rate": 1.0,
+            "load_test_criteria_met": true
+          }
+        }
+      ]
+    },
+    {
+      "suite_name": "Memory Tests",
+      "total_tests": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "total_duration": 0.8895974159240723,
+      "results": [
+        {
+          "test_name": "Memory Leaks",
+          "success": true,
+          "duration": 0.8895885944366455,
+          "error_message": null,
+          "details": {
+            "test_cycles": 5,
+            "memory_samples_mb": [
+              -182.30078125,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "avg_memory_increase_mb": -36.46015625,
+            "max_memory_increase_mb": 0.0,
+            "leak_threshold_mb": 10,
+            "no_significant_leaks": true
+          }
+        }
+      ]
+    }
+  ],
+  "system_info": {
+    "python_version": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:25:55) [GCC 14.3.0]",
+    "platform": "linux",
+    "memory_usage_mb": 1074.5078125,
+    "cpu_percent": 0.0
+  },
+  "recommendations": [
+    "Address failures in Unit Tests: 2 tests failed",
+    "Address failures in Integration Tests: 1 tests failed",
+    "Review failed tests and implement fixes before production deployment"
+  ]
+}

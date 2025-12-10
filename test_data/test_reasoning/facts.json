@@ -1,0 +1,16 @@
+{
+  "test_fact": {
+    "term": {
+      "name": "human",
+      "arguments": [
+        "socrates"
+      ],
+      "negated": false
+    },
+    "confidence": 1.0,
+    "source": "test",
+    "timestamp": 1765360727.709794,
+    "derived": false,
+    "derivation_trace": []
+  }
+}

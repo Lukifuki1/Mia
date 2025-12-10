@@ -1,0 +1,392 @@
+[
+  {
+    "request_id": "ab6b5eb4-d248-417e-9562-4ccbc855d390",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.018047809600830078,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Hello, I'm new here",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005517482757568359,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360733.8980665
+          }
+        },
+        "similarity_result": {
+          "query": "Hello, I'm new here",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.012469768524169922
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "cd4336e8-1e5c-4613-bf3a-cb40e60ba09a",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 3.409385681152344e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Hello, I'm new here",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005517482757568359,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360733.8980665
+          }
+        },
+        "similarity_result": {
+          "query": "Hello, I'm new here",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 6.67572021484375e-06
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "9deeafb5-8b9a-404f-99db-7ca5ae91c784",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.014734268188476562,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "What is artificial intelligence?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.004544258117675781,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.0236351
+          }
+        },
+        "similarity_result": {
+          "query": "What is artificial intelligence?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.010131359100341797
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "af2af96f-3722-435f-88f1-08dd58782ea2",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 3.266334533691406e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "What is artificial intelligence?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.004544258117675781,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.0236351
+          }
+        },
+        "similarity_result": {
+          "query": "What is artificial intelligence?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 6.9141387939453125e-06
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "681b94eb-9a80-4497-a4f2-b0719b866cdb",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.018384456634521484,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "How does machine learning work?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005276203155517578,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.1399043
+          }
+        },
+        "similarity_result": {
+          "query": "How does machine learning work?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.013045310974121094
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "b9bd9698-769d-4f74-9c2e-30516ace5d9d",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 3.4809112548828125e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "How does machine learning work?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005276203155517578,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.1399043
+          }
+        },
+        "similarity_result": {
+          "query": "How does machine learning work?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 5.9604644775390625e-06
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "263b16a8-5b84-4607-a645-0443b29fa060",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.015249967575073242,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Can you explain neural networks?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005543708801269531,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.2593184
+          }
+        },
+        "similarity_result": {
+          "query": "Can you explain neural networks?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.00964665412902832
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "0993d508-c706-4a3c-b072-b591628b0393",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 3.504753112792969e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Can you explain neural networks?",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.005543708801269531,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.2593184
+          }
+        },
+        "similarity_result": {
+          "query": "Can you explain neural networks?",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 7.152557373046875e-06
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "b1db64f3-cf83-4a54-a4a4-ec18f7618f82",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 0.014938592910766602,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Thank you for the information",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.004727840423583984,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.3745658
+          }
+        },
+        "similarity_result": {
+          "query": "Thank you for the information",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 0.010147333145141602
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  },
+  {
+    "request_id": "82a085f1-d2a0-4e58-a920-32b948abf844",
+    "success": true,
+    "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+    "confidence": 0.0,
+    "processing_path": [
+      "semantic_analysis"
+    ],
+    "total_processing_time": 4.076957702636719e-05,
+    "mode_used": "neural_only",
+    "explanation": "Neural-only processing with confidence 0.00",
+    "metadata": {
+      "semantic_results": {
+        "parse_result": {
+          "original_text": "Thank you for the information",
+          "entities": [],
+          "relations": [],
+          "concepts": [],
+          "confidence": 0.0,
+          "processing_time": 0.004727840423583984,
+          "metadata": {
+            "extract_entities": true,
+            "extract_relations": true,
+            "link_to_kb": true,
+            "timestamp": 1765360734.3745658
+          }
+        },
+        "similarity_result": {
+          "query": "Thank you for the information",
+          "matches": [],
+          "similarity_scores": [],
+          "processing_time": 8.106231689453125e-06
+        },
+        "entities_count": 0,
+        "relations_count": 0,
+        "concepts_count": 0
+      }
+    }
+  }
+]
