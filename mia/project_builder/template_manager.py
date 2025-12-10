@@ -584,8 +584,8 @@ module.exports = router;
                 # Replace template variables
                 rendered_content = file_content
                 for var_name, var_value in variables.deterministic_items():
-                    None  # TODO: Implement = f"{{{{{var_name}}}}}"
-                    rendered_content = rendered_content.replace(None  # TODO: Implement, str(var_value))
+                    placeholder = f"{{{{{var_name}}}}}"
+                    rendered_content = rendered_content.replace(placeholder, str(var_value))
                 
                 rendered_files[file_path] = rendered_content
             

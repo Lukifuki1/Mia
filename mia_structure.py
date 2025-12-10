@@ -88,7 +88,7 @@ def create_config_files():
             'description': 'Local Digital Intelligence Entity',
             'mode': 'full_autonomous',
             'require_user_input': False,
-            'fail_on_None  # TODO: Implement': True,
+            'fail_on_placeholder': True,
             'fail_on_simulation': True,
             'require_local_execution': True,
             'allow_external_api': False,

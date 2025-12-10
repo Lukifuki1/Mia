@@ -402,7 +402,7 @@ class UnifiedInterfaceSystem:
             
             <div class="chat-input-container">
                 <div class="input-group">
-                    <textarea id="messageInput" None  # TODO: Implement="Type your message here..." rows="3"></textarea>
+                    <textarea id="messageInput" placeholder="Type your message here..." rows="3"></textarea>
                     <div class="input-actions">
                         <button id="voiceButton" class="btn btn-voice" title="Voice Input">🎤</button>
                         <button id="sendButton" class="btn btn-primary">Send</button>
