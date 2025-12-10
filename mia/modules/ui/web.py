@@ -9,7 +9,7 @@ import json
 import logging
 from typing import Dict, Any, Optional
 from pathlib import Path
-from fastapi import FastAPI, Request, Response, HTTPException
+from fastapi import FastAPI, Request, Response, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -77,6 +77,26 @@ class MIAWebUI:
         async def learning(request: Request):
             """Learning page"""
             return self._get_learning_html()
+        
+        @self.app.get("/chat", response_class=HTMLResponse)
+        async def chat_page(request: Request):
+            """Chat interface page"""
+            print("📞 Chat page requested")
+            return HTMLResponse(self._get_chat_html())
+        
+        @self.app.websocket("/chat/ws")
+        async def chat_websocket(websocket: WebSocket):
+            """WebSocket endpoint for chat"""
+            from mia.interfaces.chat import chat_interface
+            
+            await chat_interface.connect(websocket)
+            try:
+                while True:
+                    data = await websocket.receive_text()
+                    message_data = json.loads(data)
+                    await chat_interface.process_message(websocket, message_data)
+            except WebSocketDisconnect:
+                chat_interface.disconnect(websocket)
         
         @self.app.get("/api/status")
         async def api_status():
@@ -276,6 +296,7 @@ class MIAWebUI:
             <a href="/dashboard">Dashboard</a>
             <a href="/models">Models</a>
             <a href="/learning">Learning</a>
+            <a href="/chat">Chat</a>
         </nav>
     </div>
     
@@ -338,6 +359,195 @@ class MIAWebUI:
         """Get dashboard page HTML"""
         return "Dashboard HTML content here..."
     
+    def _get_home_html(self) -> str:
+        """Get home page HTML"""
+        return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Enterprise AGI - Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .header {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .nav { display: flex; gap: 1rem; }
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover { background: rgba(255,255,255,0.2); }
+        .nav a.active { background: rgba(255,255,255,0.3); }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .hero {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .cta {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        .status {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .status h3 {
+            margin-bottom: 1rem;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+        .status-value {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🤖 MIA Enterprise AGI</div>
+        <nav class="nav">
+            <a href="/" class="active">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/models">Models</a>
+            <a href="/learning">Learning</a>
+            <a href="/chat">Chat</a>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <div class="hero">
+            <h1>🧠 MIA Enterprise AGI</h1>
+            <p>Advanced Artificial General Intelligence for Enterprise Applications</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🧠 AGI Core</h3>
+                <p>Advanced reasoning, semantic understanding, and autonomous decision-making capabilities powered by our proprietary AGI engine.</p>
+            </div>
+            <div class="feature">
+                <h3>💬 Intelligent Chat</h3>
+                <p>Real-time conversational interface with thought transparency, confidence scoring, and context-aware responses.</p>
+            </div>
+            <div class="feature">
+                <h3>🔍 Model Discovery</h3>
+                <p>Automatic discovery and integration of local AI models with performance optimization and compatibility checking.</p>
+            </div>
+            <div class="feature">
+                <h3>📚 Self-Learning</h3>
+                <p>Continuous learning from interactions and data sources to improve performance and expand knowledge base.</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Enterprise Security</h3>
+                <p>Advanced security features including encryption, authentication, audit logging, and compliance monitoring.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Analytics</h3>
+                <p>Real-time performance monitoring, usage analytics, and comprehensive reporting for enterprise insights.</p>
+            </div>
+        </div>
+        
+        <div class="status">
+            <h3>🔧 System Status</h3>
+            <div class="status-item">
+                <span>AGI Core:</span>
+                <span class="status-value">✅ Active</span>
+            </div>
+            <div class="status-item">
+                <span>Chat Interface:</span>
+                <span class="status-value">✅ Ready</span>
+            </div>
+            <div class="status-item">
+                <span>Model Discovery:</span>
+                <span class="status-value">🔍 Scanning</span>
+            </div>
+            <div class="status-item">
+                <span>Security:</span>
+                <span class="status-value">🔒 Protected</span>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <a href="/chat" class="btn">🚀 Start Chatting with MIA</a>
+        </div>
+    </div>
+</body>
+</html>
+        """
+    
     def _get_models_html(self) -> str:
         """Get models page HTML"""
         return "Models HTML content here..."
@@ -345,10 +555,387 @@ class MIAWebUI:
     def _get_learning_html(self) -> str:
         """Get learning page HTML"""
         return "Learning HTML content here..."
+    
+    def _get_chat_html(self) -> str:
+        """Get chat interface HTML"""
+        return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Enterprise AGI - Chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .nav { display: flex; gap: 1rem; }
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover { background: rgba(255,255,255,0.2); }
+        .nav a.active { background: rgba(255,255,255,0.3); }
+        .status { font-size: 0.9rem; opacity: 0.8; }
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 1rem auto;
+            width: calc(100% - 2rem);
+            background: rgba(255,255,255,0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 400px;
+        }
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 10px;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message.user {
+            align-self: flex-end;
+            background: #667eea;
+            color: white;
+        }
+        .message.assistant {
+            align-self: flex-start;
+            background: #f0f0f0;
+            color: #333;
+            border-left: 4px solid #667eea;
+        }
+        .message.system {
+            align-self: center;
+            background: #e8f4fd;
+            color: #0066cc;
+            font-style: italic;
+            text-align: center;
+        }
+        .message.thought {
+            align-self: flex-start;
+            background: #fff3cd;
+            color: #856404;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            border-left: 4px solid #ffc107;
+        }
+        .message.error {
+            align-self: center;
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+        .input-area {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        .message-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 50px;
+            max-height: 150px;
+            transition: border-color 0.3s;
+        }
+        .message-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .send-button {
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            height: 50px;
+        }
+        .send-button:hover { background: #5a6fd8; }
+        .send-button:disabled { background: #ccc; cursor: not-allowed; }
+        .typing-indicator {
+            display: none;
+            padding: 0.5rem 1rem;
+            font-style: italic;
+            color: #666;
+            background: #f8f9fa;
+            border-radius: 20px;
+            align-self: flex-start;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .metadata {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        .confidence-bar {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4444, #ffaa00, #44ff44);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🤖 MIA Enterprise AGI</div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/models">Models</a>
+            <a href="/learning">Learning</a>
+            <a href="/chat" class="active">Chat</a>
+        </nav>
+        <div class="status" id="status">Connecting...</div>
+    </div>
+    
+    <div class="chat-container">
+        <div class="messages" id="messages"></div>
+        <div class="typing-indicator" id="typing">🤔 MIA is thinking...</div>
+        <div class="input-area">
+            <textarea class="message-input" id="messageInput" 
+                     placeholder="Ask MIA anything... (Press Enter to send, Shift+Enter for new line)" 
+                     maxlength="2000"></textarea>
+            <button class="send-button" id="sendButton">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        class MIAChat {
+            constructor() {
+                this.ws = null;
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.messagesContainer = document.getElementById('messages');
+                this.statusElement = document.getElementById('status');
+                this.typingIndicator = document.getElementById('typing');
+                this.isConnected = false;
+                
+                this.connect();
+                this.setupEventListeners();
+            }
+            
+            connect() {
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const wsUrl = `${protocol}//${window.location.host}/chat/ws`;
+                
+                this.statusElement.textContent = 'Connecting...';
+                this.statusElement.style.color = '#ffc107';
+                
+                this.ws = new WebSocket(wsUrl);
+                
+                this.ws.onopen = () => {
+                    this.isConnected = true;
+                    this.statusElement.textContent = 'Connected to MIA AGI';
+                    this.statusElement.style.color = '#4CAF50';
+                    this.messageInput.disabled = false;
+                    this.sendButton.disabled = false;
+                };
+                
+                this.ws.onmessage = (event) => {
+                    try {
+                        const message = JSON.parse(event.data);
+                        this.displayMessage(message);
+                    } catch (error) {
+                        console.error('Error parsing message:', error);
+                    }
+                };
+                
+                this.ws.onclose = () => {
+                    this.isConnected = false;
+                    this.statusElement.textContent = 'Disconnected - Reconnecting...';
+                    this.statusElement.style.color = '#f44336';
+                    this.messageInput.disabled = true;
+                    this.sendButton.disabled = true;
+                    
+                    // Attempt to reconnect after 3 seconds
+                    setTimeout(() => this.connect(), 3000);
+                };
+                
+                this.ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                    this.statusElement.textContent = 'Connection Error';
+                    this.statusElement.style.color = '#f44336';
+                };
+            }
+            
+            setupEventListeners() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+                
+                // Auto-resize textarea
+                this.messageInput.addEventListener('input', () => {
+                    this.messageInput.style.height = 'auto';
+                    this.messageInput.style.height = Math.min(this.messageInput.scrollHeight, 150) + 'px';
+                });
+            }
+            
+            sendMessage() {
+                const content = this.messageInput.value.trim();
+                if (!content || !this.isConnected) return;
+                
+                const message = {
+                    content: content,
+                    metadata: {
+                        timestamp: Date.now(),
+                        client: 'web',
+                        user_agent: navigator.userAgent
+                    }
+                };
+                
+                this.ws.send(JSON.stringify(message));
+                this.messageInput.value = '';
+                this.messageInput.style.height = '50px';
+                this.sendButton.disabled = true;
+                
+                // Re-enable send button after 1 second
+                setTimeout(() => {
+                    this.sendButton.disabled = false;
+                }, 1000);
+            }
+            
+            displayMessage(message) {
+                // Handle streaming messages
+                const existingMessage = document.getElementById(`msg-${message.id}`);
+                if (existingMessage && message.metadata?.streaming) {
+                    const contentElement = existingMessage.querySelector('.content');
+                    if (contentElement) {
+                        contentElement.textContent = message.content;
+                    }
+                    return;
+                }
+                
+                const messageElement = document.createElement('div');
+                messageElement.className = `message ${message.type}`;
+                messageElement.id = `msg-${message.id}`;
+                
+                const contentElement = document.createElement('div');
+                contentElement.className = 'content';
+                contentElement.textContent = message.content;
+                messageElement.appendChild(contentElement);
+                
+                // Add metadata if available
+                if (message.metadata && Object.keys(message.metadata).length > 0) {
+                    const metadataElement = document.createElement('div');
+                    metadataElement.className = 'metadata';
+                    
+                    let metadataText = '';
+                    if (message.metadata.confidence !== undefined) {
+                        metadataText += `Confidence: ${(message.metadata.confidence * 100).toFixed(1)}% `;
+                        
+                        // Add confidence bar
+                        const confidenceBar = document.createElement('div');
+                        confidenceBar.className = 'confidence-bar';
+                        const confidenceFill = document.createElement('div');
+                        confidenceFill.className = 'confidence-fill';
+                        confidenceFill.style.width = `${message.metadata.confidence * 100}%`;
+                        confidenceBar.appendChild(confidenceFill);
+                        messageElement.appendChild(confidenceBar);
+                    }
+                    if (message.metadata.processing_time) {
+                        metadataText += `Processing: ${message.metadata.processing_time}s `;
+                    }
+                    if (message.metadata.reasoning_chain) {
+                        metadataText += `Reasoning steps: ${message.metadata.reasoning_chain.length} `;
+                    }
+                    
+                    if (metadataText) {
+                        metadataElement.textContent = metadataText;
+                        messageElement.appendChild(metadataElement);
+                    }
+                }
+                
+                // Show/hide typing indicator
+                if (message.type === 'thought' && message.content.includes('Thinking')) {
+                    this.typingIndicator.style.display = 'block';
+                } else if (message.type === 'assistant' && !message.metadata?.streaming) {
+                    this.typingIndicator.style.display = 'none';
+                }
+                
+                this.messagesContainer.appendChild(messageElement);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+        }
+        
+        // Initialize chat when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new MIAChat();
+        });
+    </script>
+</body>
+</html>
+        """
         
         # Create web directories if they don't exist
         Path("web/templates").mkdir(parents=True, exist_ok=True)
         Path("web/static").mkdir(parents=True, exist_ok=True)
+        
+        # Debug: Print all registered routes
+        print("🔍 Registered routes:")
+        for route in self.app.routes:
+            if hasattr(route, 'path'):
+                print(f"  {route.methods if hasattr(route, 'methods') else 'WS'} {route.path}")
+        print("🔍 End of routes")
         
         # Mount static files
         self.app.mount("/static", StaticFiles(directory="web/static"), name="static")
@@ -361,82 +948,10 @@ class MIAWebUI:
         
         self.logger = logging.getLogger("MIA.WebUI")
         
-        # Setup routes
-        self._setup_routes()
-        
         # Create basic HTML template
         self._create_html_template()
         self._create_static_files()
     
-    def _setup_routes(self):
-        """Setup FastAPI routes"""
-        
-        @self.app.get("/", response_class=HTMLResponse)
-        async def home(request: Request):
-            try:
-                return self.templates.TemplateResponse("advanced_ui.html", {"request": request})
-            except:
-                return self.templates.TemplateResponse("index.html", {"request": request})
-        
-        @self.app.websocket("/ws")
-        async def websocket_endpoint(websocket: WebSocket):
-            await self._handle_websocket(websocket)
-        
-        @self.app.get("/api/status")
-        async def get_status():
-            return await self._get_system_status()
-        
-        @self.app.post("/api/chat")
-        async def chat_endpoint(request: Request):
-            data = await request.json()
-            message = data.get("message", "")
-            return await self._process_chat_message(message)
-        
-        @self.app.post("/api/generate_image")
-        async def generate_image_endpoint(request: Request):
-            data = await request.json()
-            prompt = data.get("prompt", "")
-            style = data.get("style", "realistic")
-            return await self._generate_image(prompt, style)
-        
-        @self.app.post("/api/speak")
-        async def speak_endpoint(request: Request):
-            data = await request.json()
-            text = data.get("text", "")
-            emotion = data.get("emotion", "neutral")
-            return await self._speak_text(text, emotion)
-        
-        @self.app.post("/api/activate_adult_mode")
-        async def activate_adult_mode(request: Request):
-            data = await request.json()
-            phrase = data.get("phrase", "")
-            return await self._activate_adult_mode(phrase)
-        
-        @self.app.post("/api/execute_command")
-        async def execute_command(request: Request):
-            data = await request.json()
-            command = data.get("command", "")
-            return await self._execute_system_command(command)
-        
-        @self.app.get("/api/system_info")
-        async def get_system_info():
-            return await self._get_detailed_system_info()
-        
-        @self.app.post("/api/memory/search")
-        async def search_memories(request: Request):
-            data = await request.json()
-            query = data.get("query", "")
-            return await self._search_memories(query)
-        
-        @self.app.get("/api/evolution/status")
-        async def get_evolution_status():
-            from mia.core.self_evolution import get_evolution_status
-            return get_evolution_status()
-        
-        @self.app.get("/api/learning/status")
-        async def get_learning_status():
-            from mia.core.internet_learning import get_internet_learning_status
-            return get_internet_learning_status()
     
     async def _handle_websocket(self, websocket: WebSocket):
         """Handle WebSocket connection"""

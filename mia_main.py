@@ -21,8 +21,10 @@ sys.path.insert(0, str(project_root))
 
 # Import MIA core systems
 try:
+    from mia.core.agi_core import agi_core, initialize_agi, shutdown_agi
     from mia.core.model_discovery import model_discovery, discover_models
     from mia.core.model_learning import model_learning, start_learning_from_models
+    from mia.interfaces.chat import chat_interface
     from mia.enterprise.security import security_manager
     from mia.enterprise.analytics import analytics
     from mia.enterprise.api_gateway import api_gateway
@@ -128,6 +130,10 @@ class MIADesktopApp:
         
         for dir_path in data_dirs:
             Path(dir_path).mkdir(parents=True, exist_ok=True)
+        
+        # Initialize AGI Core
+        self.logger.info("🧠 Initializing AGI Core...")
+        await initialize_agi()
         
         # Initialize security manager
         self.logger.info("🔒 Initializing security system...")
