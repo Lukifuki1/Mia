@@ -81,7 +81,8 @@ class MIAWebUI:
         @self.app.get("/chat", response_class=HTMLResponse)
         async def chat_page(request: Request):
             """Chat interface page"""
-            return self._get_chat_html()
+            print("📞 Chat page requested")
+            return HTMLResponse(self._get_chat_html())
         
         @self.app.websocket("/chat/ws")
         async def chat_websocket(websocket: WebSocket):
@@ -929,6 +930,13 @@ class MIAWebUI:
         Path("web/templates").mkdir(parents=True, exist_ok=True)
         Path("web/static").mkdir(parents=True, exist_ok=True)
         
+        # Debug: Print all registered routes
+        print("🔍 Registered routes:")
+        for route in self.app.routes:
+            if hasattr(route, 'path'):
+                print(f"  {route.methods if hasattr(route, 'methods') else 'WS'} {route.path}")
+        print("🔍 End of routes")
+        
         # Mount static files
         self.app.mount("/static", StaticFiles(directory="web/static"), name="static")
         
@@ -940,80 +948,10 @@ class MIAWebUI:
         
         self.logger = logging.getLogger("MIA.WebUI")
         
-        # Setup routes
-        self._setup_routes()
-        
         # Create basic HTML template
         self._create_html_template()
         self._create_static_files()
     
-    def _setup_routes(self):
-        """Setup FastAPI routes"""
-        
-        @self.app.get("/", response_class=HTMLResponse)
-        async def home(request: Request):
-            """Home page"""
-            return HTMLResponse(self._get_home_html())
-        
-        @self.app.websocket("/ws")
-        async def websocket_endpoint(websocket: WebSocket):
-            await self._handle_websocket(websocket)
-        
-        @self.app.get("/api/status")
-        async def get_status():
-            return await self._get_system_status()
-        
-        @self.app.post("/api/chat")
-        async def chat_endpoint(request: Request):
-            data = await request.json()
-            message = data.get("message", "")
-            return await self._process_chat_message(message)
-        
-        @self.app.post("/api/generate_image")
-        async def generate_image_endpoint(request: Request):
-            data = await request.json()
-            prompt = data.get("prompt", "")
-            style = data.get("style", "realistic")
-            return await self._generate_image(prompt, style)
-        
-        @self.app.post("/api/speak")
-        async def speak_endpoint(request: Request):
-            data = await request.json()
-            text = data.get("text", "")
-            emotion = data.get("emotion", "neutral")
-            return await self._speak_text(text, emotion)
-        
-        @self.app.post("/api/activate_adult_mode")
-        async def activate_adult_mode(request: Request):
-            data = await request.json()
-            phrase = data.get("phrase", "")
-            return await self._activate_adult_mode(phrase)
-        
-        @self.app.post("/api/execute_command")
-        async def execute_command(request: Request):
-            data = await request.json()
-            command = data.get("command", "")
-            return await self._execute_system_command(command)
-        
-        @self.app.get("/api/system_info")
-        async def get_system_info():
-            return await self._get_detailed_system_info()
-        
-        @self.app.post("/api/memory/search")
-        async def search_memories(request: Request):
-            data = await request.json()
-            query = data.get("query", "")
-            return await self._search_memories(query)
-        
-        @self.app.get("/api/evolution/status")
-        async def get_evolution_status():
-            from mia.core.self_evolution import get_evolution_status
-            return get_evolution_status()
-        
-        @self.app.get("/api/learning/status")
-        async def get_learning_status():
-            from mia.core.internet_learning import get_internet_learning_status
-            return get_internet_learning_status()
     
     async def _handle_websocket(self, websocket: WebSocket):
         """Handle WebSocket connection"""
