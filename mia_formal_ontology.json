@@ -1,0 +1,356 @@
+{
+  "metadata": {
+    "name": "MIA Enterprise AGI Ontology",
+    "version": "2.0",
+    "created": "2025-12-10T12:46:19.904057",
+    "description": "Formalna ontologija MIA Enterprise AGI sistema"
+  },
+  "concepts": {
+    "mia_system": {
+      "id": "mia_system",
+      "name": "MIA Enterprise AGI System",
+      "type": "entity",
+      "description": "Glavni sistem MIA Enterprise AGI platforme",
+      "properties": {
+        "version": "2.0",
+        "architecture": "hybrid_enterprise",
+        "deployment": "production_ready",
+        "scalability": "enterprise_grade"
+      },
+      "constraints": [],
+      "axioms": [
+        "∀x (MIASystem(x) → EnterpriseAGI(x))",
+        "∀x (MIASystem(x) → ProductionReady(x))",
+        "∀x (MIASystem(x) → Scalable(x))"
+      ],
+      "metadata": {}
+    },
+    "agi_core": {
+      "id": "agi_core",
+      "name": "AGI Core Engine",
+      "type": "entity",
+      "description": "Osrednji AGI motor z model discovery integracijo",
+      "properties": {
+        "reasoning_capability": "advanced",
+        "model_switching": "dynamic",
+        "learning_integration": "active"
+      },
+      "constraints": [
+        "must_have_model_discovery",
+        "must_support_dynamic_switching",
+        "must_integrate_with_learning_system"
+      ],
+      "axioms": [],
+      "metadata": {}
+    },
+    "learning_system": {
+      "id": "learning_system",
+      "name": "Autonomous Learning System",
+      "type": "process",
+      "description": "Avtonomni učni sistem z conversation analysis",
+      "properties": {
+        "learning_type": "autonomous",
+        "pattern_recognition": "advanced",
+        "knowledge_extraction": "automatic"
+      },
+      "constraints": [],
+      "axioms": [
+        "∀x,y (Learn(x,y) → Knowledge(x) ⊆ Knowledge(x) ∪ {y})",
+        "∀x (AutonomousLearning(x) → ContinuousImprovement(x))"
+      ],
+      "metadata": {}
+    },
+    "model_discovery": {
+      "id": "model_discovery",
+      "name": "Model Discovery Engine",
+      "type": "process",
+      "description": "Sistem za odkrivanje in upravljanje AI modelov",
+      "properties": {
+        "scan_paths": 47,
+        "supported_formats": [
+          "gguf",
+          "safetensors",
+          "pytorch",
+          "onnx"
+        ],
+        "auto_detection": true
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "enterprise_monitoring": {
+      "id": "enterprise_monitoring",
+      "name": "Enterprise Monitoring System",
+      "type": "process",
+      "description": "Napredni monitoring sistem za enterprise uporabo",
+      "properties": {
+        "real_time_metrics": true,
+        "alerting": "advanced",
+        "dashboard": "comprehensive"
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "security_system": {
+      "id": "security_system",
+      "name": "Enterprise Security System",
+      "type": "entity",
+      "description": "Varnostni sistem z JWT avtentifikacijo",
+      "properties": {
+        "authentication": "JWT",
+        "authorization": "RBAC",
+        "encryption": "AES-256"
+      },
+      "constraints": [
+        "must_authenticate_users",
+        "must_authorize_actions",
+        "must_encrypt_sensitive_data"
+      ],
+      "axioms": [],
+      "metadata": {}
+    },
+    "config_manager": {
+      "id": "config_manager",
+      "name": "Configuration Management System",
+      "type": "entity",
+      "description": "Sistem za upravljanje konfiguracije",
+      "properties": {
+        "environment_support": [
+          "development",
+          "staging",
+          "production"
+        ],
+        "validation": "schema_based",
+        "hot_reload": true
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "multimodal_system": {
+      "id": "multimodal_system",
+      "name": "Multimodal Processing System",
+      "type": "process",
+      "description": "Sistem za procesiranje različnih modalnosti",
+      "properties": {
+        "supported_modalities": [
+          "text",
+          "image",
+          "audio",
+          "video"
+        ],
+        "file_upload": true,
+        "processing_pipeline": "advanced"
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "tts_system": {
+      "id": "tts_system",
+      "name": "Text-to-Speech System",
+      "type": "process",
+      "description": "Sistem za pretvorbo besedila v govor",
+      "properties": {
+        "voices": "multiple",
+        "languages": "multilingual",
+        "quality": "high"
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "chat_interface": {
+      "id": "chat_interface",
+      "name": "Chat Interface System",
+      "type": "entity",
+      "description": "Uporabniški vmesnik za pogovor",
+      "properties": {
+        "real_time": true,
+        "learning_integration": true,
+        "multimodal_support": true
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    },
+    "web_interface": {
+      "id": "web_interface",
+      "name": "Web Interface System",
+      "type": "entity",
+      "description": "Spletni uporabniški vmesnik",
+      "properties": {
+        "responsive": true,
+        "enterprise_features": true,
+        "api_endpoints": "comprehensive"
+      },
+      "constraints": [],
+      "axioms": [],
+      "metadata": {}
+    }
+  },
+  "relations": {
+    "mia_system_part_of_agi_core": {
+      "id": "mia_system_part_of_agi_core",
+      "source": "mia_system",
+      "target": "agi_core",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_learning_system": {
+      "id": "mia_system_part_of_learning_system",
+      "source": "mia_system",
+      "target": "learning_system",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_enterprise_monitoring": {
+      "id": "mia_system_part_of_enterprise_monitoring",
+      "source": "mia_system",
+      "target": "enterprise_monitoring",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_security_system": {
+      "id": "mia_system_part_of_security_system",
+      "source": "mia_system",
+      "target": "security_system",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_config_manager": {
+      "id": "mia_system_part_of_config_manager",
+      "source": "mia_system",
+      "target": "config_manager",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_multimodal_system": {
+      "id": "mia_system_part_of_multimodal_system",
+      "source": "mia_system",
+      "target": "multimodal_system",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_chat_interface": {
+      "id": "mia_system_part_of_chat_interface",
+      "source": "mia_system",
+      "target": "chat_interface",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "mia_system_part_of_web_interface": {
+      "id": "mia_system_part_of_web_interface",
+      "source": "mia_system",
+      "target": "web_interface",
+      "type": "part_of",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "agi_core_uses_model_discovery": {
+      "id": "agi_core_uses_model_discovery",
+      "source": "agi_core",
+      "target": "model_discovery",
+      "type": "uses",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "agi_core_uses_learning_system": {
+      "id": "agi_core_uses_learning_system",
+      "source": "agi_core",
+      "target": "learning_system",
+      "type": "uses",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "learning_system_produces_enterprise_monitoring": {
+      "id": "learning_system_produces_enterprise_monitoring",
+      "source": "learning_system",
+      "target": "enterprise_monitoring",
+      "type": "produces",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "chat_interface_uses_learning_system": {
+      "id": "chat_interface_uses_learning_system",
+      "source": "chat_interface",
+      "target": "learning_system",
+      "type": "uses",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "multimodal_system_uses_tts_system": {
+      "id": "multimodal_system_uses_tts_system",
+      "source": "multimodal_system",
+      "target": "tts_system",
+      "type": "uses",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "web_interface_depends_on_security_system": {
+      "id": "web_interface_depends_on_security_system",
+      "source": "web_interface",
+      "target": "security_system",
+      "type": "depends_on",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "enterprise_monitoring_monitors_agi_core": {
+      "id": "enterprise_monitoring_monitors_agi_core",
+      "source": "enterprise_monitoring",
+      "target": "agi_core",
+      "type": "monitors",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "security_system_controls_web_interface": {
+      "id": "security_system_controls_web_interface",
+      "source": "security_system",
+      "target": "web_interface",
+      "type": "controls",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    },
+    "config_manager_controls_mia_system": {
+      "id": "config_manager_controls_mia_system",
+      "source": "config_manager",
+      "target": "mia_system",
+      "type": "controls",
+      "properties": {},
+      "constraints": [],
+      "weight": 1.0
+    }
+  },
+  "axioms": [
+    "∀x (MIAComponent(x) → Monitored(x))",
+    "∀x (UserInteraction(x) → Authenticated(x))",
+    "∀x (DataProcessing(x) → Logged(x))",
+    "∀x,y (Communicates(x,y) → Secure(x,y))",
+    "∀x (Learning(x) → PersistentKnowledge(x))"
+  ]
+}

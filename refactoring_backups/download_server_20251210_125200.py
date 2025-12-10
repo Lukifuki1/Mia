@@ -5,6 +5,7 @@ Provides direct download access to the complete system ZIP file
 """
 
 from flask import Flask, send_file, render_template_string
+import os
 from pathlib import Path
 
 app = Flask(__name__)
