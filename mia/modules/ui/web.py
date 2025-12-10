@@ -1,36 +1,350 @@
 #!/usr/bin/env python3
 """
 MIA Web UI Module
-Provides web interface for MIA interaction
+Web interface for MIA Desktop Application
 """
 
-import asyncio
+import os
 import json
 import logging
 from typing import Dict, Any, Optional
 from pathlib import Path
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
+from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
-import uvicorn
-
-from mia.core.consciousness.main import consciousness
-from mia.core.memory.main import memory_system, EmotionalTone, store_memory
-from mia.modules.voice.stt.main import stt_engine, process_voice_input
-from mia.modules.voice.tts.main import tts_engine, speak, VoiceProfile
-from mia.modules.multimodal.image.main import image_generator, generate_image, ImageStyle
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 class MIAWebUI:
-    """Main web UI for MIA"""
+    """MIA Web User Interface"""
     
     def __init__(self, host: str = "0.0.0.0", port: int = 12000):
         self.host = host
         self.port = port
-        self.app = FastAPI(title="MIA - Digital Intelligence Entity")
+        self.app = FastAPI(
+            title="MIA Enterprise AGI - Web Interface",
+            description="Web interface for MIA Desktop Application",
+            version="1.0.0"
+        )
         
-        # Setup templates and static files
-        self.templates = Jinja2Templates(directory="web/templates")
+        self.logger = self._setup_logging()
+        self._setup_middleware()
+        self._setup_routes()
+        
+    def _setup_logging(self) -> logging.Logger:
+        """Setup web UI logging"""
+        logger = logging.getLogger("MIA.WebUI")
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+        return logger
+    
+    def _setup_middleware(self):
+        """Setup web UI middleware"""
+        # CORS middleware
+        self.app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    
+    def _setup_routes(self):
+        """Setup web UI routes"""
+        
+        @self.app.get("/", response_class=HTMLResponse)
+        async def home(request: Request):
+            """Home page"""
+            return self._get_home_html()
+        
+        @self.app.get("/dashboard", response_class=HTMLResponse)
+        async def dashboard(request: Request):
+            """Dashboard page"""
+            return self._get_dashboard_html()
+        
+        @self.app.get("/models", response_class=HTMLResponse)
+        async def models(request: Request):
+            """Models page"""
+            return self._get_models_html()
+        
+        @self.app.get("/learning", response_class=HTMLResponse)
+        async def learning(request: Request):
+            """Learning page"""
+            return self._get_learning_html()
+        
+        @self.app.get("/api/status")
+        async def api_status():
+            """Get system status"""
+            try:
+                from mia.core.model_discovery import model_discovery
+                from mia.core.model_learning import model_learning
+                from mia.enterprise.analytics import analytics
+                
+                discovery_stats = model_discovery.get_discovery_stats()
+                learning_stats = model_learning.get_learning_stats()
+                analytics_stats = analytics.get_real_time_metrics()
+                
+                return {
+                    "status": "running",
+                    "discovery": discovery_stats,
+                    "learning": learning_stats,
+                    "analytics": analytics_stats,
+                    "timestamp": analytics_stats.get("timestamp", 0)
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to get status: {e}")
+                return {"status": "error", "message": str(e)}
+        
+        @self.app.get("/api/models")
+        async def api_models():
+            """Get discovered models"""
+            try:
+                from mia.core.model_discovery import model_discovery
+                
+                models = model_discovery.get_discovered_models()
+                models_data = []
+                
+                for model_id, model_info in models.items():
+                    models_data.append({
+                        "id": model_id,
+                        "name": model_info.name,
+                        "path": model_info.path,
+                        "size": model_info.size,
+                        "format": model_info.format.value,
+                        "type": model_info.model_type.value,
+                        "is_loaded": model_info.is_loaded,
+                        "performance_score": model_info.performance_score
+                    })
+                
+                return {"models": models_data}
+            except Exception as e:
+                self.logger.error(f"Failed to get models: {e}")
+                return {"models": [], "error": str(e)}
+        
+        @self.app.get("/api/learning")
+        async def api_learning():
+            """Get learning progress"""
+            try:
+                from mia.core.model_learning import model_learning
+                
+                tasks = model_learning.get_learning_tasks()
+                knowledge = model_learning.get_extracted_knowledge()
+                
+                tasks_data = []
+                for task_id, task in tasks.items():
+                    tasks_data.append({
+                        "id": task.id,
+                        "model_name": task.model_info.name,
+                        "method": task.method.value,
+                        "status": task.status.value,
+                        "progress": task.progress,
+                        "started_at": task.started_at,
+                        "completed_at": task.completed_at,
+                        "error_message": task.error_message
+                    })
+                
+                knowledge_data = []
+                for knowledge_id, knowledge_item in knowledge.items():
+                    knowledge_data.append({
+                        "id": knowledge_id,
+                        "model_id": knowledge_item.model_id,
+                        "type": knowledge_item.knowledge_type,
+                        "confidence": knowledge_item.confidence,
+                        "extracted_at": knowledge_item.extracted_at
+                    })
+                
+                return {
+                    "tasks": tasks_data,
+                    "knowledge": knowledge_data
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to get learning data: {e}")
+                return {"tasks": [], "knowledge": [], "error": str(e)}
+    
+    def _get_home_html(self) -> str:
+        """Get home page HTML"""
+        return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Enterprise AGI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .nav { display: flex; gap: 1rem; }
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover { background: rgba(255,255,255,0.2); }
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero {
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🤖 MIA Enterprise AGI</div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/models">Models</a>
+            <a href="/learning">Learning</a>
+        </nav>
+    </div>
+    
+    <div class="main">
+        <div class="hero">
+            <h1>🧠 Local Digital Intelligence</h1>
+            <p>
+                MIA Enterprise AGI automatically discovers and learns from local AI models on your device.
+                Experience the power of self-improving artificial intelligence that respects your privacy
+                and works entirely offline.
+            </p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🔍 Model Discovery</h3>
+                <p>Automatically finds AI models on your device and external drives</p>
+            </div>
+            <div class="feature">
+                <h3>📚 Self-Learning</h3>
+                <p>Learns from discovered models to improve its capabilities</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Enterprise Security</h3>
+                <p>Bank-grade encryption and security for your data</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Real-time Analytics</h3>
+                <p>Monitor system performance and learning progress</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="status">
+        <span class="status-indicator"></span>
+        <span id="status-text">System Running</span>
+    </div>
+    
+    <script>
+        // Update status periodically
+        async function updateStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                document.getElementById('status-text').textContent = 
+                    `${data.discovery?.total_models || 0} models found`;
+            } catch (error) {
+                document.getElementById('status-text').textContent = 'System Error';
+            }
+        }
+        
+        updateStatus();
+        setInterval(updateStatus, 30000); // Update every 30 seconds
+    </script>
+</body>
+</html>
+        """
+    
+    def _get_dashboard_html(self) -> str:
+        """Get dashboard page HTML"""
+        return "Dashboard HTML content here..."
+    
+    def _get_models_html(self) -> str:
+        """Get models page HTML"""
+        return "Models HTML content here..."
+    
+    def _get_learning_html(self) -> str:
+        """Get learning page HTML"""
+        return "Learning HTML content here..."
         
         # Create web directories if they don't exist
         Path("web/templates").mkdir(parents=True, exist_ok=True)
