@@ -96,6 +96,15 @@ class AGICore:
         self.memory_system = None
         self.agent_system = None
         
+        # Model management
+        self.available_models = {}
+        self.current_model = None
+        self.model_performance = {}
+        self.model_discovery = None
+        
+        # Learning system
+        self.learning_system = None
+        
         # Performance metrics
         self.metrics = {
             "thoughts_generated": 0,
@@ -125,11 +134,17 @@ class AGICore:
         self.logger.info("🚀 Initializing AGI Core systems...")
         
         try:
+            # Initialize model discovery
+            await self._initialize_model_discovery()
+            
             # Initialize semantic engine
             await self._initialize_semantic_engine()
             
             # Initialize LLM backend
             await self._initialize_llm_backend()
+            
+            # Initialize learning system
+            await self._initialize_learning_system()
             
             # Initialize memory system
             await self._initialize_memory_system()
@@ -162,11 +177,159 @@ class AGICore:
         
         self.logger.info("✅ Semantic engine ready")
     
+    async def _initialize_model_discovery(self):
+        """Initialize model discovery and management"""
+        self.logger.info("🔍 Initializing model discovery...")
+        
+        try:
+            from .model_discovery import model_discovery
+            self.model_discovery = model_discovery
+            
+            # Discover available models
+            await self._discover_models()
+            
+            # Select best model
+            await self._select_optimal_model()
+            
+            self.logger.info(f"✅ Model discovery ready - {len(self.available_models)} models found")
+            
+        except Exception as e:
+            self.logger.warning(f"⚠️ Model discovery failed: {e}")
+            self.available_models = {}
+    
+    async def _discover_models(self):
+        """Discover all available models"""
+        try:
+            # Start discovery process
+            self.model_discovery.start_discovery()
+            
+            # Wait a bit for discovery to complete
+            await asyncio.sleep(2)
+            
+            # Get discovered models
+            discovered = self.model_discovery.get_discovered_models()
+            
+            for model_id, model_info in discovered.items():
+                self.available_models[model_id] = {
+                    "info": model_info,
+                    "performance_score": 0.0,
+                    "usage_count": 0,
+                    "last_used": None,
+                    "status": "available"
+                }
+                
+            self.logger.info(f"📊 Discovered {len(self.available_models)} models")
+            
+        except Exception as e:
+            self.logger.error(f"❌ Model discovery failed: {e}")
+    
+    async def _select_optimal_model(self):
+        """Select the best available model"""
+        if not self.available_models:
+            self.logger.warning("⚠️ No models available for selection")
+            return
+        
+        # Prioritize Ollama models, then HuggingFace
+        ollama_models = [m for m in self.available_models.values() 
+                        if m["info"].format.value == "ollama"]
+        
+        if ollama_models:
+            # Select first Ollama model
+            best_model = ollama_models[0]
+            self.current_model = best_model["info"].id
+            self.logger.info(f"🎯 Selected Ollama model: {self.current_model}")
+        else:
+            # Select first available model
+            first_model = list(self.available_models.values())[0]
+            self.current_model = first_model["info"].id
+            self.logger.info(f"🎯 Selected model: {self.current_model}")
+    
+    async def switch_model(self, model_id: str) -> bool:
+        """Switch to a different model"""
+        if model_id not in self.available_models:
+            self.logger.error(f"❌ Model {model_id} not available")
+            return False
+        
+        try:
+            old_model = self.current_model
+            self.current_model = model_id
+            
+            # Reinitialize LLM backend with new model
+            await self._initialize_llm_backend()
+            
+            self.logger.info(f"🔄 Switched from {old_model} to {model_id}")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"❌ Failed to switch model: {e}")
+            self.current_model = old_model  # Revert
+            return False
+    
+    def get_available_models(self) -> Dict[str, Any]:
+        """Get list of available models"""
+        return {
+            "current": self.current_model,
+            "available": {
+                model_id: {
+                    "name": model_data["info"].name,
+                    "format": model_data["info"].format.value,
+                    "size": model_data["info"].size,
+                    "performance_score": model_data["performance_score"],
+                    "usage_count": model_data["usage_count"]
+                }
+                for model_id, model_data in self.available_models.items()
+            }
+        }
+    
+    async def _initialize_learning_system(self):
+        """Initialize the learning system"""
+        self.logger.info("🧠 Initializing learning system...")
+        
+        try:
+            from .learning_system import learning_system
+            self.learning_system = learning_system
+            
+            self.logger.info("✅ Learning system ready")
+            
+        except Exception as e:
+            self.logger.error(f"❌ Failed to initialize learning system: {e}")
+            self.learning_system = None
+    
     async def _initialize_llm_backend(self):
         """Initialize the LLM backend for language processing"""
         self.logger.info("🤖 Initializing LLM backend...")
         
-        # Try to initialize Ollama backend first
+        # Use current model if available
+        if self.current_model and self.current_model in self.available_models:
+            model_info = self.available_models[self.current_model]["info"]
+            
+            if model_info.format.value == "ollama":
+                try:
+                    from mia.core.llm_backends.ollama_backend import ollama_backend
+                    
+                    if await ollama_backend.is_available():
+                        await ollama_backend.initialize()
+                        self.ollama_backend = ollama_backend
+                        self.llm_backend = {
+                            "type": "ollama",
+                            "backend": ollama_backend,
+                            "model": model_info.name,
+                            "context_length": 4096,
+                            "temperature": 0.7,
+                            "max_tokens": 1024,
+                            "status": "ready"
+                        }
+                        
+                        # Update model usage
+                        self.available_models[self.current_model]["usage_count"] += 1
+                        self.available_models[self.current_model]["last_used"] = time.time()
+                        
+                        self.logger.info(f"✅ LLM backend ready with Ollama model: {model_info.name}")
+                        return
+                except Exception as e:
+                    self.logger.warning(f"⚠️ Failed to initialize Ollama backend: {e}")
+        
+        # Try to initialize Ollama backend as fallback
         try:
             from mia.core.llm_backends.ollama_backend import ollama_backend
             
