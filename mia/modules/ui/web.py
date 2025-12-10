@@ -148,6 +148,97 @@ class MIAWebUI:
                 self.logger.error(f"Failed to get models: {e}")
                 return {"models": [], "error": str(e)}
         
+        @self.app.get("/api/enterprise/monitoring")
+        async def api_monitoring_status():
+            """Get monitoring status"""
+            try:
+                from mia.enterprise.monitoring import enterprise_monitoring
+                return enterprise_monitoring.get_system_status()
+            except Exception as e:
+                self.logger.error(f"Failed to get monitoring status: {e}")
+                return {"error": str(e)}
+        
+        @self.app.get("/api/enterprise/metrics")
+        async def api_metrics(metric_name: str = None, hours: int = 1):
+            """Get system metrics"""
+            try:
+                from mia.enterprise.monitoring import enterprise_monitoring
+                return {
+                    "metrics": enterprise_monitoring.get_metrics(metric_name, hours),
+                    "metric_name": metric_name,
+                    "hours": hours
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to get metrics: {e}")
+                return {"error": str(e)}
+        
+        @self.app.get("/api/enterprise/alerts")
+        async def api_alerts(resolved: bool = None, hours: int = 24):
+            """Get system alerts"""
+            try:
+                from mia.enterprise.monitoring import enterprise_monitoring
+                return {
+                    "alerts": enterprise_monitoring.get_alerts(resolved, hours),
+                    "resolved": resolved,
+                    "hours": hours
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to get alerts: {e}")
+                return {"error": str(e)}
+        
+        @self.app.get("/api/enterprise/config")
+        async def api_get_configuration():
+            """Get system configuration"""
+            try:
+                from mia.enterprise.config_manager import config_manager
+                return {
+                    "config": config_manager.get_all(),
+                    "environment": config_manager.get_environment().value,
+                    "schema": config_manager.get_schema_info()
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to get configuration: {e}")
+                return {"error": str(e)}
+        
+        @self.app.post("/api/enterprise/config")
+        async def api_update_configuration(request: Request):
+            """Update system configuration"""
+            try:
+                from mia.enterprise.config_manager import config_manager
+                
+                data = await request.json()
+                key = data.get("key")
+                value = data.get("value")
+                persist = data.get("persist", False)
+                
+                if not key:
+                    return {"error": "Missing 'key' parameter"}
+                
+                success = config_manager.set(key, value, persist)
+                return {
+                    "success": success,
+                    "key": key,
+                    "value": value,
+                    "persisted": persist
+                }
+            except Exception as e:
+                self.logger.error(f"Failed to update configuration: {e}")
+                return {"error": str(e)}
+        
+        @self.app.get("/api/enterprise/learning")
+        async def api_learning_stats():
+            """Get learning system statistics"""
+            try:
+                from mia.core.agi_core import agi_core
+                
+                if agi_core and agi_core.learning_system:
+                    return agi_core.learning_system.get_learning_stats()
+                else:
+                    return {"error": "Learning system not available"}
+            except Exception as e:
+                self.logger.error(f"Failed to get learning stats: {e}")
+                return {"error": str(e)}
+        
         @self.app.get("/api/learning")
         async def api_learning():
             """Get learning progress"""

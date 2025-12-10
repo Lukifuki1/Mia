@@ -137,6 +137,9 @@ class ChatInterface:
                 )
                 await self._broadcast_message(thinking_msg)
             
+            # Store current user message for learning
+            self._current_user_message = user_message
+            
             # Process with AGI core
             if self.stream_responses:
                 await self._process_streaming_response(user_message)
@@ -201,6 +204,9 @@ class ChatInterface:
         # Add to history and broadcast
         self._add_to_history(assistant_message)
         await self._broadcast_message(assistant_message)
+        
+        # Learn from conversation
+        await self._learn_from_conversation(user_message, assistant_message)
     
     async def _stream_response(self, content: str):
         """Stream response content word by word"""
@@ -250,6 +256,10 @@ class ChatInterface:
                 
                 self._add_to_history(final_msg)
                 await self._broadcast_message(final_msg)
+                
+                # Learn from conversation (for streaming responses)
+                if hasattr(self, '_current_user_message'):
+                    await self._learn_from_conversation(self._current_user_message, final_msg)
                 
         except Exception as e:
             self.logger.error(f"❌ Error during streaming: {e}")
@@ -328,6 +338,32 @@ class ChatInterface:
             "conversation_started": self.message_history[0].timestamp if self.message_history else None,
             "last_activity": self.message_history[-1].timestamp if self.message_history else None
         }
+    
+    async def _learn_from_conversation(self, user_message: ChatMessage, assistant_message: ChatMessage):
+        """Learn from conversation exchange"""
+        try:
+            # Import AGI core to access learning system
+            from mia.core.agi_core import agi_core
+            
+            if agi_core and agi_core.learning_system:
+                context = {
+                    "user_metadata": user_message.metadata,
+                    "assistant_metadata": assistant_message.metadata,
+                    "conversation_id": f"chat_{int(time.time())}"
+                }
+                
+                await agi_core.learning_system.learn_from_conversation(
+                    user_input=user_message.content,
+                    ai_response=assistant_message.content,
+                    context=context
+                )
+                
+                self.logger.info("📚 Learned from conversation")
+            else:
+                self.logger.warning("⚠️ Learning system not available")
+                
+        except Exception as e:
+            self.logger.error(f"❌ Failed to learn from conversation: {e}")
 
 # Global chat interface instance
 chat_interface = ChatInterface()

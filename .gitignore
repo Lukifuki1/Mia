@@ -139,3 +139,12 @@ test_state/
 .browser_screenshots/
 uploads/
 cache/
+
+# Enterprise features
+security/
+monitoring/
+config/production.json
+config/staging.json
+jwt_secret.key
+multimodal/
+processed/
