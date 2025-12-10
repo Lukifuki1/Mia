@@ -1,0 +1,13 @@
+{
+  "http://mia.ai/ontology#TestEntity": {
+    "uri": "http://mia.ai/ontology#TestEntity",
+    "label": "Test Entity",
+    "description": "A test entity for data flow",
+    "parent_classes": [
+      "http://mia.ai/ontology#Entity"
+    ],
+    "properties": {},
+    "constraints": {},
+    "created_at": 1765360731.4610815
+  }
+}

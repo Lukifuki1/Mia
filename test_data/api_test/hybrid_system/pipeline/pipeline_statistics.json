@@ -1,0 +1,60 @@
+{
+  "general_stats": {
+    "total_requests": 4,
+    "successful_requests": 4,
+    "failed_requests": 0,
+    "neural_only_requests": 4,
+    "symbolic_only_requests": 0,
+    "hybrid_requests": 0,
+    "adaptive_requests": 4,
+    "cache_hits": 0,
+    "cache_misses": 4,
+    "average_processing_time": 0.01645451784133911,
+    "system_health": "healthy",
+    "start_time": 1765360732.5605133
+  },
+  "stage_stats": {
+    "input_parsing": {
+      "total_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "total_time": 0.0,
+      "average_time": 0.0
+    },
+    "semantic_analysis": {
+      "total_runs": 4,
+      "successful_runs": 4,
+      "failed_runs": 0,
+      "total_time": 0.06551599502563477,
+      "average_time": 0.01637899875640869
+    },
+    "knowledge_retrieval": {
+      "total_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "total_time": 0.0,
+      "average_time": 0.0
+    },
+    "reasoning": {
+      "total_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "total_time": 0.0,
+      "average_time": 0.0
+    },
+    "result_fusion": {
+      "total_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "total_time": 0.0,
+      "average_time": 0.0
+    },
+    "output_generation": {
+      "total_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "total_time": 0.0,
+      "average_time": 0.0
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "ml_cluster_0": {
+    "pattern_id": "ml_cluster_0",
+    "pattern_type": "ml_cluster",
+    "description": "ML-detected interaction cluster with 10 examples",
+    "examples": [
+      {
+        "user_input": "Load test query 5",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.8163636,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 6",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.9439962,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 7",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.0691757,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 8",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.1960504,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 9",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.321881,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 5",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.8163636,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 6",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.9439962,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 7",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.0691757,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 8",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.1960504,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 9",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.321881,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 5",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.8163636,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 6",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.9439962,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 7",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.0691757,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 8",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.1960504,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 9",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.321881,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 5",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.8163636,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 6",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360749.9439962,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 7",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.0691757,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 8",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.1960504,
+        "cluster_id": "0"
+      },
+      {
+        "user_input": "Load test query 9",
+        "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+        "timestamp": 1765360750.321881,
+        "cluster_id": "0"
+      }
+    ],
+    "frequency": 10,
+    "confidence": 1.0,
+    "first_seen": 1765360750.4524121,
+    "last_seen": 1765360759.1254964,
+    "metadata": {}
+  }
+}

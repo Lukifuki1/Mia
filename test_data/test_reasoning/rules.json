@@ -1,0 +1,140 @@
+{
+  "transitivity_implication": {
+    "rule_type": "implication",
+    "premises": [
+      {
+        "name": "implies",
+        "arguments": [
+          "X",
+          "Y"
+        ],
+        "negated": false
+      },
+      {
+        "name": "implies",
+        "arguments": [
+          "Y",
+          "Z"
+        ],
+        "negated": false
+      }
+    ],
+    "conclusions": [
+      {
+        "name": "implies",
+        "arguments": [
+          "X",
+          "Z"
+        ],
+        "negated": false
+      }
+    ],
+    "confidence": 1.0,
+    "priority": 100,
+    "source": "system",
+    "created_at": 1765360727.7095156,
+    "metadata": {
+      "description": "Transitivity of implication"
+    }
+  },
+  "modus_ponens": {
+    "rule_type": "implication",
+    "premises": [
+      {
+        "name": "implies",
+        "arguments": [
+          "X",
+          "Y"
+        ],
+        "negated": false
+      },
+      {
+        "name": "holds",
+        "arguments": [
+          "X"
+        ],
+        "negated": false
+      }
+    ],
+    "conclusions": [
+      {
+        "name": "holds",
+        "arguments": [
+          "Y"
+        ],
+        "negated": false
+      }
+    ],
+    "confidence": 1.0,
+    "priority": 100,
+    "source": "system",
+    "created_at": 1765360727.7095208,
+    "metadata": {
+      "description": "Modus ponens inference rule"
+    }
+  },
+  "modus_tollens": {
+    "rule_type": "implication",
+    "premises": [
+      {
+        "name": "implies",
+        "arguments": [
+          "X",
+          "Y"
+        ],
+        "negated": false
+      },
+      {
+        "name": "holds",
+        "arguments": [
+          "Y"
+        ],
+        "negated": true
+      }
+    ],
+    "conclusions": [
+      {
+        "name": "holds",
+        "arguments": [
+          "X"
+        ],
+        "negated": true
+      }
+    ],
+    "confidence": 1.0,
+    "priority": 100,
+    "source": "system",
+    "created_at": 1765360727.7095256,
+    "metadata": {
+      "description": "Modus tollens inference rule"
+    }
+  },
+  "test_rule": {
+    "rule_type": "implication",
+    "premises": [
+      {
+        "name": "human",
+        "arguments": [
+          "X"
+        ],
+        "negated": false
+      }
+    ],
+    "conclusions": [
+      {
+        "name": "mortal",
+        "arguments": [
+          "X"
+        ],
+        "negated": false
+      }
+    ],
+    "confidence": 1.0,
+    "priority": 10,
+    "source": "test",
+    "created_at": 1765360727.7098424,
+    "metadata": {
+      "description": "All humans are mortal"
+    }
+  }
+}

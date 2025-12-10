@@ -77,8 +77,10 @@ class AGICore:
     - Learning and adaptation
     """
     
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: Optional[Dict[str, Any]] = None, knowledge_store=None, data_dir=None, **kwargs):
         self.config = config or {}
+        self.knowledge_store = knowledge_store
+        self.data_dir = data_dir
         self.logger = self._setup_logging()
         
         # Core state

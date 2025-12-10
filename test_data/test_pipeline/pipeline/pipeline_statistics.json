@@ -1,0 +1,60 @@
+{
+  "general_stats": {
+    "total_requests": 2,
+    "successful_requests": 2,
+    "failed_requests": 0,
+    "neural_only_requests": 1,
+    "symbolic_only_requests": 0,
+    "hybrid_requests": 1,
+    "adaptive_requests": 1,
+    "cache_hits": 0,
+    "cache_misses": 2,
+    "average_processing_time": 0.02254664897918701,
+    "system_health": "healthy",
+    "start_time": 1765360728.972751
+  },
+  "stage_stats": {
+    "input_parsing": {
+      "total_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "total_time": 9.775161743164062e-05,
+      "average_time": 9.775161743164062e-05
+    },
+    "semantic_analysis": {
+      "total_runs": 2,
+      "successful_runs": 2,
+      "failed_runs": 0,
+      "total_time": 0.04457259178161621,
+      "average_time": 0.022286295890808105
+    },
+    "knowledge_retrieval": {
+      "total_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "total_time": 4.0531158447265625e-06,
+      "average_time": 4.0531158447265625e-06
+    },
+    "reasoning": {
+      "total_runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "total_time": 7.3909759521484375e-06,
+      "average_time": 7.3909759521484375e-06
+    },
+    "result_fusion": {
+      "total_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "total_time": 1.52587890625e-05,
+      "average_time": 1.52587890625e-05
+    },
+    "output_generation": {
+      "total_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "total_time": 2.1457672119140625e-06,
+      "average_time": 2.1457672119140625e-06
+    }
+  }
+}

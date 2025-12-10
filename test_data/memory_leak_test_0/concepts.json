@@ -1,0 +1,13 @@
+{
+  "http://mia.ai/ontology#TestConcept0": {
+    "uri": "http://mia.ai/ontology#TestConcept0",
+    "label": "Test Concept 0",
+    "description": "Memory leak test concept",
+    "parent_classes": [
+      "http://mia.ai/ontology#Entity"
+    ],
+    "properties": {},
+    "constraints": {},
+    "created_at": 1765360759.425778
+  }
+}

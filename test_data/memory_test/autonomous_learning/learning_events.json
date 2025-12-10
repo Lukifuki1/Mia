@@ -1,0 +1,1135 @@
+[
+  {
+    "event_id": "36f70e70-8f7e-4dba-bc89-b4aab4997214",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 0 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "8713db7e-e04c-4d8b-9439-afa584b7e6c4",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.6226043701171875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.1021575927734375e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360738.2624657,
+      "interaction_id": "ae50b115-770f-4508-8785-16f9ba33960e"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360738.272293,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "9ab2fb70-8cf6-4411-aa92-179650275c29",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 1 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "17b49932-2bae-4ea2-955b-66e26416e9b9",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.6226043701171875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.937980651855469e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360738.4953806,
+      "interaction_id": "387e1fca-9997-4782-be94-dce9a5d15e25"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "1",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360738.5151618,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "7ae50d3f-54e1-4a3e-ad06-bcc2778ef5c0",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 2 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "834f515c-37b2-4c9a-ac2f-9f5ece748b22",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.337860107421875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.008148193359375e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360738.674414,
+      "interaction_id": "c3dabd48-2406-4dd8-92d1-6c00f4caf340"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "2",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360738.6915202,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "3753f84f-31d7-4147-8363-9a5dab6c4e2f",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 3 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "2d468e09-6f2c-49b1-9deb-8218f976b198",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.814697265625e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 7.43865966796875e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360738.852162,
+      "interaction_id": "667675a2-6ad3-44bb-b905-fb184a7579d5"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "3",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360738.8699107,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "cd55d045-95ea-44ee-8a59-06eea3056ca8",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 4 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "0e685bde-1e8a-42c3-b37a-5eb3151c3ced",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.86102294921875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.5789947509765625e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.0335767,
+      "interaction_id": "bf8112d6-9dbd-445f-94b1-374e50895fbd"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "4",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.0506167,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "0860bd5d-bf88-4d5b-896a-d4ed36053e9e",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 5 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "04951cf3-b4d9-4cd9-bea4-561f74e12ed7",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.0994415283203125e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.507469177246094e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.220247,
+      "interaction_id": "ade08162-3088-478a-85d5-d8311716415c"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "5",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.2383504,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "9f422489-e630-4aaa-a952-55d715b93db3",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 6 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "135d2a54-25f5-4e47-876e-40e3c55a226e",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.0994415283203125e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.888938903808594e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.4057665,
+      "interaction_id": "6026c8d1-efdb-4417-92a4-2b3bf370c218"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "6",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.4233887,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "13201f33-f0ad-44ab-af23-e7c202ea4585",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 7 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "49466d2b-35e7-44eb-a116-bc422bef0667",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.337860107421875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.031990051269531e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.5975587,
+      "interaction_id": "726521c8-a60e-46d7-8446-644802465c4e"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "7",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.6158683,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "08a1a4c6-3a82-4341-9ff3-8fe5166f2f40",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 8 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "99821f5f-e9ae-4d05-bc19-35d053e399da",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.814697265625e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.817413330078125e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.779475,
+      "interaction_id": "5e856120-036f-4244-a0b1-7d43f87e380d"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "8",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.8000402,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "75147630-cdbe-49c1-9ed2-72a1b2134133",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 9 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "300cea84-6e4f-4090-a692-44067d18946c",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.0994415283203125e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.318092346191406e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360739.9727368,
+      "interaction_id": "e3a488f1-b380-4817-99d4-94797e3c5ded"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "9",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360739.9906154,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 70,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "6171a7b3-f908-42bb-bd3e-94c5cbed3154",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 10 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "b785721b-b4fb-4b41-8dd1-65c4a8d19f39",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.5762786865234375e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.437301635742188e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360740.1535492,
+      "interaction_id": "3a3d2c92-99ad-4316-bbc4-1a5ec7390472"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "10",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360740.2739289,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "f896309d-82ef-48ca-852d-f68a1b6dd0ea",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 11 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "9681513a-ab64-4573-812b-4e49407c670a",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.337860107421875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.8650970458984375e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360740.4389505,
+      "interaction_id": "444af9fb-8f04-4115-81a7-bd7c7e3576cb"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "11",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360740.4631062,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "ba6391eb-1143-4b0e-8b18-1c4885bfa060",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 12 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "53fa07d8-573f-4c2a-9122-f0f390d5d791",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.0994415283203125e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.626678466796875e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360740.628517,
+      "interaction_id": "453cc8ec-543f-428e-a628-1d47b0b26735"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "12",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360740.6472924,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "e6b6df6f-6ec1-478e-a590-9455e1606fc4",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 13 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "aafe431a-1a18-4ce9-b28d-408b9531b6fd",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.6226043701171875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 4.982948303222656e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360740.812313,
+      "interaction_id": "00ff4e2f-3f4f-4179-9db7-626f096192b3"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "13",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360740.8318405,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "1c52f67a-98cd-4ddd-ae1b-7c03121eb0f8",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 14 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "94fef313-5717-4a73-8ce1-43e2341fa4c8",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.6226043701171875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.270408630371094e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.0106235,
+      "interaction_id": "72498132-5798-43c3-8bff-947ca6b5eab3"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "14",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.0327275,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "68af42e5-a8eb-4dcf-8f61-d8f4bfadf561",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 15 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "92060d0d-ee66-4f23-8e1a-4887075e65d1",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.337860107421875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 7.486343383789062e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.1972125,
+      "interaction_id": "86afb45b-120f-429d-af9d-b822eafcc221"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "15",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.2194977,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "f0b9d3c9-3158-4c8b-9e05-eee95ecc3686",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 16 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "018a4074-767b-4f8d-8b02-bb8b42844db9",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 2.384185791015625e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 5.5789947509765625e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.388392,
+      "interaction_id": "72327bfb-f539-4b93-a04b-2c43c578ed46"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "16",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.4081004,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "93a7e233-0969-494d-85f8-65a72c1166b8",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 17 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "0bc3a908-0f64-4d17-bc7b-ba91d939d60a",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.814697265625e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.794929504394531e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.573535,
+      "interaction_id": "deef8def-728f-4b93-9b8d-41f4f7eee8a2"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "17",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.5935965,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "2ffdb4d6-d65c-4a96-be34-881df18d4ba4",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 18 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "d6cdc831-b8e9-4b9b-8a2a-efa2945f2118",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.337860107421875e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.198883056640625e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.7594538,
+      "interaction_id": "a579afec-cdbb-4f49-9705-de372eee0e16"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "18",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.779621,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "abc3baf0-9380-4026-a770-2c89be550045",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Memory test query 19 with some additional text to increase memory usage",
+      "system_response": "Reasoning failed",
+      "pipeline_result": {
+        "request_id": "4519d299-03b7-41e0-975c-0bc7dff4f59f",
+        "success": false,
+        "final_answer": "Reasoning failed",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.REASONING",
+            "success": false,
+            "results": {},
+            "confidence": 0.0,
+            "processing_time": 3.5762786865234375e-06,
+            "error_message": "'DeterministicReasoningEngine' object has no attribute 'InferenceMethod'",
+            "metadata": null
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.REASONING"
+        ],
+        "total_processing_time": 6.461143493652344e-05,
+        "mode_used": "PipelineMode.SYMBOLIC_ONLY",
+        "explanation": "Reasoning stage failed",
+        "metadata": {
+          "stage_failure": "reasoning"
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360741.9500303,
+      "interaction_id": "3608ef66-7e92-423f-b427-7ae07cc2bc54"
+    },
+    "extracted_knowledge": {
+      "concepts": [
+        {
+          "name": "19",
+          "type": "CARDINAL",
+          "confidence": 0.8,
+          "source": "user_input"
+        }
+      ],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.1,
+    "timestamp": 1765360741.970496,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 71,
+      "has_feedback": false
+    }
+  }
+]

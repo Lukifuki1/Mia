@@ -1,0 +1,15 @@
+{
+  "total_learning_events": 5,
+  "successful_learning_events": 4,
+  "failed_learning_events": 1,
+  "concepts_learned": 4,
+  "relations_learned": 0,
+  "patterns_discovered": 0,
+  "consolidations_performed": 0,
+  "last_consolidation": 0,
+  "system_health": "healthy",
+  "start_time": 1765360737.0227292,
+  "learning_events_count": 0,
+  "patterns_count": 0,
+  "interaction_history_size": 0
+}

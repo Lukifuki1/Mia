@@ -1,0 +1,31 @@
+{
+  "basic_stats": {
+    "total_concepts": 1,
+    "total_relations": 1,
+    "total_individuals": 0,
+    "total_triples": 0,
+    "ontology_size_mb": 0.0,
+    "last_updated": 1765360720.1317685,
+    "validation_status": "healthy"
+  },
+  "performance_stats": {
+    "queries_executed": 0,
+    "cache_hits": 0,
+    "cache_misses": 0,
+    "cache_hit_ratio": 0.0,
+    "validations_performed": 2
+  },
+  "system_info": {
+    "rdf_available": true,
+    "mia_integration": false,
+    "storage_type": "No Storage",
+    "cache_size": 0,
+    "cache_max_size": 1000,
+    "executor_threads": 4
+  },
+  "health_status": {
+    "system_health": "healthy",
+    "last_backup": 0,
+    "uptime": -4.76837158203125e-07
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "user_input": "What is machine learning?",
+    "system_response": "Machine learning is a subset of AI.",
+    "pipeline_result": null,
+    "feedback": {
+      "helpful": true
+    },
+    "timestamp": 1765360729.0540066,
+    "interaction_id": "c941bf4f-e62f-42d7-9bca-f8a9e2e96c75"
+  }
+]

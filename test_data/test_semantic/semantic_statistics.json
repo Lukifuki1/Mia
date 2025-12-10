@@ -1,0 +1,14 @@
+{
+  "embeddings_computed": 3,
+  "texts_parsed": 1,
+  "concepts_extracted": 2,
+  "relations_extracted": 1,
+  "cache_hits": 0,
+  "cache_misses": 4,
+  "similarity_queries": 1,
+  "system_health": "healthy",
+  "start_time": 1765360727.620969,
+  "concepts_count": 0,
+  "relations_count": 0,
+  "cache_size": 3
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "event_id": "b5edb39f-b4a7-4a5c-9c79-cc3f3f8fdaad",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Hello, I'm new here",
+      "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+      "pipeline_result": {
+        "request_id": "cd4336e8-1e5c-4613-bf3a-cb40e60ba09a",
+        "success": true,
+        "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+            "success": true,
+            "results": {
+              "parse_result": {
+                "original_text": "Hello, I'm new here",
+                "entities": [],
+                "relations": [],
+                "concepts": [],
+                "confidence": 0.0,
+                "processing_time": 0.005517482757568359,
+                "metadata": {
+                  "extract_entities": true,
+                  "extract_relations": true,
+                  "link_to_kb": true,
+                  "timestamp": 1765360733.8980665
+                }
+              },
+              "similarity_result": {
+                "query": "Hello, I'm new here",
+                "matches": [],
+                "similarity_scores": [],
+                "processing_time": 6.67572021484375e-06
+              },
+              "entities_count": 0,
+              "relations_count": 0,
+              "concepts_count": 0
+            },
+            "confidence": 0.0,
+            "processing_time": 1.4066696166992188e-05,
+            "error_message": null,
+            "metadata": {
+              "semantic_method": "neural_nlp"
+            }
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.SEMANTIC_ANALYSIS"
+        ],
+        "total_processing_time": 3.409385681152344e-05,
+        "mode_used": "PipelineMode.NEURAL_ONLY",
+        "explanation": "Neural-only processing with confidence 0.00",
+        "metadata": {
+          "semantic_results": {
+            "parse_result": {
+              "original_text": "Hello, I'm new here",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.005517482757568359,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360733.8980665
+              }
+            },
+            "similarity_result": {
+              "query": "Hello, I'm new here",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 6.67572021484375e-06
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          }
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360733.910959,
+      "interaction_id": "e5a41372-7c70-4fd7-9fd7-796f58f9c010"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360733.9186134,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 19,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "241a1ec1-746b-449d-a59b-69e5ede63cbf",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "What is artificial intelligence?",
+      "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+      "pipeline_result": {
+        "request_id": "af2af96f-3722-435f-88f1-08dd58782ea2",
+        "success": true,
+        "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+            "success": true,
+            "results": {
+              "parse_result": {
+                "original_text": "What is artificial intelligence?",
+                "entities": [],
+                "relations": [],
+                "concepts": [],
+                "confidence": 0.0,
+                "processing_time": 0.004544258117675781,
+                "metadata": {
+                  "extract_entities": true,
+                  "extract_relations": true,
+                  "link_to_kb": true,
+                  "timestamp": 1765360734.0236351
+                }
+              },
+              "similarity_result": {
+                "query": "What is artificial intelligence?",
+                "matches": [],
+                "similarity_scores": [],
+                "processing_time": 6.9141387939453125e-06
+              },
+              "entities_count": 0,
+              "relations_count": 0,
+              "concepts_count": 0
+            },
+            "confidence": 0.0,
+            "processing_time": 1.430511474609375e-05,
+            "error_message": null,
+            "metadata": {
+              "semantic_method": "neural_nlp"
+            }
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.SEMANTIC_ANALYSIS"
+        ],
+        "total_processing_time": 3.266334533691406e-05,
+        "mode_used": "PipelineMode.NEURAL_ONLY",
+        "explanation": "Neural-only processing with confidence 0.00",
+        "metadata": {
+          "semantic_results": {
+            "parse_result": {
+              "original_text": "What is artificial intelligence?",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.004544258117675781,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360734.0236351
+              }
+            },
+            "similarity_result": {
+              "query": "What is artificial intelligence?",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 6.9141387939453125e-06
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          }
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360734.0341756,
+      "interaction_id": "060c8f70-cb34-43a5-82f4-5dfacd925479"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360734.0342305,
+    "metadata": {
+      "patterns_detected": 3,
+      "user_input_length": 32,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "6bdb321e-190c-4878-bc52-3eb821deaba6",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "How does machine learning work?",
+      "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+      "pipeline_result": {
+        "request_id": "b9bd9698-769d-4f74-9c2e-30516ace5d9d",
+        "success": true,
+        "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+            "success": true,
+            "results": {
+              "parse_result": {
+                "original_text": "How does machine learning work?",
+                "entities": [],
+                "relations": [],
+                "concepts": [],
+                "confidence": 0.0,
+                "processing_time": 0.005276203155517578,
+                "metadata": {
+                  "extract_entities": true,
+                  "extract_relations": true,
+                  "link_to_kb": true,
+                  "timestamp": 1765360734.1399043
+                }
+              },
+              "similarity_result": {
+                "query": "How does machine learning work?",
+                "matches": [],
+                "similarity_scores": [],
+                "processing_time": 5.9604644775390625e-06
+              },
+              "entities_count": 0,
+              "relations_count": 0,
+              "concepts_count": 0
+            },
+            "confidence": 0.0,
+            "processing_time": 1.3589859008789062e-05,
+            "error_message": null,
+            "metadata": {
+              "semantic_method": "neural_nlp"
+            }
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.SEMANTIC_ANALYSIS"
+        ],
+        "total_processing_time": 3.4809112548828125e-05,
+        "mode_used": "PipelineMode.NEURAL_ONLY",
+        "explanation": "Neural-only processing with confidence 0.00",
+        "metadata": {
+          "semantic_results": {
+            "parse_result": {
+              "original_text": "How does machine learning work?",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.005276203155517578,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360734.1399043
+              }
+            },
+            "similarity_result": {
+              "query": "How does machine learning work?",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 5.9604644775390625e-06
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          }
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360734.153337,
+      "interaction_id": "9b8aca7a-8d25-457b-8ebd-e1f3cde107ce"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360734.1533763,
+    "metadata": {
+      "patterns_detected": 1,
+      "user_input_length": 31,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "f076a69c-c530-4d40-96ae-977fbd43294f",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Can you explain neural networks?",
+      "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+      "pipeline_result": {
+        "request_id": "0993d508-c706-4a3c-b072-b591628b0393",
+        "success": true,
+        "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+            "success": true,
+            "results": {
+              "parse_result": {
+                "original_text": "Can you explain neural networks?",
+                "entities": [],
+                "relations": [],
+                "concepts": [],
+                "confidence": 0.0,
+                "processing_time": 0.005543708801269531,
+                "metadata": {
+                  "extract_entities": true,
+                  "extract_relations": true,
+                  "link_to_kb": true,
+                  "timestamp": 1765360734.2593184
+                }
+              },
+              "similarity_result": {
+                "query": "Can you explain neural networks?",
+                "matches": [],
+                "similarity_scores": [],
+                "processing_time": 7.152557373046875e-06
+              },
+              "entities_count": 0,
+              "relations_count": 0,
+              "concepts_count": 0
+            },
+            "confidence": 0.0,
+            "processing_time": 1.5020370483398438e-05,
+            "error_message": null,
+            "metadata": {
+              "semantic_method": "neural_nlp"
+            }
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.SEMANTIC_ANALYSIS"
+        ],
+        "total_processing_time": 3.504753112792969e-05,
+        "mode_used": "PipelineMode.NEURAL_ONLY",
+        "explanation": "Neural-only processing with confidence 0.00",
+        "metadata": {
+          "semantic_results": {
+            "parse_result": {
+              "original_text": "Can you explain neural networks?",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.005543708801269531,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360734.2593184
+              }
+            },
+            "similarity_result": {
+              "query": "Can you explain neural networks?",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 7.152557373046875e-06
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          }
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360734.269378,
+      "interaction_id": "3e060cf6-6d88-4f62-a3a3-ba576a0b1955"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360734.2694247,
+    "metadata": {
+      "patterns_detected": 2,
+      "user_input_length": 32,
+      "has_feedback": false
+    }
+  },
+  {
+    "event_id": "3da2f0de-0238-404f-a12c-d6b8fbc125b8",
+    "trigger": "LearningTrigger.NEW_INTERACTION",
+    "source_data": {
+      "user_input": "Thank you for the information",
+      "system_response": "Neural analysis completed but no specific entities or relations were identified.",
+      "pipeline_result": {
+        "request_id": "82a085f1-d2a0-4e58-a920-32b948abf844",
+        "success": true,
+        "final_answer": "Neural analysis completed but no specific entities or relations were identified.",
+        "confidence": 0.0,
+        "stage_results": [
+          {
+            "stage": "ProcessingStage.SEMANTIC_ANALYSIS",
+            "success": true,
+            "results": {
+              "parse_result": {
+                "original_text": "Thank you for the information",
+                "entities": [],
+                "relations": [],
+                "concepts": [],
+                "confidence": 0.0,
+                "processing_time": 0.004727840423583984,
+                "metadata": {
+                  "extract_entities": true,
+                  "extract_relations": true,
+                  "link_to_kb": true,
+                  "timestamp": 1765360734.3745658
+                }
+              },
+              "similarity_result": {
+                "query": "Thank you for the information",
+                "matches": [],
+                "similarity_scores": [],
+                "processing_time": 8.106231689453125e-06
+              },
+              "entities_count": 0,
+              "relations_count": 0,
+              "concepts_count": 0
+            },
+            "confidence": 0.0,
+            "processing_time": 1.6927719116210938e-05,
+            "error_message": null,
+            "metadata": {
+              "semantic_method": "neural_nlp"
+            }
+          }
+        ],
+        "processing_path": [
+          "ProcessingStage.SEMANTIC_ANALYSIS"
+        ],
+        "total_processing_time": 4.076957702636719e-05,
+        "mode_used": "PipelineMode.NEURAL_ONLY",
+        "explanation": "Neural-only processing with confidence 0.00",
+        "metadata": {
+          "semantic_results": {
+            "parse_result": {
+              "original_text": "Thank you for the information",
+              "entities": [],
+              "relations": [],
+              "concepts": [],
+              "confidence": 0.0,
+              "processing_time": 0.004727840423583984,
+              "metadata": {
+                "extract_entities": true,
+                "extract_relations": true,
+                "link_to_kb": true,
+                "timestamp": 1765360734.3745658
+              }
+            },
+            "similarity_result": {
+              "query": "Thank you for the information",
+              "matches": [],
+              "similarity_scores": [],
+              "processing_time": 8.106231689453125e-06
+            },
+            "entities_count": 0,
+            "relations_count": 0,
+            "concepts_count": 0
+          }
+        }
+      },
+      "feedback": null,
+      "timestamp": 1765360734.3851738,
+      "interaction_id": "fc9fa394-f24e-41d0-b45b-b2a98c80da24"
+    },
+    "extracted_knowledge": {
+      "concepts": [],
+      "relations": [],
+      "facts": [],
+      "patterns": []
+    },
+    "confidence": 0.0,
+    "timestamp": 1765360734.3852255,
+    "metadata": {
+      "patterns_detected": 0,
+      "user_input_length": 29,
+      "has_feedback": false
+    }
+  }
+]

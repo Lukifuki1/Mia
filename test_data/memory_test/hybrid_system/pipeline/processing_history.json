@@ -1,0 +1,602 @@
+[
+  {
+    "request_id": "48317208-efd3-42ce-a0d4-ea5e829da71c",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.365776062011719e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "8713db7e-e04c-4d8b-9439-afa584b7e6c4",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.1021575927734375e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "73f2448c-69f8-4f3e-a5ac-3d61c3f9c47b",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0004558563232421875,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "17b49932-2bae-4ea2-955b-66e26416e9b9",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.937980651855469e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "ba35ec24-98c9-46a8-9ba8-70e968ff064c",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001575946807861328,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "834f515c-37b2-4c9a-ac2f-9f5ece748b22",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.008148193359375e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "e04ec316-bc63-42ee-9d2e-fc3e6761ed09",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001742839813232422,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "2d468e09-6f2c-49b1-9deb-8218f976b198",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 7.43865966796875e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "7a7b8624-7199-4d0f-8f11-b8fad48462c3",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00015997886657714844,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "0e685bde-1e8a-42c3-b37a-5eb3151c3ced",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.5789947509765625e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "344c4f61-9218-45ea-9c2b-d9edb0fe21f5",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00016045570373535156,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "04951cf3-b4d9-4cd9-bea4-561f74e12ed7",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.507469177246094e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "c29f760a-bf46-48b4-b0fa-d5bd916fbb2f",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001575946807861328,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "135d2a54-25f5-4e47-876e-40e3c55a226e",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.888938903808594e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "31701be4-1f9d-4246-ac88-6eedf576c1e6",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00016379356384277344,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "49466d2b-35e7-44eb-a116-bc422bef0667",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.031990051269531e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "25b88c16-2e17-4c7e-b425-e5d9c7abbbb3",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001804828643798828,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "99821f5f-e9ae-4d05-bc19-35d053e399da",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.817413330078125e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "3d2a3739-afda-43fd-a693-5ba29a9c10c9",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001857280731201172,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "300cea84-6e4f-4090-a692-44067d18946c",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.318092346191406e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "975f077a-32a0-4ac9-ade9-00b1c342b144",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00015616416931152344,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "b785721b-b4fb-4b41-8dd1-65c4a8d19f39",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.437301635742188e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "e4eeab8d-4e7d-4038-b207-ecc9ee5c4ec7",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001723766326904297,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "9681513a-ab64-4573-812b-4e49407c670a",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.8650970458984375e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "5fd87fce-7547-49a2-a907-0aa8d520b9c8",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001652240753173828,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "53fa07d8-573f-4c2a-9122-f0f390d5d791",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.626678466796875e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "f6cba649-75c4-4d7c-9ef1-3bc0a533536c",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001735687255859375,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "aafe431a-1a18-4ce9-b28d-408b9531b6fd",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 4.982948303222656e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "386e99df-f4d8-404b-af1c-4125456cb254",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00017261505126953125,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "94fef313-5717-4a73-8ce1-43e2341fa4c8",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.270408630371094e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "77844610-47a0-4c5b-b523-3e440c38e753",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00016045570373535156,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "92060d0d-ee66-4f23-8e1a-4887075e65d1",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 7.486343383789062e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "5024d4d3-5c50-4a7b-8b1e-ec8f7c219aa3",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.0001633167266845703,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "018a4074-767b-4f8d-8b02-bb8b42844db9",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 5.5789947509765625e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "b066a1e0-56bb-45b8-a70f-6ceab3b6ed2c",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00018024444580078125,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "0bc3a908-0f64-4d17-bc7b-ba91d939d60a",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.794929504394531e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "257ccd51-89ab-49f0-b7c9-96560f5820b6",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00015854835510253906,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "d6cdc831-b8e9-4b9b-8a2a-efa2945f2118",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.198883056640625e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "1f5331f4-1063-4b51-b2c1-03db3beda7d8",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 0.00016617774963378906,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  },
+  {
+    "request_id": "4519d299-03b7-41e0-975c-0bc7dff4f59f",
+    "success": false,
+    "final_answer": "Reasoning failed",
+    "confidence": 0.0,
+    "processing_path": [
+      "reasoning"
+    ],
+    "total_processing_time": 6.461143493652344e-05,
+    "mode_used": "symbolic_only",
+    "explanation": "Reasoning stage failed",
+    "metadata": {
+      "stage_failure": "reasoning"
+    }
+  }
+]
