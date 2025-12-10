@@ -1,0 +1,304 @@
+axioms:
+- ∀x (MIAComponent(x) → Monitored(x))
+- ∀x (UserInteraction(x) → Authenticated(x))
+- ∀x (DataProcessing(x) → Logged(x))
+- ∀x,y (Communicates(x,y) → Secure(x,y))
+- ∀x (Learning(x) → PersistentKnowledge(x))
+concepts:
+  agi_core:
+    axioms: []
+    constraints:
+    - must_have_model_discovery
+    - must_support_dynamic_switching
+    - must_integrate_with_learning_system
+    description: Osrednji AGI motor z model discovery integracijo
+    id: agi_core
+    metadata: {}
+    name: AGI Core Engine
+    properties:
+      learning_integration: active
+      model_switching: dynamic
+      reasoning_capability: advanced
+    type: entity
+  chat_interface:
+    axioms: []
+    constraints: []
+    description: Uporabniški vmesnik za pogovor
+    id: chat_interface
+    metadata: {}
+    name: Chat Interface System
+    properties:
+      learning_integration: true
+      multimodal_support: true
+      real_time: true
+    type: entity
+  config_manager:
+    axioms: []
+    constraints: []
+    description: Sistem za upravljanje konfiguracije
+    id: config_manager
+    metadata: {}
+    name: Configuration Management System
+    properties:
+      environment_support:
+      - development
+      - staging
+      - production
+      hot_reload: true
+      validation: schema_based
+    type: entity
+  enterprise_monitoring:
+    axioms: []
+    constraints: []
+    description: Napredni monitoring sistem za enterprise uporabo
+    id: enterprise_monitoring
+    metadata: {}
+    name: Enterprise Monitoring System
+    properties:
+      alerting: advanced
+      dashboard: comprehensive
+      real_time_metrics: true
+    type: process
+  learning_system:
+    axioms:
+    - ∀x,y (Learn(x,y) → Knowledge(x) ⊆ Knowledge(x) ∪ {y})
+    - ∀x (AutonomousLearning(x) → ContinuousImprovement(x))
+    constraints: []
+    description: Avtonomni učni sistem z conversation analysis
+    id: learning_system
+    metadata: {}
+    name: Autonomous Learning System
+    properties:
+      knowledge_extraction: automatic
+      learning_type: autonomous
+      pattern_recognition: advanced
+    type: process
+  mia_system:
+    axioms:
+    - ∀x (MIASystem(x) → EnterpriseAGI(x))
+    - ∀x (MIASystem(x) → ProductionReady(x))
+    - ∀x (MIASystem(x) → Scalable(x))
+    constraints: []
+    description: Glavni sistem MIA Enterprise AGI platforme
+    id: mia_system
+    metadata: {}
+    name: MIA Enterprise AGI System
+    properties:
+      architecture: hybrid_enterprise
+      deployment: production_ready
+      scalability: enterprise_grade
+      version: '2.0'
+    type: entity
+  model_discovery:
+    axioms: []
+    constraints: []
+    description: Sistem za odkrivanje in upravljanje AI modelov
+    id: model_discovery
+    metadata: {}
+    name: Model Discovery Engine
+    properties:
+      auto_detection: true
+      scan_paths: 47
+      supported_formats:
+      - gguf
+      - safetensors
+      - pytorch
+      - onnx
+    type: process
+  multimodal_system:
+    axioms: []
+    constraints: []
+    description: Sistem za procesiranje različnih modalnosti
+    id: multimodal_system
+    metadata: {}
+    name: Multimodal Processing System
+    properties:
+      file_upload: true
+      processing_pipeline: advanced
+      supported_modalities:
+      - text
+      - image
+      - audio
+      - video
+    type: process
+  security_system:
+    axioms: []
+    constraints:
+    - must_authenticate_users
+    - must_authorize_actions
+    - must_encrypt_sensitive_data
+    description: Varnostni sistem z JWT avtentifikacijo
+    id: security_system
+    metadata: {}
+    name: Enterprise Security System
+    properties:
+      authentication: JWT
+      authorization: RBAC
+      encryption: AES-256
+    type: entity
+  tts_system:
+    axioms: []
+    constraints: []
+    description: Sistem za pretvorbo besedila v govor
+    id: tts_system
+    metadata: {}
+    name: Text-to-Speech System
+    properties:
+      languages: multilingual
+      quality: high
+      voices: multiple
+    type: process
+  web_interface:
+    axioms: []
+    constraints: []
+    description: Spletni uporabniški vmesnik
+    id: web_interface
+    metadata: {}
+    name: Web Interface System
+    properties:
+      api_endpoints: comprehensive
+      enterprise_features: true
+      responsive: true
+    type: entity
+metadata:
+  created: '2025-12-10T12:46:19.904490'
+  description: Formalna ontologija MIA Enterprise AGI sistema
+  name: MIA Enterprise AGI Ontology
+  version: '2.0'
+relations:
+  agi_core_uses_learning_system:
+    constraints: []
+    id: agi_core_uses_learning_system
+    properties: {}
+    source: agi_core
+    target: learning_system
+    type: uses
+    weight: 1.0
+  agi_core_uses_model_discovery:
+    constraints: []
+    id: agi_core_uses_model_discovery
+    properties: {}
+    source: agi_core
+    target: model_discovery
+    type: uses
+    weight: 1.0
+  chat_interface_uses_learning_system:
+    constraints: []
+    id: chat_interface_uses_learning_system
+    properties: {}
+    source: chat_interface
+    target: learning_system
+    type: uses
+    weight: 1.0
+  config_manager_controls_mia_system:
+    constraints: []
+    id: config_manager_controls_mia_system
+    properties: {}
+    source: config_manager
+    target: mia_system
+    type: controls
+    weight: 1.0
+  enterprise_monitoring_monitors_agi_core:
+    constraints: []
+    id: enterprise_monitoring_monitors_agi_core
+    properties: {}
+    source: enterprise_monitoring
+    target: agi_core
+    type: monitors
+    weight: 1.0
+  learning_system_produces_enterprise_monitoring:
+    constraints: []
+    id: learning_system_produces_enterprise_monitoring
+    properties: {}
+    source: learning_system
+    target: enterprise_monitoring
+    type: produces
+    weight: 1.0
+  mia_system_part_of_agi_core:
+    constraints: []
+    id: mia_system_part_of_agi_core
+    properties: {}
+    source: mia_system
+    target: agi_core
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_chat_interface:
+    constraints: []
+    id: mia_system_part_of_chat_interface
+    properties: {}
+    source: mia_system
+    target: chat_interface
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_config_manager:
+    constraints: []
+    id: mia_system_part_of_config_manager
+    properties: {}
+    source: mia_system
+    target: config_manager
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_enterprise_monitoring:
+    constraints: []
+    id: mia_system_part_of_enterprise_monitoring
+    properties: {}
+    source: mia_system
+    target: enterprise_monitoring
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_learning_system:
+    constraints: []
+    id: mia_system_part_of_learning_system
+    properties: {}
+    source: mia_system
+    target: learning_system
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_multimodal_system:
+    constraints: []
+    id: mia_system_part_of_multimodal_system
+    properties: {}
+    source: mia_system
+    target: multimodal_system
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_security_system:
+    constraints: []
+    id: mia_system_part_of_security_system
+    properties: {}
+    source: mia_system
+    target: security_system
+    type: part_of
+    weight: 1.0
+  mia_system_part_of_web_interface:
+    constraints: []
+    id: mia_system_part_of_web_interface
+    properties: {}
+    source: mia_system
+    target: web_interface
+    type: part_of
+    weight: 1.0
+  multimodal_system_uses_tts_system:
+    constraints: []
+    id: multimodal_system_uses_tts_system
+    properties: {}
+    source: multimodal_system
+    target: tts_system
+    type: uses
+    weight: 1.0
+  security_system_controls_web_interface:
+    constraints: []
+    id: security_system_controls_web_interface
+    properties: {}
+    source: security_system
+    target: web_interface
+    type: controls
+    weight: 1.0
+  web_interface_depends_on_security_system:
+    constraints: []
+    id: web_interface_depends_on_security_system
+    properties: {}
+    source: web_interface
+    target: security_system
+    type: depends_on
+    weight: 1.0

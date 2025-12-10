@@ -1,0 +1,125 @@
+{
+  "timestamp": "2025-12-10T12:54:29.430878",
+  "summary": {
+    "total_tests": 14,
+    "passed": 7,
+    "failed": 7,
+    "errors": 0,
+    "success_rate": 50.0
+  },
+  "suite_summaries": {
+    "unit_tests": {
+      "total": 5,
+      "passed": 2,
+      "failed": 3,
+      "errors": 0,
+      "avg_duration": 0.0152608
+    },
+    "integration_tests": {
+      "total": 3,
+      "passed": 1,
+      "failed": 2,
+      "errors": 0,
+      "avg_duration": 0.02494566666666666
+    },
+    "system_tests": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "avg_duration": 0.11175049999999999
+    },
+    "performance_tests": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "avg_duration": 2.0497225
+    },
+    "stress_tests": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "avg_duration": 5.1695365
+    }
+  },
+  "longest_tests": [
+    {
+      "name": "Resource Exhaustion Recovery",
+      "duration": 10.212206,
+      "type": "stress"
+    },
+    {
+      "name": "Memory Usage Optimization",
+      "duration": 4.094102,
+      "type": "performance"
+    },
+    {
+      "name": "End-to-End Conversation Flow",
+      "duration": 0.223431,
+      "type": "system"
+    },
+    {
+      "name": "High Concurrent Users",
+      "duration": 0.126867,
+      "type": "stress"
+    },
+    {
+      "name": "Multimodal Processing Pipeline",
+      "duration": 0.072958,
+      "type": "integration"
+    }
+  ],
+  "failed_tests": [
+    {
+      "name": "AGI Core Initialization",
+      "type": "unit",
+      "error": "AGI core inicializacija neuspešna: 'AGICore' object has no attribute 'get_agi_stats'",
+      "duration": 0.002571
+    },
+    {
+      "name": "Model Discovery Functionality",
+      "type": "unit",
+      "error": "Model discovery test neuspešen: 'ModelDiscoveryEngine' object has no attribute 'scan_for_models'",
+      "duration": 0.030545
+    },
+    {
+      "name": "Security System Authentication",
+      "type": "unit",
+      "error": "Security authentication test neuspešen: 'SecuritySystem' object has no attribute 'register_user'",
+      "duration": 0.029847
+    },
+    {
+      "name": "AGI-Learning Integration",
+      "type": "integration",
+      "error": "AGI-Learning integration test neuspešen: 'AGICore' object has no attribute 'process_input'",
+      "duration": 5.4e-05
+    },
+    {
+      "name": "Multimodal Processing Pipeline",
+      "type": "integration",
+      "error": "Multimodal pipeline test neuspešen: 'MultimodalSystem' object has no attribute 'process_text'",
+      "duration": 0.072958
+    },
+    {
+      "name": "End-to-End Conversation Flow",
+      "type": "system",
+      "error": "E2E conversation test neuspešen: ChatInterface.process_message() missing 1 required positional argument: 'message_data'",
+      "duration": 0.223431
+    },
+    {
+      "name": "Response Time Under Load",
+      "type": "performance",
+      "error": "Response time load test neuspešen: ChatInterface.process_message() missing 1 required positional argument: 'message_data'",
+      "duration": 0.005343
+    }
+  ],
+  "system_metrics": {
+    "cpu_percent": 29.8,
+    "memory_percent": 26.9,
+    "disk_usage": 16.5,
+    "active_simulations": 1,
+    "timestamp": "2025-12-10T12:54:30.633752"
+  }
+}
