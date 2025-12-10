@@ -1,0 +1,113 @@
+{
+  "base_uri": "http://mia.enterprise.agi/ontology#",
+  "prefixes": {
+    "mia": "http://mia.enterprise.agi/ontology#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "classes": {
+    "Agent": {
+      "uri": "mia:Agent",
+      "type": "owl:Class",
+      "description": "Autonomous intelligent agent",
+      "subclasses": [
+        "mia:AGICore",
+        "mia:HybridAgent",
+        "mia:LearningAgent"
+      ]
+    },
+    "Knowledge": {
+      "uri": "mia:Knowledge",
+      "type": "owl:Class",
+      "description": "Knowledge representation entity",
+      "subclasses": [
+        "mia:Concept",
+        "mia:Relation",
+        "mia:Rule"
+      ]
+    },
+    "Process": {
+      "uri": "mia:Process",
+      "type": "owl:Class",
+      "description": "Computational process",
+      "subclasses": [
+        "mia:Reasoning",
+        "mia:Learning",
+        "mia:Inference"
+      ]
+    },
+    "Resource": {
+      "uri": "mia:Resource",
+      "type": "owl:Class",
+      "description": "System resource",
+      "subclasses": [
+        "mia:Model",
+        "mia:Data",
+        "mia:Service"
+      ]
+    }
+  },
+  "properties": {
+    "hasKnowledge": {
+      "uri": "mia:hasKnowledge",
+      "type": "owl:ObjectProperty",
+      "domain": "mia:Agent",
+      "range": "mia:Knowledge",
+      "description": "Agent has knowledge"
+    },
+    "performsProcess": {
+      "uri": "mia:performsProcess",
+      "type": "owl:ObjectProperty",
+      "domain": "mia:Agent",
+      "range": "mia:Process",
+      "description": "Agent performs process"
+    },
+    "usesResource": {
+      "uri": "mia:usesResource",
+      "type": "owl:ObjectProperty",
+      "domain": "mia:Process",
+      "range": "mia:Resource",
+      "description": "Process uses resource"
+    },
+    "confidence": {
+      "uri": "mia:confidence",
+      "type": "owl:DatatypeProperty",
+      "domain": "mia:Knowledge",
+      "range": "xsd:float",
+      "description": "Confidence level of knowledge"
+    }
+  },
+  "individuals": {
+    "MIACore": {
+      "uri": "mia:MIACore",
+      "type": "mia:AGICore",
+      "description": "Main MIA AGI Core instance"
+    },
+    "HybridPipeline": {
+      "uri": "mia:HybridPipeline",
+      "type": "mia:Process",
+      "description": "Hybrid reasoning pipeline"
+    },
+    "SemanticLayer": {
+      "uri": "mia:SemanticLayer",
+      "type": "mia:Process",
+      "description": "Semantic processing layer"
+    }
+  },
+  "axioms": [
+    "mia:Agent rdfs:subClassOf owl:Thing",
+    "mia:Knowledge rdfs:subClassOf owl:Thing",
+    "mia:Process rdfs:subClassOf owl:Thing",
+    "mia:Resource rdfs:subClassOf owl:Thing",
+    "mia:hasKnowledge rdfs:domain mia:Agent",
+    "mia:hasKnowledge rdfs:range mia:Knowledge",
+    "mia:performsProcess rdfs:domain mia:Agent",
+    "mia:performsProcess rdfs:range mia:Process"
+  ],
+  "inference_rules": [
+    "IF ?agent mia:hasKnowledge ?knowledge AND ?knowledge mia:confidence ?conf AND ?conf > 0.8 THEN ?knowledge rdf:type mia:HighConfidenceKnowledge",
+    "IF ?agent mia:performsProcess ?process AND ?process mia:usesResource ?resource THEN ?agent mia:usesResource ?resource",
+    "IF ?agent1 mia:hasKnowledge ?knowledge AND ?agent2 mia:hasKnowledge ?knowledge THEN ?agent1 mia:sharesKnowledgeWith ?agent2"
+  ]
+}

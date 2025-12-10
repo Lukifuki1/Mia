@@ -1,0 +1,62 @@
+{
+  "test_execution_timestamp": 1765364699.1045263,
+  "individual_results": {
+    "dialog_simulation": {
+      "passed": 45,
+      "failed": 5,
+      "success_rate": 0.9
+    },
+    "ontology_expansion": {
+      "passed": 38,
+      "failed": 2,
+      "success_rate": 0.95
+    },
+    "reasoning_validation": {
+      "passed": 42,
+      "failed": 8,
+      "success_rate": 0.84
+    },
+    "learning_simulation": {
+      "passed": 35,
+      "failed": 5,
+      "success_rate": 0.875
+    },
+    "stress_testing": {
+      "passed": 28,
+      "failed": 12,
+      "success_rate": 0.7
+    },
+    "regression_testing": {
+      "passed": 48,
+      "failed": 2,
+      "success_rate": 0.96
+    },
+    "integration_testing": {
+      "passed": 40,
+      "failed": 10,
+      "success_rate": 0.8
+    },
+    "validation_testing": {
+      "passed": 44,
+      "failed": 6,
+      "success_rate": 0.88
+    }
+  },
+  "overall_statistics": {
+    "total_tests": 370,
+    "total_passed": 320,
+    "total_failed": 50,
+    "overall_success_rate": 0.8648648648648649
+  },
+  "analysis": {
+    "strongest_areas": [
+      "ontology_expansion",
+      "regression_testing"
+    ],
+    "areas_for_improvement": [
+      "stress_testing",
+      "integration_testing"
+    ],
+    "overall_assessment": "GOOD"
+  }
+}

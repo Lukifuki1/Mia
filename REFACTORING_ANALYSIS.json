@@ -1,0 +1,820 @@
+{
+  "redundant_code": [],
+  "performance_bottlenecks": [],
+  "architectural_violations": [
+    {
+      "component": "mia/core/deterministic_async.py",
+      "cohesion_score": 0.2,
+      "recommendation": "Improve internal cohesion"
+    },
+    {
+      "component": "generated_projects/sample-api/tests/test_main.py",
+      "cohesion_score": 0.2,
+      "recommendation": "Improve internal cohesion"
+    },
+    {
+      "component": "tests/mia/modules/multimodal/image/test_main.py",
+      "cohesion_score": 0.2,
+      "recommendation": "Improve internal cohesion"
+    },
+    {
+      "component": "tests/mia/core/security/test_system_fuse.py",
+      "cohesion_score": 0.2,
+      "recommendation": "Improve internal cohesion"
+    },
+    {
+      "component": "tests/mia/core/immune/test_immune_kernel.py",
+      "cohesion_score": 0.2,
+      "recommendation": "Improve internal cohesion"
+    }
+  ],
+  "complexity_hotspots": [
+    {
+      "component": "production_validation.py",
+      "complexity_score": 202.10000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_enterprise_launcher.py",
+      "complexity_score": 615.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "enterprise_final_patch_executor.py",
+      "complexity_score": 807.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "FINAL_100_PERCENT_COMPLETION.py",
+      "complexity_score": 314.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "ONE_CLICK_INSTALLER.py",
+      "complexity_score": 531.4000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "REAL_WORLD_DEPLOYMENT_TEST.py",
+      "complexity_score": 606.9,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_enterprise_monitor.py",
+      "complexity_score": 449.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "COMPLETE_TODO_AUDIT.py",
+      "complexity_score": 370.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "enterprise_compliance_auditor.py",
+      "complexity_score": 353.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "MASTER_SYSTEM_ARCHITECT.py",
+      "complexity_score": 775.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_enterprise_security.py",
+      "complexity_score": 557.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_hybrid_launcher.py",
+      "complexity_score": 347.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_enterprise_agi.py",
+      "complexity_score": 377.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "test_hybrid_system.py",
+      "complexity_score": 774.4000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia_system_integrity_test.py",
+      "complexity_score": 297.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "optimizations/file_complexity_reducer.py",
+      "complexity_score": 444.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "optimizations/advanced_caching.py",
+      "complexity_score": 549.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "desktop/enterprise_features.py",
+      "complexity_score": 234.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "enterprise/realtime_collaboration.py",
+      "complexity_score": 612.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "enterprise/analytics_dashboard.py",
+      "complexity_score": 657.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/core_methods_old.py",
+      "complexity_score": 528.7,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/package_tester.py",
+      "complexity_score": 265.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/core_methods.py",
+      "complexity_score": 251.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/system_validator.py",
+      "complexity_score": 278.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/validation_methods.py",
+      "complexity_score": 275.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/verification/platform_verifier.py",
+      "complexity_score": 273.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/reasoning/basic_reasoning_engine.py",
+      "complexity_score": 275.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/testing/test_runner.py",
+      "complexity_score": 279.20000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/testing/stability_tester.py",
+      "complexity_score": 401.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/testing/test_generator.py",
+      "complexity_score": 214.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/testing/performance_tester.py",
+      "complexity_score": 331.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/testing/enterprise_test_suite.py",
+      "complexity_score": 338.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/performance/consciousness_optimizer.py",
+      "complexity_score": 212.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/project_builder/project_generator.py",
+      "complexity_score": 252.10000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/project_builder/deployment_manager.py",
+      "complexity_score": 278.20000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/project_builder/build_system.py",
+      "complexity_score": 282.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/analysis/introspective_analyzer.py",
+      "complexity_score": 251.60000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/analysis/quality_analyzer.py",
+      "complexity_score": 347.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/analysis/system_analyzer.py",
+      "complexity_score": 270.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/analysis/core_methods.py",
+      "complexity_score": 389.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/analysis/code_metrics.py",
+      "complexity_score": 284.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/system/adaptive_resource_manager.py",
+      "complexity_score": 280.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/persistent_knowledge_store.py",
+      "complexity_score": 329.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/integration_layer.py",
+      "complexity_score": 275.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/self_evolution.py",
+      "complexity_score": 509.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_core.py",
+      "complexity_score": 365.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/system_integrator.py",
+      "complexity_score": 323.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/autonomous_core.py",
+      "complexity_score": 353.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/internet_learning.py",
+      "complexity_score": 618.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/model_learning.py",
+      "complexity_score": 404.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/model_discovery.py",
+      "complexity_score": 353.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/hybrid_integration.py",
+      "complexity_score": 479.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/world_model.py",
+      "complexity_score": 471.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/owner_guard.py",
+      "complexity_score": 318.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/hardware_optimizer.py",
+      "complexity_score": 515.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/adaptive_llm.py",
+      "complexity_score": 428.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/encryption_manager.py",
+      "complexity_score": 249.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/access_control.py",
+      "complexity_score": 288.9,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/sandbox_system.py",
+      "complexity_score": 219.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/audit_system.py",
+      "complexity_score": 380.20000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/integrity_hash.py",
+      "complexity_score": 219.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/security_methods.py",
+      "complexity_score": 315.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/security_core.py",
+      "complexity_score": 303.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/security/system_fuse.py",
+      "complexity_score": 400.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/management_methods.py",
+      "complexity_score": 215.10000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/lgpd_manager.py",
+      "complexity_score": 251.20000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/consent_manager.py",
+      "complexity_score": 254.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/audit_system.py",
+      "complexity_score": 365.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/core_methods.py",
+      "complexity_score": 407.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/privacy_manager.py",
+      "complexity_score": 376.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/compliance/data_processor.py",
+      "complexity_score": 311.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/semantic_knowledge_bank.py",
+      "complexity_score": 486.20000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/quality/qpm.py",
+      "complexity_score": 354.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/quality/pae.py",
+      "complexity_score": 416.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/quality/sse.py",
+      "complexity_score": 419.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/learning/interaction_learner.py",
+      "complexity_score": 224.70000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/learning/advanced_file_learner.py",
+      "complexity_score": 349.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/production/test_runner.py",
+      "complexity_score": 344.7,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/production/compliance_checker.py",
+      "complexity_score": 277.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/production/validation_core.py",
+      "complexity_score": 294.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/production/core_methods.py",
+      "complexity_score": 210.20000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/production/report_generator.py",
+      "complexity_score": 316.7,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/desktop/deployment_manager.py",
+      "complexity_score": 323.90000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/desktop/cross_platform_utils.py",
+      "complexity_score": 232.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/desktop/build_system.py",
+      "complexity_score": 237.9,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/interfaces/enhanced_gui.py",
+      "complexity_score": 625.3000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/interfaces/unified_interface.py",
+      "complexity_score": 341.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/management_methods.py",
+      "complexity_score": 224.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/stability_monitor.py",
+      "complexity_score": 457.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/policy_manager.py",
+      "complexity_score": 309.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/deployment_manager.py",
+      "complexity_score": 355.7,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/analytics.py",
+      "complexity_score": 242.20000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/license_manager.py",
+      "complexity_score": 277.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/compliance_manager.py",
+      "complexity_score": 286.9,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/core_methods.py",
+      "complexity_score": 360.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/unified_enterprise_manager.py",
+      "complexity_score": 362.8,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/configuration_manager.py",
+      "complexity_score": 333.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/enterprise_manager.py",
+      "complexity_score": 292.9,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/enterprise/api_gateway.py",
+      "complexity_score": 211.70000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/tests/stress/test_memory_stress.py",
+      "complexity_score": 273.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/tests/unit/test_memory_core_unit.py",
+      "complexity_score": 223.4,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/tests/lsp/test_lsp_slovenian.py",
+      "complexity_score": 376.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/ui/web.py",
+      "complexity_score": 376.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/adult_mode/adult_system.py",
+      "complexity_score": 541.4000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/lora_training/lora_manager.py",
+      "complexity_score": 661.8000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/projects/main.py",
+      "complexity_score": 236.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/voice/stt_engine.py",
+      "complexity_score": 338.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/voice/tts_engine.py",
+      "complexity_score": 462.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/api_email/email_client.py",
+      "complexity_score": 575.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/avatar/avatar_system.py",
+      "complexity_score": 366.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/monitoring/health_monitor.py",
+      "complexity_score": 613.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/multimodal/image/main.py",
+      "complexity_score": 487.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/voice/stt/main.py",
+      "complexity_score": 342.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/modules/voice/tts/main.py",
+      "complexity_score": 418.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/multimodal/video_generator.py",
+      "complexity_score": 359.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/memory/advanced_optimizer.py",
+      "complexity_score": 340.40000000000003,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/memory/main.py",
+      "complexity_score": 427.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/identity/self_model.py",
+      "complexity_score": 226.10000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/qrd.py",
+      "complexity_score": 751.9000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/qpm.py",
+      "complexity_score": 331.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/dve.py",
+      "complexity_score": 482.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/pae.py",
+      "complexity_score": 397.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/hoel.py",
+      "complexity_score": 655.2,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/sse.py",
+      "complexity_score": 393.20000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/quality_control/rfe.py",
+      "complexity_score": 622.7,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/security/system_fuse.py",
+      "complexity_score": 320.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/immune_system/integrity_guard.py",
+      "complexity_score": 236.10000000000002,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/consciousness/main.py",
+      "complexity_score": 601.3,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/executor_agent.py",
+      "complexity_score": 466.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/optimizer_agent.py",
+      "complexity_score": 713.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/validator.py",
+      "complexity_score": 431.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/planner.py",
+      "complexity_score": 266.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/optimizer.py",
+      "complexity_score": 447.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/executor.py",
+      "complexity_score": 392.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/validator_agent.py",
+      "complexity_score": 498.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/agi_agents/planner_agent.py",
+      "complexity_score": 414.5,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/core/bootstrap/main.py",
+      "complexity_score": 321.6,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/hybrid/deterministic_reasoning.py",
+      "complexity_score": 734.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/hybrid/semantic_layer.py",
+      "complexity_score": 481.70000000000005,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/hybrid/autonomous_learning.py",
+      "complexity_score": 722.8000000000001,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/hybrid/knowledge_bank_core.py",
+      "complexity_score": 641.0,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "mia/knowledge/hybrid/hybrid_pipeline.py",
+      "complexity_score": 826.1,
+      "recommendation": "Split into smaller modules"
+    },
+    {
+      "component": "desktop/enterprise/monitoring-system.py",
+      "complexity_score": 262.70000000000005,
+      "recommendation": "Split into smaller modules"
+    }
+  ],
+  "coupling_issues": [
+    {
+      "component": "launch_mia_desktop.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "test_agi_core.py",
+      "coupling_factor": 5.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "scripts/test_deterministic_loop.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/verification/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/testing/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/project_builder/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/analysis/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/security/__init__.py",
+      "coupling_factor": 5.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/compliance/__init__.py",
+      "coupling_factor": 5.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/production/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/desktop/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/enterprise/__init__.py",
+      "coupling_factor": 7.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "mia/core/agi_agents/__init__.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    },
+    {
+      "component": "test_data/projects/b0a6bb47-52f8-4c04-8e9f-b388e190de7e/main.py",
+      "coupling_factor": 4.0,
+      "recommendation": "Reduce dependencies"
+    }
+  ]
+}
