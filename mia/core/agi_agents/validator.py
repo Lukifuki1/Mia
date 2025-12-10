@@ -672,10 +672,30 @@ class AGIValidator:
     def _auto_validate_targets(self):
         """Automatically validate targets"""
         try:
-            # This would implement automatic target discovery and validation
-            # For now, just log that auto-validation is running
+            # Implement automatic target discovery and validation
             self.logger.info("Auto-validation running...")
-            return self._default_implementation()
+            
+            # Discover validation targets
+            targets = []
+            if hasattr(self, 'validation_targets'):
+                targets = self.validation_targets
+            
+            # Validate each target
+            results = []
+            for target in targets:
+                try:
+                    result = self.validate_target(target)
+                    results.append(result)
+                except Exception as e:
+                    self.logger.error(f"Failed to validate target {target}: {e}")
+                    results.append({"target": target, "status": "failed", "error": str(e)})
+            
+            return {
+                "auto_validation": True,
+                "targets_validated": len(results),
+                "results": results,
+                "timestamp": time.time()
+            }
         except Exception as e:
             self.logger.error(f"Failed to auto-validate targets: {e}")
     

@@ -90,7 +90,12 @@ class DeterministicScheduler:
                 self.logger.debug(f"Scheduler exception: {e}")
                 continue
         
-        return self._default_implementation()
+        # Return execution summary
+        return {
+            "executed_tasks": len([t for t in self.tasks if t.get("executed", False)]),
+            "total_tasks": len(self.tasks),
+            "status": "completed" if not self.running else "running"
+        }
     def stop_execution(self):
         """Ustavi izvajanje"""
         self.running = False

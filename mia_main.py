@@ -15,7 +15,7 @@ def main():
     try:
         input("Press Enter to exit...")
     except KeyboardInterrupt:
-        return self._default_implementation()
+        print("\n🛑 Application interrupted by user")
     print("👋 Goodbye!")
 
 if __name__ == "__main__":

@@ -187,7 +187,7 @@ class AdaptiveLLMManager:
                 return speed
         except Exception as e:
             self.logger.debug(f"Network speed test failed: {e}")
-            return self._default_implementation()
+            return 50.0  # Default fallback speed in KB/s
         
         return 100.0  # Default conservative estimate
     
