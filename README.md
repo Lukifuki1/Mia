@@ -44,7 +44,19 @@ MIA (Moja Inteligentna Asistentka) ni običajen chatbot ali AI pomočnik. Je **p
 - 10 GB prostora na disku
 - GPU priporočen za optimalno delovanje AI modelov
 
-### **Namestitev:**
+### **Enostavni zagon:**
+```bash
+# Univerzalni zagon (Linux/macOS)
+./start_mia.sh
+
+# Windows
+start_mia.bat
+
+# macOS (double-click)
+./start_mia.command
+```
+
+### **Ročna namestitev:**
 ```bash
 # 1. Kloniraj repozitorij
 git clone https://github.com/Lukifuki1/Mia.git
@@ -214,11 +226,12 @@ MIA Enterprise AGI/
 
 ## 📚 **Dokumentacija**
 
-- [📖 Celotni sistemski pregled](CELOTNI_SISTEMSKI_PREGLED_MIA_ENTERPRISE_AGI.md)
-- [🚀 Navodila za namestitev](INSTALLATION_GUIDE_SLOVENSKO.md)
-- [⚡ Hitri vodič](QUICK_START_GUIDE.md)
-- [🔧 Razvijalska dokumentacija](docs/)
-- [📊 Poročila o testiranju](test_reports/)
+- [📖 Celotna dokumentacija](docs/) - Organizirana dokumentacija po kategorijah
+- [🚀 Hitri vodič](docs/guides/) - Navodila za namestitev in uporabo
+- [📊 Poročila](docs/reports/) - Analitični povzetki in validacije
+- [🔍 Analize](docs/analysis/) - Tehnične ocene in načrti
+- [🚀 Uvajanje](docs/deployment/) - Produkcijske nastavitve
+- [🔒 Skladnost](docs/compliance/) - Varnostne politike
 
 ## 🤝 **Prispevanje**
 

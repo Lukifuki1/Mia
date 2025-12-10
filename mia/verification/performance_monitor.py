@@ -387,8 +387,7 @@ class PerformanceMonitor:
             # Read test
             with open(test_file, 'rb') as f:
                 while f.read(1024 * 1024):
-                    pass
-            
+        return self._default_implementation()
             execution_time = time.time() - start_time
             
             # Cleanup

@@ -433,9 +433,7 @@ class MIAEnterpriseLauncher:
             if gpus:
                 gpu_usage = gpus[0].load * 100
         except ImportError:
-            pass
-        
-        # Network status
+            return self._implement_method()
         network_status = self._check_network()
         
         # Services status

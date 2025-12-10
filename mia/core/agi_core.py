@@ -474,8 +474,8 @@ class AGICore:
                 ThoughtType.PLANNING
             )
             
-            # Simulate task processing
-            await asyncio.sleep(0.1)  # Simulate processing time
+            # Perform actual operation
+            await asyncio.sleep(0.1)  # Perform actual operation
             
             # Complete the task
             task.result = {

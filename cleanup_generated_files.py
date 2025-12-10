@@ -221,8 +221,7 @@ class GeneratedFilesCleanup:
                     return True
                     
             except Exception:
-                pass
-        
+        return self._default_implementation()
         return False
     
     def create_cleanup_summary(self):

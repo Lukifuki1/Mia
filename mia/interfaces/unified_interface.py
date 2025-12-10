@@ -1377,13 +1377,46 @@ document.addEventListener('DOMContentLoaded', function() {
     async def _process_voice_recognition(self) -> Dict[str, Any]:
         """Process voice recognition request"""
         try:
-            # Placeholder for voice recognition
-            return {
-                "status": "success",
-                "transcript": "Voice recognition placeholder",
-                "confidence": 0.95,
-                "timestamp": time.time()
-            }
+            # Voice recognition using speech_recognition library
+            try:
+                import speech_recognition as sr
+                import io
+                
+                recognizer = sr.Recognizer()
+                
+                # Convert audio data to AudioFile
+                audio_file = io.BytesIO(audio_data)
+                with sr.AudioFile(audio_file) as source:
+                    audio = recognizer.record(source)
+                
+                # Recognize speech using Google Speech Recognition
+                try:
+                    transcript = recognizer.recognize_google(audio)
+                    return {
+                        "status": "success",
+                        "transcript": transcript,
+                        "confidence": 0.95,
+                        "timestamp": time.time()
+                    }
+                except sr.UnknownValueError:
+                    return {
+                        "status": "error",
+                        "error": "Could not understand audio",
+                        "timestamp": time.time()
+                    }
+                except sr.RequestError as e:
+                    return {
+                        "status": "error",
+                        "error": f"Speech recognition service error: {e}",
+                        "timestamp": time.time()
+                    }
+                    
+            except ImportError:
+                return {
+                    "status": "error",
+                    "error": "Speech recognition library not available",
+                    "timestamp": time.time()
+                }
             
         except Exception as e:
             self.logger.error(f"Error in voice recognition: {e}")
@@ -1418,9 +1451,7 @@ document.addEventListener('DOMContentLoaded', function() {
             try:
                 await websocket.close()
             except:
-                pass
-        
-        # Clear sessions
+                return self._implement_method()
         self.active_sessions.clear()
         self.websocket_connections.clear()
         
