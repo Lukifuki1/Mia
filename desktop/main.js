@@ -33,9 +33,10 @@ const APP_CONFIG = {
     name: 'MIA Enterprise AGI',
     version: app.getVersion(),
     backend_port: 8000,
-    frontend_port: 3000,
+    frontend_port: 12000,
+    desktop_port: 12001,
     python_executable: process.platform === 'win32' ? 'python.exe' : 'python3',
-    backend_script: 'mia_enterprise_launcher.py'
+    backend_script: 'mia_enterprise_agi.py'
 };
 
 // Security configuration
@@ -285,7 +286,14 @@ async function startBackendServices() {
             throw new Error(`Backend script not found: ${backendScript}`);
         }
         
-        backendProcess = spawn(pythonPath, [backendScript], {
+        backendProcess = spawn(pythonPath, [
+            backendScript,
+            '--mode', 'desktop',
+            '--desktop-port', APP_CONFIG.desktop_port.toString(),
+            '--api-port', APP_CONFIG.backend_port.toString(),
+            '--web-port', APP_CONFIG.frontend_port.toString(),
+            '--enable-desktop'
+        ], {
             cwd: getResourcesPath(),
             stdio: ['pipe', 'pipe', 'pipe'],
             env: {

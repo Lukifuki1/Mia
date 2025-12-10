@@ -1,0 +1,71 @@
+{
+  "system": {
+    "name": "MIA Enterprise AGI",
+    "version": "2.0.0",
+    "mode": "production",
+    "debug": false,
+    "log_level": "INFO"
+  },
+  "server": {
+    "api_port": 8000,
+    "web_port": 12000,
+    "desktop_port": 12001,
+    "host": "0.0.0.0",
+    "cors_enabled": true,
+    "ssl_enabled": false
+  },
+  "ai": {
+    "default_model": "microsoft/DialoGPT-medium",
+    "ollama_enabled": true,
+    "ollama_models": ["llama2", "mistral", "codellama"],
+    "transformers_cache": "./models",
+    "max_tokens": 2048,
+    "temperature": 0.7,
+    "learning_enabled": true,
+    "memory_enabled": true
+  },
+  "memory": {
+    "short_term_limit": 100,
+    "medium_term_limit": 1000,
+    "long_term_enabled": true,
+    "hierarchical_indexing": true,
+    "compression_enabled": true,
+    "backup_enabled": true
+  },
+  "multimodal": {
+    "tts_enabled": true,
+    "stt_enabled": true,
+    "image_generation": true,
+    "video_generation": false,
+    "avatar_enabled": true,
+    "voice_cloning": false
+  },
+  "enterprise": {
+    "authentication_required": false,
+    "audit_logging": true,
+    "compliance_mode": "standard",
+    "data_retention_days": 365,
+    "encryption_enabled": true,
+    "backup_schedule": "daily"
+  },
+  "desktop": {
+    "auto_launch": false,
+    "minimize_to_tray": true,
+    "notifications_enabled": true,
+    "theme": "dark",
+    "window_state_persistence": true
+  },
+  "development": {
+    "hot_reload": false,
+    "debug_mode": false,
+    "test_mode": false,
+    "profiling_enabled": false
+  },
+  "paths": {
+    "data_dir": "./mia/data",
+    "models_dir": "./models",
+    "projects_dir": "./projects",
+    "logs_dir": "./logs",
+    "temp_dir": "./temp"
+  }
+}

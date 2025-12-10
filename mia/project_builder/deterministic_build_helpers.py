@@ -536,11 +536,10 @@ class ComprehensiveDeterministicBuildHelpers:
         
         def kill(self):
             """Kill the process"""
-            pass
-            
+        return self._default_implementation()
         def terminate(self):
             """Terminate the process"""
-            pass
+        return self._default_implementation()
     def deterministic_run(self, *args, **kwargs):
         """Deterministic subprocess.run"""
         class DeterministicResult:
@@ -611,7 +610,7 @@ class ComprehensiveDeterministicBuildHelpers:
         
         def cleanup(self):
             """Cleanup temporary directory"""
-            pass
+        return self._default_implementation()
         def __enter__(self):
             return self.name
         

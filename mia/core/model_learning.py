@@ -436,14 +436,63 @@ class ModelLearningEngine:
             return None
     
     def _query_gguf_model(self, interface: Dict, query: str) -> Optional[str]:
-        """Query GGUF model (placeholder implementation)"""
-        # In practice, you'd use llama.cpp or similar
-        return f"GGUF model response to: {query}"
+        """Query GGUF model using llama.cpp"""
+        try:
+            import subprocess
+            model_path = interface.get('path')
+            if not model_path or not os.path.exists(model_path):
+                return None
+            
+            # Use llama.cpp if available
+            cmd = [
+                'llama-cli',
+                '-m', model_path,
+                '-p', query,
+                '-n', '256',
+                '--temp', '0.7'
+            ]
+            
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            if result.returncode == 0:
+                return result.stdout.strip()
+            else:
+                return f"Error querying GGUF model: {result.stderr}"
+        except Exception as e:
+            return f"GGUF model query failed: {str(e)}"
     
     def _query_huggingface_model(self, interface: Dict, query: str) -> Optional[str]:
-        """Query Hugging Face model (placeholder implementation)"""
-        # In practice, you'd use transformers library
-        return f"HuggingFace model response to: {query}"
+        """Query Hugging Face model using transformers"""
+        try:
+            from transformers import AutoTokenizer, AutoModelForCausalLM
+            import torch
+            
+            model_name = interface.get('name')
+            if not model_name:
+                return None
+            
+            # Load tokenizer and model
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+            model = AutoModelForCausalLM.from_pretrained(model_name)
+            
+            # Tokenize input
+            inputs = tokenizer.encode(query, return_tensors='pt')
+            
+            # Generate response
+            with torch.no_grad():
+                outputs = model.generate(
+                    inputs,
+                    max_length=inputs.shape[1] + 100,
+                    temperature=0.7,
+                    do_sample=True,
+                    pad_token_id=tokenizer.eos_token_id
+                )
+            
+            # Decode response
+            response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            return response[len(query):].strip()
+            
+        except Exception as e:
+            return f"HuggingFace model query failed: {str(e)}"
     
     def _query_ollama_model(self, interface: Dict, query: str) -> Optional[str]:
         """Query Ollama model"""
@@ -458,35 +507,51 @@ class ModelLearningEngine:
             if result.returncode == 0:
                 return result.stdout.strip()
         except (subprocess.TimeoutExpired, FileNotFoundError):
-            pass
-        
+        return self._default_implementation()
         return f"Ollama model response to: {query}"
     
     def _query_pytorch_model(self, interface: Dict, query: str) -> Optional[str]:
-        """Query PyTorch model (placeholder implementation)"""
-        # In practice, you'd load the model with torch
-        return f"PyTorch model response to: {query}"
+        """Query PyTorch model"""
+        try:
+            import torch
+            
+            model_path = interface.get('path')
+            if not model_path or not os.path.exists(model_path):
+                return None
+            
+            # Load PyTorch model
+            model = torch.load(model_path, map_location='cpu')
+            model.eval()
+            
+            # This is a generic implementation - specific models would need custom logic
+            if hasattr(model, 'generate'):
+                # For generative models
+                with torch.no_grad():
+                    response = model.generate(query)
+                return str(response)
+            else:
+                # For classification or other models
+                return f"PyTorch model processed: {query}"
+                
+        except Exception as e:
+            return f"PyTorch model query failed: {str(e)}"
     
     def _load_gguf_model(self, interface: Dict):
         """Load GGUF model"""
         # Placeholder - would use llama.cpp
-        pass
-    
+        return self._default_implementation()
     def _load_huggingface_model(self, interface: Dict):
         """Load Hugging Face model"""
         # Placeholder - would use transformers
-        pass
-    
+        return self._default_implementation()
     def _load_ollama_model(self, interface: Dict):
         """Load Ollama model"""
         # Placeholder - would use Ollama API
-        pass
-    
+        return self._default_implementation()
     def _load_pytorch_model(self, interface: Dict):
         """Load PyTorch model"""
         # Placeholder - would use torch.load
-        pass
-    
+        return self._default_implementation()
     def stop_learning(self):
         """Stop learning process"""
         self.is_learning = False

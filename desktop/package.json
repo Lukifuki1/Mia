@@ -90,8 +90,16 @@
         ]
       },
       {
-        "from": "../config",
-        "to": "config"
+        "from": "../mia_enterprise_agi.py",
+        "to": "mia_enterprise_agi.py"
+      },
+      {
+        "from": "../requirements.txt",
+        "to": "requirements.txt"
+      },
+      {
+        "from": "../web",
+        "to": "web"
       }
     ],
     "win": {
