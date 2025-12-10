@@ -423,7 +423,7 @@ class MIASystemAudit:
         # Ključne zahteve iz originalnega dokumenta
         original_requirements = [
             ("Popolnoma lokalno delovanje", True),
-            ("Brez placeholderjev", self.check_no_placeholders()),
+            ("Brez None  # TODO: Implementjev", self.check_no_None  # TODO: Implements()),
             ("Brez TODO komentarjev", self.check_no_todos()),
             ("Deterministično obnašanje", True),
             ("Zavestni sistem", True),
@@ -442,14 +442,14 @@ class MIASystemAudit:
         for requirement, status in original_requirements:
             self.audit_result("ORIGINAL_REQUIREMENTS", requirement, status)
     
-    def check_no_placeholders(self) -> bool:
-        """Preveri če ni placeholderjev v kodi"""
-        placeholder_terms = ["TODO", "FIXME", "PLACEHOLDER", "STUB", "DUMMY", "MOCK"]
+    def check_no_raise NotImplementedError("Implementation needed")s(self) -> bool:
+        """Preveri če ni None  # TODO: Implementjev v kodi"""
+        None  # TODO: Implement_terms = ["TODO", "FIXME", "PLACEHOLDER", "STUB", "DUMMY", "MOCK"]
         
         for py_file in Path(".").rglob("*.py"):
             try:
                 content = py_file.read_text()
-                for term in placeholder_terms:
+                for term in None  # TODO: Implement_terms:
                     if term in content.upper():
                         return False
             except:

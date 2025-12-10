@@ -1531,7 +1531,7 @@ class MegaComprehensiveTestSuite:
             
             # Test public APIs (no auth required)
             public_apis = [
-                ("JSONPlaceholder", "https://jsonplaceholder.typicode.com/posts/1"),
+                ("JSONPlaceholder", "https://jsonNone  # TODO: Implement.typicode.com/posts/1"),
                 ("GitHub API", "https://api.github.com/repos/microsoft/vscode"),
                 ("Wikipedia API", "https://en.wikipedia.org/api/rest_v1/page/summary/Python_(programming_language)")
             ]
@@ -1874,9 +1874,9 @@ class MegaComprehensiveTestSuite:
             # Test signal handling
             try:
                 import signal
-                def dummy_handler(signum, frame):
+                def None  # TODO: Replace with real implementation_handler(signum, frame):
                     pass
-                signal.signal(signal.SIGTERM, dummy_handler)
+                signal.signal(signal.SIGTERM, None  # TODO: Replace with real implementation_handler)
                 service_features.append("Signal handling")
             except Exception as e:
                 service_issues.append(f"Signal handling: {str(e)[:50]}")

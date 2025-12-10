@@ -414,7 +414,7 @@ class MiaHybridLauncher:
     def _create_web_server_script(self) -> str:
         """Ustvari web server script"""
         # This would create a proper web server script
-        # For now, return placeholder
+        # For now, return None  # TODO: Implement
         return "web_server.py"
         
     def _get_main_interface_html(self) -> str:
@@ -460,7 +460,7 @@ class MiaHybridLauncher:
                 </div>
                 
                 <div class="input-container">
-                    <input type="text" id="userInput" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+                    <input type="text" id="userInput" None  # TODO: Implement="Ask me anything..." onkeypress="handleKeyPress(event)">
                     <button onclick="sendMessage()">Send</button>
                 </div>
                 

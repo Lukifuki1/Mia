@@ -1,0 +1,1313 @@
+{
+  "scan_timestamp": 1765362833.5206754,
+  "scan_date": "2025-12-10 10:33:53",
+  "project_root": "/workspace/project/Mia",
+  "statistics": {
+    "files_scanned": 269,
+    "total_issues": 144,
+    "critical_issues": 21,
+    "high_issues": 7,
+    "medium_issues": 94,
+    "low_issues": 22,
+    "fixed_issues": 0
+  },
+  "issues": [
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 13,
+      "issue_type": "NotImplemented",
+      "content": "- NotImplemented exceptions",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "     10: - HACK rešitve\n     11: - placeholder kodo\n     12: - dummy implementacije\n>>>  13: - NotImplemented exceptions\n     14: - pass statements z komentarji\n     15: - Nedokončane funkcije\n     16: "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 76,
+      "issue_type": "NotImplemented",
+      "content": "'NotImplemented': r'NotImplementedError|NotImplemented',",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n>>>  76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',\n     79:             'empty_function': r'def\\s+\\w+\\([^)]*\\):\\s*pass\\s*$',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 76,
+      "issue_type": "NotImplemented",
+      "content": "'NotImplemented': r'NotImplementedError|NotImplemented',",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n>>>  76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',\n     79:             'empty_function': r'def\\s+\\w+\\([^)]*\\):\\s*pass\\s*$',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 76,
+      "issue_type": "NotImplemented",
+      "content": "'NotImplemented': r'NotImplementedError|NotImplemented',",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n>>>  76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',\n     79:             'empty_function': r'def\\s+\\w+\\([^)]*\\):\\s*pass\\s*$',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 78,
+      "issue_type": "NotImplemented",
+      "content": "'raise_not_implemented': r'raise\\s+NotImplementedError',",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "     75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n>>>  78:             'raise_not_implemented': r'raise\\s+NotImplementedError',\n     79:             'empty_function': r'def\\s+\\w+\\([^)]*\\):\\s*pass\\s*$',\n     80:             'empty_class': r'class\\s+\\w+[^:]*:\\s*pass\\s*$'\n     81:         }"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 160,
+      "issue_type": "NotImplemented",
+      "content": "# Check for NotImplementedError raises",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    157:                         f\"Implement class {node.name} or add docstring explaining purpose\"\n    158:                     )\n    159:                     \n>>> 160:             # Check for NotImplementedError raises\n    161:             elif isinstance(node, ast.Raise):\n    162:                 if isinstance(node.exc, ast.Call) and isinstance(node.exc.func, ast.Name):\n    163:                     if node.exc.func.id == 'NotImplementedError':"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 163,
+      "issue_type": "NotImplemented",
+      "content": "if node.exc.func.id == 'NotImplementedError':",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    160:             # Check for NotImplementedError raises\n    161:             elif isinstance(node, ast.Raise):\n    162:                 if isinstance(node.exc, ast.Call) and isinstance(node.exc.func, ast.Name):\n>>> 163:                     if node.exc.func.id == 'NotImplementedError':\n    164:                         self.add_issue(\n    165:                             file_path, node.lineno, 'NOT_IMPLEMENTED',\n    166:                             lines[node.lineno - 1].strip(), 'CRITICAL',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 172,
+      "issue_type": "NotImplemented",
+      "content": "critical_patterns = ['NotImplemented', 'raise_not_implemented', 'SYNTAX_ERROR']",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    169:                         \n    170:     def determine_severity(self, pattern_name: str, line: str) -> str:\n    171:         \"\"\"Določi resnost problema\"\"\"\n>>> 172:         critical_patterns = ['NotImplemented', 'raise_not_implemented', 'SYNTAX_ERROR']\n    173:         high_patterns = ['TODO', 'FIXME', 'BUG', 'empty_function']\n    174:         medium_patterns = ['XXX', 'HACK', 'empty_class', 'placeholder']\n    175:         "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 207,
+      "issue_type": "NotImplemented",
+      "content": "'NotImplemented': \"Implement the missing functionality\",",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    204:             'BUG': \"Fix the identified bug\",\n    205:             'placeholder': \"Replace placeholder with actual implementation\",\n    206:             'dummy': \"Replace dummy code with real implementation\",\n>>> 207:             'NotImplemented': \"Implement the missing functionality\",\n    208:             'pass_todo': \"Complete the implementation\",\n    209:             'empty_function': \"Add function implementation or proper docstring\",\n    210:             'empty_class': \"Add class implementation or proper docstring\""
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 318,
+      "issue_type": "NotImplemented",
+      "content": "return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    315:             if 'placeholder' in original_line.lower():\n    316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:\n>>> 318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:\n    320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 318,
+      "issue_type": "raise_not_implemented",
+      "content": "return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')",
+      "severity": "CRITICAL",
+      "suggested_fix": "Review and fix this issue",
+      "context": "    315:             if 'placeholder' in original_line.lower():\n    316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:\n>>> 318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:\n    320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 328,
+      "issue_type": "NotImplemented",
+      "content": "# Convert pass # TODO to raise NotImplementedError",
+      "severity": "CRITICAL",
+      "suggested_fix": "Complete TODO: to raise NotImplementedError",
+      "context": "    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:\n>>> 328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n    331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 328,
+      "issue_type": "raise_not_implemented",
+      "content": "# Convert pass # TODO to raise NotImplementedError",
+      "severity": "CRITICAL",
+      "suggested_fix": "Complete TODO: to raise NotImplementedError",
+      "context": "    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:\n>>> 328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n    331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 331,
+      "issue_type": "NotImplemented",
+      "content": "return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'",
+      "severity": "CRITICAL",
+      "suggested_fix": "Complete TODO: {comment_part}\")\\n'",
+      "context": "    328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n>>> 331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'\n    332:                 \n    333:         return None\n    334:         "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 331,
+      "issue_type": "raise_not_implemented",
+      "content": "return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'",
+      "severity": "CRITICAL",
+      "suggested_fix": "Complete TODO: {comment_part}\")\\n'",
+      "context": "    328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n>>> 331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'\n    332:                 \n    333:         return None\n    334:         "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 480,
+      "issue_type": "NotImplemented",
+      "content": "1. **Fix NotImplementedError raises** - These prevent functionality",
+      "severity": "CRITICAL",
+      "suggested_fix": "Implement the missing functionality",
+      "context": "    477: ## 🔧 Recommended Actions\n    478: \n    479: ### Immediate Actions (Critical & High)\n>>> 480: 1. **Fix NotImplementedError raises** - These prevent functionality\n    481: 2. **Complete TODO items** - Essential features are missing\n    482: 3. **Implement empty functions** - Core functionality gaps\n    483: 4. **Fix syntax errors** - Prevent system from running"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 224,
+      "issue_type": "SYNTAX_ERROR",
+      "content": "Syntax error: expected an indented block after 'except' statement on line 223",
+      "severity": "CRITICAL",
+      "suggested_fix": "Fix syntax error before proceeding",
+      "context": ""
+    },
+    {
+      "file_path": "mia/project_builder/core_methods.py",
+      "line_number": 462,
+      "issue_type": "SYNTAX_ERROR",
+      "content": "Syntax error: unmatched '}'",
+      "severity": "CRITICAL",
+      "suggested_fix": "Fix syntax error before proceeding",
+      "context": ""
+    },
+    {
+      "file_path": "mia/project_builder/deterministic_build_helpers.py",
+      "line_number": 271,
+      "issue_type": "SYNTAX_ERROR",
+      "content": "Syntax error: expected '('",
+      "severity": "CRITICAL",
+      "suggested_fix": "Fix syntax error before proceeding",
+      "context": ""
+    },
+    {
+      "file_path": "mia/testing/validation_methods.py",
+      "line_number": 496,
+      "issue_type": "SYNTAX_ERROR",
+      "content": "Syntax error: unmatched '}'",
+      "severity": "CRITICAL",
+      "suggested_fix": "Fix syntax error before proceeding",
+      "context": ""
+    },
+    {
+      "file_path": "mia/verification/performance_monitor.py",
+      "line_number": 390,
+      "issue_type": "SYNTAX_ERROR",
+      "content": "Syntax error: expected an indented block after 'while' statement on line 389",
+      "severity": "CRITICAL",
+      "suggested_fix": "Fix syntax error before proceeding",
+      "context": ""
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 320,
+      "issue_type": "TODO",
+      "content": "return original_line.replace('placeholder', 'None  # TODO: Implement')",
+      "severity": "HIGH",
+      "suggested_fix": "Complete TODO: Implement')",
+      "context": "    317:                 if 'def ' in original_line:\n    318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:\n>>> 320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     \n    322:         elif issue.issue_type == 'dummy':\n    323:             if 'dummy' in original_line.lower():"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 324,
+      "issue_type": "TODO",
+      "content": "return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')",
+      "severity": "HIGH",
+      "suggested_fix": "Complete TODO: Replace with real implementation')",
+      "context": "    321:                     \n    322:         elif issue.issue_type == 'dummy':\n    323:             if 'dummy' in original_line.lower():\n>>> 324:                 return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')\n    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 328,
+      "issue_type": "TODO",
+      "content": "# Convert pass # TODO to raise NotImplementedError",
+      "severity": "HIGH",
+      "suggested_fix": "Complete TODO: to raise NotImplementedError",
+      "context": "    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:\n>>> 328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n    331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'"
+    },
+    {
+      "file_path": "MEGA_COMPREHENSIVE_TEST.py",
+      "line_number": 1877,
+      "issue_type": "EMPTY_FUNCTION",
+      "content": "def dummy_handler(...): pass",
+      "severity": "HIGH",
+      "suggested_fix": "Implement function dummy_handler or add docstring explaining why it's empty",
+      "context": ""
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 31,
+      "issue_type": "TODO",
+      "content": "# TODO comments",
+      "severity": "HIGH",
+      "suggested_fix": "Complete TODO: comments",
+      "context": "     28:             # Placeholder comments\n     29:             (r'# This is a placeholder for.*\\n', ''),\n     30:             \n>>>  31:             # TODO comments\n     32:             (r'# TODO:.*\\n', ''),\n     33:             \n     34:             # Dummy implementations"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 32,
+      "issue_type": "TODO",
+      "content": "(r'# TODO:.*\\n', ''),",
+      "severity": "HIGH",
+      "suggested_fix": "Complete TODO: .*\\n', ''),",
+      "context": "     29:             (r'# This is a placeholder for.*\\n', ''),\n     30:             \n     31:             # TODO comments\n>>>  32:             (r'# TODO:.*\\n', ''),\n     33:             \n     34:             # Dummy implementations\n     35:             (r'def dummy_.*?\\n.*?return.*?\\n', self._generate_real_method),"
+    },
+    {
+      "file_path": "mia/core/self_evolution.py",
+      "line_number": 246,
+      "issue_type": "BUG",
+      "content": "# Bug fix for: {bug_description}",
+      "severity": "HIGH",
+      "suggested_fix": "Fix the identified bug",
+      "context": "    243: ''',\n    244:             \n    245:             \"bug_fix_template\": '''\n>>> 246: # Bug fix for: {bug_description}\n    247: # Original issue: {original_issue}\n    248: # Fix applied: {fix_description}\n    249: "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 3,
+      "issue_type": "placeholder",
+      "content": "🔍 COMPLETE TODO/PLACEHOLDER/DUMMY CODE AUDIT & FIX",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /PLACEHOLDER/DUMMY CODE AUDIT & FIX",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n>>>   3: 🔍 COMPLETE TODO/PLACEHOLDER/DUMMY CODE AUDIT & FIX\n      4: ==================================================\n      5: \n      6: Sistematičen pregled vseh 265 Python datotek za:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 9,
+      "issue_type": "placeholder",
+      "content": "- XXX placeholderje",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "      6: Sistematičen pregled vseh 265 Python datotek za:\n      7: - TODO komentarje\n      8: - FIXME oznake  \n>>>   9: - XXX placeholderje\n     10: - HACK rešitve\n     11: - placeholder kodo\n     12: - dummy implementacije"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 11,
+      "issue_type": "placeholder",
+      "content": "- placeholder kodo",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "      8: - FIXME oznake  \n      9: - XXX placeholderje\n     10: - HACK rešitve\n>>>  11: - placeholder kodo\n     12: - dummy implementacije\n     13: - NotImplemented exceptions\n     14: - pass statements z komentarji"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 48,
+      "issue_type": "placeholder",
+      "content": "Popoln auditor za iskanje in popravljanje TODO/placeholder kode",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /placeholder kode",
+      "context": "     45: \n     46: class CompleteTODOAuditor:\n     47:     \"\"\"\n>>>  48:     Popoln auditor za iskanje in popravljanje TODO/placeholder kode\n     49:     \"\"\"\n     50:     \n     51:     def __init__(self, project_root: Path):"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 74,
+      "issue_type": "placeholder",
+      "content": "'placeholder': r'placeholder|PLACEHOLDER',",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     71:             'BUG': r'#\\s*BUG[:\\s]*(.*)',\n     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n>>>  74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 74,
+      "issue_type": "placeholder",
+      "content": "'placeholder': r'placeholder|PLACEHOLDER',",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     71:             'BUG': r'#\\s*BUG[:\\s]*(.*)',\n     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n>>>  74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 74,
+      "issue_type": "placeholder",
+      "content": "'placeholder': r'placeholder|PLACEHOLDER',",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     71:             'BUG': r'#\\s*BUG[:\\s]*(.*)',\n     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n>>>  74:             'placeholder': r'placeholder|PLACEHOLDER',\n     75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 85,
+      "issue_type": "placeholder",
+      "content": "logger.info(\"🔍 Starting complete TODO/placeholder audit...\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /placeholder audit...\")",
+      "context": "     82:         \n     83:     def scan_all_files(self):\n     84:         \"\"\"Preglej vse Python datoteke v projektu\"\"\"\n>>>  85:         logger.info(\"🔍 Starting complete TODO/placeholder audit...\")\n     86:         \n     87:         python_files = list(self.project_root.rglob(\"*.py\"))\n     88:         logger.info(f\"📁 Found {len(python_files)} Python files to scan\")"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 174,
+      "issue_type": "placeholder",
+      "content": "medium_patterns = ['XXX', 'HACK', 'empty_class', 'placeholder']",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    171:         \"\"\"Določi resnost problema\"\"\"\n    172:         critical_patterns = ['NotImplemented', 'raise_not_implemented', 'SYNTAX_ERROR']\n    173:         high_patterns = ['TODO', 'FIXME', 'BUG', 'empty_function']\n>>> 174:         medium_patterns = ['XXX', 'HACK', 'empty_class', 'placeholder']\n    175:         \n    176:         if pattern_name in critical_patterns:\n    177:             return 'CRITICAL'"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 205,
+      "issue_type": "placeholder",
+      "content": "'placeholder': \"Replace placeholder with actual implementation\",",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    202:             'XXX': \"Review and resolve the marked code\",\n    203:             'HACK': \"Replace hack with proper implementation\",\n    204:             'BUG': \"Fix the identified bug\",\n>>> 205:             'placeholder': \"Replace placeholder with actual implementation\",\n    206:             'dummy': \"Replace dummy code with real implementation\",\n    207:             'NotImplemented': \"Implement the missing functionality\",\n    208:             'pass_todo': \"Complete the implementation\","
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 205,
+      "issue_type": "placeholder",
+      "content": "'placeholder': \"Replace placeholder with actual implementation\",",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    202:             'XXX': \"Review and resolve the marked code\",\n    203:             'HACK': \"Replace hack with proper implementation\",\n    204:             'BUG': \"Fix the identified bug\",\n>>> 205:             'placeholder': \"Replace placeholder with actual implementation\",\n    206:             'dummy': \"Replace dummy code with real implementation\",\n    207:             'NotImplemented': \"Implement the missing functionality\",\n    208:             'pass_todo': \"Complete the implementation\","
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 274,
+      "issue_type": "placeholder",
+      "content": "fixable_patterns = ['placeholder', 'dummy', 'pass_todo']",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: ']",
+      "context": "    271:         \"\"\"Avtomatsko popravi probleme, kjer je to možno\"\"\"\n    272:         logger.info(\"🔧 Starting automatic fixes...\")\n    273:         \n>>> 274:         fixable_patterns = ['placeholder', 'dummy', 'pass_todo']\n    275:         \n    276:         for issue in self.issues:\n    277:             if issue.issue_type in fixable_patterns:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 314,
+      "issue_type": "placeholder",
+      "content": "if issue.issue_type == 'placeholder':",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    311:         \n    312:     def generate_fix(self, issue: CodeIssue, original_line: str) -> Optional[str]:\n    313:         \"\"\"Generiraj popravek za problem\"\"\"\n>>> 314:         if issue.issue_type == 'placeholder':\n    315:             if 'placeholder' in original_line.lower():\n    316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 315,
+      "issue_type": "placeholder",
+      "content": "if 'placeholder' in original_line.lower():",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    312:     def generate_fix(self, issue: CodeIssue, original_line: str) -> Optional[str]:\n    313:         \"\"\"Generiraj popravek za problem\"\"\"\n    314:         if issue.issue_type == 'placeholder':\n>>> 315:             if 'placeholder' in original_line.lower():\n    316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:\n    318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 316,
+      "issue_type": "placeholder",
+      "content": "# Replace placeholder with actual implementation",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    313:         \"\"\"Generiraj popravek za problem\"\"\"\n    314:         if issue.issue_type == 'placeholder':\n    315:             if 'placeholder' in original_line.lower():\n>>> 316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:\n    318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 318,
+      "issue_type": "placeholder",
+      "content": "return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    315:             if 'placeholder' in original_line.lower():\n    316:                 # Replace placeholder with actual implementation\n    317:                 if 'def ' in original_line:\n>>> 318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:\n    320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 320,
+      "issue_type": "placeholder",
+      "content": "return original_line.replace('placeholder', 'None  # TODO: Implement')",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: Implement')",
+      "context": "    317:                 if 'def ' in original_line:\n    318:                     return original_line.replace('placeholder', 'raise NotImplementedError(\"Implementation needed\")')\n    319:                 else:\n>>> 320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     \n    322:         elif issue.issue_type == 'dummy':\n    323:             if 'dummy' in original_line.lower():"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 386,
+      "issue_type": "placeholder",
+      "content": "markdown_content = f\"\"\"# 🔍 COMPLETE TODO/PLACEHOLDER AUDIT REPORT",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /PLACEHOLDER AUDIT REPORT",
+      "context": "    383:         \n    384:     def generate_markdown_report(self, report_data: Dict[str, Any]):\n    385:         \"\"\"Generiraj markdown poročilo\"\"\"\n>>> 386:         markdown_content = f\"\"\"# 🔍 COMPLETE TODO/PLACEHOLDER AUDIT REPORT\n    387: \n    388: ## 📊 Executive Summary\n    389: "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 486,
+      "issue_type": "placeholder",
+      "content": "1. **Replace placeholder code** - Improve code quality",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    483: 4. **Fix syntax errors** - Prevent system from running\n    484: \n    485: ### Medium Priority Actions\n>>> 486: 1. **Replace placeholder code** - Improve code quality\n    487: 2. **Remove hack implementations** - Technical debt cleanup\n    488: 3. **Document empty classes** - Clarify design intentions\n    489: "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 492,
+      "issue_type": "placeholder",
+      "content": "2. **Code review process** - Prevent placeholder code in production",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    489: \n    490: ### Long-term Actions\n    491: 1. **Establish TODO tracking** - Use issue tracker instead of code comments\n>>> 492: 2. **Code review process** - Prevent placeholder code in production\n    493: 3. **Automated checks** - CI/CD pipeline to catch issues early\n    494: \n    495: ---"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 530,
+      "issue_type": "placeholder",
+      "content": "🔧 AUTO-FIX SCRIPT FOR TODO/PLACEHOLDER ISSUES",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /PLACEHOLDER ISSUES",
+      "context": "    527:         \"\"\"Generiraj script za avtomatske popravke\"\"\"\n    528:         fix_script_content = f'''#!/usr/bin/env python3\n    529: \"\"\"\n>>> 530: 🔧 AUTO-FIX SCRIPT FOR TODO/PLACEHOLDER ISSUES\n    531: Generated: {time.strftime('%Y-%m-%d %H:%M:%S')}\n    532: \n    533: This script automatically fixes common TODO/placeholder issues."
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 533,
+      "issue_type": "placeholder",
+      "content": "This script automatically fixes common TODO/placeholder issues.",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /placeholder issues.",
+      "context": "    530: 🔧 AUTO-FIX SCRIPT FOR TODO/PLACEHOLDER ISSUES\n    531: Generated: {time.strftime('%Y-%m-%d %H:%M:%S')}\n    532: \n>>> 533: This script automatically fixes common TODO/placeholder issues.\n    534: Run with: python AUTO_FIX_TODOS.py\n    535: \"\"\"\n    536: "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 563,
+      "issue_type": "placeholder",
+      "content": "print(\"🔧 Starting automatic TODO/placeholder fixes...\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /placeholder fixes...\")",
+      "context": "    560: \n    561: def main():\n    562:     \"\"\"Apply all automatic fixes\"\"\"\n>>> 563:     print(\"🔧 Starting automatic TODO/placeholder fixes...\")\n    564:     \n    565:     project_root = Path(__file__).parent\n    566:     "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 574,
+      "issue_type": "placeholder",
+      "content": "if issue.issue_type in ['placeholder', 'dummy', 'pass_todo']:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: ']:",
+      "context": "    571:         # Add specific fixes for each file\n    572:         fixes_by_file = {}\n    573:         for issue in self.issues:\n>>> 574:             if issue.issue_type in ['placeholder', 'dummy', 'pass_todo']:\n    575:                 file_path = issue.file_path\n    576:                 if file_path not in fixes_by_file:\n    577:                     fixes_by_file[file_path] = []"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 618,
+      "issue_type": "placeholder",
+      "content": "print(\"🔍 COMPLETE TODO/PLACEHOLDER AUDIT - RESULTS\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /PLACEHOLDER AUDIT - RESULTS\")",
+      "context": "    615:     def print_summary(self):\n    616:         \"\"\"Izpiši povzetek rezultatov\"\"\"\n    617:         print(\"\\n\" + \"=\"*80)\n>>> 618:         print(\"🔍 COMPLETE TODO/PLACEHOLDER AUDIT - RESULTS\")\n    619:         print(\"=\"*80)\n    620:         print(f\"📁 Files scanned: {self.stats['files_scanned']}\")\n    621:         print(f\"📊 Total issues: {self.stats['total_issues']}\")"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 655,
+      "issue_type": "placeholder",
+      "content": "print(\"🔍 Starting Complete TODO/Placeholder Audit\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: /Placeholder Audit\")",
+      "context": "    652:     \"\"\"Main entry point\"\"\"\n    653:     project_root = Path(__file__).parent\n    654:     \n>>> 655:     print(\"🔍 Starting Complete TODO/Placeholder Audit\")\n    656:     print(f\"📁 Project root: {project_root}\")\n    657:     print(\"=\"*60)\n    658:     "
+    },
+    {
+      "file_path": "MEGA_COMPREHENSIVE_TEST.py",
+      "line_number": 1534,
+      "issue_type": "placeholder",
+      "content": "(\"JSONPlaceholder\", \"https://jsonplaceholder.typicode.com/posts/1\"),",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1531:             \n    1532:             # Test public APIs (no auth required)\n    1533:             public_apis = [\n>>> 1534:                 (\"JSONPlaceholder\", \"https://jsonplaceholder.typicode.com/posts/1\"),\n    1535:                 (\"GitHub API\", \"https://api.github.com/repos/microsoft/vscode\"),\n    1536:                 (\"Wikipedia API\", \"https://en.wikipedia.org/api/rest_v1/page/summary/Python_(programming_language)\")\n    1537:             ]"
+    },
+    {
+      "file_path": "MEGA_COMPREHENSIVE_TEST.py",
+      "line_number": 1534,
+      "issue_type": "placeholder",
+      "content": "(\"JSONPlaceholder\", \"https://jsonplaceholder.typicode.com/posts/1\"),",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1531:             \n    1532:             # Test public APIs (no auth required)\n    1533:             public_apis = [\n>>> 1534:                 (\"JSONPlaceholder\", \"https://jsonplaceholder.typicode.com/posts/1\"),\n    1535:                 (\"GitHub API\", \"https://api.github.com/repos/microsoft/vscode\"),\n    1536:                 (\"Wikipedia API\", \"https://en.wikipedia.org/api/rest_v1/page/summary/Python_(programming_language)\")\n    1537:             ]"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 4,
+      "issue_type": "placeholder",
+      "content": "Removes generated files with placeholders and keeps only core modules",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n      3: 🧹 MIA Enterprise AGI - Generated Files Cleanup\n>>>   4: Removes generated files with placeholders and keeps only core modules\n      5: \"\"\"\n      6: \n      7: import os"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 13,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Cleanup generated files with placeholders\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     10: import logging\n     11: \n     12: class GeneratedFilesCleanup:\n>>>  13:     \"\"\"Cleanup generated files with placeholders\"\"\"\n     14:     \n     15:     def __init__(self):\n     16:         self.logger = self._setup_logging()"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 65,
+      "issue_type": "placeholder",
+      "content": "\"enterprise_placeholder_fixer.py\",",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     62:             \"modules.toml\",\n     63:             \"mia_config.yaml\",\n     64:             \"mia_prompts.txt\",\n>>>  65:             \"enterprise_placeholder_fixer.py\",\n     66:             \"cleanup_generated_files.py\"\n     67:         ]\n     68:         "
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 105,
+      "issue_type": "placeholder",
+      "content": "# Clean test directories with many placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    102:             if Path(dir_name).exists():\n    103:                 self._cleanup_report_directory(dir_name)\n    104:         \n>>> 105:         # Clean test directories with many placeholders\n    106:         test_dirs = [\"tests\", \"mia/tests\"]\n    107:         for test_dir in test_dirs:\n    108:             if Path(test_dir).exists():"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 163,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Cleanup test directory with many placeholders\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    160:             self.logger.error(f\"Error cleaning {directory}: {e}\")\n    161:     \n    162:     def _cleanup_test_directory(self, directory: str):\n>>> 163:         \"\"\"Cleanup test directory with many placeholders\"\"\"\n    164:         path = Path(directory)\n    165:         \n    166:         try:"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 167,
+      "issue_type": "placeholder",
+      "content": "# Count placeholders in test files",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    164:         path = Path(directory)\n    165:         \n    166:         try:\n>>> 167:             # Count placeholders in test files\n    168:             for item in path.rglob(\"*.py\"):\n    169:                 if item.is_file():\n    170:                     try:"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 173,
+      "issue_type": "placeholder",
+      "content": "placeholder_count = content.lower().count('todo') + \\",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: ') + \\",
+      "context": "    170:                     try:\n    171:                         with open(item, 'r') as f:\n    172:                             content = f.read()\n>>> 173:                             placeholder_count = content.lower().count('todo') + \\\n    174:                                               content.lower().count('placeholder') + \\\n    175:                                               content.lower().count('mock') + \\\n    176:                                               content.lower().count('simulate')"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 174,
+      "issue_type": "placeholder",
+      "content": "content.lower().count('placeholder') + \\",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    171:                         with open(item, 'r') as f:\n    172:                             content = f.read()\n    173:                             placeholder_count = content.lower().count('todo') + \\\n>>> 174:                                               content.lower().count('placeholder') + \\\n    175:                                               content.lower().count('mock') + \\\n    176:                                               content.lower().count('simulate')\n    177:                         "
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 178,
+      "issue_type": "placeholder",
+      "content": "# Delete files with many placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    175:                                               content.lower().count('mock') + \\\n    176:                                               content.lower().count('simulate')\n    177:                         \n>>> 178:                         # Delete files with many placeholders\n    179:                         if placeholder_count > 10:\n    180:                             item.unlink()\n    181:                             self.deleted_files.append(str(item))"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 179,
+      "issue_type": "placeholder",
+      "content": "if placeholder_count > 10:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    176:                                               content.lower().count('simulate')\n    177:                         \n    178:                         # Delete files with many placeholders\n>>> 179:                         if placeholder_count > 10:\n    180:                             item.unlink()\n    181:                             self.deleted_files.append(str(item))\n    182:                             self.logger.info(f\"Deleted test file with {placeholder_count} placeholders: {item}\")"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 182,
+      "issue_type": "placeholder",
+      "content": "self.logger.info(f\"Deleted test file with {placeholder_count} placeholders: {item}\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    179:                         if placeholder_count > 10:\n    180:                             item.unlink()\n    181:                             self.deleted_files.append(str(item))\n>>> 182:                             self.logger.info(f\"Deleted test file with {placeholder_count} placeholders: {item}\")\n    183:                             \n    184:                     except Exception as e:\n    185:                         self.logger.error(f\"Error processing {item}: {e}\")"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 182,
+      "issue_type": "placeholder",
+      "content": "self.logger.info(f\"Deleted test file with {placeholder_count} placeholders: {item}\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    179:                         if placeholder_count > 10:\n    180:                             item.unlink()\n    181:                             self.deleted_files.append(str(item))\n>>> 182:                             self.logger.info(f\"Deleted test file with {placeholder_count} placeholders: {item}\")\n    183:                             \n    184:                     except Exception as e:\n    185:                         self.logger.error(f\"Error processing {item}: {e}\")"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 209,
+      "issue_type": "placeholder",
+      "content": "# Delete files with many placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    206:             if file_path.match(pattern):\n    207:                 return True\n    208:         \n>>> 209:         # Delete files with many placeholders\n    210:         if file_path.suffix == \".py\":\n    211:             try:\n    212:                 with open(file_path, 'r') as f:"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 214,
+      "issue_type": "placeholder",
+      "content": "placeholder_count = content.lower().count('todo') + \\",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: ') + \\",
+      "context": "    211:             try:\n    212:                 with open(file_path, 'r') as f:\n    213:                     content = f.read()\n>>> 214:                     placeholder_count = content.lower().count('todo') + \\\n    215:                                       content.lower().count('placeholder') + \\\n    216:                                       content.lower().count('mock') + \\\n    217:                                       content.lower().count('simulate')"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 215,
+      "issue_type": "placeholder",
+      "content": "content.lower().count('placeholder') + \\",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    212:                 with open(file_path, 'r') as f:\n    213:                     content = f.read()\n    214:                     placeholder_count = content.lower().count('todo') + \\\n>>> 215:                                       content.lower().count('placeholder') + \\\n    216:                                       content.lower().count('mock') + \\\n    217:                                       content.lower().count('simulate')\n    218:                 "
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 219,
+      "issue_type": "placeholder",
+      "content": "# Delete if more than 20 placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    216:                                       content.lower().count('mock') + \\\n    217:                                       content.lower().count('simulate')\n    218:                 \n>>> 219:                 # Delete if more than 20 placeholders\n    220:                 if placeholder_count > 20:\n    221:                     return True\n    222:                     "
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 220,
+      "issue_type": "placeholder",
+      "content": "if placeholder_count > 20:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    217:                                       content.lower().count('simulate')\n    218:                 \n    219:                 # Delete if more than 20 placeholders\n>>> 220:                 if placeholder_count > 20:\n    221:                     return True\n    222:                     \n    223:             except Exception:"
+    },
+    {
+      "file_path": "cleanup_generated_files.py",
+      "line_number": 255,
+      "issue_type": "placeholder",
+      "content": "✅ Cleaned codebase from {len(self.deleted_files)} generated files with placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    252: - scripts/ (Build scripts)\n    253: \n    254: ### Result:\n>>> 255: ✅ Cleaned codebase from {len(self.deleted_files)} generated files with placeholders\n    256: ✅ Kept all core functionality intact\n    257: ✅ Ready for production deployment\n    258: \"\"\""
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 3,
+      "issue_type": "placeholder",
+      "content": "🔧 MIA Enterprise AGI - Placeholder Fixer",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n>>>   3: 🔧 MIA Enterprise AGI - Placeholder Fixer\n      4: Automatically fixes all placeholders, mocks, and dummy implementations\n      5: \"\"\"\n      6: "
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 4,
+      "issue_type": "placeholder",
+      "content": "Automatically fixes all placeholders, mocks, and dummy implementations",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n      3: 🔧 MIA Enterprise AGI - Placeholder Fixer\n>>>   4: Automatically fixes all placeholders, mocks, and dummy implementations\n      5: \"\"\"\n      6: \n      7: import os"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 14,
+      "issue_type": "placeholder",
+      "content": "class EnterprisePlaceholderFixer:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     11: from typing import List, Dict, Any\n     12: import logging\n     13: \n>>>  14: class EnterprisePlaceholderFixer:\n     15:     \"\"\"Fixes all placeholders in the codebase\"\"\"\n     16:     \n     17:     def __init__(self):"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 15,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Fixes all placeholders in the codebase\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     12: import logging\n     13: \n     14: class EnterprisePlaceholderFixer:\n>>>  15:     \"\"\"Fixes all placeholders in the codebase\"\"\"\n     16:     \n     17:     def __init__(self):\n     18:         self.logger = self._setup_logging()"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 23,
+      "issue_type": "placeholder",
+      "content": "self.placeholder_patterns = [",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     20:         self.total_fixes = 0\n     21:         \n     22:         # Patterns to find and replace\n>>>  23:         self.placeholder_patterns = [\n     24:             # Mock data patterns\n     25:             (r'# Generate mock data based on identifier\\s*\\n\\s*mock_data = \\{[^}]*\\}', \n     26:              self._generate_real_data_implementation),"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 28,
+      "issue_type": "placeholder",
+      "content": "# Placeholder comments",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     25:             (r'# Generate mock data based on identifier\\s*\\n\\s*mock_data = \\{[^}]*\\}', \n     26:              self._generate_real_data_implementation),\n     27:             \n>>>  28:             # Placeholder comments\n     29:             (r'# This is a placeholder for.*\\n', ''),\n     30:             \n     31:             # TODO comments"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 29,
+      "issue_type": "placeholder",
+      "content": "(r'# This is a placeholder for.*\\n', ''),",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     26:              self._generate_real_data_implementation),\n     27:             \n     28:             # Placeholder comments\n>>>  29:             (r'# This is a placeholder for.*\\n', ''),\n     30:             \n     31:             # TODO comments\n     32:             (r'# TODO:.*\\n', ''),"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 49,
+      "issue_type": "placeholder",
+      "content": "logger = logging.getLogger(\"PlaceholderFixer\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     46:     \n     47:     def _setup_logging(self) -> logging.Logger:\n     48:         \"\"\"Setup logging\"\"\"\n>>>  49:         logger = logging.getLogger(\"PlaceholderFixer\")\n     50:         if not logger.handlers:\n     51:             handler = logging.StreamHandler()\n     52:             formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 58,
+      "issue_type": "placeholder",
+      "content": "def fix_all_placeholders(self, root_path: str = \".\") -> Dict[str, Any]:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     55:             logger.setLevel(logging.INFO)\n     56:         return logger\n     57:     \n>>>  58:     def fix_all_placeholders(self, root_path: str = \".\") -> Dict[str, Any]:\n     59:         \"\"\"Fix all placeholders in the codebase\"\"\"\n     60:         self.logger.info(\"🔧 Starting enterprise placeholder fixing...\")\n     61:         "
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 59,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Fix all placeholders in the codebase\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     56:         return logger\n     57:     \n     58:     def fix_all_placeholders(self, root_path: str = \".\") -> Dict[str, Any]:\n>>>  59:         \"\"\"Fix all placeholders in the codebase\"\"\"\n     60:         self.logger.info(\"🔧 Starting enterprise placeholder fixing...\")\n     61:         \n     62:         # Find all Python files"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 60,
+      "issue_type": "placeholder",
+      "content": "self.logger.info(\"🔧 Starting enterprise placeholder fixing...\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     57:     \n     58:     def fix_all_placeholders(self, root_path: str = \".\") -> Dict[str, Any]:\n     59:         \"\"\"Fix all placeholders in the codebase\"\"\"\n>>>  60:         self.logger.info(\"🔧 Starting enterprise placeholder fixing...\")\n     61:         \n     62:         # Find all Python files\n     63:         python_files = list(Path(root_path).rglob(\"*.py\"))"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 83,
+      "issue_type": "placeholder",
+      "content": "self.logger.info(f\"✅ Fixed {self.total_fixes} placeholders in {len(self.fixed_files)} files\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     80:             \"fixed_files\": self.fixed_files\n     81:         }\n     82:         \n>>>  83:         self.logger.info(f\"✅ Fixed {self.total_fixes} placeholders in {len(self.fixed_files)} files\")\n     84:         return summary\n     85:     \n     86:     def _should_skip_file(self, file_path: Path) -> bool:"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 96,
+      "issue_type": "placeholder",
+      "content": "\"enterprise_placeholder_fixer.py\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     93:             \".env\",\n     94:             \"test_\",\n     95:             \"_test.py\",\n>>>  96:             \"enterprise_placeholder_fixer.py\"\n     97:         ]\n     98:         \n     99:         file_str = str(file_path)"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 103,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Fix placeholders in a single file\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    100:         return any(pattern in file_str for pattern in skip_patterns)\n    101:     \n    102:     def _fix_file(self, file_path: Path):\n>>> 103:         \"\"\"Fix placeholders in a single file\"\"\"\n    104:         try:\n    105:             with open(file_path, 'r', encoding='utf-8') as f:\n    106:                 content = f.read()"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 112,
+      "issue_type": "placeholder",
+      "content": "for pattern, replacement in self.placeholder_patterns:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    109:             fixes_in_file = 0\n    110:             \n    111:             # Apply all patterns\n>>> 112:             for pattern, replacement in self.placeholder_patterns:\n    113:                 if callable(replacement):\n    114:                     # Custom replacement function\n    115:                     matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 178,
+      "issue_type": "placeholder",
+      "content": "# Fix placeholder return values",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    175:             flags=re.MULTILINE\n    176:         )\n    177:         \n>>> 178:         # Fix placeholder return values\n    179:         content = re.sub(\n    180:             r'return \\{\\s*\"success\":\\s*True,\\s*\"message\":\\s*\".*placeholder.*\"\\s*\\}',\n    181:             'return self._execute_operation()',"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 180,
+      "issue_type": "placeholder",
+      "content": "r'return \\{\\s*\"success\":\\s*True,\\s*\"message\":\\s*\".*placeholder.*\"\\s*\\}',",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    177:         \n    178:         # Fix placeholder return values\n    179:         content = re.sub(\n>>> 180:             r'return \\{\\s*\"success\":\\s*True,\\s*\"message\":\\s*\".*placeholder.*\"\\s*\\}',\n    181:             'return self._execute_operation()',\n    182:             content\n    183:         )"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 299,
+      "issue_type": "placeholder",
+      "content": "fixer = EnterprisePlaceholderFixer()",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    296: \n    297: def main():\n    298:     \"\"\"Main function\"\"\"\n>>> 299:     fixer = EnterprisePlaceholderFixer()\n    300:     \n    301:     # Fix all placeholders\n    302:     summary = fixer.fix_all_placeholders()"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 301,
+      "issue_type": "placeholder",
+      "content": "# Fix all placeholders",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    298:     \"\"\"Main function\"\"\"\n    299:     fixer = EnterprisePlaceholderFixer()\n    300:     \n>>> 301:     # Fix all placeholders\n    302:     summary = fixer.fix_all_placeholders()\n    303:     \n    304:     # Add enterprise methods to files that need them"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 302,
+      "issue_type": "placeholder",
+      "content": "summary = fixer.fix_all_placeholders()",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    299:     fixer = EnterprisePlaceholderFixer()\n    300:     \n    301:     # Fix all placeholders\n>>> 302:     summary = fixer.fix_all_placeholders()\n    303:     \n    304:     # Add enterprise methods to files that need them\n    305:     for file_path in summary[\"fixed_files\"]:"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 308,
+      "issue_type": "placeholder",
+      "content": "print(\"\\n🎉 ENTERPRISE PLACEHOLDER FIXING COMPLETE!\")",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    305:     for file_path in summary[\"fixed_files\"]:\n    306:         fixer.add_enterprise_methods(Path(file_path))\n    307:     \n>>> 308:     print(\"\\n🎉 ENTERPRISE PLACEHOLDER FIXING COMPLETE!\")\n    309:     print(f\"📊 Files processed: {summary['files_processed']}\")\n    310:     print(f\"🔧 Files fixed: {summary['files_fixed']}\")\n    311:     print(f\"✅ Total fixes: {summary['total_fixes']}\")"
+    },
+    {
+      "file_path": "mia/core/agi_agents/optimizer_agent.py",
+      "line_number": 741,
+      "issue_type": "placeholder",
+      "content": "score = np.random.uniform(0.5, 1.0)  # Placeholder",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    738:             \n    739:             if not objective_function:\n    740:                 # Default scoring\n>>> 741:                 score = np.random.uniform(0.5, 1.0)  # Placeholder\n    742:                 metrics = {\"default\": score}\n    743:             else:\n    744:                 # Run objective function"
+    },
+    {
+      "file_path": "mia/core/model_learning.py",
+      "line_number": 347,
+      "issue_type": "placeholder",
+      "content": "\"response_time\": 1.0  # Placeholder",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    344:                         \"output\": response,\n    345:                         \"expected_type\": test[\"expected_type\"],\n    346:                         \"response_length\": len(response),\n>>> 347:                         \"response_time\": 1.0  # Placeholder\n    348:                     }\n    349:             except Exception as e:\n    350:                 self.logger.warning(f\"Failed behavior test '{test['input']}': {e}\")"
+    },
+    {
+      "file_path": "mia/core/model_learning.py",
+      "line_number": 541,
+      "issue_type": "placeholder",
+      "content": "# Placeholder - would use llama.cpp",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    538:     \n    539:     def _load_gguf_model(self, interface: Dict):\n    540:         \"\"\"Load GGUF model\"\"\"\n>>> 541:         # Placeholder - would use llama.cpp\n    542:         return self._default_implementation()\n    543:     def _load_huggingface_model(self, interface: Dict):\n    544:         \"\"\"Load Hugging Face model\"\"\""
+    },
+    {
+      "file_path": "mia/core/model_learning.py",
+      "line_number": 545,
+      "issue_type": "placeholder",
+      "content": "# Placeholder - would use transformers",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    542:         return self._default_implementation()\n    543:     def _load_huggingface_model(self, interface: Dict):\n    544:         \"\"\"Load Hugging Face model\"\"\"\n>>> 545:         # Placeholder - would use transformers\n    546:         return self._default_implementation()\n    547:     def _load_ollama_model(self, interface: Dict):\n    548:         \"\"\"Load Ollama model\"\"\""
+    },
+    {
+      "file_path": "mia/core/model_learning.py",
+      "line_number": 549,
+      "issue_type": "placeholder",
+      "content": "# Placeholder - would use Ollama API",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    546:         return self._default_implementation()\n    547:     def _load_ollama_model(self, interface: Dict):\n    548:         \"\"\"Load Ollama model\"\"\"\n>>> 549:         # Placeholder - would use Ollama API\n    550:         return self._default_implementation()\n    551:     def _load_pytorch_model(self, interface: Dict):\n    552:         \"\"\"Load PyTorch model\"\"\""
+    },
+    {
+      "file_path": "mia/core/model_learning.py",
+      "line_number": 553,
+      "issue_type": "placeholder",
+      "content": "# Placeholder - would use torch.load",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    550:         return self._default_implementation()\n    551:     def _load_pytorch_model(self, interface: Dict):\n    552:         \"\"\"Load PyTorch model\"\"\"\n>>> 553:         # Placeholder - would use torch.load\n    554:         return self._default_implementation()\n    555:     def stop_learning(self):\n    556:         \"\"\"Stop learning process\"\"\""
+    },
+    {
+      "file_path": "mia/interfaces/unified_interface.py",
+      "line_number": 405,
+      "issue_type": "placeholder",
+      "content": "<textarea id=\"messageInput\" placeholder=\"Type your message here...\" rows=\"3\"></textarea>",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    402:             \n    403:             <div class=\"chat-input-container\">\n    404:                 <div class=\"input-group\">\n>>> 405:                     <textarea id=\"messageInput\" placeholder=\"Type your message here...\" rows=\"3\"></textarea>\n    406:                     <div class=\"input-actions\">\n    407:                         <button id=\"voiceButton\" class=\"btn btn-voice\" title=\"Voice Input\">🎤</button>\n    408:                         <button id=\"sendButton\" class=\"btn btn-primary\">Send</button>"
+    },
+    {
+      "file_path": "mia/interfaces/unified_interface.py",
+      "line_number": 1361,
+      "issue_type": "placeholder",
+      "content": "# Placeholder for voice synthesis",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1358:             text = data.get(\"text\", \"\")\n    1359:             voice = data.get(\"voice\", \"neural\")\n    1360:             \n>>> 1361:             # Placeholder for voice synthesis\n    1362:             return {\n    1363:                 \"status\": \"success\",\n    1364:                 \"message\": f\"Voice synthesis for: {text}\","
+    },
+    {
+      "file_path": "mia/modules/lora_training/lora_manager.py",
+      "line_number": 761,
+      "issue_type": "placeholder",
+      "content": "# Placeholder for other types",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    758:                 loss = nn.MSELoss()(outputs.last_hidden_state, targets)\n    759:                 \n    760:             else:\n>>> 761:                 # Placeholder for other types\n    762:                 inputs = torch.randn(config.batch_size, 768)\n    763:                 outputs = model(inputs)\n    764:                 targets = torch.randn(config.batch_size, 768)"
+    },
+    {
+      "file_path": "mia/modules/ui/web.py",
+      "line_number": 751,
+      "issue_type": "placeholder",
+      "content": "placeholder=\"Ask MIA anything... (Press Enter to send, Shift+Enter for new line)\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    748:         <div class=\"typing-indicator\" id=\"typing\">🤔 MIA is thinking...</div>\n    749:         <div class=\"input-area\">\n    750:             <textarea class=\"message-input\" id=\"messageInput\" \n>>> 751:                      placeholder=\"Ask MIA anything... (Press Enter to send, Shift+Enter for new line)\" \n    752:                      maxlength=\"2000\"></textarea>\n    753:             <button class=\"send-button\" id=\"sendButton\">Send</button>\n    754:         </div>"
+    },
+    {
+      "file_path": "mia/modules/ui/web.py",
+      "line_number": 1358,
+      "issue_type": "placeholder",
+      "content": "<input type=\"text\" id=\"chat-input\" placeholder=\"Type your message here...\">",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1355:             <div id=\"chat-container\">\n    1356:                 <div id=\"chat-messages\"></div>\n    1357:                 <div id=\"chat-input-container\">\n>>> 1358:                     <input type=\"text\" id=\"chat-input\" placeholder=\"Type your message here...\">\n    1359:                     <button id=\"send-btn\">Send</button>\n    1360:                     <button id=\"voice-btn\">🎤</button>\n    1361:                 </div>"
+    },
+    {
+      "file_path": "mia/modules/ui/web.py",
+      "line_number": 1367,
+      "issue_type": "placeholder",
+      "content": "<input type=\"text\" id=\"image-prompt\" placeholder=\"Describe the image...\">",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1364:             <div id=\"sidebar\">\n    1365:                 <div id=\"image-generation\">\n    1366:                     <h3>Image Generation</h3>\n>>> 1367:                     <input type=\"text\" id=\"image-prompt\" placeholder=\"Describe the image...\">\n    1368:                     <select id=\"image-style\">\n    1369:                         <option value=\"realistic\">Realistic</option>\n    1370:                         <option value=\"artistic\">Artistic</option>"
+    },
+    {
+      "file_path": "mia/modules/ui/web.py",
+      "line_number": 1386,
+      "issue_type": "placeholder",
+      "content": "<input type=\"password\" id=\"adult-phrase\" placeholder=\"Enter activation phrase\">",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    1383:         </main>\n    1384:         \n    1385:         <div id=\"adult-mode-panel\" style=\"display: none;\">\n>>> 1386:             <input type=\"password\" id=\"adult-phrase\" placeholder=\"Enter activation phrase\">\n    1387:             <button id=\"activate-adult-btn\">Activate Adult Mode</button>\n    1388:         </div>\n    1389:     </div>"
+    },
+    {
+      "file_path": "mia/project_builder/template_manager.py",
+      "line_number": 587,
+      "issue_type": "placeholder",
+      "content": "placeholder = f\"{{{{{var_name}}}}}\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    584:                 # Replace template variables\n    585:                 rendered_content = file_content\n    586:                 for var_name, var_value in variables.deterministic_items():\n>>> 587:                     placeholder = f\"{{{{{var_name}}}}}\"\n    588:                     rendered_content = rendered_content.replace(placeholder, str(var_value))\n    589:                 \n    590:                 rendered_files[file_path] = rendered_content"
+    },
+    {
+      "file_path": "mia/project_builder/template_manager.py",
+      "line_number": 588,
+      "issue_type": "placeholder",
+      "content": "rendered_content = rendered_content.replace(placeholder, str(var_value))",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    585:                 rendered_content = file_content\n    586:                 for var_name, var_value in variables.deterministic_items():\n    587:                     placeholder = f\"{{{{{var_name}}}}}\"\n>>> 588:                     rendered_content = rendered_content.replace(placeholder, str(var_value))\n    589:                 \n    590:                 rendered_files[file_path] = rendered_content\n    591:             "
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 426,
+      "issue_type": "placeholder",
+      "content": "(\"Brez placeholderjev\", self.check_no_placeholders()),",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    423:         # Ključne zahteve iz originalnega dokumenta\n    424:         original_requirements = [\n    425:             (\"Popolnoma lokalno delovanje\", True),\n>>> 426:             (\"Brez placeholderjev\", self.check_no_placeholders()),\n    427:             (\"Brez TODO komentarjev\", self.check_no_todos()),\n    428:             (\"Deterministično obnašanje\", True),\n    429:             (\"Zavestni sistem\", True),"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 426,
+      "issue_type": "placeholder",
+      "content": "(\"Brez placeholderjev\", self.check_no_placeholders()),",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    423:         # Ključne zahteve iz originalnega dokumenta\n    424:         original_requirements = [\n    425:             (\"Popolnoma lokalno delovanje\", True),\n>>> 426:             (\"Brez placeholderjev\", self.check_no_placeholders()),\n    427:             (\"Brez TODO komentarjev\", self.check_no_todos()),\n    428:             (\"Deterministično obnašanje\", True),\n    429:             (\"Zavestni sistem\", True),"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 445,
+      "issue_type": "placeholder",
+      "content": "def check_no_placeholders(self) -> bool:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    442:         for requirement, status in original_requirements:\n    443:             self.audit_result(\"ORIGINAL_REQUIREMENTS\", requirement, status)\n    444:     \n>>> 445:     def check_no_placeholders(self) -> bool:\n    446:         \"\"\"Preveri če ni placeholderjev v kodi\"\"\"\n    447:         placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]\n    448:         "
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 446,
+      "issue_type": "placeholder",
+      "content": "\"\"\"Preveri če ni placeholderjev v kodi\"\"\"",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    443:             self.audit_result(\"ORIGINAL_REQUIREMENTS\", requirement, status)\n    444:     \n    445:     def check_no_placeholders(self) -> bool:\n>>> 446:         \"\"\"Preveri če ni placeholderjev v kodi\"\"\"\n    447:         placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]\n    448:         \n    449:         for py_file in Path(\".\").rglob(\"*.py\"):"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 447,
+      "issue_type": "placeholder",
+      "content": "placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: \", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "context": "    444:     \n    445:     def check_no_placeholders(self) -> bool:\n    446:         \"\"\"Preveri če ni placeholderjev v kodi\"\"\"\n>>> 447:         placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]\n    448:         \n    449:         for py_file in Path(\".\").rglob(\"*.py\"):\n    450:             try:"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 447,
+      "issue_type": "placeholder",
+      "content": "placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "severity": "MEDIUM",
+      "suggested_fix": "Complete TODO: \", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "context": "    444:     \n    445:     def check_no_placeholders(self) -> bool:\n    446:         \"\"\"Preveri če ni placeholderjev v kodi\"\"\"\n>>> 447:         placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]\n    448:         \n    449:         for py_file in Path(\".\").rglob(\"*.py\"):\n    450:             try:"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 452,
+      "issue_type": "placeholder",
+      "content": "for term in placeholder_terms:",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    449:         for py_file in Path(\".\").rglob(\"*.py\"):\n    450:             try:\n    451:                 content = py_file.read_text()\n>>> 452:                 for term in placeholder_terms:\n    453:                     if term in content.upper():\n    454:                         return False\n    455:             except:"
+    },
+    {
+      "file_path": "mia_hybrid_launcher.py",
+      "line_number": 417,
+      "issue_type": "placeholder",
+      "content": "# For now, return placeholder",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    414:     def _create_web_server_script(self) -> str:\n    415:         \"\"\"Ustvari web server script\"\"\"\n    416:         # This would create a proper web server script\n>>> 417:         # For now, return placeholder\n    418:         return \"web_server.py\"\n    419:         \n    420:     def _get_main_interface_html(self) -> str:"
+    },
+    {
+      "file_path": "mia_hybrid_launcher.py",
+      "line_number": 463,
+      "issue_type": "placeholder",
+      "content": "<input type=\"text\" id=\"userInput\" placeholder=\"Ask me anything...\" onkeypress=\"handleKeyPress(event)\">",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "    460:                 </div>\n    461:                 \n    462:                 <div class=\"input-container\">\n>>> 463:                     <input type=\"text\" id=\"userInput\" placeholder=\"Ask me anything...\" onkeypress=\"handleKeyPress(event)\">\n    464:                     <button onclick=\"sendMessage()\">Send</button>\n    465:                 </div>\n    466:                 "
+    },
+    {
+      "file_path": "mia_structure.py",
+      "line_number": 91,
+      "issue_type": "placeholder",
+      "content": "'fail_on_placeholder': True,",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     88:             'description': 'Local Digital Intelligence Entity',\n     89:             'mode': 'full_autonomous',\n     90:             'require_user_input': False,\n>>>  91:             'fail_on_placeholder': True,\n     92:             'fail_on_simulation': True,\n     93:             'require_local_execution': True,\n     94:             'allow_external_api': False,"
+    },
+    {
+      "file_path": "tests/integration/test_system_integration.py",
+      "line_number": 22,
+      "issue_type": "placeholder",
+      "content": "self.assertTrue(True)  # Placeholder",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     19:         \"\"\"Test MIA bootstrap process\"\"\"\n     20:         try:\n     21:             # Test basic system initialization\n>>>  22:             self.assertTrue(True)  # Placeholder\n     23:         except Exception as e:\n     24:             self.skipTest(f\"Bootstrap test skipped: {e}\")\n     25:     "
+    },
+    {
+      "file_path": "tests/integration/test_system_integration.py",
+      "line_number": 30,
+      "issue_type": "placeholder",
+      "content": "self.assertTrue(True)  # Placeholder",
+      "severity": "MEDIUM",
+      "suggested_fix": "Replace placeholder with actual implementation",
+      "context": "     27:         \"\"\"Test module loading system\"\"\"\n     28:         try:\n     29:             # Test module loading\n>>>  30:             self.assertTrue(True)  # Placeholder\n     31:         except Exception as e:\n     32:             self.skipTest(f\"Module loading test skipped: {e}\")\n     33:     "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 3,
+      "issue_type": "dummy",
+      "content": "🔍 COMPLETE TODO/PLACEHOLDER/DUMMY CODE AUDIT & FIX",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: /PLACEHOLDER/DUMMY CODE AUDIT & FIX",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n>>>   3: 🔍 COMPLETE TODO/PLACEHOLDER/DUMMY CODE AUDIT & FIX\n      4: ==================================================\n      5: \n      6: Sistematičen pregled vseh 265 Python datotek za:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 12,
+      "issue_type": "dummy",
+      "content": "- dummy implementacije",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "      9: - XXX placeholderje\n     10: - HACK rešitve\n     11: - placeholder kodo\n>>>  12: - dummy implementacije\n     13: - NotImplemented exceptions\n     14: - pass statements z komentarji\n     15: - Nedokončane funkcije"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 75,
+      "issue_type": "dummy",
+      "content": "'dummy': r'dummy|DUMMY',",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n>>>  75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 75,
+      "issue_type": "dummy",
+      "content": "'dummy': r'dummy|DUMMY',",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n>>>  75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 75,
+      "issue_type": "dummy",
+      "content": "'dummy': r'dummy|DUMMY',",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "     72:             'NOTE': r'#\\s*NOTE[:\\s]*(.*)',\n     73:             'WARNING': r'#\\s*WARNING[:\\s]*(.*)',\n     74:             'placeholder': r'placeholder|PLACEHOLDER',\n>>>  75:             'dummy': r'dummy|DUMMY',\n     76:             'NotImplemented': r'NotImplementedError|NotImplemented',\n     77:             'pass_todo': r'pass\\s*#.*(?:TODO|FIXME|XXX)',\n     78:             'raise_not_implemented': r'raise\\s+NotImplementedError',"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 206,
+      "issue_type": "dummy",
+      "content": "'dummy': \"Replace dummy code with real implementation\",",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    203:             'HACK': \"Replace hack with proper implementation\",\n    204:             'BUG': \"Fix the identified bug\",\n    205:             'placeholder': \"Replace placeholder with actual implementation\",\n>>> 206:             'dummy': \"Replace dummy code with real implementation\",\n    207:             'NotImplemented': \"Implement the missing functionality\",\n    208:             'pass_todo': \"Complete the implementation\",\n    209:             'empty_function': \"Add function implementation or proper docstring\","
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 206,
+      "issue_type": "dummy",
+      "content": "'dummy': \"Replace dummy code with real implementation\",",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    203:             'HACK': \"Replace hack with proper implementation\",\n    204:             'BUG': \"Fix the identified bug\",\n    205:             'placeholder': \"Replace placeholder with actual implementation\",\n>>> 206:             'dummy': \"Replace dummy code with real implementation\",\n    207:             'NotImplemented': \"Implement the missing functionality\",\n    208:             'pass_todo': \"Complete the implementation\",\n    209:             'empty_function': \"Add function implementation or proper docstring\","
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 274,
+      "issue_type": "dummy",
+      "content": "fixable_patterns = ['placeholder', 'dummy', 'pass_todo']",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: ']",
+      "context": "    271:         \"\"\"Avtomatsko popravi probleme, kjer je to možno\"\"\"\n    272:         logger.info(\"🔧 Starting automatic fixes...\")\n    273:         \n>>> 274:         fixable_patterns = ['placeholder', 'dummy', 'pass_todo']\n    275:         \n    276:         for issue in self.issues:\n    277:             if issue.issue_type in fixable_patterns:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 322,
+      "issue_type": "dummy",
+      "content": "elif issue.issue_type == 'dummy':",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    319:                 else:\n    320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     \n>>> 322:         elif issue.issue_type == 'dummy':\n    323:             if 'dummy' in original_line.lower():\n    324:                 return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')\n    325:                 "
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 323,
+      "issue_type": "dummy",
+      "content": "if 'dummy' in original_line.lower():",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    320:                     return original_line.replace('placeholder', 'None  # TODO: Implement')\n    321:                     \n    322:         elif issue.issue_type == 'dummy':\n>>> 323:             if 'dummy' in original_line.lower():\n    324:                 return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')\n    325:                 \n    326:         elif issue.issue_type == 'pass_todo':"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 324,
+      "issue_type": "dummy",
+      "content": "return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: Replace with real implementation')",
+      "context": "    321:                     \n    322:         elif issue.issue_type == 'dummy':\n    323:             if 'dummy' in original_line.lower():\n>>> 324:                 return original_line.replace('dummy', 'None  # TODO: Replace with real implementation')\n    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 328,
+      "issue_type": "pass_todo",
+      "content": "# Convert pass # TODO to raise NotImplementedError",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: to raise NotImplementedError",
+      "context": "    325:                 \n    326:         elif issue.issue_type == 'pass_todo':\n    327:             if 'pass' in original_line and '#' in original_line:\n>>> 328:                 # Convert pass # TODO to raise NotImplementedError\n    329:                 comment_part = original_line.split('#', 1)[1].strip()\n    330:                 indent = len(original_line) - len(original_line.lstrip())\n    331:                 return ' ' * indent + f'raise NotImplementedError(\"TODO: {comment_part}\")\\n'"
+    },
+    {
+      "file_path": "COMPLETE_TODO_AUDIT.py",
+      "line_number": 574,
+      "issue_type": "dummy",
+      "content": "if issue.issue_type in ['placeholder', 'dummy', 'pass_todo']:",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: ']:",
+      "context": "    571:         # Add specific fixes for each file\n    572:         fixes_by_file = {}\n    573:         for issue in self.issues:\n>>> 574:             if issue.issue_type in ['placeholder', 'dummy', 'pass_todo']:\n    575:                 file_path = issue.file_path\n    576:                 if file_path not in fixes_by_file:\n    577:                     fixes_by_file[file_path] = []"
+    },
+    {
+      "file_path": "MEGA_COMPREHENSIVE_TEST.py",
+      "line_number": 1877,
+      "issue_type": "dummy",
+      "content": "def dummy_handler(signum, frame):",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    1874:             # Test signal handling\n    1875:             try:\n    1876:                 import signal\n>>> 1877:                 def dummy_handler(signum, frame):\n    1878:                     pass\n    1879:                 signal.signal(signal.SIGTERM, dummy_handler)\n    1880:                 service_features.append(\"Signal handling\")"
+    },
+    {
+      "file_path": "MEGA_COMPREHENSIVE_TEST.py",
+      "line_number": 1879,
+      "issue_type": "dummy",
+      "content": "signal.signal(signal.SIGTERM, dummy_handler)",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    1876:                 import signal\n    1877:                 def dummy_handler(signum, frame):\n    1878:                     pass\n>>> 1879:                 signal.signal(signal.SIGTERM, dummy_handler)\n    1880:                 service_features.append(\"Signal handling\")\n    1881:             except Exception as e:\n    1882:                 service_issues.append(f\"Signal handling: {str(e)[:50]}\")"
+    },
+    {
+      "file_path": "enterprise/realtime_collaboration.py",
+      "line_number": 499,
+      "issue_type": "NOTE",
+      "content": "# Note: In a real implementation, you would use websockets.serve",
+      "severity": "LOW",
+      "suggested_fix": "Review and fix this issue",
+      "context": "    496:             async def handle_client(websocket, path):\n    497:                 await self.handle_client_connection(websocket, path)\n    498:             \n>>> 499:             # Note: In a real implementation, you would use websockets.serve\n    500:             # For this demo, we'll simulate the server\n    501:             self.server_running = True\n    502:             self.logger.info(\"✅ Collaboration server started\")"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 4,
+      "issue_type": "dummy",
+      "content": "Automatically fixes all placeholders, mocks, and dummy implementations",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "      1: #!/usr/bin/env python3\n      2: \"\"\"\n      3: 🔧 MIA Enterprise AGI - Placeholder Fixer\n>>>   4: Automatically fixes all placeholders, mocks, and dummy implementations\n      5: \"\"\"\n      6: \n      7: import os"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 34,
+      "issue_type": "dummy",
+      "content": "# Dummy implementations",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "     31:             # TODO comments\n     32:             (r'# TODO:.*\\n', ''),\n     33:             \n>>>  34:             # Dummy implementations\n     35:             (r'def dummy_.*?\\n.*?return.*?\\n', self._generate_real_method),\n     36:             \n     37:             # Simulate patterns"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 35,
+      "issue_type": "dummy",
+      "content": "(r'def dummy_.*?\\n.*?return.*?\\n', self._generate_real_method),",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "     32:             (r'# TODO:.*\\n', ''),\n     33:             \n     34:             # Dummy implementations\n>>>  35:             (r'def dummy_.*?\\n.*?return.*?\\n', self._generate_real_method),\n     36:             \n     37:             # Simulate patterns\n     38:             (r'# Simulate.*\\n', '# Perform actual operation\\n'),"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 154,
+      "issue_type": "dummy",
+      "content": "method_name = re.search(r'def (dummy_\\w+)', match_text)",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    151:     \n    152:     def _generate_real_method(self, match_text: str, file_path: Path) -> str:\n    153:         \"\"\"Generate real method implementation\"\"\"\n>>> 154:         method_name = re.search(r'def (dummy_\\w+)', match_text)\n    155:         if method_name:\n    156:             real_name = method_name.group(1).replace('dummy_', '')\n    157:             return f'''def {real_name}(self, *args, **kwargs):"
+    },
+    {
+      "file_path": "enterprise_placeholder_fixer.py",
+      "line_number": 156,
+      "issue_type": "dummy",
+      "content": "real_name = method_name.group(1).replace('dummy_', '')",
+      "severity": "LOW",
+      "suggested_fix": "Replace dummy code with real implementation",
+      "context": "    153:         \"\"\"Generate real method implementation\"\"\"\n    154:         method_name = re.search(r'def (dummy_\\w+)', match_text)\n    155:         if method_name:\n>>> 156:             real_name = method_name.group(1).replace('dummy_', '')\n    157:             return f'''def {real_name}(self, *args, **kwargs):\n    158:         \"\"\"Real implementation of {real_name}\"\"\"\n    159:         try:"
+    },
+    {
+      "file_path": "mia_comprehensive_audit.py",
+      "line_number": 447,
+      "issue_type": "dummy",
+      "content": "placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "severity": "LOW",
+      "suggested_fix": "Complete TODO: \", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]",
+      "context": "    444:     \n    445:     def check_no_placeholders(self) -> bool:\n    446:         \"\"\"Preveri če ni placeholderjev v kodi\"\"\"\n>>> 447:         placeholder_terms = [\"TODO\", \"FIXME\", \"PLACEHOLDER\", \"STUB\", \"DUMMY\", \"MOCK\"]\n    448:         \n    449:         for py_file in Path(\".\").rglob(\"*.py\"):\n    450:             try:"
+    }
+  ],
+  "fixed_issues": []
+}
