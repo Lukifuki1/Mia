@@ -81,7 +81,6 @@ class ChatInterface:
     
     async def connect(self, websocket: WebSocket):
         """Accept a new WebSocket connection"""
-        await websocket.accept()
         self.active_connections.append(websocket)
         self.logger.info(f"🔌 New chat connection established. Total: {len(self.active_connections)}")
         
@@ -205,46 +204,73 @@ class ChatInterface:
     
     async def _stream_response(self, content: str):
         """Stream response content word by word"""
-        words = content.split()
-        streamed_content = ""
+        if not content or not content.strip():
+            content = "I apologize, but I couldn't generate a proper response."
         
+        words = content.split()
+        if not words:
+            words = ["No", "response", "generated."]
+        
+        streamed_content = ""
         message_id = f"msg_{int(time.time() * 1000)}"
         
-        for i, word in enumerate(words):
-            streamed_content += word + " "
+        try:
+            for i, word in enumerate(words):
+                streamed_content += word + " "
+                
+                # Create streaming message
+                stream_msg = ChatMessage(
+                    id=message_id,
+                    type=MessageType.ASSISTANT,
+                    content=streamed_content.strip(),
+                    timestamp=time.time(),
+                    metadata={
+                        "streaming": True,
+                        "progress": (i + 1) / len(words),
+                        "complete": i == len(words) - 1
+                    }
+                )
+                
+                # Check if we still have active connections before sending
+                if self.active_connections:
+                    await self._broadcast_message(stream_msg)
+                    await asyncio.sleep(0.05)  # Small delay for streaming effect
+                else:
+                    break  # No active connections, stop streaming
             
-            # Create streaming message
-            stream_msg = ChatMessage(
-                id=message_id,
-                type=MessageType.ASSISTANT,
-                content=streamed_content.strip(),
-                timestamp=time.time(),
-                metadata={
-                    "streaming": True,
-                    "progress": (i + 1) / len(words),
-                    "complete": i == len(words) - 1
-                }
-            )
-            
-            await self._broadcast_message(stream_msg)
-            await asyncio.sleep(0.05)  # Small delay for streaming effect
-        
-        # Final complete message
-        final_msg = ChatMessage(
-            id=message_id,
-            type=MessageType.ASSISTANT,
-            content=content,
-            timestamp=time.time(),
-            metadata={"streaming": False, "complete": True}
-        )
-        
-        self._add_to_history(final_msg)
-        await self._broadcast_message(final_msg)
+            # Final complete message only if we have connections
+            if self.active_connections:
+                final_msg = ChatMessage(
+                    id=message_id,
+                    type=MessageType.ASSISTANT,
+                    content=content,
+                    timestamp=time.time(),
+                    metadata={"streaming": False, "complete": True}
+                )
+                
+                self._add_to_history(final_msg)
+                await self._broadcast_message(final_msg)
+                
+        except Exception as e:
+            self.logger.error(f"❌ Error during streaming: {e}")
+            # Send error message if we still have connections
+            if self.active_connections:
+                error_msg = ChatMessage(
+                    id=f"error_{int(time.time() * 1000)}",
+                    type=MessageType.ERROR,
+                    content="Sorry, there was an error during response streaming.",
+                    timestamp=time.time(),
+                    metadata={"error": str(e), "complete": True}
+                )
+                await self._broadcast_message(error_msg)
     
     async def _send_message(self, websocket: WebSocket, message: ChatMessage):
         """Send message to specific WebSocket"""
         try:
-            await websocket.send_text(json.dumps(asdict(message)))
+            message_dict = asdict(message)
+            # Convert enum to string for JSON serialization
+            message_dict['type'] = message.type.value
+            await websocket.send_text(json.dumps(message_dict))
         except Exception as e:
             self.logger.error(f"❌ Failed to send message: {e}")
     
@@ -253,11 +279,14 @@ class ChatInterface:
         if not self.active_connections:
             return
         
-        message_json = json.dumps(asdict(message))
+        # Convert message to dict and handle enum serialization
+        message_dict = asdict(message)
+        message_dict['type'] = message.type.value  # Convert enum to string
+        message_json = json.dumps(message_dict)
         
         # Send to all connections
         disconnected = []
-        for websocket in self.active_connections:
+        for websocket in self.active_connections.copy():  # Use copy to avoid modification during iteration
             try:
                 await websocket.send_text(message_json)
             except Exception as e:

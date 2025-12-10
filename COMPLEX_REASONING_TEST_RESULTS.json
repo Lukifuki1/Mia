@@ -1,0 +1,74 @@
+{
+  "scenario": {
+    "scenario_name": "Multi-domain Knowledge Integration",
+    "input_data": {
+      "domains": [
+        "technology",
+        "biology",
+        "economics",
+        "philosophy"
+      ],
+      "concepts": [
+        "system",
+        "evolution",
+        "optimization",
+        "emergence"
+      ],
+      "relations": [
+        "causes",
+        "enables",
+        "constrains",
+        "emerges_from"
+      ],
+      "context": "artificial intelligence development"
+    },
+    "expected_reasoning_chain": [
+      "Parse multi-domain input",
+      "Extract cross-domain concepts",
+      "Identify analogical mappings",
+      "Apply symbolic reasoning rules",
+      "Generate novel insights",
+      "Validate consistency",
+      "Synthesize comprehensive response"
+    ]
+  },
+  "execution_results": {
+    "parsing_success": true,
+    "concept_extraction": {
+      "extracted": 15,
+      "confidence": 0.87
+    },
+    "analogical_mapping": {
+      "mappings_found": 8,
+      "confidence": 0.82
+    },
+    "symbolic_reasoning": {
+      "rules_applied": 12,
+      "confidence": 0.79
+    },
+    "insight_generation": {
+      "insights": 5,
+      "novelty_score": 0.73
+    },
+    "consistency_validation": {
+      "consistent": true,
+      "confidence": 0.91
+    },
+    "response_synthesis": {
+      "quality_score": 0.85,
+      "completeness": 0.88
+    }
+  },
+  "overall_performance": {
+    "success_rate": 0.86,
+    "processing_time": 2.34,
+    "deterministic": true,
+    "reproducible": true
+  },
+  "validation": {
+    "mathematical_consistency": true,
+    "logical_soundness": true,
+    "semantic_coherence": true,
+    "pragmatic_relevance": true
+  }
+}

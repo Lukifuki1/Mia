@@ -89,6 +89,7 @@ class MIAWebUI:
             """WebSocket endpoint for chat"""
             from mia.interfaces.chat import chat_interface
             
+            await websocket.accept()
             await chat_interface.connect(websocket)
             try:
                 while True:

@@ -1,0 +1,6383 @@
+{
+  "mia_simple_test.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "internal:mia_project_system",
+      "external:pathlib",
+      "internal:mia_multimodal_system",
+      "internal:mia_voice_system",
+      "internal:mia_production_core"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "download_server.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:flask",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "production_validation.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:importlib.util",
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:subprocess"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_enterprise_launcher.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "internal:mia.enterprise",
+      "concurrency:asyncio",
+      "internal:mia.core.security.system_fuse",
+      "external:fastapi",
+      "external:socket",
+      "internal:mia_production_core",
+      "internal:mia.core.agi_agents.executor",
+      "external:logging",
+      "external:typing",
+      "external:psutil",
+      "internal:mia.core.quality_control.dve",
+      "internal:mia.core.multimodal.video_generator",
+      "external:subprocess",
+      "internal:mia.core.quality_control.rfe",
+      "internal:mia.core.agi_agents.optimizer",
+      "internal:mia.core.system_integrator",
+      "internal:mia.core.quality_control.sse",
+      "internal:mia.core.immune_system.integrity_guard",
+      "external:pathlib",
+      "external:GPUtil",
+      "external:argparse",
+      "external:time",
+      "external:gc",
+      "internal:mia.core.quality_control.qpm",
+      "concurrency:threading",
+      "internal:mia.core.quality_control.qrd",
+      "internal:mia.core.agi_agents.validator",
+      "external:signal",
+      "external:enum",
+      "external:os",
+      "internal:mia.testing.enterprise_test_suite",
+      "external:json",
+      "internal:mia.core.quality_control.hoel",
+      "ml:torch",
+      "internal:mia_project_system",
+      "internal:mia.core.agi_agents.planner",
+      "external:transformers",
+      "internal:mia_web_interface",
+      "internal:mia_multimodal_system",
+      "internal:mia.core.quality_control.pae",
+      "internal:mia_voice_system",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "AUTO_FIX_TODOS.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:re",
+      "external:os",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "enterprise_final_patch_executor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:re",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "FINAL_100_PERCENT_COMPLETION.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:re",
+      "internal:mia.core.fixed_concurrent",
+      "external:time",
+      "external:subprocess",
+      "internal:mia.learning.internet_learning"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "fix_indentation_errors.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:os",
+      "external:ast"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "ONE_CLICK_INSTALLER.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "external:platform",
+      "external:logging",
+      "external:tkinter",
+      "external:typing",
+      "external:psutil",
+      "external:string",
+      "external:subprocess",
+      "external:shutil",
+      "external:webbrowser",
+      "external:tempfile",
+      "external:pathlib",
+      "external:time",
+      "concurrency:threading",
+      "external:zipfile",
+      "external:os",
+      "external:json",
+      "external:tarfile",
+      "external:urllib.request"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "launch_mia_desktop.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:subprocess",
+      "external:sys",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "REAL_WORLD_DEPLOYMENT_TEST.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:sys",
+      "external:os",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "concurrency:threading",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:string",
+      "external:socket",
+      "external:time",
+      "external:subprocess",
+      "external:urllib.request",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_enterprise_monitor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "external:dataclasses",
+      "external:logging",
+      "external:typing",
+      "external:psutil",
+      "external:sqlite3",
+      "external:email.mime.multipart",
+      "external:smtplib",
+      "external:aiohttp",
+      "external:pathlib",
+      "external:GPUtil",
+      "external:argparse",
+      "external:time",
+      "concurrency:threading",
+      "external:enum",
+      "external:os",
+      "external:json",
+      "external:email.mime.text",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "COMPLETE_TODO_AUDIT.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:ast",
+      "external:re",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "internal:mia.enterprise.analytics",
+      "internal:mia.enterprise.api_gateway",
+      "external:logging",
+      "internal:mia.interfaces.chat",
+      "external:typing",
+      "internal:mia.enterprise.security",
+      "internal:mia.modules.ui.web",
+      "external:pathlib",
+      "internal:mia.core.model_discovery",
+      "external:time",
+      "internal:mia.core.model_learning",
+      "concurrency:threading",
+      "external:signal",
+      "external:os",
+      "external:uvicorn",
+      "external:json"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "test_agi_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "external:pathlib",
+      "external:traceback"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "enterprise_compliance_auditor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "enterprise_compliance_test.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "internal:mia.enterprise"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "fix_syntax_errors.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:re",
+      "external:os",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "MASTER_SYSTEM_ARCHITECT.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:importlib.util",
+      "external:sys",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:collections",
+      "external:ast",
+      "external:networkx",
+      "external:typing",
+      "external:subprocess",
+      "external:pathlib",
+      "external:re",
+      "external:time",
+      "concurrency:threading",
+      "external:os",
+      "external:json",
+      "external:numpy",
+      "external:inspect",
+      "external:concurrent.futures",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_cli_test.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "internal:mia_production_core"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia_enterprise_security.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:secrets",
+      "external:base64",
+      "external:dataclasses",
+      "external:pyotp",
+      "external:hmac",
+      "external:logging",
+      "external:bcrypt",
+      "external:typing",
+      "external:sqlite3",
+      "external:cryptography.fernet",
+      "external:pathlib",
+      "external:time",
+      "external:cryptography.hazmat.primitives.kdf.pbkdf2",
+      "external:enum",
+      "external:os",
+      "external:json",
+      "external:jwt",
+      "external:cryptography.hazmat.primitives",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_structure.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:json",
+      "external:yaml",
+      "external:os",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia_hybrid_launcher.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "external:fastapi",
+      "external:fastapi.responses",
+      "external:logging",
+      "internal:mia.knowledge.hybrid.hybrid_pipeline",
+      "external:typing",
+      "external:subprocess",
+      "external:fastapi.staticfiles",
+      "external:webbrowser",
+      "external:pathlib",
+      "internal:mia.core.hybrid_integration",
+      "external:argparse",
+      "external:time",
+      "external:fastapi.middleware.cors",
+      "concurrency:threading",
+      "external:signal",
+      "external:os",
+      "external:uvicorn",
+      "external:json",
+      "external:concurrent.futures",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_enterprise_agi.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "internal:mia.enterprise.analytics",
+      "internal:mia.modules.voice.main",
+      "internal:mia.modules.multimodal.main",
+      "external:logging",
+      "internal:mia.interfaces.chat",
+      "internal:mia.modules.projects.main",
+      "external:typing",
+      "external:psutil",
+      "external:subprocess",
+      "internal:mia.enterprise.unified_enterprise_manager",
+      "external:pathlib",
+      "internal:mia.core.model_discovery",
+      "external:argparse",
+      "external:time",
+      "internal:mia.core.model_learning",
+      "concurrency:threading",
+      "external:signal",
+      "external:enum",
+      "external:os",
+      "external:json",
+      "internal:mia.interfaces.unified_interface",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "fix_all_modules.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "test_hybrid_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "concurrency:asyncio",
+      "internal:mia_hybrid_launcher",
+      "external:logging",
+      "internal:mia.knowledge.hybrid.hybrid_pipeline",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "external:typing",
+      "external:psutil",
+      "external:subprocess",
+      "internal:mia.knowledge.hybrid.autonomous_learning",
+      "external:pathlib",
+      "external:traceback",
+      "internal:mia.core.hybrid_integration",
+      "external:gc",
+      "external:time",
+      "external:unittest",
+      "external:os",
+      "internal:mia.knowledge.hybrid.semantic_layer",
+      "external:json",
+      "internal:mia.knowledge.hybrid.deterministic_reasoning",
+      "external:concurrent.futures",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_system_integrity_test.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "internal:mia.core.self_evolution",
+      "external:sys",
+      "external:os",
+      "concurrency:asyncio",
+      "internal:mia.modules.multimodal.image.main",
+      "external:aiohttp",
+      "external:pathlib",
+      "external:psutil",
+      "external:traceback",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "internal:mia.modules.ui.web"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia_bootstrap.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:ollama",
+      "external:importlib.util",
+      "external:sys",
+      "external:os",
+      "external:json",
+      "ml:torch",
+      "external:pathlib",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "external:datetime",
+      "external:yaml",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "IMMEDIATE_FIX_SCRIPT.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:pathlib",
+      "external:subprocess"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "optimizations/file_complexity_reducer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:os",
+      "external:logging",
+      "external:ast",
+      "external:pathlib",
+      "external:typing",
+      "external:re"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "optimizations/performance_optimizer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pickle",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:gc",
+      "concurrency:multiprocessing",
+      "external:time",
+      "external:concurrent.futures",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "optimizations/integrated_optimizer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:performance_optimizer",
+      "external:time",
+      "external:advanced_caching"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "optimizations/advanced_caching.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:collections",
+      "external:pickle",
+      "external:pathlib",
+      "external:typing",
+      "external:weakref",
+      "external:psutil",
+      "external:gzip",
+      "external:sqlite3",
+      "external:zlib",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "scripts/generate_build_report.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:json",
+      "external:datetime",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "scripts/verify_reproducibility.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "scripts/test_deterministic_loop.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:json",
+      "external:sys",
+      "external:deep_deterministic_analysis",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "desktop/cross_platform_builder.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "internal:mia.desktop",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "desktop/enterprise_features.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "internal:mia.enterprise",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "enterprise/ai_model_management.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pickle",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:time",
+      "external:datetime",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "enterprise/realtime_collaboration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "concurrency:threading",
+      "external:uuid",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "enterprise/analytics_dashboard.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:statistics",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:math",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:sqlite3",
+      "external:time",
+      "external:datetime",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "bootstrap/mia_boot.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "internal:mia.core.self_evolution",
+      "external:sys",
+      "external:signal",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "internal:mia.modules.voice.stt.main",
+      "internal:mia.modules.voice.tts.main",
+      "internal:mia.modules.multimodal.image.main",
+      "internal:mia.core.adaptive_llm",
+      "external:pathlib",
+      "external:typing",
+      "internal:mia.core.internet_learning",
+      "internal:mia.core.memory.main",
+      "internal:mia.core.consciousness.main",
+      "internal:mia.core.bootstrap.main"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/core_methods_old.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:package_tester",
+      "external:performance_monitor",
+      "external:platform_verifier",
+      "external:system_validator"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/verification/package_tester.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:logging",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/deterministic_helpers.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:random",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/verification/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pickle",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/essential_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/verification/system_validator.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:urllib.request",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:subprocess",
+      "external:socket",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/validation_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/platform_verifier.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:socket",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/verification/isolation_wrapper.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:sys",
+      "external:contextlib",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/reasoning/basic_reasoning_engine.py": {
+    "semantic_type": "mia:ReasoningEngine",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:re",
+      "external:typing",
+      "external:time",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:ReasoningEngine",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/testing/test_runner.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:os",
+      "external:logging",
+      "internal:mia.testing",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "internal:mia",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/testing/stability_tester.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/testing/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:performance_tester",
+      "external:test_generator",
+      "external:test_runner",
+      "external:stability_tester"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/testing/test_generator.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:ast",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/testing/performance_tester.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/testing/enterprise_test_suite.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/agi/__init__.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/performance/consciousness_optimizer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:collections",
+      "external:typing",
+      "external:time",
+      "external:concurrent.futures",
+      "concurrency:threading"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/performance/performance_benchmarker.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:memory_optimizer",
+      "external:consciousness_optimizer",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/performance/memory_optimizer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:collections",
+      "external:typing",
+      "external:time",
+      "external:concurrent.futures",
+      "concurrency:threading"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/performance/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:memory_optimizer",
+      "external:consciousness_optimizer",
+      "external:performance_benchmarker"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/project_builder/project_generator.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:deterministic_build_helpers",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:platform",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:dataclasses",
+      "external:time",
+      "external:subprocess",
+      "external:uuid",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/project_builder/management_methods.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:deterministic_build_helpers",
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/project_builder/deployment_manager.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:subprocess"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/project_builder/__init__.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:build_system",
+      "external:deployment_manager",
+      "external:project_generator",
+      "external:template_manager"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/project_builder/build_system.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:subprocess"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/introspective_analyzer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:code_metrics",
+      "external:quality_analyzer",
+      "external:sys",
+      "external:system_analyzer",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:code_metrics",
+      "external:introspective_analyzer",
+      "external:quality_analyzer",
+      "external:system_analyzer"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/analysis/quality_analyzer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:ast",
+      "external:re",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/deterministic_helpers.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:random",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/analysis/system_analyzer.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:base64",
+      "external:psutil",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/analysis/essential_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/analysis/code_metrics.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:os",
+      "external:logging",
+      "external:collections",
+      "external:ast",
+      "external:pathlib",
+      "external:typing",
+      "external:dataclasses",
+      "external:re",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/system/adaptive_resource_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:GPUtil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/tests/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/deterministic_async.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction"
+    ],
+    "semantic_dependencies": [
+      "concurrency:asyncio"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "async_processor",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/persistent_knowledge_store.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:json",
+      "external:collections",
+      "external:re",
+      "external:typing",
+      "external:pathlib",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/performance_optimizer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "ml:torch",
+      "external:typing",
+      "external:psutil",
+      "external:gc"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/integration_layer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "internal:mia.system.adaptive_resource_manager",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "internal:mia.learning.advanced_file_learner",
+      "external:pathlib",
+      "external:typing",
+      "internal:mia.learning.interaction_learner",
+      "external:time",
+      "internal:mia.reasoning.basic_reasoning_engine",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/deterministic_memory.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:hashlib",
+      "external:collections"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/core/self_evolution.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:importlib",
+      "external:ast",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:inspect",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "external:subprocess",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "internal:mia.core.model_discovery",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/system_integrator.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/fixed_concurrent.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction"
+    ],
+    "semantic_dependencies": [
+      "concurrency:asyncio",
+      "external:typing",
+      "concurrency:multiprocessing",
+      "external:concurrent.futures",
+      "concurrency:threading"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "async_processor",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/autonomous_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:sentence_transformers",
+      "ml:torch",
+      "external:aiohttp",
+      "external:pathlib",
+      "external:typing",
+      "external:networkx",
+      "external:transformers",
+      "external:time",
+      "external:datetime",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "async_processor",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/internet_learning.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:urllib.parse",
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:collections",
+      "external:aiohttp",
+      "external:re",
+      "external:typing",
+      "external:pathlib",
+      "external:bs4",
+      "external:feedparser",
+      "external:time",
+      "external:requests",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/model_learning.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "ml:torch",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:model_discovery",
+      "external:transformers",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/model_discovery.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/hybrid_integration.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "external:uuid",
+      "external:logging",
+      "internal:mia.knowledge.hybrid.hybrid_pipeline",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "external:typing",
+      "internal:mia.knowledge.hybrid.autonomous_learning",
+      "external:pathlib",
+      "external:time",
+      "concurrency:threading",
+      "external:enum",
+      "external:os",
+      "internal:mia.knowledge.hybrid.semantic_layer",
+      "external:json",
+      "internal:mia.knowledge.hybrid.deterministic_reasoning",
+      "external:concurrent.futures",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/world_model.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:networkx",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/deterministic_scheduler.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:typing",
+      "external:queue",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/core/owner_guard.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:getpass",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/hardware_optimizer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:dataclasses",
+      "external:glob",
+      "external:gc",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/adaptive_llm.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:requests",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/encryption_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:secrets",
+      "external:json",
+      "external:cryptography.hazmat.primitives",
+      "external:pathlib",
+      "external:base64",
+      "external:typing",
+      "external:time",
+      "external:cryptography.fernet",
+      "external:cryptography.hazmat.primitives.asymmetric",
+      "external:cryptography.hazmat.primitives.kdf.pbkdf2",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/training_guard.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/access_control.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:secrets",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/rbac_iam.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:typing",
+      "external:dataclasses",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/sandbox_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:sys",
+      "external:signal",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:tempfile",
+      "external:ast",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:contextlib",
+      "external:time",
+      "external:subprocess"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:security_core",
+      "external:system_fuse",
+      "external:access_control",
+      "external:encryption_manager",
+      "external:audit_system"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/security/cognitive_guard.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:logging",
+      "external:json",
+      "external:re",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/audit_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/integrity_hash.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/security_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/security_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:ast",
+      "external:re",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/validation_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/network_security.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:ssl",
+      "external:urllib.parse",
+      "external:logging",
+      "external:typing",
+      "external:urllib3.util.retry",
+      "external:requests",
+      "external:requests.adapters",
+      "external:socket",
+      "external:ipaddress"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/security/behavior_firewall.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:typing",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/input_sanitization.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:urllib.parse",
+      "external:logging",
+      "external:json",
+      "external:re",
+      "external:typing",
+      "external:html"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/security/system_fuse.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tempfile",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:gc",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/immune/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/validation/introspective_validator.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:validation_core",
+      "external:os",
+      "external:validation_utils",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/validation/validation_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:copy",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:uuid",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/validation/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:validation_core",
+      "external:introspective_validator",
+      "external:validation_utils"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/validation/validation_utils.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/compliance/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/lgpd_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:consent_manager",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:data_processor",
+      "external:privacy_manager",
+      "external:audit_system",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:consent_manager",
+      "external:lgpd_manager",
+      "external:privacy_manager",
+      "external:data_processor",
+      "external:audit_system"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/compliance/consent_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/audit_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/security_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/privacy_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:base64",
+      "external:typing",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/validation_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/compliance/data_processor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/semantic_knowledge_bank.py": {
+    "semantic_type": "mia:KnowledgeComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:rdflib.plugins.sparql",
+      "external:json",
+      "external:collections",
+      "concurrency:asyncio",
+      "external:sentence_transformers",
+      "ontology:rdflib",
+      "external:pathlib",
+      "external:typing",
+      "external:networkx",
+      "external:re",
+      "external:numpy",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:KnowledgeComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/quality/qpm.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/quality/pae.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/quality/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:qpm",
+      "external:sse",
+      "external:pae"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/quality/sse.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/learning/interaction_learner.py": {
+    "semantic_type": "mia:LearningComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:re",
+      "external:typing",
+      "external:time",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:LearningComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/learning/advanced_file_learner.py": {
+    "semantic_type": "mia:LearningComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "ml:torch",
+      "external:llama_cpp",
+      "external:re",
+      "external:pathlib",
+      "external:typing",
+      "external:transformers",
+      "external:time",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:LearningComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/learning/internet_learning.py": {
+    "semantic_type": "mia:LearningComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:aiohttp",
+      "external:pathlib",
+      "external:typing",
+      "external:re",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:LearningComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/test_runner.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "internal:mia.security",
+      "external:platform",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "internal:mia.production",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/compliance_checker.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform",
+      "external:locale"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/validation_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:compliance_checker",
+      "external:validation_core",
+      "external:test_runner",
+      "external:report_generator"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/production/deterministic_helpers.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:random",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/production/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/report_generator.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/production/essential_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/desktop/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/deployment_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:zipfile",
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tarfile",
+      "external:tempfile",
+      "external:pathlib",
+      "external:base64",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:platform_detector",
+      "external:deployment_manager",
+      "external:cross_platform_utils",
+      "external:build_system"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/desktop/deterministic_helpers.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:random",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/desktop/platform_detector.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "external:datetime",
+      "external:platform"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/essential_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/desktop/cross_platform_utils.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:win32com.client",
+      "external:platform",
+      "external:tempfile",
+      "external:winshell",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/build_system.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tempfile",
+      "external:pathlib",
+      "external:base64",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/desktop/isolation_wrapper.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:typing",
+      "external:sys",
+      "external:contextlib",
+      "external:os"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/interfaces/chat.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "internal:mia.core.agi_core",
+      "external:pathlib",
+      "external:typing",
+      "external:fastapi",
+      "external:fastapi.responses",
+      "external:time",
+      "external:dataclasses",
+      "external:fastapi.staticfiles"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/interfaces/__init__.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:chat"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/interfaces/enhanced_gui.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "internal:mia.core.integration_layer",
+      "external:os",
+      "external:tkinter",
+      "concurrency:asyncio",
+      "external:json",
+      "external:logging",
+      "external:platform",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:queue",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/interfaces/unified_interface.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:speech_recognition",
+      "concurrency:asyncio",
+      "internal:mia.core.agi_core",
+      "external:fastapi",
+      "external:fastapi.responses",
+      "external:dataclasses",
+      "external:uuid",
+      "external:logging",
+      "external:typing",
+      "external:fastapi.templating",
+      "external:fastapi.staticfiles",
+      "external:pathlib",
+      "external:time",
+      "external:fastapi.middleware.cors",
+      "external:io",
+      "external:enum",
+      "external:os",
+      "external:uvicorn",
+      "external:json",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_retention_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/enterprise/security.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:secrets",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:jwt",
+      "external:cryptography.hazmat.primitives",
+      "external:pathlib",
+      "external:typing",
+      "external:base64",
+      "external:time",
+      "external:cryptography.fernet",
+      "external:cryptography.hazmat.primitives.kdf.pbkdf2",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/management_methods.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_privacy_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/stability_monitor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_breach_response.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:datetime",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/policy_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/deployment_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_audit_trail.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:datetime",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/__init__.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling",
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:compliance_manager",
+      "external:deployment_manager",
+      "external:policy_manager",
+      "external:enterprise_manager",
+      "external:stability_monitor",
+      "external:license_manager",
+      "external:configuration_manager"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/enterprise/analytics.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:sqlite3",
+      "external:time",
+      "external:datetime",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/license_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/compliance_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:logging",
+      "external:json",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/core_methods.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_transfer_controls.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/enterprise/unified_enterprise_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "external:datetime",
+      "external:uuid",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/configuration_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/lgpd_consent_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:json",
+      "external:typing",
+      "external:hashlib",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "mia/enterprise/enterprise_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:deployment_manager",
+      "external:policy_manager",
+      "external:pathlib",
+      "external:typing",
+      "external:license_manager",
+      "external:configuration_manager",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/enterprise/api_gateway.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:fastapi.middleware.trustedhost",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:uvicorn",
+      "external:security",
+      "external:pathlib",
+      "external:typing",
+      "external:fastapi",
+      "external:fastapi.security",
+      "external:analytics",
+      "external:time",
+      "external:fastapi.middleware.cors",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/tests/stress/test_memory_stress.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:random",
+      "external:string",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "external:pytest",
+      "external:concurrent.futures",
+      "concurrency:threading"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/tests/unit/test_memory_core_unit.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:json",
+      "external:unittest.mock",
+      "external:tempfile",
+      "external:pathlib",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "external:pytest"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/tests/lsp/test_lsp_slovenian.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:json",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time",
+      "external:pytest"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/ui/web.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "internal:mia.enterprise.analytics",
+      "external:fastapi",
+      "external:fastapi.responses",
+      "external:base64",
+      "internal:mia.core.internet_learning",
+      "external:platform",
+      "external:logging",
+      "internal:mia.interfaces.chat",
+      "external:typing",
+      "external:psutil",
+      "external:fastapi.templating",
+      "external:subprocess",
+      "external:fastapi.staticfiles",
+      "external:random",
+      "external:pathlib",
+      "internal:mia.core.adaptive_llm",
+      "internal:mia.core.model_discovery",
+      "external:fastapi.middleware.cors",
+      "internal:mia.core.model_learning",
+      "internal:mia.core.self_evolution",
+      "external:os",
+      "external:json",
+      "external:shlex"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/adult_mode/adult_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:gc",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/project_builder/main.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "internal:mia.project_builder.project_generator",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "internal:mia.project_builder",
+      "external:pathlib",
+      "external:typing",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/lora_training/lora_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:zipfile",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "ml:torch",
+      "external:soundfile",
+      "external:pathlib",
+      "external:typing",
+      "external:transformers",
+      "external:librosa",
+      "external:time",
+      "external:torch.nn",
+      "concurrency:threading",
+      "external:torch.utils.data",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/projects/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:dataclasses",
+      "external:time",
+      "external:subprocess",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/voice/stt_engine.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:webrtcvad",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:whisper",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:wave",
+      "external:queue",
+      "external:time",
+      "concurrency:threading",
+      "external:pyaudio",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/voice/tts_engine.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "concurrency:asyncio",
+      "external:pygame",
+      "external:TTS.api",
+      "external:logging",
+      "external:typing",
+      "external:tempfile",
+      "external:pathlib",
+      "external:wave",
+      "external:time",
+      "concurrency:threading",
+      "external:pyaudio",
+      "external:pyttsx3",
+      "external:enum",
+      "external:os",
+      "external:json",
+      "ml:torch",
+      "external:numpy",
+      "external:queue",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/api_email/email_client.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:smtplib",
+      "external:re",
+      "external:email",
+      "external:pathlib",
+      "external:typing",
+      "external:imaplib",
+      "external:queue",
+      "external:email.mime.multipart",
+      "external:time",
+      "external:email.header",
+      "external:email.mime.text",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/avatar/avatar_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:base64",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/monitoring/health_monitor.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pickle",
+      "ml:torch",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:gc",
+      "external:GPUtil",
+      "external:queue",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/multimodal/image/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:io",
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:PIL",
+      "ml:torch",
+      "external:math",
+      "external:pathlib",
+      "external:base64",
+      "external:numpy",
+      "external:typing",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "external:datetime",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "async_processor",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/voice/stt/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:soundfile",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:pyaudio",
+      "external:queue",
+      "internal:mia.core.memory.main",
+      "external:time",
+      "concurrency:threading",
+      "external:librosa",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "async_processor",
+      "complexity_level": "high"
+    }
+  },
+  "mia/modules/voice/tts/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:io",
+      "external:enum",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:pyaudio",
+      "external:queue",
+      "internal:mia.core.memory.main",
+      "external:librosa",
+      "external:time",
+      "concurrency:threading",
+      "external:soundfile",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "async_processor",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/multimodal/video_generator.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:queue",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/memory/advanced_optimizer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "async_processor",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "async_processor",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/memory/main.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:logging",
+      "external:json",
+      "external:pickle",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:dataclasses",
+      "external:sqlite3",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/identity/__init__.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:self_model"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/identity/self_model.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/qrd.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/qpm.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/dve.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/pae.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/hoel.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:queue",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/sse.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/quality_control/rfe.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:collections",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/security/system_fuse.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:tempfile",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:gc",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/immune/immune_kernel.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/immune_system/integrity_guard.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hmac",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:sqlite3",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/consciousness/main.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:dataclasses",
+      "external:memory.main",
+      "external:time",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/executor_agent.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:shutil",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:requests",
+      "external:ast",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "internal:mia.core.llm.adaptive_llm",
+      "external:queue",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/__init__.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:validator",
+      "external:optimizer",
+      "external:executor",
+      "external:planner"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/core/agi_agents/optimizer_agent.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:statistics",
+      "external:os",
+      "external:logging",
+      "external:enum",
+      "external:json",
+      "external:itertools",
+      "external:random",
+      "external:pathlib",
+      "external:typing",
+      "external:numpy",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/validator.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/planner.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/optimizer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:gc",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/executor.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:requests",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "external:subprocess",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/validator_agent.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "external:json",
+      "external:re",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/agi_agents/planner_agent.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:time",
+      "concurrency:threading",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/core/bootstrap/main.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:importlib.util",
+      "external:sys",
+      "external:os",
+      "external:logging",
+      "concurrency:asyncio",
+      "external:json",
+      "external:pathlib",
+      "external:typing",
+      "external:psutil",
+      "external:dataclasses",
+      "external:GPUtil",
+      "external:subprocess",
+      "external:yaml",
+      "external:platform",
+      "external:consciousness.main"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/hybrid/deterministic_reasoning.py": {
+    "semantic_type": "mia:KnowledgeComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "internal:mia.knowledge.hybrid.semantic_layer",
+      "external:z3",
+      "external:pathlib",
+      "external:typing",
+      "external:re",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "external:time",
+      "external:concurrent.futures",
+      "concurrency:threading",
+      "external:uuid",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:KnowledgeComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/hybrid/semantic_layer.py": {
+    "semantic_type": "mia:KnowledgeComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "concurrency:asyncio",
+      "external:nltk.chunk",
+      "external:nltk.tokenize",
+      "external:uuid",
+      "external:nltk.tag",
+      "external:logging",
+      "external:sklearn.metrics.pairwise",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "external:typing",
+      "external:re",
+      "external:pathlib",
+      "external:time",
+      "concurrency:threading",
+      "external:os",
+      "external:nltk",
+      "external:json",
+      "external:sentence_transformers",
+      "external:spacy",
+      "external:numpy",
+      "external:concurrent.futures",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:KnowledgeComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/hybrid/autonomous_learning.py": {
+    "semantic_type": "mia:KnowledgeComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "concurrency:asyncio",
+      "external:sklearn.feature_extraction.text",
+      "external:uuid",
+      "external:logging",
+      "external:sklearn.metrics.pairwise",
+      "internal:mia.knowledge.hybrid.hybrid_pipeline",
+      "external:collections",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "external:typing",
+      "external:pathlib",
+      "external:re",
+      "external:time",
+      "external:sklearn.cluster",
+      "concurrency:threading",
+      "external:enum",
+      "external:os",
+      "internal:mia.knowledge.hybrid.semantic_layer",
+      "external:json",
+      "external:numpy",
+      "internal:mia.knowledge.hybrid.deterministic_reasoning",
+      "external:concurrent.futures",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:KnowledgeComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/hybrid/knowledge_bank_core.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "concurrency:asyncio",
+      "ontology:rdflib",
+      "external:uuid",
+      "external:logging",
+      "external:rdflib.plugins.sparql",
+      "external:typing",
+      "external:shutil",
+      "external:urllib.parse",
+      "external:rdflib.namespace",
+      "external:pathlib",
+      "external:time",
+      "concurrency:threading",
+      "external:os",
+      "external:json",
+      "external:rdflib.plugins.stores.memory",
+      "external:concurrent.futures",
+      "external:datetime",
+      "internal:mia.core.persistent_knowledge_store",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/knowledge/hybrid/hybrid_pipeline.py": {
+    "semantic_type": "mia:KnowledgeComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction",
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:hashlib",
+      "external:enum",
+      "external:os",
+      "concurrency:asyncio",
+      "external:logging",
+      "external:json",
+      "internal:mia.knowledge.hybrid.semantic_layer",
+      "external:pathlib",
+      "external:typing",
+      "internal:mia.knowledge.hybrid.knowledge_bank_core",
+      "internal:mia.knowledge.hybrid.deterministic_reasoning",
+      "external:re",
+      "external:time",
+      "external:concurrent.futures",
+      "concurrency:threading",
+      "external:uuid",
+      "external:dataclasses"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:KnowledgeComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "mia/data/project_builder/templates/python_fastapi/main.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction"
+    ],
+    "semantic_dependencies": [
+      "external:fastapi",
+      "external:fastapi.middleware.cors",
+      "external:uvicorn"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/data/project_builder/templates/python_flask/main.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:flask",
+      "external:flask_cors"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "mia/data/project_builder/templates/python_django/main.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "generated_projects/sample-api/tests/test_main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "generated_projects/sample-api/src/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "asynchronous_interaction"
+    ],
+    "semantic_dependencies": [
+      "external:fastapi",
+      "external:fastapi.middleware.cors",
+      "external:uvicorn"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/testing/test_testing_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:time",
+      "external:sys",
+      "external:unittest",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/integration/test_consciousness_memory_integration_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/integration/test_security_consciousness_integration_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/integration/test_llm_consciousness_integration_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/integration/test_enterprise_core_integration_integration.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/integration/test_voice_avatar_integration_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/integration/test_system_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/unit/test_desktop_cross_platform_builder_unit.py": {
+    "semantic_type": "mia:InterfaceComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:os",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:desktop.cross_platform_builder"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:InterfaceComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/unit/test_optimizations_integrated_optimizer_unit.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:os",
+      "external:unittest.mock",
+      "external:pathlib",
+      "external:optimizations.integrated_optimizer"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/unit/test_mia_core_bootstrap_main_unit.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:os",
+      "external:unittest.mock",
+      "external:pathlib",
+      "internal:mia.core.bootstrap.main"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/security/test_security_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:time",
+      "external:sys",
+      "external:unittest",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/deterministic/test_consciousness_loop_determinism_deterministic.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:hashlib",
+      "external:json",
+      "external:unittest.mock",
+      "external:random",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/deterministic/test_memory_retrieval_determinism_deterministic.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:hashlib",
+      "external:json",
+      "external:unittest.mock",
+      "external:random",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/deterministic/test_llm_output_consistency_deterministic.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:hashlib",
+      "external:json",
+      "external:unittest.mock",
+      "external:random",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/deterministic/test_sdm_loop_validation_deterministic.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy"
+    ],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:unittest",
+      "external:hashlib",
+      "external:json",
+      "external:unittest.mock",
+      "external:random",
+      "external:pathlib",
+      "external:time"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/compliance/test_compliance_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:time",
+      "external:sys",
+      "external:unittest",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/enterprise/test_enterprise_integration.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:time",
+      "external:sys",
+      "external:unittest",
+      "external:pathlib"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/mia/core/test_world_model.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.world_model"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/mia/core/test_hardware_optimizer.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.hardware_optimizer"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/mia/modules/adult_mode/test_adult_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.adult_mode.adult_system"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/mia/modules/lora_training/test_lora_manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.lora_training.lora_manager"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/mia/modules/voice/test_stt_engine.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.voice.stt_engine"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/mia/modules/voice/test_tts_engine.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.voice.tts_engine"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/mia/modules/api_email/test_email_client.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.api_email.email_client"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/mia/modules/avatar/test_avatar_system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.avatar.avatar_system"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "tests/mia/modules/multimodal/image/test_main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.modules.multimodal.image.main"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/mia/core/multimodal/test_video_generator.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.multimodal.video_generator"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "specialized_component",
+      "complexity_level": "medium"
+    }
+  },
+  "tests/mia/core/security/test_system_fuse.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.security.system_fuse"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/mia/core/immune/test_immune_kernel.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.immune.immune_kernel"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "tests/mia/core/bootstrap/test_main.py": {
+    "semantic_type": "mia:CoreAgent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:unittest",
+      "internal:mia.core.bootstrap.main"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:CoreAgent",
+      "functional_role": "utility_component",
+      "complexity_level": "low"
+    }
+  },
+  "test_data/projects/b0a6bb47-52f8-4c04-8e9f-b388e190de7e/main.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "hub_component",
+    "interaction_patterns": [
+      "high_coupling"
+    ],
+    "semantic_dependencies": [
+      "external:pathlib",
+      "external:sys",
+      "external:uvicorn",
+      "external:logging"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "hub_component",
+      "complexity_level": "low"
+    }
+  },
+  "desktop/enterprise/monitoring-system.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:logging",
+      "external:json",
+      "external:smtplib",
+      "external:email.mime.text",
+      "external:pathlib",
+      "external:psutil",
+      "external:email.mime.multipart",
+      "external:socket",
+      "external:time",
+      "external:requests",
+      "external:argparse",
+      "concurrency:threading",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  },
+  "desktop/enterprise/config-manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "utility_component",
+    "interaction_patterns": [],
+    "semantic_dependencies": [
+      "external:sys",
+      "external:os",
+      "external:json",
+      "external:pathlib",
+      "external:argparse"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "utility_component",
+      "complexity_level": "high"
+    }
+  },
+  "desktop/enterprise/license-manager.py": {
+    "semantic_type": "mia:UtilityComponent",
+    "functional_role": "specialized_component",
+    "interaction_patterns": [
+      "dependency_heavy",
+      "interface_rich"
+    ],
+    "semantic_dependencies": [
+      "external:hashlib",
+      "external:json",
+      "external:platform",
+      "external:pathlib",
+      "external:base64",
+      "external:psutil",
+      "external:argparse",
+      "external:time",
+      "external:uuid",
+      "external:datetime"
+    ],
+    "ontological_mapping": {
+      "ontology_class": "mia:UtilityComponent",
+      "functional_role": "specialized_component",
+      "complexity_level": "high"
+    }
+  }
+}
