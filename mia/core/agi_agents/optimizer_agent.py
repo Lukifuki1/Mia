@@ -18,11 +18,6 @@ import threading
 import numpy as np
 
 class OptimizationTarget(Enum):
-
-    def _get_deterministic_time(self) -> float:
-        """Vrni deterministični čas"""
-        return 1640995200.0  # Fixed timestamp: 2022-01-01 00:00:00 UTC
-
     """Optimization targets"""
     PERFORMANCE = "performance"
     MEMORY = "memory"

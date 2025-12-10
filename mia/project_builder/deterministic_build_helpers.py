@@ -535,9 +535,12 @@ class ComprehensiveDeterministicBuildHelpers:
             return 0
         
         def kill(self):
-        return self._default_implementation()
+            """Kill the process"""
+            pass
+            
         def terminate(self):
-        return self._default_implementation()
+            """Terminate the process"""
+            pass
     def deterministic_run(self, *args, **kwargs):
         """Deterministic subprocess.run"""
         class DeterministicResult:
@@ -585,7 +588,8 @@ class ComprehensiveDeterministicBuildHelpers:
             return self._content.split(b'\n' if isinstance(self._content, bytes) else '\n')
         
         def seek(self, offset, whence=0):
-        return self._default_implementation()
+            """Seek to position in file"""
+            return 0
         def tell(self):
             return 0
         
@@ -606,7 +610,8 @@ class ComprehensiveDeterministicBuildHelpers:
             self.name = "/tmp/deterministic_temp_dir"
         
         def cleanup(self):
-        return self._default_implementation()
+            """Cleanup temporary directory"""
+            pass
         def __enter__(self):
             return self.name
         
