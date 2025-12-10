@@ -60,6 +60,12 @@ class ChatInterface:
         
         self.logger.info("💬 Chat Interface initialized")
     
+    async def initialize(self):
+        """Initialize chat interface"""
+        self.logger.info("🚀 Initializing Chat Interface...")
+        # Chat interface is already initialized in __init__
+        self.logger.info("✅ Chat Interface ready")
+    
     def _setup_logging(self) -> logging.Logger:
         """Setup chat interface logging"""
         logger = logging.getLogger("MIA.Chat")
