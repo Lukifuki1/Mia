@@ -416,9 +416,18 @@ class ModelDiscoveryEngine:
             cache_path = Path("mia/data/models/discovered_models.json")
             cache_path.parent.mkdir(parents=True, exist_ok=True)
             
+            # Convert models to dict with enum serialization
+            models_dict = {}
+            for k, v in self.discovered_models.items():
+                model_dict = asdict(v)
+                # Convert enums to strings for JSON serialization
+                model_dict['format'] = v.format.value
+                model_dict['model_type'] = v.model_type.value
+                models_dict[k] = model_dict
+            
             cache_data = {
                 'last_scan': time.time(),
-                'models': {k: asdict(v) for k, v in self.discovered_models.items()}
+                'models': models_dict
             }
             
             with open(cache_path, 'w') as f:

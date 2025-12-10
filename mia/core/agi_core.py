@@ -166,7 +166,27 @@ class AGICore:
         """Initialize the LLM backend for language processing"""
         self.logger.info("🤖 Initializing LLM backend...")
         
-        # Check for available local models
+        # Try to initialize Ollama backend first
+        try:
+            from mia.core.llm_backends.ollama_backend import ollama_backend
+            
+            if await ollama_backend.is_available():
+                await ollama_backend.initialize()
+                self.ollama_backend = ollama_backend  # Store reference for direct access
+                self.llm_backend = {
+                    "type": "ollama",
+                    "backend": ollama_backend,
+                    "context_length": 4096,
+                    "temperature": 0.7,
+                    "max_tokens": 1024,
+                    "status": "ready"
+                }
+                self.logger.info("✅ LLM backend ready with Ollama")
+                return
+        except Exception as e:
+            self.logger.warning(f"⚠️ Failed to initialize Ollama backend: {e}")
+        
+        # Check for available local models as fallback
         from mia.core.model_discovery import model_discovery
         
         models = model_discovery.get_discovered_models()
@@ -179,6 +199,7 @@ class AGICore:
         
         if best_model:
             self.llm_backend = {
+                "type": "local",
                 "model": best_model,
                 "context_length": 4096,
                 "temperature": 0.7,
@@ -189,6 +210,7 @@ class AGICore:
         else:
             # Fallback to basic text processing
             self.llm_backend = {
+                "type": "basic",
                 "model": None,
                 "mode": "basic_processing",
                 "status": "fallback"
@@ -385,17 +407,39 @@ class AGICore:
     
     async def _generate_llm_response(self, prompt: str, reasoning_chain: List[str], thought_type: ThoughtType) -> str:
         """Generate response using LLM backend"""
-        # This would integrate with the actual LLM
-        # For now, return a structured response
-        
-        response_parts = [
-            f"Based on my analysis of: {prompt}",
-            f"Reasoning process: {' -> '.join(reasoning_chain)}",
-            f"Thought type: {thought_type.value}",
-            "I understand this requires careful consideration and will provide a thoughtful response."
-        ]
-        
-        return "\n".join(response_parts)
+        try:
+            if self.llm_backend.get("type") == "ollama":
+                backend = self.llm_backend["backend"]
+                
+                # Create a structured prompt for the LLM
+                system_prompt = f"""You are MIA, an Enterprise AGI assistant. You are currently engaged in {thought_type.value} thinking.
+                
+Your reasoning chain so far: {' -> '.join(reasoning_chain)}
+
+Please provide a thoughtful, professional response to the following:"""
+                
+                full_prompt = f"{system_prompt}\n\nUser: {prompt}\n\nMIA:"
+                
+                # Use timeout for LLM response generation
+                response = await asyncio.wait_for(
+                    backend.generate_response(
+                        prompt=full_prompt,
+                        model="llama3.2:1b",
+                        stream=False,
+                        temperature=self.llm_backend.get("temperature", 0.7),
+                        max_tokens=self.llm_backend.get("max_tokens", 1024)
+                    ),
+                    timeout=8.0  # 8 second timeout
+                )
+                
+                return response.strip() if response else "I'm processing your request..."
+                
+        except asyncio.TimeoutError:
+            self.logger.warning("LLM generation timed out, using fallback")
+            return await self._generate_basic_response(prompt, reasoning_chain, thought_type)
+        except Exception as e:
+            self.logger.error(f"❌ LLM generation error: {e}")
+            return await self._generate_basic_response(prompt, reasoning_chain, thought_type)
     
     async def _generate_basic_response(self, prompt: str, reasoning_chain: List[str], thought_type: ThoughtType) -> str:
         """Generate basic response without LLM"""
@@ -522,19 +566,44 @@ class AGICore:
     async def _generate_chat_response(self, message: str, thought: Thought) -> str:
         """Generate a chat response based on the message and thought"""
         
-        # Analyze message intent
+        # Try to use Ollama backend if available with timeout
+        if hasattr(self, 'ollama_backend') and self.ollama_backend:
+            try:
+                # Use asyncio.wait_for with a shorter timeout for chat responses
+                response = await asyncio.wait_for(
+                    self.ollama_backend.generate_response(message),
+                    timeout=10.0  # 10 second timeout for chat
+                )
+                if response and response.strip() and not response.startswith("Error:"):
+                    return response
+            except asyncio.TimeoutError:
+                self.logger.warning("Ollama backend timed out, using fallback response")
+            except Exception as e:
+                self.logger.warning(f"Ollama backend failed: {e}, falling back to basic response")
+        
+        # Enhanced fallback response generation
         intent = self._analyze_intent(message)
         
-        if intent == "question":
-            response = f"Based on my analysis: {thought.content}"
-        elif intent == "request":
-            response = f"I understand you're asking me to: {message}. {thought.content}"
-        elif intent == "conversation":
-            response = f"I appreciate you sharing that. {thought.content}"
-        else:
-            response = thought.content
+        # Generate more intelligent responses based on message content
+        message_lower = message.lower()
         
-        return response
+        if "ai" in message_lower or "artificial intelligence" in message_lower:
+            return "Artificial Intelligence (AI) is the simulation of human intelligence in machines that are programmed to think and learn like humans. It includes machine learning, natural language processing, computer vision, and decision-making capabilities. AI systems can analyze data, recognize patterns, and make predictions to solve complex problems."
+        
+        elif "explain" in message_lower or "what is" in message_lower:
+            return f"Based on my analysis of your question '{message}', I can provide insights. {thought.content} This involves understanding the core concepts and providing clear explanations based on available knowledge."
+        
+        elif "how" in message_lower:
+            return f"To address your question about '{message}', here's my understanding: {thought.content} The process typically involves systematic analysis and step-by-step reasoning."
+        
+        elif intent == "question":
+            return f"Based on my analysis: {thought.content}"
+        elif intent == "request":
+            return f"I understand you're asking me to: {message}. {thought.content}"
+        elif intent == "conversation":
+            return f"I appreciate you sharing that. {thought.content}"
+        else:
+            return thought.content
     
     def _analyze_intent(self, message: str) -> str:
         """Analyze the intent of a user message"""

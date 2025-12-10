@@ -187,15 +187,19 @@ class MIADesktopApp:
         try:
             self.web_ui = MIAWebUI(host="0.0.0.0", port=12000)
             
-            # Start web UI in background
+            # Start web UI in background with proper error handling
             def start_web_ui():
-                import uvicorn
-                uvicorn.run(
-                    self.web_ui.app,
-                    host=self.web_ui.host,
-                    port=self.web_ui.port,
-                    log_level="info"
-                )
+                try:
+                    import uvicorn
+                    uvicorn.run(
+                        self.web_ui.app,
+                        host=self.web_ui.host,
+                        port=self.web_ui.port,
+                        log_level="error",  # Reduce log noise
+                        access_log=False
+                    )
+                except Exception as e:
+                    self.logger.error(f"Web UI thread error: {e}")
             
             web_thread = threading.Thread(target=start_web_ui, daemon=True)
             web_thread.start()
@@ -213,15 +217,19 @@ class MIADesktopApp:
         self.logger.info("🔌 Starting API gateway...")
         
         try:
-            # Start API gateway in background
+            # Start API gateway in background with proper error handling
             def start_api():
-                import uvicorn
-                uvicorn.run(
-                    api_gateway.app,
-                    host="0.0.0.0",
-                    port=8000,
-                    log_level="info"
-                )
+                try:
+                    import uvicorn
+                    uvicorn.run(
+                        api_gateway.app,
+                        host="0.0.0.0",
+                        port=8000,
+                        log_level="error",  # Reduce log noise
+                        access_log=False
+                    )
+                except Exception as e:
+                    self.logger.error(f"API gateway thread error: {e}")
             
             api_thread = threading.Thread(target=start_api, daemon=True)
             api_thread.start()
